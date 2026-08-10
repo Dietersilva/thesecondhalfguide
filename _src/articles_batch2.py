@@ -2,6 +2,7 @@
 """Second batch of articles, rewritten from the draft pack in house style."""
 
 from build_articles import facts, check, AD_INLINE, CHECKED
+from charts import part_d_phases
 
 ARTICLES2 = {}
 
@@ -37,6 +38,7 @@ ARTICLES2['drug-cap'] = {
         ('Also available', 'The Medicare Prescription Payment Plan spreads your drug costs across monthly '
                            'instalments. It changes the timing, not the total.'),
     ]) + """
+""" + part_d_phases() + """
       <h2>What the cap is not</h2>
 
       <p>&ldquo;Out-of-pocket cap&rdquo; sounds like it means your medical spending stops at $2,100. It

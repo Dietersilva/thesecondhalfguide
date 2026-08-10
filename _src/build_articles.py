@@ -133,6 +133,10 @@ ARTICLE_CSS = """
   }
 """
 
+from charts import CHART_CSS, thresholds_timeline, enrolment_window, fraud_share, part_d_phases
+
+ARTICLE_CSS += CHART_CSS
+
 CHECK_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" '
              'stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>')
 INFO_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" '
@@ -305,6 +309,7 @@ ARTICLES['senior-age'] = {
       ticket, and one or two of them can permanently change what you pay for health care for the rest of
       your life. Telling those apart is the whole game.</p>
 
+""" + thresholds_timeline() + """
 """ + facts('The thresholds, roughly in order', [
         ('Age 50', 'The earliest one that carries real weight, and the newest. Shingles and pneumococcal '
                    'vaccines are both recommended from 50 &mdash; pneumococcal moved down from 65 in late '
@@ -430,6 +435,7 @@ ARTICLES['five-minute-rule'] = {
         ('20% / 37%', 'People 60+ filed a fifth of all complaints but absorbed well over a third of all '
                       'the money lost.'),
     ]) + """
+""" + fraud_share() + """
       <p>That last row is the one worth sitting with. The problem is not that older adults get targeted
       more often. It's that when it lands, it lands much harder &mdash; because that's where the
       retirement accounts and the home equity are.</p>

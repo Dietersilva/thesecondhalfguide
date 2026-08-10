@@ -3,6 +3,7 @@
 under-covered money-saving facts."""
 
 from build_articles import facts, check, AD_INLINE, CHECKED
+from charts import enrolment_window
 
 ARTICLES3 = {}
 
@@ -36,6 +37,7 @@ ARTICLES3['medicare-enrollment'] = {
       birthday month. Enrol during or after, and it starts later &mdash; which can leave a gap. If you
       have a choice, the early part of the window is the better part.</p>
 
+""" + enrolment_window() + """
 """ + facts('Medicare in 2026', [
         ('$202.90', 'Standard monthly Part B premium. Higher earners pay an income-related surcharge, '
                     'ranging up to $689.90.'),
