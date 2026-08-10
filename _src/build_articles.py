@@ -1192,7 +1192,8 @@ def _load_batches():
     # one, so merging at module scope would recurse when run as a script.
     import importlib
     for mod, name in (('articles_batch2', 'ARTICLES2'), ('articles_batch3', 'ARTICLES3'),
-                      ('articles_batch4', 'ARTICLES4')):
+                      ('articles_batch4', 'ARTICLES4'),
+                      ('articles_batch5', 'ARTICLES5')):
         ARTICLES.update(getattr(importlib.import_module(mod), name))
 
 
