@@ -33,8 +33,9 @@ ROUTES = {
 }
 
 DESCRIPTIONS = {
-    '/': 'Plain-language facts for the years after 55 — the dates, thresholds and dollar figures '
-         'that actually matter, with sources you can check.',
+    '/': 'Smart, practical information for people roughly 55–70 navigating the financial and '
+         'lifestyle transition into retirement — what nobody tells you about the 10 years '
+         'surrounding it.',
     '/about': 'Who writes The Second Half Guide, how it is funded, and the editorial standards it '
               'holds itself to.',
     '/contact': 'How to reach The Second Half Guide — corrections, topic suggestions and reader stories.',
@@ -236,6 +237,8 @@ def main():
               + '\n'.join(css_blocks) + NORMALIZE)
     open(f'{SITE}/styles.css', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
+    if os.path.exists('ogcard/og.png'):
+        shutil.copy('ogcard/og.png', f'{SITE}/og.png')
 
     for path, (title, desc, canonical, body) in rendered.items():
         head = f"""<!doctype html>
@@ -251,7 +254,12 @@ def main():
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{ORIGIN}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Second Half Guide — what nobody tells you about the 10 years surrounding retirement.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{ORIGIN}/og.png">
 <meta name="author" content="Edward Silva">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">

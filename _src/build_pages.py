@@ -166,7 +166,7 @@ ABOUT_BODY = """  <div class="wrap">
     <div class="page-head">
       <span class="eyebrow">About</span>
       <h1>Why this site exists</h1>
-      <p class="dek">Most writing about life after 55 falls into one of two traps: it talks down to you, or it's a sales pitch wearing a cardigan. We're trying to do something plainer than that.</p>
+      <p class="dek">Smart, practical information for people roughly 55&ndash;70 navigating the financial and lifestyle transition into retirement. Most writing aimed at this stage falls into one of two traps: it talks down to you, or it's a sales pitch wearing a cardigan. We're trying to do something plainer.</p>
     </div>
 
     <div class="prose">

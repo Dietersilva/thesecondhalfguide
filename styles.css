@@ -157,6 +157,16 @@ body.hub h1 {
     text-wrap: balance;
     color: var(--ink);
   }
+body.hub .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 1.4;
+    color: var(--pine-strong);
+    max-width: 24ch;
+    margin: 0 0 18px;
+  }
 body.hub .hero-sub {
     font-size: 20px;
     line-height: 1.6;
