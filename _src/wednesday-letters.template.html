@@ -1,28 +1,139 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Wednesday Letters — The Second Half Guide</title>
-<meta name="description" content="The Wednesday Letters — reader correspondence from The Second Half Guide.">
-<link rel="canonical" href="https://thesecondhalfguide.com/wednesday-letters">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="The Second Half Guide">
-<meta property="og:title" content="The Wednesday Letters — The Second Half Guide">
-<meta property="og:description" content="The Wednesday Letters — reader correspondence from The Second Half Guide.">
-<meta property="og:url" content="https://thesecondhalfguide.com/wednesday-letters">
-<meta name="twitter:card" content="summary">
-<meta name="author" content="Edward Silva">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
-</head>
-<body class="article">
+<style>
+  @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_400) format('woff2'); }
+  @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 700; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_700) format('woff2'); }
+  @font-face { font-family: 'Atkinson Hyperlegible'; font-style: italic; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_400I) format('woff2'); }
+  @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_700) format('woff2'); }
+  @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 500; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_500I) format('woff2'); }
+
+  :root {
+    --bg: #FFFDF7;
+    --surface: #FFFFFF;
+    --surface-2: #FBF3DD;
+    --ink: #2E3024;
+    --ink-soft: #5C5F4F;
+    --ink-faint: #87897A;
+    --pine: #3E8267;
+    --pine-strong: #2C6650;
+    --gold: #E08E2B;
+    --gold-soft: #FBE4B8;
+    --line: #EDE6D3;
+    --focus: #2C6650;
+    --shadow: 0 1px 2px rgba(51,53,42,0.05), 0 8px 24px -12px rgba(51,53,42,0.14);
+    --radius: 14px;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+    font-size: 19px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--pine-strong); }
+  a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+  .wrap-wide { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; gap: 16px; }
+  .wordmark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .wordmark em { font-style: italic; font-weight: 500; color: var(--pine-strong); }
+  .topbar-cta { font-size: 16px; font-weight: 700; color: var(--pine-strong); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+  .topbar-cta:hover { border-bottom-color: var(--pine-strong); }
+
+  .story-head { padding: 64px 0 10px; text-align: center; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); background: color-mix(in srgb, var(--gold-soft) 60%, transparent);
+    padding: 6px 16px; border-radius: 999px; margin-bottom: 22px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
+    line-height: 1.06; letter-spacing: -0.015em; margin: 0 0 20px; text-wrap: balance;
+  }
+  .dek {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: 20px; line-height: 1.5; color: var(--ink-soft); margin: 0 auto 26px; max-width: 40ch;
+  }
+  .byline { font-size: 15px; color: var(--ink-faint); }
+
+  .divider-orn {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin: 36px 0 8px; color: var(--gold);
+  }
+  .divider-orn::before, .divider-orn::after {
+    content: ""; height: 1px; width: 60px; background: var(--line);
+  }
+  .divider-orn span { font-family: 'Fraunces', serif; font-size: 18px; }
+
+  .story { padding: 10px 0 20px; }
+  .story p { margin: 0 0 24px; }
+  .story p.first::first-letter {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 68px; line-height: 0.82;
+    float: left; padding: 6px 12px 0 0; color: var(--pine-strong);
+  }
+  .story em { font-style: italic; }
+
+  .letter {
+    margin: 34px 0; padding: 26px 30px; background: var(--surface-2);
+    border-radius: var(--radius); border-left: 4px solid var(--gold-soft);
+  }
+  .letter p {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: 20px; line-height: 1.55; color: var(--ink); margin: 0 0 12px;
+  }
+  .letter p:last-child { margin-bottom: 0; }
+  .letter .sig { font-size: 16px; color: var(--ink-faint); font-style: normal; font-family: 'Atkinson Hyperlegible', sans-serif; }
+
+  .scene-break {
+    text-align: center; color: var(--ink-faint); letter-spacing: 0.5em;
+    margin: 34px 0; font-size: 15px;
+  }
+
+  .fiction-note {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin: 44px 0 0; padding: 20px 24px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .fiction-note svg { flex: none; width: 22px; height: 22px; stroke: var(--ink-faint); margin-top: 3px; }
+  .fiction-note p { margin: 0; font-size: 15.5px; color: var(--ink-faint); }
+
+  .ad-slot { margin: 44px 0; }
+  .ad-slot-inner {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 90px;
+    border: 1.5px dashed var(--line); border-radius: 10px; background: var(--surface-2); padding: 14px; text-align: center;
+  }
+  .ad-slot-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); }
+  .ad-slot-note { font-size: 13px; color: var(--ink-faint); }
+
+  .next-up {
+    margin: 50px 0 8px; padding: 30px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+  }
+  .next-up p.label { font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); margin: 0 0 8px; }
+  .next-up h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; }
+  .next-up p { margin: 0 0 16px; color: var(--ink-soft); }
+  .next-up a.btn {
+    display: inline-flex; font-weight: 700; font-size: 16px; padding: 12px 20px; border-radius: 10px;
+    background: var(--pine); color: #FBFAF4; text-decoration: none;
+  }
+  .next-up a.btn:hover { background: var(--pine-strong); }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 60px; margin-top: 40px; }
+  .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--ink-faint); }
+  footer a { color: var(--ink-soft); }
+</style>
+
 <header class="topbar">
   <div class="wrap-wide">
-    <a class="wordmark" href="/">The <em>Second Half</em> Guide</a>
-    <a class="topbar-cta" href="/#ask">Send us a topic &rarr;</a>
+    <a class="wordmark" href="https://claude.ai/code/artifact/d7289b2f-07da-4008-b5cf-6c2547f70169">The <em>Second Half</em> Guide</a>
+    <a class="topbar-cta" href="https://claude.ai/code/artifact/d7289b2f-07da-4008-b5cf-6c2547f70169#ask">Send us a topic &rarr;</a>
   </div>
 </header>
 
@@ -119,7 +230,7 @@
       <p class="label">Explore more</p>
       <h3>See every topic we're building</h3>
       <p>Stories, Medicare, Social Security, scam protection, and more &mdash; plus a place to tell us what to cover next.</p>
-      <a class="btn" href="/">Back to The Second Half Guide &rarr;</a>
+      <a class="btn" href="https://claude.ai/code/artifact/d7289b2f-07da-4008-b5cf-6c2547f70169">Back to The Second Half Guide &rarr;</a>
     </div>
   </div>
 
@@ -138,5 +249,3 @@
     <span>Privacy Policy &amp; Terms &mdash; coming soon</span>
   </div>
 </footer>
-</body>
-</html>

@@ -40,7 +40,7 @@ SHARED_CSS = """
   body {
     margin: 0; background: var(--bg); color: var(--ink);
     font-family: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
-    font-size: 19px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    font-size: 19px; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
   a { color: var(--pine-strong); }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
@@ -67,10 +67,10 @@ SHARED_CSS = """
     color: var(--pine-strong); background: var(--surface-2); padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
   }
   h1 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 5vw, 48px);
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
     line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
   }
-  .dek { font-size: 21px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
+  .dek { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
   .meta { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin-bottom: 8px; }
 
   .prose { padding: 8px 0 12px; }

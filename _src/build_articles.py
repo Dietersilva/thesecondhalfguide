@@ -15,10 +15,10 @@ from build_pages import SHARED_CSS, HUB
 ARTICLE_CSS = """
   .article-head { padding: 56px 0 8px; }
   h1 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 5vw, 48px);
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
     line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
   }
-  .dek { font-size: 21px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
+  .dek { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
   .meta { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin-bottom: 8px; }
 
   .prose { padding: 8px 0 12px; }
@@ -37,7 +37,7 @@ ARTICLE_CSS = """
     border-radius: var(--radius); box-shadow: var(--shadow);
   }
   blockquote.pull p {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 22px; line-height: 1.5;
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.5;
     color: var(--ink); margin: 0; max-width: 56ch;
   }
 

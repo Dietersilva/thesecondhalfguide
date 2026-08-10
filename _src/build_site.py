@@ -91,6 +91,69 @@ def collect_pages():
 
 FONT_FACE_RE = re.compile(r'@font-face\s*\{[^}]*\}', re.S)
 
+# Every page carried its own <style> block, and several define the same
+# selectors with different values (.wrap is 1040px on the hub, 760px on an
+# article, 680px on a letter). Concatenating them into one stylesheet let the
+# last definition win everywhere. Each layout's rules are scoped under a body
+# class instead; genuinely global bits (:root, *, html, @font-face) stay shared.
+GLOBAL_SELECTORS = {':root', '*', 'html'}
+
+
+def split_rules(css):
+    """Yield top-level (prelude, body_or_None) pairs."""
+    i, n, start = 0, len(css), 0
+    while i < n:
+        c = css[i]
+        if c == '{':
+            prelude = css[start:i].strip()
+            depth, j = 1, i + 1
+            while j < n and depth:
+                if css[j] == '{': depth += 1
+                elif css[j] == '}': depth -= 1
+                j += 1
+            yield prelude, css[i + 1:j - 1]
+            i = start = j
+        elif c == ';' and css[start:i].strip().startswith('@'):
+            yield css[start:i].strip(), None
+            i += 1; start = i
+        else:
+            i += 1
+
+
+def scope_css(css, cls):
+    """Prefix rules with body.<cls>; return (scoped, global_rules)."""
+    scoped, globals_ = [], []
+    for prelude, block in split_rules(css):
+        if block is None:
+            globals_.append(prelude + ';'); continue
+        if prelude.startswith('@media') or prelude.startswith('@supports'):
+            inner, inner_globals = scope_css(block, cls)
+            globals_.extend(inner_globals)
+            if inner.strip():
+                scoped.append(f'{prelude} {{{inner}}}')
+            continue
+        if prelude.startswith('@'):
+            globals_.append(f'{prelude} {{{block}}}'); continue
+        out = []
+        for sel in (p.strip() for p in prelude.split(',')):
+            if not sel: continue
+            if sel in GLOBAL_SELECTORS:
+                globals_.append(f'{sel} {{{block}}}'); continue
+            if sel == 'body' or sel.startswith('body.') or sel.startswith('body '):
+                out.append(sel.replace('body', f'body.{cls}', 1))
+            else:
+                out.append(f'body.{cls} {sel}')
+        if out:
+            scoped.append(f'{", ".join(out)} {{{block}}}')
+    return '\n'.join(scoped), globals_
+
+
+def layout_class(path):
+    if path == '/': return 'hub'
+    if path in ('/about', '/contact', '/privacy'): return 'doc'
+    return 'article'
+
+
 NEW_FONT_FACES = """
 @font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/atkinson-400.woff2) format('woff2')}
 @font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/atkinson-700.woff2) format('woff2')}
@@ -123,6 +186,7 @@ def main():
         pass  # covered by article_urls.json below if present
 
     css_blocks, seen = [], set()
+    global_rules, seen_scoped = [], set()
     script_hashes = set()
     rendered = {}
 
@@ -133,10 +197,14 @@ def main():
         style_m = re.search(r'<style>(.*?)</style>', html, re.S)
         css = style_m.group(1) if style_m else ''
         css = FONT_FACE_RE.sub('', css)
-        key = css.strip()
-        if key and key not in seen:
-            seen.add(key)
-            css_blocks.append(css)
+        cls = layout_class(path)
+        scoped, page_globals = scope_css(css, cls)
+        for g in page_globals:
+            if g not in seen:
+                seen.add(g); global_rules.append(g)
+        if (cls, scoped) not in seen_scoped:
+            seen_scoped.add((cls, scoped))
+            css_blocks.append(scoped)
 
         body = html[style_m.end():] if style_m else html
         body = re.sub(r'^\s*', '', body)
@@ -160,7 +228,12 @@ def main():
 
         rendered[path] = (title, desc, canonical, body)
 
-    styles = NEW_FONT_FACES + '\n'.join(css_blocks)
+    # The article-layout pages came from templates with three different
+    # measures (680/740/760). Settle on one so every article reads the same
+    # and the fact tables have room.
+    NORMALIZE = '\nbody.article .wrap { max-width: 760px; }\n'
+    styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
+              + '\n'.join(css_blocks) + NORMALIZE)
     open(f'{SITE}/styles.css', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
 
@@ -185,7 +258,7 @@ def main():
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class=\"{layout_class(path)}\">
 """
         out = head + body.rstrip() + '\n</body>\n</html>\n'
         fn = 'index.html' if path == '/' else f'{path.lstrip("/")}.html'

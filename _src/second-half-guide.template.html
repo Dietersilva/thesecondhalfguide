@@ -1,0 +1,776 @@
+<title>The Second Half Guide</title>
+<style>
+  @font-face {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(data:font/woff2;base64,ATKINSON_400) format('woff2');
+  }
+  @font-face {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(data:font/woff2;base64,ATKINSON_700) format('woff2');
+  }
+  @font-face {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(data:font/woff2;base64,ATKINSON_400I) format('woff2');
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url(data:font/woff2;base64,FRAUNCES_700) format('woff2');
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(data:font/woff2;base64,FRAUNCES_500I) format('woff2');
+  }
+
+  /* Deliberately single-theme: this audience reads best on a
+     consistently bright, high-contrast page, so we don't adapt
+     to the viewer's OS dark-mode setting here. */
+  :root {
+    --bg: #FFFDF7;
+    --surface: #FFFFFF;
+    --surface-2: #FBF3DD;
+    --ink: #2E3024;
+    --ink-soft: #5C5F4F;
+    --ink-faint: #87897A;
+    --pine: #3E8267;
+    --pine-strong: #2C6650;
+    --gold: #E08E2B;
+    --gold-soft: #FBE4B8;
+    --line: #EDE6D3;
+    --focus: #2C6650;
+    --shadow: 0 1px 2px rgba(51,53,42,0.05), 0 8px 24px -12px rgba(51,53,42,0.14);
+    --radius: 14px;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--pine-strong); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 16px;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .wordmark em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--pine-strong);
+  }
+  .topbar-cta {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--pine-strong);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+  }
+  .topbar-cta:hover { border-bottom-color: var(--pine-strong); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 64px 0 40px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pine-strong);
+    background: var(--surface-2);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(34px, 4.6vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .hero-sub {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 30px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .btn-primary {
+    background: var(--pine);
+    color: #FBFAF4;
+  }
+  .btn-primary:hover { background: var(--pine-strong); }
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--ink);
+  }
+  .btn-ghost:hover { border-color: var(--ink-faint); }
+
+  /* ---------- arc graphic ---------- */
+  .arc-figure { margin: 0; }
+  .arc-figure svg { width: 100%; height: auto; display: block; }
+  .arc-caption {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ---------- note section ---------- */
+  .note {
+    padding: 8px 0 56px;
+  }
+  .note blockquote {
+    margin: 0;
+    padding: 32px 36px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .note p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 62ch;
+    margin: 0 0 14px;
+  }
+  .note cite {
+    display: block;
+    font-style: normal;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- topics ---------- */
+  .section-head {
+    max-width: 62ch;
+    margin: 0 0 34px;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(26px, 3vw, 32px);
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .section-head p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .start-here {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    text-decoration: none;
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 14px 22px;
+    margin: 0 0 34px;
+  }
+  .start-here-eyebrow {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pine-strong);
+  }
+  .start-here-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .start-here-arrow {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--pine-strong);
+    margin-left: auto;
+  }
+
+  .topics {
+    padding: 8px 0 60px;
+  }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .topic-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow);
+  }
+  .topic-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .topic-icon svg { width: 24px; height: 24px; stroke: var(--pine-strong); }
+  .topic-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .topic-card p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0;
+    flex-grow: 1;
+  }
+  .tag-soon {
+    align-self: flex-start;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: color-mix(in srgb, var(--gold-soft) 55%, transparent);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .tag-live {
+    align-self: flex-start;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--pine-strong);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  .tag-live:hover { border-bottom-color: var(--pine-strong); }
+  /* Several topics now have more than one published piece. */
+  .card-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  /* ---------- form ---------- */
+  .ask {
+    padding: 12px 0 64px;
+  }
+  .ask-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+  }
+  fieldset {
+    border: none;
+    margin: 0 0 26px;
+    padding: 0;
+  }
+  legend {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px 18px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 17px;
+  }
+  .check-item input {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    accent-color: var(--pine);
+    flex: none;
+  }
+  label.field-label {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .field-hint {
+    font-size: 14px;
+    color: var(--ink-faint);
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  input[type="email"], input[type="text"], textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  .ask-row { margin-bottom: 22px; }
+  .ask-foot {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .ask-note {
+    font-size: 14.5px;
+    color: var(--ink-faint);
+  }
+  #ask-status {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--pine-strong);
+  }
+
+  /* ---------- trust strip ---------- */
+  .trust {
+    padding: 0 0 60px;
+  }
+  .trust-box {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+  }
+  .trust-box svg { flex: none; width: 26px; height: 26px; stroke: var(--pine-strong); margin-top: 2px; }
+  .trust-box p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+
+  /* ---------- ad slots ---------- */
+  .ad-slot {
+    margin: 0 0 56px;
+  }
+  .ad-slot-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 90px;
+    border: 1.5px dashed var(--line);
+    border-radius: 10px;
+    background: var(--surface-2);
+    padding: 14px;
+    text-align: center;
+  }
+  .ad-slot-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ad-slot-note {
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 44px;
+  }
+  .foot-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-size: 15px;
+    color: var(--ink-faint);
+  }
+  .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero { padding-top: 40px; }
+    .ask-box { padding: 26px; }
+    .note blockquote { padding: 24px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.7s ease-out both;
+    }
+    .reveal.d2 { animation-delay: 0.12s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top">The <em>Second Half</em> Guide</a>
+    <a class="topbar-cta" href="#ask">Send us a topic &rarr;</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Plain facts, checked and dated</span>
+        <h1>Are you nearing your second half?</h1>
+        <p class="hero-sub">It isn't the downhill side &mdash; it's the part where you finally know what you're doing. This is a plain-spoken guide to the parts of it that actually take some figuring out: Medicare, money, family, and everything in between.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#topics">Start reading</a>
+          <a class="btn btn-ghost" href="#ask">Tell us what you need</a>
+        </div>
+      </div>
+      <figure class="arc-figure reveal d2">
+        <svg viewBox="0 0 560 320" role="img" aria-labelledby="arcTitle arcDesc">
+          <title id="arcTitle">A rising arc representing life's second half</title>
+          <desc id="arcDesc">A curved line rises from the lower left and levels out high on the right, with a marker past the midpoint labeled "you are here," illustrating that the second half continues upward rather than declining.</desc>
+          <line x1="30" y1="270" x2="530" y2="270" stroke="var(--line)" stroke-width="1.5"/>
+          <path d="M35,255 C130,90 240,55 340,58 C420,60 470,80 515,110" fill="none" stroke="var(--pine)" stroke-width="4" stroke-linecap="round"/>
+          <line x1="185" y1="270" x2="185" y2="150" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 6"/>
+          <text x="185" y="292" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="13" fill="var(--ink-faint)">first half</text>
+          <text x="400" y="292" text-anchor="middle" font-family="Atkinson Hyperlegible" font-size="13" fill="var(--ink-faint)">second half</text>
+          <circle cx="365" cy="59" r="9" fill="var(--gold)"/>
+          <circle cx="365" cy="59" r="17" fill="var(--gold)" opacity="0.25"/>
+          <circle cx="365" cy="59" r="26" fill="var(--gold)" opacity="0.12"/>
+          <text x="365" y="34" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="500" font-size="16" fill="var(--ink)">you are here</text>
+        </svg>
+        <figcaption class="arc-caption">The line doesn't go down from here. It levels out &mdash; and keeps going.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap ad-slot">
+    <div class="ad-slot-inner">
+      <span class="ad-slot-label">Advertisement</span>
+      <span class="ad-slot-note">Leaderboard unit &middot; activates after AdSense approval</span>
+    </div>
+  </div>
+
+  <section class="note">
+    <div class="wrap">
+      <blockquote>
+        <p>We built this because most sites either patronize this stage of life or ignore it entirely. This one won't do either. Short, straight answers &mdash; no jargon, no fine print you need a magnifying glass for, no assumption that getting older means slowing down.</p>
+        <cite>&mdash; The Second Half Guide</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="topics" id="topics">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we're covering</h2>
+        <p>Twenty-four pieces published so far &mdash; the dates, thresholds and dollar figures worth knowing as you approach 60, plus the parts of this stage that have nothing to do with paperwork. Tell us what to write next in the form below.</p>
+      </div>
+
+      <a class="start-here" href="https://claude.ai/code/artifact/7ccf5206-2e2c-42c9-a49c-cbb27d5f88b5">
+        <span class="start-here-eyebrow">Start here</span>
+        <span class="start-here-title">Approaching 60 and beyond: what actually changes, and what doesn't</span>
+        <span class="start-here-arrow">Read it &rarr;</span>
+      </a>
+      <div class="topic-grid">
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 8h4M16 8h4M6 12h12M7 16h10"/></svg>
+          </div>
+          <h3>Medicare &amp; health insurance</h3>
+          <p>Enrollment windows, what the drug cap really covers, and where Medicare stops working.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/9aa6d645-f0f3-4db2-8c71-535ebb5fb551">Read: The deadline that never forgives you &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/b36f1473-2201-4354-ad3d-9f12fc5e11e6">Read: What the 15 October window is for &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/082f51f0-1330-4b30-8333-dbbea65b0068">Read: The $2,100 drug cap &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/96c40b41-3780-42d3-8db8-16e9ddd9cdca">Read: Travel insurance after 60 &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.5 15c.4 1 1.3 1.5 2.5 1.5 1.6 0 2.5-.8 2.5-1.9 0-2.6-5-1.3-5-3.9 0-1.1.9-1.9 2.5-1.9 1.2 0 2.1.5 2.5 1.5"/></svg>
+          </div>
+          <h3>Money &amp; the tax year</h3>
+          <p>The dated facts &mdash; deduction amounts, claiming ages, the thresholds that move each year.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/06b38a83-00a1-42db-93ac-1b56cbdaa9a7">Read: The new $6,000 senior deduction &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/f18cc53c-1c7b-473a-bafc-bac54df82623">Read: The property tax break you may qualify for &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/c1ae0269-8005-42bc-aa20-4bf4c8d1a177">Read: Should you file at 62? &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v3h3M9 12h6M9 15.5h6M9 8.5h3"/></svg>
+          </div>
+          <h3>Paperwork that matters</h3>
+          <p>Wills, beneficiary forms, digital accounts &mdash; explained without the law-school vocabulary.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/27c6854e-48c4-4758-b836-e7777976f5bb">Read: Your beneficiary form may outrank your will &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/244e6bb2-7621-436a-a23b-ba69539766b4">Read: Who gets your digital life? &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/43ac90f7-7fee-4653-bc1d-c1f36b732232">Read: Power of attorney &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
+          </div>
+          <h3>Scam &amp; fraud protection</h3>
+          <p>The current phone, email, and gift-card scams &mdash; and exactly what to do if one gets through.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/8143eec9-cf0c-4dee-a376-8223f660ca92">Read: The five-minute rule &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/1f79fa4b-7886-4d6d-b812-2e2142c030e6">Read: Why your phone rings more in October &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/4adadc1a-5ef3-4315-b7fc-e23f087c75e9">Read: When the voice sounds like your grandchild &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/c76fd581-9441-4a56-b995-ba8c83ac238c">Read: Romance scams after 55 &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/c9bd23f5-82bb-469a-aaf8-592026422822">Read: The call that empties accounts &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+          </div>
+          <h3>Aging in place</h3>
+          <p>The home changes that actually matter &mdash; and the ones that are just upsells.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/fd2b319c-32d3-4957-b2a8-17bb44dfc37f">Read: Staying home is a goal, not a plan &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/8463d7bb-bd49-4b97-a8f4-1319bf03ff35">Read: Free college classes after 60 &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l3-8h12l3 8"/><path d="M3 13h18v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 5v3M15 5v3"/></svg>
+          </div>
+          <h3>Travel &amp; discounts</h3>
+          <p>Where the real senior discounts are, which age unlocks what, and which ones aren't worth having.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/678c6dd2-3734-46bd-86f7-20cc64748cef">Read: When does &ldquo;senior&rdquo; actually start? &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/e29dd33c-c8b0-433f-8974-76938d5e73d6">Read: The National Parks Senior Pass &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/b9e633d7-5fb9-4808-aead-e83758ad34ee">Read: The &ldquo;go-go years&rdquo; are not a deadline &rarr;</a>
+          </div>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.5-3 2.7-5 5.5-5s5 2 5.5 5"/><path d="M15 14.5c2 .2 3.5 1.9 4 4.5"/></svg>
+          </div>
+          <h3>Grandparenting &amp; family</h3>
+          <p>Staying close across the distance &mdash; and the boundaries that keep everyone happy.</p>
+          <div class="card-links">
+            <a class="tag-live" href="https://claude.ai/code/artifact/d69e0393-1de3-4bd8-8d32-b56de52c8096">Read: Being available without being on call &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/f7be8b7e-6241-4e18-82bd-1e751d2de393">Read: The new long-distance grandparent &rarr;</a>
+            <a class="tag-live" href="https://claude.ai/code/artifact/88860eb8-0dc4-4cad-a053-b4b17afa6fc8">Read: The Wednesday Letters &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap ad-slot">
+    <div class="ad-slot-inner">
+      <span class="ad-slot-label">Advertisement</span>
+      <span class="ad-slot-note">In-content unit &middot; activates after AdSense approval</span>
+    </div>
+  </div>
+
+  <section class="ask" id="ask">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What matters most to you right now?</h2>
+        <p>Pick as many as you like, or just write in. We're building the first guides from what people actually ask for.</p>
+      </div>
+      <div class="ask-box">
+        <form id="topicForm">
+          <fieldset>
+            <legend>Topics you'd like covered</legend>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="topic" value="Medicare & health insurance"> Medicare &amp; health insurance</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Retirement & Social Security"> Retirement &amp; Social Security</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Estate planning"> Estate planning</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Scam & fraud protection"> Scam &amp; fraud protection</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Aging in place"> Aging in place</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Travel & discounts"> Travel &amp; discounts</label>
+              <label class="check-item"><input type="checkbox" name="topic" value="Grandparenting & family"> Grandparenting &amp; family</label>
+            </div>
+          </fieldset>
+
+          <div class="ask-row">
+            <label class="field-label" for="moreText">Something else we should cover<span class="field-hint">(optional)</span></label>
+            <textarea id="moreText" name="more" placeholder="Tell us what's on your mind &mdash; there's no wrong answer here."></textarea>
+          </div>
+
+          <div class="ask-row">
+            <label class="field-label" for="emailField">Your email<span class="field-hint">(optional &mdash; only if you'd like a reply)</span></label>
+            <input type="email" id="emailField" name="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+
+          <div class="ask-foot">
+            <button type="submit" class="btn btn-primary">Send us your topics</button>
+            <span id="ask-status" role="status" aria-live="polite"></span>
+          </div>
+          <p class="ask-note">This opens a pre-filled email in your mail app &mdash; nothing is collected on this page.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="wrap">
+      <div class="trust-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <p>We set the type larger than most sites and picked a typeface built for easier reading, on purpose. If anything here is still hard to read, that's useful for us to know &mdash; say so in the form above.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap ad-slot">
+    <div class="ad-slot-inner">
+      <span class="ad-slot-label">Advertisement</span>
+      <span class="ad-slot-note">Footer unit &middot; activates after AdSense approval</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <span>&copy; 2026 The Second Half Guide</span>
+    <span class="foot-links">
+      <a href="https://claude.ai/code/artifact/9547133b-a75a-4f81-b112-6ed4d1034a63">About</a>
+      <a href="https://claude.ai/code/artifact/bde95ba2-582b-4a77-af16-559d0beb862c">Contact</a>
+      <a href="https://claude.ai/code/artifact/01d12169-239a-4780-afc1-244fead8ddd6">Privacy &amp; Terms</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById('topicForm');
+    var status = document.getElementById('ask-status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var topics = Array.prototype.slice.call(form.querySelectorAll('input[name="topic"]:checked')).map(function (el) { return el.value; });
+      var more = form.querySelector('#moreText').value.trim();
+      var email = form.querySelector('#emailField').value.trim();
+
+      var lines = [];
+      lines.push('Topics I want covered:');
+      lines.push(topics.length ? topics.map(function (t) { return '- ' + t; }).join('\n') : '(none selected)');
+      if (more) { lines.push(''); lines.push('Something else:'); lines.push(more); }
+      if (email) { lines.push(''); lines.push('Reply to: ' + email); }
+
+      var subject = encodeURIComponent('Topic suggestion for The Second Half Guide');
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:hello@thesecondhalfguide.com?subject=' + subject + '&body=' + body;
+
+      status.textContent = 'Opening your email app…';
+    });
+  })();
+</script>
