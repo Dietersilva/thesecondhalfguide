@@ -211,7 +211,9 @@ def article(a, links, nav):
     nxt = a.get('next')
     next_html = ''
     if nxt:
-        href = nav.get(nxt['slug'], HUB)
+        # The site is the source of truth now, so an unknown slug resolves to
+        # its own path rather than silently falling back to the hub.
+        href = nav.get(nxt['slug'], '/' + nxt['slug'])
         next_html = f"""    <div class="next-up">
       <p class="label">Next up</p>
       <h3>{nxt['title']}</h3>
@@ -291,7 +293,8 @@ ARTICLES['senior-age'] = {
     'checked': CHECKED,
     'body': """      <p>A pizza chain decides you're a senior at 55. The National Park Service won't agree until 62.
       Amtrak's standard senior fare starts at 65. Social Security will let you file at 62 but won't call
-      it your full retirement age until 67. Medicare mostly shows up at 65.</p>
+      it your full retirement age until 67. Medicare mostly shows up at 65. And the CDC, quietly, now
+      starts two of its adult vaccine recommendations at 50.</p>
 
       <p>None of these organizations consulted each other. &ldquo;Senior&rdquo; sounds like a category
       you enter on a particular morning, the way you became eligible to vote at 18. It isn't. It's a
@@ -303,6 +306,9 @@ ARTICLES['senior-age'] = {
       your life. Telling those apart is the whole game.</p>
 
 """ + facts('The thresholds, roughly in order', [
+        ('Age 50', 'The earliest one that carries real weight, and the newest. Shingles and pneumococcal '
+                   'vaccines are both recommended from 50 &mdash; pneumococcal moved down from 65 in late '
+                   '2024. Also the first age many private discounts appear.'),
         ('Age 55', 'A private-market marketing number. Restaurants, retailers, hotels, gyms and some '
                    'housing communities use it. No federal meaning whatsoever.'),
         ('Age 59&frac12;', 'The age at which withdrawals from most retirement accounts stop carrying the '
@@ -360,7 +366,10 @@ ARTICLES['senior-age'] = {
 
 """ + check([
         'If you are within about a year of 65, put your seven-month Medicare window on a calendar now. '
-        'It is the only genuinely unforgiving date in this decade.',
+        'It is the only genuinely unforgiving date in this decade &mdash; we go through it in detail in '
+        '<a href="/medicare-enrollment">the deadline that never forgives you</a>.',
+        'If you have passed 50, ask your doctor which <a href="/vaccine-ages">adult vaccines</a> you are '
+        'due for. Two recommendations moved down to 50 recently and most now cost nothing on Medicare.',
         'Pull your Social Security statement at <em>ssa.gov</em> and check the earnings record for gaps '
         'or errors. They happen, and they quietly shrink a benefit you haven’t claimed yet.',
         'At 62, if you visit federal recreation sites at all, the $80 lifetime Senior Pass is one of the '
@@ -1176,7 +1185,8 @@ def _load_batches():
     # Imported lazily inside main(): the batch modules import back from this
     # one, so merging at module scope would recurse when run as a script.
     import importlib
-    for mod, name in (('articles_batch2', 'ARTICLES2'), ('articles_batch3', 'ARTICLES3')):
+    for mod, name in (('articles_batch2', 'ARTICLES2'), ('articles_batch3', 'ARTICLES3'),
+                      ('articles_batch4', 'ARTICLES4')):
         ARTICLES.update(getattr(importlib.import_module(mod), name))
 
 
