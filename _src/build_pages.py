@@ -376,9 +376,6 @@ PRIVACY_BODY = """  <div class="wrap">
       <h3>Governing law and contact</h3>
       <p>These terms are governed by the laws of the State of New York. Questions about this policy or these terms can be sent to <a href="mailto:hello@thesecondhalfguide.com">hello@thesecondhalfguide.com</a>.</p>
 
-      <div class="todo">
-        <p><strong>Edward &mdash; two things to settle before launch.</strong> (1) This is a solid, standard policy that reflects how the site actually works today, but it isn't a substitute for review by an attorney licensed in New York &mdash; worth an hour of a lawyer's time before you're monetized, particularly the liability and CCPA/GDPR sections. (2) If you add a newsletter, analytics, or affiliate links later, sections 1, 2, and 4 need updating to match &mdash; a privacy policy that describes practices you don't actually follow is worse than none at all.</p>
-      </div>
     </div>
   </div>
 """
