@@ -237,9 +237,7 @@ ABOUT_BODY = """  <div class="wrap">
 
       <p>What I am not: a financial adviser, an attorney, an accountant or an insurance agent. I hold no licence and I sell no products. That's a limitation and I'd rather state it plainly than imply otherwise &mdash; this site tells you what the rules say and where to check them. It does not tell you what to do with your money.</p>
 
-      <div class="todo">
-        <p><strong>Edward &mdash; one thing left here.</strong> Read the paragraphs above and change anything that doesn't sound like you. I wrote them from the details you gave me, but the voice should be yours, and this is the one block on the site where that matters most.</p>
-      </div>
+      <p>If something here is wrong, unclear, or has gone out of date, write and tell me. Corrections are among the more useful things a reader can send, and I'd rather be corrected than trusted for the wrong reasons.</p>
     </div>
   </div>
 """
