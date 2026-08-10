@@ -239,6 +239,8 @@ def main():
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
     if os.path.exists('ogcard/og.png'):
         shutil.copy('ogcard/og.png', f'{SITE}/og.png')
+    if os.path.isdir('images'):
+        shutil.copytree('images', f'{SITE}/images')
 
     for path, (title, desc, canonical, body) in rendered.items():
         head = f"""<!doctype html>

@@ -558,6 +558,11 @@ body.doc .todo {
     border-radius: var(--radius); background: color-mix(in srgb, var(--gold-soft) 30%, transparent);
   }
 body.doc .todo p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+body.doc .author-intro { display: flex; gap: 22px; align-items: center; margin: 0 0 20px; }
+body.doc .author-intro img { flex: none; width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--surface); box-shadow: var(--shadow); }
+body.doc .author-intro p { margin: 0; }
+@media (max-width: 520px) {body.doc .author-intro { flex-direction: column; align-items: flex-start; gap: 16px; }}
 body.doc .todo strong { color: var(--ink); }
 body.doc .contact-card {
     display: flex; gap: 18px; align-items: flex-start; margin: 0 0 18px;
@@ -635,6 +640,11 @@ body.article .todo {
     border-radius: var(--radius); background: color-mix(in srgb, var(--gold-soft) 30%, transparent);
   }
 body.article .todo p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+body.article .author-intro { display: flex; gap: 22px; align-items: center; margin: 0 0 20px; }
+body.article .author-intro img { flex: none; width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--surface); box-shadow: var(--shadow); }
+body.article .author-intro p { margin: 0; }
+@media (max-width: 520px) {body.article .author-intro { flex-direction: column; align-items: flex-start; gap: 16px; }}
 body.article .todo strong { color: var(--ink); }
 body.article .contact-card {
     display: flex; gap: 18px; align-items: flex-start; margin: 0 0 18px;
@@ -716,10 +726,9 @@ body.article .author {
     display: flex; gap: 18px; align-items: flex-start; margin: 40px 0 8px; padding: 26px 28px;
     background: var(--surface-2); border-radius: var(--radius); border-left: 4px solid var(--pine);
   }
-body.article .author .initials {
-    flex: none; width: 54px; height: 54px; border-radius: 50%; background: var(--pine);
-    color: #FBFAF4; font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px;
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.02em;
+body.article .author .portrait {
+    flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--surface); box-shadow: 0 1px 3px rgba(51,53,42,0.18);
   }
 body.article .author h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin: 0 0 8px; }
 body.article .author p { margin: 0 0 10px; font-size: 16px; color: var(--ink-soft); max-width: 62ch; }

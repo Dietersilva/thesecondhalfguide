@@ -101,6 +101,11 @@ SHARED_CSS = """
     border-radius: var(--radius); background: color-mix(in srgb, var(--gold-soft) 30%, transparent);
   }
   .todo p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+  .author-intro { display: flex; gap: 22px; align-items: center; margin: 0 0 20px; }
+  .author-intro img { flex: none; width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--surface); box-shadow: var(--shadow); }
+  .author-intro p { margin: 0; }
+  @media (max-width: 520px) { .author-intro { flex-direction: column; align-items: flex-start; gap: 16px; } }
   .todo strong { color: var(--ink); }
 
   .contact-card {
@@ -216,7 +221,11 @@ ABOUT_BODY = """  <div class="wrap">
       </div>
 
       <h2>Who writes this</h2>
-      <p>The Second Half Guide is written and edited by <strong>Edward Silva</strong>.</p>
+      <div class="author-intro">
+        <img src="/images/edward.png" width="120" height="120" alt="Edward Silva"
+             loading="lazy" decoding="async">
+        <p>The Second Half Guide is written and edited by <strong>Edward Silva</strong>.</p>
+      </div>
 
       <p>I spent more than forty years as a computer professional. That career leaves you with one habit that turns out to be useful here: when somebody hands you a summary, you go and read the actual documentation. Forty years of release notes, specifications and vendor claims will teach anyone to distrust a confident paraphrase.</p>
 
@@ -229,7 +238,7 @@ ABOUT_BODY = """  <div class="wrap">
       <p>What I am not: a financial adviser, an attorney, an accountant or an insurance agent. I hold no licence and I sell no products. That's a limitation and I'd rather state it plainly than imply otherwise &mdash; this site tells you what the rules say and where to check them. It does not tell you what to do with your money.</p>
 
       <div class="todo">
-        <p><strong>Edward &mdash; two things worth adding here before launch.</strong> First, a photograph of you. Author photos measurably help on exactly this kind of site, and a real face outperforms anything else on this page. Second, read the paragraphs above and change anything that doesn't sound like you &mdash; I've written them from the details you gave me, but the voice should be yours, and it's the one block on the site where that matters most.</p>
+        <p><strong>Edward &mdash; one thing left here.</strong> Read the paragraphs above and change anything that doesn't sound like you. I wrote them from the details you gave me, but the voice should be yours, and this is the one block on the site where that matters most.</p>
       </div>
     </div>
   </div>

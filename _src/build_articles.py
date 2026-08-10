@@ -82,10 +82,9 @@ ARTICLE_CSS = """
     display: flex; gap: 18px; align-items: flex-start; margin: 40px 0 8px; padding: 26px 28px;
     background: var(--surface-2); border-radius: var(--radius); border-left: 4px solid var(--pine);
   }
-  .author .initials {
-    flex: none; width: 54px; height: 54px; border-radius: 50%; background: var(--pine);
-    color: #FBFAF4; font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px;
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.02em;
+  .author .portrait {
+    flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--surface); box-shadow: 0 1px 3px rgba(51,53,42,0.18);
   }
   .author h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin: 0 0 8px; }
   .author p { margin: 0 0 10px; font-size: 16px; color: var(--ink-soft); max-width: 62ch; }
@@ -168,7 +167,8 @@ READER_CALL = """      <div class="reader-call">
 """
 
 AUTHOR = """    <div class="author">
-      <div class="initials" aria-hidden="true">ES</div>
+      <img class="portrait" src="/images/edward.png" width="72" height="72"
+           alt="Edward Silva" loading="lazy" decoding="async">
       <div>
         <h2>Edward Silva</h2>
         <p>Edward spent more than forty years as a computer professional &mdash; long enough to pick up
