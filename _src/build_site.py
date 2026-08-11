@@ -260,9 +260,9 @@ def latest_section(meta):
     if not cards:
         return ''
     return ('  <section class="latest" id="latest">\n    <div class="wrap">\n'
-            '      <div class="section-head">\n        <h2>Latest</h2>\n'
-            '        <p>The most recent pieces. Everything stays filed under its topic below &mdash; '
-            'this is just what went up most recently.</p>\n      </div>\n'
+            '      <div class="section-head">\n        <h2>Just published</h2>\n'
+            '        <p>The newest pieces. Everything stays filed under its topic below &mdash; this is '
+            'simply what went up most recently.</p>\n      </div>\n'
             '      <div class="latest-grid">\n' + '\n'.join(cards)
             + '\n      </div>\n    </div>\n  </section>\n')
 
