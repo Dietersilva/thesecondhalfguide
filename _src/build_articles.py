@@ -328,7 +328,8 @@ ARTICLES['senior-age'] = {
                    'centered on your birthday month. Amtrak’s standard 10% senior discount also starts here.'),
         ('Age 67', 'Full retirement age for Social Security if you were born in 1960 or later. Not 65 &mdash; '
                    'a genuinely widespread misconception.'),
-        ('Age 73', 'Required withdrawals from most traditional retirement accounts begin.'),
+        ('Age 73 or 75', 'Required withdrawals from most traditional retirement accounts begin. Born '
+                         '1951&ndash;1959, it is 73; born 1960 or later, it is 75.'),
     ]) + """
       <h2>The two that actually carry consequences</h2>
 
@@ -772,7 +773,9 @@ ARTICLES['beneficiary-form'] = {
         ('By ownership', 'Property held in joint tenancy with right of survivorship typically passes to '
                          'the surviving owner automatically.'),
         ('By your will', 'Most everything else &mdash; solely owned property, personal belongings, '
-                         'vehicles, and anything with no beneficiary named or a beneficiary who has died.'),
+                         'vehicles. An account whose named beneficiary has died may fall here too, but '
+                         'not always: many retirement plans and insurance contracts carry their own '
+                         'default order, and it governs before your will does.'),
         ('By trust', 'Assets actually retitled into a trust, which is a step people sometimes skip after '
                      'paying to have the trust drawn up.'),
     ]) + """

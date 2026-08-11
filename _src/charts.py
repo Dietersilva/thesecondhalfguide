@@ -45,9 +45,11 @@ def thresholds_timeline():
         (62, 'Social Security opens', 'real'),
         (65, 'Medicare', 'hard'),
         (67, 'Full retirement age', 'real'),
-        (73, 'Withdrawals required', 'real'),
+        (75, 'Withdrawals required', 'real'),
     ]
-    lo, hi, x0, x1 = 48, 75, 40, 720
+    # hi runs past the last mark so the 75 label has room to sit under its
+    # tick instead of hanging off the right edge of the viewBox.
+    lo, hi, x0, x1 = 48, 78, 40, 720
     fill = {'hard': 'var(--gold)', 'real': 'var(--pine)', 'soft': 'var(--ink-faint)'}
 
     def X(a):
@@ -69,11 +71,12 @@ def thresholds_timeline():
         parts.append(f'<text class="c-num" x="{x}" y="52" text-anchor="middle">{shown}</text>')
         parts.append(f'<text class="c-lab" x="{x}" y="{ly}" text-anchor="middle">{label}</text>')
     svg = ('        <svg viewBox="0 0 760 140" role="img" aria-labelledby="thT thD">\n'
-           '          <title id="thT">Age thresholds from 50 to 73</title>\n'
+           '          <title id="thT">Age thresholds from 50 to 75</title>\n'
            '          <desc id="thD">A horizontal age axis marking seven thresholds: vaccines at 50, '
            'private discounts at 55, the end of the retirement-account penalty at 59 and a half, '
            'Social Security and the parks pass at 62, Medicare enrollment at 65, full retirement age '
-           'at 67, and required withdrawals at 73. Medicare at 65 is highlighted as the one with a '
+           'at 67, and required withdrawals at 75 for anyone born in 1960 or later. Medicare at 65 is '
+           'highlighted as the one with a '
            'permanent penalty for missing it.</desc>\n          '
            + '\n          '.join(parts) + '\n        </svg>')
     return _wrap('The decade, in order',

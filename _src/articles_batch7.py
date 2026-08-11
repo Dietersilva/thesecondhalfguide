@@ -218,9 +218,9 @@ ARTICLES7['gold-courier-scam'] = {
     'title': 'When the Scammer Sends Someone to Your Door &mdash; The Second Half Guide',
     'eyebrow': 'Protecting yourself',
     'h1': 'When the scammer sends someone to your door',
-    'dek': 'The fastest-growing fraud against older adults ends with a stranger collecting cash or gold '
-           'bars from your house. It has taken more than $50 million this year, and 98% of the losses '
-           'are from people over 60.',
+    'dek': 'A fast-growing fraud against older adults ends with a stranger collecting cash or gold bars '
+           'from your house. The FBI logged about 725 of these in 2025, with $311.8 million in reported '
+           'losses, and 98% of the losses fall on people over 60.',
     'meta': '6 minute read &middot; Reflects current FBI and FTC warnings',
     'checked': CHECKED,
     'reader': True,

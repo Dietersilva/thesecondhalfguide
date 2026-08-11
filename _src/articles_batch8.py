@@ -10,8 +10,9 @@ ARTICLES8['medicare-savings'] = {
     'title': 'The Medicare Help Millions Qualify For and Never Claim &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare help millions qualify for and never claim',
-    'dek': 'Four programs pay your Part B premium, your deductibles, or your drug costs. The income '
-           'limits are higher than most people assume, and take-up is dismal.',
+    'dek': 'Four Medicare Savings Programs help with premiums and deductibles, and a separate program '
+           'helps with drug costs. The income limits are higher than most people assume, and take-up '
+           'is dismal.',
     'meta': '6 minute read &middot; 2026 limits verified',
     'checked': CHECKED,
     'body': """      <p>If your income is modest, there are programs that will pay your Medicare Part B premium —
@@ -33,8 +34,10 @@ ARTICLES8['medicare-savings'] = {
         ('Resource limit', 'Around $9,950 for an individual. Your home and usually one car don’t count.'),
         ('Extra Help', 'Separate program for drug costs &mdash; roughly $23,475 a year single / '
                        '$31,725 couple.'),
-        ('The automatic part', 'Qualify for any Medicare Savings Program and you are <strong>automatically '
-                               'eligible for Extra Help</strong> too.'),
+        ('QDWI', 'The fourth Savings Program, and the narrowest: it helps certain working people '
+                 'with disabilities who lost premium-free Part A pay that Part A premium.'),
+        ('The automatic part', 'Qualify for <strong>QMB, SLMB or QI</strong> and you are automatically '
+                               'eligible for Extra Help too. QDWI works differently.'),
     ]) + """
       <h2>What it’s actually worth</h2>
 
@@ -225,7 +228,7 @@ ARTICLES8['falls'] = {
     'eyebrow': 'Home &amp; everyday life',
     'h1': 'Falls: the numbers, and what actually reduces them',
     'dek': 'More than one in four older adults falls each year, and fall deaths have risen 51% in a '
-           'decade. The good news is that the single most effective intervention is free.',
+           'decade. The good news is that the best-supported prevention costs nothing.',
     'meta': '6 minute read &middot; CDC and USPSTF figures',
     'checked': CHECKED,
     'body': """      <p>Falls are the thing that most often turns an independent life into a dependent one — not

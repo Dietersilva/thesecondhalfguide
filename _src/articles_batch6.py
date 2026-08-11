@@ -52,8 +52,10 @@ ARTICLES6['airport-help'] = {
 
       <h2>How to arrange it</h2>
 
-      <p>Airlines ask for <strong>48 hours' notice</strong> (Southwest says 24), and giving it makes
-      everything smoother. But here's the part worth knowing: <strong>they cannot refuse you because you
+      <p>Airlines generally <strong>cannot require advance notice</strong> simply because you need
+      disability assistance &mdash; federal rules reserve the 48-hour requirement for specific
+      accommodations that need preparation, like in-flight oxygen. Telling them when you book still makes
+      everything smoother. But the part worth knowing is that <strong>they cannot refuse you because you
       didn't call ahead.</strong> If you arrive and need help you didn't book, ask at the check-in desk.</p>
 
       <p>You can usually add assistance when booking online — look for &ldquo;special assistance&rdquo; or
@@ -68,7 +70,7 @@ ARTICLES6['airport-help'] = {
       Passenger Support Specialist to meet you and walk you through screening.</p>
 
       <p>This is the right call if screening itself is the difficult part — a medical device, a joint
-      replacement that sets off the detector, a condition that makes standing in line hard, or a
+      replacement that may set off the detector, a condition that makes standing in line hard, or a
       traveling companion with dementia for whom the line is genuinely distressing. It's free, and it
       is startlingly under-used.</p>
 
@@ -454,7 +456,7 @@ ARTICLES6['cruise-medical'] = {
     'h1': 'What happens if you get sick on a cruise',
     'dek': 'There is a doctor on board. They bill you, your Medicare almost certainly doesn’t apply, and '
            'if you have to leave the ship the number gets very large very quickly.',
-    'meta': '5 minute read &middot; Costs and coverage rules verified for 2026',
+    'meta': '5 minute read &middot; Medicare coverage rules verified for 2026; shipboard costs vary by line',
     'checked': CHECKED,
     'body': """      <p>Cruising suits a lot of people in this stage of life, for good reasons: you unpack once, the
       walking is optional, and there's a doctor on board.</p>
@@ -464,13 +466,16 @@ ARTICLES6['cruise-medical'] = {
       insurance is really for — getting off the ship — is the part with the eye-watering number attached.</p>
 
 """ + facts('What it costs at sea', [
-        ('A consultation', 'Roughly $100&ndash;$200 during posted hours.'),
-        ('After hours', 'Commonly $300&ndash;$600 for the same visit outside clinic times.'),
+        ('A consultation', 'Not included in your fare. Cruise lines set their own rates and publish '
+                          'them inconsistently; ask yours before you sail.'),
+        ('After hours', 'Typically billed at a higher rate than the same visit during posted clinic '
+                        'hours.'),
         ('Tests and treatment', 'X-rays, bloods, IV fluids and medication are billed separately and add '
                                 'up into the thousands quickly.'),
-        ('An overnight in the infirmary', 'Roughly $1,000&ndash;$3,000 a day.'),
-        ('Medical evacuation', '$15,000 to well over $200,000 depending on distance and aircraft. '
-                               'Helicopter lifts from a ship commonly run $15,000&ndash;$50,000.'),
+        ('An overnight in the infirmary', 'Charged by the day, on top of the treatment itself.'),
+        ('Medical evacuation', 'The one that can become enormous. What it costs turns on where the ship '
+                               'is, where you have to get to, and whether it takes a helicopter, a boat '
+                               'or an air ambulance. This is the risk travel insurance exists for.'),
         ('How you pay', 'Charged to your onboard account, settled at the end of the cruise. You pay '
                         'first and claim later.'),
     ]) + """

@@ -164,8 +164,10 @@ ARTICLES2['power-of-attorney'] = {
                                     'safer but can mean delay and argument at the worst moment.'),
         ('Financial vs. medical', 'Two separate documents. A financial POA does not authorise health-care '
                                   'decisions; that’s a health-care proxy or medical power of attorney.'),
-        ('Ends at death', 'A POA stops the moment the principal dies. Authority then passes to the '
-                          'executor under the will. These are frequently different people.'),
+        ('Ends at death', 'A POA stops the moment the principal dies. The person named executor in the '
+                          'will has to be formally appointed through probate before they can act &mdash; '
+                          'the authority is not automatic, and there is often a gap. These are '
+                          'frequently different people.'),
     ]) + """
       <blockquote class="pull">
         <p>A power of attorney is a backup key. The value of a backup key is highest before anybody is

@@ -283,8 +283,10 @@ ARTICLES3['enrollment-scams'] = {
         ('Gifts', 'Agents may not offer cash or gifts above a nominal value to induce enrollment. '
                   '&ldquo;Free&rdquo; gift cards for switching are not a thing.'),
         ('Enrolling you on a call', 'An agent cannot enroll you in a plan during an unsolicited contact.'),
-        ('Your Medicare number', 'Treat it like your Social Security number, because it is linked to it. '
-                                 'Only your doctors, pharmacists and insurers need it.'),
+        ('Your Medicare number', 'Treat it as sensitive. It is no longer built from your Social Security '
+                                 'number &mdash; that changed in 2019 &mdash; but it is still the key to '
+                                 'billing in your name. Only your doctors, pharmacists and insurers '
+                                 'need it.'),
     ]) + """
       <blockquote class="pull">
         <p>Nearly every legitimate Medicare interaction starts with you. If a conversation began because
@@ -470,19 +472,27 @@ ARTICLES3['free-college'] = {
     'title': 'Most States Will Let You Take College Classes Free After 60 &mdash; The Second Half Guide',
     'eyebrow': 'Home &amp; everyday life',
     'h1': 'Most states will let you take college classes free after 60',
-    'dek': 'Forty-six states have some form of tuition waiver for older residents. Three start at 55. '
-           'It is one of the best-kept and least-claimed benefits in the country.',
+    'dek': 'Most states have some provision letting older residents take public-college courses free or '
+           'cheaply. It is one of the best-kept and least-claimed benefits in the country &mdash; and the '
+           'rules vary more than anyone tells you.',
     'meta': '5 minute read &middot; Programs vary by state and campus &mdash; verify locally',
     'checked': CHECKED,
-    'body': """      <p>This one surprises almost everybody, so let's start with the fact: in all but four states
-      &mdash; Arizona, Idaho, Indiana and South Dakota &mdash; there is some statewide provision for
-      older residents to take courses at public colleges and universities free or at steeply reduced
-      cost.</p>
+    'body': """      <p>This one surprises almost everybody, so let's start with the fact: in most states there is
+      some provision for older residents to take courses at public colleges and universities free or at
+      steeply reduced cost. Some of it is statewide law; some of it is left to individual colleges or
+      university systems, which is why two campuses in the same state can answer differently.</p>
 
-      <p>Most set the age at 60 or 65. Colorado, Louisiana and Tennessee start at <strong>55</strong>.</p>
+      <p>Ages commonly start at <strong>60 or 65</strong>, and a few states go lower. The other
+      distinction that matters more than the age: whether the benefit lets you <strong>audit</strong> a
+      course &mdash; sit in, no credit, no transcript &mdash; or actually enroll for credit. Those are
+      often different programs with different ages, and the free one is usually auditing.</p>
+
+      <p>Because the rules turn on your state, your campus and which of those two you want, the only
+      number worth trusting is the one you get from the registrar. Ask for the senior or
+      &ldquo;60-plus&rdquo; tuition waiver by name.</p>
 
       <p>These programs have existed for decades in many states. They are also dramatically
-      under-claimed, mostly because nobody is incentivised to advertise them &mdash; a tuition waiver is,
+      under-claimed, mostly because nobody is incentivized to advertise them &mdash; a tuition waiver is,
       by definition, revenue a college isn't collecting.</p>
 
       <h2>How they generally work</h2>

@@ -106,8 +106,9 @@ ARTICLES5['hearing-aids'] = {
         'possible fix and a genuinely common cause.',
         'Get a <strong>real hearing test</strong>. Knowing whether your loss is mild, moderate or severe '
         'is what tells you which market you are shopping in.',
-        'Check the <strong>return window</strong> before you buy — OTC devices are required to have one, '
-        'and you will want it. Thirty to forty-five days is common.',
+        'Check the <strong>return policy</strong> before you buy. The FDA does not require OTC hearing aids '
+        'to come with one, though many sellers offer a return window voluntarily &mdash; and you will '
+        'want it.',
         'If you have an iPhone and AirPods Pro 2, <strong>try the Hearing Aid Feature first</strong>. '
         'It costs nothing to find out.',
         'Give any device <strong>two to three weeks</strong>. Amplified hearing sounds strange at first '
@@ -142,7 +143,7 @@ ARTICLES5['long-term-care'] = {
     'title': 'Long-Term Care: The Numbers, Before the Sales Pitch &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Long-term care: the numbers, before the sales pitch',
-    'dek': 'It is the largest financial risk in retirement and the least planned for. Here is what care '
+    'dek': 'It is the one of the largest financial risks in retirement and the least planned for. Here is what care '
            'actually costs, who pays for it now, and what insurance does and doesn’t do.',
     'meta': '7 minute read &middot; Costs from the 2025&ndash;26 Cost of Care survey',
     'checked': CHECKED,
@@ -157,7 +158,8 @@ ARTICLES5['long-term-care'] = {
       <h2>What care costs</h2>
 
 """ + facts('National median costs', [
-        ('Assisted living', 'About $5,511 a month &mdash; roughly $66,000 a year.'),
+        ('Assisted living', 'About $6,200 a month &mdash; roughly $74,400 a year '
+                            '(CareScout, 2025).'),
         ('Nursing home, semi-private', 'About $315 a day &mdash; roughly $115,000 a year.'),
         ('Nursing home, private room', 'About $355 a day &mdash; roughly $130,000 a year.'),
         ('Home health aide', 'Billed hourly. A few hours a day adds up faster than people expect; '
@@ -279,8 +281,9 @@ ARTICLES5['cola'] = {
     'title': 'The COLA: Why a Raise Doesn’t Feel Like One &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The COLA: why a raise doesn’t feel like one',
-    'dek': 'Social Security rose 2.8% this year. Then Medicare took about a third of it back before the '
-           'money ever reached anyone — which is the part the headlines skip.',
+    'dek': 'Social Security rose 2.8% this year. For an average retired worker paying the standard Part B '
+           'premium, Medicare took back about a third of it before the money ever arrived — which is the '
+           'part the headlines skip.',
     'meta': '5 minute read &middot; Verified against SSA and CMS figures for 2026',
     'checked': CHECKED,
     'body': """      <p>Every October the Social Security Administration announces the cost-of-living adjustment for
