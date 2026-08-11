@@ -240,8 +240,10 @@ LATEST_SHOWN = 6
 # your form -> Embed -> HTML). Until it is set the block is left out of the
 # build entirely: shipping a form that posts nowhere would collect addresses
 # into a void, which is worse than having no form at all.
-KIT_FORM_ID = None
-KIT_ENDPOINT = 'https://app.convertkit.com/forms/%s/subscriptions'
+KIT_FORM_ID = '9792077'
+# Kit now serves this on app.kit.com; app.convertkit.com is the older host and
+# stays in the CSP so an older form URL would not silently break.
+KIT_ENDPOINT = 'https://app.kit.com/forms/%s/subscriptions'
 
 SUBSCRIBE_CSS = """
 .signup { border-top: 1px solid var(--line); margin-top: 8px; padding: 40px 0 8px; }
