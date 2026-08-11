@@ -327,9 +327,9 @@ ARTICLES8['falls'] = {
 
 # ------------------------------------------------------- wellness visit
 ARTICLES8['wellness-visit'] = {
-    'title': 'The Free Medicare Visit Almost Nobody Uses &mdash; The Second Half Guide',
+    'title': 'The Free Medicare Visit That Isn&rsquo;t a Physical &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'The free Medicare visit almost nobody uses',
+    'h1': 'The free Medicare visit that isn&rsquo;t a physical',
     'dek': 'You get one every year at no cost. It is not a physical, which is the source of most of the '
            'confusion &mdash; and of most of the surprise bills.',
     'meta': '5 minute read &middot; Verified against Medicare coverage rules',
@@ -337,9 +337,10 @@ ARTICLES8['wellness-visit'] = {
     'body': """      <p>Medicare covers an <strong>Annual Wellness Visit</strong> every year at no cost to you: no
       copay, no deductible, no coinsurance.</p>
 
-      <p>Most people entitled to it never take it, and a good number of those who do end up with an
-      unexpected bill — because of a distinction that is genuinely confusing and rarely explained at the
-      front desk.</p>
+      <p>About 60% of Medicare beneficiaries living in the community had one in 2022, by CMS&rsquo;s own
+      beneficiary survey — so this is not an unknown benefit. The problem is what people think they are
+      getting. A large share arrive expecting a physical, and some leave with an unexpected bill, because
+      of a distinction that is genuinely confusing and rarely explained at the front desk.</p>
 
       <h2>Three different appointments with similar names</h2>
 

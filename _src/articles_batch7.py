@@ -126,8 +126,8 @@ ARTICLES7['social-security-login'] = {
 
       <h2>What replaced it</h2>
 
-      <p>You now sign in through one of two federal identity services: <strong>Login.gov</strong> or
-      <strong>ID.me</strong>. Both verify who you are once, then let you into Social Security — and, in
+      <p>You now sign in through one of two identity services: <strong>Login.gov</strong>, run by the
+      federal government, or <strong>ID.me</strong>, a private company the government contracts with. Both verify who you are once, then let you into Social Security — and, in
       Login.gov's case, a long list of other federal services with the same credential.</p>
 
 """ + facts('The two options', [
