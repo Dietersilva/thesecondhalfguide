@@ -1193,7 +1193,8 @@ def _load_batches():
     import importlib
     for mod, name in (('articles_batch2', 'ARTICLES2'), ('articles_batch3', 'ARTICLES3'),
                       ('articles_batch4', 'ARTICLES4'),
-                      ('articles_batch5', 'ARTICLES5')):
+                      ('articles_batch5', 'ARTICLES5'),
+                      ('articles_batch6', 'ARTICLES6')):
         ARTICLES.update(getattr(importlib.import_module(mod), name))
 
 
