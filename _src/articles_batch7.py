@@ -22,7 +22,7 @@ ARTICLES7['wep-gpo-repeal'] = {
       under the older retirement system.</p>
 
       <p>They were called the <strong>Windfall Elimination Provision</strong> and the <strong>Government
-      Pension Offset</strong>, and they were among the most resented rules in the whole programme.</p>
+      Pension Offset</strong>, and they were among the most resented rules in the whole program.</p>
 
       <p><strong>The Social Security Fairness Act repealed both.</strong> It was signed on 5 January 2025
       and applies to benefits payable from January 2024 onward — meaning it was retroactive from the day
@@ -139,7 +139,7 @@ ARTICLES7['social-security-login'] = {
         ('Already have either?', 'Use it. You don’t need a new account, and one credential works across '
                                  'many agencies.'),
         ('How long it takes', 'Typically 5&ndash;20 minutes, once.'),
-        ('What you’ll need', 'An email address, a phone, a state ID or driver’s licence, and your Social '
+        ('What you’ll need', 'An email address, a phone, a state ID or driver’s license, and your Social '
                              'Security number.'),
         ('Two-factor', 'Required. A code by text or an authenticator app each time you sign in.'),
     ]) + """
@@ -163,7 +163,7 @@ ARTICLES7['social-security-login'] = {
         <li><strong>A recent move</strong>, so your address doesn't match records yet.</li>
         <li><strong>A phone not in your name</strong> — a family plan in a spouse's or child's name is a
         very common cause.</li>
-        <li><strong>Name mismatches</strong> after marriage, divorce, or between a licence and Social
+        <li><strong>Name mismatches</strong> after marriage, divorce, or between a license and Social
         Security records.</li>
       </ul>
 
@@ -265,7 +265,7 @@ ARTICLES7['gold-courier-scam'] = {
         ('An accusation designed to shame', 'Illegal images, money laundering, drug money. The point is '
                                             'to stop you telling your family.'),
         ('Being transferred &ldquo;up&rdquo;', 'Bank, then agency, then a senior investigator. Each '
-                                               'handover is theatre.'),
+                                               'handover is theater.'),
         ('&ldquo;Government escrow&rdquo;', 'No such thing exists. It is not a real process.'),
         ('Buying gold or withdrawing cash', 'This is the moment. No legitimate process ends here.'),
         ('Someone coming to your home', 'No agency sends a courier for your valuables. Ever.'),
@@ -316,7 +316,7 @@ ARTICLES7['gold-courier-scam'] = {
       <em>different</em> device.</p>
 
       <p>Then, please, tell someone. The shame is engineered — it is a designed feature of the scheme,
-      not a reflection of your judgement — and it's the thing that keeps people silent while the same
+      not a reflection of your judgment — and it's the thing that keeps people silent while the same
       crew moves to the next address.</p>
 """,
     'sources': [

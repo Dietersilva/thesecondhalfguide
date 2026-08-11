@@ -41,9 +41,12 @@ DESCRIPTIONS = {
     '/contact': 'How to reach The Second Half Guide — corrections, topic suggestions and reader stories.',
     '/privacy': 'Privacy Policy and Terms of Use for The Second Half Guide, including advertising '
                 'cookies and editorial disclaimers.',
+    '/numbers': 'The real phone numbers for Medicare, Social Security, fraud reporting and local help '
+                '— checked, and printable for the drawer.',
+    '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide.',
     '/approaching-60': 'What genuinely changes as you approach 60, what does not, and the handful of '
                        'deadlines worth putting on a calendar.',
-    '/social-security-62': 'The maths behind claiming Social Security at 62 — when filing early pays '
+    '/social-security-62': 'The math behind claiming Social Security at 62 — when filing early pays '
                            'off and when it does not.',
     '/bank-imposter-scam': 'How the bank impostor call works, why it is so effective, and exactly what '
                            'to do if one reaches you.',
@@ -52,6 +55,8 @@ DESCRIPTIONS = {
 
 PAGE_FILES = {
     'second-half-guide.html': '/',
+    'numbers.html': '/numbers',
+    'subscribed.html': '/subscribed',
     'about.html': '/about',
     'contact.html': '/contact',
     'privacy.html': '/privacy',
@@ -169,14 +174,21 @@ AD_SLOT_RE = re.compile(
     re.S)
 
 
-def house_promo(target, title, blurb, wide):
-    cls = 'house house-wide' if wide else 'house'
-    return (f'      <a class="{cls}" href="{target}">\n'
-            f'        <span class="house-label">Also on The Second Half Guide</span>\n'
-            f'        <span class="house-title">{title}</span>\n'
-            f'        <span class="house-blurb">{blurb}</span>\n'
-            f'        <span class="house-more">Read it &rarr;</span>\n'
-            f'      </a>\n')
+def house_promo(target, title, blurb, container):
+    """container: the width class the ad slot sat in, or '' if already inside one.
+
+    The promo used to replace the whole slot div, wrapper and all, which left
+    the full-width variant with nothing constraining it -- it ran edge to edge
+    while every other block on the page was inset. Keep the wrapper.
+    """
+    open_, close = (f'  <div class="{container}">\n', '  </div>\n') if container else ('', '')
+    return (open_
+            + f'      <a class="house" href="{target}">\n'
+            + f'        <span class="house-label">Also on The Second Half Guide</span>\n'
+            + f'        <span class="house-title">{title}</span>\n'
+            + f'        <span class="house-blurb">{blurb}</span>\n'
+            + f'        <span class="house-more">Read it &rarr;</span>\n'
+            + f'      </a>\n' + close)
 
 
 HOUSE_CSS = """
@@ -219,6 +231,79 @@ LATEST = [
     '/hearing-aids', '/long-term-care', '/cola',
 ]
 LATEST_SHOWN = 6
+
+# Kit's plain-HTML endpoint, so the form is a normal POST rather than a
+# third-party script. The CSP forbids external scripts, and a signup that
+# only works with JavaScript enabled is the wrong bet for this audience.
+#
+# Set this to the numeric form ID from Kit (Grow -> Landing Pages & Forms ->
+# your form -> Embed -> HTML). Until it is set the block is left out of the
+# build entirely: shipping a form that posts nowhere would collect addresses
+# into a void, which is worse than having no form at all.
+KIT_FORM_ID = None
+KIT_ENDPOINT = 'https://app.convertkit.com/forms/%s/subscriptions'
+
+SUBSCRIBE_CSS = """
+.signup { border-top: 1px solid var(--line); margin-top: 8px; padding: 40px 0 8px; }
+.signup-card {
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px;
+}
+.signup-card h2 { font-size: 1.45rem; margin: 0 0 6px; }
+.signup-card p.why { margin: 0 0 20px; color: var(--ink-soft); max-width: 54ch; }
+.signup-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.signup-field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 260px; }
+.signup-field label { font-weight: 700; font-size: 1rem; }
+.signup-field input {
+  font: inherit; font-size: 1.05rem; padding: 13px 14px; min-height: 52px;
+  border: 2px solid var(--line); border-radius: 9px; background: var(--surface);
+  color: var(--ink); width: 100%;
+}
+.signup-field input:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.signup-form button {
+  font: inherit; font-weight: 700; font-size: 1.05rem; min-height: 52px;
+  padding: 13px 22px; border: 0; border-radius: 9px; cursor: pointer;
+  background: var(--pine-strong); color: #fff; flex: 0 0 auto;
+}
+.signup-form button:hover { filter: brightness(1.08); }
+.signup-form button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.signup-fine { margin: 16px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+@media (max-width: 520px) {
+  .signup-form button { width: 100%; }
+}
+@media print { .signup { display: none; } }
+"""
+
+
+def subscribe_block(wide):
+    """The Wednesday Letters signup. Returns '' until KIT_FORM_ID is set."""
+    if not KIT_FORM_ID:
+        return ''
+    wrap = 'wrap-wide' if wide else 'wrap'
+    return (
+        '  <section class="signup" id="letters">\n'
+        f'    <div class="{wrap}">\n'
+        '      <div class="signup-card">\n'
+        '        <h2>Wednesday Letters</h2>\n'
+        '        <p class="why">One email, Wednesday mornings: the few things that '
+        'changed this week for people in their late fifties and sixties, and what '
+        'the numbers actually are. No advice, no hype, no selling your address.</p>\n'
+        f'        <form class="signup-form" action="{KIT_ENDPOINT % KIT_FORM_ID}" '
+        'method="post">\n'
+        '          <div class="signup-field">\n'
+        '            <label for="letters-email">Your email address</label>\n'
+        '            <input id="letters-email" type="email" name="email_address" '
+        'autocomplete="email" required>\n'
+        '          </div>\n'
+        '          <button type="submit">Send me Wednesday Letters</button>\n'
+        '        </form>\n'
+        '        <p class="signup-fine">Free. Unsubscribe in one click, any time. '
+        'We never sell, rent, or share your address &mdash; see the '
+        '<a href="/privacy">privacy policy</a>.</p>\n'
+        '      </div>\n'
+        '    </div>\n'
+        '  </section>\n')
+
 
 LATEST_CSS = """
 body.hub .latest { padding: 8px 0 56px; }
@@ -266,9 +351,89 @@ def latest_section(meta):
             '      <div class="latest-grid">\n' + '\n'.join(cards)
             + '\n      </div>\n    </div>\n  </section>\n')
 
+# The four oldest templates still carried a "Privacy Policy & Terms — coming
+# soon" span from before those pages existed, so About/Contact/Privacy were
+# unreachable from them. Rather than patch each source, the footer is rebuilt
+# here for every page, which also keeps a new link (like /numbers) from having
+# to be added in four places.
+FOOTER_RE = re.compile(r'<footer>.*?</footer>', re.S)
+FOOTER_LINKS = (('/about', 'About'), ('/contact', 'Contact'),
+                ('/numbers', 'Useful numbers'), ('/privacy', 'Privacy &amp; Terms'))
+
+
+def footer_block(cls):
+    wrap = 'wrap' if cls == 'hub' else 'wrap-wide'
+    links = '\n'.join(f'      <a href="{h}">{t}</a>' for h, t in FOOTER_LINKS)
+    return ('<footer>\n'
+            f'  <div class="{wrap} foot-grid">\n'
+            '    <span>&copy; 2026 The Second Half Guide</span>\n'
+            '    <span class="foot-links">\n' + links + '\n    </span>\n'
+            '  </div>\n</footer>')
+
+
+# Search engines have no way to tell that these pages are reported facts with
+# a named author and a checked date rather than anonymous filler, which is the
+# whole distinction a YMYL site lives or dies on. JSON-LD says it outright.
+#
+# datePublished is deliberately absent: the builder knows when a page was last
+# checked but not when it first went up, and a guessed publication date on a
+# site whose selling point is verified numbers would be the one lie on it.
+MONTHS = {m: i for i, m in enumerate(
+    'January February March April May June July August September October '
+    'November December'.split(), 1)}
+CHECKED_RE = re.compile(r'Checked against primary sources on (\d{1,2}) (\w+) (\d{4})')
+
+PERSON = {
+    '@type': 'Person',
+    'name': 'Edward Silva',
+    'url': ORIGIN + '/about',
+    'image': ORIGIN + '/images/edward.png',
+}
+PUBLISHER = {
+    '@type': 'Organization',
+    'name': 'The Second Half Guide',
+    'url': ORIGIN + '/',
+    'logo': {'@type': 'ImageObject', 'url': ORIGIN + '/og.png',
+             'width': 1200, 'height': 630},
+}
+
+
+def json_ld(path, title, desc, canonical, headline, body):
+    cls = layout_class(path)
+    if cls == 'hub':
+        node = {'@type': 'WebSite', 'name': 'The Second Half Guide',
+                'url': ORIGIN + '/', 'description': desc, 'publisher': PUBLISHER,
+                'inLanguage': 'en-US'}
+    elif cls == 'doc':
+        node = {'@type': 'ProfilePage' if path == '/about' else 'WebPage',
+                'name': headline, 'url': canonical, 'description': desc,
+                'publisher': PUBLISHER, 'inLanguage': 'en-US'}
+        if path == '/about':
+            node['mainEntity'] = PERSON
+    else:
+        node = {'@type': 'Article', 'headline': headline[:110], 'url': canonical,
+                'description': desc, 'author': PERSON, 'publisher': PUBLISHER,
+                'image': ORIGIN + '/og.png', 'inLanguage': 'en-US',
+                'isAccessibleForFree': True,
+                'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical}}
+        m = CHECKED_RE.search(re.sub(r'<[^>]+>', ' ', body))
+        if m and m.group(2) in MONTHS:
+            node['dateModified'] = '%s-%02d-%02d' % (
+                m.group(3), MONTHS[m.group(2)], int(m.group(1)))
+    node['@context'] = 'https://schema.org'
+    return json.dumps(node, indent=None, separators=(',', ':'), sort_keys=True)
+
+
+# Utility pages: real destinations for a reader mid-flow, but nothing a
+# search engine should index or a sitemap should advertise.
+NOINDEX = {'/subscribed'}
+ROBOTS = {False: 'index, follow, max-image-preview:large',
+          True: 'noindex, follow'}
+
+
 def layout_class(path):
     if path == '/': return 'hub'
-    if path in ('/about', '/contact', '/privacy'): return 'doc'
+    if path in ('/about', '/contact', '/privacy', '/numbers', '/subscribed'): return 'doc'
     return 'article'
 
 
@@ -333,6 +498,17 @@ def main():
             return routes.get(m.group(1), '/')
         body = re.sub(r'https://claude\.ai/code/artifact/([a-f0-9-]{36})', swap, body)
 
+        body, n_foot = FOOTER_RE.subn(footer_block(cls), body)
+        assert n_foot == 1, f'{path}: expected one footer, found {n_foot}'
+
+        # The letter is the point of the site's email, so it goes at the end of
+        # anything worth reading. Not on the reference pages, where a signup
+        # would interrupt someone mid-task looking up a phone number.
+        if cls in ('hub', 'article'):
+            block = subscribe_block(wide=(cls != 'hub'))
+            if block:
+                body = body.replace('<footer>', block + '\n<footer>', 1)
+
         # Allow-list each inline script by hash instead of relaxing script-src.
         for s in re.findall(r'<script(?![^>]*\ssrc=)[^>]*>(.*?)</script>', body, re.S):
             digest = base64.b64encode(hashlib.sha256(s.encode()).digest()).decode()
@@ -343,7 +519,7 @@ def main():
             d = re.search(r'<p class="dek">(.*?)</p>', body, re.S)
             desc = re.sub(r'<[^>]+>', '', d.group(1)).strip() if d else DESCRIPTIONS['/']
         desc = re.sub(r'\s+', ' ', desc)[:300]
-        canonical = ORIGIN + ('' if path == '/' else path)
+        canonical = ORIGIN + path  # '/' keeps its slash, matching the sitemap
 
         h1m = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
         headline = re.sub(r'\s+', ' ', h1m.group(1)).strip() if h1m else title
@@ -375,13 +551,24 @@ def main():
                 target = picks[(i + n[0]) % len(picks)]
                 n[0] += 1
                 headline, blurb = meta[target]
-                return house_promo(target, headline, blurb, 'wrap-wide' in m.group(1))
+                slot = m.group(1)
+                container = ('wrap-wide' if 'wrap-wide' in slot
+                             else 'wrap' if 'wrap' in slot else '')
+                return house_promo(target, headline, blurb, container)
 
             rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
 
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + (HOUSE_CSS if not ADS_LIVE else ''))
-    open(f'{SITE}/styles.css', 'w').write(styles)
+              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + SUBSCRIBE_CSS
+              + (HOUSE_CSS if not ADS_LIVE else ''))
+    # The stylesheet used to be served as a plain /styles.css. Because the
+    # name never changed, a reader whose browser had cached an older copy kept
+    # it -- and new markup (the house promos) rendered against old CSS as bare
+    # underlined links. Hashing the content into the filename makes a changed
+    # stylesheet a different URL, so a stale copy can never be reused.
+    css_name = 'styles.%s.css' % hashlib.sha256(
+        styles.encode()).hexdigest()[:10]
+    open(f'{SITE}/{css_name}', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
     if os.path.exists('ogcard/og.png'):
         shutil.copy('ogcard/og.png', f'{SITE}/og.png')
@@ -389,6 +576,11 @@ def main():
         shutil.copytree('images', f'{SITE}/images')
 
     for path, (title, desc, canonical, body) in rendered.items():
+        ld = json_ld(path, title, desc, canonical, meta[path][0], body)
+        # A ld+json data block is not executed, so script-src does not gate it,
+        # but hashing it costs nothing and survives a stricter policy later.
+        script_hashes.add("'sha256-%s'" % base64.b64encode(
+            hashlib.sha256(ld.encode()).digest()).decode())
         head = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -409,10 +601,11 @@ def main():
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{ORIGIN}/og.png">
 <meta name="author" content="Edward Silva">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="{ROBOTS[path in NOINDEX]}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/{css_name}">
+<script type="application/ld+json">{ld}</script>
 </head>
 <body class=\"{layout_class(path)}\">
 """
@@ -424,10 +617,13 @@ def main():
 
     # sitemap
     urls = ''.join(
-        f'  <url><loc>{ORIGIN}{"" if p == "/" else p}</loc>'
+        # The homepage entry used to be a bare https://host with no path at
+        # all. Google tolerates it; the sitemap protocol and stricter
+        # validators want a complete URL, so the root keeps its slash.
+        f'  <url><loc>{ORIGIN}{p}</loc>'
         f'<changefreq>{"weekly" if p == "/" else "monthly"}</changefreq>'
         f'<priority>{"1.0" if p == "/" else "0.8"}</priority></url>\n'
-        for p in sorted(rendered))
+        for p in sorted(rendered) if p not in NOINDEX)
     open(f'{SITE}/sitemap.xml', 'w').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
@@ -445,7 +641,11 @@ def main():
            "object-src 'none'; "
            "frame-ancestors 'none'; "
            "base-uri 'self'; "
-           "form-action 'self'")
+           # The signup posts to Kit, so the policy has to name it. Kept to
+           # the one host rather than relaxed, so a form injected anywhere on
+           # the site still cannot exfiltrate to an attacker's endpoint.
+           "form-action 'self'"
+           + (' https://app.convertkit.com https://app.kit.com' if KIT_FORM_ID else ''))
     vercel = {
         "$schema": "https://openapi.vercel.sh/vercel.json",
         "cleanUrls": True,
@@ -464,15 +664,24 @@ def main():
             ]},
             {"source": "/fonts/(.*)", "headers": [
                 {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
-            {"source": "/styles.css", "headers": [
-                {"key": "Cache-Control", "value": "public, max-age=604800"}]},
+            # Safe to cache forever now that the name carries a content hash:
+            # a changed stylesheet is a different URL. The old /styles.css was
+            # cached for a week under a fixed name, so readers kept stale CSS.
+            {"source": "/styles.(.*).css", "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+            {"source": "/images/(.*)", "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=86400"}]},
+            # HTML must revalidate, otherwise a deploy does not reach anyone
+            # who has already visited until their cache happens to expire.
+            {"source": "/(.*)", "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]},
         ],
     }
     open(f'{SITE}/vercel.json', 'w').write(json.dumps(vercel, indent=2) + '\n')
 
     total = sum(os.path.getsize(os.path.join(r, f))
                 for r, _, fs in os.walk(SITE) for f in fs)
-    print(f'{len(rendered)} pages, styles.css {len(styles) // 1024}KB, total {total // 1024}KB')
+    print(f'{len(rendered)} pages, {css_name} {len(styles) // 1024}KB, total {total // 1024}KB')
     leftover = [p for p, (_, _, _, b) in rendered.items() if 'claude.ai/code/artifact' in b]
     print('pages still linking to claude.ai:', leftover or 'none')
 

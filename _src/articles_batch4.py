@@ -28,7 +28,7 @@ ARTICLES4['advantage-vs-original'] = {
 
       <h2>The two structures</h2>
 
-      <p><strong>Original Medicare</strong> is the federal programme: Part A (hospital) and Part B
+      <p><strong>Original Medicare</strong> is the federal program: Part A (hospital) and Part B
       (medical). You can see any provider in the country who accepts Medicare, which is most of them. No
       networks, no referrals. It doesn't include drug coverage, so people add a Part D plan. And it has
       <em>no annual limit on what you can pay out of pocket</em> — which is why most people also buy a
@@ -59,7 +59,7 @@ ARTICLES4['advantage-vs-original'] = {
       <p>Strip away the marketing and the structures make opposite bets.</p>
 
       <p>Original plus Medigap front-loads your costs into predictable monthly premiums, and in return
-      very little is unpredictable afterwards. You pay more in good years. In a catastrophic year you're
+      very little is unpredictable afterward. You pay more in good years. In a catastrophic year you're
       largely insulated, and you can go to any specialist in the country without asking permission.</p>
 
       <p>Advantage front-loads almost nothing and charges you as you use care. If you're healthy, you may
@@ -82,7 +82,7 @@ ARTICLES4['advantage-vs-original'] = {
         <li><strong>The dental and vision extras are real but capped.</strong> Often one or two thousand
         dollars a year. Useful for cleanings and glasses; it won't cover implants.</li>
         <li><strong>Networks change.</strong> Your doctor being in-network this year doesn't guarantee
-        next year, which is why the autumn review matters.</li>
+        next year, which is why the fall review matters.</li>
         <li><strong>Prior authorisation is a real difference in kind</strong>, not just paperwork. It can
         mean delays for imaging, rehab or a skilled nursing stay.</li>
         <li><strong>Travel matters more than people expect.</strong> Original travels anywhere in the US.
@@ -94,14 +94,14 @@ ARTICLES4['advantage-vs-original'] = {
 
       <h2>The part that’s hard to reverse</h2>
 
-      <p>Here is the fact that belongs at the centre of this decision, and it's structural rather than a
+      <p>Here is the fact that belongs at the center of this decision, and it's structural rather than a
       matter of opinion.</p>
 
-      <p>You can switch between Advantage and Original every autumn. That direction is easy. But going
+      <p>You can switch between Advantage and Original every fall. That direction is easy. But going
       <em>back</em> to Original usually means wanting a Medigap policy to cover the gaps — and Medigap
-      has its own enrolment rules, which are far less forgiving.</p>
+      has its own enrollment rules, which are far less forgiving.</p>
 
-""" + facts('Medigap enrolment', [
+""" + facts('Medigap enrollment', [
         ('Your one guaranteed window', 'Six months, starting the first month you are 65 <em>and</em> '
                                        'enrolled in Part B. During it, insurers must sell you any policy '
                                        'they offer at standard rates, regardless of health.'),
@@ -139,7 +139,7 @@ ARTICLES4['advantage-vs-original'] = {
         'Ask how often you <strong>travel or live elsewhere</strong> for part of the year.',
         'If you want Medigap, buy it in your <strong>six-month window</strong>. This is the single most '
         'time-sensitive thing in this article.',
-        'Talk to your <strong>SHIP</strong> counsellor &mdash; free, and unlike a broker, they earn '
+        'Talk to your <strong>SHIP</strong> counselor &mdash; free, and unlike a broker, they earn '
         'nothing from your choice. Find yours at <em>shiphelp.org</em>.',
     ]) + """
       <p>Anyone who tells you one of these is simply better than the other is telling you about
@@ -171,7 +171,7 @@ ARTICLES4['medicare-gaps'] = {
            'needs it. Worth knowing before you’re planning around an assumption that isn’t true.',
     'meta': '6 minute read &middot; Verified against 2026 Medicare rules',
     'checked': CHECKED,
-    'body': """      <p>Medicare is a good programme. It is also, in a few specific places, not the programme people
+    'body': """      <p>Medicare is a good program. It is also, in a few specific places, not the program people
       assume it is &mdash; and the gaps tend to be discovered at the worst possible moment, usually in a
       hospital corridor.</p>
 
@@ -200,7 +200,7 @@ ARTICLES4['medicare-gaps'] = {
       <p>So the maximum is 100 days, it's conditional, and it's for getting better rather than for living
       somewhere. The care most people picture when they think &ldquo;nursing home&rdquo; is paid for
       privately, by long-term care insurance, or &mdash; once savings are largely gone &mdash; by
-      Medicaid, which is a separate programme with strict income and asset rules.</p>
+      Medicaid, which is a separate program with strict income and asset rules.</p>
 
       <blockquote class="pull">
         <p>Medicare covers getting better. It does not cover needing help. Those are different things,
@@ -239,7 +239,7 @@ ARTICLES4['medicare-gaps'] = {
       <ul>
         <li><strong>Care outside the United States</strong>, with narrow exceptions. Covered in our
         <a href="/travel-insurance">travel insurance</a> piece &mdash; this is the gap that catches
-        travellers.</li>
+        travelers.</li>
         <li><strong>Routine foot care</strong> such as toenail clipping and callus removal, unless you
         have a qualifying condition like diabetes.</li>
         <li><strong>Cosmetic surgery</strong>, other than reconstruction after injury or covered surgery.</li>
@@ -248,7 +248,7 @@ ARTICLES4['medicare-gaps'] = {
         the covered services; the membership fee is yours.</li>
       </ul>
 
-      <h2>And a few things people don’t realise <em>are</em> covered</h2>
+      <h2>And a few things people don’t realize <em>are</em> covered</h2>
 
       <p>The list runs both ways, and this side is under-used:</p>
 
@@ -262,7 +262,7 @@ ARTICLES4['medicare-gaps'] = {
         '<strong>Diabetes supplies and self-management training</strong>, plus therapeutic shoes for '
         'those who qualify.',
         '<strong>Mental health care</strong>, including therapy, and since 2024 marriage and family '
-        'therapists and mental health counsellors can bill Medicare directly.',
+        'therapists and mental health counselors can bill Medicare directly.',
         '<strong>Telehealth</strong>, though the rules have shifted repeatedly since 2020 &mdash; check '
         'current terms rather than assuming.',
     ]) + """

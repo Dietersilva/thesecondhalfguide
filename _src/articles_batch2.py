@@ -39,7 +39,7 @@ ARTICLES2['drug-cap'] = {
         ('Not included', 'Everything else in Medicare: hospital stays, doctor visits, tests, Part B drugs, '
                          'dental, vision, hearing.'),
         ('Also available', 'The Medicare Prescription Payment Plan spreads your drug costs across monthly '
-                           'instalments. It changes the timing, not the total.'),
+                           'installments. It changes the timing, not the total.'),
     ]) + """
 """ + part_d_phases() + """
       <h2>What the cap is not</h2>
@@ -75,7 +75,7 @@ ARTICLES2['drug-cap'] = {
       <p>The Medicare Plan Finder at <em>medicare.gov</em> will do this. Enter your prescriptions and your
       pharmacy, and it estimates total annual cost per plan &mdash; premiums plus drug costs, not premiums
       alone. It takes about twenty minutes and it is the single highest-value thing you can do during
-      open enrolment.</p>
+      open enrollment.</p>
 
       <h2>The cash-flow question hiding underneath</h2>
 
@@ -90,20 +90,20 @@ ARTICLES2['drug-cap'] = {
       costs into monthly payments across the year instead of charging them at the pharmacy counter. You
       don't pay less &mdash; the total is identical &mdash; but it converts a spike into something
       predictable. For households where the timing was the real problem, that's the useful option, and
-      it's easy to miss because it sounds like a discount programme and isn't.</p>
+      it's easy to miss because it sounds like a discount program and isn't.</p>
 
       <h2>Worth doing</h2>
 
 """ + check([
         'Run your <strong>actual prescription list</strong> through the Plan Finder at <em>medicare.gov</em> '
-        'during open enrolment. Compare estimated annual totals, not monthly premiums.',
+        'during open enrollment. Compare estimated annual totals, not monthly premiums.',
         'Check each drug is <strong>on the formulary</strong> and see which tier it lands on. This matters '
         'more now than it did before the cap.',
         'Check whether your pharmacy is <strong>preferred</strong> in the plan. The same drug at the same '
         'plan can cost different amounts at different counters.',
         'If your costs land heavily in the early months, ask about the <strong>Medicare Prescription '
         'Payment Plan</strong>.',
-        'Look into <strong>Extra Help</strong> if money is tight. It’s a separate federal programme '
+        'Look into <strong>Extra Help</strong> if money is tight. It’s a separate federal program '
         'for people with limited income and resources, and it’s widely under-claimed.',
     ]) + """
       <p>The cap is real protection and it removes a genuine fear that hung over people with serious
@@ -216,7 +216,7 @@ ARTICLES2['power-of-attorney'] = {
       <p>Two things reduce the odds. Ask each institution now whether they accept a general durable power
       of attorney or require their own form &mdash; many have one, and completing it takes minutes today
       versus weeks of argument later. And refresh the document periodically; a POA signed in 2004 draws
-      far more scepticism than one signed recently.</p>
+      far more skepticism than one signed recently.</p>
 
       <h2>Worth doing</h2>
 
@@ -269,7 +269,7 @@ ARTICLES2['romance-scams'] = {
 
       <p>The caricature says the victim must have been lonely, naive, or not paying attention. The actual
       mechanism is long-form social engineering, run patiently by people who do this professionally, and
-      it is closer to how intelligence services cultivate an asset than to anything you'd recognise as a
+      it is closer to how intelligence services cultivate an asset than to anything you'd recognize as a
       con.</p>
 
       <p>It is also, year after year, among the highest-loss categories of consumer fraud reported to the
@@ -291,8 +291,8 @@ ARTICLES2['romance-scams'] = {
       every other circumstance, the generous answer is the right one.</p>
 
       <blockquote class="pull">
-        <p>The scam doesn't attack your judgement. It builds a relationship first, then asks your
-        judgement to evaluate the relationship.</p>
+        <p>The scam doesn't attack your judgment. It builds a relationship first, then asks your
+        judgment to evaluate the relationship.</p>
       </blockquote>
 
       <h2>Why this stage of life creates specific openings</h2>
@@ -365,7 +365,7 @@ ARTICLES2['romance-scams'] = {
       <p>Shame is the last tool the scam uses, and the most effective one. It keeps people silent long
       enough for the trail to go cold, and it stops them warning anyone else.</p>
 
-      <p>These are not stories about people who couldn't recognise a fraud. They're stories about
+      <p>These are not stories about people who couldn't recognize a fraud. They're stories about
       criminals who understood something true and rather sad about modern life: that genuine attention,
       arriving daily, is scarce enough to be worth a great deal of money to whoever supplies it.</p>
 """,
@@ -450,7 +450,7 @@ ARTICLES2['travel-insurance'] = {
       <p><strong>4. Medical evacuation and repatriation.</strong> Transport to appropriate care, or home.
       A separate thing again &mdash; a policy that pays a hospital bill does not automatically pay for the
       aircraft that gets you to the hospital. This is the coverage that turns a catastrophic number into a
-      manageable one, and it's the reason cruise and expedition travellers buy policies at all.</p>
+      manageable one, and it's the reason cruise and expedition travelers buy policies at all.</p>
 
       <h2>The pre-existing condition clause</h2>
 
@@ -562,13 +562,13 @@ ARTICLES2['go-go-years'] = {
 
       <p>Three things, and they cost people real money and real experience.</p>
 
-      <p><strong>It rushes expensive decisions.</strong> Urgency is the enemy of good financial judgement
+      <p><strong>It rushes expensive decisions.</strong> Urgency is the enemy of good financial judgment
       &mdash; a theme this site keeps running into from different directions. Front-loading heavy
       spending on the assumption that later years won't be worth funding is a bet, and it's a bet made on
       an average rather than on you.</p>
 
       <p><strong>It assumes travel has one form.</strong> Someone who no longer wants a twelve-mile
-      walking day hasn't stopped travelling. They may prefer a month in one apartment in one city, which
+      walking day hasn't stopped traveling. They may prefer a month in one apartment in one city, which
       is a deeper experience than three countries in ten days ever was. Rail travel. A cruise. Trips built
       around family, or food, or a language, rather than around exertion.</p>
 
@@ -609,7 +609,7 @@ ARTICLES2['go-go-years'] = {
     ],
     'next': {'slug': 'parks-pass',
              'title': 'The National Parks Senior Pass',
-             'blurb': '$80 for life at 62 &mdash; and a genuinely good reason to keep travelling close to home.'},
+             'blurb': '$80 for life at 62 &mdash; and a genuinely good reason to keep traveling close to home.'},
 }
 
 # ---------------------------------------------------------------- grandparent
@@ -641,7 +641,7 @@ ARTICLES2['long-distance'] = {
 
       <p>The nearby grandparent goes to the Tuesday football match. Picks up a sick child at short notice.
       Sits at the kitchen table for an unremarkable hour. That last one is the real advantage &mdash;
-      frequency creates familiarity <em>without requiring an event</em>. Nobody has to organise it, and
+      frequency creates familiarity <em>without requiring an event</em>. Nobody has to organize it, and
       nobody is performing.</p>
 
       <h2>What distance does differently</h2>
@@ -748,7 +748,7 @@ ARTICLES2['aging-in-place'] = {
       later, usually during a week when a decision has to be made quickly and none of the options are
       good.</p>
 
-      <p>Staying home works when the home and the neighbourhood can keep doing their jobs as the person
+      <p>Staying home works when the home and the neighborhood can keep doing their jobs as the person
       living there changes. That's a testable proposition. You can look at a house and a street and form
       a fairly accurate view of how well they'll hold up &mdash; and the earlier you look, the more of
       the answer is still within your control.</p>
@@ -814,7 +814,7 @@ ARTICLES2['aging-in-place'] = {
       and at what rate &mdash; availability varies enormously by region. Who is within a genuine
       short-notice drive. Whether there's an <em>Area Agency on Aging</em> covering your county, because
       there almost certainly is and it's the most under-used resource in this whole subject &mdash;
-      transport programmes, meal delivery, home-modification help, benefits screening, often free.</p>
+      transport programs, meal delivery, home-modification help, benefits screening, often free.</p>
 
       <h2>Worth doing early</h2>
 
@@ -825,7 +825,7 @@ ARTICLES2['aging-in-place'] = {
         'grab bars, handrails on both sides of stairs. Small money, disproportionate effect.',
         'When you renovate <strong>anything</strong>, build the future version. A bathroom redone at 62 '
         'should have blocking in the walls for grab bars even if you fit none. It costs almost nothing '
-        'during the job and a great deal afterwards.',
+        'during the job and a great deal afterward.',
         'Answer the <strong>driving question</strong> honestly. It’s the one most likely to decide this.',
         'Look up your <strong>Area Agency on Aging</strong> now, while nothing is wrong. Knowing what '
         'exists locally is most of the value.',

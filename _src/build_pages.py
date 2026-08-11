@@ -129,6 +129,34 @@ SHARED_CSS = """
   .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; color: var(--ink-faint); }
   footer a { color: var(--ink-soft); }
   .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  .numbers { margin: 0 0 10px; }
+  .num-group { margin: 0 0 30px; }
+  .num-group h2 { margin-top: 34px; }
+  .num-card {
+    display: flex; gap: 20px; align-items: flex-start; padding: 20px 22px; margin: 0 0 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .num-card .who { flex: 1 1 auto; }
+  .num-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin: 0 0 5px; }
+  .num-card p { margin: 0 0 5px; font-size: 16px; color: var(--ink-soft); }
+  .num-card p.not { font-size: 15px; color: var(--ink-faint); }
+  .num-card .tel {
+    flex: none; text-align: right; font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 20px; color: var(--pine-strong); white-space: nowrap;
+  }
+  .num-card .tel span { display: block; font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 400; font-size: 13.5px; color: var(--ink-faint); margin-top: 4px; }
+  @media (max-width: 620px) {
+    .num-card { flex-direction: column; gap: 8px; }
+    .num-card .tel { text-align: left; }
+  }
+  @media print {
+    .topbar, footer, .callout, .print-note { display: none !important; }
+    body { font-size: 12pt; }
+    .num-card { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+    a { text-decoration: none; color: #000; }
+  }
 """
 
 SHARED_CSS = (SHARED_CSS
@@ -160,6 +188,7 @@ def page(title, body, links):
     <span class="foot-links">
       <a href="{links['about']}">About</a>
       <a href="{links['contact']}">Contact</a>
+      <a href="/numbers">Useful numbers</a>
       <a href="{links['privacy']}">Privacy &amp; Terms</a>
     </span>
   </div>
@@ -235,7 +264,7 @@ ABOUT_BODY = """  <div class="wrap">
 
       <p>I'm married, with two grown sons, both married themselves &mdash; which is its own education in the family side of this stage of life, and a fair amount of why the site isn't only about paperwork.</p>
 
-      <p>What I am not: a financial adviser, an attorney, an accountant or an insurance agent. I hold no licence and I sell no products. That's a limitation and I'd rather state it plainly than imply otherwise &mdash; this site tells you what the rules say and where to check them. It does not tell you what to do with your money.</p>
+      <p>What I am not: a financial adviser, an attorney, an accountant or an insurance agent. I hold no license and I sell no products. That's a limitation and I'd rather state it plainly than imply otherwise &mdash; this site tells you what the rules say and where to check them. It does not tell you what to do with your money.</p>
 
       <p>If something here is wrong, unclear, or has gone out of date, write and tell me. Corrections are among the more useful things a reader can send, and I'd rather be corrected than trusted for the wrong reasons.</p>
     </div>
@@ -283,7 +312,7 @@ CONTACT_BODY = """  <div class="wrap">
       </ul>
 
       <h2>Response times</h2>
-      <p>We're small. Expect a reply within a few business days for most messages. Corrections get looked at first &mdash; if an article is wrong, fixing it beats answering everything else in the queue.</p>
+      <p>We're small. Expect a reply within a few business days for most messages. Corrections get looked at first &mdash; if an article is wrong, fixing it beats answering everything else in the line.</p>
 
       <div class="callout">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
@@ -323,8 +352,10 @@ PRIVACY_BODY = """  <div class="wrap">
         <li><strong>Information you send us.</strong> If you email us or submit a topic-suggestion form, we receive whatever you choose to include &mdash; typically your message and, if you provide it, your email address. We ask that you not send sensitive personal or financial information.</li>
         <li><strong>Standard technical information.</strong> Like most websites, our hosting infrastructure automatically records ordinary request data such as IP address, browser type, device type, referring page, and the time of your visit.</li>
         <li><strong>Analytics data,</strong> if and when we enable a web analytics service, in the form of aggregate statistics about which pages are read and for how long.</li>
+        <li><strong>Your email address, if you subscribe to Wednesday Letters.</strong> Our newsletter signup form passes your address to Kit (Kit.com), the email service that stores our subscriber list and delivers the letter on our behalf. We ask for nothing else &mdash; no name, no age, no location. Kit records ordinary delivery information such as whether an email was opened or a link clicked, and processes your data under <a href="https://kit.com/privacy">its own privacy policy</a>.</li>
       </ul>
-      <p>We do not sell personal information, and we do not run a mailing list unless and until you explicitly sign up for one.</p>
+      <p><strong>We do not sell, rent, trade, or share your email address with anyone,</strong> and we will not use it to send you anything other than the newsletter you asked for. Every issue carries a one-click unsubscribe link; you may also email us and we will remove you. Unsubscribing deletes you from the list entirely.</p>
+      <p>We do not sell personal information.</p>
 
       <h2>2. Cookies and advertising</h2>
       <p>This site is supported by advertising, and advertising involves cookies.</p>
@@ -380,10 +411,192 @@ PRIVACY_BODY = """  <div class="wrap">
   </div>
 """
 
+NUMBERS_BODY = """  <div class="wrap">
+    <div class="page-head">
+      <span class="eyebrow">Keep this somewhere</span>
+      <h1>The numbers worth keeping by the phone</h1>
+      <p class="dek">Every scam on this site works the same way: someone contacts you, and you deal with
+      them instead of hanging up and calling the real number. This is the real numbers. Print it and put
+      it in a drawer.</p>
+      <p class="meta">Checked August 2026 &middot; Print this page for the drawer</p>
+    </div>
+
+    <div class="prose numbers">
+
+      <h2>Medicare</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>Medicare</h3>
+            <p>Coverage questions, claims, replacement cards, plan changes, reporting fraud.</p>
+            <p class="not">Won't recommend a specific plan or sell you anything.</p>
+          </div>
+          <div class="tel">1-800-633-4227<span>1-800-MEDICARE &middot; 24 hours<br>TTY 1-877-486-2048</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>SHIP &mdash; your state's Medicare counselors</h3>
+            <p>Free, trained, one-to-one help comparing plans. They earn nothing whichever you pick.</p>
+            <p class="not">Find your state's number at <strong>shiphelp.org</strong>.</p>
+          </div>
+          <div class="tel">shiphelp.org<span>Free &middot; independent</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>Senior Medicare Patrol</h3>
+            <p>Help when you suspect Medicare billing fraud or errors on a statement.</p>
+            <p class="not">Find your state's program at <strong>smpresource.org</strong>.</p>
+          </div>
+          <div class="tel">smpresource.org<span>Free &middot; local</span></div>
+        </div>
+      </div>
+
+      <h2>Social Security</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>Social Security Administration</h3>
+            <p>Benefits, survivor claims, earnings record corrections, appointments.</p>
+            <p class="not">Waits can be long. The website handles most of this faster &mdash; see our
+            <a href="/social-security-login">guide to the new login</a>.</p>
+          </div>
+          <div class="tel">1-800-772-1213<span>8am&ndash;7pm local, weekdays</span></div>
+        </div>
+      </div>
+
+      <h2>Fraud and scams</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>National Elder Fraud Hotline</h3>
+            <p>Staffed by people trained to help older adults who have been targeted or defrauded. They
+            help you report it to the right places.</p>
+            <p class="not">Run by the Justice Department's Office for Victims of Crime.</p>
+          </div>
+          <div class="tel">1-833-372-8311<span>833-FRAUD-11<br>10am&ndash;6pm ET, weekdays</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>FBI Internet Crime Complaint Center</h3>
+            <p>Report online fraud, wire transfers, crypto, gold couriers. Speed matters &mdash; fast
+            reports are how money sometimes gets recovered.</p>
+            <p class="not">Online only; there is no phone line.</p>
+          </div>
+          <div class="tel">ic3.gov<span>Report online</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>Federal Trade Commission</h3>
+            <p>Report any scam, whether or not you lost money. Reports are what get networks shut down.</p>
+            <p class="not">Report at <strong>reportfraud.ftc.gov</strong>.</p>
+          </div>
+          <div class="tel">reportfraud<span>.ftc.gov</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>Your bank</h3>
+            <p>The number on the back of your card. Not a number anyone gave you on a call.</p>
+            <p class="not">Write yours here: ______________________</p>
+          </div>
+          <div class="tel">On your card<span>Never from a caller</span></div>
+        </div>
+      </div>
+
+      <h2>Local help</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>Eldercare Locator</h3>
+            <p>The front door to everything local: transport, meals, home care, caregiver support,
+            benefits screening, Adult Protective Services.</p>
+            <p class="not">Connects you to your Area Agency on Aging &mdash; the most under-used resource
+            in this whole subject.</p>
+          </div>
+          <div class="tel">1-800-677-1116<span>eldercare.acl.gov</span></div>
+        </div>
+        <div class="num-card">
+          <div class="who">
+            <h3>Benefits screening</h3>
+            <p>Checks what you may qualify for &mdash; Medicare Savings Programs, food, energy, property
+            tax relief &mdash; in one pass.</p>
+            <p class="not">See <a href="/medicare-savings">why this is worth twenty minutes</a>.</p>
+          </div>
+          <div class="tel">benefitscheckup<span>.org</span></div>
+        </div>
+      </div>
+
+      <h2>Travel</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>TSA Cares</h3>
+            <p>Arranges a specialist to help you through airport screening. Call at least 72 hours ahead.</p>
+            <p class="not">Separate from airline wheelchair assistance, which you book with the airline
+            &mdash; <a href="/airport-help">both are free</a>.</p>
+          </div>
+          <div class="tel">1-855-787-2227<span>72 hours ahead</span></div>
+        </div>
+      </div>
+
+      <h2>If things are bad</h2>
+      <div class="num-group">
+        <div class="num-card">
+          <div class="who">
+            <h3>988 Suicide &amp; Crisis Lifeline</h3>
+            <p>Call or text 988. Free, confidential, 24 hours.</p>
+            <p class="not">For you or for someone you're worried about.</p>
+          </div>
+          <div class="tel">988<span>Call or text &middot; 24 hours</span></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p><strong>The whole point of this page.</strong> If someone contacts you claiming to be any of
+        these organizations, hang up and call the number here instead. Not the number they gave you, and
+        not by pressing 1. That single habit defeats nearly every scam we've written about &mdash; see
+        <a href="/five-minute-rule">the five-minute rule</a>.</p>
+      </div>
+
+      <p class="print-note">Numbers were checked in August 2026. Government phone lines change rarely,
+      but if one of these is wrong, <a href="mailto:hello@thesecondhalfguide.com">tell us</a> and we'll
+      fix it the same week.</p>
+    </div>
+  </div>
+"""
+
+SUBSCRIBED_BODY = """  <div class="wrap">
+    <article class="doc">
+      <p class="eyebrow">Wednesday Letters</p>
+      <h1>Check your inbox &mdash; there's one more step</h1>
+      <p class="dek">We've sent you a short email asking you to confirm. The letter won't start arriving until you click the link inside it.</p>
+
+      <h2>Why the extra step</h2>
+      <p>Confirming proves the address is really yours. It stops anyone from signing you up for mail you never asked for, and it keeps our list clean enough that the letter lands in inboxes rather than spam folders. It takes one click and you only do it once.</p>
+
+      <h2>If nothing arrives in a few minutes</h2>
+      <ul>
+        <li><strong>Look in spam, junk, or Promotions.</strong> First emails from a new sender often land there. If you find it, mark it &ldquo;not spam&rdquo; &mdash; that teaches your mail program to deliver the rest to your inbox.</li>
+        <li><strong>Add us to your contacts.</strong> Saving our sending address in your address book is the single most reliable way to keep the letter out of the junk folder.</li>
+        <li><strong>Check the address you typed.</strong> A missing letter in the domain is the usual culprit. You can simply sign up again.</li>
+        <li><strong>Still nothing?</strong> Email <a href="mailto:hello@thesecondhalfguide.com">hello@thesecondhalfguide.com</a> and we'll sort it out by hand.</li>
+      </ul>
+
+      <h2>What you've signed up for</h2>
+      <p>One email, Wednesday mornings. A few things that changed this week for people in their late fifties and sixties, with the actual numbers and a link to the full piece. Nothing else &mdash; we don't sell, rent, or share your address, and every issue has a one-click unsubscribe link at the bottom. The <a href="/privacy">privacy policy</a> spells it out.</p>
+
+      <h2>While you wait</h2>
+      <p>Two things worth having already: <a href="/numbers">the numbers worth keeping by the phone</a>, which prints onto a single page for the drawer, and <a href="/five-minute-rule">the five-minute rule</a>, which is the one habit that defeats most of the scams we write about.</p>
+    </article>
+  </div>
+"""
+
 PAGES = {
     'about': ('About &mdash; The Second Half Guide', ABOUT_BODY),
     'contact': ('Contact &mdash; The Second Half Guide', CONTACT_BODY),
     'privacy': ('Privacy Policy &amp; Terms &mdash; The Second Half Guide', PRIVACY_BODY),
+    'numbers': ('The Numbers Worth Keeping by the Phone &mdash; The Second Half Guide', NUMBERS_BODY),
+    'subscribed': ('Almost there &mdash; confirm your subscription &mdash; The Second Half Guide', SUBSCRIBED_BODY),
 }
 
 

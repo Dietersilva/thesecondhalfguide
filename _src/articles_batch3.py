@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Third batch: the Medicare enrolment cluster, timed for autumn, plus two
+"""Third batch: the Medicare enrollment cluster, timed for fall, plus two
 under-covered money-saving facts."""
 
 from build_articles import facts, check, AD_INLINE, CHECKED
@@ -7,19 +7,19 @@ from charts import enrolment_window
 
 ARTICLES3 = {}
 
-# ------------------------------------------------------------ enrolment
+# ------------------------------------------------------------ enrollment
 ARTICLES3['medicare-enrollment'] = {
     'title': 'The Medicare Deadline That Never Forgives You &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare deadline that never forgives you',
-    'dek': 'Almost every date in this decade is negotiable. This one isn’t &mdash; miss your enrolment '
+    'dek': 'Almost every date in this decade is negotiable. This one isn’t &mdash; miss your enrollment '
            'window without the right coverage and you pay a surcharge every month for the rest of your life.',
     'meta': '7 minute read &middot; Verified against Medicare rules and 2026 figures',
     'checked': CHECKED,
     'body': """      <p>We've written a fair amount on this site about how few of the age thresholds in your 60s
       actually matter. Most are marketing. Some are openings rather than deadlines.</p>
 
-      <p>This is the exception, and it's worth being blunt about it. Medicare's late-enrolment penalties
+      <p>This is the exception, and it's worth being blunt about it. Medicare's late-enrollment penalties
       are permanent. Not a one-off fee, not a penalty that expires after a few years &mdash; a percentage
       added to your monthly premium for as long as you have the coverage. Someone who delays Part B by
       three years without qualifying coverage pays roughly 30% extra <em>every month, for the rest of
@@ -28,13 +28,13 @@ ARTICLES3['medicare-enrollment'] = {
       <p>The good news is that avoiding it is entirely mechanical. You need to know two things: when your
       window is, and whether your current coverage exempts you.</p>
 
-      <h2>Your Initial Enrolment Period</h2>
+      <h2>Your Initial Enrollment Period</h2>
 
-      <p>Seven months, centred on the month you turn 65: the three months before, your birthday month,
+      <p>Seven months, centered on the month you turn 65: the three months before, your birthday month,
       and the three months after.</p>
 
-      <p>Enrol in the three months <em>before</em> and coverage generally starts on the first day of your
-      birthday month. Enrol during or after, and it starts later &mdash; which can leave a gap. If you
+      <p>Enroll in the three months <em>before</em> and coverage generally starts on the first day of your
+      birthday month. Enroll during or after, and it starts later &mdash; which can leave a gap. If you
       have a choice, the early part of the window is the better part.</p>
 
 """ + enrolment_window() + """
@@ -58,7 +58,7 @@ ARTICLES3['medicare-enrollment'] = {
       <h2>The exception that covers most people still working</h2>
 
       <p>If you're 65 and still employed &mdash; or covered by a spouse's employer plan &mdash; you can
-      generally delay Part B without penalty, and pick it up later through a Special Enrolment Period.
+      generally delay Part B without penalty, and pick it up later through a Special Enrollment Period.
       That's eight months from when the employment or the group coverage ends, whichever comes first.</p>
 
       <p>This is where it goes wrong for people, so read the next paragraph twice.</p>
@@ -78,20 +78,20 @@ ARTICLES3['medicare-enrollment'] = {
 """ + AD_INLINE + """
       <h2>The HSA trap</h2>
 
-      <p>A specific one that catches organised people, because it punishes planning ahead.</p>
+      <p>A specific one that catches organized people, because it punishes planning ahead.</p>
 
       <p>You cannot contribute to a health savings account once you're enrolled in any part of Medicare.
-      And when you enrol in Part A after 65, coverage is applied <em>retroactively</em> &mdash; up to six
+      And when you enroll in Part A after 65, coverage is applied <em>retroactively</em> &mdash; up to six
       months back, though never before your 65th birthday month.</p>
 
       <p>So contributions made during those retroactive months become excess contributions, with tax
       consequences attached. If you're working past 65 and funding an HSA, stop contributing about six
-      months before you plan to enrol. Note also that claiming Social Security automatically enrols you
+      months before you plan to enroll. Note also that claiming Social Security automatically enrolls you
       in Part A, which means the Social Security decision and the HSA decision are quietly linked.</p>
 
       <h2>If you’ve already missed it</h2>
 
-      <p>Not ideal, but not hopeless. The General Enrolment Period runs 1 January to 31 March each year,
+      <p>Not ideal, but not hopeless. The General Enrollment Period runs 1 January to 31 March each year,
       and since 2023 coverage begins the month after you sign up rather than waiting until July. The
       penalty still applies, but the gap in coverage is much shorter than it used to be.</p>
 
@@ -111,20 +111,20 @@ ARTICLES3['medicare-enrollment'] = {
         'Check whether your drug coverage is <strong>creditable</strong> &mdash; your plan must tell you '
         'in writing each year. Keep those letters; they’re your evidence if a penalty is ever assessed '
         'wrongly.',
-        'Funding an <strong>HSA</strong> past 65? Stop about six months before you enrol.',
+        'Funding an <strong>HSA</strong> past 65? Stop about six months before you enroll.',
         'Talk to your <strong>SHIP</strong> &mdash; the State Health Insurance Assistance Program. Free, '
         'unbiased, one per state, and they are not selling you a plan. Reach them via <em>shiphelp.org</em> '
         'or 1-800-MEDICARE.',
     ]) + """
       <p>Nearly everything else in this decade can be revisited. Claim Social Security early and you can
-      sometimes withdraw or suspend. Choose the wrong Part D plan and you can change it in the autumn.
+      sometimes withdraw or suspend. Choose the wrong Part D plan and you can change it in the fall.
       Buy the wrong house and you can sell it.</p>
 
       <p>This one doesn't work that way. Which is why, of all the dates on this site, it's the one worth
       writing down today.</p>
 """,
     'sources': [
-        ('Medicare &mdash; Avoid late enrolment penalties',
+        ('Medicare &mdash; Avoid late enrollment penalties',
          'https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties'),
         ('Medicare &mdash; When does Medicare coverage start?',
          'https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start'),
@@ -133,18 +133,18 @@ ARTICLES3['medicare-enrollment'] = {
         ('SHIP &mdash; Free local Medicare counselling', 'https://www.shiphelp.org/'),
     ],
     'next': {'slug': 'open-enrollment',
-             'title': 'Open enrolment: what the 15 October window is actually for',
+             'title': 'Open enrollment: what the 15 October window is actually for',
              'blurb': 'The annual review most people skip, and the letter in September that tells you '
                       'whether you need it.'},
 }
 
-# ------------------------------------------------------------ open enrolment
+# ------------------------------------------------------------ open enrollment
 ARTICLES3['open-enrollment'] = {
-    'title': 'Open Enrolment: What the 15 October Window Is Actually For &mdash; The Second Half Guide',
+    'title': 'Open Enrollment: What the 15 October Window Is Actually For &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'Open enrolment: what the 15 October window is actually for',
+    'h1': 'Open enrollment: what the 15 October window is actually for',
     'dek': 'Your plan is allowed to change its costs, its drug list and its doctors every January. '
-           'Autumn is the only time most people can respond &mdash; and most don’t.',
+           'Fall is the only time most people can respond &mdash; and most don’t.',
     'meta': '6 minute read &middot; Dates and figures current for the 2026&ndash;27 cycle',
     'checked': CHECKED,
     'body': """      <p>Here is the thing that makes Medicare different from almost every other product you buy.</p>
@@ -154,23 +154,23 @@ ARTICLES3['open-enrollment'] = {
       January. You don't have to agree. You don't have to be consulted. You'll be told, in a letter, and
       if you do nothing you'll simply be enrolled in the new version.</p>
 
-      <p>Open enrolment is the window in which you're allowed to respond. Most people don't use it. Study
+      <p>Open enrollment is the window in which you're allowed to respond. Most people don't use it. Study
       after study finds that only a minority of enrollees compare plans in any given year, and a
       substantial number could have paid less by switching.</p>
 
 """ + facts('The windows worth knowing', [
-        ('15 Oct &ndash; 7 Dec', 'Medicare Open Enrolment. Change Part D plans, switch between Original '
+        ('15 Oct &ndash; 7 Dec', 'Medicare Open Enrollment. Change Part D plans, switch between Original '
                                  'Medicare and Medicare Advantage, or move between Advantage plans. '
                                  'Changes take effect 1 January.'),
         ('By 30 September', 'The deadline for plans to mail your Annual Notice of Change for the '
                             'following year. If it hasn’t arrived by early October, chase it.'),
         ('$2,400 in 2027', 'The Part D out-of-pocket cap rises from $2,100. Worth knowing before you '
-                           'compare plans this autumn.'),
-        ('1 Jan &ndash; 31 Mar', 'Medicare Advantage Open Enrolment. If you’re already in an Advantage '
+                           'compare plans this fall.'),
+        ('1 Jan &ndash; 31 Mar', 'Medicare Advantage Open Enrollment. If you’re already in an Advantage '
                                  'plan, you get one switch &mdash; to a different Advantage plan or back '
                                  'to Original Medicare.'),
         ('September', 'Your Annual Notice of Change arrives. This is the letter that matters.'),
-        ('All year', 'Special Enrolment Periods for qualifying events &mdash; moving, losing other '
+        ('All year', 'Special Enrollment Periods for qualifying events &mdash; moving, losing other '
                      'coverage, your plan leaving your area, qualifying for Extra Help.'),
     ]) + """
       <h2>The letter not to throw away</h2>
@@ -182,12 +182,12 @@ ARTICLES3['open-enrollment'] = {
       <p>It is not marketing. It's a legally required document listing exactly what's changing about
       <em>your</em> plan in January. Premium, deductible, copays, drug list, network.</p>
 
-      <p>If you read one document this autumn, read that one. Compare it against what you're paying now.
+      <p>If you read one document this fall, read that one. Compare it against what you're paying now.
       A great many people discover that the plan they've been happy with for years has quietly moved
       their main medication to a higher tier, or dropped their pharmacy from its preferred network.</p>
 
       <blockquote class="pull">
-        <p>Doing nothing is a decision. It re-enrols you in next year's version of a plan you chose based
+        <p>Doing nothing is a decision. It re-enrolls you in next year's version of a plan you chose based
         on this year's terms.</p>
       </blockquote>
 
@@ -205,7 +205,7 @@ ARTICLES3['open-enrollment'] = {
         <li><strong>Premiums and deductibles</strong>, including the Part D deductible, which can be up
         to $615 in 2026.</li>
         <li><strong>Whole plans withdrawing</strong> from a county. If that happens you'll be notified and
-        get a Special Enrolment Period &mdash; but you need to act.</li>
+        get a Special Enrollment Period &mdash; but you need to act.</li>
       </ul>
 
       <h2>How to do the review in about twenty minutes</h2>
@@ -227,8 +227,8 @@ ARTICLES3['open-enrollment'] = {
         'In Medicare Advantage? Confirm your <strong>doctors and hospital</strong> are still in network '
         'for next year. Don’t assume.',
         'Check whether your <strong>pharmacy is preferred</strong> under next year’s terms.',
-        'Ask your <strong>SHIP counsellor</strong> for help if it’s confusing. Free, unbiased, and they '
-        'earn nothing whichever plan you pick &mdash; unlike most people who will call you this autumn.',
+        'Ask your <strong>SHIP counselor</strong> for help if it’s confusing. Free, unbiased, and they '
+        'earn nothing whichever plan you pick &mdash; unlike most people who will call you this fall.',
         'Get it done before <strong>7 December</strong>. The window doesn’t extend and it doesn’t care why '
         'you missed it.',
     ]) + """
@@ -247,16 +247,16 @@ ARTICLES3['open-enrollment'] = {
     ],
     'next': {'slug': 'enrollment-scams',
              'title': 'Why your phone rings more in October',
-             'blurb': 'Open enrolment is also the fraud industry’s busiest season. What the rules '
+             'blurb': 'Open enrollment is also the fraud industry’s busiest season. What the rules '
                       'actually permit.'},
 }
 
-# ------------------------------------------------------------ enrolment scams
+# ------------------------------------------------------------ enrollment scams
 ARTICLES3['enrollment-scams'] = {
     'title': 'Why Your Phone Rings More in October &mdash; The Second Half Guide',
     'eyebrow': 'Protecting yourself',
     'h1': 'Why your phone rings more in October',
-    'dek': 'Open enrolment is the one season when unsolicited Medicare contact feels normal. That’s '
+    'dek': 'Open enrollment is the one season when unsolicited Medicare contact feels normal. That’s '
            'exactly what makes it the most profitable eight weeks of the fraud calendar.',
     'meta': '5 minute read &middot; Reflects current CMS marketing rules',
     'checked': CHECKED,
@@ -280,9 +280,9 @@ ARTICLES3['enrollment-scams'] = {
         ('Unsolicited calls', 'Plans and their agents are generally prohibited from calling you without '
                               'permission. A cold call about your Medicare plan is a red flag on its own.'),
         ('Door-to-door', 'Not allowed without an appointment you arranged.'),
-        ('Gifts', 'Agents may not offer cash or gifts above a nominal value to induce enrolment. '
+        ('Gifts', 'Agents may not offer cash or gifts above a nominal value to induce enrollment. '
                   '&ldquo;Free&rdquo; gift cards for switching are not a thing.'),
-        ('Enrolling you on a call', 'An agent cannot enrol you in a plan during an unsolicited contact.'),
+        ('Enrolling you on a call', 'An agent cannot enroll you in a plan during an unsolicited contact.'),
         ('Your Medicare number', 'Treat it like your Social Security number, because it is linked to it. '
                                  'Only your doctors, pharmacists and insurers need it.'),
     ]) + """
@@ -315,11 +315,11 @@ ARTICLES3['enrollment-scams'] = {
       <h2>The free help almost nobody uses</h2>
 
       <p>Every state has a <strong>SHIP</strong> &mdash; a State Health Insurance Assistance Program.
-      Trained counsellors, free, and structurally unable to profit from your decision. They don't sell
+      Trained counselors, free, and structurally unable to profit from your decision. They don't sell
       plans and they earn no commission whichever one you choose.</p>
 
       <p>That last part is the whole point. A broker may be perfectly honest and still only offer the
-      plans they're contracted with. A SHIP counsellor has no such constraint. Find yours at
+      plans they're contracted with. A SHIP counselor has no such constraint. Find yours at
       <em>shiphelp.org</em> or through 1-800-MEDICARE.</p>
 
       <p>If you'd rather work with a broker &mdash; and many people reasonably would &mdash; ask two
@@ -345,7 +345,7 @@ ARTICLES3['enrollment-scams'] = {
       It's that a genuine deadline, real mail from real insurers and a legitimately confusing decision all
       arrive at once &mdash; and confusion plus a deadline is the environment every scam is built for.</p>
 
-      <p>You already have the defence. It's the same one that works the rest of the year: if they
+      <p>You already have the defense. It's the same one that works the rest of the year: if they
       contacted you, hang up and call back on a number you found yourself.</p>
 """,
     'sources': [
@@ -369,7 +369,7 @@ ARTICLES3['property-tax'] = {
     'h1': 'The property tax break you might already qualify for',
     'dek': 'Most states reduce, freeze or defer property taxes once you hit a certain age. Almost none '
            'of them apply it automatically &mdash; and the age is often lower than people assume.',
-    'meta': '5 minute read &middot; Programmes vary by state and county &mdash; verify locally',
+    'meta': '5 minute read &middot; Programs vary by state and county &mdash; verify locally',
     'checked': CHECKED,
     'body': """      <p>Property tax is the retirement expense nobody warns you about. It doesn't fall when your
       income does. It doesn't stop when the mortgage is paid off. And in a lot of places it has risen
@@ -400,7 +400,7 @@ ARTICLES3['property-tax'] = {
       <h2>The age is often lower than you’d guess</h2>
 
       <p>People assume 65. It's frequently earlier: 61 in some states, 62 in several, 60 in a few local
-      programmes, and some jurisdictions offer additional relief again at 70 or 75.</p>
+      programs, and some jurisdictions offer additional relief again at 70 or 75.</p>
 
       <p>Because thresholds, income limits and application deadlines vary not just by state but sometimes
       by county and school district, this is one of the few topics where we won't print a table of
@@ -419,10 +419,10 @@ ARTICLES3['property-tax'] = {
 
 """ + check([
         'Search <strong>&ldquo;[your county] assessor senior exemption&rdquo;</strong>. The county '
-        'assessor or treasurer administers this, not the state, and their site will list every programme '
+        'assessor or treasurer administers this, not the state, and their site will list every program '
         'you might qualify for.',
         'Then search your <strong>state</strong> department of revenue for &ldquo;property tax relief&rdquo; '
-        '&mdash; some programmes are state-run and separate from the county’s.',
+        '&mdash; some programs are state-run and separate from the county’s.',
         'Note the <strong>application deadline</strong>. Many fall early in the year and are strict. '
         'Missing it usually means waiting a full cycle.',
         'Check whether it <strong>renews automatically</strong>. Some need reapplying annually; people '
@@ -447,17 +447,17 @@ ARTICLES3['property-tax'] = {
 
       <p>Also check whether your state offers relief for <strong>veterans</strong>, for people with
       <strong>disabilities</strong>, or for <strong>surviving spouses</strong>. These often stack with
-      age-based programmes, and stacking is where the numbers get genuinely large.</p>
+      age-based programs, and stacking is where the numbers get genuinely large.</p>
 
       <p>Half an hour on a county website is an unglamorous way to spend a morning. It is also, per
       minute, quite possibly the best-paid work available to a homeowner over 60.</p>
 """,
     'sources': [
-        ('Lincoln Institute of Land Policy &mdash; Residential property tax relief programmes by state',
+        ('Lincoln Institute of Land Policy &mdash; Residential property tax relief programs by state',
          'https://www.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs/'),
         ('National Council on Aging &mdash; Benefits and assistance for older adults',
          'https://www.ncoa.org/older-adults/benefits/'),
-        ('BenefitsCheckUp &mdash; Screening tool for programmes you may qualify for',
+        ('BenefitsCheckUp &mdash; Screening tool for programs you may qualify for',
          'https://benefitscheckup.org/'),
     ],
     'next': {'slug': 'free-college',
@@ -472,7 +472,7 @@ ARTICLES3['free-college'] = {
     'h1': 'Most states will let you take college classes free after 60',
     'dek': 'Forty-six states have some form of tuition waiver for older residents. Three start at 55. '
            'It is one of the best-kept and least-claimed benefits in the country.',
-    'meta': '5 minute read &middot; Programmes vary by state and campus &mdash; verify locally',
+    'meta': '5 minute read &middot; Programs vary by state and campus &mdash; verify locally',
     'checked': CHECKED,
     'body': """      <p>This one surprises almost everybody, so let's start with the fact: in all but four states
       &mdash; Arizona, Idaho, Indiana and South Dakota &mdash; there is some statewide provision for
@@ -481,18 +481,18 @@ ARTICLES3['free-college'] = {
 
       <p>Most set the age at 60 or 65. Colorado, Louisiana and Tennessee start at <strong>55</strong>.</p>
 
-      <p>These programmes have existed for decades in many states. They are also dramatically
+      <p>These programs have existed for decades in many states. They are also dramatically
       under-claimed, mostly because nobody is incentivised to advertise them &mdash; a tuition waiver is,
       by definition, revenue a college isn't collecting.</p>
 
       <h2>How they generally work</h2>
 
-""" + facts('The shape of most programmes', [
-        ('Space available', 'You enrol after fee-paying students have registered. The near-universal '
+""" + facts('The shape of most programs', [
+        ('Space available', 'You enroll after fee-paying students have registered. The near-universal '
                             'model &mdash; you fill an empty seat rather than displacing anyone. It also '
                             'means popular courses may be closed to you.'),
         ('Audit or credit', 'Some states cover audit only &mdash; attend and learn, no grade, no credit. '
-                            'Others allow full for-credit enrolment, occasionally all the way to a degree.'),
+                            'Others allow full for-credit enrollment, occasionally all the way to a degree.'),
         ('Tuition, not fees', 'The waiver typically covers tuition. Lab fees, technology fees, parking, '
                               'books and materials usually remain yours. Budget a few hundred dollars '
                               'rather than nothing.'),
@@ -507,7 +507,7 @@ ARTICLES3['free-college'] = {
       Senior Citizens Higher Education Act covers residents 60 and over, with income conditions attached
       to for-credit study.</p>
 
-      <p>The variation is the point: check your own state rather than assuming your neighbour's rules
+      <p>The variation is the point: check your own state rather than assuming your neighbor's rules
       apply.</p>
 
       <blockquote class="pull">
@@ -523,7 +523,7 @@ ARTICLES3['free-college'] = {
       setting &mdash; and it removes the thing that puts people off, which is rarely the material and
       usually the fear of being examined on it.</p>
 
-      <p>For-credit enrolment matters if you want the qualification, or if a structured obligation is what
+      <p>For-credit enrollment matters if you want the qualification, or if a structured obligation is what
       actually gets you to turn up. Some people genuinely need the deadline. Know which sort you are
       before choosing.</p>
 
@@ -533,7 +533,7 @@ ARTICLES3['free-college'] = {
         'Search <strong>&ldquo;[your state] senior citizen tuition waiver&rdquo;</strong>, then check the '
         'specific campus &mdash; institutions often apply the state rule with their own conditions.',
         'Call the <strong>registrar’s office</strong>, not admissions. Registrars administer waivers; '
-        'admissions staff frequently don’t know the programme exists.',
+        'admissions staff frequently don’t know the program exists.',
         'Ask what the <strong>space-available deadline</strong> is. You typically register in the last days '
         'before term, which means having a backup course in mind.',
         'Ask what <strong>fees remain</strong>. This is where the actual cost lives.',
@@ -544,7 +544,7 @@ ARTICLES3['free-college'] = {
     ]) + """
       <p>There's a practical case for this &mdash; the language before the trip, the accounting course,
       the thing you meant to study at 20 and couldn't. There's also a less tidy one that shows up
-      repeatedly in research on ageing: sustained mental engagement and regular contact with people
+      repeatedly in research on aging: sustained mental engagement and regular contact with people
       outside your own generation both matter, and a weekly class delivers both without anyone having to
       call it an intervention.</p>
 

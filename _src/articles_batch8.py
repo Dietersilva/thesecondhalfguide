@@ -10,11 +10,11 @@ ARTICLES8['medicare-savings'] = {
     'title': 'The Medicare Help Millions Qualify For and Never Claim &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare help millions qualify for and never claim',
-    'dek': 'Four programmes pay your Part B premium, your deductibles, or your drug costs. The income '
+    'dek': 'Four programs pay your Part B premium, your deductibles, or your drug costs. The income '
            'limits are higher than most people assume, and take-up is dismal.',
     'meta': '6 minute read &middot; 2026 limits verified',
     'checked': CHECKED,
-    'body': """      <p>If your income is modest, there are programmes that will pay your Medicare Part B premium —
+    'body': """      <p>If your income is modest, there are programs that will pay your Medicare Part B premium —
       $202.90 a month in 2026, straight out of your Social Security payment — and in some cases your
       deductibles and copays too.</p>
 
@@ -31,7 +31,7 @@ ARTICLES8['medicare-savings'] = {
         ('QI', 'About $1,816 single / $2,455 couple. Pays some or all of the Part B premium. First come, '
                'first served each year.'),
         ('Resource limit', 'Around $9,950 for an individual. Your home and usually one car don’t count.'),
-        ('Extra Help', 'Separate programme for drug costs &mdash; roughly $23,475 a year single / '
+        ('Extra Help', 'Separate program for drug costs &mdash; roughly $23,475 a year single / '
                        '$31,725 couple.'),
         ('The automatic part', 'Qualify for any Medicare Savings Program and you are <strong>automatically '
                                'eligible for Extra Help</strong> too.'),
@@ -46,10 +46,10 @@ ARTICLES8['medicare-savings'] = {
       are protected from being billed by providers for Medicare-covered services at all.</p>
 
       <p>And Extra Help transforms drug costs. With it, generics run about <strong>$5.10</strong> and
-      brand-name drugs about <strong>$12.65</strong> in 2026, with no late-enrolment penalty for Part D.</p>
+      brand-name drugs about <strong>$12.65</strong> in 2026, with no late-enrollment penalty for Part D.</p>
 
       <blockquote class="pull">
-        <p>Qualifying for the smallest of these programmes is worth roughly $2,400 a year. Qualifying for
+        <p>Qualifying for the smallest of these programs is worth roughly $2,400 a year. Qualifying for
         the largest can be worth several times that.</p>
       </blockquote>
 
@@ -63,7 +63,7 @@ ARTICLES8['medicare-savings'] = {
         in your state.</li>
         <li><strong>&ldquo;I own my house, so I won't qualify.&rdquo;</strong> Your primary home doesn't
         count toward the resource limit. Neither, usually, does one car.</li>
-        <li><strong>&ldquo;It's welfare.&rdquo;</strong> These are Medicare programmes funded partly by
+        <li><strong>&ldquo;It's welfare.&rdquo;</strong> These are Medicare programs funded partly by
         the payroll taxes you paid for forty years. You are not taking someone else's place; QI is the
         only one with a cap, and it routinely goes unfilled.</li>
         <li><strong>&ldquo;It'll affect my estate.&rdquo;</strong> Medicare Savings Programs are not
@@ -81,7 +81,7 @@ ARTICLES8['medicare-savings'] = {
         'application never gets made.',
         'Do it even if you think you are slightly over. <strong>State limits vary</strong> and some '
         'income is disregarded in the calculation.',
-        'Ask your <strong>SHIP counsellor</strong> to help &mdash; free, and they do these applications '
+        'Ask your <strong>SHIP counselor</strong> to help &mdash; free, and they do these applications '
         'constantly. <em>shiphelp.org</em>.',
         'Try <strong>BenefitsCheckUp</strong> at <em>benefitscheckup.org</em>, which screens for these '
         'alongside food, energy and property tax help in one pass.',
@@ -89,7 +89,7 @@ ARTICLES8['medicare-savings'] = {
         'Eligibility is not a one-time verdict.',
     ]) + """
       <p>The reason to take this seriously even if you're comfortable: circumstances change. The most
-      common path into these programmes is a household going from two Social Security payments to one,
+      common path into these programs is a household going from two Social Security payments to one,
       which is the subject of <a href="/widows-penalty">a separate piece on this site</a> and is far more
       financially violent than people expect.</p>
 
@@ -195,7 +195,7 @@ ARTICLES8['widows-penalty'] = {
     ]) + """
       <h2>One deadline worth knowing</h2>
 
-      <p>If the house is going to be sold, timing matters more than almost anyone realises. A surviving
+      <p>If the house is going to be sold, timing matters more than almost anyone realizes. A surviving
       spouse can use the <strong>full $500,000 capital gains exclusion</strong> on a home sale — but
       generally only if the sale happens <strong>within two years of the death</strong>. After that it
       drops to $250,000.</p>
@@ -216,7 +216,7 @@ ARTICLES8['widows-penalty'] = {
     ],
     'next': {'slug': 'medicare-savings',
              'title': 'The Medicare help millions qualify for and never claim',
-             'blurb': 'Programmes that pay your Part B premium &mdash; and a survivor may newly qualify.'},
+             'blurb': 'Programs that pay your Part B premium &mdash; and a survivor may newly qualify.'},
 }
 
 # ------------------------------------------------------------------- falls
@@ -243,8 +243,8 @@ ARTICLES8['falls'] = {
                    'are up 38%.'),
         ('About 33%', 'The reduction in fall risk from challenging lower-body strength and balance '
                       'training three times a week.'),
-        ('31&ndash;58%', 'Reductions associated with Tai Chi programmes in trial data. Structured '
-                         'programmes like Otago show 23&ndash;40%.'),
+        ('31&ndash;58%', 'Reductions associated with Tai Chi programs in trial data. Structured '
+                         'programs like Otago show 23&ndash;40%.'),
     ]) + """
       <h2>The intervention that works</h2>
 
@@ -257,7 +257,7 @@ ARTICLES8['falls'] = {
       chance of getting up unaided if you do go down.</p>
 
       <p>The word doing the work is <em>challenging</em>. Gentle seated movement is pleasant and does
-      very little for balance. The programmes with good trial evidence — Tai Chi, Otago — deliberately
+      very little for balance. The programs with good trial evidence — Tai Chi, Otago — deliberately
       put you near the edge of your balance, safely, so the system adapts. Standing on one leg while
       holding a counter is closer to the target than a chair-based class.</p>
 
@@ -291,7 +291,7 @@ ARTICLES8['falls'] = {
 
 """ + check([
         'Start <strong>strength and balance work three times a week</strong>. Look for Tai Chi or a '
-        'recognised falls-prevention class &mdash; many senior centres and Area Agencies on Aging run '
+        'recognized falls-prevention class &mdash; many senior centers and Area Agencies on Aging run '
         'them free.',
         'Ask for a <strong>medication review</strong> naming falls as the reason. Bring everything, '
         'including supplements and anything over the counter.',
@@ -318,7 +318,7 @@ ARTICLES8['falls'] = {
          'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/falls-prevention-community-dwelling-older-adults-interventions'),
         ('National Council on Aging &mdash; Falls prevention',
          'https://www.ncoa.org/article/get-the-facts-on-falls-prevention/'),
-        ('Eldercare Locator &mdash; Find local programmes', 'https://eldercare.acl.gov/'),
+        ('Eldercare Locator &mdash; Find local programs', 'https://eldercare.acl.gov/'),
     ],
     'next': {'slug': 'aging-in-place',
              'title': 'Aging in place: staying home is a goal, not a plan',
@@ -495,7 +495,7 @@ ARTICLES8['downsizing-math'] = {
       </ul>
 
       <p>The counter-case deserves equal weight: moving costs money and energy, a paid-off house is
-      unusually cheap to live in, and leaving a neighbourhood where you know people has a real cost that
+      unusually cheap to live in, and leaving a neighborhood where you know people has a real cost that
       never appears in a spreadsheet.</p>
 
       <h2>Before you decide</h2>
@@ -546,7 +546,7 @@ ARTICLES8['driving'] = {
       pressure.</p>
 
       <p>It isn't that. Driving is a set of specific abilities — vision, reaction time, neck rotation,
-      attention, judgement — and they change at different rates in different people. Some 80-year-olds
+      attention, judgment — and they change at different rates in different people. Some 80-year-olds
       are safer drivers than some 60-year-olds. Age by itself tells you remarkably little.</p>
 
       <h2>Renewal rules vary enormously by state</h2>
@@ -607,13 +607,13 @@ ARTICLES8['driving'] = {
         'fixable, and often the problem is one of those rather than driving itself.',
         'Consider a <strong>professional driving assessment</strong> &mdash; occupational therapists '
         'certified as driver rehabilitation specialists do these. An outside verdict removes the family '
-        'from the judgement.',
+        'from the judgment.',
         'Solve <strong>transport before removing driving.</strong> Nothing goes worse than taking the '
         'keys with no plan &mdash; that is how people become isolated, and isolation does its own damage.',
-        'Ask your <strong>Area Agency on Aging</strong> about local transport programmes. Many run '
+        'Ask your <strong>Area Agency on Aging</strong> about local transport programs. Many run '
         'volunteer driver schemes nobody knows about.',
     ]) + """
-      <p>The last point is the one families most often get backwards. Driving isn't only transport — it's
+      <p>The last point is the one families most often get backward. Driving isn't only transport — it's
       autonomy, and the ability to leave the house without asking anyone. Take that away without
       replacing it and you've traded a driving risk for a loneliness one, which has its own well-documented
       health effects.</p>

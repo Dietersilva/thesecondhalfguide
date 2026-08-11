@@ -275,6 +275,7 @@ def article(a, links, nav):
     <span class="foot-links">
       <a href="{links['about']}">About</a>
       <a href="{links['contact']}">Contact</a>
+      <a href="/numbers">Useful numbers</a>
       <a href="{links['privacy']}">Privacy &amp; Terms</a>
     </span>
   </div>
@@ -324,7 +325,7 @@ ARTICLES['senior-age'] = {
         ('Age 62', 'Two very different things share this number: the earliest you can claim Social Security '
                    'retirement benefits, and the age you can buy the America the Beautiful Senior Pass.'),
         ('Age 65', 'The big one. Medicare eligibility generally begins, with a seven-month enrollment window '
-                   'centred on your birthday month. Amtrak’s standard 10% senior discount also starts here.'),
+                   'centered on your birthday month. Amtrak’s standard 10% senior discount also starts here.'),
         ('Age 67', 'Full retirement age for Social Security if you were born in 1960 or later. Not 65 &mdash; '
                    'a genuinely widespread misconception.'),
         ('Age 73', 'Required withdrawals from most traditional retirement accounts begin.'),
@@ -418,7 +419,7 @@ ARTICLES['five-minute-rule'] = {
       terrible is happening, and there is no time to think.</p>
 
       <p>That last clause is the actual product. Everything else is set dressing. Once you see modern
-      fraud as an attack on your decision time rather than on your intelligence, the defence gets a lot
+      fraud as an attack on your decision time rather than on your intelligence, the defense gets a lot
       simpler &mdash; and a lot more durable, because it doesn't require you to have heard of this
       particular scam before.</p>
 
@@ -459,7 +460,7 @@ ARTICLES['five-minute-rule'] = {
 
       <blockquote class="pull">
         <p>A scammer only has control while you stay inside their channel. Hanging up is not rude. It is
-        the entire defence.</p>
+        the entire defense.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -491,7 +492,7 @@ ARTICLES['five-minute-rule'] = {
       <h2>The habit worth building</h2>
 
 """ + check([
-        'Decide now, while nothing is happening, that <strong>no legitimate organisation will ever be '
+        'Decide now, while nothing is happening, that <strong>no legitimate organization will ever be '
         'harmed by you hanging up and calling back</strong> on a number you looked up yourself. That '
         'single sentence is the rule.',
         'Treat any demand for secrecy as the tell. Real banks and real agencies do not ask you to keep '
@@ -577,7 +578,7 @@ ARTICLES['voice-cloning'] = {
       event is still perfectly checkable.</p>
 
 """ + AD_INLINE + """
-      <h2>Two defences, and the honest limits of each</h2>
+      <h2>Two defenses, and the honest limits of each</h2>
 
       <h3>A family code word</h3>
 
@@ -616,12 +617,12 @@ ARTICLES['voice-cloning'] = {
         'worth far more than any tip you’ll remember mid-call.',
     ]) + """
       <p>AI doesn't have to fool you for an hour. It only has to beat the first few seconds of your
-      scepticism. Which is why the useful skill isn't learning to hear the seams in synthetic
+      skepticism. Which is why the useful skill isn't learning to hear the seams in synthetic
       audio &mdash; it's having a household habit that doesn't depend on hearing anything at all.</p>
 
       <p>&ldquo;I know that voice&rdquo; is no longer the same sentence as &ldquo;I know who is
       calling.&rdquo; Identity has quietly become something you verify rather than something you
-      recognise.</p>
+      recognize.</p>
 """,
     'sources': [
         ('FTC &mdash; Scammers use AI to enhance their family emergency schemes',
@@ -666,7 +667,7 @@ ARTICLES['parks-pass'] = {
         ('Watch for', 'Buying online or by mail can add a processing charge, so $80 isn’t always the '
                       'checkout total.'),
     ]) + """
-      <h2>Why the maths looks so good</h2>
+      <h2>Why the math looks so good</h2>
 
       <p>A single vehicle entry at a marquee park runs a substantial fraction of the lifetime pass price.
       Visit two or three fee-charging federal sites and you're roughly even. Everything after that is
@@ -676,7 +677,7 @@ ARTICLES['parks-pass'] = {
       <p>The per-vehicle rule is where it gets quietly generous. At most big parks the fee is charged per
       car, not per head &mdash; so one passholder driving four friends through the gate covers all of
       them. Grandparents on a road trip with the family get particularly good value out of this and
-      frequently don't realise it.</p>
+      frequently don't realize it.</p>
 
       <blockquote class="pull">
         <p>The pass covers entrance and standard amenity fees at federal recreation sites. It does not
@@ -698,7 +699,7 @@ ARTICLES['parks-pass'] = {
         <li><strong>Lodging and camping in full.</strong> Some camping fees get the 50% discount. Many
         don't. Reservations through private systems generally don't.</li>
         <li><strong>Special recreation permits.</strong> Lottery permits, backcountry permits and
-        specialised access usually sit outside the pass.</li>
+        specialized access usually sit outside the pass.</li>
         <li><strong>Timed-entry reservations.</strong> Increasingly common at busy parks, usually a
         separate small booking fee, and the pass doesn't exempt you from needing one.</li>
       </ul>
@@ -712,7 +713,7 @@ ARTICLES['parks-pass'] = {
 """ + check([
         '<strong>Road trippers.</strong> If a multi-park drive through the West is anywhere in your '
         'plans, buy it before you go. It pays for itself somewhere around the second gate.',
-        '<strong>RV and camping travellers.</strong> The amenity discounts on campsites and boat launches '
+        '<strong>RV and camping travelers.</strong> The amenity discounts on campsites and boat launches '
         'can quietly outrun the entrance savings.',
         '<strong>Anyone who drives companions.</strong> One pass, one carload &mdash; the per-vehicle '
         'rule is the most underused part of the deal.',
@@ -721,7 +722,7 @@ ARTICLES['parks-pass'] = {
         '<strong>Probably skip it if</strong> your outdoor life is mostly state parks, or your travel '
         'budget goes to hotels and tours rather than gate fees.',
     ]) + """
-      <p>One last thing that doesn't fit in a spreadsheet. A lifetime pass changes behaviour. When entry
+      <p>One last thing that doesn't fit in a spreadsheet. A lifetime pass changes behavior. When entry
       is already paid for, a federal recreation site becomes the low-friction default &mdash; the place
       you stop on the way somewhere else, the detour you take because why not. Several people have
       described buying the pass and then visiting more parks in the following three years than in the
@@ -795,7 +796,7 @@ ARTICLES['beneficiary-form'] = {
         state law entirely. Do not rely on it sorting itself out.</li>
         <li><strong>A beneficiary who died first.</strong> If there's no contingent beneficiary named, the
         account may default to the estate &mdash; which can mean probate and, for retirement accounts,
-        potentially less favourable tax treatment for whoever inherits.</li>
+        potentially less favorable tax treatment for whoever inherits.</li>
         <li><strong>Rolling an account to a new provider.</strong> A rollover creates a <em>new</em>
         account. The old beneficiary designation does not necessarily follow it. This one catches
         careful people.</li>
@@ -1146,7 +1147,7 @@ ARTICLES['on-call'] = {
       you want to be asked.</p>
 
       <p><strong>Your side:</strong> &ldquo;retired&rdquo; describes your employment status and almost
-      nothing else. You may be caring for a spouse or a parent, managing your own health, travelling,
+      nothing else. You may be caring for a spouse or a parent, managing your own health, traveling,
       working part-time, or simply protecting a stretch of unscheduled life you waited decades for. None
       of that is visible from outside.</p>
 

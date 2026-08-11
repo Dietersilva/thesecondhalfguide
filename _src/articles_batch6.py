@@ -16,14 +16,14 @@ ARTICLES6['airport-help'] = {
            'feels like admitting something.',
     'meta': '6 minute read &middot; Verified against DOT and TSA guidance',
     'checked': CHECKED,
-    'body': """      <p>Airports have quietly become one of the main reasons people stop travelling.</p>
+    'body': """      <p>Airports have quietly become one of the main reasons people stop traveling.</p>
 
-      <p>Not the flying. The distance from the kerb to the gate, the standing in queues, the shoes, the
+      <p>Not the flying. The distance from the curb to the gate, the standing in lines, the shoes, the
       belt, the tight connection at an airport the size of a small town. Plenty of people who are
       perfectly capable of enjoying two weeks in Lisbon look at the getting-there and decide it isn't
       worth it.</p>
 
-      <p>What almost nobody realises is that the help exists, it's free, and it isn't a favour. It's
+      <p>What almost nobody realizes is that the help exists, it's free, and it isn't a favor. It's
       federal law.</p>
 
       <h2>What the law actually says</h2>
@@ -34,7 +34,7 @@ ARTICLES6['airport-help'] = {
       your own. If you can't comfortably manage the walk from check-in to the gate, you qualify.</p>
 
 """ + facts('What you can ask for, free of charge', [
-        ('Kerb to gate', 'A wheelchair and someone to push it, from the moment you arrive at the terminal '
+        ('Curb to gate', 'A wheelchair and someone to push it, from the moment you arrive at the terminal '
                          'to your seat on the aircraft.'),
         ('Between gates', 'Assistance across a connection &mdash; often the leg that actually defeats '
                           'people, in an unfamiliar airport with 40 minutes to spare.'),
@@ -42,7 +42,7 @@ ARTICLES6['airport-help'] = {
                                             'someone to guide you. This is a real and much less '
                                             'well-known option.'),
         ('Boarding assistance', 'Including an aisle chair where a normal wheelchair won’t fit.'),
-        ('At the far end', 'The same again on arrival, through to baggage claim and the kerb.'),
+        ('At the far end', 'The same again on arrival, through to baggage claim and the curb.'),
         ('The cost', 'Nothing. Airlines are prohibited from charging for any of it.'),
     ]) + """
       <blockquote class="pull">
@@ -58,18 +58,18 @@ ARTICLES6['airport-help'] = {
 
       <p>You can usually add assistance when booking online — look for &ldquo;special assistance&rdquo; or
       &ldquo;accessibility&rdquo; in the passenger details. If you booked through an agent or a website,
-      call the airline directly afterwards to confirm it's on the reservation, because it doesn't always
+      call the airline directly afterward to confirm it's on the reservation, because it doesn't always
       travel with the booking.</p>
 
       <h2>Security: TSA Cares</h2>
 
-      <p>Separately from the airline, the TSA runs a programme called <strong>TSA Cares</strong>. Call
+      <p>Separately from the airline, the TSA runs a program called <strong>TSA Cares</strong>. Call
       <strong>1-855-787-2227</strong> at least 72 hours before your flight and they'll arrange a
       Passenger Support Specialist to meet you and walk you through screening.</p>
 
       <p>This is the right call if screening itself is the difficult part — a medical device, a joint
       replacement that sets off the detector, a condition that makes standing in line hard, or a
-      travelling companion with dementia for whom the queue is genuinely distressing. It's free, and it
+      traveling companion with dementia for whom the line is genuinely distressing. It's free, and it
       is startlingly under-used.</p>
 
 """ + AD_INLINE + """
@@ -86,7 +86,7 @@ ARTICLES6['airport-help'] = {
       do three-quarters of a mile at pace with a bag all qualify, and the staff pushing the chair are not
       assessing you.</p>
 
-      <p>Second, and more practically: the alternative to using it is often not travelling. Plenty of
+      <p>Second, and more practically: the alternative to using it is often not traveling. Plenty of
       people quietly stop taking trips because the airport became the hard part, and never connect that
       decision to a free service they'd have found mildly embarrassing to request. Measured against
       seeing your grandchildren, that's a poor trade.</p>
@@ -96,7 +96,7 @@ ARTICLES6['airport-help'] = {
 """ + check([
         'Request assistance <strong>when you book</strong>, then <strong>call the airline</strong> to '
         'confirm it is on the reservation. Bookings made through third parties often lose it.',
-        'Give yourself <strong>more time, not less</strong>. Assistance is a queue like any other, and at '
+        'Give yourself <strong>more time, not less</strong>. Assistance is a line like any other, and at '
         'busy airports there can be a wait for someone to arrive.',
         'On connections, tell them at the <strong>first</strong> airport that you need help at the next '
         'one. It should be on the booking, but confirming costs nothing.',
@@ -108,7 +108,7 @@ ARTICLES6['airport-help'] = {
         'Official</strong> available. Ask for one by name &mdash; it changes the conversation immediately.',
     ]) + """
       <p>None of this makes an airport pleasant. It does remove the specific part that stops people
-      travelling, and it costs nothing but a phone call and a small amount of pride.</p>
+      traveling, and it costs nothing but a phone call and a small amount of pride.</p>
 
       <p>Of everything on this site, this may be the item with the widest gap between how useful it is and
       how few people know about it.</p>
@@ -148,14 +148,14 @@ ARTICLES6['airport-security'] = {
                        'applies automatically.'),
         ('The catch', 'The 75+ exemption does <em>not</em> cover light jackets. Those still come off for '
                       'imaging in standard lanes.'),
-        ('TSA PreCheck', 'About $77&ndash;$85 for five years, depending on the enrolment provider. Shoes, '
+        ('TSA PreCheck', 'About $77&ndash;$85 for five years, depending on the enrollment provider. Shoes, '
                          'belt and light jacket stay on; laptops and liquids stay in the bag; separate, '
                          'usually shorter lane.'),
         ('Global Entry', '$120 for five years. <strong>Includes PreCheck</strong>, and speeds re-entry '
                          'into the US through passport control.'),
         ('CLEAR', 'A separate paid service, several hundred dollars a year. Moves you to the front of the '
-                  'identity-check queue. It does not change how you are screened.'),
-        ('Age 12 and under', 'Also keep shoes on, travelling with an eligible adult.'),
+                  'identity-check line. It does not change how you are screened.'),
+        ('Age 12 and under', 'Also keep shoes on, traveling with an eligible adult.'),
     ]) + """
       <h2>The arithmetic that surprises people</h2>
 
@@ -164,9 +164,9 @@ ARTICLES6['airport-security'] = {
       and it's spread across five years.</p>
 
       <p>If you travel abroad even once in five years, <strong>Global Entry is the better buy</strong>,
-      and it isn't close. The queue at passport control after a long-haul flight is the one that
+      and it isn't close. The line at passport control after a long-haul flight is the one that
       genuinely tests people. The main argument for PreCheck alone is that it's slightly easier to get:
-      Global Entry requires an in-person interview, and appointment waits at some enrolment centres run
+      Global Entry requires an in-person interview, and appointment waits at some enrollment centers run
       to months.</p>
 
       <blockquote class="pull">
@@ -181,7 +181,7 @@ ARTICLES6['airport-security'] = {
       — PreCheck removes that, along with the belt, and lets your laptop and liquids stay in the bag.</p>
 
       <p>Which is really the point: the value of PreCheck isn't speed so much as <strong>the number of
-      separate physical operations</strong> you perform at the belt while people queue behind you.
+      separate physical operations</strong> you perform at the belt while people line behind you.
       Standard screening asks you to remove a jacket, a belt, shoes if you're under 75, take a laptop
       out, take liquids out, and reassemble all of it one-handed at the far end. PreCheck removes most of
       that.</p>
@@ -202,18 +202,18 @@ ARTICLES6['airport-security'] = {
         <li><strong>Medications and mobility aids don't count</strong> against carry-on limits, and
         liquids that are medically necessary are exempt from the usual limit — declare them.</li>
         <li><strong>REAL ID</strong> is now required for domestic flights. A passport works too. Check
-        your licence has the star before you rely on it.</li>
+        your license has the star before you rely on it.</li>
       </ul>
 
 """ + check([
         'Turning 75? You already have the shoe exemption &mdash; <strong>nothing to apply for</strong>.',
-        'Travelling abroad at all in the next five years? <strong>Global Entry</strong>, not PreCheck.',
+        'Traveling abroad at all in the next five years? <strong>Global Entry</strong>, not PreCheck.',
         'Check whether a <strong>credit card</strong> you already hold reimburses the fee.',
         'Put your <strong>Known Traveler Number</strong> in your airline profile and check it appears on '
         'each booking.',
         'Tell the officer about <strong>implants and devices</strong> before you step through, not after '
         'the alarm.',
-        'Confirm your driver’s licence is <strong>REAL ID compliant</strong>, or carry your passport.',
+        'Confirm your driver’s license is <strong>REAL ID compliant</strong>, or carry your passport.',
     ]) + """
       <p>None of this is dramatic. But screening is the part of the journey most likely to leave someone
       flustered before they've even boarded, and a fair amount of it is avoidable for either nothing or
@@ -307,7 +307,7 @@ ARTICLES6['passport-traps'] = {
         'It lists validity and blank-page requirements.',
         'Confirm the <strong>name on your ticket matches the passport exactly</strong>, including middle '
         'names.',
-        'Count your <strong>blank pages</strong> if you have travelled a lot.',
+        'Count your <strong>blank pages</strong> if you have traveled a lot.',
         'Never rely on a <strong>passport card</strong> for anything involving a plane.',
         'Photograph the ID page and keep a copy separately from the passport. It does not replace it, but '
         'it speeds up replacing a lost one considerably.',
@@ -369,7 +369,7 @@ ARTICLES6['travel-medications'] = {
       the cabin, and as an assistive device it <strong>doesn't count toward your carry-on allowance</strong>.</p>
 
 """ + facts('What travels easily', [
-        ('Pills and tablets', 'No quantity limit in carry-on. Original labelled bottles aren’t federally '
+        ('Pills and tablets', 'No quantity limit in carry-on. Original labeled bottles aren’t federally '
                               'required but make everything faster, and some countries do want them.'),
         ('Liquid medication', 'Exempt from the 3-1-1 liquid limit in reasonable quantities. Declare it at '
                               'the checkpoint and it may be screened separately.'),
@@ -394,11 +394,11 @@ ARTICLES6['travel-medications'] = {
       <p>Some medications that are entirely ordinary in the US are <strong>controlled or banned
       elsewhere</strong> — certain stimulants, some strong painkillers, some sleep medications, and a
       number of cold remedies containing pseudoephedrine. Japan, the UAE, Singapore and others enforce
-      this seriously, and &ldquo;it's prescribed&rdquo; is not always a defence.</p>
+      this seriously, and &ldquo;it's prescribed&rdquo; is not always a defense.</p>
 
       <p>The check takes ten minutes: look up the destination country's embassy page for medication
       rules. Carry a copy of your prescription and a letter from your doctor listing what you take and
-      why. Keep everything in labelled original packaging when crossing borders.</p>
+      why. Keep everything in labeled original packaging when crossing borders.</p>
 
       <h2>The practical failures</h2>
 
@@ -438,7 +438,7 @@ ARTICLES6['travel-medications'] = {
          'https://www.faa.gov/hazmat/packsafe/pocs'),
         ('TSA &mdash; Portable oxygen concentrators',
          'https://www.tsa.gov/travel/security-screening/whatcanibring/items/portable-oxygen-concentrators'),
-        ('CDC &mdash; Travellers’ health: taking medicines abroad',
+        ('CDC &mdash; Travelers’ health: taking medicines abroad',
          'https://wwwnc.cdc.gov/travel/page/pack-smart'),
     ],
     'next': {'slug': 'cruise-medical',
@@ -459,7 +459,7 @@ ARTICLES6['cruise-medical'] = {
     'body': """      <p>Cruising suits a lot of people in this stage of life, for good reasons: you unpack once, the
       walking is optional, and there's a doctor on board.</p>
 
-      <p>That last one is where a reasonable assumption goes wrong. There is indeed a medical centre.
+      <p>That last one is where a reasonable assumption goes wrong. There is indeed a medical center.
       It's just not part of your fare, it doesn't work like a hospital at home, and the thing everybody's
       insurance is really for — getting off the ship — is the part with the eye-watering number attached.</p>
 
@@ -494,14 +494,14 @@ ARTICLES6['cruise-medical'] = {
 """ + AD_INLINE + """
       <h2>The evacuation is the actual risk</h2>
 
-      <p>A ship's medical centre handles a great deal: minor injuries, infections, stabilising someone
+      <p>A ship's medical center handles a great deal: minor injuries, infections, stabilising someone
       until port. What it cannot do is major surgery or sustained intensive care. If something serious
       happens, the answer is getting you to a hospital on land — by helicopter, by diverting the ship, or
       by disembarking you at the next port and arranging transport from there.</p>
 
       <p>Cruise contracts generally place the cost of that on the passenger. And the bill doesn't stop at
       the aircraft: you may then be in a hospital in a country you hadn't planned to visit, paying cash,
-      possibly needing a medically supervised flight home afterwards — <em>repatriation</em>, which is
+      possibly needing a medically supervised flight home afterward — <em>repatriation</em>, which is
       separately expensive and separately covered, or not.</p>
 
       <p>This is the specific reason travel insurance exists for cruises, and why <strong>medical
@@ -583,7 +583,7 @@ ARTICLES6['the-big-trip'] = {
         ('Vaccinations', 'Some travel vaccines need multiple doses over weeks. Start early.'),
         ('Medical equipment', 'Airline approval for an oxygen concentrator can take longer than you '
                               'expect. Sort it before booking, not after.'),
-        ('Global Entry', 'Interview appointments can be months out at busy enrolment centres.'),
+        ('Global Entry', 'Interview appointments can be months out at busy enrollment centers.'),
     ]) + """
       <blockquote class="pull">
         <p>Nearly everything that ruins a big trip was fixable in February and impossible in June.</p>
@@ -621,9 +621,9 @@ ARTICLES6['the-big-trip'] = {
       <ul>
         <li><strong>A direct flight</strong>, or at least a long connection. The tight connection in an
         unfamiliar airport is where trips actually come apart.</li>
-        <li><strong>Location over luxury.</strong> A modest hotel in the centre beats a smart one forty
+        <li><strong>Location over luxury.</strong> A modest hotel in the center beats a smart one forty
         minutes out, every time, because it means you can go back and rest in the middle of the day.</li>
-        <li><strong>A lift.</strong> Charming European buildings are famous for four flights of narrow
+        <li><strong>An elevator.</strong> Charming European buildings are famous for four flights of narrow
         stairs. Ask, specifically — &ldquo;is there an elevator&rdquo; is not a rude question.</li>
         <li><strong>Refundable bookings</strong>, when the trip is a year out and your health a year from
         now is a forecast rather than a fact.</li>
@@ -651,10 +651,10 @@ ARTICLES6['the-big-trip'] = {
       the thing everyone spends their planning on — deciding where to go.</p>
 """,
     'sources': [
-        ('CDC &mdash; Travellers’ health', 'https://wwwnc.cdc.gov/travel'),
+        ('CDC &mdash; Travelers’ health', 'https://wwwnc.cdc.gov/travel'),
         ('U.S. Department of State &mdash; Country information',
          'https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages.html'),
-        ('U.S. Department of State &mdash; Travellers with special considerations',
+        ('U.S. Department of State &mdash; Travelers with special considerations',
          'https://travel.state.gov/content/travel/en/international-travel/before-you-go/travelers-with-special-considerations.html'),
     ],
     'next': {'slug': 'airport-help',

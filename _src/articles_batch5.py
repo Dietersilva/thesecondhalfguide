@@ -247,7 +247,7 @@ ARTICLES5['long-term-care'] = {
         '<strong>Whether you are protecting a spouse.</strong> One partner needing years of care can '
         'consume assets the other still needs to live on. This is the strongest single argument for '
         'coverage.',
-        '<strong>Your state.</strong> Partnership programmes in many states let you shelter additional '
+        '<strong>Your state.</strong> Partnership programs in many states let you shelter additional '
         'assets from Medicaid spend-down if you hold a qualifying policy.',
         '<strong>Who would actually provide care.</strong> Assuming a family member will is a plan with '
         'a person’s life inside it &mdash; worth discussing with them rather than about them.',
@@ -319,7 +319,7 @@ ARTICLES5['cola'] = {
       <p>One protection worth knowing about: the <strong>hold harmless</strong> provision generally
       prevents your Part B increase from exceeding your COLA increase in dollar terms, so most people's
       net Social Security payment shouldn't actually fall year over year. It protects you from going
-      backwards. It doesn't get you the raise you read about.</p>
+      backward. It doesn't get you the raise you read about.</p>
 
 """ + AD_INLINE + """
       <h2>Why the number is what it is</h2>

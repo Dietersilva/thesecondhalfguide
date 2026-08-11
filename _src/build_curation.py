@@ -14,7 +14,7 @@ EXTRA_CSS = """
 
   .tag { display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
   .tag.live { background: #DCEFE4; color: #1F5240; }
-  .tag.queue { background: var(--gold-soft); color: #7A4A08; }
+  .tag.line { background: var(--gold-soft); color: #7A4A08; }
   .tag.cut { background: #EFE9E2; color: #6B6257; }
 
   .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 36px; }
@@ -22,7 +22,7 @@ EXTRA_CSS = """
   .stat .n { font-family: 'Fraunces', serif; font-weight: 700; font-size: 34px; line-height: 1; margin-bottom: 6px; }
   .stat .l { font-size: 14.5px; color: var(--ink-soft); }
   .stat.live .n { color: var(--pine-strong); }
-  .stat.queue .n { color: #B0741A; }
+  .stat.line .n { color: #B0741A; }
   .stat.cut .n { color: var(--ink-faint); }
 
   .rule-box { margin: 30px 0; padding: 24px 28px; background: var(--surface-2); border-radius: var(--radius); border-left: 4px solid var(--pine); }
@@ -118,7 +118,7 @@ live_rows = [(f'<td class="num">{n}</td>', f'<td class="ttl">{t}</td>',
              for n, t, note in ROWS_LIVE]
 
 queue_rows = [(f'<td class="num">{n}</td>', f'<td class="ttl">{t}</td>',
-               f'<td><span class="tag queue">Queued</span></td>', f'<td>{note}</td>')
+               f'<td><span class="tag line">Queued</span></td>', f'<td>{note}</td>')
               for n, t, note in ROWS_QUEUE]
 
 cut_advice_rows = [(f'<td class="num">{n}</td>', f'<td class="ttl">{t}</td>',
@@ -143,7 +143,7 @@ BODY = """  <div class="wrap">
         <div class="stat live"><div class="n">15</div><div class="l">Rewritten and published</div></div>
         <div class="stat cut"><div class="n">25</div><div class="l">Cut &mdash; off-brief or redundant</div></div>
         <div class="stat cut"><div class="n">5</div><div class="l">Fiction &mdash; replaced, see below</div></div>
-        <div class="stat queue"><div class="n">3</div><div class="l">Fraud pieces now collecting reader stories</div></div>
+        <div class="stat line"><div class="n">3</div><div class="l">Fraud pieces now collecting reader stories</div></div>
       </div>
 
       <h2>The rule I applied</h2>
