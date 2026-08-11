@@ -1173,6 +1173,26 @@ body.article .foot-grid { display: flex; justify-content: space-between; flex-wr
 body.article footer a { color: var(--ink-soft); }
 body.article .wrap { max-width: 760px; }
 
+body.hub .latest { padding: 8px 0 56px; }
+body.hub .latest-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px;
+}
+body.hub .latest-card {
+  display: block; text-decoration: none; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+body.hub .latest-card:hover { border-color: var(--pine); }
+body.hub .latest-kicker {
+  display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
+}
+body.hub .latest-card h3 {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+  margin: 0 0 8px; color: var(--ink); text-wrap: balance;
+}
+body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+
 body.hub .house, body.article .house, body.doc .house {
   display: block; margin: 44px 0; padding: 24px 28px; text-decoration: none;
   background: var(--surface-2); border-radius: var(--radius);

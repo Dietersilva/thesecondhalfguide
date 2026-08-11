@@ -205,6 +205,67 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 }
 """
 
+
+# --- Latest ------------------------------------------------------------------
+# Newest first. An article's topic card is its permanent home; this is a
+# time-ordered view of the same pages, not a separate place things live in for a
+# week. Add new slugs to the top as they publish.
+LATEST = [
+    '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
+    '/downsizing-math', '/driving',
+    '/gold-courier-scam', '/wep-gpo-repeal', '/social-security-login',
+    '/airport-help', '/airport-security', '/passport-traps',
+    '/travel-medications', '/cruise-medical', '/the-big-trip',
+    '/hearing-aids', '/long-term-care', '/cola',
+]
+LATEST_SHOWN = 6
+
+LATEST_CSS = """
+body.hub .latest { padding: 8px 0 56px; }
+body.hub .latest-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px;
+}
+body.hub .latest-card {
+  display: block; text-decoration: none; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px;
+  box-shadow: var(--shadow);
+}
+body.hub .latest-card:hover { border-color: var(--pine); }
+body.hub .latest-kicker {
+  display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
+}
+body.hub .latest-card h3 {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+  margin: 0 0 8px; color: var(--ink); text-wrap: balance;
+}
+body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+"""
+
+
+def latest_section(meta):
+    cards = []
+    for path in LATEST[:LATEST_SHOWN]:
+        if path not in meta:
+            continue
+        headline, blurb = meta[path]
+        if len(blurb) > 150:
+            blurb = blurb[:147].rsplit(' ', 1)[0] + '&hellip;'
+        cards.append(
+            f'        <a class="latest-card" href="{path}">\n'
+            f'          <span class="latest-kicker">New</span>\n'
+            f'          <h3>{headline}</h3>\n'
+            f'          <p>{blurb}</p>\n'
+            f'        </a>')
+    if not cards:
+        return ''
+    return ('  <section class="latest" id="latest">\n    <div class="wrap">\n'
+            '      <div class="section-head">\n        <h2>Latest</h2>\n'
+            '        <p>The most recent pieces. Everything stays filed under its topic below &mdash; '
+            'this is just what went up most recently.</p>\n      </div>\n'
+            '      <div class="latest-grid">\n' + '\n'.join(cards)
+            + '\n      </div>\n    </div>\n  </section>\n')
+
 def layout_class(path):
     if path == '/': return 'hub'
     if path in ('/about', '/contact', '/privacy'): return 'doc'
@@ -294,6 +355,13 @@ def main():
     # measures (680/740/760). Settle on one so every article reads the same
     # and the fact tables have room.
     NORMALIZE = '\nbody.article .wrap { max-width: 760px; }\n'
+    if '/' in rendered:
+        title, desc, canonical, body = rendered['/']
+        marker = '  <section class="topics" id="topics">'
+        if marker in body:
+            body = body.replace(marker, latest_section(meta) + '\n' + marker, 1)
+            rendered['/'] = (title, desc, canonical, body)
+
     if not ADS_LIVE:
         pool = [p for p in PROMO_POOL if p in rendered]
         for i, path in enumerate(sorted(rendered)):
@@ -312,7 +380,7 @@ def main():
             rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
 
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE + (HOUSE_CSS if not ADS_LIVE else ''))
+              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + (HOUSE_CSS if not ADS_LIVE else ''))
     open(f'{SITE}/styles.css', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
     if os.path.exists('ogcard/og.png'):
