@@ -149,6 +149,62 @@ def scope_css(css, cls):
     return '\n'.join(scoped), globals_
 
 
+
+# --- House promos -----------------------------------------------------------
+# Until advertising is live, the ad slots carry promos for other articles
+# rather than dashed placeholders. Unsold inventory becomes internal linking,
+# which is worth more to a new site than an empty box announcing it has no ads.
+# Flip ADS_LIVE to True when AdSense is approved and the slots come back.
+ADS_LIVE = False
+
+# Broadly appealing pieces — the ones worth putting in front of any reader.
+PROMO_POOL = [
+    '/airport-help', '/five-minute-rule', '/senior-age', '/medicare-enrollment',
+    '/beneficiary-form', '/free-college', '/parks-pass', '/voice-cloning',
+    '/medicare-gaps', '/long-term-care', '/property-tax', '/the-big-trip',
+]
+
+AD_SLOT_RE = re.compile(
+    r'[ \t]*<div class="((?:wrap-wide |wrap )?ad-slot)">.*?</div>\s*</div>\n?',
+    re.S)
+
+
+def house_promo(target, title, blurb, wide):
+    cls = 'house house-wide' if wide else 'house'
+    return (f'      <a class="{cls}" href="{target}">\n'
+            f'        <span class="house-label">Also on The Second Half Guide</span>\n'
+            f'        <span class="house-title">{title}</span>\n'
+            f'        <span class="house-blurb">{blurb}</span>\n'
+            f'        <span class="house-more">Read it &rarr;</span>\n'
+            f'      </a>\n')
+
+
+HOUSE_CSS = """
+body.hub .house, body.article .house, body.doc .house {
+  display: block; margin: 44px 0; padding: 24px 28px; text-decoration: none;
+  background: var(--surface-2); border-radius: var(--radius);
+  border-left: 4px solid var(--pine);
+}
+body.hub .house:hover, body.article .house:hover, body.doc .house:hover {
+  background: color-mix(in srgb, var(--gold-soft) 40%, var(--surface-2));
+}
+body.hub .house-label, body.article .house-label, body.doc .house-label {
+  display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
+}
+body.hub .house-title, body.article .house-title, body.doc .house-title {
+  display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 21px;
+  line-height: 1.25; color: var(--ink); margin-bottom: 6px; text-wrap: balance;
+}
+body.hub .house-blurb, body.article .house-blurb, body.doc .house-blurb {
+  display: block; font-size: 16.5px; color: var(--ink-soft); max-width: 62ch;
+}
+body.hub .house-more, body.article .house-more, body.doc .house-more {
+  display: inline-block; margin-top: 12px; font-size: 15.5px; font-weight: 700;
+  color: var(--pine-strong);
+}
+"""
+
 def layout_class(path):
     if path == '/': return 'hub'
     if path in ('/about', '/contact', '/privacy'): return 'doc'
@@ -188,6 +244,7 @@ def main():
 
     css_blocks, seen = [], set()
     global_rules, seen_scoped = [], set()
+    meta = {}
     script_hashes = set()
     rendered = {}
 
@@ -227,14 +284,35 @@ def main():
         desc = re.sub(r'\s+', ' ', desc)[:300]
         canonical = ORIGIN + ('' if path == '/' else path)
 
+        h1m = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.S)
+        headline = re.sub(r'\s+', ' ', h1m.group(1)).strip() if h1m else title
+        meta[path] = (headline, desc)
+
         rendered[path] = (title, desc, canonical, body)
 
     # The article-layout pages came from templates with three different
     # measures (680/740/760). Settle on one so every article reads the same
     # and the fact tables have room.
     NORMALIZE = '\nbody.article .wrap { max-width: 760px; }\n'
+    if not ADS_LIVE:
+        pool = [p for p in PROMO_POOL if p in rendered]
+        for i, path in enumerate(sorted(rendered)):
+            title, desc, canonical, body = rendered[path]
+            picks = [p for p in pool if p != path]
+            if not picks:
+                continue
+            n = [0]
+
+            def swap(m, path=path, picks=picks, n=n):
+                target = picks[(i + n[0]) % len(picks)]
+                n[0] += 1
+                headline, blurb = meta[target]
+                return house_promo(target, headline, blurb, 'wrap-wide' in m.group(1))
+
+            rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
+
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE)
+              + '\n'.join(css_blocks) + NORMALIZE + (HOUSE_CSS if not ADS_LIVE else ''))
     open(f'{SITE}/styles.css', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
     if os.path.exists('ogcard/og.png'):

@@ -1172,3 +1172,27 @@ body.article footer { border-top: 1px solid var(--line); padding: 34px 0 60px; m
 body.article .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--ink-faint); }
 body.article footer a { color: var(--ink-soft); }
 body.article .wrap { max-width: 760px; }
+
+body.hub .house, body.article .house, body.doc .house {
+  display: block; margin: 44px 0; padding: 24px 28px; text-decoration: none;
+  background: var(--surface-2); border-radius: var(--radius);
+  border-left: 4px solid var(--pine);
+}
+body.hub .house:hover, body.article .house:hover, body.doc .house:hover {
+  background: color-mix(in srgb, var(--gold-soft) 40%, var(--surface-2));
+}
+body.hub .house-label, body.article .house-label, body.doc .house-label {
+  display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
+}
+body.hub .house-title, body.article .house-title, body.doc .house-title {
+  display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 21px;
+  line-height: 1.25; color: var(--ink); margin-bottom: 6px; text-wrap: balance;
+}
+body.hub .house-blurb, body.article .house-blurb, body.doc .house-blurb {
+  display: block; font-size: 16.5px; color: var(--ink-soft); max-width: 62ch;
+}
+body.hub .house-more, body.article .house-more, body.doc .house-more {
+  display: inline-block; margin-top: 12px; font-size: 15.5px; font-weight: 700;
+  color: var(--pine-strong);
+}
