@@ -118,7 +118,7 @@ ARTICLES6['airport-help'] = {
          'https://www.transportation.gov/individuals/aviation-consumer-protection/wheelchair-and-guided-assistance'),
         ('U.S. DOT &mdash; Passengers with disabilities',
          'https://www.transportation.gov/individuals/aviation-consumer-protection/passengers-disabilities'),
-        ('TSA Cares', 'https://www.tsa.gov/travel/passenger-support'),
+        ('TSA Cares', 'https://www.tsa.gov/travel/tsa-cares/passenger-support'),
     ],
     'next': {'slug': 'airport-security',
              'title': 'Airport security after 75, and whether PreCheck is worth it',
