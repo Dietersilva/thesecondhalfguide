@@ -1239,6 +1239,35 @@ body.hub .latest-card h3 {
 }
 body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
 
+.signup { border-top: 1px solid var(--line); margin-top: 8px; padding: 40px 0 8px; }
+.signup-card {
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px;
+}
+.signup-card h2 { font-size: 1.45rem; margin: 0 0 6px; }
+.signup-card p.why { margin: 0 0 20px; color: var(--ink-soft); max-width: 54ch; }
+.signup-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.signup-field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 260px; }
+.signup-field label { font-weight: 700; font-size: 1rem; }
+.signup-field input {
+  font: inherit; font-size: 1.05rem; padding: 13px 14px; min-height: 52px;
+  border: 2px solid var(--line); border-radius: 9px; background: var(--surface);
+  color: var(--ink); width: 100%;
+}
+.signup-field input:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.signup-form button {
+  font: inherit; font-weight: 700; font-size: 1.05rem; min-height: 52px;
+  padding: 13px 22px; border: 0; border-radius: 9px; cursor: pointer;
+  background: var(--pine-strong); color: #fff; flex: 0 0 auto;
+}
+.signup-form button:hover { filter: brightness(1.08); }
+.signup-form button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.signup-fine { margin: 16px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+@media (max-width: 520px) {
+  .signup-form button { width: 100%; }
+}
+@media print { .signup { display: none; } }
+
 body.hub .house, body.article .house, body.doc .house {
   display: block; margin: 44px 0; padding: 24px 28px; text-decoration: none;
   background: var(--surface-2); border-radius: var(--radius);
