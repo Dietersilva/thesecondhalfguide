@@ -129,7 +129,7 @@ ARTICLES3['medicare-enrollment'] = {
         ('Medicare &mdash; When does Medicare coverage start?',
          'https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start'),
         ('CMS &mdash; 2026 Medicare Parts A &amp; B premiums and deductibles',
-         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-and-deductibles'),
+         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles'),
         ('SHIP &mdash; Free local Medicare counselling', 'https://www.shiphelp.org/'),
     ],
     'next': {'slug': 'open-enrollment',
@@ -239,7 +239,7 @@ ARTICLES3['open-enrollment'] = {
 """,
     'sources': [
         ('Medicare &mdash; Joining a plan',
-         'https://www.medicare.gov/health-drug-plans/health-plans/your-coverage-options/joining-plan'),
+         'https://www.medicare.gov/basics/get-started-with-medicare/get-more-coverage/joining-a-plan'),
         ('Medicare &mdash; Plan Finder', 'https://www.medicare.gov/plan-compare/'),
         ('Medicare &mdash; Drug coverage costs',
          'https://www.medicare.gov/health-drug-plans/part-d/basics/costs'),
@@ -454,7 +454,7 @@ ARTICLES3['property-tax'] = {
 """,
     'sources': [
         ('Lincoln Institute of Land Policy &mdash; Residential property tax relief programmes by state',
-         'https://www.lincolninst.edu/publications/other/residential-property-tax-relief-programs/'),
+         'https://www.lincolninst.edu/data/significant-features-property-tax/access-database/residential-property-tax-relief-programs/'),
         ('National Council on Aging &mdash; Benefits and assistance for older adults',
          'https://www.ncoa.org/older-adults/benefits/'),
         ('BenefitsCheckUp &mdash; Screening tool for programmes you may qualify for',

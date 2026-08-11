@@ -116,8 +116,6 @@ ARTICLES6['airport-help'] = {
     'sources': [
         ('U.S. Department of Transportation &mdash; Wheelchair and guided assistance',
          'https://www.transportation.gov/individuals/aviation-consumer-protection/wheelchair-and-guided-assistance'),
-        ('U.S. DOT &mdash; Passengers with disabilities',
-         'https://www.transportation.gov/individuals/aviation-consumer-protection/passengers-disabilities'),
         ('TSA Cares', 'https://www.tsa.gov/travel/tsa-cares/passenger-support'),
     ],
     'next': {'slug': 'airport-security',
@@ -434,8 +432,8 @@ ARTICLES6['travel-medications'] = {
       and that's exactly where people discover they needed them.</p>
 """,
     'sources': [
-        ('TSA &mdash; What can I bring? Medications',
-         'https://www.tsa.gov/travel/security-screening/whatcanibring/items/medications'),
+        ('TSA &mdash; What can I bring? Medical items',
+         'https://www.tsa.gov/travel/security-screening/whatcanibring/medical'),
         ('FAA &mdash; Portable oxygen concentrators',
          'https://www.faa.gov/hazmat/packsafe/pocs'),
         ('TSA &mdash; Portable oxygen concentrators',
@@ -537,9 +535,9 @@ ARTICLES6['cruise-medical'] = {
         ('Medicare &mdash; Travel outside the U.S.',
          'https://www.medicare.gov/coverage/travel-outside-the-u.s.'),
         ('Medicare &mdash; How to compare Medigap policies',
-         'https://www.medicare.gov/health-drug-plans/medigap/basics/compare-policies'),
-        ('CDC &mdash; Cruise ship travel',
-         'https://wwwnc.cdc.gov/travel/page/cruise-ship-travel'),
+         'https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy'),
+        ('CDC Yellow Book &mdash; Cruise ship travel',
+         'https://wwwnc.cdc.gov/travel/yellowbook/2024/air-land-sea/cruise-ship-travel'),
         ('U.S. Department of State &mdash; Cruise ship passengers',
          'https://travel.state.gov/content/travel/en/international-travel/before-you-go/travelers-with-special-considerations/cruise.html'),
     ],

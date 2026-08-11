@@ -209,7 +209,7 @@ ARTICLES8['widows-penalty'] = {
 """,
     'sources': [
         ('SSA &mdash; Survivor benefits', 'https://www.ssa.gov/benefits/survivors/'),
-        ('IRS &mdash; Filing status', 'https://www.irs.gov/filing/individuals/filing-status'),
+        ('IRS &mdash; Filing status', 'https://www.irs.gov/publications/p501'),
         ('IRS &mdash; Topic 701: Sale of your home', 'https://www.irs.gov/taxtopics/tc701'),
         ('Medicare &mdash; Part B costs and IRMAA',
          'https://www.medicare.gov/basics/costs/medicare-costs'),
@@ -626,7 +626,7 @@ ARTICLES8['driving'] = {
         ('CDC &mdash; Older adult drivers',
          'https://www.cdc.gov/older-adult-drivers/about/index.html'),
         ('National Institute on Aging &mdash; Older drivers',
-         'https://www.nia.nih.gov/health/safety/older-drivers'),
+         'https://www.nia.nih.gov/health/older-drivers'),
         ('Eldercare Locator &mdash; Transport help', 'https://eldercare.acl.gov/'),
     ],
     'next': {'slug': 'aging-in-place',
