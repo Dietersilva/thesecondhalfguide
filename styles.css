@@ -583,6 +583,29 @@ body.doc footer { border-top: 1px solid var(--line); padding: 34px 0 60px; margi
 body.doc .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; color: var(--ink-faint); }
 body.doc footer a { color: var(--ink-soft); }
 body.doc .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+body.doc .numbers { margin: 0 0 10px; }
+body.doc .num-group { margin: 0 0 30px; }
+body.doc .num-group h2 { margin-top: 34px; }
+body.doc .num-card {
+    display: flex; gap: 20px; align-items: flex-start; padding: 20px 22px; margin: 0 0 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+body.doc .num-card .who { flex: 1 1 auto; }
+body.doc .num-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin: 0 0 5px; }
+body.doc .num-card p { margin: 0 0 5px; font-size: 16px; color: var(--ink-soft); }
+body.doc .num-card p.not { font-size: 15px; color: var(--ink-faint); }
+body.doc .num-card .tel {
+    flex: none; text-align: right; font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 20px; color: var(--pine-strong); white-space: nowrap;
+  }
+body.doc .num-card .tel span { display: block; font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 400; font-size: 13.5px; color: var(--ink-faint); margin-top: 4px; }
+@media (max-width: 620px) {body.doc .num-card { flex-direction: column; gap: 8px; }
+body.doc .num-card .tel { text-align: left; }}
+@media print {body.doc .topbar, body.doc footer, body.doc .callout, body.doc .print-note { display: none !important; }
+body.doc { font-size: 12pt; }
+body.doc .num-card { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+body.doc a { text-decoration: none; color: #000; }}
 body.article {
     margin: 0; background: var(--bg); color: var(--ink);
     font-family: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
@@ -665,6 +688,29 @@ body.article footer { border-top: 1px solid var(--line); padding: 34px 0 60px; m
 body.article .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 22px; font-size: 15px; color: var(--ink-faint); }
 body.article footer a { color: var(--ink-soft); }
 body.article .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+body.article .numbers { margin: 0 0 10px; }
+body.article .num-group { margin: 0 0 30px; }
+body.article .num-group h2 { margin-top: 34px; }
+body.article .num-card {
+    display: flex; gap: 20px; align-items: flex-start; padding: 20px 22px; margin: 0 0 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+body.article .num-card .who { flex: 1 1 auto; }
+body.article .num-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin: 0 0 5px; }
+body.article .num-card p { margin: 0 0 5px; font-size: 16px; color: var(--ink-soft); }
+body.article .num-card p.not { font-size: 15px; color: var(--ink-faint); }
+body.article .num-card .tel {
+    flex: none; text-align: right; font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: 20px; color: var(--pine-strong); white-space: nowrap;
+  }
+body.article .num-card .tel span { display: block; font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 400; font-size: 13.5px; color: var(--ink-faint); margin-top: 4px; }
+@media (max-width: 620px) {body.article .num-card { flex-direction: column; gap: 8px; }
+body.article .num-card .tel { text-align: left; }}
+@media print {body.article .topbar, body.article footer, body.article .callout, body.article .print-note { display: none !important; }
+body.article { font-size: 12pt; }
+body.article .num-card { break-inside: avoid; border: 1px solid #999; box-shadow: none; }
+body.article a { text-decoration: none; color: #000; }}
 body.article .article-head { padding: 56px 0 8px; }
 body.article h1 {
     font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
