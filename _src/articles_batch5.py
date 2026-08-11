@@ -382,7 +382,7 @@ ARTICLES5['cola'] = {
         ('SSA &mdash; Social Security announces 2.8 percent benefit increase for 2026',
          'https://www.ssa.gov/news/en/press/releases/2025-10-24.html'),
         ('CMS &mdash; 2026 Medicare Parts A &amp; B premiums and deductibles',
-         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles'),
+         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-and-deductibles'),
         ('SSA &mdash; Income taxes and your Social Security benefits',
          'https://www.ssa.gov/benefits/retirement/planner/taxes.html'),
     ],

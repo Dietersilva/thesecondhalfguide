@@ -155,7 +155,7 @@ ARTICLES4['advantage-vs-original'] = {
         ('Medicare &mdash; Switching or dropping a Medigap policy',
          'https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy/change-policies/switch-drop'),
         ('CMS &mdash; 2026 Medicare Parts A &amp; B premiums and deductibles',
-         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles'),
+         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-and-deductibles'),
     ],
     'next': {'slug': 'medicare-gaps',
              'title': 'What Medicare doesn’t cover',
