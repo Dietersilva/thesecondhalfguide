@@ -162,6 +162,10 @@ ARTICLES3['open-enrollment'] = {
         ('15 Oct &ndash; 7 Dec', 'Medicare Open Enrolment. Change Part D plans, switch between Original '
                                  'Medicare and Medicare Advantage, or move between Advantage plans. '
                                  'Changes take effect 1 January.'),
+        ('By 30 September', 'The deadline for plans to mail your Annual Notice of Change for the '
+                            'following year. If it hasn’t arrived by early October, chase it.'),
+        ('$2,400 in 2027', 'The Part D out-of-pocket cap rises from $2,100. Worth knowing before you '
+                           'compare plans this autumn.'),
         ('1 Jan &ndash; 31 Mar', 'Medicare Advantage Open Enrolment. If you’re already in an Advantage '
                                  'plan, you get one switch &mdash; to a different Advantage plan or back '
                                  'to Original Medicare.'),

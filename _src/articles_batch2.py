@@ -25,6 +25,9 @@ ARTICLES2['drug-cap'] = {
       <p>So the cap deserves the attention it's getting. It also gets described inaccurately more often
       than almost any other Medicare number, so it's worth being precise about what it does.</p>
 
+      <p>One thing to hold in mind while you read: <strong>the cap moves</strong>. It is indexed, and it
+      rises to about $2,400 for 2027. The structure below stays the same; the ceiling does not.</p>
+
 """ + facts('Part D, 2026', [
         ('$2,100', 'Annual out-of-pocket maximum for covered Part D drugs. Includes your deductible, '
                    'copays and coinsurance.'),
