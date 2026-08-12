@@ -246,6 +246,11 @@ ABOUT_BODY = """  <div class="wrap">
       <p>When something is wrong anyway, we fix the article itself rather than quietly editing around it, and we move the checked date only for what was genuinely re-verified.</p>
       <p>If you find something wrong, tell us. Corrections are one of the more useful things a reader can send, and we'd rather be corrected than trusted for the wrong reasons.</p>
 
+      <h2>How this site is made</h2>
+      <p>The research and drafting here are done with AI assistance &mdash; Claude for the writing and the first round of verification, and an independent pass by ChatGPT to check the figures against a second opinion. Neither one is treated as the last word. They disagree often enough that the disagreement is the useful part: where they conflict, the number gets checked again, and if it still can't be settled it doesn't get published.</p>
+      <p>What that process is pointed at is ordinary reporting &mdash; the dollar amounts, dates and thresholds that the Social Security Administration, Medicare, the IRS, the CDC and the FBI publish for the current year. Those sources are named at the foot of every article, and they are the thing to trust. This site's job is to find them, put them in one place, and say plainly what they mean.</p>
+      <p>Edward Silva is the publisher. He decides what gets covered and what doesn't, and he is responsible for everything that appears here.</p>
+
       <div class="callout">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
         <p><strong>We're a publisher, not an advisor.</strong> Nothing here is personalized financial, legal, medical, or tax advice, and reading it doesn't create a professional relationship. For decisions that turn on your specific numbers, talk to a licensed professional &mdash; ideally bringing our articles as a list of questions to ask.</p>
