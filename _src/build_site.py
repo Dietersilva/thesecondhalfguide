@@ -571,6 +571,10 @@ def main():
     css_name = 'styles.%s.css' % hashlib.sha256(
         styles.encode()).hexdigest()[:10]
     open(f'{SITE}/{css_name}', 'w').write(styles)
+    # Anyone whose browser cached a page from before the hash existed will
+    # still request /styles.css. Serving it keeps those readers styled
+    # instead of handing them a 404 and an unstyled page.
+    open(f'{SITE}/styles.css', 'w').write(styles)
     open(f'{SITE}/favicon.svg', 'w').write(FAVICON)
     if os.path.exists('ogcard/og.png'):
         shutil.copy('ogcard/og.png', f'{SITE}/og.png')
@@ -663,6 +667,10 @@ def main():
                  "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"},
                 {"key": "X-Frame-Options", "value": "DENY"},
                 {"key": "Cross-Origin-Opener-Policy", "value": "same-origin"},
+                # HTML must revalidate or a deploy never reaches anyone who has
+                # already visited. Listed here, before the long-cache rules, so
+                # those override it for the assets rather than the reverse.
+                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"},
             ]},
             {"source": "/fonts/(.*)", "headers": [
                 {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
@@ -673,10 +681,9 @@ def main():
                 {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
             {"source": "/images/(.*)", "headers": [
                 {"key": "Cache-Control", "value": "public, max-age=86400"}]},
-            # HTML must revalidate, otherwise a deploy does not reach anyone
-            # who has already visited until their cache happens to expire.
-            {"source": "/(.*)", "headers": [
-                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]},
+            # The unhashed legacy copy: short cache, since its contents change.
+            {"source": "/styles.css", "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=300"}]},
         ],
     }
     open(f'{SITE}/vercel.json', 'w').write(json.dumps(vercel, indent=2) + '\n')
