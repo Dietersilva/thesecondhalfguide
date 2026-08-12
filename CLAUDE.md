@@ -141,7 +141,10 @@ slug to `LATEST` (newest first) so it appears under "Just published". Add to
   `*`, `html` and `@font-face` stay global. Do not add unscoped rules.
 - **The stylesheet filename carries a content hash.** It used to be a fixed
   `/styles.css` cached for a week, so returning readers kept stale CSS and new
-  markup rendered unstyled. Never reintroduce a fixed asset name.
+  markup rendered unstyled. The hashed name is what pages link to. A copy is
+  also written to the old `/styles.css` path on a five-minute cache, purely so
+  browsers still holding pre-hash HTML get a working stylesheet instead of a
+  404 — do not remove it, and do not link pages at it.
 - **The footer is generated for every page** in `build_site.py`. Do not hand-
   edit footers; four pages once drifted to "Privacy Policy — coming soon" and
   lost their links to About, Contact and Privacy entirely.
@@ -149,11 +152,16 @@ slug to `LATEST` (newest first) so it appears under "Just published". Add to
   `unsafe-inline`. `form-action` names Kit's endpoint only. If you add an
   inline script it is hashed automatically; if you add an external one it will
   be blocked, and that is deliberate.
+- **Cache headers are order-sensitive.** Vercel applies later matching header
+  rules over earlier ones, so the catch-all `Cache-Control` must stay listed
+  before the long-cache rules for fonts, the hashed stylesheet and images —
+  otherwise it overrides them and every asset revalidates on every visit.
 - **`ADS_LIVE = False`.** Ad slots currently render house promos for other
   articles. Flip to `True` only once AdSense is approved.
-- **`KIT_FORM_ID = None`.** The newsletter signup is built but omitted from
-  the build until a real Kit form ID is set, because a form posting nowhere
-  collects addresses into a void. Setting it also adds Kit to `form-action`.
+- **`KIT_FORM_ID` is set** and the Wednesday Letters signup is live on the
+  homepage and every article. It posts to Kit's plain-HTML endpoint, not their
+  JavaScript embed, because the CSP forbids external scripts. Leave the value
+  alone; setting it to None silently removes the signup everywhere.
 
 ---
 
@@ -181,6 +189,7 @@ Do not duplicate these. Check the list before proposing a topic.
 - `/go-go-years` — The "go-go years" are real, not a deadline
 - `/gold-courier-scam` — When the scammer sends someone to your door
 - `/hearing-aids` — What the over-the-counter rule changed
+- `/irmaa` — The Medicare surcharge set by your income from two years ago
 - `/long-distance` — The new long-distance grandparent
 - `/long-term-care` — Long-term care: the numbers
 - `/medicare-enrollment` — The deadline that never forgives you
@@ -210,14 +219,12 @@ Do not duplicate these. Check the list before proposing a topic.
 
 ### Known gaps, roughly in priority order
 
-1. **IRMAA** — the income surcharge on Part B and Part D. Based on income from
-   *two years ago*; retiring is itself an appealable life-changing event
-   (form SSA-44). Almost nobody knows either fact.
-2. **Observation status vs. admitted** — three nights in a hospital bed under
+1. **Observation status vs. admitted** — three nights in a hospital bed under
    "observation" and Medicare can decline the skilled-nursing stay after.
-3. **The Medigap 6-month window** — one-time guaranteed issue; after it
+2. **The Medigap 6-month window** — one-time guaranteed issue; after it
    closes, insurers may underwrite or refuse.
-4. **RMDs and QCDs** — 31 December deadline, age 73, QCD route at 70½.
+3. **RMDs and QCDs** — 31 December deadline, age 73 or 75 by birth year, and
+   the QCD route at 70½.
 
 **Seasonality:** Medicare Annual Enrollment runs **15 October – 7 December**.
 That is when this vertical's advertising money exists. Anything meant to earn

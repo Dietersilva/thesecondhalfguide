@@ -637,3 +637,131 @@ ARTICLES8['driving'] = {
              'title': 'Aging in place: staying home is a goal, not a plan',
              'blurb': 'Driving is usually what decides whether staying put actually works.'},
 }
+
+
+# ------------------------------------------------------------------- IRMAA
+ARTICLES8['irmaa'] = {
+    'title': 'IRMAA: The Medicare Surcharge Based on Money You Earned Two Years Ago '
+             '&mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'The Medicare surcharge based on what you earned two years ago',
+    'dek': 'Cross one income line and your Medicare premium jumps by hundreds a month. The income '
+           'that counts is from two years back &mdash; and retiring is grounds to appeal it.',
+    'meta': '6 minute read &middot; 2026 figures verified against CMS and SSA',
+    'checked': CHECKED,
+    'body': """      <p>Most people meet IRMAA by letter. It arrives in the fall, it is written in the flat
+      register of federal correspondence, and it says your Medicare premium next year will be
+      substantially more than the number everybody else quotes.</p>
+
+      <p>The name is <strong>Income-Related Monthly Adjustment Amount</strong>. It is a surcharge added
+      to your Medicare Part B and Part D premiums when your income is above a threshold. Two things
+      about how it works catch people out, and both are worth knowing before the letter arrives rather
+      than after.</p>
+
+""" + facts('What IRMAA costs in 2026', [
+        ('The standard Part B premium', '$202.90 a month. This is what most people pay and what most '
+                                        'articles quote.'),
+        ('Where the surcharge starts', 'Modified adjusted gross income above <strong>$109,000 '
+                                       'single</strong> or <strong>$218,000 married filing '
+                                       'jointly</strong>.'),
+        ('The first step up', '$284.10 a month for Part B &mdash; about $81 more, or roughly $975 a '
+                              'year, and that is the smallest bracket.'),
+        ('The top of the scale', '$689.90 a month, reached above $500,000 single or $750,000 joint. '
+                                 'Five brackets in total.'),
+        ('Part D as well', 'A separate surcharge of roughly $14.50 to $91.00 a month on top of whatever '
+                           'your drug plan charges.'),
+        ('Whose income counts', 'Your MAGI &mdash; adjusted gross income plus tax-exempt interest, '
+                                'which is why municipal bonds do not help here.'),
+    ]) + """
+      <h2>The first thing: it looks backwards</h2>
+
+      <p>Your 2026 premium is set by your <strong>2024</strong> tax return. Medicare uses the most recent
+      return the IRS has passed along, which is always two years old.</p>
+
+      <p>That lag is the whole problem. The year that decides your premium is often the last year you
+      were working &mdash; or the year you sold a house, converted an IRA to a Roth, took a large
+      distribution, or received a settlement. By the time the surcharge lands you may have retired, your
+      income may have halved, and none of that is visible to the calculation.</p>
+
+      <p>People assume the letter reflects what they are earning now. It reflects what they were earning
+      the year before last.</p>
+
+      <h2>The second thing: it is a cliff, not a slope</h2>
+
+      <p>IRMAA does not phase in. Cross a threshold by a single dollar and you owe the entire bracket.
+      One dollar of extra income can cost you around <strong>$975 across the year</strong> at the first
+      step, and more at the higher ones. There is no proration and no partial credit.</p>
+
+      <p>Which means the amounts that trigger it are often small and accidental: a year-end bonus, a
+      required distribution slightly larger than expected, a capital gain from selling something you had
+      held for decades. The mechanism does not care that the income was one-off.</p>
+
+""" + AD_INLINE + """
+      <h2>The part almost nobody is told</h2>
+
+      <p><strong>You can ask for it to be recalculated, and retiring is one of the accepted reasons.</strong></p>
+
+      <p>Social Security keeps a list of life-changing events that justify using your current income
+      instead of the two-year-old figure. The form is <strong>SSA-44</strong>, it is two pages, and it is
+      free. The accepted events are:</p>
+
+""" + check([
+        'Work stoppage &mdash; which includes <strong>retirement</strong>. This is the common one, and '
+        'the one people do not realize counts.',
+        'Work reduction &mdash; cutting back hours or moving to part-time.',
+        'Marriage, divorce or annulment, or the <strong>death of a spouse</strong>.',
+        'Loss of income-producing property, through disaster or other events outside your control.',
+        'Loss of pension income.',
+        'Employer settlement payment, or the employer closing or going bankrupt.',
+    ]) + """
+      <p>You file the form with an estimate of this year's income and documentation of the event &mdash;
+      a letter from your employer, a death certificate, a divorce decree. Decisions generally take a
+      month or two, and an approval can be backdated to when the event happened, which sometimes means a
+      refund of premiums already paid.</p>
+
+      <p>What does not qualify is simply disagreeing with the number, or having had a one-off gain in a
+      year you were otherwise not working. A one-time capital gain or Roth conversion is not on the list
+      of named events &mdash; though Social Security can consider other circumstances that caused a
+      significant drop in income, so it is worth asking rather than assuming.</p>
+
+      <blockquote class="pull">
+        <p>The surcharge is calculated automatically. The appeal is not. Nobody files SSA-44 on your
+        behalf, and nothing in the letter suggests you might have grounds to.</p>
+      </blockquote>
+
+      <h2>What to do with this</h2>
+
+      <p><strong>If you are still working and near 63,</strong> that is the year that will set your
+      first Medicare premium. It is the year to be conscious of one-off income &mdash; the Roth
+      conversion, the property sale, the deferred compensation &mdash; if you have any say in the timing.</p>
+
+      <p><strong>If you have just retired and a surcharge letter arrives,</strong> file SSA-44. Your
+      income has changed and the calculation has not caught up. This is precisely the situation the form
+      exists for.</p>
+
+      <p><strong>If the letter is simply correct,</strong> it still only applies for one year at a time.
+      The determination is redone annually against a fresh return, so a single high year does not follow
+      you permanently. It follows you for one year, two years later.</p>
+
+      <p>The thresholds themselves move a little each year with inflation, which is worth checking rather
+      than assuming: the 2026 figures above are not the 2025 ones. Medicare publishes the full bracket
+      table each fall, and the letter you receive will name the bracket it has put you in.</p>
+
+      <p>None of this is a reason to earn less. It is a reason to know that the line exists, roughly where
+      it sits, and that the calculation behind it is looking at a year you have probably stopped thinking
+      about.</p>
+""",
+    'sources': [
+        ('Medicare &mdash; Part B costs',
+         'https://www.medicare.gov/basics/costs/medicare-costs'),
+        ('SSA &mdash; Request to lower an Income-Related Monthly Adjustment Amount',
+         'https://www.ssa.gov/medicare/lower-irmaa'),
+        ('SSA &mdash; Form SSA-44', 'https://www.ssa.gov/forms/ssa-44.pdf'),
+        ('Medicare &mdash; Drug coverage (Part D) costs',
+         'https://www.medicare.gov/drug-coverage-part-d/costs-for-medicare-drug-coverage'),
+    ],
+    'next': {'slug': 'medicare-savings',
+             'title': 'The Medicare help millions qualify for and never claim',
+             'blurb': 'The surcharge has a mirror image: if your income is modest, there are programs '
+                      'that pay the premium instead.'},
+}
