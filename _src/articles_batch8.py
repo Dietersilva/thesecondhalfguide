@@ -641,8 +641,7 @@ ARTICLES8['driving'] = {
 
 # ------------------------------------------------------------------- IRMAA
 ARTICLES8['irmaa'] = {
-    'title': 'IRMAA: The Medicare Surcharge Based on Money You Earned Two Years Ago '
-             '&mdash; The Second Half Guide',
+    'title': 'IRMAA 2026: Medicare Income Surcharge Explained &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare surcharge based on what you earned two years ago',
     'dek': 'Cross one income line and your Medicare premium jumps by hundreds a month. The income '
@@ -769,8 +768,7 @@ ARTICLES8['irmaa'] = {
 
 # ------------------------------------------------- observation status
 ARTICLES8['observation-status'] = {
-    'title': 'Three Nights in a Hospital Bed, and Medicare Says You Were Never Admitted '
-             '&mdash; The Second Half Guide',
+    'title': 'Medicare Observation Status and the 3-Day Rule &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Three nights in a hospital bed, and Medicare says you were never admitted',
     'dek': 'Observation is a billing status, not a place. It looks identical from the bed, and it '
@@ -890,8 +888,7 @@ ARTICLES8['observation-status'] = {
 
 # ------------------------------------------------------- Medigap window
 ARTICLES8['medigap-window'] = {
-    'title': 'The Six Months That Decide Whether You Can Ever Buy Medigap '
-             '&mdash; The Second Half Guide',
+    'title': 'The Medigap 6-Month Open Enrollment Window &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The six months that decide whether you can ever buy Medigap',
     'dek': 'One window, once, and it does not reopen. Inside it no insurer can ask about your health. '
@@ -1006,8 +1003,7 @@ ARTICLES8['medigap-window'] = {
 
 # ------------------------------------------------------------- RMDs / QCDs
 ARTICLES8['rmd-deadline'] = {
-    'title': 'The Withdrawal the IRS Requires, and the Deadline That Costs 25% '
-             '&mdash; The Second Half Guide',
+    'title': 'RMD Rules 2026: Age 73 or 75, and QCDs &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The withdrawal the IRS requires, and the deadline that costs 25%',
     'dek': 'At some point the tax deferral ends and the government wants its share. The age depends on '

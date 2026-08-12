@@ -10,6 +10,7 @@ for previewing but wrong for a real site. This turns that output into:
 """
 
 import base64
+import html as html_mod
 import hashlib
 import json
 import os
@@ -17,6 +18,7 @@ import re
 import shutil
 
 SITE = 'site'
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 ORIGIN = 'https://thesecondhalfguide.com'
 
 # artifact uuid -> site path
@@ -389,6 +391,33 @@ def footer_block(cls):
 # datePublished is deliberately absent: the builder knows when a page was last
 # checked but not when it first went up, and a guessed publication date on a
 # site whose selling point is verified numbers would be the one lie on it.
+def git_dates():
+    """slug path -> first-committed date, so datePublished is a fact not a guess.
+
+    datePublished was deliberately left out when the structured data went in,
+    because guessing a date on a site whose selling point is verified numbers
+    would have been the one lie on it. The repository knows when each page
+    first shipped, so the guess is no longer necessary.
+    """
+    import subprocess
+    root = os.path.dirname(os.path.abspath(SRC_DIR))
+    out = {}
+    try:
+        files = subprocess.run(['git', 'ls-files', '*.html'], cwd=root,
+                               capture_output=True, text=True, timeout=30)
+        for fn in files.stdout.split():
+            r = subprocess.run(['git', 'log', '--diff-filter=A', '--format=%ad',
+                                '--date=short', '--', fn],
+                               cwd=root, capture_output=True, text=True, timeout=30)
+            lines = [l for l in r.stdout.split() if l]
+            if lines:
+                path = '/' if fn == 'index.html' else '/' + fn[:-5]
+                out[path] = lines[-1]
+    except Exception:
+        pass
+    return out
+
+
 MONTHS = {m: i for i, m in enumerate(
     'January February March April May June July August September October '
     'November December'.split(), 1)}
@@ -409,7 +438,7 @@ PUBLISHER = {
 }
 
 
-def json_ld(path, title, desc, canonical, headline, body):
+def json_ld(path, title, desc, canonical, headline, body, published=None):
     cls = layout_class(path)
     if cls == 'hub':
         node = {'@type': 'WebSite', 'name': 'The Second Half Guide',
@@ -427,10 +456,15 @@ def json_ld(path, title, desc, canonical, headline, body):
                 'image': ORIGIN + '/og.png', 'inLanguage': 'en-US',
                 'isAccessibleForFree': True,
                 'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical}}
+        if published:
+            node['datePublished'] = published
         m = CHECKED_RE.search(re.sub(r'<[^>]+>', ' ', body))
         if m and m.group(2) in MONTHS:
             node['dateModified'] = '%s-%02d-%02d' % (
                 m.group(3), MONTHS[m.group(2)], int(m.group(1)))
+        node.setdefault('dateModified', published or '')
+        if not node['dateModified']:
+            del node['dateModified']
     node['@context'] = 'https://schema.org'
     return json.dumps(node, indent=None, separators=(',', ':'), sort_keys=True)
 
@@ -467,6 +501,7 @@ def main():
             f.write(base64.b64decode(open(src).read().strip()))
 
     pages = collect_pages()
+    published = git_dates()
 
     # article slug -> path, so cross-links resolve locally
     routes = dict(ROUTES)
@@ -488,6 +523,8 @@ def main():
     for path, html in sorted(pages.items()):
         title_m = re.search(r'<title>(.*?)</title>', html, re.S)
         title = title_m.group(1).strip() if title_m else 'The Second Half Guide'
+        if path != '/':
+            title = re.sub(r'\s*(?:&mdash;|\u2014|\|)\s*The Second Half Guide\s*$', '', title)
 
         style_m = re.search(r'<style>(.*?)</style>', html, re.S)
         css = style_m.group(1) if style_m else ''
@@ -591,7 +628,8 @@ def main():
         shutil.copytree('images', f'{SITE}/images')
 
     for path, (title, desc, canonical, body) in rendered.items():
-        ld = json_ld(path, title, desc, canonical, meta[path][0], body)
+        ld = json_ld(path, title, desc, canonical, meta[path][0], body,
+                     published.get(path))
         # A ld+json data block is not executed, so script-src does not gate it,
         # but hashing it costs nothing and survives a stricter policy later.
         script_hashes.add("'sha256-%s'" % base64.b64encode(
@@ -636,15 +674,70 @@ def main():
         # all. Google tolerates it; the sitemap protocol and stricter
         # validators want a complete URL, so the root keeps its slash.
         f'  <url><loc>{ORIGIN}{p}</loc>'
-        f'<changefreq>{"weekly" if p == "/" else "monthly"}</changefreq>'
+        + (f'<lastmod>{published[p]}</lastmod>' if p in published else '')
+        + f'<changefreq>{"weekly" if p == "/" else "monthly"}</changefreq>'
         f'<priority>{"1.0" if p == "/" else "0.8"}</priority></url>\n'
         for p in sorted(rendered) if p not in NOINDEX)
     open(f'{SITE}/sitemap.xml', 'w').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
 
-    open(f'{SITE}/robots.txt', 'w').write(
-        f'User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n')
+    # The wildcard already permits these, but naming them states the intent
+    # rather than leaving it to a default: this site wants to be read, quoted
+    # and cited by assistants. Being cited as the source of a Medicare figure
+    # is worth more to a small publisher than the pageview it might displace.
+    AI_AGENTS = [
+        'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',           # OpenAI
+        'ClaudeBot', 'Claude-Web', 'anthropic-ai',           # Anthropic
+        'PerplexityBot', 'Perplexity-User',                  # Perplexity
+        'Google-Extended',                                   # Gemini grounding
+        'Applebot-Extended', 'Bingbot', 'CCBot', 'Meta-ExternalAgent',
+    ]
+    robots = ['User-agent: *', 'Allow: /', '',
+              '# Assistants and their crawlers are welcome. Every figure here',
+              '# is sourced at the foot of the article it appears in.']
+    for agent in AI_AGENTS:
+        robots += [f'User-agent: {agent}', 'Allow: /', '']
+    robots += [f'Sitemap: {ORIGIN}/sitemap.xml', '']
+    open(f'{SITE}/robots.txt', 'w').write('\n'.join(robots))
+
+    # llms.txt: an emerging convention pointing a model at the parts of a site
+    # worth reading, in the order worth reading them. Cheap, and this site is
+    # exactly the shape it was proposed for -- factual reference, plain prose.
+    llms = [f'# The Second Half Guide', '',
+            '> Smart, practical information for people roughly 55-70 navigating the '
+            'financial and lifestyle transition into retirement. Every dollar amount, '
+            'age threshold and deadline is checked against the agency that publishes '
+            'it, and the sources are listed at the foot of each article.', '',
+            'Published by Edward Silva. Not financial, legal, medical or tax advice; '
+            'this is a publisher, not an advisor. Figures are stated for the year '
+            'named on the page and change annually.', '']
+    groups = [
+        ('Medicare', ['/medicare-enrollment', '/open-enrollment', '/advantage-vs-original',
+                      '/medicare-gaps', '/medicare-savings', '/irmaa', '/observation-status',
+                      '/medigap-window', '/drug-cap', '/wellness-visit', '/vaccine-ages']),
+        ('Social Security and taxes', ['/social-security-62', '/cola', '/wep-gpo-repeal',
+                                       '/widows-penalty', '/senior-deduction', '/rmd-deadline',
+                                       '/property-tax', '/social-security-login']),
+        ('Fraud and safety', ['/bank-imposter-scam', '/five-minute-rule', '/romance-scams',
+                              '/gold-courier-scam', '/voice-cloning', '/enrollment-scams',
+                              '/numbers']),
+        ('Reference', ['/about', '/senior-age', '/approaching-60']),
+    ]
+    for name, paths in groups:
+        llms.append(f'## {name}')
+        for p_ in paths:
+            if p_ in meta:
+                # llms.txt is plain markdown, so the HTML entities the site
+                # stores have to be resolved and the summary cut at a word
+                # boundary rather than mid-word at a fixed offset.
+                head_ = html_mod.unescape(meta[p_][0])
+                sum_ = html_mod.unescape(meta[p_][1])
+                if len(sum_) > 160:
+                    sum_ = sum_[:160].rsplit(' ', 1)[0] + '…'
+                llms.append(f'- [{head_}]({ORIGIN}{p_}): {sum_}')
+        llms.append('')
+    open(f'{SITE}/llms.txt', 'w').write('\n'.join(llms))
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
     # AdSense will require loosening script-src/frame-src — do that deliberately.
