@@ -35,33 +35,47 @@ ROUTES = {
 }
 
 DESCRIPTIONS = {
-    '/': 'Smart, practical information for people roughly 55–70 navigating the financial and '
-         'lifestyle transition into retirement — what nobody tells you about the 10 years '
-         'surrounding it.',
-    '/about': 'Who writes The Second Half Guide, how it is funded, and the editorial standards it '
-              'holds itself to.',
-    '/contact': 'How to reach The Second Half Guide — corrections, topic suggestions and reader stories.',
-    '/privacy': 'Privacy Policy and Terms of Use for The Second Half Guide, including advertising '
-                'cookies and editorial disclaimers.',
-    '/numbers': 'The real phone numbers for Medicare, Social Security, fraud reporting and local help '
-                '— checked, and printable for the drawer.',
-    '/irmaa': 'IRMAA, the Medicare surcharge set by your income from two years ago — the 2026 '
-              'thresholds, why it is a cliff rather than a slope, and the form that appeals it.',
-    '/observation-status': 'Observation is a billing status, not a place — why three nights in a '
-                           'hospital bed may not count toward Medicare\'s three-day rule, and the '
-                           'appeal that opened in 2025.',
-    '/medigap-window': 'The one-time six-month Medigap window: when it starts, what guaranteed issue '
-                       'means, and what insurers may ask once it closes.',
-    '/rmd-deadline': 'Required minimum distributions in 2026 — the age by birth year, the first-year '
-                     'trap, the 25% penalty, and the charitable route that skips the tax.',
-    '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide.',
-    '/approaching-60': 'What genuinely changes as you approach 60, what does not, and the handful of '
-                       'deadlines worth putting on a calendar.',
-    '/social-security-62': 'The math behind claiming Social Security at 62 — when filing early pays '
-                           'off and when it does not.',
-    '/bank-imposter-scam': 'How the bank impostor call works, why it is so effective, and exactly what '
-                           'to do if one reaches you.',
-    '/wednesday-letters': 'The Wednesday Letters — reader correspondence from The Second Half Guide.',
+    # Written for the result page, not the article: 120-158 characters, with
+    # the words a reader would actually type near the front. Anything not
+    # listed here falls back to the page dek, which is usually too long.
+    '/': 'Smart, practical information for people roughly 55–70 — the dates, thresholds and dollar figures of the ten years surrounding retirement, checked and dated.',
+    '/medigap-window': 'The one-time six-month Medigap window: when it starts, what guaranteed issue means, and what insurers may ask about your health once it closes.',
+    '/numbers': 'The real phone numbers for Medicare, Social Security, fraud reporting and local help — checked, with hours, and printable for the kitchen drawer.',
+    '/rmd-deadline': 'Required minimum distributions in 2026: the age by birth year, the first-year trap, the 25% penalty, and the charitable route that skips the tax.',
+    '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide — and what to do if the confirmation email has not arrived yet.',
+    '/about': 'Who writes The Second Half Guide, how it is funded, how the facts are checked, and the standards it holds itself to. Published by Edward Silva.',
+    '/advantage-vs-original': 'Medicare Advantage or Original Medicare: what each one is, how the money works, and the one decision that gets much harder to reverse later on.',
+    '/airport-help': 'Wheelchairs, escorts through the terminal, help through security — all free and yours by law. Almost entirely unused, because nobody tells you.',
+    '/approaching-60': 'What actually changes as you approach 60: the deadlines worth a calendar entry, the thresholds that matter, and the many that are only marketing.',
+    '/bank-imposter-scam': 'How the bank impostor call works, why it defeats careful people, and the one sentence that stops it — plus what to do if one has already reached you.',
+    '/cola': 'Social Security rose 2.8% for 2026. For an average retired worker on the standard Part B premium, Medicare took back about a third before it arrived.',
+    '/contact': 'Reach The Second Half Guide: corrections, topic suggestions and reader stories. A real person reads everything, and corrections are especially welcome.',
+    '/cruise-medical': 'There is a doctor on board, they bill you, and Medicare almost certainly does not apply. What shipboard care costs, and what evacuation can run to.',
+    '/digital-estate': 'Photographs, bills and password resets now live behind a login — and a password is not the same as permission. What an executor can actually reach.',
+    '/downsizing-math': 'Selling a big house and buying a small one may free up less than you think. The costs that decide it are the ones nobody puts in the spreadsheet.',
+    '/driving': 'Age alone is a poor predictor of who should stop driving. The specific, checkable things that are better ones — and the road in between the two.',
+    '/drug-cap': 'Part D prescription costs now have a hard annual ceiling of $2,100. A genuinely big change — and “out-of-pocket cap” is doing a lot of work.',
+    '/enrollment-scams': 'Open enrollment is the one season when unsolicited Medicare contact feels normal. That is what makes it the most profitable weeks of the fraud year.',
+    '/falls': 'More than one in four older adults falls each year and fall deaths are up 51% in a decade. The best-supported prevention costs nothing at all.',
+    '/free-college': 'Most states let older residents take public-college courses free or cheaply. Rules vary by state, campus, age, and whether you audit or take credit.',
+    '/gold-courier-scam': 'The FBI logged about 725 gold-courier frauds in 2025, with $311.8 million lost and 98% of it by people over 60. It ends with a stranger at your door.',
+    '/irmaa': 'IRMAA 2026: the Medicare surcharge set by your income from two years ago. The thresholds, why it is a cliff not a slope, and the form that appeals it.',
+    '/long-distance': 'Living far from grandchildren changes the mechanics of closeness, not the closeness itself. What has to be built rather than simply absorbed.',
+    '/long-term-care': 'What long-term care actually costs in 2026, who pays for it, and what insurance does and does not do. One of the largest risks in retirement.',
+    '/medicare-enrollment': 'Miss your Medicare enrollment window without the right coverage and you pay a surcharge every month for life. The seven months that decide it.',
+    '/medicare-gaps': 'What Medicare does not cover: teeth, eyes, ears, and the very large one most people do not discover until a parent needs it. Worth knowing early.',
+    '/medicare-savings': 'Four Medicare Savings Programs help with premiums and deductibles, plus Extra Help for drug costs. The 2026 income limits are higher than most assume.',
+    '/observation-status': 'Observation is a billing status, not a place. Why three hospital nights may not count toward Medicare\'s three-day rule, and the appeal opened in 2025.',
+    '/privacy': 'Privacy Policy and Terms for The Second Half Guide: what we collect, the newsletter, advertising cookies, your rights, and the editorial disclaimers.',
+    '/property-tax': 'Most states reduce, freeze or defer property taxes at a certain age. Almost none apply it automatically, and the age is lower than people assume.',
+    '/senior-age': 'There is no senior birthday. About a dozen unrelated clocks — 50, 55, 59½, 62, 65, 67 — set by different institutions, and only some of them matter.',
+    '/senior-deduction': 'The new $6,000 senior deduction for people 65 and over — temporary, income-limited, and widely misdescribed as “no tax on Social Security.”',
+    '/social-security-62': 'Filing for Social Security at 62 cuts your benefit permanently. The arithmetic — the reduction, the break-even, and when filing early still wins.',
+    '/social-security-login': 'Your old Social Security username and password no longer work. Nothing went wrong — the sign-in system changed, and getting back in takes 20 minutes.',
+    '/voice-cloning': 'The grandparent scam had one reliable flaw: the caller never sounded right. Voice cloning removed it. What still works has nothing to do with the voice.',
+    '/wednesday-letters': 'Fiction from The Second Half Guide: twenty-one years of Wednesday mornings at a small-town post office, and the letters that kept on arriving.',
+    '/wep-gpo-repeal': 'WEP and GPO cut the Social Security of teachers, firefighters and public employees for decades. Both were repealed, and many affected still don\'t know.',
+    '/widows-penalty': 'When one spouse dies, income falls and the tax brackets narrow at the same time. One of the harshest bits of arithmetic in retirement, rarely explained.',
 }
 
 PAGE_FILES = {

@@ -129,6 +129,12 @@ git add -A && git commit && git push   # deploy
 | `build_articles.py` | every article, from `articles_batch2..8.py` |
 | `build_site.py` | assembles `_src/site/`: one stylesheet, heads, sitemap, headers |
 
+- **Every page needs a `DESCRIPTIONS` entry.** Without one the build falls
+  back to the page dek, which is written to be read on the page and usually
+  runs past the ~158 characters a search result shows. Write it for the result
+  page instead: 120–158 characters, with the words a reader would actually
+  type near the front. It feeds the meta description, `og:description` and the
+  JSON-LD in one go.
 - **Never hardcode a count.** The homepage sentence "N pieces published so
   far" is filled from `{{ARTICLE_COUNT}}` at build time, counting pages with
   the article layout. It read "Forty-five" for a while after the count was
