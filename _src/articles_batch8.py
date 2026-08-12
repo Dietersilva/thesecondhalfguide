@@ -1015,9 +1015,15 @@ ARTICLES8['rmd-deadline'] = {
            'entirely.',
     'meta': '6 minute read &middot; 2026 figures verified against IRS rules',
     'checked': CHECKED,
-    'body': """      <p>Money in a traditional 401(k) or IRA has never been taxed. That was the deal: deduct it going
-      in, pay on the way out. Required minimum distributions are the government collecting on the second
-      half of that arrangement, and they are not optional.</p>
+    'body': """      <p>Most money in a traditional 401(k) or IRA has never been taxed. That was the deal: deduct it
+      going in, pay on the way out. Required minimum distributions are the government collecting on the
+      second half of that arrangement, and they are not optional.</p>
+
+      <p><em>Most</em>, because some traditional IRAs also hold nondeductible contributions &mdash;
+      money that was already taxed on the way in. That creates after-tax basis, it is tracked on IRS
+      Form 8606, and it means part of each withdrawal is not taxable again. If you ever made a
+      contribution you could not deduct, this applies to you and it is worth telling whoever prepares
+      your return.</p>
 
       <p>Three things about them catch people, and the first is that the starting age is no longer a
       single number.</p>

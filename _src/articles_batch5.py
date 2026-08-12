@@ -143,7 +143,7 @@ ARTICLES5['long-term-care'] = {
     'title': 'Long-Term Care: The Numbers, Before the Sales Pitch &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Long-term care: the numbers, before the sales pitch',
-    'dek': 'It is the one of the largest financial risks in retirement and the least planned for. Here is what care '
+    'dek': 'It is one of the largest financial risks in retirement and the least planned for. Here is what care '
            'actually costs, who pays for it now, and what insurance does and doesn’t do.',
     'meta': '7 minute read &middot; Costs from the 2025&ndash;26 Cost of Care survey',
     'checked': CHECKED,
