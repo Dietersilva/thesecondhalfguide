@@ -45,6 +45,7 @@ DESCRIPTIONS = {
     '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide — and what to do if the confirmation email has not arrived yet.',
     '/about': 'Who writes The Second Half Guide, how it is funded, how the facts are checked, and the standards it holds itself to. Published by Edward Silva.',
     '/advantage-vs-original': 'Medicare Advantage or Original Medicare: what each one is, how the money works, and the one decision that gets much harder to reverse later on.',
+    '/airport-security': 'TSA ended the shoes-off rule for everyone in July 2025, deleting the one screening benefit of turning 75. What PreCheck and Global Entry still buy you.',
     '/airport-help': 'Wheelchairs, escorts through the terminal, help through security — all free and yours by law. Almost entirely unused, because nobody tells you.',
     '/approaching-60': 'What actually changes as you approach 60: the deadlines worth a calendar entry, the thresholds that matter, and the many that are only marketing.',
     '/bank-imposter-scam': 'How the bank impostor call works, why it defeats careful people, and the one sentence that stops it — plus what to do if one has already reached you.',

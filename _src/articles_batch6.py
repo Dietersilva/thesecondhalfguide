@@ -31,7 +31,8 @@ ARTICLES6['airport-help'] = {
       <p>The <strong>Air Carrier Access Act</strong> requires airlines to provide assistance to
       passengers with a disability or reduced mobility, at no charge. And the definition is broader than
       most people assume &mdash; you do not need a diagnosis, a permanent condition, or a wheelchair of
-      your own. If you can't comfortably manage the walk from check-in to the gate, you qualify.</p>
+      your own. If a disability or a mobility problem makes the walk from check-in to the gate
+      genuinely difficult, you qualify &mdash; and nobody is going to ask you to prove it.</p>
 
 """ + facts('What you can ask for, free of charge', [
         ('Curb to gate', 'A wheelchair and someone to push it, from the moment you arrive at the terminal '
@@ -128,28 +129,30 @@ ARTICLES6['airport-help'] = {
 
 # ---------------------------------------------------------- airport security
 ARTICLES6['airport-security'] = {
-    'title': 'Airport Security After 75, and Whether PreCheck Is Worth It &mdash; The Second Half Guide',
+    'title': 'Airport Security After 75: What Changed in 2025 &mdash; The Second Half Guide',
     'eyebrow': 'Getting out there',
-    'h1': 'Airport security after 75, and whether PreCheck is worth it',
-    'dek': 'There is a real age threshold in airport screening, it starts at 75, and it is narrower than '
-           'people think. Here is what it covers and what it doesn’t.',
+    'h1': 'The airport rule that went away, and what PreCheck still buys you',
+    'dek': 'For nineteen years, shoes came off. Since July 2025 they don’t &mdash; for anyone, at any '
+           'age. Which quietly deleted the one screening benefit of turning 75.',
     'meta': '5 minute read &middot; Fees and rules verified for 2026',
     'checked': CHECKED,
-    'body': """      <p>Among the many age thresholds we've catalogued on this site, here's one that turns up in an
-      unexpected place: airport security.</p>
+    'body': """      <p>For nineteen years, one of the few genuine perks of turning 75 was that you could keep your
+      shoes on at airport security while everyone else queued in their socks.</p>
 
-      <p><strong>Passengers 75 and older can keep their shoes on</strong> during standard screening. It's
-      part of the TSA's risk-based approach, it requires no application and no fee, and a surprising
-      number of people who qualify have never heard of it.</p>
+      <p>That perk is gone, because the rule it was an exception to is gone. <strong>On 8 July 2025 the
+      Department of Homeland Security ended the shoes-off requirement at domestic TSA checkpoints for
+      everyone</strong>, at any age, in standard lanes. Nineteen years of screening technology had made
+      it unnecessary.</p>
 
-      <p>It's also narrower than it sounds, in a way that matters if you're deciding whether to pay for
-      anything.</p>
+      <p>So the age threshold is still worth knowing about, but mainly for the opposite reason to the one
+      people expect: it no longer does much, and if you are deciding whether to pay for PreCheck on the
+      strength of it, the arithmetic has changed.</p>
 
 """ + facts('The screening options, 2026', [
-        ('Turning 75', 'Shoes stay on in standard lanes. No fee, no application, no card &mdash; it '
-                       'applies automatically.'),
-        ('The catch', 'The 75+ exemption does <em>not</em> cover light jackets. Those still come off for '
-                      'imaging in standard lanes.'),
+        ('Shoes, since July 2025', 'They stay on in standard lanes, at any age. The old exemption for '
+                                   '75 and over no longer distinguishes you from anyone else.'),
+        ('What still comes off', 'A light jacket and a belt, in standard lanes, at any age. Laptops and '
+                                 'liquids still come out of the bag.'),
         ('TSA PreCheck', 'About $77&ndash;$85 for five years, depending on the enrollment provider. Shoes, '
                          'belt and light jacket stay on; laptops and liquids stay in the bag; separate, '
                          'usually shorter lane.'),
@@ -157,7 +160,9 @@ ARTICLES6['airport-security'] = {
                          'into the US through passport control.'),
         ('CLEAR', 'A separate paid service, several hundred dollars a year. Moves you to the front of the '
                   'identity-check line. It does not change how you are screened.'),
-        ('Age 12 and under', 'Also keep shoes on, traveling with an eligible adult.'),
+        ('Shoes that still cause trouble', 'Steel toes, heel rods, heavy buckles and some orthopedic '
+                                           'inserts have enough metal to trigger a second look, whatever '
+                                           'the general rule says.'),
     ]) + """
       <h2>The arithmetic that surprises people</h2>
 
@@ -177,16 +182,17 @@ ARTICLES6['airport-security'] = {
       </blockquote>
 
 """ + AD_INLINE + """
-      <h2>Why PreCheck still helps after 75</h2>
+      <h2>What PreCheck still buys you</h2>
 
-      <p>Because of the jacket. In standard lanes a light jacket comes off for imaging regardless of age
-      — PreCheck removes that, along with the belt, and lets your laptop and liquids stay in the bag.</p>
+      <p>Less than it did, and still something. The shoes were always the most visible part of the pitch,
+      and they are now free to everyone. What remains is the jacket, the belt, the laptop, the liquids
+      and the separate lane.</p>
 
-      <p>Which is really the point: the value of PreCheck isn't speed so much as <strong>the number of
-      separate physical operations</strong> you perform at the belt while people line behind you.
-      Standard screening asks you to remove a jacket, a belt, shoes if you're under 75, take a laptop
-      out, take liquids out, and reassemble all of it one-handed at the far end. PreCheck removes most of
-      that.</p>
+      <p>Which is really the point, and it survives the rule change: the value of PreCheck isn't speed so
+      much as <strong>the number of separate physical operations</strong> you perform at the belt while
+      people line up behind you. Standard screening still asks you to take off a jacket and a belt, take
+      a laptop out, take liquids out, and reassemble all of it one-handed at the far end. PreCheck
+      removes most of that.</p>
 
       <p>For anyone with arthritic hands, balance issues, or a strong dislike of being hurried, that's
       the benefit. Not minutes saved — fumbling avoided.</p>
@@ -200,7 +206,8 @@ ARTICLES6['airport-security'] = {
         <li><strong>Some credit cards reimburse the fee</strong> for PreCheck or Global Entry, often once
         every four years. If you carry a travel card, check before paying.</li>
         <li><strong>Medical devices and implants:</strong> tell the officer before screening. A joint
-        replacement will set off a detector, and saying so first turns a search into a formality.</li>
+        replacement may affect how you are screened depending on the equipment in use, and saying so
+        first turns a search into a formality.</li>
         <li><strong>Medications and mobility aids don't count</strong> against carry-on limits, and
         liquids that are medically necessary are exempt from the usual limit — declare them.</li>
         <li><strong>REAL ID</strong> is now required for domestic flights. A passport works too. Check
@@ -208,7 +215,8 @@ ARTICLES6['airport-security'] = {
       </ul>
 
 """ + check([
-        'Turning 75? You already have the shoe exemption &mdash; <strong>nothing to apply for</strong>.',
+        'Turning 75 no longer changes your screening. <strong>Shoes stay on for everyone</strong> in '
+        'standard lanes since July 2025.',
         'Traveling abroad at all in the next five years? <strong>Global Entry</strong>, not PreCheck.',
         'Check whether a <strong>credit card</strong> you already hold reimburses the fee.',
         'Put your <strong>Known Traveler Number</strong> in your airline profile and check it appears on '

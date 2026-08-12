@@ -144,8 +144,8 @@ ARTICLES7['social-security-login'] = {
         ('Two-factor', 'Required. A code by text or an authenticator app each time you sign in.'),
     ]) + """
       <blockquote class="pull">
-        <p>This is a one-time twenty minutes, not a permanent obstacle — and it's the same credential
-        for the IRS, the VA and Medicare.</p>
+        <p>This is a one-time twenty minutes, not a permanent obstacle — and the same credential opens
+        a good deal of the rest of the government, though not every agency accepts both providers.</p>
       </blockquote>
 
 """ + AD_INLINE + """

@@ -66,9 +66,10 @@ ARTICLES8['medicare-savings'] = {
         in your state.</li>
         <li><strong>&ldquo;I own my house, so I won't qualify.&rdquo;</strong> Your primary home doesn't
         count toward the resource limit. Neither, usually, does one car.</li>
-        <li><strong>&ldquo;It's welfare.&rdquo;</strong> These are Medicare programs funded partly by
-        the payroll taxes you paid for forty years. You are not taking someone else's place; QI is the
-        only one with a cap, and it routinely goes unfilled.</li>
+        <li><strong>&ldquo;It's welfare.&rdquo;</strong> These programs are run through your state's
+        Medicaid office, which is what puts people off, but what they do is pay a Medicare bill you are
+        already being charged. You are not taking someone else's place either; QI is the only one with a
+        cap, and it routinely goes unfilled.</li>
         <li><strong>&ldquo;It'll affect my estate.&rdquo;</strong> Medicare Savings Programs are not
         long-term-care Medicaid, and estate recovery rules generally do not apply to MSP benefits in the
         way people fear. Worth asking about specifically rather than assuming the worst.</li>
@@ -251,9 +252,10 @@ ARTICLES8['falls'] = {
     ]) + """
       <h2>The intervention that works</h2>
 
-      <p>It isn't grab bars. Grab bars help, and you should have them. But the evidence is clearest and
-      strongest on one thing: <strong>lower-body strength and balance training, done regularly, at a
-      difficulty that actually challenges your balance.</strong></p>
+      <p>It isn't grab bars. Grab bars help, and you should have them. But the strongest evidence sits with
+      <strong>exercise done regularly at a difficulty that actually challenges your balance</strong>
+      &mdash; programs combining balance, gait, functional and strength work. Which specific component
+      does the most is not something the trials can cleanly separate.</p>
 
       <p>Roughly a third fewer falls, from three sessions a week. No drug in this space comes close, and
       the effect compounds — stronger legs also mean an easier time on stairs, longer walks, and a better
@@ -265,8 +267,8 @@ ARTICLES8['falls'] = {
       holding a counter is closer to the target than a chair-based class.</p>
 
       <blockquote class="pull">
-        <p>The single most effective thing you can do about falls costs nothing, takes about half an hour
-        three times a week, and is almost never what people go looking for.</p>
+        <p>The best-supported thing you can do about falls costs nothing, takes about half an hour three
+        times a week, and is almost never what people go looking for.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -675,7 +677,8 @@ ARTICLES8['irmaa'] = {
       <h2>The first thing: it looks backwards</h2>
 
       <p>Your 2026 premium is set by your <strong>2024</strong> tax return. Medicare uses the most recent
-      return the IRS has passed along, which is always two years old.</p>
+      return the IRS has passed along, which is generally two years old &mdash; occasionally three, if
+      the newer one was not available when the determination was made.</p>
 
       <p>That lag is the whole problem. The year that decides your premium is often the last year you
       were working &mdash; or the year you sold a house, converted an IRA to a Roth, took a large
@@ -718,10 +721,11 @@ ARTICLES8['irmaa'] = {
       month or two, and an approval can be backdated to when the event happened, which sometimes means a
       refund of premiums already paid.</p>
 
-      <p>What does not qualify is simply disagreeing with the number, or having had a one-off gain in a
-      year you were otherwise not working. A one-time capital gain or Roth conversion is not on the list
-      of named events &mdash; though Social Security can consider other circumstances that caused a
-      significant drop in income, so it is worth asking rather than assuming.</p>
+      <p>What does not qualify is simply disagreeing with the number. A one-time capital gain or a Roth
+      conversion is <strong>not</strong> a life-changing event on this list, however much it feels like
+      one &mdash; the gain was real income in the year it happened. There are separate routes if the
+      underlying tax data is wrong rather than merely inconvenient: an amended return, corrected IRS
+      information, or asking Social Security to use a more recent year's return than the one it used.</p>
 
       <blockquote class="pull">
         <p>The surcharge is calculated automatically. The appeal is not. Nobody files SSA-44 on your
