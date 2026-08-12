@@ -71,6 +71,28 @@ FTC phone number for exactly this reason and points at `reportfraud.ftc.gov`
 instead. On a page whose promise is "this is safe to call," an unverified
 entry is worse than a missing one.
 
+### The failure that checking numbers does not catch
+
+A figure can be perfectly current while **the rule it describes has been
+repealed, replaced or made universal** — and the article still reads fine,
+which is exactly why nobody notices.
+
+`/airport-security` was built on the TSA exemption letting passengers 75 and
+over keep their shoes on. DHS ended the shoes-off requirement for everyone on
+8 July 2025. Every number in the piece stayed correct. Its entire premise was
+dead, and it survived two outside audits before anyone caught it.
+
+So before checking any figure, ask of the article: **does the rule, program,
+threshold, form, exemption or agency practice this is built on still exist, in
+this form, and still apply to the people it says it applies to?** Watch for an
+exemption that became universal or was withdrawn, a program renamed or ended,
+a form or appeal route replaced, a temporary provision that expired, a court
+decision or final rule, or an age that now varies by birth year where it used
+to be one number.
+
+A dead premise needs a rewrite, not an edit. Flag it rather than patching
+around it.
+
 Every article carries **"Checked on <date> against the sources listed below"**.
 It used to say "against primary sources", which implied reading the agency's
 own page — something this sandbox cannot do. Do not restore that wording, and
