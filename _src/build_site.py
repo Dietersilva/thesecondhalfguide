@@ -476,6 +476,25 @@ ROBOTS = {False: 'index, follow, max-image-preview:large',
           True: 'noindex, follow'}
 
 
+# The homepage used to state the article count in words, by hand, and it went
+# stale the moment anything was published. It is derived from the build now.
+ONES = ('zero one two three four five six seven eight nine ten eleven twelve '
+        'thirteen fourteen fifteen sixteen seventeen eighteen nineteen').split()
+TENS = ('', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
+        'eighty', 'ninety')
+
+
+def spell(n):
+    """Small integers in words, since the sentence reads better that way."""
+    if n < 20:
+        w = ONES[n]
+    elif n < 100:
+        w = TENS[n // 10] + ('-' + ONES[n % 10] if n % 10 else '')
+    else:
+        return str(n)
+    return w[0].upper() + w[1:]
+
+
 def layout_class(path):
     if path == '/': return 'hub'
     if path in ('/about', '/contact', '/privacy', '/numbers', '/subscribed'): return 'doc'
@@ -581,6 +600,8 @@ def main():
     NORMALIZE = '\nbody.article .wrap { max-width: 760px; }\n'
     if '/' in rendered:
         title, desc, canonical, body = rendered['/']
+        n_articles = sum(1 for p_ in rendered if layout_class(p_) == 'article')
+        body = body.replace('{{ARTICLE_COUNT}}', spell(n_articles))
         marker = '  <section class="topics" id="topics">'
         if marker in body:
             body = body.replace(marker, latest_section(meta) + '\n' + marker, 1)

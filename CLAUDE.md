@@ -129,6 +129,11 @@ git add -A && git commit && git push   # deploy
 | `build_articles.py` | every article, from `articles_batch2..8.py` |
 | `build_site.py` | assembles `_src/site/`: one stylesheet, heads, sitemap, headers |
 
+- **Never hardcode a count.** The homepage sentence "N pieces published so
+  far" is filled from `{{ARTICLE_COUNT}}` at build time, counting pages with
+  the article layout. It read "Forty-five" for a while after the count was
+  forty-nine. If you add another figure like it, derive it the same way.
+
 **Adding an article:** append a dict to the newest `articles_batch*.py`, then
 run `publish.py`. Add a `DESCRIPTIONS` entry in `build_site.py`, and add the
 slug to `LATEST` (newest first) so it appears under "Just published". Add to
