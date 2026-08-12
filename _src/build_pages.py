@@ -418,7 +418,7 @@ NUMBERS_BODY = """  <div class="wrap">
       <p class="dek">Every scam on this site works the same way: someone contacts you, and you deal with
       them instead of hanging up and calling the real number. This is the real numbers. Print it and put
       it in a drawer.</p>
-      <p class="meta">Checked August 2026 &middot; Print this page for the drawer</p>
+      <p class="meta">Compiled and verified by <a href="/about">Edward Silva</a> &middot; checked August 2026 &middot; Print this page for the drawer</p>
     </div>
 
     <div class="prose numbers">

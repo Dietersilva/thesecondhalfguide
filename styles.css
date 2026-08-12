@@ -767,6 +767,7 @@ body.article .ad-slot-label { font-size: 12px; font-weight: 700; letter-spacing:
 body.article .ad-slot-note { font-size: 13px; color: var(--ink-faint); }
 body.article .byline { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 16px; color: var(--ink-soft); margin: 0 0 14px; border-top: 1px solid var(--line); padding-top: 16px; }
 body.article .byline strong { color: var(--ink); font-size: 17px; }
+body.article .byline strong a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 body.article .byline span { color: var(--ink-faint); font-size: 15px; }
 body.article .author {
     display: flex; gap: 18px; align-items: flex-start; margin: 40px 0 8px; padding: 26px 28px;

@@ -76,6 +76,7 @@ ARTICLE_CSS = """
 
   .byline { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 16px; color: var(--ink-soft); margin: 0 0 14px; border-top: 1px solid var(--line); padding-top: 16px; }
   .byline strong { color: var(--ink); font-size: 17px; }
+  .byline strong a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .byline span { color: var(--ink-faint); font-size: 15px; }
 
   .author {
@@ -230,7 +231,7 @@ def article(a, links, nav):
       <span class="eyebrow">{a['eyebrow']}</span>
       <h1>{a['h1']}</h1>
       <p class="dek">{a['dek']}</p>
-      <p class="byline"><strong>By Edward Silva</strong> <span>&middot; {a['meta']}</span></p>
+      <p class="byline"><strong>By <a href="/about">Edward Silva</a></strong> <span>&middot; {a['meta']}</span></p>
     </div>
 
     <div class="prose">
