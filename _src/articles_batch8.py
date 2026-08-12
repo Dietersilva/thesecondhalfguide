@@ -886,3 +886,238 @@ ARTICLES8['observation-status'] = {
              'title': 'Long-term care: the numbers, before the sales pitch',
              'blurb': 'What the nursing facility actually costs, if Medicare declines to pay for it.'},
 }
+
+
+# ------------------------------------------------------- Medigap window
+ARTICLES8['medigap-window'] = {
+    'title': 'The Six Months That Decide Whether You Can Ever Buy Medigap '
+             '&mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'The six months that decide whether you can ever buy Medigap',
+    'dek': 'One window, once, and it does not reopen. Inside it no insurer can ask about your health. '
+           'Outside it, in most states, they can ask anything and say no.',
+    'meta': '6 minute read &middot; Verified against Medicare and state Medigap rules',
+    'checked': CHECKED,
+    'body': """      <p>Most Medicare deadlines are annoying. You miss one, you pay a penalty, you carry on. This one
+      is different in kind: miss it and a product you wanted may simply stop being available to you, for
+      the rest of your life, because of your medical history.</p>
+
+      <p>It is called the <strong>Medigap open enrollment period</strong>. It lasts six months, it happens
+      once, and almost nobody is told what it costs to let it pass.</p>
+
+""" + facts('The window, precisely', [
+        ('How long', 'Six months. One time. It does not repeat and it cannot be reopened.'),
+        ('When it starts', 'The first month you are <strong>both 65 or older and enrolled in Part '
+                           'B</strong> &mdash; not your birthday. Delaying Part B for employer coverage '
+                           'delays this too.'),
+        ('What it guarantees', 'Any Medigap policy sold in your state, at the standard rate, with no '
+                               'health questions and no refusal.'),
+        ('What closes with it', 'In most states, insurers may then ask your full medical history, charge '
+                                'you more for it, or decline you outright.'),
+        ('Where the rules are better', 'A few states &mdash; New York, Connecticut, Massachusetts and '
+                                       'Maine among them &mdash; require guaranteed issue beyond this '
+                                       'window. The rules differ between them, so check your own.'),
+        ('If you move', 'Those state protections do not travel with you. They belong to the state you '
+                        'live in, not to you.'),
+    ]) + """
+      <h2>What underwriting actually means here</h2>
+
+      <p>Inside the window, the application asks your name, your address and your Medicare number. Outside
+      it, in most of the country, the application asks about your health &mdash; and the answers decide
+      the outcome.</p>
+
+      <p>This is not a formality that ends with a higher price. Insurers can and do decline applications
+      outright. The conditions that cause trouble are the ordinary ones people accumulate in their
+      sixties and seventies, not exotic ones. Someone perfectly healthy at 65 who buys nothing, and
+      returns at 70 after a cardiac event or a cancer diagnosis, is applying in a different world from
+      the one they left.</p>
+
+""" + AD_INLINE + """
+      <h2>Why people miss it</h2>
+
+      <p>Almost always for a reason that felt sensible at the time.</p>
+
+""" + check([
+        'They chose Medicare Advantage at 65, which is a perfectly reasonable choice &mdash; but the '
+        'Medigap window ran out in the background while they were in it.',
+        'They were still working with employer coverage, delayed Part B, and did not realize the '
+        'Medigap clock had not started rather than being paused indefinitely.',
+        'They looked at the premium at 65, decided they were healthy and did not need it, and planned '
+        'to revisit the question later. Later is the problem.',
+        'Nobody ever mentioned it. It is not on the enrollment paperwork and it is not what the '
+        'advertising is about.',
+    ]) + """
+      <h2>The exceptions worth knowing</h2>
+
+      <p>The window is not the only route to guaranteed issue, and if you are outside it the exceptions
+      are where to look first. Federal rules create guaranteed-issue rights in specific circumstances
+      &mdash; among them losing employer or union coverage that was paying alongside Medicare, and a
+      Medicare Advantage plan leaving your area or ending its contract.</p>
+
+      <p>There is also a <strong>trial right</strong>: if you joined a Medicare Advantage plan when you
+      first became eligible at 65, you generally have twelve months to switch back to Original Medicare
+      and buy a Medigap policy with guaranteed issue. Twelve months, from the start of that plan. It is a
+      genuine safety net and it is easy to spend without noticing.</p>
+
+      <p>These rights are narrower than the open enrollment window, they come with their own timing
+      rules, and they are worth confirming with your state's own program rather than an insurer's
+      salesperson.</p>
+
+      <blockquote class="pull">
+        <p>The decision at 65 is not only which coverage you want now. It is whether you keep the option
+        of changing your mind later.</p>
+      </blockquote>
+
+      <h2>What to do about it</h2>
+
+      <p><strong>If you are approaching 65,</strong> find out exactly when your six months start &mdash;
+      it hangs on your Part B enrollment date, not your birthday &mdash; and write the end date down.
+      Decide inside it, not after.</p>
+
+      <p><strong>If you are still working past 65 on employer coverage,</strong> the window opens when
+      you take Part B. That is usually when you retire, and it is the moment to have this decision
+      already made rather than to start thinking about it.</p>
+
+      <p><strong>If the window has closed,</strong> it is still worth applying rather than assuming the
+      answer. Underwriting standards vary between insurers, and a decline from one is not a decline from
+      all. Check whether your state has broader rules, and check whether any guaranteed-issue right
+      applies to your situation.</p>
+
+      <p>Free help exists and does not sell anything: every state has a <strong>SHIP</strong>, a State
+      Health Insurance Assistance Program, with counselors who earn no commission whichever way you go.
+      Their number is on our <a href="/numbers">page of numbers worth keeping by the phone</a>.</p>
+""",
+    'sources': [
+        ('Medicare &mdash; When can I buy Medigap?',
+         'https://www.medicare.gov/health-drug-plans/medigap/ready-to-buy'),
+        ('Medicare Interactive &mdash; Medigap enrollment periods and guaranteed issue',
+         'https://www.medicareinteractive.org/understanding-medicare/health-coverage-options/'
+         'supplemental-insurance-for-original-medicare-medigaps/'
+         'medigap-purchasing-details-enrollment-periods-guaranteed-issue-and-more'),
+        ('NCOA &mdash; Medigap open enrollment',
+         'https://www.ncoa.org/article/medigap-open-enrollment-period/'),
+        ('SHIP &mdash; free local Medicare counseling', 'https://www.shiphelp.org/'),
+    ],
+    'next': {'slug': 'advantage-vs-original',
+             'title': 'Advantage or Original: what actually differs',
+             'blurb': 'The choice this window is really about, laid out without the sales pitch.'},
+}
+
+
+# ------------------------------------------------------------- RMDs / QCDs
+ARTICLES8['rmd-deadline'] = {
+    'title': 'The Withdrawal the IRS Requires, and the Deadline That Costs 25% '
+             '&mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'The withdrawal the IRS requires, and the deadline that costs 25%',
+    'dek': 'At some point the tax deferral ends and the government wants its share. The age depends on '
+           'your birth year, the first one has a trap in it, and there is a route that skips the tax '
+           'entirely.',
+    'meta': '6 minute read &middot; 2026 figures verified against IRS rules',
+    'checked': CHECKED,
+    'body': """      <p>Money in a traditional 401(k) or IRA has never been taxed. That was the deal: deduct it going
+      in, pay on the way out. Required minimum distributions are the government collecting on the second
+      half of that arrangement, and they are not optional.</p>
+
+      <p>Three things about them catch people, and the first is that the starting age is no longer a
+      single number.</p>
+
+""" + facts('The rules, in 2026 terms', [
+        ('When they start', 'Age <strong>73</strong> if you were born between 1951 and 1959. Age '
+                            '<strong>75</strong> if you were born in 1960 or later.'),
+        ('The annual deadline', '31 December, every year after the first.'),
+        ('The first one only', 'You may delay it to <strong>1 April</strong> of the following year '
+                               '&mdash; which is where the trap is.'),
+        ('Missing one', 'A <strong>25% excise tax</strong> on whatever you failed to withdraw. It drops '
+                        'to 10% if you correct it within the IRS window, generally two years.'),
+        ('Which accounts', 'Traditional IRAs, SEP and SIMPLE IRAs, and most workplace plans. Roth IRAs '
+                           'have never required them for the original owner.'),
+        ('The charitable route', 'A qualified charitable distribution from an IRA, available from age '
+                                 '<strong>70&frac12;</strong>, up to <strong>$111,000</strong> per '
+                                 'person in 2026 &mdash; $222,000 for a married couple each giving from '
+                                 'their own IRA.'),
+    ]) + """
+      <h2>The first-year trap</h2>
+
+      <p>The rule that lets you delay your first withdrawal to 1 April sounds like a kindness. Used
+      carelessly it is expensive, because the second one is still due on 31 December of that same year.</p>
+
+      <p>Delay the first and you take <strong>two distributions in one calendar year</strong>. Both land
+      in the same tax return, stacked on top of each other. That can push you into a higher bracket, make
+      more of your Social Security taxable, and &mdash; the one people do not see coming &mdash; raise
+      your income above an IRMAA threshold, which sets your Medicare premium two years later.</p>
+
+      <p>Sometimes doubling up genuinely is the right call, if the following year's income will be much
+      lower. But it should be a decision, not a side effect of not getting round to it in December.</p>
+
+""" + AD_INLINE + """
+      <h2>The penalty is real, and it is survivable</h2>
+
+      <p>Miss a distribution and the excise tax is <strong>25% of the amount you should have taken</strong>.
+      Not 25% of your account, and not a tax on the withdrawal itself &mdash; a penalty on the shortfall,
+      on top of the ordinary income tax you still owe when you do take it.</p>
+
+      <p>It used to be 50%, which was among the harshest penalties in the tax code. SECURE 2.0 cut it,
+      and added something more useful: correct the mistake within the IRS's window, generally two years,
+      and the penalty falls to <strong>10%</strong>. There is also a waiver route &mdash; file Form 5329
+      promptly and show the miss had reasonable cause &mdash; and the IRS does grant it.</p>
+
+      <p>So a missed distribution is a problem to fix quickly rather than a catastrophe to panic about.
+      The expensive version is the one nobody notices for years.</p>
+
+      <h2>The part worth knowing if you give to charity</h2>
+
+      <p>A <strong>qualified charitable distribution</strong> sends money straight from your IRA to a
+      charity, and it never counts as your income at all.</p>
+
+      <p>That last clause is the whole point, and it is why a QCD beats writing a check and claiming a
+      deduction. A deduction only helps if you itemize, and most people over 65 do not. A QCD works
+      regardless, because the money never appears in your income in the first place &mdash; which also
+      keeps it out of the calculations that key off your income, including the taxable share of your
+      Social Security and the IRMAA thresholds that set your Medicare premium.</p>
+
+""" + check([
+        'Available from age <strong>70&frac12;</strong> &mdash; earlier than RMDs begin, so there are '
+        'years when you can do this before you are required to withdraw anything.',
+        'Up to <strong>$111,000</strong> per person in 2026. A married couple can each give that much '
+        'from their own IRA.',
+        'It counts toward your RMD for the year, up to the amount given.',
+        'It must go <strong>directly</strong> from the IRA to the charity. Money that passes through '
+        'your hands first is an ordinary withdrawal, taxed as one.',
+        'It has to be a qualifying charity. Donor-advised funds and private foundations generally do '
+        'not count.',
+    ]) + """
+      <blockquote class="pull">
+        <p>The deadline is 31 December, and it is a real one. Custodians get busy in the last week of
+        December, and a transfer that does not complete in time counts as missed.</p>
+      </blockquote>
+
+      <h2>What to actually do</h2>
+
+      <p><strong>Find your age.</strong> Born 1951 to 1959, it is 73. Born 1960 or later, it is 75. This
+      changed under SECURE 2.0 and a great deal of material still in circulation says 73 for everyone.</p>
+
+      <p><strong>Do it in November.</strong> Not late December. Custodians are slow at year end,
+      paperwork gets returned, and the deadline does not care why the transfer failed to settle.</p>
+
+      <p><strong>If you have several accounts,</strong> the rules on which ones can be combined differ
+      between IRAs and workplace plans. This is the part where people miscalculate in good faith, and
+      it is worth asking your custodian rather than assuming.</p>
+
+      <p><strong>If you give to charity anyway,</strong> ask whether a QCD suits you before you write
+      the check. Same money to the same charity, and it can be worth materially more to you.</p>
+""",
+    'sources': [
+        ('IRS &mdash; Required minimum distributions',
+         'https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs'),
+        ('IRS &mdash; Retirement plan and IRA required minimum distributions',
+         'https://www.irs.gov/retirement-plans/plan-participant-employee/'
+         'retirement-topics-required-minimum-distributions-rmd'),
+        ('Congressional Research Service &mdash; Qualified charitable distributions from IRAs',
+         'https://www.congress.gov/crs-product/IF11377'),
+        ('IRS &mdash; Form 5329', 'https://www.irs.gov/forms-pubs/about-form-5329'),
+    ],
+    'next': {'slug': 'irmaa',
+             'title': 'The Medicare surcharge based on what you earned two years ago',
+             'blurb': 'The threshold a doubled-up first distribution can push you over.'},
+}

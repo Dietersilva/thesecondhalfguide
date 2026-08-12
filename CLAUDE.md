@@ -71,8 +71,10 @@ FTC phone number for exactly this reason and points at `reportfraud.ftc.gov`
 instead. On a page whose promise is "this is safe to call," an unverified
 entry is worse than a missing one.
 
-Every article carries **"Checked against primary sources on <date>"**. That
-line has to stay true.
+Every article carries **"Checked on <date> against the sources listed below"**.
+It used to say "against primary sources", which implied reading the agency's
+own page — something this sandbox cannot do. Do not restore that wording, and
+do not move the checked date for an article you did not actually re-verify.
 
 ---
 
@@ -191,6 +193,8 @@ Do not duplicate these. Check the list before proposing a topic.
 - `/hearing-aids` — What the over-the-counter rule changed
 - `/irmaa` — The Medicare surcharge set by your income from two years ago
 - `/observation-status` — Observation vs. admitted, and the three-day rule
+- `/medigap-window` — The one-time six-month Medigap window
+- `/rmd-deadline` — RMDs by birth year, the 25% penalty, and QCDs
 - `/long-distance` — The new long-distance grandparent
 - `/long-term-care` — Long-term care: the numbers
 - `/medicare-enrollment` — The deadline that never forgives you
@@ -218,12 +222,13 @@ Do not duplicate these. Check the list before proposing a topic.
 - `/widows-penalty` — The widow's penalty
 - `/wednesday-letters` — Reader correspondence
 
-### Known gaps, roughly in priority order
+### Known gaps
 
-1. **The Medigap 6-month window** — one-time guaranteed issue; after it
-   closes, insurers may underwrite or refuse.
-2. **RMDs and QCDs** — 31 December deadline, age 73 or 75 by birth year, and
-   the QCD route at 70½.
+The four gaps identified in August 2026 — IRMAA, observation status, the
+Medigap window, and RMDs/QCDs — are all now written. There is no standing
+backlog. When the week's news is thin, look for what has actually changed
+rather than reaching for a list; if nothing has, a quiet week is the right
+answer.
 
 **Seasonality:** Medicare Annual Enrollment runs **15 October – 7 December**.
 That is when this vertical's advertising money exists. Anything meant to earn

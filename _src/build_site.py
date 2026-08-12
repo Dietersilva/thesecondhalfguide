@@ -48,6 +48,10 @@ DESCRIPTIONS = {
     '/observation-status': 'Observation is a billing status, not a place — why three nights in a '
                            'hospital bed may not count toward Medicare\'s three-day rule, and the '
                            'appeal that opened in 2025.',
+    '/medigap-window': 'The one-time six-month Medigap window: when it starts, what guaranteed issue '
+                       'means, and what insurers may ask once it closes.',
+    '/rmd-deadline': 'Required minimum distributions in 2026 — the age by birth year, the first-year '
+                     'trap, the 25% penalty, and the charitable route that skips the tax.',
     '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide.',
     '/approaching-60': 'What genuinely changes as you approach 60, what does not, and the handful of '
                        'deadlines worth putting on a calendar.',
@@ -228,7 +232,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
-    '/observation-status', '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
+    '/rmd-deadline', '/medigap-window', '/observation-status', '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
     '/downsizing-math', '/driving',
     '/gold-courier-scam', '/wep-gpo-repeal', '/social-security-login',
     '/airport-help', '/airport-security', '/passport-traps',
