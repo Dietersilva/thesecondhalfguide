@@ -45,6 +45,9 @@ DESCRIPTIONS = {
                 '— checked, and printable for the drawer.',
     '/irmaa': 'IRMAA, the Medicare surcharge set by your income from two years ago — the 2026 '
               'thresholds, why it is a cliff rather than a slope, and the form that appeals it.',
+    '/observation-status': 'Observation is a billing status, not a place — why three nights in a '
+                           'hospital bed may not count toward Medicare\'s three-day rule, and the '
+                           'appeal that opened in 2025.',
     '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide.',
     '/approaching-60': 'What genuinely changes as you approach 60, what does not, and the handful of '
                        'deadlines worth putting on a calendar.',
@@ -225,7 +228,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
-    '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
+    '/observation-status', '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
     '/downsizing-math', '/driving',
     '/gold-courier-scam', '/wep-gpo-repeal', '/social-security-login',
     '/airport-help', '/airport-security', '/passport-traps',

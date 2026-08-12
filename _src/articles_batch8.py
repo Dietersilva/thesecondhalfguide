@@ -765,3 +765,124 @@ ARTICLES8['irmaa'] = {
              'blurb': 'The surcharge has a mirror image: if your income is modest, there are programs '
                       'that pay the premium instead.'},
 }
+
+
+# ------------------------------------------------- observation status
+ARTICLES8['observation-status'] = {
+    'title': 'Three Nights in a Hospital Bed, and Medicare Says You Were Never Admitted '
+             '&mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'Three nights in a hospital bed, and Medicare says you were never admitted',
+    'dek': 'Observation is a billing status, not a place. It looks identical from the bed, and it '
+           'can cost you the nursing-home stay afterward. Since 2025 there is finally a way to '
+           'appeal it.',
+    'meta': '6 minute read &middot; Verified against CMS rules and the Alexander v. Azar remedy',
+    'checked': CHECKED,
+    'body': """      <p>Someone falls, breaks a hip, and spends three nights in a hospital. They are in a hospital
+      bed, on a hospital ward, wearing a hospital gown, with hospital staff coming and going. Then they
+      are discharged to a skilled nursing facility for rehabilitation, and a bill arrives for the whole
+      thing.</p>
+
+      <p>The explanation is that they were never admitted. They were under <strong>observation</strong>,
+      which Medicare treats as outpatient care &mdash; and outpatient days do not count toward the three
+      inpatient days Medicare requires before it will pay for the nursing facility afterward.</p>
+
+      <p>Nothing about the room tells you which one you are in.</p>
+
+""" + facts('The two statuses, and what turns on them', [
+        ('Inpatient', 'You were formally admitted. Part A covers the stay, after one deductible.'),
+        ('Observation', 'Outpatient care that happens to involve a bed. Part B covers it &mdash; which '
+                        'means 20% coinsurance, and Original Medicare puts no cap on that.'),
+        ('The three-day rule', 'Medicare pays for a skilled nursing facility only after <strong>three '
+                               'consecutive inpatient days</strong>. Observation days never count toward '
+                               'them, however many there are.'),
+        ('The drugs you already take', 'Your routine medications given during an outpatient stay are '
+                                       'often not covered the way they would be as an inpatient, and '
+                                       'get billed separately.'),
+        ('What it can cost', 'The hospital coinsurance is the small part. The nursing facility that '
+                             'Medicare then declines to pay for is the large one.'),
+        ('Under Medicare Advantage', 'Plans can set their own rules here and some waive the three-day '
+                                     'requirement entirely. Ask your plan rather than assuming either '
+                                     'way.'),
+    ]) + """
+      <h2>You are told, but not asked</h2>
+
+      <p>Since 2017 hospitals have had to hand you a form called the <strong>MOON</strong> &mdash; the
+      Medicare Outpatient Observation Notice &mdash; if you have been receiving observation services as
+      an outpatient for more than 24 hours. It has to arrive within 36 hours, in writing, with a
+      plain-language explanation of why you do not meet the criteria for admission.</p>
+
+      <p>It is worth knowing exactly what that form is and is not. It is a notification. For most of its
+      existence it came with <strong>no right of appeal at all</strong> &mdash; it told you the decision
+      and left you with it. People signed it while medicated, or exhausted, or without reading it,
+      because it looked like the twentieth piece of paper in a stack of admission forms.</p>
+
+""" + AD_INLINE + """
+      <h2>What changed in 2025</h2>
+
+      <p>A class action called <em>Alexander v. Azar</em>, upheld on appeal in 2022, forced Medicare to
+      create an appeal that did not previously exist. CMS issued the rule in October 2024 and turned the
+      process on in two stages:</p>
+
+""" + check([
+        '<strong>From 1 January 2025</strong> &mdash; a retrospective appeal, filed after the fact, for '
+        'Part A coverage that was denied because your status changed.',
+        '<strong>From 14 February 2025</strong> &mdash; an expedited appeal you can file '
+        '<strong>while still in the hospital</strong>, before you are discharged, which is the version '
+        'that can actually change what happens next.',
+    ]) + """
+      <p>There is an important limit on who this covers, and it is the thing most likely to be
+      misunderstood. The appeal is for people in Original Medicare who were <strong>initially admitted
+      as an inpatient and then reclassified</strong> to outpatient observation during the stay. It is
+      not, on its own terms, a route for someone placed under observation from the moment they
+      arrived.</p>
+
+      <p>That distinction matters enormously in practice and it is not intuitive. It is worth asking
+      directly, in the hospital, which of the two happened &mdash; because the answer determines whether
+      this door is open to you.</p>
+
+      <h2>What to do, in the room</h2>
+
+      <p>The single most useful question, asked out loud on the first day and again on the second:
+      <strong>&ldquo;Am I an inpatient or under observation right now?&rdquo;</strong> Not <em>have I
+      been admitted</em>, which people answer loosely, and not <em>am I staying overnight</em>, which is
+      not the same question. Ask for the answer plainly, and ask again if the stay goes on, because the
+      status can be changed partway through.</p>
+
+      <p>If the answer is observation, ask the hospital's case manager or discharge planner whether the
+      attending physician believes an inpatient admission is justified. Status is a clinical judgment
+      applied against Medicare's criteria, not a fixed fact, and doctors do revisit it.</p>
+
+      <p>If you were admitted and then moved to observation, say that you want to appeal, and say it
+      before discharge. That is the expedited route, and it is the one with teeth.</p>
+
+      <p>And if you are the family member rather than the patient: this is the thing to handle. Someone
+      who has just broken a hip is in no condition to interrogate their own billing status, and the
+      window in which the question matters is the few days when they are least able to ask it.</p>
+
+      <blockquote class="pull">
+        <p>Nobody in the room will raise this with you. The form arrives, it gets signed, and the
+        consequence shows up weeks later in an envelope.</p>
+      </blockquote>
+
+      <p>One more piece of housekeeping: hospitals move to an updated MOON form in April 2026, which
+      requires an individualized written explanation of why you specifically do not meet inpatient
+      criteria. If you are handed one, read that section. It is the hospital's own reasoning, in
+      writing, and it is what any appeal will turn on.</p>
+""",
+    'sources': [
+        ('CMS &mdash; Hospital Appeals, Change of Inpatient Status (Alexander v. Azar)',
+         'https://www.cms.gov/medicare/appeals-grievances/original-medicare-appeals/'
+         'hospital-appeals-change-inpatient-status-alexander-v-azar'),
+        ('CMS &mdash; Appeal Rights for Certain Changes in Patient Status, final rule',
+         'https://www.federalregister.gov/documents/2024/10/15/2024-23195/'
+         'medicare-program-appeal-rights-for-certain-changes-in-patient-status'),
+        ('Medicare &mdash; Skilled nursing facility care',
+         'https://www.medicare.gov/coverage/skilled-nursing-facility-care'),
+        ('Center for Medicare Advocacy &mdash; Outpatient observation status',
+         'https://medicareadvocacy.org/medicare-info/observation-status/'),
+    ],
+    'next': {'slug': 'long-term-care',
+             'title': 'Long-term care: the numbers, before the sales pitch',
+             'blurb': 'What the nursing facility actually costs, if Medicare declines to pay for it.'},
+}

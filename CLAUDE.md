@@ -190,6 +190,7 @@ Do not duplicate these. Check the list before proposing a topic.
 - `/gold-courier-scam` — When the scammer sends someone to your door
 - `/hearing-aids` — What the over-the-counter rule changed
 - `/irmaa` — The Medicare surcharge set by your income from two years ago
+- `/observation-status` — Observation vs. admitted, and the three-day rule
 - `/long-distance` — The new long-distance grandparent
 - `/long-term-care` — Long-term care: the numbers
 - `/medicare-enrollment` — The deadline that never forgives you
@@ -219,11 +220,9 @@ Do not duplicate these. Check the list before proposing a topic.
 
 ### Known gaps, roughly in priority order
 
-1. **Observation status vs. admitted** — three nights in a hospital bed under
-   "observation" and Medicare can decline the skilled-nursing stay after.
-2. **The Medigap 6-month window** — one-time guaranteed issue; after it
+1. **The Medigap 6-month window** — one-time guaranteed issue; after it
    closes, insurers may underwrite or refuse.
-3. **RMDs and QCDs** — 31 December deadline, age 73 or 75 by birth year, and
+2. **RMDs and QCDs** — 31 December deadline, age 73 or 75 by birth year, and
    the QCD route at 70½.
 
 **Seasonality:** Medicare Annual Enrollment runs **15 October – 7 December**.
