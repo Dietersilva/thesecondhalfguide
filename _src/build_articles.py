@@ -240,7 +240,7 @@ def article(a, links, nav):
 
     <div class="sources">
       <h2>Where these facts come from</h2>
-      <p class="checked">Checked against primary sources on {a['checked']}. Dollar limits and program
+      <p class="checked">Checked on {a['checked']} against the sources listed below. Dollar limits and program
       rules change &mdash; if you're reading this well after that date, verify the numbers at the links below.</p>
       <ul>
 {src}
