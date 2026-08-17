@@ -71,6 +71,26 @@ FTC phone number for exactly this reason and points at `reportfraud.ftc.gov`
 instead. On a page whose promise is "this is safe to call," an unverified
 entry is worse than a missing one.
 
+### Outside audits are leads, not instructions
+
+Two outside fact-checks have been useful and both were wrong often enough to
+matter. Treat their output as a list of things to verify, never as text to
+paste. Specifically:
+
+- One of them gave **opposite advice on the same claim across two passes**.
+  On Massachusetts Medigap it first said to add year-round guaranteed issue,
+  then said to remove the February–March window, then rejected the year-round
+  wording it had asked for. The regulation, 211 CMR 71.10, carries **both**
+  facts: issuers may not deny or price on health status *at any time*, and a
+  required annual open enrollment runs 1 Feb – 31 Mar. Neither exclusive
+  framing was right. Go to the rule.
+- It has twice reported already-corrected text as still live, because it was
+  reading a cached copy. Verify currency against the deployed files yourself
+  before accepting a "still broken" claim.
+- Where it is reliably good is **overstatement** — "always", "never", "the
+  largest", "will" where "may" belongs. Most of its true findings are that
+  shape.
+
 ### The failure that checking numbers does not catch
 
 A figure can be perfectly current while **the rule it describes has been

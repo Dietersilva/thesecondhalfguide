@@ -23,7 +23,8 @@ ARTICLES3['medicare-enrollment'] = {
       late-enrollment penalties are permanent. Not a one-off fee, not a penalty that expires after a few
       years &mdash; a percentage added to your monthly premium for as long as you have the coverage. (The
       one that does end is the penalty on premium Part A, which most people never pay: it runs for twice
-      the number of years you delayed, and then stops.) Someone who delays Part B by
+      the number of years you delayed, and then stops. And someone who qualifies for a Medicare Savings
+      Program generally will not pay the Part B penalty either.) Someone who delays Part B by
       three years without qualifying coverage pays roughly 30% extra <em>every month, for the rest of
       their life</em>.</p>
 

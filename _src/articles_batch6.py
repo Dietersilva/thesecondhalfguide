@@ -140,8 +140,9 @@ ARTICLES6['airport-security'] = {
       shoes on at airport security while everyone else queued in their socks.</p>
 
       <p>That perk is gone, because the rule it was an exception to is gone. <strong>On 8 July 2025 the
-      Department of Homeland Security ended the shoes-off requirement at domestic TSA checkpoints for
-      everyone</strong>, at any age, in standard lanes. Nineteen years of screening technology had made
+      Department of Homeland Security ended the nationwide shoes-off requirement at domestic TSA
+      checkpoints</strong>, for passengers of any age. Screening can still take a closer look at particular
+      footwear, but the blanket rule is gone. Nineteen years of screening technology had made
       it unnecessary.</p>
 
       <p>So the age threshold is still worth knowing about, but mainly for the opposite reason to the one

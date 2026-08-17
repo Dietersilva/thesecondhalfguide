@@ -112,8 +112,10 @@ ARTICLES4['advantage-vs-original'] = {
         ('After that', 'In most states insurers may use medical underwriting &mdash; they can ask health '
                        'questions, charge more, or decline you.'),
         ('Unless you live somewhere with better rules', 'New York, Connecticut and '
-                                                        'Massachusetts don’t allow underwriting at all &mdash; '
-                                                        'Massachusetts is guaranteed issue all year. '
+                                                        'Massachusetts don’t allow underwriting at all. '
+                                                        'Massachusetts bars health-based pricing or refusal '
+                                                        'at any time and also runs a designated annual open '
+                                                        'enrollment, 1 Feb &ndash; 31 Mar. '
                                                         'Washington allows switching after 90 days. A '
                                                         'growing list of states &mdash; including '
                                                         'California, Illinois, Oregon, Nevada, Maryland '
