@@ -36,20 +36,31 @@ ARTICLES9['aca-subsidy-cliff'] = {
 """ + facts('What changed at the start of 2026', [
         ('The cliff, restored', 'Income above 400% of the federal poverty level now loses ACA premium '
                                 'tax credits entirely, not gradually.'),
-        ('Everyone else pays more too', 'People still under 400% and receiving credits are paying more '
-                                        'as well, because the enhanced, larger credit amount also '
-                                        'expired.'),
-        ('The average increase', 'Subsidized enrollees are seeing out-of-pocket premiums rise about '
-                                 '114% on average &mdash; from roughly $888 a year in 2025 to roughly '
-                                 '$1,904 in 2026.'),
+        ('Enrollees are paying more, on average', 'KFF found the average net premium payment across '
+                                                  '<em>all</em> marketplace enrollees, subsidized or not, '
+                                                  'rose about 58% &mdash; from $113 to $178 a month.'),
+        ('The steeper estimate, for one group', 'For people who were receiving subsidies in 2025 and keep '
+                                                'the identical plan in 2026, KFF estimates the increase '
+                                                'at about 114% on average &mdash; roughly $888 a year to '
+                                                'roughly $1,904. Many enrollees are instead switching to '
+                                                'cheaper plans, which is part of why the increase across '
+                                                'everyone is smaller than that figure.'),
         ('Who is affected most', 'People with incomes just above 400% of poverty, a group that made up '
                                  'a small share of 2025 enrollment but a large share of the drop in '
                                  'sign-ups this year.'),
-        ('400% of poverty, in dollars', 'Roughly $62,600 for a single person and $84,600 for a couple '
-                                        'in the 48 contiguous states, using the poverty guidelines this '
-                                        'year’s eligibility is measured against. Check your own '
-                                        'household size on HealthCare.gov &mdash; the figure moves with '
-                                        'family size and is higher in Alaska and Hawaii.'),
+        ('400% of poverty, in dollars', 'Roughly $62,600 for a single person and $84,600 for a couple in '
+                                        'the 48 contiguous states. Marketplace eligibility for 2026 '
+                                        'coverage is measured against the <strong>2025</strong> poverty '
+                                        'guidelines, not the newer 2026 ones &mdash; using the wrong '
+                                        'year’s table is an easy way to get this number wrong. Check your '
+                                        'own household size on HealthCare.gov, and confirm which year’s '
+                                        'guideline it is using.'),
+        ('The repayment cap is also gone', 'Starting with the 2026 tax year, if you received more advance '
+                                           'premium tax credit than you turned out to qualify for, there '
+                                           'is <strong>no cap</strong> on what you repay at tax time. '
+                                           'Through 2025 the repayment was capped at a few hundred to a '
+                                           'few thousand dollars depending on income; that cap is gone for '
+                                           '2026 returns, at every income level.'),
     ]) + """
       <h2>Why this lands on this site's readers specifically</h2>
 
@@ -72,12 +83,18 @@ ARTICLES9['aca-subsidy-cliff'] = {
         'Find your <strong>household size and estimated 2026 income</strong> in dollars, then compare it '
         'to 400% of the federal poverty line for that household size &mdash; not last year’s income, '
         'this year’s estimate.',
-        'If you are close to the line, understand that <strong>$1 over means the whole credit disappears</strong>, '
-        'not a smaller credit. This is a cliff, not a slope, the same shape as the Medicare IRMAA '
-        'surcharge described elsewhere on this site.',
-        'Managing income to stay under the line is a real, legal strategy &mdash; timing IRA withdrawals, '
-        'Roth conversions, and capital gains matters more this year than last. This is a conversation for '
-        'an accountant who can see your actual numbers, not a formula here.',
+        'If your household income for the year comes in <strong>above the applicable 400% threshold</strong>, '
+        'the premium tax credit is not available for that year &mdash; it is a cliff, not a slope, the same '
+        'shape as the Medicare IRMAA surcharge described elsewhere on this site.',
+        'Income from <strong>IRA withdrawals, Roth conversions and realized capital gains</strong> all count '
+        'toward the household income used to determine eligibility. Anyone considering one of these '
+        'transactions specifically because of its effect on marketplace eligibility should check the full '
+        'tax consequences with a qualified tax professional first &mdash; this page reports the rule, not '
+        'the strategy.',
+        'Because the <strong>repayment cap is gone for 2026</strong>, an income estimate that turns out too '
+        'low is a bigger risk than in past years &mdash; there is no longer a ceiling on what you would owe '
+        'back. If your income might come in higher than what you told the marketplace, update your '
+        'application during the year rather than waiting for tax time.',
         'Re-check your plan during <strong>open enrollment</strong> even if nothing else about your life '
         'changed &mdash; the subsidy math changed under you, and the plan that made sense in 2025 may not '
         'be the best value in 2026.',
@@ -99,6 +116,10 @@ ARTICLES9['aca-subsidy-cliff'] = {
          'https://www.congress.gov/crs-product/R48290'),
         ('HealthCare.gov &mdash; Federal poverty level (FPL)',
          'https://www.healthcare.gov/glossary/federal-poverty-level-fpl/'),
+        ('IRS &mdash; Fact Sheet 2025-10, Premium Tax Credit questions and answers',
+         'https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-on-the-premium-tax-credit'),
+        ('KFF &mdash; What We Know So Far About 2026 ACA Marketplace Enrollment, Premiums, and Deductibles',
+         'https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/'),
     ],
     'next': {'slug': 'rule-of-55',
              'title': 'The Rule of 55: what it actually covers',
@@ -128,9 +149,12 @@ ARTICLES9['rule-of-55'] = {
         ('What it applies to', 'Only the 401(k) or 403(b) of the employer <strong>you are leaving</strong>. '
                                'Not old employers’ plans, not IRAs, not a plan you already rolled '
                                'money into.'),
-        ('Public safety exception', 'Federal, state and local public safety employees &mdash; police, '
-                                    'firefighters, EMTs among them &mdash; qualify at 50, or after 25 '
-                                    'years of service, whichever comes first.'),
+        ('Public safety exception', 'A specific list of &ldquo;qualified public safety employees&rdquo; '
+                                    '&mdash; state and local police, firefighters and EMS workers, federal '
+                                    'law enforcement and firefighters, air traffic controllers, and (since '
+                                    'a 2022 law) private-sector firefighters and state/local corrections '
+                                    'officers &mdash; qualify at 50, or at any age once they reach 25 years '
+                                    'of service under the plan.'),
         ('Taxes still apply', 'Ordinary income tax is owed on every withdrawal, exactly as it would be '
                               'after 59&frac12;. Only the 10% early-withdrawal penalty is waived.'),
         ('The plan decides the mechanics', 'Employers are not required to allow flexible withdrawals. '
@@ -139,10 +163,12 @@ ARTICLES9['rule-of-55'] = {
     ]) + """
       <h2>The mistake that cancels it</h2>
 
-      <p>The single most common way people accidentally lose this exception: <strong>rolling the 401(k)
-      into an IRA</strong> after leaving the job, often on the advice of someone focused on investment
-      options rather than on this rule. The moment the money moves into an IRA, penalty-free access under
-      the Rule of 55 is gone — IRAs use age 59&frac12; with no equivalent exception.</p>
+      <p>One way people lose access to this exception without meaning to: <strong>rolling the 401(k) into
+      an IRA</strong> after leaving the job, often on the advice of someone focused on investment options
+      rather than on this rule. The Rule of 55 itself does not apply to IRAs — it is specific to the
+      employer plan. Once the money is in an IRA, the standard age-59&frac12; rule governs it instead, along
+      with the IRA's own separate list of penalty exceptions, which is shorter and does not include simply
+      &ldquo;you left a job after 55.&rdquo;</p>
 
       <p>If there is any chance you will need this money before 59&frac12;, that is a reason to leave it in
       the old employer's plan, at least for the amount you may need, before rolling the rest anywhere
@@ -178,6 +204,9 @@ ARTICLES9['rule-of-55'] = {
          'https://www.irs.gov/retirement-plans/retirement-plans-faqs-regarding-required-minimum-distributions'),
         ('IRS &mdash; Topic no. 558, Additional tax on early distributions',
          'https://www.irs.gov/taxtopics/tc558'),
+        ('TSP.gov &mdash; SECURE Act 2.0, Section 329: Modification of eligible age for qualified public '
+         'safety employees',
+         'https://www.tsp.gov/bulletins/23-3/'),
     ],
     'next': {'slug': 'delayed-retirement-credit',
              'title': 'What delaying Social Security actually adds to your check',
@@ -201,10 +230,12 @@ ARTICLES9['delayed-retirement-credit'] = {
         ('Full retirement age (FRA)', '67, for anyone born in 1960 or later.'),
         ('Delayed retirement credits', '8% added per year for each year you wait past FRA, up to age 70.'),
         ('Maximum total increase', '24% above your FRA benefit amount, reached at age 70.'),
-        ('Where it stops', 'Age 70. Waiting past 70 adds nothing further &mdash; there is no reason to '
-                           'delay claiming beyond it.'),
+        ('Where it stops', 'Delayed retirement credits stop accumulating at age 70. Waiting beyond 70 does '
+                           'not increase the retirement benefit further.'),
         ('What it does not change', 'How your benefit was calculated in the first place, or whether '
-                                    'benefits are taxed. It is purely a multiplier applied for waiting.'),
+                                    'benefits are taxed. The credit increases the benefit based on how '
+                                    'long you wait past FRA, up to 70 &mdash; it does not change anything '
+                                    'else about how the benefit works.'),
     ]) + """
       <p>In practical terms: someone whose FRA benefit is $2,000 a month gets about $2,480 a month by
       waiting until 70 instead — permanently, adjusted for cost-of-living increases every year after,
@@ -227,8 +258,12 @@ ARTICLES9['delayed-retirement-credit'] = {
         'If you are married, the <strong>higher earner delaying</strong> raises the benefit that becomes '
         'the survivor benefit later &mdash; the mechanic behind <a href="/widows-penalty">the widow’s '
         'penalty</a> piece on this site.',
-        'Delaying does not affect <strong>Medicare enrollment</strong>. You still need to sign up for Part '
-        'B on its own seven-month schedule regardless of when you claim Social Security.',
+        'Delaying Social Security does not automatically delay your <strong>Medicare</strong> enrollment. '
+        'Most people still need to sign up for Part B on its own seven-month schedule at 65 no matter when '
+        'they claim Social Security. The exception is active employer group health coverage — yours or a '
+        'spouse’s current job — which can open a Special Enrollment Period instead; see '
+        '<a href="/medicare-enrollment">the Medicare enrollment deadline piece</a> on this site for the '
+        'specifics.',
         'The 8% figure is <strong>set in statute</strong>, not adjusted for inflation or market conditions '
         '&mdash; it is the same 8% every year, unlike COLA increases.',
     ]) + """
