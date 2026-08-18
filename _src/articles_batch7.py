@@ -260,8 +260,9 @@ ARTICLES7['gold-courier-scam'] = {
       </ol>
 
 """ + facts('The tells, in the order you’ll meet them', [
-        ('A pop-up with a phone number', 'Real security software never gives you a number to call. This '
-                                         'is the entry point for a large share of these cases.'),
+        ('A pop-up with a phone number', 'A number that appears inside an alarming warning is the entry '
+                                         'point for a large share of these cases. Whether or not the '
+                                         'software is genuine, that is not the number to call.'),
         ('Remote access to your computer', 'Once granted, everything they show you on your own screen is '
                                            'under their control.'),
         ('An accusation designed to shame', 'Illegal images, money laundering, drug money. The point is '
@@ -298,8 +299,10 @@ ARTICLES7['gold-courier-scam'] = {
       <h2>The rules that stop it</h2>
 
 """ + check([
-        'A <strong>pop-up with a phone number is always a scam.</strong> Don’t call it. Shut the '
-        'browser; hold the power button if you must.',
+        '<strong>Never call a number that a pop-up gave you.</strong> If you think the warning might '
+        'be real, close the browser &mdash; hold the power button if you must &mdash; and reach the '
+        'company through a number you looked up yourself. That works whether the warning was genuine '
+        'or not, which is the point.',
         'Never give <strong>remote access</strong> to anyone who contacted you first.',
         'No agency, bank or investigator will ever tell you to buy <strong>gold, silver or '
         'cryptocurrency</strong>, or to hand valuables to a courier. Treat any of these as proof.',
