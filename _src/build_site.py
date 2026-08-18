@@ -70,6 +70,9 @@ DESCRIPTIONS = {
     '/privacy': 'Privacy Policy and Terms for The Second Half Guide: what we collect, the newsletter, advertising cookies, your rights, and the editorial disclaimers.',
     '/property-tax': 'Most states reduce, freeze or defer property taxes at a certain age. Almost none apply it automatically, and the age is lower than people assume.',
     '/senior-age': 'There is no senior birthday. About a dozen unrelated clocks — 50, 55, 59½, 62, 65, 67 — set by different institutions, and only some of them matter.',
+    '/aca-subsidy-cliff': 'The enhanced ACA premium tax credits expired at the end of 2025. What that means for marketplace premiums in 2026, and where the subsidy cliff now sits.',
+    '/rule-of-55': 'Leave a job at 55 or later and you may tap that employer’s 401(k) penalty-free. The IRS rule, the rollover trap that cancels it, and what still gets taxed.',
+    '/delayed-retirement-credit': 'Waiting past full retirement age adds 8% a year to your Social Security check, up to 24% at 70. The published SSA rule, not a hidden bonus.',
     '/no-tax-on-social-security': 'The 2025 law created a $6,000 deduction for people over 65. It did not change how Social Security is taxed — those thresholds are frozen since 1984.',
     '/senior-deduction-phaseout': 'The $6,000 senior deduction shrinks by six cents per dollar above $75,000 single or $150,000 joint, and reaches zero at $175,000. The arithmetic.',
     '/senior-deduction-sunset': 'The $6,000 senior deduction applies to tax years 2025 through 2028 and then ends. What that means for timing a conversion or a sale.',
@@ -253,6 +256,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/aca-subsidy-cliff', '/rule-of-55', '/delayed-retirement-credit',
     '/senior-deduction-sunset', '/standard-deduction-65',
     '/no-tax-on-social-security', '/senior-deduction-phaseout',
     '/rmd-deadline', '/medigap-window', '/observation-status', '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
