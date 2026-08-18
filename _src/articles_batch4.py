@@ -139,7 +139,7 @@ ARTICLES4['advantage-vs-original'] = {
         'Run your <strong>prescriptions</strong> through the Plan Finder at <em>medicare.gov</em> under '
         'both structures. Compare estimated annual totals, not premiums.',
         'Ask how often you <strong>travel or live elsewhere</strong> for part of the year.',
-        'If you want Medigap, buy it in your <strong>six-month window</strong>. This is the single most '
+        'If you want Medigap, buy it in your <strong>six-month window</strong>. It is the most '
         'time-sensitive thing in this article.',
         'Talk to your <strong>SHIP</strong> counselor &mdash; free, and unlike a broker, they earn '
         'nothing from your choice. Find yours at <em>shiphelp.org</em>.',
@@ -185,7 +185,7 @@ ARTICLES4['medicare-gaps'] = {
       custodial care.</strong> Not in a nursing home, not assisted living, not a home aide who helps with
       bathing, dressing, meals and medication.</p>
 
-      <p>This is the single most consequential misunderstanding in American retirement planning, and it's
+      <p>This is the misunderstanding that costs families most, and it's
       easy to see how it arises, because Medicare <em>does</em> cover something that looks similar.</p>
 
 """ + facts('Skilled nursing care under Medicare, 2026', [

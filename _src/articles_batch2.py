@@ -200,7 +200,7 @@ ARTICLES2['power-of-attorney'] = {
 
       <ul>
         <li><strong>The power to make gifts.</strong> Sometimes useful for tax or Medicaid planning.
-        Also the single most common route to abuse.</li>
+        Also a common route to abuse.</li>
         <li><strong>The power to change beneficiary designations.</strong> Remember that beneficiary
         forms often outrank your will &mdash; so this power can quietly rewrite your estate plan.</li>
         <li><strong>Real estate transactions.</strong> Selling or mortgaging your home.</li>
@@ -363,7 +363,7 @@ ARTICLES2['romance-scams'] = {
         '<strong>Keep everything</strong> &mdash; messages, profiles, payment records, account numbers. '
         'Don’t delete in embarrassment; it’s the evidence.',
         '<strong>Tell one person you trust.</strong> Isolation is the mechanism. Breaking it is the '
-        'single most protective thing you can do.',
+        'thing that protects people.',
     ]) + """
       <p>Shame is the last tool the scam uses, and the most effective one. It keeps people silent long
       enough for the trail to go cold, and it stops them warning anyone else.</p>
@@ -466,7 +466,7 @@ ARTICLES2['travel-insurance'] = {
       14&ndash;21 days, and insure the full trip cost. Miss the window and the waiver is simply
       unavailable, at any price.</p>
 
-      <p>Which produces the single most actionable rule in this article: if you have any ongoing health
+      <p>Which produces the one rule worth carrying out of this article: if you have any ongoing health
       condition and intend to insure a significant trip, buy the policy <strong>right after you make the
       first deposit</strong>, not the week before you fly.</p>
 
@@ -778,7 +778,7 @@ ARTICLES2['aging-in-place'] = {
       <h2>What actually makes a house workable</h2>
 
 """ + facts('Roughly in order of how much they matter', [
-        ('A no-step entry', 'One way into the house without stairs. The single most valuable modification '
+        ('A no-step entry', 'One way into the house without stairs. The modification that matters most '
                             'and often the least expensive to solve, sometimes with a ramp or regrading.'),
         ('A full bathroom on the main floor', 'Along with a bedroom. Whether single-floor living is '
                                               'possible does more work than any other structural question.'),

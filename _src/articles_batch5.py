@@ -147,8 +147,8 @@ ARTICLES5['long-term-care'] = {
            'actually costs, who pays for it now, and what insurance does and doesn’t do.',
     'meta': '7 minute read &middot; Costs from the 2025&ndash;26 Cost of Care survey',
     'checked': CHECKED,
-    'body': """      <p>We've said elsewhere that Medicare doesn't cover long-term custodial care. That's the single
-      most consequential gap in American retirement planning, and it deserves more than a sentence.</p>
+    'body': """      <p>We've said elsewhere that Medicare doesn't cover long-term custodial care. That's the
+      largest gap most people meet in retirement, and it deserves more than a sentence.</p>
 
       <p>So this piece is the numbers. Not whether you should buy insurance — that depends on your
       assets, your health, your family and your state, and anyone who answers it without asking about

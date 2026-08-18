@@ -362,7 +362,7 @@ ARTICLES6['travel-medications'] = {
       exceptions, no doctor's note.</p>
 
       <p>What is permitted is an <strong>FAA-approved portable oxygen concentrator</strong>, which makes
-      oxygen from cabin air rather than storing it. If you use oxygen, this is the single most important
+      oxygen from cabin air rather than storing it. If you use oxygen, this is the first thing
       thing to sort out before booking, because it has several moving parts:</p>
 
       <ul>
@@ -613,7 +613,7 @@ ARTICLES6['the-big-trip'] = {
       <p>A few structural choices make a large difference:</p>
 
       <ul>
-        <li><strong>Fewer bases, longer stays.</strong> Changing hotels is the single most tiring thing in
+        <li><strong>Fewer bases, longer stays.</strong> Changing hotels is the tiring part of
         travel &mdash; packing, transfers, re-orienting. Three nights minimum anywhere; a week where you
         can. Day trips out from a base beat a new city every second night.</li>
         <li><strong>One thing a day.</strong> One museum, one site, one long lunch. Two is a stretch,

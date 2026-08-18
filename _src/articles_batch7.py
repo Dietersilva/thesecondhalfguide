@@ -71,7 +71,7 @@ ARTICLES7['wep-gpo-repeal'] = {
         'Already receiving Social Security and had WEP or GPO applied? Look at your <strong>current '
         'payment amount</strong> and confirm it rose. Most adjustments and back payments have been made.',
         'Told years ago not to file for a <strong>spousal or survivor benefit</strong> because of a '
-        'public pension? Contact SSA. This is the single most likely place money is being left unclaimed.',
+        'public pension? Contact SSA. This is where money is most often left unclaimed.',
         'Still working in public service and planning your claim? The old arithmetic no longer applies '
         '&mdash; <strong>any estimate made before 2025 understates your benefit</strong>.',
         'Check your <strong>my Social Security</strong> account for your current benefit and earnings '

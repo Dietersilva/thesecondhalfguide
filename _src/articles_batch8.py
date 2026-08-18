@@ -164,7 +164,7 @@ ARTICLES8['widows-penalty'] = {
 """ + AD_INLINE + """
       <h2>The pension election nobody remembers making</h2>
 
-      <p>If there's a pension, the single most consequential decision was made years earlier, usually at
+      <p>If there's a pension, the decision that mattered most was made years earlier, usually at
       a desk, on a form, in a hurry.</p>
 
       <p>Taking the higher single-life payment rather than a reduced joint-and-survivor option means the
@@ -311,7 +311,7 @@ ARTICLES8['falls'] = {
         'medicine because people are embarrassed.',
     ]) + """
       <p>The last one matters most. Falls go unmentioned because they feel like evidence of decline, so
-      the single most useful warning sign gets hidden from the one person who could act on it.</p>
+      the clearest warning sign gets hidden from the one person who could act on it.</p>
 
       <p>A fall isn't a verdict about age. It's a data point about strength, medication, vision and blood
       pressure — every one of which can be changed.</p>
@@ -848,7 +848,7 @@ ARTICLES8['observation-status'] = {
 
       <h2>What to do, in the room</h2>
 
-      <p>The single most useful question, asked out loud on the first day and again on the second:
+      <p>The question worth asking out loud on the first day and again on the second:
       <strong>&ldquo;Am I an inpatient or under observation right now?&rdquo;</strong> Not <em>have I
       been admitted</em>, which people answer loosely, and not <em>am I staying overnight</em>, which is
       not the same question. Ask for the answer plainly, and ask again if the stay goes on, because the

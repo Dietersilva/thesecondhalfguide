@@ -304,7 +304,7 @@ ARTICLES['senior-age'] = {
 
       <p>None of these organizations consulted each other. &ldquo;Senior&rdquo; sounds like a category
       you enter on a particular morning, the way you became eligible to vote at 18. It isn't. It's a
-      patchwork of unrelated definitions, and the single most useful habit you can build in this decade
+      patchwork of unrelated definitions, and the most useful habit in this decade
       is asking a follow-up question: <em>senior for what?</em></p>
 
       <p>Because the honest answer is that some of these thresholds are worth a few dollars off a train
@@ -759,7 +759,7 @@ ARTICLES['beneficiary-form'] = {
       <p>Both documents are valid. They say different things. And in many cases it's the eighteen-year-old
       form, not the carefully drafted will, that determines where the money goes.</p>
 
-      <p>This is probably the single most common gap between what people believe their estate plan says
+      <p>This is probably the widest gap between what people believe their estate plan says
       and what it actually does &mdash; and unlike most estate-planning problems, it's genuinely quick to
       check.</p>
 
