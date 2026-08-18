@@ -1127,3 +1127,389 @@ ARTICLES8['rmd-deadline'] = {
              'title': 'The Medicare surcharge based on what you earned two years ago',
              'blurb': 'The threshold a doubled-up first distribution can push you over.'},
 }
+
+
+# --------------------------------------------- senior deduction: phase-out
+ARTICLES8['senior-deduction-phaseout'] = {
+    'title': 'Senior Deduction Phase-Out: The $75,000 Line &mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'The $75,000 line, and what the senior deduction is worth above it',
+    'dek': 'The $6,000 deduction does not stop at the threshold, it shrinks. Six cents for every dollar '
+           'over &mdash; which means the arithmetic is worth doing before December.',
+    'meta': '5 minute read &middot; 2026 figures verified against IRS rules',
+    'checked': CHECKED,
+    'body': """      <p>Most coverage of the new senior deduction stops at two numbers: <strong>$6,000</strong>, and
+      <strong>$75,000</strong>. You get the deduction if you are 65 or older, and it starts phasing out
+      above $75,000 of income.</p>
+
+      <p>What almost nothing explains is what happens <em>between</em> those points, which is where a lot
+      of people actually are. It does not vanish at $75,001. It shrinks, at a fixed rate, and the rate is
+      slow enough that the deduction is still worth real money well past the threshold.</p>
+
+""" + facts('The arithmetic, 2026', [
+        ('The deduction', '$6,000 per person 65 or older. A married couple where both qualify get '
+                          '<strong>$12,000</strong> between them.'),
+        ('Where it starts shrinking', 'Modified adjusted gross income above <strong>$75,000 single</strong> '
+                                      'or <strong>$150,000 married filing jointly</strong>.'),
+        ('How fast', 'It falls by <strong>6 cents for every dollar</strong> of income above the threshold.'),
+        ('Where it reaches zero', '$175,000 single. $250,000 joint.'),
+        ('Which years', 'Tax years <strong>2025 through 2028</strong> only. It is temporary.'),
+        ('Standard or itemized', 'You can claim it either way. It is not tied to taking the standard '
+                                 'deduction.'),
+    ]) + """
+      <h2>What the taper actually costs you</h2>
+
+      <p>Six percent is gentler than people assume. Work it through for a single filer 65 or older:</p>
+
+""" + check([
+        'At <strong>$75,000</strong> or below &mdash; the full $6,000.',
+        'At <strong>$85,000</strong> &mdash; $10,000 over the line, so $600 comes off. You still have '
+        '$5,400.',
+        'At <strong>$100,000</strong> &mdash; $25,000 over, so $1,500 comes off. Still $4,500.',
+        'At <strong>$125,000</strong> &mdash; half gone. $3,000 left.',
+        'At <strong>$175,000</strong> &mdash; nothing left.',
+    ]) + """
+      <p>The practical point is that <strong>being over the threshold is not the same as being out</strong>.
+      Someone at $100,000 who assumes the deduction is not for them is leaving $4,500 of deduction
+      unclaimed on the assumption that a headline number applied to them.</p>
+
+""" + AD_INLINE + """
+      <h2>The bit worth planning around</h2>
+
+      <p>Because the taper is smooth, every dollar of income you can move out of one year and into
+      another is worth six cents of deduction on top of whatever it saves in ordinary tax. That is not a
+      dramatic amount on a single dollar. It becomes one on a large, discretionary, one-off sum.</p>
+
+      <p>The candidates are the usual ones: a Roth conversion, a property sale, a lumpy retirement
+      distribution, exercising options, or realizing a gain that has been sitting for years. If you have
+      any control over which tax year one of those lands in, the deduction is one more thing on the
+      scale.</p>
+
+      <p>It also interacts with something else on this site. <a href="/irmaa">IRMAA</a>, the Medicare
+      surcharge, keys off the same kind of income two years later &mdash; and unlike this deduction, it
+      is a cliff rather than a taper. A dollar that costs you six cents of senior deduction can, at the
+      wrong moment, also cost you around $975 of Medicare surcharge. The two thresholds are worth looking
+      at on the same page.</p>
+
+      <blockquote class="pull">
+        <p>The deduction tapers. The Medicare surcharge does not. One dollar over the wrong line costs
+        far more than one dollar over this one.</p>
+      </blockquote>
+
+      <h2>Two things to check before assuming</h2>
+
+      <p><strong>Which income figure applies.</strong> The threshold is modified adjusted gross income,
+      not your gross pay and not your taxable income after deductions. For most people it is close to
+      adjusted gross income, but if you have tax-exempt interest or foreign income the two diverge.</p>
+
+      <p><strong>Whether both of you qualify.</strong> The $12,000 for a married couple requires
+      <em>both</em> spouses to be 65 or older. A couple where one is 66 and the other is 63 gets $6,000
+      this year and the second $6,000 in the year the younger one turns 65 &mdash; assuming the provision
+      is still in force, which it is not scheduled to be after 2028.</p>
+
+      <p>None of this is a reason to earn less. It is a reason to know the line is a slope rather than a
+      wall, and roughly where on it you are standing.</p>
+""",
+    'sources': [
+        ('IRS &mdash; Check your eligibility for the new enhanced deduction for seniors',
+         'https://www.irs.gov/newsroom/check-your-eligibility-for-the-new-enhanced-deduction-for-seniors'),
+        ('IRS &mdash; 2026 filing season updates and resources for seniors',
+         'https://www.irs.gov/newsroom/2026-filing-season-updates-and-resources-for-seniors'),
+    ],
+    'next': {'slug': 'no-tax-on-social-security',
+             'title': '&ldquo;No tax on Social Security&rdquo;: what the law actually did',
+             'blurb': 'The deduction is real. The phrase attached to it in the press is not.'},
+}
+
+
+# ------------------------------------- "no tax on Social Security"
+ARTICLES8['no-tax-on-social-security'] = {
+    'title': 'No Tax on Social Security: What the Law Actually Did &mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': '&ldquo;No tax on Social Security&rdquo;: what the law actually did',
+    'dek': 'A real deduction arrived for people over 65. It is not what the phrase says it is, and the '
+           'rules taxing Social Security were not touched.',
+    'meta': '6 minute read &middot; Verified against IRS and SSA rules',
+    'checked': CHECKED,
+    'body': """      <p>If you have heard that Social Security is no longer taxed, you heard something that was said a
+      great deal and is not accurate. What actually passed was a <strong>$6,000 deduction for people 65
+      and older</strong>, and the distinction between those two things decides whether your own tax bill
+      changes.</p>
+
+      <p>The deduction is real and worth having. It is just a different mechanism, pointed at a different
+      group of people, and it leaves the rules that tax Social Security exactly where they were.</p>
+
+""" + facts('The two things being confused', [
+        ('What passed', 'A $6,000 deduction per person 65 or older, for tax years 2025 through 2028, '
+                        'phasing out above $75,000 single or $150,000 joint.'),
+        ('What did not pass', 'Any change to how Social Security benefits are taxed. Those rules are '
+                              'untouched.'),
+        ('Who it reaches', 'People 65 and older. Social Security can start at 62, and disability and '
+                           'survivor benefits reach people younger still &mdash; none of them get this.'),
+        ('What it reduces', 'Your taxable income generally. Not your benefit, and not the share of your '
+                            'benefit that counts as income.'),
+        ('Whether it ends', 'Yes. After 2028 unless Congress extends it.'),
+    ]) + """
+      <h2>How Social Security is actually taxed</h2>
+
+      <p>The rule that decides this is called <strong>provisional income</strong> &mdash; roughly your
+      adjusted gross income, plus any tax-exempt interest, plus half of your Social Security benefit.
+      Where that lands sets how much of the benefit is taxable.</p>
+
+""" + facts('The thresholds that decide it', [
+        ('Single, under $25,000', 'None of your benefit is taxable.'),
+        ('Single, $25,000&ndash;$34,000', 'Up to 50% of the benefit becomes taxable.'),
+        ('Single, above $34,000', 'Up to 85% becomes taxable.'),
+        ('Married filing jointly', 'The same tiers, at $32,000 and $44,000.'),
+        ('The part that matters', 'None of these figures has been adjusted for inflation since they were '
+                                  'written &mdash; 1984 for the first tier, 1993 for the second.'),
+    ]) + """
+""" + AD_INLINE + """
+      <h2>Why those frozen numbers matter more than the deduction</h2>
+
+      <p>Almost everything else in the tax code moves with inflation. Brackets shift each year. The
+      standard deduction rises. The Social Security wage base climbs with average wages. The benefit
+      itself gets a cost-of-living adjustment every January.</p>
+
+      <p>These two thresholds do not move at all. They were set in 1984 and 1993 and they have stayed
+      there while everything measured against them grew.</p>
+
+      <p>The effect is slow and one-directional. When the first tier was written, taxation of benefits
+      reached fewer than one in ten recipients. It now reaches well over half. Nobody voted for that
+      each year; it is simply what happens when a fixed line meets four decades of inflation.</p>
+
+      <blockquote class="pull">
+        <p>Your COLA raises your benefit every January. The line that decides whether the benefit is
+        taxed has not moved since 1984. Those two facts have been pushing in opposite directions your
+        whole retirement.</p>
+      </blockquote>
+
+      <h2>So what does the deduction actually do for you</h2>
+
+      <p>It lowers your taxable income by up to $6,000, which for many people over 65 means less tax
+      overall &mdash; and for some, enough less that they owe nothing. That is a genuinely good outcome
+      and it is where the phrase came from.</p>
+
+      <p>But note what it does not do:</p>
+
+""" + check([
+        'It does not change how much of your benefit is <strong>counted</strong> as income. The '
+        'provisional income calculation runs exactly as before.',
+        'It does not help anyone <strong>under 65</strong>, including people who claimed at 62 and '
+        'people receiving disability or survivor benefits.',
+        'It does not help if your income is <strong>above the phase-out</strong> &mdash; it shrinks by '
+        'six cents per dollar over the threshold and is gone entirely at $175,000 single, $250,000 joint.',
+        'It does not help if you already <strong>owed no federal income tax</strong>. A deduction reduces '
+        'what is taxed; if nothing was being taxed, there is nothing to reduce.',
+    ]) + """
+      <p>That last one is worth sitting with, because it inverts the intuition. The people whose Social
+      Security was never taxed in the first place &mdash; the lowest incomes &mdash; get nothing from
+      this, because they had no tax bill to lower. The benefit lands in the middle.</p>
+
+      <h2>What to do about it</h2>
+
+      <p>Nothing dramatic. Check whether you are 65 by the end of the tax year, check where your income
+      sits relative to $75,000 or $150,000, and make sure whoever prepares your return knows to claim it
+      &mdash; it applies whether you itemize or take the standard deduction, which is unusual and easy to
+      miss.</p>
+
+      <p>And treat &ldquo;no tax on Social Security&rdquo; as what it is: a description of a political
+      goal rather than of the law. The <a href="/senior-deduction">deduction itself</a> is worth
+      understanding on its own terms.</p>
+""",
+    'sources': [
+        ('IRS &mdash; Check your eligibility for the new enhanced deduction for seniors',
+         'https://www.irs.gov/newsroom/check-your-eligibility-for-the-new-enhanced-deduction-for-seniors'),
+        ('SSA &mdash; Income taxes and your Social Security benefit',
+         'https://www.ssa.gov/benefits/retirement/planner/taxes.html'),
+        ('Congressional Research Service &mdash; Social Security: Taxation of Benefits',
+         'https://www.congress.gov/crs-product/RL32552'),
+    ],
+    'next': {'slug': 'standard-deduction-65',
+             'title': 'What someone over 65 can actually deduct in 2026',
+             'blurb': 'Three separate amounts, and they stack. Most people only know about one.'},
+}
+
+
+# ------------------------------------------- stacking the deductions
+ARTICLES8['standard-deduction-65'] = {
+    'title': 'Standard Deduction Over 65 in 2026: How the Three Amounts Stack '
+             '&mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'What someone over 65 can actually deduct in 2026',
+    'dek': 'There are three separate amounts, they stack, and most coverage mentions one. Together they '
+           'come to more than most people expect.',
+    'meta': '5 minute read &middot; 2026 figures verified against IRS rules',
+    'checked': CHECKED,
+    'body': """      <p>Ask most people over 65 what their standard deduction is and you will get one number, usually
+      the headline one. There are actually <strong>three separate amounts</strong>, they are governed by
+      different rules, and they add together.</p>
+
+      <p>Worth knowing precisely, because the total decides whether itemizing is worth the effort at all
+      &mdash; and for a great many people over 65 it now is not.</p>
+
+""" + facts('The three, for 2026', [
+        ('1. The base standard deduction', '$16,100 single. $32,200 married filing jointly. '
+                                           '$24,150 head of household.'),
+        ('2. The age-65 addition', 'An extra $2,050 if you are single or head of household. $1,650 '
+                                   '<em>per qualifying spouse</em> if married. This one is decades old.'),
+        ('3. The new senior deduction', '$6,000 per person 65 or older, for 2025 through 2028, phasing '
+                                        'out above $75,000 single or $150,000 joint.'),
+        ('The unusual part', 'Number three applies <strong>whether you itemize or not</strong>. The other '
+                             'two are standard-deduction only.'),
+        ('Also available at 65', 'The age addition applies if you are blind as well, and both can apply '
+                                 'to the same person.'),
+    ]) + """
+      <h2>What that adds up to</h2>
+
+      <p>A single filer aged 66, income under $75,000:</p>
+
+""" + check([
+        '$16,100 base standard deduction',
+        '+ $2,050 age-65 addition',
+        '+ $6,000 new senior deduction',
+        '= <strong>$24,150 of income not taxed</strong>',
+    ]) + """
+      <p>A married couple, both 67, joint income under $150,000:</p>
+
+""" + check([
+        '$32,200 base standard deduction',
+        '+ $1,650 &times; 2 for the age addition',
+        '+ $6,000 &times; 2 for the new senior deduction',
+        '= <strong>$47,500 of income not taxed</strong>',
+    ]) + """
+""" + AD_INLINE + """
+      <h2>Why this changes the itemizing question</h2>
+
+      <p>Itemizing only helps if your deductible expenses exceed the standard deduction. At $47,500 for a
+      couple, that is a high bar &mdash; it takes a large mortgage, serious medical bills, substantial
+      charitable giving, or some combination.</p>
+
+      <p>A lot of people over 65 keep itemizing out of habit, from years when the standard deduction was
+      smaller and the mortgage was larger. It is worth running both ways once, properly, rather than
+      assuming the answer carried over from a decade ago.</p>
+
+      <p>And note the asymmetry that makes the new deduction unusual: because the $6,000 applies either
+      way, <strong>it is not part of that comparison at all</strong>. You get it whichever route you take.
+      Only the first two amounts are on the standard-deduction side of the scale.</p>
+
+      <blockquote class="pull">
+        <p>The new $6,000 is not a reason to stop itemizing. It arrives regardless. The reason to check is
+        that the other two have grown a lot while your deductible expenses probably have not.</p>
+      </blockquote>
+
+      <h2>Two mistakes worth avoiding</h2>
+
+      <p><strong>Assuming the age addition is the new thing.</strong> It is not. The extra amount for
+      being 65 or older has existed for decades and is separate from the 2025 provision. Some coverage
+      conflates them, which makes the new deduction sound smaller than it is or the old one sound newer
+      than it is.</p>
+
+      <p><strong>Assuming turning 65 mid-year means half.</strong> It does not. If you reach 65 by the
+      end of the tax year, you get the full amounts for that year. There is no proration. The IRS also
+      treats someone born on 1 January as having reached that age the previous day, which occasionally
+      pulls a birthday back into the earlier tax year.</p>
+
+      <p>If your income is above $75,000 single or $150,000 joint, the third amount shrinks rather than
+      disappears &mdash; the arithmetic is in
+      <a href="/senior-deduction-phaseout">the phase-out piece</a>. And if you heard this described as
+      &ldquo;no tax on Social Security,&rdquo; <a href="/no-tax-on-social-security">that is a different
+      thing entirely</a>.</p>
+""",
+    'sources': [
+        ('IRS &mdash; 2026 filing season updates and resources for seniors',
+         'https://www.irs.gov/newsroom/2026-filing-season-updates-and-resources-for-seniors'),
+        ('IRS &mdash; Check your eligibility for the new enhanced deduction for seniors',
+         'https://www.irs.gov/newsroom/check-your-eligibility-for-the-new-enhanced-deduction-for-seniors'),
+    ],
+    'next': {'slug': 'senior-deduction-sunset',
+             'title': 'The senior deduction ends after 2028',
+             'blurb': 'It is written into the law, and almost nobody claiming it seems to know.'},
+}
+
+
+# ------------------------------------------------- the 2028 sunset
+ARTICLES8['senior-deduction-sunset'] = {
+    'title': 'The Senior Deduction Ends After 2028 &mdash; The Second Half Guide',
+    'eyebrow': 'Facts &amp; thresholds',
+    'h1': 'The senior deduction ends after 2028',
+    'dek': 'Four tax years, written into the law from the start. Which makes the years it covers worth '
+           'using deliberately rather than discovering later.',
+    'meta': '5 minute read &middot; 2026 figures verified against IRS rules',
+    'checked': CHECKED,
+    'body': """      <p>The $6,000 deduction for people 65 and older is not a permanent feature of the tax code. It
+      applies to <strong>tax years 2025, 2026, 2027 and 2028</strong>, and then it stops unless Congress
+      acts.</p>
+
+      <p>That was in the legislation from the beginning. It is not a rumor or a projection. And it is the
+      part least likely to reach someone who learned about the deduction from a headline, because the
+      headline never mentioned an end date.</p>
+
+""" + facts('What is and is not scheduled to end', [
+        ('The $6,000 senior deduction', 'Ends after tax year 2028.'),
+        ('The base standard deduction', 'Permanent, and adjusted for inflation each year.'),
+        ('The age-65 addition', 'Permanent. $2,050 single or $1,650 per qualifying spouse in 2026.'),
+        ('Social Security taxation rules', 'Unchanged, and not scheduled to change. Those thresholds have '
+                                           'been frozen since 1984 and 1993.'),
+        ('What happens in 2029', 'Nothing dramatic. Your deduction drops by up to $6,000 per qualifying '
+                                 'person, and your taxable income rises accordingly.'),
+    ]) + """
+      <h2>What it is worth while it lasts</h2>
+
+      <p>The value depends on your bracket, which is the honest answer, but the shape is easy. A deduction
+      reduces the income you are taxed on, so $6,000 of deduction is worth $6,000 multiplied by whatever
+      rate applies to your top dollars. For a couple where both qualify, the amount is $12,000.</p>
+
+      <p>Over four years, for a couple in the middle brackets, that is not a rounding error. It is worth
+      knowing it is a window rather than a permanent state.</p>
+
+""" + AD_INLINE + """
+      <h2>The planning that follows from a deadline</h2>
+
+      <p>A temporary deduction changes the relative attractiveness of pulling income forward. If you have
+      a large discretionary event coming &mdash; a Roth conversion, a property sale, a big distribution
+      &mdash; the years through 2028 have a deduction attached to them that 2029 does not.</p>
+
+      <p>Two cautions on that, both important.</p>
+
+      <p><strong>The deduction phases out.</strong> Pulling a large sum into 2027 to make use of the
+      deduction can push your income past $75,000 or $150,000 and shrink the very thing you were trying
+      to use. It falls six cents on the dollar above the threshold and is gone at $175,000 single or
+      $250,000 joint.</p>
+
+      <p><strong><a href="/irmaa">IRMAA</a> is watching the same income.</strong> Medicare surcharges key
+      off income from two years earlier, and unlike this deduction they work as a cliff. A conversion
+      timed to catch the deduction can catch a Medicare surcharge as well, two years later, for
+      substantially more money.</p>
+
+      <blockquote class="pull">
+        <p>A deadline is a reason to plan, not a reason to hurry. The two thresholds that punish hurrying
+        are the phase-out and the Medicare surcharge, and they both look at the same income you are
+        moving.</p>
+      </blockquote>
+
+      <h2>What to expect between now and then</h2>
+
+      <p>Provisions with sunset dates are frequently extended, and this one is popular and cheap to
+      describe, so there will be pressure to keep it. There will also be reporting each year suggesting
+      it is about to end, and reporting suggesting it certainly will not.</p>
+
+      <p>Neither is knowable in advance. The defensible position is the boring one: <strong>plan on the
+      law as written</strong>, which ends it after 2028, and treat an extension as a pleasant surprise
+      rather than an assumption. That is the same rule that applies to every temporary provision, and it
+      is the one that does not leave you rearranging your affairs around something that did not
+      happen.</p>
+
+      <p>If you are not yet 65, the arithmetic is different again: the window may close before you are
+      eligible for much of it. Someone turning 65 in 2028 gets one year of it.</p>
+""",
+    'sources': [
+        ('IRS &mdash; Check your eligibility for the new enhanced deduction for seniors',
+         'https://www.irs.gov/newsroom/check-your-eligibility-for-the-new-enhanced-deduction-for-seniors'),
+        ('IRS &mdash; 2026 filing season updates and resources for seniors',
+         'https://www.irs.gov/newsroom/2026-filing-season-updates-and-resources-for-seniors'),
+    ],
+    'next': {'slug': 'irmaa',
+             'title': 'The Medicare surcharge based on what you earned two years ago',
+             'blurb': 'The other threshold watching the same income, and the one that does not taper.'},
+}

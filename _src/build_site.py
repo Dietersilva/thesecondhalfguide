@@ -70,6 +70,10 @@ DESCRIPTIONS = {
     '/privacy': 'Privacy Policy and Terms for The Second Half Guide: what we collect, the newsletter, advertising cookies, your rights, and the editorial disclaimers.',
     '/property-tax': 'Most states reduce, freeze or defer property taxes at a certain age. Almost none apply it automatically, and the age is lower than people assume.',
     '/senior-age': 'There is no senior birthday. About a dozen unrelated clocks — 50, 55, 59½, 62, 65, 67 — set by different institutions, and only some of them matter.',
+    '/no-tax-on-social-security': 'The 2025 law created a $6,000 deduction for people over 65. It did not change how Social Security is taxed — those thresholds are frozen since 1984.',
+    '/senior-deduction-phaseout': 'The $6,000 senior deduction shrinks by six cents per dollar above $75,000 single or $150,000 joint, and reaches zero at $175,000. The arithmetic.',
+    '/senior-deduction-sunset': 'The $6,000 senior deduction applies to tax years 2025 through 2028 and then ends. What that means for timing a conversion or a sale.',
+    '/standard-deduction-65': 'Three separate deductions stack for someone over 65 in 2026: the base, the age-65 addition, and the new $6,000. Together, more than most expect.',
     '/senior-deduction': 'The new $6,000 senior deduction for people 65 and over — temporary, income-limited, and widely misdescribed as “no tax on Social Security.”',
     '/social-security-62': 'Filing for Social Security at 62 cuts your benefit permanently. The arithmetic — the reduction, the break-even, and when filing early still wins.',
     '/social-security-login': 'Your old Social Security username and password no longer work. Nothing went wrong — the sign-in system changed, and getting back in takes 20 minutes.',
@@ -249,6 +253,8 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/senior-deduction-sunset', '/standard-deduction-65',
+    '/no-tax-on-social-security', '/senior-deduction-phaseout',
     '/rmd-deadline', '/medigap-window', '/observation-status', '/irmaa', '/medicare-savings', '/widows-penalty', '/falls', '/wellness-visit',
     '/downsizing-math', '/driving',
     '/gold-courier-scam', '/wep-gpo-repeal', '/social-security-login',

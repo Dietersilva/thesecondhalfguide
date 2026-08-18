@@ -137,7 +137,7 @@ ARTICLES6['airport-security'] = {
     'meta': '5 minute read &middot; Fees and rules verified for 2026',
     'checked': CHECKED,
     'body': """      <p>For nineteen years, one of the few genuine perks of turning 75 was that you could keep your
-      shoes on at airport security while everyone else queued in their socks.</p>
+      shoes on at airport security while everyone else stood in line in their socks.</p>
 
       <p>That perk is gone, because the rule it was an exception to is gone. <strong>On 8 July 2025 the
       Department of Homeland Security ended the nationwide shoes-off requirement at domestic TSA
