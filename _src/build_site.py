@@ -390,6 +390,52 @@ def latest_section(meta):
 # unreachable from them. Rather than patch each source, the footer is rebuilt
 # here for every page, which also keeps a new link (like /numbers) from having
 # to be added in four places.
+# The wordmark links home, but it is set in ink-colored serif with no
+# underline, so it reads as a title rather than a link. "Click the logo to go
+# home" is a learned convention and a poor thing to rely on for readers who
+# came to the web later. The header is rebuilt with an explicit, underlined
+# Home link — omitted on the homepage itself, where it would be a link to the
+# page you are on.
+HEADER_RE = re.compile(r'<header class="topbar">.*?</header>', re.S)
+
+HEADER_CSS = """
+.topnav { display: flex; align-items: center; gap: 20px; }
+.topbar-home {
+  font-size: 16px; font-weight: 700; color: var(--pine-strong);
+  text-decoration: underline; text-decoration-thickness: 2px;
+  text-underline-offset: 4px; white-space: nowrap;
+}
+.topbar-home:hover { color: var(--ink); }
+/* Three items do not fit a 390px phone. The wordmark shrinks and the topic
+   CTA gives way first: Home is navigation, the CTA is an invitation, and the
+   footer carries the contact route on every page anyway. */
+@media (max-width: 620px) {
+  .topbar .wrap, .topbar .wrap-wide { padding-left: 18px; padding-right: 18px; }
+  .wordmark { font-size: 18px; }
+  .topnav { gap: 14px; }
+}
+@media (max-width: 470px) {
+  .topnav .topbar-cta { display: none; }
+}
+@media print { .topnav { display: none; } }
+"""
+
+
+def header_block(cls):
+    wrap = 'wrap' if cls == 'hub' else 'wrap-wide'
+    home = '/#top' if cls == 'hub' else '/'
+    nav = '' if cls == 'hub' else '      <a class="topbar-home" href="/">Home</a>\n'
+    return ('<header class="topbar">\n'
+            f'  <div class="{wrap}">\n'
+            f'    <a class="wordmark" href="{home}">The <em>Second Half</em> Guide</a>\n'
+            '    <nav class="topnav">\n'
+            + nav +
+            f'      <a class="topbar-cta" href="{"#ask" if cls == "hub" else "/#ask"}">'
+            'Send us a topic &rarr;</a>\n'
+            '    </nav>\n'
+            '  </div>\n</header>')
+
+
 FOOTER_RE = re.compile(r'<footer>.*?</footer>', re.S)
 FOOTER_LINKS = (('/about', 'About'), ('/contact', 'Contact'),
                 ('/numbers', 'Useful numbers'), ('/privacy', 'Privacy &amp; Terms'))
@@ -589,6 +635,9 @@ def main():
         body, n_foot = FOOTER_RE.subn(footer_block(cls), body)
         assert n_foot == 1, f'{path}: expected one footer, found {n_foot}'
 
+        body, n_head = HEADER_RE.subn(header_block(cls), body)
+        assert n_head == 1, f'{path}: expected one header, found {n_head}'
+
         # The letter is the point of the site's email, so it goes at the end of
         # anything worth reading. Not on the reference pages, where a signup
         # would interrupt someone mid-task looking up a phone number.
@@ -649,7 +698,7 @@ def main():
             rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
 
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + SUBSCRIBE_CSS
+              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + SUBSCRIBE_CSS + HEADER_CSS
               + (HOUSE_CSS if not ADS_LIVE else ''))
     # The stylesheet used to be served as a plain /styles.css. Because the
     # name never changed, a reader whose browser had cached an older copy kept

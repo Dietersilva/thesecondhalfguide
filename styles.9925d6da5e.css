@@ -1269,6 +1269,26 @@ body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
 }
 @media print { .signup { display: none; } }
 
+.topnav { display: flex; align-items: center; gap: 20px; }
+.topbar-home {
+  font-size: 16px; font-weight: 700; color: var(--pine-strong);
+  text-decoration: underline; text-decoration-thickness: 2px;
+  text-underline-offset: 4px; white-space: nowrap;
+}
+.topbar-home:hover { color: var(--ink); }
+/* Three items do not fit a 390px phone. The wordmark shrinks and the topic
+   CTA gives way first: Home is navigation, the CTA is an invitation, and the
+   footer carries the contact route on every page anyway. */
+@media (max-width: 620px) {
+  .topbar .wrap, .topbar .wrap-wide { padding-left: 18px; padding-right: 18px; }
+  .wordmark { font-size: 18px; }
+  .topnav { gap: 14px; }
+}
+@media (max-width: 470px) {
+  .topnav .topbar-cta { display: none; }
+}
+@media print { .topnav { display: none; } }
+
 body.hub .house, body.article .house, body.doc .house {
   display: block; margin: 44px 0; padding: 24px 28px; text-decoration: none;
   background: var(--surface-2); border-radius: var(--radius);
