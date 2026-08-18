@@ -488,8 +488,8 @@ ARTICLES['five-minute-rule'] = {
       reflex being exploited. A grandparent hears panic in a familiar voice and stops processing
       anything else.</p>
 
-      <p>If anything, being good at solving problems quickly is a risk factor. The scam is shaped like a
-      problem you can fix.</p>
+      <p>Which is the uncomfortable part: the scam is shaped like a problem you can fix, and it is
+      built to reward exactly the reflex that has served competent people well everywhere else.</p>
 
       <h2>The habit worth building</h2>
 

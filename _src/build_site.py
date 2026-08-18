@@ -710,6 +710,24 @@ def main():
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         open(dest, 'w').write(out)
 
+    # Every article must be reachable from a homepage category list. Two
+    # pieces once rotated off "Just published" without ever being added to a
+    # category, which left them linked from nowhere on the homepage at all.
+    # The lists are hand-maintained in the template, so this is the only thing
+    # that notices.
+    if '/' in rendered:
+        home = rendered['/'][3]
+        topics = re.search(r'<section class="topics".*?</section>', home, re.S)
+        listed = set(re.findall(r'href="(/[a-z0-9-]+)"', topics.group(0))) if topics else set()
+        arts = {p_ for p_ in rendered if layout_class(p_) == 'article'}
+        orphans = sorted(arts - listed)
+        if orphans:
+            raise SystemExit(
+                'These articles are in no homepage category list, so a reader '
+                'browsing the site cannot find them:\n  '
+                + '\n  '.join(orphans)
+                + '\nAdd each to a category in second-half-guide.template.html.')
+
     # sitemap
     urls = ''.join(
         # The homepage entry used to be a bare https://host with no path at

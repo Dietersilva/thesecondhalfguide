@@ -390,8 +390,9 @@ ARTICLES8['wellness-visit'] = {
       every screening reviewed against your actual history, cognition and mood and fall risk all checked
       because the format requires it rather than because you raised them.</p>
 
-      <p>The medication review alone justifies it. So does the fall-risk screening, given <a href="/falls">what
-      the fall numbers look like</a>.</p>
+      <p>The medication review and the fall-risk screening are the two parts most likely to turn up
+      something, given <a href="/falls">what the fall numbers look like</a> and how quietly a
+      medication list grows.</p>
 
       <h2>How to avoid the surprise bill</h2>
 
@@ -691,8 +692,9 @@ ARTICLES8['irmaa'] = {
       <h2>The second thing: it is a cliff, not a slope</h2>
 
       <p>IRMAA does not phase in. Cross a threshold by a single dollar and you owe the entire bracket.
-      One dollar of extra income can cost you around <strong>$975 across the year</strong> at the first
-      step, and more at the higher ones. There is no proration and no partial credit.</p>
+      At the first step that is about <strong>$975 across the year in Part B alone</strong>, and more at
+      the higher ones. The Part D surcharge is separate and sits on top of it, so the Part B figure is
+      not your total exposure. There is no proration and no partial credit.</p>
 
       <p>Which means the amounts that trigger it are often small and accidental: a year-end bonus, a
       required distribution slightly larger than expected, a capital gain from selling something you had
@@ -734,9 +736,10 @@ ARTICLES8['irmaa'] = {
 
       <h2>What to do with this</h2>
 
-      <p><strong>If you are still working and near 63,</strong> that is the year that will set your
-      first Medicare premium. It is the year to be conscious of one-off income &mdash; the Roth
-      conversion, the property sale, the deferred compensation &mdash; if you have any say in the timing.</p>
+      <p><strong>If you are 63,</strong> that is the year that will set your first Medicare premium at
+      65. Whatever lands in it &mdash; a Roth conversion, a property sale, deferred compensation, an
+      unusually large distribution &mdash; is what the calculation will read two years later, however
+      little it resembles your income by then.</p>
 
       <p><strong>If you have just retired and a surcharge letter arrives,</strong> file SSA-44. Your
       income has changed and the calculation has not caught up. This is precisely the situation the form
@@ -867,10 +870,9 @@ ARTICLES8['observation-status'] = {
         consequence shows up weeks later in an envelope.</p>
       </blockquote>
 
-      <p>One more piece of housekeeping: hospitals move to an updated MOON form in April 2026, which
-      requires an individualized written explanation of why you specifically do not meet inpatient
-      criteria. If you are handed one, read that section. It is the hospital's own reasoning, in
-      writing, and it is what any appeal will turn on.</p>
+      <p>One more piece of housekeeping: an updated MOON form takes effect in April 2026. Whichever
+      version you are handed, read the part explaining why you do not meet inpatient criteria. That is
+      the hospital's own reasoning, in writing, and it is what any appeal will turn on.</p>
 """,
     'sources': [
         ('CMS &mdash; Hospital Appeals, Change of Inpatient Status (Alexander v. Azar)',
@@ -918,8 +920,9 @@ ARTICLES8['medigap-window'] = {
         ('Where the rules are better', 'A few states &mdash; New York, Connecticut, Massachusetts and '
                                        'Maine among them &mdash; require guaranteed issue beyond this '
                                        'window. The rules differ between them, so check your own.'),
-        ('If you move', 'Those state protections do not travel with you. They belong to the state you '
-                        'live in, not to you.'),
+        ('If you move', 'State protections generally attach to where you live rather than following '
+                        'you, so a move can change what is available. Check the rules of the state you '
+                        'are moving to before assuming they match.'),
     ]) + """
       <h2>What underwriting actually means here</h2>
 
@@ -1076,11 +1079,11 @@ ARTICLES8['rmd-deadline'] = {
       <p>A <strong>qualified charitable distribution</strong> sends money straight from your IRA to a
       charity, and it never counts as your income at all.</p>
 
-      <p>That last clause is the whole point, and it is why a QCD beats writing a check and claiming a
-      deduction. A deduction only helps if you itemize, and most people over 65 do not. A QCD works
-      regardless, because the money never appears in your income in the first place &mdash; which also
-      keeps it out of the calculations that key off your income, including the taxable share of your
-      Social Security and the IRMAA thresholds that set your Medicare premium.</p>
+      <p>That last clause is what makes it behave differently from a donation you write a check for and
+      deduct. A deduction only reduces tax if you itemize, and most people over 65 now take the standard
+      deduction instead. A QCD is not a deduction at all: the money never enters your income, which also
+      keeps it out of the calculations that read your income &mdash; the taxable share of your Social
+      Security, and the IRMAA thresholds that set your Medicare premium two years later.</p>
 
 """ + check([
         'Available from age <strong>70&frac12;</strong> &mdash; earlier than RMDs begin, so there are '
@@ -1110,8 +1113,9 @@ ARTICLES8['rmd-deadline'] = {
       between IRAs and workplace plans. This is the part where people miscalculate in good faith, and
       it is worth asking your custodian rather than assuming.</p>
 
-      <p><strong>If you give to charity anyway,</strong> ask whether a QCD suits you before you write
-      the check. Same money to the same charity, and it can be worth materially more to you.</p>
+      <p><strong>The distinction is worth knowing before December,</strong> because the two routes are
+      not interchangeable once the money has moved. A distribution that reaches you first is an ordinary
+      taxable withdrawal, whatever you do with it afterward.</p>
 """,
     'sources': [
         ('IRS &mdash; Required minimum distributions',

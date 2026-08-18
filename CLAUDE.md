@@ -177,6 +177,12 @@ git add -A && git commit && git push   # deploy
   page instead: 120–158 characters, with the words a reader would actually
   type near the front. It feeds the meta description, `og:description` and the
   JSON-LD in one go.
+- **Every article needs a homepage category link.** The category lists in
+  `second-half-guide.template.html` are hand-maintained, and "Just published"
+  rotates. Two pieces once fell off the front page without ever being added to
+  a category, leaving them linked from nowhere a reader would browse. The
+  build now fails with the offending slugs rather than shipping them, so add
+  the link when you add the article.
 - **Never hardcode a count.** The homepage sentence "N pieces published so
   far" is filled from `{{ARTICLE_COUNT}}` at build time, counting pages with
   the article layout. It read "Forty-five" for a while after the count was

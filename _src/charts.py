@@ -133,8 +133,8 @@ def fraud_share():
            + '\n          '.join(parts) + '\n        </svg>')
     return _wrap('Where the money actually goes',
                  svg,
-                 'FBI IC3, 2025. A fifth of the reports, well over a third of the losses — because that '
-                 'is where the retirement accounts are.')
+                 'FBI IC3, 2025. A fifth of the reports, well over a third of the losses '
+                 '&mdash; the losses per victim are far larger in this age group.')
 
 
 # ---------------------------------------------------------------- Part D
