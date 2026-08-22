@@ -196,7 +196,7 @@ ARTICLES7['social-security-login'] = {
         'If online verification fails, use the <strong>in-person option</strong> at a post office or '
         'Social Security office rather than trying repeatedly.',
         'Write down which service you used and keep your <strong>two-factor method</strong> current. '
-        'Changing phone numbers without updating it is the commonest way people lock themselves out again.',
+        'Changing phone numbers without updating it is a common way people lock themselves out again.',
     ]) + """
       <p>Once you're in, it's worth the trip: your earnings record, your benefit estimate, your current
       payment, and your tax forms all live there. The earnings record in particular is worth checking —

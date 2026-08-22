@@ -237,7 +237,7 @@ ARTICLES8['falls'] = {
       end somewhere nobody chose.</p>
 
       <p>They're also treated as bad luck, which is the part worth arguing with. A large share of fall
-      risk is measurable and modifiable, and the most effective single intervention costs nothing.</p>
+      risk is measurable and modifiable, and the best-supported intervention costs nothing at all.</p>
 
 """ + facts('What the data show', [
         ('More than 1 in 4', 'Older adults who report a fall each year.'),
@@ -484,6 +484,11 @@ ARTICLES8['downsizing-math'] = {
       <p>That deadline is worth flagging on its own, because it collides with grief. Selling the house is
       exactly the decision people are counselled not to rush — and there is a genuine two-year tax clock
       running while they take that advice. Not a reason to hurry, but a reason to know the date.</p>
+
+      <p>Two other conditions ride along with that deadline: the couple would have qualified for the
+      joint exclusion had the sale happened before the death, and the surviving spouse has not remarried
+      by the time the house sells. Remarrying before closing drops it back to the single $250,000 limit,
+      same as missing the two-year window does.</p>
 
 """ + AD_INLINE + """
       <h2>The non-financial reasons, which are usually the real ones</h2>
@@ -913,8 +918,10 @@ ARTICLES8['medigap-window'] = {
         ('When it starts', 'The first month you are <strong>both 65 or older and enrolled in Part '
                            'B</strong> &mdash; not your birthday. Delaying Part B for employer coverage '
                            'delays this too.'),
-        ('What it guarantees', 'Any Medigap policy sold in your state, at the standard rate, with no '
-                               'health questions and no refusal.'),
+        ('What it guarantees', 'Any Medigap policy sold in your state, at whatever that insurer’s '
+                               'ordinary published rate is &mdash; no health questions, no rate-up for '
+                               'your medical history, and no refusal. It does not mean one uniform price '
+                               'nationwide; insurers still price policies differently from each other.'),
         ('What closes with it', 'In most states, insurers may then ask your full medical history, charge '
                                 'you more for it, or decline you outright.'),
         ('Where the rules are better', 'A few states &mdash; New York, Connecticut, Massachusetts and '
