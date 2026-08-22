@@ -331,6 +331,8 @@
     margin: 0;
     line-height: 1.3;
   }
+  .topic-card h3 a { color: inherit; text-decoration: none; }
+  .topic-card h3 a:hover { text-decoration: underline; }
   .topic-card p {
     font-size: 16px;
     color: var(--ink-soft);
@@ -592,7 +594,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 8h4M16 8h4M6 12h12M7 16h10"/></svg>
           </div>
-          <h3>Medicare &amp; health insurance</h3>
+          <h3><a href="/medicare">Medicare &amp; health insurance</a></h3>
           <p>Enrollment windows, what the drug cap really covers, and where Medicare stops working.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/9aa6d645-f0f3-4db2-8c71-535ebb5fb551">Read: The deadline that never forgives you &rarr;</a>
@@ -611,7 +613,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.5 15c.4 1 1.3 1.5 2.5 1.5 1.6 0 2.5-.8 2.5-1.9 0-2.6-5-1.3-5-3.9 0-1.1.9-1.9 2.5-1.9 1.2 0 2.1.5 2.5 1.5"/></svg>
           </div>
-          <h3>Money &amp; the tax year</h3>
+          <h3><a href="/money">Money &amp; the tax year</a></h3>
           <p>The dated facts &mdash; deduction amounts, claiming ages, the thresholds that move each year.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/06b38a83-00a1-42db-93ac-1b56cbdaa9a7">Read: The new $6,000 senior deduction &rarr;</a>
@@ -639,7 +641,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v3h3M9 12h6M9 15.5h6M9 8.5h3"/></svg>
           </div>
-          <h3>Paperwork that matters</h3>
+          <h3><a href="/paperwork">Paperwork that matters</a></h3>
           <p>Wills, beneficiary forms, digital accounts &mdash; explained without the law-school vocabulary.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/27c6854e-48c4-4758-b836-e7777976f5bb">Read: Your beneficiary form may outrank your will &rarr;</a>
@@ -652,7 +654,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
           </div>
-          <h3>Scam &amp; fraud protection</h3>
+          <h3><a href="/fraud">Scam &amp; fraud protection</a></h3>
           <p>The current phone, email, and gift-card scams &mdash; and exactly what to do if one gets through.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/8143eec9-cf0c-4dee-a376-8223f660ca92">Read: The five-minute rule &rarr;</a>
@@ -668,7 +670,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
           </div>
-          <h3>Aging in place</h3>
+          <h3><a href="/aging">Aging in place</a></h3>
           <p>The home changes that actually matter &mdash; and the ones that are just upsells.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/fd2b319c-32d3-4957-b2a8-17bb44dfc37f">Read: Staying home is a goal, not a plan &rarr;</a>
@@ -684,7 +686,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l3-8h12l3 8"/><path d="M3 13h18v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 5v3M15 5v3"/></svg>
           </div>
-          <h3>Travel &amp; discounts</h3>
+          <h3><a href="/travel">Travel &amp; discounts</a></h3>
           <p>Where the real discounts are, what changes at the airport, and the logistics that decide whether a big trip works.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/678c6dd2-3734-46bd-86f7-20cc64748cef">Read: When does &ldquo;senior&rdquo; actually start? &rarr;</a>
@@ -704,7 +706,7 @@
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.5-3 2.7-5 5.5-5s5 2 5.5 5"/><path d="M15 14.5c2 .2 3.5 1.9 4 4.5"/></svg>
           </div>
-          <h3>Grandparenting &amp; family</h3>
+          <h3><a href="/family">Grandparenting &amp; family</a></h3>
           <p>Staying close across the distance &mdash; and the boundaries that keep everyone happy.</p>
           <div class="card-links">
             <a class="tag-live" href="https://claude.ai/code/artifact/d69e0393-1de3-4bd8-8d32-b56de52c8096">Read: Being available without being on call &rarr;</a>

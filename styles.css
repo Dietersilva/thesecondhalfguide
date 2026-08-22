@@ -329,6 +329,8 @@ body.hub .topic-card h3 {
     margin: 0;
     line-height: 1.3;
   }
+body.hub .topic-card h3 a { color: inherit; text-decoration: none; }
+body.hub .topic-card h3 a:hover { text-decoration: underline; }
 body.hub .topic-card p {
     font-size: 16px;
     color: var(--ink-soft);
@@ -829,6 +831,28 @@ body.article .chart text { font-family: 'Atkinson Hyperlegible', sans-serif; }
 body.article .c-lab { font-size: 13px; fill: var(--ink-soft); }
 body.article .c-num { font-size: 15px; font-weight: 700; fill: var(--ink); }
 body.article .c-key { font-size: 12.5px; fill: var(--ink-faint); }
+body.topic .topic-hero { padding: 52px 0 8px; }
+body.topic .topic-hero .topic-icon { width: 42px; height: 42px; color: var(--pine-strong); margin-bottom: 16px; }
+body.topic .topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
+body.topic .topic-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+body.topic .topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
+body.topic .topic-hero .count { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin: 18px 0 0; }
+body.topic .topic-list { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
+body.topic .topic-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 22px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+}
+body.topic .topic-link:hover { border-color: var(--pine); }
+body.topic .topic-link:hover .topic-link-arrow { transform: translateX(3px); }
+body.topic .topic-link-title { font-size: 17px; font-weight: 700; max-width: 62ch; }
+body.topic .topic-link-arrow { flex: none; color: var(--pine-strong); font-weight: 700; transition: transform .15s; }
+body.topic .topic-back {
+  display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700;
+  color: var(--pine-strong); text-decoration: underline; text-decoration-thickness: 2px;
+  text-underline-offset: 3px; margin: 4px 0 0; width: fit-content;
+}
+body.topic .wrap { max-width: 800px; }
 body.article {
     margin: 0;
     background: var(--bg);
@@ -1032,6 +1056,25 @@ body.article .next-up a.btn:hover { background: var(--pine-strong); }
 body.article footer { border-top: 1px solid var(--line); padding: 34px 0 60px; margin-top: 40px; }
 body.article .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--ink-faint); }
 body.article footer a { color: var(--ink-soft); }
+body.topic .search-hero { padding: 52px 0 8px; }
+body.topic .search-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+body.topic .search-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 24px; max-width: 58ch; }
+body.topic .search-label { display: block; font-weight: 700; font-size: 1rem; margin: 0 0 8px; }
+body.topic .search-input {
+  font: inherit; font-size: 1.15rem; width: 100%; padding: 16px 18px; min-height: 56px;
+  border: 2px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink);
+}
+body.topic .search-input:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+body.topic .search-status { font-size: 15px; color: var(--ink-faint); margin: 16px 0 0; }
+body.topic .search-results { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
+body.topic .search-result {
+  display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+}
+body.topic .search-result:hover { border-color: var(--pine); }
+body.topic .search-result-title { display: block; font-size: 17px; font-weight: 700; margin: 0 0 4px; }
+body.topic .search-result-desc { display: block; font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+body.topic .wrap { max-width: 700px; }
 body.article {
     margin: 0;
     background: var(--bg);
@@ -1276,13 +1319,25 @@ body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
   text-underline-offset: 4px; white-space: nowrap;
 }
 .topbar-home:hover { color: var(--ink); }
-/* Three items do not fit a 390px phone. The wordmark shrinks and the topic
-   CTA gives way first: Home is navigation, the CTA is an invitation, and the
-   footer carries the contact route on every page anyway. */
+.topbar-search {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%; color: var(--pine-strong); flex: none;
+}
+.topbar-search svg { width: 20px; height: 20px; stroke: currentColor; }
+.topbar-search:hover { background: var(--surface-2); }
+.topic-crumb {
+  display: flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 700;
+  color: var(--pine-strong); text-decoration: none; margin: 0 0 14px; width: fit-content;
+}
+.topic-crumb:hover { text-decoration: underline; }
+/* Three items did not fit a 390px phone before Search was added; the wordmark
+   shrinks and the topic CTA gives way first: Home and Search are navigation,
+   the CTA is an invitation, and the footer carries the contact route on
+   every page anyway. */
 @media (max-width: 620px) {
   .topbar .wrap, .topbar .wrap-wide { padding-left: 18px; padding-right: 18px; }
   .wordmark { font-size: 18px; }
-  .topnav { gap: 14px; }
+  .topnav { gap: 10px; }
 }
 @media (max-width: 470px) {
   .topnav .topbar-cta { display: none; }

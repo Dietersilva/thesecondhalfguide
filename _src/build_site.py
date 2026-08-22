@@ -84,6 +84,14 @@ DESCRIPTIONS = {
     '/wednesday-letters': 'Fiction from The Second Half Guide: twenty-one years of Wednesday mornings at a small-town post office, and the letters that kept on arriving.',
     '/wep-gpo-repeal': 'WEP and GPO cut the Social Security of teachers, firefighters and public employees for decades. Both were repealed, and many affected still don\'t know.',
     '/widows-penalty': 'When one spouse dies, income falls and the tax brackets narrow at the same time. One of the harshest bits of arithmetic in retirement, rarely explained.',
+    '/medicare': 'Every Medicare and health-insurance article in one place — enrollment windows, the drug cap, IRMAA, Medigap, and where Medicare stops working.',
+    '/money': 'Every dated fact about taxes, deductions and Social Security — the senior deduction, RMDs, IRMAA, the Medigap window, and thresholds that move yearly.',
+    '/paperwork': 'Every article on wills, beneficiary forms, digital accounts and power of attorney — explained without the law-school vocabulary, in one place.',
+    '/fraud': 'Every scam and fraud-protection article on the site in one place — the current phone, email and gift-card scams, and exactly what to do if one gets through.',
+    '/aging': 'Every article on staying home safely — the home changes that matter, falls prevention, downsizing math, driving, and which upgrades are just upsells.',
+    '/travel': 'Every travel and discount article on the site — airport security, passport rules, cruise medical coverage, and where the real senior discounts are.',
+    '/family': 'Every article on grandparenting and staying close to family in one place — the boundaries, the distance, and the fiction column, Wednesday Letters.',
+    '/search': 'Search every article on The Second Half Guide by topic — Medicare, Social Security, taxes, fraud protection or aging in place — and jump straight to it.',
 }
 
 PAGE_FILES = {
@@ -410,13 +418,25 @@ HEADER_CSS = """
   text-underline-offset: 4px; white-space: nowrap;
 }
 .topbar-home:hover { color: var(--ink); }
-/* Three items do not fit a 390px phone. The wordmark shrinks and the topic
-   CTA gives way first: Home is navigation, the CTA is an invitation, and the
-   footer carries the contact route on every page anyway. */
+.topbar-search {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%; color: var(--pine-strong); flex: none;
+}
+.topbar-search svg { width: 20px; height: 20px; stroke: currentColor; }
+.topbar-search:hover { background: var(--surface-2); }
+.topic-crumb {
+  display: flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 700;
+  color: var(--pine-strong); text-decoration: none; margin: 0 0 14px; width: fit-content;
+}
+.topic-crumb:hover { text-decoration: underline; }
+/* Three items did not fit a 390px phone before Search was added; the wordmark
+   shrinks and the topic CTA gives way first: Home and Search are navigation,
+   the CTA is an invitation, and the footer carries the contact route on
+   every page anyway. */
 @media (max-width: 620px) {
   .topbar .wrap, .topbar .wrap-wide { padding-left: 18px; padding-right: 18px; }
   .wordmark { font-size: 18px; }
-  .topnav { gap: 14px; }
+  .topnav { gap: 10px; }
 }
 @media (max-width: 470px) {
   .topnav .topbar-cta { display: none; }
@@ -424,16 +444,20 @@ HEADER_CSS = """
 @media print { .topnav { display: none; } }
 """
 
+SEARCH_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" '
+              'stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>')
+
 
 def header_block(cls):
-    wrap = 'wrap' if cls == 'hub' else 'wrap-wide'
+    wrap = 'wrap' if cls in ('hub', 'topic') else 'wrap-wide'
     home = '/#top' if cls == 'hub' else '/'
     nav = '' if cls == 'hub' else '      <a class="topbar-home" href="/">Home</a>\n'
+    search = f'      <a class="topbar-search" href="/search" aria-label="Search the site">{SEARCH_SVG}</a>\n'
     return ('<header class="topbar">\n'
             f'  <div class="{wrap}">\n'
             f'    <a class="wordmark" href="{home}">The <em>Second Half</em> Guide</a>\n'
             '    <nav class="topnav">\n'
-            + nav +
+            + nav + search +
             f'      <a class="topbar-cta" href="{"#ask" if cls == "hub" else "/#ask"}">'
             'Send us a topic &rarr;</a>\n'
             '    </nav>\n'
@@ -566,10 +590,217 @@ def spell(n):
     return w[0].upper() + w[1:]
 
 
+CATEGORY_SLUGS = ('medicare', 'money', 'paperwork', 'fraud', 'aging', 'travel', 'family')
+
+
 def layout_class(path):
     if path == '/': return 'hub'
     if path in ('/about', '/contact', '/privacy', '/numbers', '/subscribed'): return 'doc'
+    if path == '/search' or path.lstrip('/') in CATEGORY_SLUGS: return 'topic'
     return 'article'
+
+
+def _balanced_divs(html, open_tag):
+    """Yield the inner HTML of each <div class="X">...</div> block, matched
+    by depth rather than a naive non-greedy regex, since topic-card divs
+    nest an icon div and a card-links div inside themselves."""
+    tag_re = re.compile(r'<div\b[^>]*>|</div>')
+    out, i = [], 0
+    while True:
+        start = html.find(open_tag, i)
+        if start == -1:
+            break
+        pos = start + len(open_tag)
+        depth = 1
+        for m in tag_re.finditer(html, pos):
+            depth += -1 if m.group(0) == '</div>' else 1
+            if depth == 0:
+                out.append(html[pos:m.start()])
+                i = m.end()
+                break
+        else:
+            break
+    return out
+
+
+def extract_categories(home_html, routes):
+    """Pull the topic-grid cards out of the raw homepage, in document order.
+
+    The template's topic-grid is already the one hand-maintained list of
+    which article belongs to which category -- the orphan-article check
+    depends on it. Parsing it here instead of hand-duplicating the list
+    means a hub page and the homepage card can never drift apart; there is
+    only ever the one list.
+    """
+    section = re.search(r'<section class="topics".*?</section>', home_html, re.S)
+    cards = _balanced_divs(section.group(0), '<div class="topic-card">')
+    assert len(cards) == len(CATEGORY_SLUGS), \
+        f'expected {len(CATEGORY_SLUGS)} topic cards, found {len(cards)}'
+
+    def resolve(href):
+        m = re.match(r'https://claude\.ai/code/artifact/([a-f0-9-]{36})', href)
+        return routes.get(m.group(1), '/') if m else href
+
+    cats = []
+    for slug, card in zip(CATEGORY_SLUGS, cards):
+        icon = re.search(r'<div class="topic-icon">(.*?)</div>', card, re.S).group(1).strip()
+        name = re.sub(r'<[^>]+>', '', re.search(r'<h3>(.*?)</h3>', card, re.S).group(1)).strip()
+        blurb = re.search(r'</h3>\s*<p>(.*?)</p>', card, re.S).group(1).strip()
+        links = re.findall(r'<a class="tag-live" href="(.*?)">Read: (.*?) &rarr;</a>', card, re.S)
+        cats.append({
+            'slug': slug, 'name': name, 'icon': icon, 'blurb': blurb,
+            'articles': [(resolve(h), t) for h, t in links],
+        })
+    return cats
+
+
+HUB_PAGE_CSS = """
+.topic-hero { padding: 52px 0 8px; }
+.topic-hero .topic-icon { width: 42px; height: 42px; color: var(--pine-strong); margin-bottom: 16px; }
+.topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
+.topic-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+.topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
+.topic-hero .count { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin: 18px 0 0; }
+.topic-list { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
+.topic-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 22px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+}
+.topic-link:hover { border-color: var(--pine); }
+.topic-link:hover .topic-link-arrow { transform: translateX(3px); }
+.topic-link-title { font-size: 17px; font-weight: 700; max-width: 62ch; }
+.topic-link-arrow { flex: none; color: var(--pine-strong); font-weight: 700; transition: transform .15s; }
+.topic-back {
+  display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700;
+  color: var(--pine-strong); text-decoration: underline; text-decoration-thickness: 2px;
+  text-underline-offset: 3px; margin: 4px 0 0; width: fit-content;
+}
+.wrap { max-width: 800px; }
+"""
+
+
+def hub_page(cat):
+    cards = '\n'.join(
+        f'        <a class="topic-link" href="{href}">\n'
+        f'          <span class="topic-link-title">{text}</span>\n'
+        f'          <span class="topic-link-arrow">&rarr;</span>\n'
+        f'        </a>'
+        for href, text in cat['articles']
+    )
+    n = len(cat['articles'])
+    plural = 'piece' if n == 1 else 'pieces'
+    return f"""<title>{cat['name']} &mdash; The Second Half Guide</title>
+<style>{HUB_PAGE_CSS}</style>
+
+<header class="topbar"></header>
+
+<main>
+  <div class="wrap">
+    <div class="topic-hero">
+      <div class="topic-icon">{cat['icon']}</div>
+      <h1>{cat['name']}</h1>
+      <p class="dek">{cat['blurb']}</p>
+      <p class="count">{n} {plural} in this topic</p>
+    </div>
+    <div class="topic-list">
+{cards}
+    </div>
+    <a class="topic-back" href="/">&larr; All topics</a>
+  </div>
+</main>
+
+<footer></footer>
+"""
+
+
+SEARCH_PAGE_CSS = """
+.search-hero { padding: 52px 0 8px; }
+.search-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+.search-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 24px; max-width: 58ch; }
+.search-label { display: block; font-weight: 700; font-size: 1rem; margin: 0 0 8px; }
+.search-input {
+  font: inherit; font-size: 1.15rem; width: 100%; padding: 16px 18px; min-height: 56px;
+  border: 2px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink);
+}
+.search-input:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.search-status { font-size: 15px; color: var(--ink-faint); margin: 16px 0 0; }
+.search-results { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
+.search-result {
+  display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+}
+.search-result:hover { border-color: var(--pine); }
+.search-result-title { display: block; font-size: 17px; font-weight: 700; margin: 0 0 4px; }
+.search-result-desc { display: block; font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+.wrap { max-width: 700px; }
+"""
+
+
+def search_page():
+    return """<title>Search &mdash; The Second Half Guide</title>
+<style>""" + SEARCH_PAGE_CSS + """</style>
+
+<header class="topbar"></header>
+
+<main>
+  <div class="wrap">
+    <div class="search-hero">
+      <h1>Search</h1>
+      <p class="dek">Find a specific article by topic &mdash; IRMAA, Medigap, a passport rule, a scam
+      you're worried about, anything on the site.</p>
+      <label for="q" class="search-label">Search</label>
+      <input id="q" type="text" class="search-input" autocomplete="off"
+             placeholder="Try &ldquo;IRMAA,&rdquo; &ldquo;passport,&rdquo; &ldquo;scam&rdquo;&hellip;">
+      <p id="search-status" class="search-status">Type at least 2 letters to see results.</p>
+    </div>
+    <div id="results" class="search-results"></div>
+  </div>
+</main>
+
+<script type="application/json" id="search-data">{{SEARCH_INDEX}}</script>
+<script>
+(function () {
+  var data = JSON.parse(document.getElementById('search-data').textContent);
+  var input = document.getElementById('q');
+  var results = document.getElementById('results');
+  var status = document.getElementById('search-status');
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    if (q.length < 2) {
+      results.innerHTML = '';
+      status.textContent = 'Type at least 2 letters to see results.';
+      status.hidden = false;
+      return;
+    }
+    var titleHits = [], descHits = [];
+    for (var i = 0; i < data.length; i++) {
+      var item = data[i];
+      if (item.t.toLowerCase().indexOf(q) !== -1) { titleHits.push(item); }
+      else if (item.d.toLowerCase().indexOf(q) !== -1) { descHits.push(item); }
+    }
+    var hits = titleHits.concat(descHits);
+    if (hits.length === 0) {
+      results.innerHTML = '';
+      status.textContent = 'No matches. Try a shorter or different word.';
+      status.hidden = false;
+      return;
+    }
+    status.hidden = true;
+    var html = '';
+    for (var j = 0; j < hits.length; j++) {
+      html += '<a class="search-result" href="' + hits[j].u + '">'
+        + '<span class="search-result-title">' + hits[j].t + '</span>'
+        + '<span class="search-result-desc">' + hits[j].d + '</span>'
+        + '</a>';
+    }
+    results.innerHTML = html;
+  });
+})();
+</script>
+
+<footer></footer>
+"""
 
 
 NEW_FONT_FACES = """
@@ -604,6 +835,19 @@ def main():
                  '8463d7bb-bd49-4b97-a8f4-1319bf03ff35'):
         pass  # covered by article_urls.json below if present
 
+    # Category hub pages and the search index are both derived from the
+    # homepage's own topic-grid, so they cannot drift from what the
+    # homepage already links to. Generated here, before the main loop, so
+    # they flow through the same header/footer/CSS/CSP pipeline as every
+    # other page rather than needing special-cased handling.
+    categories = extract_categories(pages['/'], routes)
+    breadcrumbs = {}
+    for cat in categories:
+        pages['/' + cat['slug']] = hub_page(cat)
+        for href, _ in cat['articles']:
+            breadcrumbs.setdefault(href, (cat['name'], cat['slug']))
+    pages['/search'] = search_page()
+
     css_blocks, seen = [], set()
     global_rules, seen_scoped = [], set()
     meta = {}
@@ -635,6 +879,11 @@ def main():
         def swap(m):
             return routes.get(m.group(1), '/')
         body = re.sub(r'https://claude\.ai/code/artifact/([a-f0-9-]{36})', swap, body)
+
+        if cls == 'article' and path in breadcrumbs:
+            cat_name, cat_slug = breadcrumbs[path]
+            crumb = f'<a class="topic-crumb" href="/{cat_slug}">&larr; {cat_name}</a>\n      '
+            body = re.sub(r'<span class="eyebrow">', crumb + '<span class="eyebrow">', body, count=1)
 
         body, n_foot = FOOTER_RE.subn(footer_block(cls), body)
         assert n_foot == 1, f'{path}: expected one footer, found {n_foot}'
@@ -680,6 +929,21 @@ def main():
         if marker in body:
             body = body.replace(marker, latest_section(meta) + '\n' + marker, 1)
             rendered['/'] = (title, desc, canonical, body)
+
+    # The search index needs every page's title and description, which are
+    # not all known until the loop above has finished -- same reason
+    # {{ARTICLE_COUNT}} above is filled in as a second pass rather than
+    # inline.
+    if '/search' in rendered:
+        index = [
+            {'t': meta[p_][0], 'd': meta[p_][1], 'u': p_}
+            for p_ in sorted(rendered)
+            if layout_class(p_) in ('article', 'topic') and p_ != '/search'
+        ]
+        index_json = json.dumps(index, separators=(',', ':')).replace('</', '<\\/')
+        title, desc, canonical, body = rendered['/search']
+        body = body.replace('{{SEARCH_INDEX}}', index_json)
+        rendered['/search'] = (title, desc, canonical, body)
 
     if not ADS_LIVE:
         pool = [p for p in PROMO_POOL if p in rendered]
@@ -737,7 +1001,7 @@ def main():
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
-<meta property="og:type" content="{'website' if path == '/' else 'article'}">
+<meta property="og:type" content="{'article' if layout_class(path) == 'article' else 'website'}">
 <meta property="og:site_name" content="The Second Half Guide">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
