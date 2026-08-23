@@ -84,6 +84,9 @@ DESCRIPTIONS = {
     '/wednesday-letters': 'Fiction from The Second Half Guide: twenty-one years of Wednesday mornings at a small-town post office, and the letters that kept on arriving.',
     '/wep-gpo-repeal': 'WEP and GPO cut the Social Security of teachers, firefighters and public employees for decades. Both were repealed, and many affected still don\'t know.',
     '/widows-penalty': 'When one spouse dies, income falls and the tax brackets narrow at the same time. One of the harshest bits of arithmetic in retirement, rarely explained.',
+    '/spousal-benefits': 'Married or divorced, you may be owed a Social Security benefit based on a spouse’s record — up to half, not on top of your own. The rules that decide it.',
+    '/hsa-medicare-timing': 'Still working past 65 with an HSA? Enrolling in Medicare later can retroactively tax contributions already made. The 6-month rule that avoids the 6% penalty.',
+    '/catch-up-60-63': 'For four calendar years only, ages 60–63, the 401(k) catch-up jumps to $11,250 instead of $8,000 — if your plan opts in, and if you know to ask.',
 }
 
 PAGE_FILES = {
@@ -256,6 +259,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/spousal-benefits', '/hsa-medicare-timing', '/catch-up-60-63',
     '/aca-subsidy-cliff', '/rule-of-55', '/delayed-retirement-credit',
     '/senior-deduction-sunset', '/standard-deduction-65',
     '/no-tax-on-social-security', '/senior-deduction-phaseout',
