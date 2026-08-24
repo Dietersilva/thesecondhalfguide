@@ -34,15 +34,20 @@ ARTICLES10['spousal-benefits'] = {
                                      'years</strong> and you are currently unmarried.'),
         ('Claiming early', 'Reduces the spousal benefit permanently, the same way claiming your own '
                            'retirement benefit early does.'),
-        ('You get the higher one, not both', 'SSA pays whichever is larger — your own retirement benefit '
-                                             'or the spousal benefit — not the sum of the two.'),
+        ('You don&rsquo;t get two full checks', 'SSA pays your own retirement benefit first. If your '
+                                                'spousal benefit is higher, SSA adds a partial spousal '
+                                                'amount on top so the combined total equals the higher '
+                                                'figure — not your own benefit plus a full separate '
+                                                'spousal payment.'),
         ('No delayed credits on this one', 'Waiting past your own full retirement age does '
                                            '<strong>not</strong> grow the spousal benefit. It tops out at '
                                            'your FRA, whether you claim then, at 68, or at 70.'),
-        ('Your ex does not need to know', 'If you have been divorced at least two years, you can claim on '
-                                          'an ex-spouse&rsquo;s record even if they have not filed yet — '
-                                          'and it does not reduce anything they or a current spouse '
-                                          'receive.'),
+        ('Your ex does not need to have filed', 'This only matters if your ex hasn&rsquo;t started their '
+                                                'own benefit yet. If they have already filed, you can '
+                                                'claim on their record right away. If they haven&rsquo;t, '
+                                                'you need to have been divorced <strong>at least two '
+                                                'years</strong> to claim anyway. Either way, it does not '
+                                                'reduce anything they or a current spouse receive.'),
     ]) + """
       <h2>The part that surprises people: you don&rsquo;t choose</h2>
 
@@ -53,9 +58,15 @@ ARTICLES10['spousal-benefits'] = {
       growing with delayed retirement credits no longer exists for almost anyone reading this.</p>
 
       <p>That makes the <a href="/delayed-retirement-credit">delayed retirement credit</a> math
-      one-directional here: it can still be worth delaying your <em>own</em> benefit past FRA if it will
-      end up larger than half your spouse&rsquo;s — but delaying does nothing for a spousal benefit
-      itself, which is fixed at your FRA amount regardless of when you actually claim it.</p>
+      one-directional here: <strong>delayed retirement credits keep increasing your own benefit</strong>
+      after FRA, all the way to 70 — but they do nothing for a spousal benefit itself, which is fixed at
+      your FRA amount regardless of when you actually claim it. The pieces this site has already covered
+      each answer half the picture; which half applies to you depends on your own earnings record next to
+      your spouse&rsquo;s, not a rule this page can settle for you.</p>
+
+      <p>The rules above describe the standard retirement-age spousal benefit. A separate, narrower
+      spousal benefit exists for someone caring for the worker&rsquo;s child who is under 16 or disabled —
+      a different situation from the one this piece covers.</p>
 
       <blockquote class="pull">
         <p>The spousal benefit is not something you request on top of your own. It is the answer to a
@@ -129,8 +140,10 @@ ARTICLES10['hsa-medicare-timing'] = {
                            'never earlier than the month you turned 65.'),
         ('The conflict', 'You are not HSA-eligible for any month covered by Medicare, including a month '
                          'covered <em>retroactively</em>.'),
-        ('The penalty', 'A <strong>6% excise tax</strong> on any HSA contribution made during a month '
-                        'later found to be retroactively covered by Medicare.'),
+        ('The tax consequence', 'Contributions made during a retroactively-covered month become '
+                                '<strong>excess HSA contributions</strong>. Left uncorrected, an excess '
+                                'contribution is charged a <strong>6% excise tax for every year it '
+                                'remains</strong> in the account, not a one-time hit.'),
         ('The fix', 'Stop HSA contributions at least <strong>6 months before</strong> you apply for '
                     'Medicare, or before your 65th birthday if you plan to enroll right at 65.'),
         ('What is not affected', 'Money already in the HSA. It stays yours, stays tax-free for qualified '
@@ -166,16 +179,20 @@ ARTICLES10['hsa-medicare-timing'] = {
         'least 6 months before that claim takes effect, since claiming triggers automatic Part A '
         'enrollment.',
         'If you already over-contributed during a retroactive-coverage window, you can generally '
-        '<strong>withdraw the excess</strong> before your tax filing deadline to avoid the 6% excise tax '
-        'on that amount &mdash; talk to the HSA custodian about the correction process.',
+        '<strong>withdraw the excess, plus any earnings it generated</strong>, by your tax return deadline '
+        '<strong>including extensions</strong> for that contribution year to avoid the excise tax on that '
+        'amount &mdash; talk to the HSA custodian about the correction process.',
         'Employer contributions count too. If your employer contributes to your HSA automatically, that '
         'also needs to stop on the same schedule.',
         'None of this affects an HSA balance you already have. It is only about <em>new</em> '
         'contributions during the overlap window.',
     ]) + """
-      <p>This is a timing rule, not a reason to avoid an HSA-eligible plan while still working. The whole
-      exposure is contained to a single 6-month window around whenever Medicare enrollment actually
-      happens — get that window right and the rest of the HSA&rsquo;s tax treatment is unaffected.</p>
+      <p>This is a timing rule, not a reason to avoid an HSA-eligible plan while still working. The
+      Medicare retroactivity itself only ever reaches back up to 6 months. But that is a separate question
+      from how long the <em>tax</em> consequence lasts: an excess contribution left uncorrected keeps
+      accruing the 6% excise tax every year, on top of ordinary income tax on whatever it earned. Get the
+      6-month timing right, or correct an excess contribution promptly if you miss it, and neither issue
+      lingers.</p>
 """,
     'sources': [
         ('IRS &mdash; Publication 969, Health Savings Accounts and Other Tax-Favored Health Plans',
@@ -195,8 +212,9 @@ ARTICLES10['catch-up-60-63'] = {
     'title': 'The Four-Year 401(k) Catch-Up Window at 60&ndash;63 &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The four-year 401(k) catch-up window at 60&ndash;63',
-    'dek': 'For four calendar years only, the catch-up limit on a 401(k) jumps well past the standard '
-           'age-50 amount &mdash; but only if your plan opts in, and only if you know to ask.',
+    'dek': 'For four calendar years only, the catch-up limit on a 401(k) or similar workplace plan jumps '
+           'well past the standard age-50 amount &mdash; but only if your plan permits it, and only if '
+           'you know to ask.',
     'meta': '5 minute read &middot; Verified against IRS 2026 figures',
     'checked': CHECKED10,
     'body': """      <p>Everyone 50 and older can already put more into a 401(k) than younger workers can. Fewer people
@@ -210,12 +228,19 @@ ARTICLES10['catch-up-60-63'] = {
                                              'standard catch-up, for a total of <strong>$35,750</strong>.'),
         ('The window', 'Only the calendar years you turn 60, 61, 62 or 63. Turn 64, and the limit drops '
                        'back to the standard $8,000 catch-up.'),
-        ('Employer opt-in required', 'Plans are not required to offer the higher catch-up even if they '
-                                     'already allow the standard 50+ catch-up. Ask your plan '
-                                     'administrator directly.'),
-        ('The Roth requirement', 'If your prior-year wages from that employer exceeded $150,000 '
-                                 '(indexed), <strong>all</strong> of your catch-up contributions that '
-                                 'year — not just the extra amount — must go into a Roth account.'),
+        ('Plan availability', 'The higher catch-up must be specifically <strong>permitted under the '
+                              'employer&rsquo;s plan</strong> &mdash; it is not automatic just because the '
+                              'plan allows the standard 50+ catch-up. Ask your plan administrator '
+                              'directly.'),
+        ('The Roth requirement', 'For 2026, participants whose <strong>prior-year FICA wages from the '
+                                 'plan sponsor exceeded $150,000</strong> (indexed) generally must make '
+                                 '<strong>all</strong> of that year&rsquo;s catch-up contributions as '
+                                 'designated Roth contributions, not just the extra amount above the '
+                                 'standard catch-up.'),
+        ('Not only 401(k)s', 'The same age window, dollar figures and Roth threshold also apply to '
+                             '<strong>403(b) plans, governmental 457(b) plans, and the federal Thrift '
+                             'Savings Plan</strong>. SIMPLE plans have their own, smaller catch-up '
+                             'figures.'),
     ]) + """
       <h2>Why the window is exactly four years</h2>
 
@@ -225,9 +250,11 @@ ARTICLES10['catch-up-60-63'] = {
       you&rsquo;ve turned 64, the amount reverts to the ordinary $8,000 catch-up. There is no extending it
       and no repeating it — four specific tax years, tied to your birth year, and then it&rsquo;s gone.</p>
 
-      <p>For someone with the cash flow to use it, that is up to $27,000 more sheltered over four years
-      than the standard catch-up alone would allow — a meaningful amount in the years right before
-      retirement, when income is often at its highest and the runway to grow it is shortest.</p>
+      <p>At the 2026 figures, that is <strong>$3,250 more</strong> in an eligible year than the standard
+      50+ catch-up alone allows — a meaningful amount in the years right before retirement, when income is
+      often at its highest and the runway to grow it is shortest. These limits are indexed for inflation
+      and reset most years, so the four-year total will not simply be four times this year&rsquo;s
+      difference; what stays constant is the shape of the rule, not this specific dollar figure.</p>
 
       <blockquote class="pull">
         <p>This is not automatic and it is not universal. It exists only in plans that chose to offer it,
@@ -246,8 +273,9 @@ ARTICLES10['catch-up-60-63'] = {
       converting it.</p>
 
 """ + check([
-        'Ask your plan administrator directly whether your 401(k) offers the <strong>age 60&ndash;63 '
-        'super catch-up</strong>. It is not universal, and it will not be flagged for you automatically.',
+        'Ask your plan administrator directly whether your 401(k), 403(b), 457(b) or TSP account offers '
+        'the <strong>age 60&ndash;63 super catch-up</strong>. It is not universal, and it will not be '
+        'flagged for you automatically.',
         'Check whether your prior-year wages from that specific employer put you over the '
         '<strong>$150,000 Roth-mandate threshold</strong> &mdash; this determines whether your catch-up '
         'contributions land pre-tax or Roth.',
