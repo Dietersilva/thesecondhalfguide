@@ -92,6 +92,9 @@ DESCRIPTIONS = {
     '/travel': 'Every travel and discount article on the site — airport security, passport rules, cruise medical coverage, and where the real senior discounts are.',
     '/family': 'Every article on grandparenting and staying close to family in one place — the boundaries, the distance, and the fiction column, Wednesday Letters.',
     '/search': 'Search every article on The Second Half Guide by topic — Medicare, Social Security, taxes, fraud protection or aging in place — and jump straight to it.',
+    '/spousal-benefits': 'Married or divorced, you may be owed a Social Security benefit based on a spouse’s record — up to half, not on top of your own. The rules that decide it.',
+    '/hsa-medicare-timing': 'Still working past 65 with an HSA? Enrolling in Medicare later can retroactively tax contributions already made. The 6-month rule that avoids the 6% penalty.',
+    '/catch-up-60-63': 'For four calendar years only, ages 60–63, the 401(k) catch-up jumps to $11,250 instead of $8,000 — if your plan opts in, and if you know to ask.',
 }
 
 PAGE_FILES = {
@@ -264,6 +267,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/spousal-benefits', '/hsa-medicare-timing', '/catch-up-60-63',
     '/aca-subsidy-cliff', '/rule-of-55', '/delayed-retirement-credit',
     '/senior-deduction-sunset', '/standard-deduction-65',
     '/no-tax-on-social-security', '/senior-deduction-phaseout',
