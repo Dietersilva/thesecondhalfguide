@@ -84,6 +84,9 @@ DESCRIPTIONS = {
     '/wednesday-letters': 'Fiction from The Second Half Guide: twenty-one years of Wednesday mornings at a small-town post office, and the letters that kept on arriving.',
     '/wep-gpo-repeal': 'WEP and GPO cut the Social Security of teachers, firefighters and public employees for decades. Both were repealed, and many affected still don\'t know.',
     '/widows-penalty': 'When one spouse dies, income falls and the tax brackets narrow at the same time. One of the harshest bits of arithmetic in retirement, rarely explained.',
+    '/overpayment-clawback': 'SSA can now withhold up to 50% of your monthly check to recover an overpayment. Two deadlines inside the letter — 30 and 60 days — decide when that starts.',
+    '/cobra-medicare-trap': 'COBRA keeps your health plan going after a job ends, but it isn’t creditable coverage for Medicare Part B — missing that risks a permanent penalty.',
+    '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
     '/medicare': 'Every Medicare and health-insurance article in one place — enrollment windows, the drug cap, IRMAA, Medigap, and where Medicare stops working.',
     '/money': 'Every dated fact about taxes, deductions and Social Security — the senior deduction, RMDs, IRMAA, the Medigap window, and thresholds that move yearly.',
     '/paperwork': 'Every article on wills, beneficiary forms, digital accounts and power of attorney — explained without the law-school vocabulary, in one place.',
@@ -267,6 +270,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/overpayment-clawback', '/cobra-medicare-trap', '/medicare-advantage-oep',
     '/spousal-benefits', '/hsa-medicare-timing', '/catch-up-60-63',
     '/aca-subsidy-cliff', '/rule-of-55', '/delayed-retirement-credit',
     '/senior-deduction-sunset', '/standard-deduction-65',
