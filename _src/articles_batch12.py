@@ -18,20 +18,21 @@ ARTICLES12['compassionate-allowances'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Social Security&rsquo;s fast track for a severe diagnosis',
     'dek': 'A little-known SSA list lets certain disability claims skip the usual months of review and '
-           'be approved on medical evidence alone. Fourteen conditions were added to it on August 11, '
-           'bringing the total to 314.',
+           'be identified for expedited processing instead. Fourteen conditions were added to it on '
+           'August 11, bringing the total to 314.',
     'meta': '6 minute read &middot; Verified against SSA rules',
     'checked': CHECKED12,
     'body': """      <p>A standard Social Security disability claim can take months, sometimes over a year, to move
       through review. For a specific list of conditions serious enough that there is little real question
-      about the outcome, SSA skips most of that. The program is called <strong>Compassionate
-      Allowances</strong>, and on August 11, 2026, SSA added 14 conditions to it &mdash; bringing the list
-      to 314.</p>
+      about the outcome, SSA identifies the claim for expedited processing instead. The program is called
+      <strong>Compassionate Allowances</strong>, and on August 11, 2026, SSA added 14 conditions to it
+      &mdash; bringing the list to 314.</p>
 
 """ + facts('The rule, precisely', [
-        ('What it is', 'A published list of specific medical conditions serious enough that SSA can '
-                       'approve a disability claim based on <strong>medical confirmation of the diagnosis '
-                       'alone</strong>, rather than the standard multi-step disability review.'),
+        ('What it is', 'A published list of specific medical conditions serious enough that, in SSA&rsquo;s '
+                       'own words, a claim is &ldquo;often approved based on medical confirmation of the '
+                       'diagnosis alone&rdquo; &mdash; identified for expedited processing rather than the '
+                       'standard multi-step disability review.'),
         ('The August 2026 update', '<strong>14 conditions</strong> were added on August 11, 2026, '
                                    'bringing the Compassionate Allowances (CAL) list to <strong>314 '
                                    'conditions</strong> in total.'),
@@ -44,8 +45,9 @@ ARTICLES12['compassionate-allowances'] = {
                                      'under either one.'),
         ('Track record', 'SSA reports that more than <strong>1.2 million people</strong> have been '
                          'approved through Compassionate Allowances since the program began in 2008.'),
-        ('Processing time', 'A CAL-flagged claim can be approved in <strong>days to a few weeks</strong>, '
-                            'instead of the months a standard disability claim typically takes.'),
+        ('Processing time', 'SSA describes CAL claims as processed <strong>substantially faster</strong> '
+                            'than an ordinary disability claim, though SSA does not publish a specific '
+                            'day or week range.'),
     ]) + """
       <h2>The part that matters: it speeds the decision, not the waiting periods</h2>
 
@@ -67,9 +69,9 @@ ARTICLES12['compassionate-allowances'] = {
       <p>SSA runs a second, related process called <strong>Quick Disability Determinations (QDD)</strong>,
       easy to confuse with Compassionate Allowances because both exist to speed up the most clear-cut
       claims. The difference is how each one identifies a case. CAL works from the published list of
-      specific named conditions; QDD instead runs a computer model over every incoming application, looking
-      for language and documentation patterns that predict a claim is very likely to be approved, whatever
-      the diagnosis. A condition that never makes the CAL list can still be flagged and fast-tracked through
+      specific named conditions; QDD instead uses a predictive model to flag claims where there is a high
+      likelihood the person is disabled and the medical evidence can be readily obtained, whatever the
+      diagnosis. A condition that never makes the CAL list can still be flagged and fast-tracked through
       QDD if the application and the medical record make the case clearly enough on their own.</p>
 
       <p>New conditions do not appear on the CAL list by accident. SSA adds to it through public outreach
@@ -121,7 +123,7 @@ ARTICLES12['compassionate-allowances'] = {
          'https://www.ssa.gov/disabilityresearch/qdd.htm'),
     ],
     'next': {'slug': 'ssi-wage-reporting',
-             'title': 'Your SSI wage reports just became automatic',
+             'title': 'Social Security’s automatic wage reporting, and what it still needs from you',
              'blurb': 'Another change from this year’s SSA modernization push, this one for people who work while on SSI or SSDI.'},
 }
 
@@ -130,30 +132,33 @@ ARTICLES12['medicare-card-scam'] = {
     'title': 'The New Medicare Card Scam, and the Real Reissue Behind It &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The new Medicare card scam, and the real reissue behind it',
-    'dek': 'About 1.3 million Medicare numbers were reissued this spring after a security incident. '
-           'Nothing about anyone&rsquo;s coverage changed &mdash; but the real event gave scammers a new '
+    'dek': 'About 1.3 million Medicare numbers were reissued this spring as a fraud-prevention measure. '
+           'Nothing about anyone&rsquo;s coverage changed &mdash; but the real reissue gave scammers a new '
            'script that is still circulating.',
     'meta': '5 minute read &middot; Verified against CMS and SMP guidance',
     'checked': CHECKED12,
     'body': """      <p>Some Medicare beneficiaries received a new card in the mail this spring with a new number on
       it, unprompted, without asking for one. That part was real: CMS reissued roughly 1.3 million
-      Medicare numbers after a security incident affecting Medicare claims-processing systems. The trouble
-      is that the same event became the basis for a scam call &mdash; and the calls kept coming long after
-      the real reissue was finished.</p>
+      Medicare numbers as a security and fraud-prevention measure. CMS did not publicly identify a single
+      specific incident behind the reissue, though patient advocates have linked it to a pattern of earlier
+      Medicare data breaches and fraudulent activity. What is not in question is what happened next: the
+      same reissue became the basis for a scam call, and the calls kept coming long after the real reissue
+      was finished.</p>
 
 """ + facts('The rule, precisely', [
         ('What happened', 'CMS reissued <strong>Medicare Beneficiary Identifiers</strong> &mdash; the '
                           'number on your Medicare card &mdash; for about <strong>1.3 million '
-                          'people</strong>, following a security incident tied to Medicare '
-                          'claims-processing systems.'),
+                          'people</strong>, as a security and fraud-prevention measure.'),
+        ('What CMS has and hasn&rsquo;t said', 'CMS has not publicly identified one specific incident '
+                                                'behind this reissue. Patient advocates have linked it to '
+                                                'a pattern of earlier Medicare data breaches and '
+                                                'fraudulent activity, but that connection is their '
+                                                'assessment, not a CMS confirmation.'),
         ('Timing', 'New cards were mailed in <strong>March 2026</strong>; the new numbers took effect on '
                    '<strong>April 14, 2026</strong>.'),
         ('What actually changed', 'Only the identification number. Benefits, premiums, a Medicare '
                                   'Advantage or Part D plan, and a Medigap policy were <strong>not '
                                   'affected</strong>.'),
-        ('What CMS said about fraud', 'The agency reported <strong>no confirmed cases</strong> of '
-                                      'identity theft or fraud tied directly to the incident in its public '
-                                      'statements at the time.'),
         ('The rule that stops the scam', 'Medicare does not call, text, or email you first to '
                                          '&ldquo;verify,&rdquo; &ldquo;activate,&rdquo; or '
                                          '&ldquo;confirm&rdquo; a card or number. A reissued card simply '
@@ -212,6 +217,8 @@ ARTICLES12['medicare-card-scam'] = {
          'https://smpresource.org/medicare-fraud/medicare-cards/'),
         ('SSA &mdash; How do I get a replacement Medicare card?',
          'https://www.ssa.gov/faqs/en/questions/KA-01735.html'),
+        ('Center for Medicare Advocacy &mdash; New Medicare Cards Arriving for Some',
+         'https://medicareadvocacy.org/new-medicare-cards-2026/'),
     ],
     'next': {'slug': 'bank-imposter-scam',
              'title': 'The phone call that empties bank accounts',
@@ -220,18 +227,20 @@ ARTICLES12['medicare-card-scam'] = {
 
 # ------------------------------------------------------------- SSI wage reporting
 ARTICLES12['ssi-wage-reporting'] = {
-    'title': 'Your SSI Wage Reports Just Became Automatic &mdash; The Second Half Guide',
+    'title': 'Social Security&rsquo;s Automatic Wage Reporting, and What It Still Needs From You &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'Your SSI wage reports just became automatic',
-    'dek': 'If you or a family member gets SSI and works, Social Security used to rely entirely on you to '
-           'report every paycheck by hand. A system called the Payroll Information Exchange now does much '
-           'of that for you.',
+    'h1': 'Social Security&rsquo;s automatic wage reporting, and what it still needs from you',
+    'dek': 'A system called the Payroll Information Exchange has been fully running since September 2025, '
+           'feeding many SSI and SSDI recipients&rsquo; wages to SSA automatically. It is not automatic '
+           'for everyone, and not automatic the moment you sign up.',
     'meta': '5 minute read &middot; Verified against SSA rules',
     'checked': CHECKED12,
     'body': """      <p>Supplemental Security Income has always come with a strict rule: report your wages to SSA every
-      month, by hand, or risk an overpayment if a raise or extra shift went unreported. On July 24, 2026,
-      SSA reported that a system called the <strong>Payroll Information Exchange (PIE)</strong> now
-      handles much of that automatically, for recipients who work for a participating employer.</p>
+      month, by hand, or risk an overpayment if a raise or extra shift went unreported. A system called
+      the <strong>Payroll Information Exchange (PIE)</strong> now handles much of that automatically, for
+      recipients who authorize it and work for a participating employer &mdash; a system that has been
+      fully running since 2025, and that SSA highlighted again in a July 24, 2026 report on SSI
+      improvements.</p>
 
 """ + facts('The rule, precisely', [
         ('The old rule, still mostly true', 'SSI recipients who work have long had to report wages to SSA '
@@ -239,17 +248,27 @@ ARTICLES12['ssi-wage-reporting'] = {
                                             'went unreported.'),
         ('What changed', 'The Payroll Information Exchange pulls wage and employment data directly from '
                          'participating payroll providers each month, <strong>automatically</strong>, for '
-                         'SSDI and SSI recipients whose employer is part of the exchange.'),
-        ('Status', 'PIE reached full-scale monthly operation in <strong>September 2025</strong>, and SSA '
-                   'highlighted it again in a <strong>July 24, 2026</strong> report as part of a wider '
-                   'round of SSI improvements.'),
+                         'SSDI and SSI recipients who authorize it and whose employer is part of the '
+                         'exchange.'),
+        ('You have to opt in', 'PIE is not automatic by default. A recipient authorizes it by signing SSA '
+                               'Form <strong>SSA-8240</strong>; SSA does not start pulling an '
+                               'unauthorized person&rsquo;s wage data.'),
+        ('Keep reporting until SSA confirms it', 'After authorizing PIE, keep reporting wages the '
+                                                  '<strong>old way every month</strong> until SSA sends a '
+                                                  'letter confirming it is actually receiving your wage '
+                                                  'information through the exchange. Stopping early, before '
+                                                  'that letter, is how a gap turns into an overpayment.'),
+        ('Status', 'PIE began monthly exchanges in <strong>April 2025</strong> and reached full-scale '
+                   'monthly operation in <strong>September 2025</strong> &mdash; this is not a new system, '
+                   'though SSA highlighted it again in a <strong>July 24, 2026</strong> report as part of a '
+                   'wider round of SSI improvements.'),
         ('The SSI Improvement Office', 'SSA named a lead executive over a newly created SSI Improvement '
                                        'Office in 2026 &mdash; the first time the agency has had one '
                                        '&mdash; overseeing changes meant to reduce improper payments and '
                                        'speed up service.'),
-        ('Where the data comes from', 'Wage information comes from payroll data providers that '
-                                      'participate in the exchange, <strong>not from every employer '
-                                      'automatically</strong>.'),
+        ('Where the data comes from', 'SSA&rsquo;s payroll data provider is <strong>Equifax</strong>. Wage '
+                                      'information comes through that participating provider, <strong>not '
+                                      'from every employer automatically</strong>.'),
         ('It reduces the burden, not the requirement', 'Income PIE cannot see &mdash; self-employment, or '
                                                         'a job with a payroll provider outside the exchange '
                                                         '&mdash; still needs to be reported the old way.'),
@@ -260,8 +279,8 @@ ARTICLES12['ssi-wage-reporting'] = {
       common way people ended up owing money back, through no fault beyond a missed phone call or form. It
       does not eliminate overpayment risk generally, and wages are not the only thing SSA has automated
       checks for. SSI also comes with a strict <strong>resource limit</strong> — $2,000 for an individual,
-      $3,000 for a couple — and money held above that in a bank account is, separately from unreported
-      wages, one of the leading causes of SSI overpayments.</p>
+      $3,000 for a couple — and SSA describes money held above that limit in a bank account as a
+      <strong>major cause</strong> of SSI improper payments, separate from unreported wages.</p>
 
       <p>SSA checks this through a different system, the <strong>Access to Financial Institution
       (AFI)</strong> tool, which SSA expanded as part of the same 2026 modernization push. AFI lets SSA
@@ -286,8 +305,10 @@ ARTICLES12['ssi-wage-reporting'] = {
       <h2>What to actually do</h2>
 
 """ + check([
-        'If you receive SSI or SSDI and work for an employer, ask whether the Payroll Information '
-        'Exchange is active for your record &mdash; it is not universal yet.',
+        'PIE requires your <strong>authorization</strong> (Form SSA-8240) and a participating employer '
+        '&mdash; ask SSA whether it is active for your record rather than assuming it is.',
+        'After you authorize it, <strong>keep reporting wages the old way</strong> every month until SSA '
+        'sends a letter confirming it is receiving your wage information through the exchange.',
         'Keep reporting income PIE does not cover: <strong>self-employment</strong>, tips, or an employer '
         'outside the exchange.',
         'Keep your own pay stubs regardless. Automatic reporting reduces the paperwork, not the value of '
@@ -306,6 +327,11 @@ ARTICLES12['ssi-wage-reporting'] = {
          'https://www.ssa.gov/faqs/en/questions/KA-10116.html'),
         ('SSA &mdash; Access to Financial Institutions (AFI)',
          'https://www.ssa.gov/improperpayments/afi.html'),
+        ('SSA &mdash; Form SSA-8240, Authorization for the Social Security Administration To Obtain Wage '
+         'and Employment Information From Payroll Data Providers',
+         'https://www.ssa.gov/forms/ssa-8240.pdf'),
+        ('SSA &mdash; SSI Spotlight on the Payroll Information Exchange (PIE)',
+         'https://www.ssa.gov/ssi/spotlights/spot-pie.htm'),
     ],
     'next': {'slug': 'overpayment-clawback',
              'title': 'The Social Security overpayment letter, and the deadline inside it',
