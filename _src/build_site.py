@@ -98,6 +98,9 @@ DESCRIPTIONS = {
     '/spousal-benefits': 'Married or divorced, you may be owed a Social Security benefit based on a spouse’s record — up to half, not on top of your own. The rules that decide it.',
     '/hsa-medicare-timing': 'Still working past 65 with an HSA? Enrolling in Medicare later can retroactively tax contributions already made. The 6-month rule that avoids the 6% penalty.',
     '/catch-up-60-63': 'For four calendar years only, ages 60–63, the 401(k) catch-up jumps to $11,250 instead of $8,000 — if your plan opts in, and if you know to ask.',
+    '/compassionate-allowances': 'SSA added 14 conditions to its Compassionate Allowances list on August 11, 2026, bringing the total to 314. How the disability fast track actually works.',
+    '/medicare-card-scam': 'CMS reissued 1.3 million Medicare numbers this spring after a security incident. The real reissue and the scam script copying it, side by side.',
+    '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
 }
 
 PAGE_FILES = {
@@ -270,6 +273,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/compassionate-allowances', '/medicare-card-scam', '/ssi-wage-reporting',
     '/overpayment-clawback', '/cobra-medicare-trap', '/medicare-advantage-oep',
     '/spousal-benefits', '/hsa-medicare-timing', '/catch-up-60-63',
     '/aca-subsidy-cliff', '/rule-of-55', '/delayed-retirement-credit',
