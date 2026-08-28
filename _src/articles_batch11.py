@@ -38,8 +38,10 @@ ARTICLES11['overpayment-clawback'] = {
                                          'default a few weeks later, before the 100% rate took effect.'),
         ('Two different remedies', 'A <strong>reconsideration</strong> (Form SSA-561) disputes that you '
                                    'were overpaid, or the amount. A <strong>waiver</strong> (Form SSA-632) '
-                                   'concedes the overpayment but argues it wasn&rsquo;t your fault and you '
-                                   'can&rsquo;t afford to repay it. You can file both at once.'),
+                                   'does not dispute the overpayment — it asks SSA not to recover it '
+                                   'because you were not at fault, and either repayment would keep you '
+                                   'from covering necessary living expenses or recovery would otherwise be '
+                                   'unfair. SSA permits filing both.'),
         ('No deadline on the waiver', 'There is no time limit to request a waiver. There is a time limit '
                                       'that determines whether withholding pauses while SSA decides.'),
     ]) + """
@@ -49,17 +51,18 @@ ARTICLES11['overpayment-clawback'] = {
       waiver request — and withholding does not start at all while SSA reviews it. Miss that window and
       file later, and withholding can already be underway by the time your request is filed; filing then
       suspends further withholding while the review is pending, but does not undo what was already taken.
-      A reconsideration filed within 60 days still pauses withholding during review; after that, it may
-      not.</p>
+      A reconsideration filed within 60 days still pauses withholding during review. A reconsideration is
+      generally due within that 60-day window, but SSA can accept one filed later if you show good
+      cause for the delay.</p>
 
       <p>The waiver itself has no deadline — you can request one at any time. But requesting it inside
       that first 30 days is what keeps money in your check while you wait for an answer, rather than
       having to get it back later if you win.</p>
 
       <blockquote class="pull">
-        <p>The overpayment amount is fixed by the time the letter arrives. What is still negotiable is
-        whether half your check disappears starting this month, or not until SSA has actually decided
-        you&rsquo;re wrong.</p>
+        <p>The amount in the letter is fixed by the time it arrives. The calendar isn&rsquo;t: responding
+        promptly can decide whether SSA starts withholding your benefit while a challenge or waiver
+        request is still pending.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -72,13 +75,13 @@ ARTICLES11['overpayment-clawback'] = {
         '<strong>SSA-561</strong> (Request for Reconsideration).',
         'If you don&rsquo;t dispute it but <strong>can&rsquo;t afford the withholding</strong> or it '
         'wasn&rsquo;t your fault, file Form <strong>SSA-632</strong> (Request for Waiver).',
-        'When in doubt, <strong>file both at the same time</strong> — they address different questions '
-        'and one does not substitute for the other.',
+        'Reconsideration and waiver <strong>answer different questions</strong>, and SSA permits filing '
+        'both at the same time.',
         'If your income comes from <strong>SSI</strong> rather than retirement, survivors or disability '
         'benefits, remember the 10% default rate applies to you, not the 50% Title II rate.',
-        'You can also request a <strong>different repayment rate</strong> than SSA&rsquo;s default without '
-        'disputing the overpayment at all — a lower, negotiated monthly amount is often available for the '
-        'asking.',
+        'You can also request a <strong>different recovery rate</strong> than SSA&rsquo;s default without '
+        'disputing the overpayment at all, if the proposed withholding amount would cause a financial '
+        'problem — whether it&rsquo;s approved depends on SSA&rsquo;s rules and your circumstances.',
     ]) + """
       <p>None of this is a reason to ignore a legitimate overpayment — it is a reason to open the letter
       the day it arrives rather than the week after, since the calendar inside it, not the balance, is
@@ -119,24 +122,32 @@ ARTICLES11['cobra-medicare-trap'] = {
                      'employers with 20 or more workers.'),
         ('What it costs', 'The full premium — employee and employer share combined — plus up to a 2% '
                           'administrative fee. Often several times what was deducted from a paycheck.'),
-        ('What you get', 'The identical plan you had while employed. You cannot switch to a different '
-                         'plan through COBRA.'),
+        ('What you get', 'Generally the same group coverage active employees have. You cannot switch to a '
+                         'different plan through COBRA, but if the employer changes its plan for active '
+                         'employees — a new carrier, a different network, adjusted benefits — that change '
+                         'applies to your COBRA coverage too.'),
         ('The election window', 'Generally <strong>60 days</strong> from losing coverage or from the '
                                 'COBRA notice, whichever is later, to elect it.'),
     ]) + """
       <h2>Where it goes wrong at 65</h2>
 
 """ + facts('The trap, precisely', [
+        ('The key deadline: 8 months', 'If you&rsquo;re 65 or older when you stop working or your '
+                                       'employer coverage ends, whichever happens first, you generally '
+                                       'have <strong>8 months</strong> to sign up for Part B without a '
+                                       'penalty. Choosing COBRA does not extend it.'),
         ('COBRA is not creditable coverage for Part B', 'Medicare does not treat COBRA as coverage based '
-                                                         'on current employment. It does not delay or '
-                                                         'excuse Medicare enrollment the way an active '
-                                                         'employer plan does.'),
-        ('The clock starts at job loss, not at COBRA&rsquo;s end', 'Your Medicare enrollment window is '
-                                                                    'generally tied to when active '
-                                                                    'employment (and the group health plan '
-                                                                    'that came with it) actually ended — '
-                                                                    'not to how long COBRA continues '
-                                                                    'afterward.'),
+                                                         'on current employment, and does not count losing '
+                                                         'COBRA as a qualifying event for a new Special '
+                                                         'Enrollment Period. It does not delay or excuse '
+                                                         'Medicare enrollment the way an active employer '
+                                                         'plan does.'),
+        ('The clock starts at job loss, not at COBRA&rsquo;s end', 'The 8-month window starts the day '
+                                                                    'active employment (and the group '
+                                                                    'health plan that came with it) '
+                                                                    'actually ended — not when COBRA runs '
+                                                                    'out, even if you elect COBRA '
+                                                                    'immediately.'),
         ('The penalty is permanent', 'Miss the window while relying on COBRA and the Part B late-enrollment '
                                      'penalty — roughly 10% of the premium for each full 12-month period '
                                      'you could have enrolled but did not — applies for as long as you '
@@ -155,27 +166,29 @@ ARTICLES11['cobra-medicare-trap'] = {
 """ + AD_INLINE + """
       <h2>What actually protects you</h2>
 
-      <p>The safe route is enrolling in Medicare on its own schedule regardless of what COBRA is doing —
-      generally within the seven-month window centered on turning 65, covered in more detail in <a
-      href="/medicare-enrollment">the Medicare enrollment deadline piece</a> on this site. If you are
-      leaving a job at or after 65 with <em>active</em> employer coverage, that coverage can open a
-      genuine Special Enrollment Period; COBRA taken after that employment ends is a different thing and
-      does not reopen or extend that window.</p>
+      <p>The safe route is enrolling in Medicare on the 8-month clock described above, regardless of what
+      COBRA is doing. That clock is distinct from the seven-month Initial Enrollment Period centered on
+      turning 65, covered in more detail in <a href="/medicare-enrollment">the Medicare enrollment
+      deadline piece</a> on this site — the seven-month window is for people with no other coverage
+      delaying them; the 8-month window described here is specifically for people who had active employer
+      coverage and are enrolling after it ends. If you are still actively working at or after 65 with
+      employer coverage, that active coverage is what opens the 8-month window once it ends — COBRA taken
+      after that does not reopen or extend it.</p>
 
 """ + check([
         'If you are turning 65 while on COBRA, <strong>enroll in Medicare on schedule anyway</strong>. '
         'Do not wait for COBRA to run out.',
         'Confirm directly with your COBRA plan administrator whether the drug coverage is '
         '<strong>creditable for Part D</strong> — do not assume it, either way.',
-        'Once Medicare starts, <strong>COBRA is often no longer the primary payer</strong> and can end '
-        'early as a result — ask the plan administrator how your specific COBRA coverage responds to '
-        'Medicare enrollment.',
+        'How Medicare affects COBRA depends on which coverage came first: Medicare warns that '
+        '<strong>COBRA you already have will probably end</strong> once you enroll in Medicare '
+        'afterward — confirm your plan&rsquo;s specific rule rather than assuming either way.',
         'If you are unsure whether your situation counts as &ldquo;active employment&rdquo; coverage versus '
         '<strong>COBRA continuation</strong>, that distinction is the one to get an SSA or SHIP counselor '
         'to confirm before assuming either way.',
-        'Consider Medigap timing too: enrolling in Medicare while still effectively covered by COBRA can '
-        'affect your <a href="/medigap-window">one-time Medigap open enrollment window</a>, which starts '
-        'when Part B starts, not when other coverage ends.',
+        '<strong>COBRA does not postpone your Medigap Open Enrollment Period.</strong> That six-month <a '
+        'href="/medigap-window">federal window</a> generally begins when you are 65 or older and enrolled '
+        'in Part B, whether or not other coverage continues alongside it.',
     ]) + """
       <p>Eighteen months of COBRA feels like a plan. The Medicare clock underneath it runs on its own
       schedule regardless, and the penalty for guessing wrong about that does not go away once you
@@ -188,6 +201,10 @@ ARTICLES11['cobra-medicare-trap'] = {
          'https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/faqs/cobra-continuation-health-coverage-workers'),
         ('Medicare &mdash; Part B late enrollment penalty',
          'https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties'),
+        ('Medicare &mdash; COBRA coverage',
+         'https://www.medicare.gov/basics/get-started-with-medicare/medicare-basics/working-past-65/cobra-coverage'),
+        ('Medicare &mdash; Special Enrollment Periods',
+         'https://www.medicare.gov/basics/get-started-with-medicare/get-more-coverage/joining-a-plan/special-enrollment-periods'),
     ],
     'next': {'slug': 'medicare-advantage-oep',
              'title': 'The other Medicare enrollment window, in January',
@@ -227,6 +244,11 @@ ARTICLES11['medicare-advantage-oep'] = {
                                    'plan while staying on Original Medicare.'),
         ('One change only', 'Unlike AEP, which allows changing your mind more than once before it ends, '
                             'MA OEP permits a single plan change during the window.'),
+        ('Not the only other window', 'AEP and MA OEP are the two recurring, calendar-based windows. '
+                                      'Separate Special Enrollment Periods also exist for specific '
+                                      'situations — moving, losing other coverage, a plan leaving your '
+                                      'area, and others — and a newly-eligible Medicare Advantage enrollee '
+                                      'gets a similar one-time trial window in their first three months.'),
     ]) + """
       <h2>Why the two get confused</h2>
 
@@ -242,8 +264,9 @@ ARTICLES11['medicare-advantage-oep'] = {
       chance to correct course before locking in for the rest of the year.</p>
 
       <blockquote class="pull">
-        <p>AEP is where most people make their decision. MA OEP is where some people get to unmake it —
-        once, and only if they were already on Medicare Advantage to begin with.</p>
+        <p>AEP is where most people make their decision. MA OEP is narrower and available only to people
+        already on Medicare Advantage who want to make one more permitted change — whether they&rsquo;re
+        correcting a plan that didn&rsquo;t work out or simply switching to a different one.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -257,16 +280,18 @@ ARTICLES11['medicare-advantage-oep'] = {
         'If you return to Original Medicare during MA OEP, you can pick up a <strong>standalone Part D '
         'plan</strong> at the same time — this is one of the few times you can newly enroll in Part D '
         'outside AEP without a separate qualifying event.',
-        'Returning to Original Medicare here does <strong>not</strong> reopen your one-time <a '
-        'href="/medigap-window">Medigap guaranteed-issue window</a> unless you separately qualify for a '
-        'protection under your state&rsquo;s rules or a federal trial-right provision.',
+        'Returning to Original Medicare here does <strong>not</strong>, by itself, restart your <a '
+        'href="/medigap-window">six-month Medigap Open Enrollment Period</a>. You may still have a '
+        'guaranteed-issue right — including a federal trial right if this is your first year on Medicare '
+        'Advantage — or protections under your state&rsquo;s own rules; those are separate from OEP and '
+        'worth checking on their own terms.',
         'Because it is one change only, use it deliberately — this is not a second AEP to shop around in, '
         'it is a single correction.',
     ]) + """
       <p>Two windows, seven months apart, serving different purposes — one broad and available to
-      everyone with Medicare, the other narrow and available only to undo a Medicare Advantage decision
-      that already didn&rsquo;t work out. Confusing which one applies to you is the easiest way to miss
-      both.</p>
+      everyone with Medicare, the other narrower and available only to people already on Medicare
+      Advantage who want to make one permitted change. Confusing which one applies to you is the easiest
+      way to miss both.</p>
 """,
     'sources': [
         ('Medicare &mdash; Medicare Advantage Open Enrollment Period',
