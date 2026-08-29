@@ -34,18 +34,16 @@ ARTICLES13['pickleball-injuries'] = {
                                          '<strong>4 in 5</strong> of the roughly 125,000 pickleball ER '
                                          'visits recorded from 2018 through 2025. <strong>Half</strong> of '
                                          'those were players 65 and older.'),
-        ('It is not just more players', 'Among players 65+, the injury rate <strong>per 1,000 '
-                                        'participants</strong> rose from 2.5 in 2019 to 6.8 in 2023 &mdash; '
-                                        'a rate increase, not only a volume increase from more people '
-                                        'playing.'),
         ('What actually causes the injuries', 'Falls, trips and slips account for <strong>nearly '
-                                              'half</strong> of all pickleball injuries. Strains and '
-                                              'sprains make up about 29%; fractures about 27% of emergency '
-                                              'department visits.'),
-        ('A gender gap in fracture risk', 'Women 60+ were roughly <strong>3 times</strong> more likely to '
-                                          'suffer a fracture, and <strong>9 times</strong> more likely to '
-                                          'fracture a wrist specifically, than men 60+ in the same '
-                                          'NEISS-based analysis.'),
+                                              'half</strong> of all pickleball ER visits in the same '
+                                              '2018&ndash;2025 analysis. A separate, earlier study focused '
+                                              'specifically on seniors (60+, 2010&ndash;2019) found the '
+                                              'leading diagnoses among that group were strains and sprains '
+                                              '(33.2%) and fractures (28.1%).'),
+        ('A gender gap in fracture risk', 'In that same senior-specific 2010&ndash;2019 study, women 60+ '
+                                          'were <strong>3.7 times</strong> more likely than men 60+ to '
+                                          'suffer a fracture, and <strong>9.3 times</strong> more likely to '
+                                          'suffer a wrist fracture specifically.'),
     ]) + """
       <h2>Why this sport, and why this age group</h2>
 
@@ -58,29 +56,33 @@ ARTICLES13['pickleball-injuries'] = {
       reason to stop playing; it is a reason to know what actually drives it.</p>
 
       <blockquote class="pull">
-        <p>The sport did not get more dangerous. More people your age started playing it, played it harder
-        than their bodies were warmed up for, and the emergency rooms noticed before anyone else did.</p>
+        <p>Popularity explains part of the surge in injuries. It does not explain why older players make up
+        such a lopsided share of them &mdash; that part is about the sport itself, and who is playing it.</p>
       </blockquote>
 
 """ + AD_INLINE + """
-      <h2>What the research points to</h2>
+      <h2>What tends to reduce the risk</h2>
+
+      <p>Sports-medicine guidance for older recreational players who take up a new racquet sport commonly
+      emphasizes the same handful of things: a proper warm-up, footwear built for lateral movement rather
+      than running, and building up intensity gradually rather than playing at full pace from the first
+      match. None of this is specific research about pickleball&rsquo;s exact injury mechanisms &mdash; it
+      is the general standard for this kind of activity, applied to a sport that happens to fit the pattern
+      closely.</p>
 
 """ + check([
-        'Court shoes with <strong>lateral support</strong>, not running shoes &mdash; running shoes are '
-        'built to grip going forward, not for the side-to-side stopping pickleball actually demands.',
-        'A real <strong>warm-up</strong> before playing, especially first thing in the morning or after '
-        'sitting for a while. Cold muscles and tendons are a documented factor in racquet-sport strains.',
-        'Know your own <strong>bone-density status</strong> if you are a woman over 60 &mdash; the '
-        'fracture-risk gap in the data above is specific enough to be worth a conversation with your '
-        'doctor, not a general caution.',
-        'Backward movement and quick pivots are where falls concentrate. Playing a position and a pace '
-        'that keeps you moving mostly forward and side to side reduces the highest-risk motion.',
-        'Sitting out a game, or a day, when a knee or ankle already feels off is not overcaution &mdash; '
-        'most of these injuries are acute (a fall or a bad step), not gradual wear.',
+        'Court shoes built for <strong>lateral support</strong> are the standard recommendation over '
+        'running shoes, which are built to grip going forward rather than stop side to side.',
+        'A proper <strong>warm-up</strong> before playing, especially first thing in the morning or after '
+        'sitting for a while, is standard sports-medicine advice for racquet sports generally.',
+        'The fracture-risk gap between men and women 60+ in the data above is specific enough that it is '
+        'worth knowing about, whatever you and your doctor already discuss about bone health.',
+        'Falls, not overuse, drive most of these injuries &mdash; a bad step or a hard pivot, not gradual '
+        'wear. That is why footwear and warm-up matter more here than in a lot of other exercise.',
     ]) + """
-      <p>None of this is a reason to trade pickleball for the couch. It is the same trade the site made
-      with falls generally: knowing what actually causes the injury changes what you do about it more than
-      general caution ever does.</p>
+      <p>None of this is a reason to trade pickleball for the couch. The data above says something more
+      specific: this particular sport, played by this particular age group, has a real and rising injury
+      count behind the fun of it &mdash; worth knowing, not worth avoiding.</p>
 """,
     'sources': [
         ('KCUR/NPR &mdash; Missouri hospitals are seeing more pickleball injuries as sport&rsquo;s '
@@ -92,6 +94,8 @@ ARTICLES13['pickleball-injuries'] = {
         ('PMC &mdash; Non-fatal senior pickleball and tennis-related injuries treated in United States '
          'emergency departments, 2010&ndash;2019',
          'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8091689/'),
+        ('Sports &amp; Fitness Industry Association &mdash; 2026 Topline Participation Report',
+         'https://sfia.org/research/u-s-pickleball-participation/'),
     ],
     'next': {'slug': 'falls',
              'title': 'Falls: the numbers, and what actually reduces them',
@@ -103,9 +107,9 @@ ARTICLES13['skip-gen-travel'] = {
     'title': 'Skip-Gen Travel: Grandparents and Grandkids, No Parents &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Skip-gen travel: grandparents and grandkids, no parents',
-    'dek': 'A specific kind of family trip is growing fast &mdash; grandparent and grandchild, without the '
-           'grandchild&rsquo;s parents along. The numbers behind it, and the one piece of paperwork that '
-           'actually matters if the trip crosses a border.',
+    'dek': 'Grandparents are increasingly central to family travel &mdash; including trips where the '
+           'grandchild&rsquo;s parents stay home. The numbers behind it, and the one piece of paperwork '
+           'that actually matters if the trip crosses a border.',
     'meta': '5 minute read &middot; Verified against industry survey and State Department guidance',
     'checked': CHECKED13,
     'body': """      <p>&ldquo;Skip-gen&rdquo; travel is a specific thing, distinct from the family reunion trip where
@@ -124,9 +128,16 @@ ARTICLES13['skip-gen-travel'] = {
                                            'themselves; most of the rest split costs with their adult '
                                            'children.'),
         ('Not the same trip', 'A multigenerational trip (everyone travels together) and a skip-gen trip '
-                              '(grandparent and grandchild only) are reported as two distinct, both-growing '
-                              'categories in the same survey data &mdash; not one blended trend.'),
+                              '(grandparent and grandchild only) are reported as two distinct categories in '
+                              'the same survey data, not one blended trend. About <strong>11%</strong> of '
+                              'parents surveyed say they plan a skip-gen trip in the next 12 months '
+                              '&mdash; a steady share, not a sudden spike.'),
     ]) + """
+
+      <p>The figures above come from the Family Travel Association&rsquo;s 2025 US Family Travel Survey, of
+      1,596 US parents and grandparents surveyed in summer 2025 &mdash; self-reported survey responses, not
+      a government dataset.</p>
+
       <h2>The one piece of paperwork that actually matters</h2>
 
       <p>The United States does not require a written permission letter for a minor to travel
@@ -138,9 +149,9 @@ ARTICLES13['skip-gen-travel'] = {
 
       <p>Where a letter is expected, the standard version is simple: both parents sign a statement
       naming the grandparent and acknowledging the child is traveling with that person, with their
-      permission, and it is preferably in English and notarized. It costs nothing but a trip to a notary
-      and a few weeks of lead time &mdash; the kind of thing that is easy to forget until it is the reason
-      a family is pulled aside at a border.</p>
+      permission, and it is preferably in English and notarized. The State Department&rsquo;s own guidance
+      also says to always bring a copy of the child&rsquo;s birth certificate, or other evidence of the
+      legal relationship, regardless of what a specific destination requires.</p>
 
       <blockquote class="pull">
         <p>Nobody plans a skip-gen trip around the paperwork. It is the one part of the trip that can
@@ -152,17 +163,16 @@ ARTICLES13['skip-gen-travel'] = {
 
 """ + check([
         'If the trip crosses a border, <strong>contact the destination country&rsquo;s embassy or '
-        'consulate</strong> directly to ask about consent-letter requirements &mdash; do not assume US '
-        'rules are the only ones that apply.',
-        'Where a letter is expected, both parents should sign it, and getting it <strong>notarized</strong> '
-        'is the safer default even when a destination does not explicitly require notarization.',
-        'Carry the grandchild&rsquo;s own <strong>passport</strong> and, if relevant, proof of the family '
-        'relationship (a birth certificate) &mdash; airline staff and border agents ask for this more '
-        'often than families expect.',
-        'For a domestic trip, the paperwork bar is much lower, but a signed permission note covering '
-        'medical treatment authorization is still worth having in case of an urgent care visit.',
-        'Book with the grandparent as the primary contact wherever the itinerary allows it, since that is '
-        'who will be asked to produce documentation if anything is questioned.',
+        'consulate</strong> directly to ask about consent-letter requirements &mdash; the State Department '
+        'says this varies by country and the US does not set the rule.',
+        'Where a letter is expected, both parents should sign it. A notarized letter in English is the '
+        'commonly recommended form, even in places that do not explicitly require notarization.',
+        'Always carry the grandchild&rsquo;s own <strong>passport</strong> and a copy of their '
+        '<strong>birth certificate</strong> or other evidence of the family relationship &mdash; official '
+        'guidance recommends this regardless of destination.',
+        'A signed note authorizing emergency medical treatment is commonly recommended for a minor '
+        'traveling without a parent, domestic trips included; state rules on who can authorize treatment '
+        'vary, so check what applies where you live and where you are headed.',
     ]) + """
       <p>The trend itself is the easy part &mdash; grandparents already know whether they want to take a
       grandchild somewhere. The paperwork is the part that decides whether the plan survives contact with
