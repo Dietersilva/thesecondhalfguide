@@ -101,6 +101,8 @@ DESCRIPTIONS = {
     '/compassionate-allowances': 'SSA added 14 conditions to its Compassionate Allowances list on August 11, 2026, bringing the total to 314. How the disability fast track actually works.',
     '/medicare-card-scam': 'CMS reissued 1.3 million Medicare numbers this spring after a security incident. The real reissue and the scam script copying it, side by side.',
     '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
+    '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
+    '/skip-gen-travel': 'Grandparents traveling with grandchildren, no parents along, is a fast-growing trip type. The numbers, and the consent paperwork that can stop it.',
 }
 
 PAGE_FILES = {
@@ -273,6 +275,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/pickleball-injuries', '/skip-gen-travel',
     '/compassionate-allowances', '/medicare-card-scam', '/ssi-wage-reporting',
     '/overpayment-clawback', '/cobra-medicare-trap', '/medicare-advantage-oep',
     '/spousal-benefits', '/hsa-medicare-timing', '/catch-up-60-63',
