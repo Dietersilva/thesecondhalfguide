@@ -1145,16 +1145,28 @@ def main():
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
     # AdSense will require loosening script-src/frame-src — do that deliberately.
-    # Vercel Web Analytics is the one deliberate exception: a same-origin
-    # script Vercel itself serves (not a third-party host), added by explicit
-    # path rather than relaxing script-src generally.
+    # Vercel Web Analytics is the one deliberate exception, added narrowly on
+    # two fronts rather than relaxed generally:
+    #   - script-src gets the exact same-origin path Vercel serves the
+    #     script from, not a blanket 'self' (which would let ANY same-origin
+    #     script path execute, defeating the hash allowlist for everything
+    #     else on the site).
+    #   - the analytics beacon itself posts to Vercel's own collection host,
+    #     not a same-origin path, so connect-src (unset elsewhere, which
+    #     falls back to default-src 'self') needs that one host named. This
+    #     was confirmed against Vercel's own CSP guidance for Analytics/Speed
+    #     Insights, not assumed — a same-origin-only policy loads the script
+    #     but silently drops every reported visit.
     script_src_extra = f"{ORIGIN}/_vercel/insights/script.js" if VERCEL_ANALYTICS else ''
+    connect_src = (" connect-src 'self' https://vitals.vercel-insights.com;"
+                   if VERCEL_ANALYTICS else '')
     csp = (f"default-src 'self'; "
            "img-src 'self' data:; "
            "style-src 'self'; "
            "font-src 'self'; "
            f"script-src {' '.join(sorted(script_hashes)) or chr(39)+'none'+chr(39)}"
-           f"{' ' + script_src_extra if script_src_extra else ''}; "
+           f"{' ' + script_src_extra if script_src_extra else ''};"
+           f"{connect_src} "
            "object-src 'none'; "
            "frame-ancestors 'none'; "
            "base-uri 'self'; "
