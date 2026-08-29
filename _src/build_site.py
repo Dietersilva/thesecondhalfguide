@@ -1036,7 +1036,9 @@ def main():
 </head>
 <body class=\"{layout_class(path)}\">
 """
-        out = head + body.rstrip() + '\n</body>\n</html>\n'
+        # Vercel Web Analytics
+        analytics_script = '<script defer src="/_vercel/insights/script.js"></script>\n'
+        out = head + body.rstrip() + '\n' + analytics_script + '</body>\n</html>\n'
         fn = 'index.html' if path == '/' else f'{path.lstrip("/")}.html'
         dest = os.path.join(SITE, fn)
         os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -1133,11 +1135,13 @@ def main():
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
     # AdSense will require loosening script-src/frame-src — do that deliberately.
+    # Vercel Analytics script is allowed via 'self' since it's served from /_vercel/insights/
     csp = (f"default-src 'self'; "
            "img-src 'self' data:; "
            "style-src 'self'; "
            "font-src 'self'; "
-           f"script-src {' '.join(sorted(script_hashes)) or chr(39)+'none'+chr(39)}; "
+           f"script-src 'self' {' '.join(sorted(script_hashes))}; "
+           "connect-src 'self' https://vitals.vercel-insights.com; "
            "object-src 'none'; "
            "frame-ancestors 'none'; "
            "base-uri 'self'; "
