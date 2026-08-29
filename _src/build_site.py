@@ -214,6 +214,16 @@ def scope_css(css, cls):
 # Flip ADS_LIVE to True when AdSense is approved and the slots come back.
 ADS_LIVE = False
 
+# Vercel Web Analytics: a same-origin script Vercel serves for any project
+# with Analytics turned on in its dashboard (no npm package needed for a
+# static site — that's only required for the React component / custom
+# track() events, neither of which this site uses). The toggle here has to
+# match the dashboard toggle: turning this on before enabling Analytics in
+# Vercel just serves a 404 script tag; leaving it off after enabling in the
+# dashboard means Vercel is ready to count visits but nothing loads the
+# script.
+VERCEL_ANALYTICS = False
+
 # Broadly appealing pieces — the ones worth putting in front of any reader.
 PROMO_POOL = [
     '/airport-help', '/five-minute-rule', '/senior-age', '/medicare-enrollment',
@@ -1036,7 +1046,9 @@ def main():
 </head>
 <body class=\"{layout_class(path)}\">
 """
-        out = head + body.rstrip() + '\n</body>\n</html>\n'
+        analytics = ('<script defer src="/_vercel/insights/script.js"></script>\n'
+                     if VERCEL_ANALYTICS else '')
+        out = head + body.rstrip() + '\n' + analytics + '</body>\n</html>\n'
         fn = 'index.html' if path == '/' else f'{path.lstrip("/")}.html'
         dest = os.path.join(SITE, fn)
         os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -1133,11 +1145,16 @@ def main():
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
     # AdSense will require loosening script-src/frame-src — do that deliberately.
+    # Vercel Web Analytics is the one deliberate exception: a same-origin
+    # script Vercel itself serves (not a third-party host), added by explicit
+    # path rather than relaxing script-src generally.
+    script_src_extra = f"{ORIGIN}/_vercel/insights/script.js" if VERCEL_ANALYTICS else ''
     csp = (f"default-src 'self'; "
            "img-src 'self' data:; "
            "style-src 'self'; "
            "font-src 'self'; "
-           f"script-src {' '.join(sorted(script_hashes)) or chr(39)+'none'+chr(39)}; "
+           f"script-src {' '.join(sorted(script_hashes)) or chr(39)+'none'+chr(39)}"
+           f"{' ' + script_src_extra if script_src_extra else ''}; "
            "object-src 'none'; "
            "frame-ancestors 'none'; "
            "base-uri 'self'; "
