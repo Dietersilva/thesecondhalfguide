@@ -222,7 +222,7 @@ ADS_LIVE = False
 # Vercel just serves a 404 script tag; leaving it off after enabling in the
 # dashboard means Vercel is ready to count visits but nothing loads the
 # script.
-VERCEL_ANALYTICS = False
+VERCEL_ANALYTICS = True
 
 # Broadly appealing pieces — the ones worth putting in front of any reader.
 PROMO_POOL = [
