@@ -102,7 +102,7 @@ DESCRIPTIONS = {
     '/medicare-card-scam': 'CMS reissued 1.3 million Medicare numbers this spring after a security incident. The real reissue and the scam script copying it, side by side.',
     '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
     '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
-    '/skip-gen-travel': 'Grandparents traveling with grandchildren, no parents along, is a fast-growing trip type. The numbers, and the consent paperwork that can stop it.',
+    '/skip-gen-travel': 'Grandparents plan 75% of skip-gen trips and pay for 84% of them. What the survey shows, and the consent paperwork that can stop a trip at the border.',
 }
 
 PAGE_FILES = {
