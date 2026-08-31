@@ -224,6 +224,16 @@ ADS_LIVE = False
 # script.
 VERCEL_ANALYTICS = True
 
+# Google Analytics 4 (gtag.js), separate from Vercel Analytics -- Vercel
+# counts all traffic, GA4 is the one connected to Search Console and the
+# one most ad/marketing tooling expects. GA4_MEASUREMENT_ID is the Web
+# stream's own ID (Admin > Data Streams in analytics.google.com), not a
+# secret -- it is designed to be public, since it ships in every page's
+# HTML. GA4_ANALYTICS gates whether the tag actually renders, same pattern
+# as VERCEL_ANALYTICS and ADS_LIVE.
+GA4_MEASUREMENT_ID = 'G-5ZNM6R61VB'
+GA4_ANALYTICS = False
+
 # Broadly appealing pieces — the ones worth putting in front of any reader.
 PROMO_POOL = [
     '/airport-help', '/five-minute-rule', '/senior-age', '/medicare-enrollment',
@@ -1011,6 +1021,22 @@ def main():
     if os.path.isdir('images'):
         shutil.copytree('images', f'{SITE}/images')
 
+    # Identical on every page, so hashed and built once rather than inside
+    # the per-page loop below. The loader script (src=...) doesn't need a
+    # hash -- only inline script bodies do -- but this inline gtag() config
+    # block does, the same as any other inline script on the site.
+    ga4_script = ''
+    if GA4_ANALYTICS:
+        ga4_inline = ("window.dataLayer = window.dataLayer || [];\n"
+                      "  function gtag(){dataLayer.push(arguments);}\n"
+                      "  gtag('js', new Date());\n"
+                      f"  gtag('config', '{GA4_MEASUREMENT_ID}');")
+        script_hashes.add("'sha256-%s'" % base64.b64encode(
+            hashlib.sha256(ga4_inline.encode()).digest()).decode())
+        ga4_script = (
+            f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>\n'
+            f'<script>{ga4_inline}</script>\n')
+
     for path, (title, desc, canonical, body) in rendered.items():
         ld = json_ld(path, title, desc, canonical, meta[path][0], body,
                      published.get(path))
@@ -1046,8 +1072,8 @@ def main():
 </head>
 <body class=\"{layout_class(path)}\">
 """
-        analytics = ('<script defer src="/_vercel/insights/script.js"></script>\n'
-                     if VERCEL_ANALYTICS else '')
+        analytics = (('<script defer src="/_vercel/insights/script.js"></script>\n'
+                      if VERCEL_ANALYTICS else '') + ga4_script)
         out = head + body.rstrip() + '\n' + analytics + '</body>\n</html>\n'
         fn = 'index.html' if path == '/' else f'{path.lstrip("/")}.html'
         dest = os.path.join(SITE, fn)
@@ -1145,21 +1171,34 @@ def main():
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
     # AdSense will require loosening script-src/frame-src — do that deliberately.
-    # Vercel Web Analytics is the one deliberate exception, added narrowly on
-    # two fronts rather than relaxed generally:
-    #   - script-src gets the exact same-origin path Vercel serves the
-    #     script from, not a blanket 'self' (which would let ANY same-origin
-    #     script path execute, defeating the hash allowlist for everything
-    #     else on the site).
-    #   - the analytics beacon itself posts to Vercel's own collection host,
-    #     not a same-origin path, so connect-src (unset elsewhere, which
-    #     falls back to default-src 'self') needs that one host named. This
-    #     was confirmed against Vercel's own CSP guidance for Analytics/Speed
-    #     Insights, not assumed — a same-origin-only policy loads the script
-    #     but silently drops every reported visit.
-    script_src_extra = f"{ORIGIN}/_vercel/insights/script.js" if VERCEL_ANALYTICS else ''
-    connect_src = (" connect-src 'self' https://vitals.vercel-insights.com;"
-                   if VERCEL_ANALYTICS else '')
+    # Analytics providers are the deliberate exceptions, each added narrowly
+    # on exactly the fronts it needs rather than a general relaxation:
+    #   - script-src gets exact hosts/paths, never a blanket 'self' (which
+    #     would let ANY same-origin script path execute, defeating the hash
+    #     allowlist for everything else on the site).
+    #   - connect-src (unset elsewhere, which falls back to default-src
+    #     'self') names exactly the hosts each provider's beacon posts to.
+    #     Confirmed per-provider against that provider's own CSP guidance,
+    #     not assumed -- a script that loads but can't reach its collection
+    #     endpoint fails silently: the tag runs, nothing gets reported, and
+    #     nothing in the browser looks broken enough to notice.
+    script_src_extras = []
+    connect_src_extras = []
+    if VERCEL_ANALYTICS:
+        script_src_extras.append(f"{ORIGIN}/_vercel/insights/script.js")
+        connect_src_extras.append('https://vitals.vercel-insights.com')
+    if GA4_ANALYTICS:
+        # gtag.js itself loads from googletagmanager.com; the actual hit
+        # (pageview, event) posts to google-analytics.com, region-qualified
+        # subdomains included (region1.google-analytics.com and similar,
+        # depending on where the request lands) -- hence the wildcard rather
+        # than the bare host alone.
+        script_src_extras.append('https://www.googletagmanager.com')
+        connect_src_extras.append('https://www.google-analytics.com')
+        connect_src_extras.append('https://*.google-analytics.com')
+    script_src_extra = ' '.join(script_src_extras)
+    connect_src = (f" connect-src 'self' {' '.join(connect_src_extras)};"
+                   if connect_src_extras else '')
     csp = (f"default-src 'self'; "
            "img-src 'self' data:; "
            "style-src 'self'; "
