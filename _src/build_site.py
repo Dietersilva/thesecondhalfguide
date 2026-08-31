@@ -232,7 +232,7 @@ VERCEL_ANALYTICS = True
 # HTML. GA4_ANALYTICS gates whether the tag actually renders, same pattern
 # as VERCEL_ANALYTICS and ADS_LIVE.
 GA4_MEASUREMENT_ID = 'G-5ZNM6R61VB'
-GA4_ANALYTICS = False
+GA4_ANALYTICS = True
 
 # Broadly appealing pieces — the ones worth putting in front of any reader.
 PROMO_POOL = [
