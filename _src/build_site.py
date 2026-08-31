@@ -1065,6 +1065,7 @@ def main():
 <meta name="twitter:image" content="{ORIGIN}/og.png">
 <meta name="author" content="Edward Silva">
 <meta name="robots" content="{ROBOTS[path in NOINDEX]}">
+<meta name="p:domain_verify" content="cf9e7cc57922a3cff500c309a64354e5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/{css_name}">
