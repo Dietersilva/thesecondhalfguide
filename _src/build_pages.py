@@ -334,7 +334,7 @@ PRIVACY_BODY = """  <div class="wrap">
       <span class="eyebrow">Legal</span>
       <h1>Privacy Policy &amp; Terms of Use</h1>
       <p class="dek">What this site collects, what it doesn't, and the terms under which it's offered.</p>
-      <p class="meta">Effective August 10, 2026 &middot; Last updated August 10, 2026</p>
+      <p class="meta">Effective August 10, 2026 &middot; Last updated August 31, 2026</p>
     </div>
 
     <div class="prose">
@@ -358,7 +358,7 @@ PRIVACY_BODY = """  <div class="wrap">
       <ul>
         <li><strong>Information you send us.</strong> If you email us or submit a topic-suggestion form, we receive whatever you choose to include &mdash; typically your message and, if you provide it, your email address. We ask that you not send sensitive personal or financial information.</li>
         <li><strong>Standard technical information.</strong> Like most websites, our hosting infrastructure automatically records ordinary request data such as IP address, browser type, device type, referring page, and the time of your visit.</li>
-        <li><strong>Analytics data,</strong> if and when we enable a web analytics service, in the form of aggregate statistics about which pages are read and for how long.</li>
+        <li><strong>Analytics data.</strong> We use <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics</a>, which is cookieless and does not track you across sites, and Google Analytics, which does use cookies, to see aggregate statistics about which pages are read and for how long. Google's use of this data is governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
         <li><strong>Your email address, if you subscribe to Wednesday Letters.</strong> Our newsletter signup form passes your address to Kit (Kit.com), the email service that stores our subscriber list and delivers the letter on our behalf. We ask for nothing else &mdash; no name, no age, no location. Kit records ordinary delivery information such as whether an email was opened or a link clicked, and processes your data under <a href="https://kit.com/privacy">its own privacy policy</a>.</li>
       </ul>
       <p><strong>We do not sell, rent, trade, or share your email address with anyone,</strong> and we will not use it to send you anything other than the newsletter you asked for. Every issue carries a one-click unsubscribe link; you may also email us and we will remove you. Unsubscribing deletes you from the list entirely.</p>
