@@ -14,8 +14,8 @@ ARTICLES6['airport-help'] = {
     'dek': 'Wheelchairs, escorts through the terminal, someone to walk you through security. All free, '
            'all yours by law &mdash; and almost entirely unused, because nobody tells you and asking '
            'feels like admitting something.',
-    'meta': '6 minute read &middot; Verified against DOT and TSA guidance',
-    'checked': CHECKED,
+    'meta': '7 minute read &middot; Verified against DOT and TSA guidance',
+    'checked': '31 August 2026',
     'body': """      <p>Airports have quietly become one of the main reasons people stop traveling.</p>
 
       <p>Not the flying. The distance from the curb to the gate, the standing in lines, the shoes, the
@@ -43,6 +43,13 @@ ARTICLES6['airport-help'] = {
                                             'someone to guide you. This is a real and much less '
                                             'well-known option.'),
         ('Boarding assistance', 'Including an aisle chair where a normal wheelchair won’t fit.'),
+        ('Pre-boarding', 'If you need extra time to board, stow equipment, or get seated, you can ask to '
+                         'pre-board. Self-identifying at the gate is enough &mdash; no documentation '
+                         'required &mdash; and it comes ahead of first class, elite status and military '
+                         'boarding.'),
+        ('Seating', 'A seat with a movable aisle armrest if you transfer using an aisle chair, or a seat '
+                    'next to someone assisting you &mdash; a personal care attendant, interpreter or '
+                    'reader &mdash; at no extra charge.'),
         ('At the far end', 'The same again on arrival, through to baggage claim and the curb.'),
         ('The cost', 'Nothing. Airlines are prohibited from charging for any of it.'),
     ]) + """
@@ -64,6 +71,16 @@ ARTICLES6['airport-help'] = {
       call the airline directly afterward to confirm it's on the reservation, because it doesn't always
       travel with the booking.</p>
 
+      <h2>If something goes wrong: ask for the CRO</h2>
+
+      <p>Every airline is required to have a <strong>Complaints Resolution Official (CRO)</strong>
+      available at each airport it serves, for as long as it's operating there that day &mdash; in person
+      or by phone, at no cost to you. Their job is to resolve a disability-assistance dispute on the spot,
+      not to take a note and refer you to a complaints department that answers next week.</p>
+
+      <p>If a request is refused or handled badly, the sentence that gets you there fastest: &ldquo;I'd
+      like to speak with your Complaints Resolution Official, please.&rdquo;</p>
+
       <h2>Security: TSA Cares</h2>
 
       <p>Separately from the airline, the TSA runs a program called <strong>TSA Cares</strong>. Call
@@ -74,6 +91,15 @@ ARTICLES6['airport-help'] = {
       replacement that may set off the detector, a condition that makes standing in line hard, or a
       traveling companion with dementia for whom the line is genuinely distressing. It's free, and it
       is startlingly under-used.</p>
+
+      <h2>Bringing someone with you</h2>
+
+      <p>If a family member wants to walk you to the gate but isn't flying themselves, many airlines will
+      issue a free <strong>escort pass</strong> at the ticket counter &mdash; a photo ID, and sometimes
+      proof of the relationship, is usually all it takes. This one isn't a federal right the way
+      wheelchair assistance is; it's airline policy, so confirm with your specific carrier rather than
+      assume it. The escort still goes through the regular security line like anyone else &mdash; the
+      pass doesn't carry PreCheck or CLEAR with it.</p>
 
 """ + AD_INLINE + """
       <h2>The part that isn’t about logistics</h2>
@@ -107,8 +133,8 @@ ARTICLES6['airport-help'] = {
         'ahead.',
         'Bring a <strong>doctor’s note</strong> if you have implants, a pump, or a device. Not required, '
         'but it shortens conversations.',
-        'If assistance is denied or badly handled, airlines must have a <strong>Complaints Resolution '
-        'Official</strong> available. Ask for one by name &mdash; it changes the conversation immediately.',
+        'If a request is refused or handled badly, ask for the <strong>Complaints Resolution '
+        'Official</strong> by name &mdash; it changes the conversation immediately.',
     ]) + """
       <p>None of this makes an airport pleasant. It does remove the specific part that stops people
       traveling, and it costs nothing but a phone call and a small amount of pride.</p>
@@ -120,6 +146,12 @@ ARTICLES6['airport-help'] = {
         ('U.S. Department of Transportation &mdash; Wheelchair and guided assistance',
          'https://www.transportation.gov/individuals/aviation-consumer-protection/wheelchair-and-guided-assistance'),
         ('TSA Cares', 'https://www.tsa.gov/travel/tsa-cares/passenger-support'),
+        ('eCFR &mdash; 14 CFR 382.151, Complaints Resolution Officials',
+         'https://www.ecfr.gov/current/title-14/chapter-II/subchapter-D/part-382/subpart-K/section-382.151'),
+        ('eCFR &mdash; 14 CFR 382.93, Preboarding',
+         'https://www.ecfr.gov/current/title-14/chapter-II/subchapter-D/part-382/subpart-G/section-382.93'),
+        ('eCFR &mdash; 14 CFR 382.81, Seating accommodations',
+         'https://www.ecfr.gov/current/title-14/chapter-II/subchapter-D/part-382/subpart-F/section-382.81'),
     ],
     'next': {'slug': 'airport-security',
              'title': 'Airport security after 75, and whether PreCheck is worth it',
