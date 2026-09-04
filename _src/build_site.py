@@ -599,6 +599,20 @@ def json_ld(path, title, desc, canonical, headline, body, published=None):
     return json.dumps(node, indent=None, separators=(',', ':'), sort_keys=True)
 
 
+def breadcrumb_ld(path, headline, crumb=None):
+    """crumb is (category_name, category_slug) for an article; a category
+    hub page passes None since the page itself *is* that level."""
+    items = [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': ORIGIN + '/'}]
+    if crumb:
+        cat_name, cat_slug = crumb
+        items.append({'@type': 'ListItem', 'position': 2, 'name': cat_name,
+                      'item': f'{ORIGIN}/{cat_slug}'})
+    items.append({'@type': 'ListItem', 'position': len(items) + 1, 'name': headline,
+                  'item': ORIGIN + path})
+    node = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': items}
+    return json.dumps(node, indent=None, separators=(',', ':'), sort_keys=True)
+
+
 # Utility pages: real destinations for a reader mid-flow, but nothing a
 # search engine should index or a sitemap should advertise.
 NOINDEX = {'/subscribed'}
@@ -1044,6 +1058,23 @@ def main():
         # but hashing it costs nothing and survives a stricter policy later.
         script_hashes.add("'sha256-%s'" % base64.b64encode(
             hashlib.sha256(ld.encode()).digest()).decode())
+
+        # BreadcrumbList, scoped to pages with a real place in the category
+        # structure -- articles (via the same map that drives the visible
+        # "<- Category" link) and the category hub pages themselves. Docs,
+        # the homepage and search aren't part of that hierarchy, so they
+        # don't get an invented trail.
+        crumb_ld = None
+        if path in breadcrumbs:
+            crumb_ld = breadcrumb_ld(path, meta[path][0], breadcrumbs[path])
+        elif path.lstrip('/') in CATEGORY_SLUGS:
+            crumb_ld = breadcrumb_ld(path, meta[path][0])
+        breadcrumb_script = ''
+        if crumb_ld:
+            script_hashes.add("'sha256-%s'" % base64.b64encode(
+                hashlib.sha256(crumb_ld.encode()).digest()).decode())
+            breadcrumb_script = f'<script type="application/ld+json">{crumb_ld}</script>\n'
+
         head = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -1070,7 +1101,7 @@ def main():
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/{css_name}">
 <script type="application/ld+json">{ld}</script>
-</head>
+{breadcrumb_script}</head>
 <body class=\"{layout_class(path)}\">
 """
         analytics = (('<script defer src="/_vercel/insights/script.js"></script>\n'
