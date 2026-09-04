@@ -13,8 +13,8 @@ ARTICLES2['drug-cap'] = {
     'h1': 'The $2,100 drug cap: real protection, narrower than it sounds',
     'dek': 'For the first time, Part D prescription costs have a hard annual ceiling. It is a genuinely '
            'big change &mdash; and the phrase &ldquo;out-of-pocket cap&rdquo; is doing a lot of work.',
-    'meta': '5 minute read &middot; Verified against Medicare figures for 2026',
-    'checked': CHECKED,
+    'meta': '5 minute read &middot; Verified against Medicare figures for 2026 and the finalized 2027 cap',
+    'checked': '4 September 2026',
     'body': """      <p>If you take expensive medication, $2,100 is the most important number in Medicare this year.</p>
 
       <p>It's the annual ceiling on what you can pay out of pocket for covered Part D prescription drugs.
@@ -25,9 +25,10 @@ ARTICLES2['drug-cap'] = {
       <p>So the cap deserves the attention it's getting. It also gets described inaccurately more often
       than almost any other Medicare number, so it's worth being precise about what it does.</p>
 
-      <p>One thing to hold in mind while you read: <strong>the cap moves</strong>. It is indexed and
-      rises each year &mdash; currently projected at roughly $2,400 for 2027, though the figure is not
-      settled until CMS publishes it. The structure below stays the same; the ceiling does not.</p>
+      <p>One thing to hold in mind while you read: <strong>the cap moves</strong>. It is indexed and rises
+      each year. CMS has now finalized the 2027 figures: the out-of-pocket cap rises to <strong>$2,400</strong>,
+      and the deductible that counts toward it rises to <strong>$700</strong>, both up from the 2026 numbers
+      below. The structure stays the same; the dollar amounts do not.</p>
 
 """ + facts('Part D, 2026', [
         ('$2,100', 'Annual out-of-pocket maximum for covered Part D drugs. Includes your deductible, '
@@ -118,6 +119,8 @@ ARTICLES2['drug-cap'] = {
         ('Medicare &amp; You 2026 handbook', 'https://www.medicare.gov/publications/10050-medicare-and-you.pdf'),
         ('Medicare &mdash; Prescription Payment Plan',
          'https://www.medicare.gov/prescription-payment-plan'),
+        ('CMS &mdash; Contract Year 2027 Medicare Advantage and Part D Final Rule (fact sheet)',
+         'https://www.cms.gov/newsroom/fact-sheets/contract-year-2027-medicare-advantage-part-d-final-rule'),
     ],
     'next': {'slug': 'senior-age',
              'title': '55, 60, 62, 65: when does &ldquo;senior&rdquo; actually start?',
