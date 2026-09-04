@@ -99,7 +99,7 @@ DESCRIPTIONS = {
     '/hsa-medicare-timing': 'Still working past 65 with an HSA? Enrolling in Medicare later can retroactively tax contributions already made. The 6-month rule that avoids the 6% penalty.',
     '/catch-up-60-63': 'For four calendar years only, ages 60–63, the 401(k) catch-up jumps to $11,250 instead of $8,000 — if your plan opts in, and if you know to ask.',
     '/compassionate-allowances': 'SSA added 14 conditions to its Compassionate Allowances list on August 11, 2026, bringing the total to 314. How the disability fast track actually works.',
-    '/medicare-card-scam': 'CMS reissued 1.3 million Medicare numbers this spring after a security incident. The real reissue and the scam script copying it, side by side.',
+    '/medicare-card-scam': 'CMS reissued about 1.3 million Medicare numbers this spring as a fraud-prevention measure. Scammers quickly turned the real reissue into a new phone script.',
     '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
     '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
     '/skip-gen-travel': 'Grandparents plan 75% of skip-gen trips and pay for 84% of them. What the survey shows, and the consent paperwork that can stop a trip at the border.',
