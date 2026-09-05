@@ -49,21 +49,22 @@ ARTICLES14['anoc-letter'] = {
       <h2>Why 2027&rsquo;s letter carries more weight than most</h2>
 
       <p>CMS finalized new Part D numbers for 2027 this spring, and they are a real jump. The annual
-      out-of-pocket cap on covered drugs rises to <strong>$2,400</strong>, up from $2,100. The deductible
-      that counts toward it rises to <strong>$700</strong>, up from $615. Both figures will show up
-      somewhere in this year&rsquo;s ANOC for anyone with Part D coverage, and both are large enough to
-      change what a year of prescriptions actually costs.</p>
+      out-of-pocket <strong>threshold</strong> on covered drugs rises to <strong>$2,400</strong>, up from
+      $2,100 &mdash; that applies to every Part D plan. The <strong>defined-standard deductible</strong>
+      rises to <strong>$700</strong>, up from $615 &mdash; that figure is the maximum a plan is allowed to
+      charge; individual plans can and do set it lower, or waive it. Your ANOC will show what your specific
+      plan actually charges for 2027, not necessarily the defined-standard number itself.</p>
 
       <blockquote class="pull">
-        <p>The number at the top of the letter is usually the premium. The number that actually changes
-        what you pay over a year is usually further down &mdash; in the drug formulary, not the headline.</p>
+        <p>The premium is only one of the numbers that can change what your coverage costs over a year.
+        Drug tiers, formulary changes, cost-sharing and pharmacy status can matter just as much.</p>
       </blockquote>
 
 """ + AD_INLINE + """
       <h2>Where the real information is buried</h2>
 
-      <p>Plans lead with the premium because it is the easiest number to compare and the least likely to
-      alarm anyone. It is also, for most people, not where the money actually moves.</p>
+      <p>Plans typically lead with the premium, since it is the easiest single number to compare across
+      plans. It is also, for most people, not where the money actually moves.</p>
 
       <p>A maintenance medication that sat on one pricing tier this year can move to a higher tier for
       2027, pick up a new prior-authorization requirement, or drop off the formulary entirely &mdash; and
@@ -94,11 +95,12 @@ ARTICLES14['anoc-letter'] = {
 
       <p>What&rsquo;s inside the envelope depends on what kind of plan you have. A <strong>standalone Part
       D</strong> plan &mdash; drug coverage only, paired with Original Medicare &mdash; sends an ANOC that&rsquo;s
-      almost entirely about drug costs: premium, deductible, formulary and pharmacy network. A
-      <strong>Medicare Advantage</strong> plan bundles medical and drug coverage together, so its ANOC
-      covers more ground: the same drug-cost items, plus changes to the provider network, referral
-      requirements, and the plan&rsquo;s service area. Losing a doctor from the network is exactly the kind
-      of change that shows up in an Advantage ANOC and never appears at all in a standalone Part D one
+      almost entirely about drug costs: premium, deductible, formulary and pharmacy network. Most
+      <strong>Medicare Advantage</strong> plans include Part D drug coverage along with medical coverage
+      (a minority don&rsquo;t), so their ANOC typically covers more ground: the same drug-cost items, plus
+      changes to the provider network, referral requirements, and the plan&rsquo;s service area. Losing a
+      doctor from the network is exactly the kind of change that shows up in an Advantage ANOC and never
+      appears at all in a standalone Part D one
       &mdash; another reason the letter is worth reading in full rather than skimmed for the premium line.</p>
 
       <h2>What to actually do with it</h2>
@@ -108,8 +110,10 @@ ARTICLES14['anoc-letter'] = {
         'currently take against it, not just the ones you remember being expensive.',
         'Check whether your <strong>preferred pharmacy</strong> is still preferred. The same drug at the '
         'same counter can cost a different amount if that status changed.',
-        'Note the new <strong>2027 out-of-pocket cap ($2,400) and deductible ($700)</strong> if you have '
-        'Part D coverage &mdash; both are higher than this year, regardless of which plan you keep.',
+        'If you have Part D coverage, the <strong>2027 out-of-pocket threshold rises to $2,400</strong> '
+        'no matter which plan you keep. The <strong>defined-standard deductible rises to $700</strong>, '
+        'but that&rsquo;s the maximum &mdash; check your own ANOC for what your specific plan actually '
+        'charges.',
         'If anything in the letter concerns you, the window to act is <strong>October 15 to December '
         '7</strong>. Outside that window, this year&rsquo;s plan carries into next year automatically.',
         'The ANOC tells you what your plan is changing to. It does not tell you what a better-fit plan '
@@ -158,11 +162,11 @@ ARTICLES14['cola-2027-estimate'] = {
 """ + facts('Where things actually stand', [
         ('2.8%', 'The <em>official</em>, already-locked-in 2026 COLA, announced in October 2025 and in '
                  'effect since January 2026.'),
-        ('3.5% &ndash; 3.7%', 'The range of independent 2027 <em>estimates</em> circulating as of late '
-                              'summer 2026, from three separate trackers &mdash; not from Social '
-                              'Security.'),
-        ('3', 'The number of months of data that actually decide it: July, August and September CPI-W, '
-             'averaged and compared to the same three months a year earlier.'),
+        ('3.4% &ndash; 3.6%', 'The range of independent 2027 <em>estimates</em> as of early September '
+                              '2026, from three separate trackers &mdash; not from Social Security.'),
+        ('1 of 3', 'How many of the three CPI-W months that decide the COLA had actually been published '
+                   'as of this writing. Only July&rsquo;s figure is out; August&rsquo;s arrives September '
+                   '11, and September&rsquo;s &mdash; the last one needed &mdash; October 14.'),
         ('14 October 2026', 'The date the Social Security Administration is expected to announce the '
                             'official 2027 COLA, after the Bureau of Labor Statistics releases September '
                             'inflation data.'),
@@ -170,12 +174,16 @@ ARTICLES14['cola-2027-estimate'] = {
     ]) + """
       <h2>Where the estimates come from</h2>
 
-      <p>Three groups have published 2027 COLA forecasts using July inflation data: The Senior Citizens
-      League estimated <strong>3.6%</strong>, AARP projected <strong>3.5%</strong>, and independent analyst
-      Mary Johnson put it at <strong>3.7%</strong>. All three are running the same public CPI-W formula the
-      government itself will eventually use &mdash; they are not guessing randomly. But all three are
-      working from two-thirds of the data the real number requires. August and September inflation figures
-      can still move the result in either direction before the government&rsquo;s own number is calculated.</p>
+      <p>Three groups have published 2027 COLA forecasts. The Senior Citizens League estimated
+      <strong>3.6%</strong> and AARP projected <strong>3.5%</strong>, both on August 12. Independent
+      analyst Mary Johnson put her estimate at 3.7% in July, then revised it down to <strong>3.4%</strong>
+      in August as fresh inflation data came in &mdash; an earlier estimate that has since moved should be
+      read as superseded, not as her current view. All three are running the same public CPI-W formula the
+      government itself will eventually use &mdash; they are not guessing randomly. But as of this writing,
+      only <strong>one of the three months</strong> that decide the COLA has actually been published:
+      July&rsquo;s. August&rsquo;s CPI-W arrives September 11, and September&rsquo;s &mdash; the month that
+      actually closes the calculation &mdash; not until October 14. Two-thirds of the real data is still
+      ahead of every estimate above.</p>
 
       <blockquote class="pull">
         <p>None of these figures are Social Security&rsquo;s number. They are outside groups running the
@@ -186,7 +194,7 @@ ARTICLES14['cola-2027-estimate'] = {
       <h2>Why three trackers publish three different numbers</h2>
 
       <p>All three groups are running the same public formula on the same underlying government data, so
-      the spread between 3.5% and 3.7% isn&rsquo;t disagreement about the rule &mdash; it&rsquo;s a
+      the spread between 3.4% and 3.6% isn&rsquo;t disagreement about the rule &mdash; it&rsquo;s a
       difference in timing and rounding as each one updated its own estimate through the summer. A forecast
       published right after July&rsquo;s CPI-W release reflects one month of real data and two months of
       assumption. The same tracker&rsquo;s estimate a few weeks later, after August&rsquo;s release, is
@@ -208,8 +216,8 @@ ARTICLES14['cola-2027-estimate'] = {
       publishing estimates, gets to shortcut that.</p>
 
       <p>To put the range in dollars rather than percent: on today&rsquo;s average retired-worker benefit
-      of about $2,071 a month (itself the result of the 2026 COLA), a 3.5% adjustment works out to roughly
-      $72 a month, and 3.7% to roughly $77. That arithmetic is simple and it is also entirely provisional
+      of about $2,086 a month (the July 2026 figure), a 3.4% adjustment works out to roughly
+      $71 a month, and 3.6% to roughly $75. That arithmetic is simple and it is also entirely provisional
       &mdash; it applies whichever estimate turns out closest, and none of them is the number Social
       Security will actually use. A smaller benefit sees a smaller dollar increase at the same percentage,
       and a larger one sees more &mdash; the COLA is a percentage of what you already receive, not a flat
@@ -221,10 +229,13 @@ ARTICLES14['cola-2027-estimate'] = {
       deposit. That happened with 2026&rsquo;s already-official 2.8%: it added about $56 to the average
       benefit, but the Medicare Part B premium rose from $185.00 to $202.90 over the same period &mdash; an
       increase of $17.90, deducted automatically before the payment arrives. Net effect: about $38 of the
-      announced $56 actually landed. A <a href="/cola">hold-harmless</a> rule keeps the Part B increase
-      from ever exceeding the COLA in dollar terms, so the payment shouldn&rsquo;t go backward &mdash; but it
-      routinely arrives smaller than the headline percentage implies, and 2027&rsquo;s Part B premium hasn&rsquo;t
-      been announced yet either.</p>
+      announced $56 actually landed. A <a href="/cola">hold-harmless</a> provision limits how much the Part
+      B increase can eat into the COLA for most people who have Part B premiums withheld directly from
+      Social Security &mdash; it does not cover everyone. Newly-enrolled Medicare beneficiaries, higher
+      earners paying the IRMAA surcharge, and people whose Part B premium is paid by Medicaid are among
+      those it doesn&rsquo;t protect. For everyone, protected or not, the amount that actually lands
+      routinely arrives smaller than the headline percentage implies, and 2027&rsquo;s Part B premium
+      hasn&rsquo;t been announced yet either.</p>
 
       <h2>What&rsquo;s worth doing while you wait</h2>
 
@@ -240,8 +251,8 @@ ARTICLES14['cola-2027-estimate'] = {
         'matter. Inflation news from earlier in the year, however dramatic, already happened before the '
         'clock started.',
         'Independent trackers have been revising their 2027 estimates downward over the summer as '
-        'inflation cooled, converging toward roughly <strong>3.5%&ndash;3.7%</strong> by August &mdash; a '
-        'range that only closes entirely once September&rsquo;s figure is in.',
+        'inflation cooled, converging toward roughly <strong>3.4%&ndash;3.6%</strong> as of early '
+        'September &mdash; a range that only closes entirely once September&rsquo;s figure is in.',
     ]) + """
       <p>The estimate season exists because people want to plan, and there is nothing wrong with knowing
       the range. The distinction worth holding onto is which number is a forecast and which one is Social
@@ -300,9 +311,8 @@ ARTICLES14['qr-parking-scam'] = {
         ('How it works', 'A sticker bearing a scammer&rsquo;s own QR code is placed over the legitimate '
                          'one, redirecting your payment and your card details to them instead of the '
                          'parking operator.'),
-        ('What you can lose', 'Your card number and personal information, and in some versions a '
-                              'recurring charge you did not agree to &mdash; not just the price of '
-                              'parking.'),
+        ('What you can lose', 'Per the FTC: your card number, your personal information, or both &mdash; '
+                              'not just the price of parking.'),
         ('The tell', 'A sticker sitting slightly proud of the sign underneath it, or a link that previews '
                      'somewhere that doesn&rsquo;t match the parking operator&rsquo;s name.'),
         ('Where to report it', 'ReportFraud.ftc.gov, and the parking operator or property manager if the '
@@ -323,10 +333,10 @@ ARTICLES14['qr-parking-scam'] = {
 """ + AD_INLINE + """
       <h2>Where this is showing up</h2>
 
-      <p>Parking meters and lot payment kiosks are the pattern the FTC named specifically, and QR-based
-      payment has become common enough at airports, downtown lots, hospitals and event venues that most
-      people no longer think twice about scanning one. That familiarity is exactly what makes a tampered
-      sticker easy to miss &mdash; it looks like every other QR code you&rsquo;ve paid with this year.</p>
+      <p>Parking meters and lot payment kiosks are the pattern the FTC named specifically. QR-based payment
+      has become familiar enough at meters like these that most people no longer think twice about scanning
+      one &mdash; and that familiarity is exactly what makes a tampered sticker easy to miss. It looks like
+      every other QR code you&rsquo;ve paid with this year.</p>
 
       <p>It is also not an isolated trick. Two related versions have drawn their own federal warnings in
       the past year. The FBI&rsquo;s Internet Crime Complaint Center warned in mid-2025 about unsolicited
@@ -341,9 +351,12 @@ ARTICLES14['qr-parking-scam'] = {
       <h2>The alternative that sidesteps the whole problem</h2>
 
       <p>A tampered sticker only works if you use it. Most parking meters and lots that offer QR payment
-      also print the operator&rsquo;s official app name or a phone number directly on the same sign &mdash;
-      neither of which a scammer can intercept with a piece of paper. Where the meter itself takes a card or
-      coins directly, that route avoids the QR code entirely. None of this requires distrusting parking
+      also print the operator&rsquo;s official app name or a phone number directly on the same sign.
+      Neither is immune to tampering in theory, but a scammer would need to cover far more of the sign to
+      fake both, rather than the one small sticker over the QR code &mdash; using an independently verified
+      official app or phone number, or looking the operator up yourself rather than trusting anything
+      printed on the sign, avoids relying on the QR code specifically. Where the meter itself takes a card
+      or coins directly, that route avoids the QR code entirely. None of this requires distrusting parking
       technology generally; it just means the QR code on the sign is one option among several, not the only
       way to pay, and it&rsquo;s worth defaulting to one of the others whenever they&rsquo;re available.</p>
 

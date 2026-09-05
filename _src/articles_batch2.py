@@ -26,9 +26,10 @@ ARTICLES2['drug-cap'] = {
       than almost any other Medicare number, so it's worth being precise about what it does.</p>
 
       <p>One thing to hold in mind while you read: <strong>the cap moves</strong>. It is indexed and rises
-      each year. CMS has now finalized the 2027 figures: the out-of-pocket cap rises to <strong>$2,400</strong>,
-      and the deductible that counts toward it rises to <strong>$700</strong>, both up from the 2026 numbers
-      below. The structure stays the same; the dollar amounts do not.</p>
+      each year. CMS has now finalized the 2027 figures: the annual out-of-pocket threshold rises to
+      <strong>$2,400</strong>, and the defined-standard deductible &mdash; the maximum a plan can charge,
+      same as the $615 figure below &mdash; rises to <strong>$700</strong>. Both are up from the 2026
+      numbers below. The structure stays the same; the dollar amounts do not.</p>
 
 """ + facts('Part D, 2026', [
         ('$2,100', 'Annual out-of-pocket maximum for covered Part D drugs. Includes your deductible, '
