@@ -104,7 +104,7 @@ DESCRIPTIONS = {
     '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
     '/skip-gen-travel': 'Grandparents plan 75% of skip-gen trips and pay for 84% of them. What the survey shows, and the consent paperwork that can stop a trip at the border.',
     '/anoc-letter': 'Every Medicare Advantage and Part D plan must mail its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
-    '/cola-2027-estimate': 'Trackers estimate the 2027 Social Security COLA at 3.5%-3.7%, but nothing is official until SSA announces it in mid-October. What decides it.',
+    '/cola-2027-estimate': 'Trackers estimate the 2027 Social Security COLA at 3.4%-3.6%, but nothing is official until SSA announces it in mid-October. What decides it.',
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
 }
 
