@@ -11,15 +11,18 @@
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.4183bdcb11.css">
 <link rel="stylesheet" href="/retirement-strategy-model.css">
+<link rel="stylesheet" href="/retirement-strategy-model-header.css">
 </head>
-<body class="rsm-page">
+<body class="hub rsm-page">
 <header class="topbar">
   <div class="wrap">
     <a class="wordmark" href="/">The <em>Second Half</em> Guide</a>
-    <nav class="topnav" aria-label="Primary">
-      <a class="topbar-home" href="/">Home</a>
+    <nav class="topnav rsm-topnav" aria-label="Primary">
+      <a class="topbar-cta" href="/">Home</a>
+      <a class="topbar-cta" href="/money">Money</a>
+      <a class="topbar-cta" href="/medicare">Medicare</a>
+      <a class="topbar-cta" href="/fraud">Fraud</a>
       <a class="topbar-search" href="/search" aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
-      <a class="topbar-cta" href="/#ask">Send us a topic &rarr;</a>
     </nav>
   </div>
 </header>
@@ -48,7 +51,7 @@
     <label>Years of Social Security-covered work<select id="years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label>
     <label>Expected annual earnings until retirement<input id="future-wages" type="number" min="0" step="1000" value="60000"></label>
   </div>
-  <p class="rsm-hint">We estimate Social Security using an SSA-style earnings reconstruction. If you know an actual SSA estimate, you can enter it below.</p>
+  <p class="rsm-hint">We estimate Social Security using an SSA-style earnings reconstruction. If you know an actual SSA estimate, use Advanced customization.</p>
 
   <div id="spouse-inputs" class="rsm-hidden">
     <div class="rsm-section-title">Spouse / partner</div>
@@ -92,7 +95,7 @@
     <label class="rsm-check"><input id="creditable-drug" type="checkbox"> Employer drug coverage is creditable</label>
   </div>
 
-  <details class="rsm-advanced" open><summary>Exact SSA estimate &amp; earnings-test details</summary><div class="rsm-grid-2 rsm-advanced-grid">
+  <details class="rsm-advanced"><summary>Advanced customization</summary><div class="rsm-grid-2 rsm-advanced-grid">
     <label>Your SSA monthly estimate (optional)<input id="ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
     <label>Estimate is for age<select id="ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label>
     <label class="spouse-advanced rsm-hidden">Spouse SSA monthly estimate (optional)<input id="spouse-ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
@@ -130,7 +133,7 @@
   <details class="rsm-panel"><summary><strong>Year-by-year roadmap: 62 to 67</strong></summary><div id="roadmap" class="rsm-roadmap"></div></details>
   <details class="rsm-panel"><summary><strong>Medicare dates and warnings</strong></summary><div id="medicare-results" class="rsm-medicare-grid"></div></details>
   <details class="rsm-panel"><summary><strong>How the estimate was built</strong></summary><div id="strategy-notes" class="rsm-notes"></div></details>
-  <details class="rsm-panel rsm-assumptions"><summary><strong>Assumptions &amp; calculation notes</strong></summary><ul><li>The default Social Security estimate reconstructs prior covered earnings using an SSA Quick Calculator-style method, applies wage indexing, a 35-year calculation and the applicable benefit formula.</li><li>An SSA estimate entered above overrides the rough estimate.</li><li>The portfolio model grows current balances, adds entered contributions while working, and uses Social Security plus pension/other income against the retirement spending target.</li><li>Taxes, investment volatility, inflation, RMDs, detailed survivor benefits and exact Medicare premiums are not fully modeled yet.</li></ul><p class="rsm-source-note">Educational planning tool, not financial, tax or legal advice. Verify important Social Security and Medicare decisions with the issuing agency.</p></details>
+  <details class="rsm-panel rsm-assumptions"><summary><strong>Assumptions &amp; calculation notes</strong></summary><ul><li>The default Social Security estimate reconstructs prior covered earnings using an SSA Quick Calculator-style method, applies wage indexing, a 35-year calculation and the applicable benefit formula.</li><li>An SSA estimate entered under Advanced customization overrides the rough estimate.</li><li>The portfolio model grows current balances, adds entered contributions while working, and uses Social Security plus pension/other income against the retirement spending target.</li><li>Taxes, investment volatility, inflation, RMDs, detailed survivor benefits and exact Medicare premiums are not fully modeled yet.</li></ul><p class="rsm-source-note">Educational planning tool, not financial, tax or legal advice. Verify important Social Security and Medicare decisions with the issuing agency.</p></details>
 
   <div class="rsm-print-row"><button id="print-report" class="btn btn-primary" type="button">Print / save this report</button><span>Your entered financial values are not stored by this calculator.</span></div>
 </div>
