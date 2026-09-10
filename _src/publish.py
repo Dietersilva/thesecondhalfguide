@@ -13,8 +13,10 @@ STATIC_TOOLS = (
     'retirement-strategy-model.html',
     'retirement-strategy-model.css',
     'retirement-strategy-model-header.css',
+    'retirement-strategy-model-launch.css',
     'retirement-strategy-model.js',
     'retirement-strategy-model-modes.js',
+    'retirement-strategy-model-launch.js',
 )
 KEEP = {'.git', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src'}
 
@@ -44,7 +46,7 @@ def install_static_tools():
         html = f.read()
     marker = '<a class="tag-live" href="/delayed-retirement-credit">'
     tool_link = ('<a class="tag-live" href="/retirement-strategy-model">'
-                 'Try: Retirement Strategy Model &mdash; compare ages 62&ndash;67 &rarr;</a>\n            ')
+                 'Try: Social Security 62 vs. 65 vs. 67 Retirement Calculator &rarr;</a>\n            ')
     if '/retirement-strategy-model' not in html and marker in html:
         html = html.replace(marker, tool_link + marker, 1)
     with open(home, 'w', encoding='utf-8') as f:
@@ -57,6 +59,8 @@ def install_static_tools():
         node = ('  <url>\n'
                 '    <loc>https://thesecondhalfguide.com/retirement-strategy-model</loc>\n'
                 '    <lastmod>2026-09-10</lastmod>\n'
+                '    <changefreq>monthly</changefreq>\n'
+                '    <priority>0.9</priority>\n'
                 '  </url>\n')
         xml = xml.replace('</urlset>', node + '</urlset>')
     with open(sitemap, 'w', encoding='utf-8') as f:
@@ -66,10 +70,10 @@ def install_static_tools():
     if os.path.exists(llms):
         with open(llms, encoding='utf-8') as f:
             text = f.read()
-        line = ('\n- [Retirement Strategy Model]'
+        line = ('\n- [Social Security 62 vs. 65 vs. 67 Retirement Calculator]'
                 '(https://thesecondhalfguide.com/retirement-strategy-model): '
-                'Private browser-based Social Security, savings and Medicare timing calculator.\n')
-        if 'Retirement Strategy Model' not in text:
+                'Private browser-based retirement strategy tool comparing Social Security claiming ages, savings drawdown, work earnings-test effects, spending coverage, couple combinations and Medicare timing.\n')
+        if 'retirement-strategy-model' not in text:
             text += line
         with open(llms, 'w', encoding='utf-8') as f:
             f.write(text)
