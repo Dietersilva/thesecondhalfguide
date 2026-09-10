@@ -1,5 +1,22 @@
 (() => {
 'use strict';
+
+function ensureInteriorNavigation(){
+  const nav=document.querySelector('.topbar .topnav');
+  if(!nav)return;
+  let home=nav.querySelector('.topbar-home');
+  if(!home){
+    home=document.createElement('a');
+    home.className='topbar-home';
+    home.href='/';
+    home.textContent='Home';
+    const search=nav.querySelector('.topbar-search');
+    nav.insertBefore(home,search||nav.firstChild);
+  }
+  const wordmark=document.querySelector('.topbar .wordmark');
+  if(wordmark)wordmark.setAttribute('href','/');
+}
+
 function setupModes(){
   const quick=document.getElementById('rsm-quick-mode');
   const advanced=document.getElementById('rsm-advanced-mode');
@@ -27,5 +44,11 @@ function setupModes(){
   details.addEventListener('toggle',()=>setMode(details.open?'advanced':'quick',false));
   setMode('quick',false);
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupModes,{once:true});else setupModes();
+
+function init(){
+  ensureInteriorNavigation();
+  setupModes();
+}
+
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
