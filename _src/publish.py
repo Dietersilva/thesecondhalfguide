@@ -57,7 +57,19 @@ def install_static_tools():
         src = os.path.join(SRC, name)
         if not os.path.exists(src):
             sys.exit(f'missing standalone tool source: {src}')
-        shutil.copy2(src, os.path.join(SITE, name))
+        dest = os.path.join(SITE, name)
+        shutil.copy2(src, dest)
+        # Protected Vercel preview links carry _vercel_share in the URL. Root-
+        # relative asset/navigation URLs drop that token, so the preview serves
+        # unstyled/unauthorized assets. Make the standalone tool preserve the
+        # preview token exactly like the generated site shell.
+        if name == 'retirement-strategy-model.html':
+            with open(dest, encoding='utf-8') as f:
+                html = f.read()
+            bridge = '''<script>(function(){var p=new URLSearchParams(location.search),t=p.get("_vercel_share");if(!t)return;document.querySelectorAll("a[href^='/'],link[href^='/'],script[src^='/']").forEach(function(el){var a=el.hasAttribute("href")?"href":"src",v=el.getAttribute(a);if(!v)return;var u=new URL(v,location.origin);u.searchParams.set("_vercel_share",t);el.setAttribute(a,u.pathname+u.search)})})();</script>'''
+            html = html.replace('</head>', bridge + '</head>', 1)
+            with open(dest, 'w', encoding='utf-8') as f:
+                f.write(html)
 
     # Allow the calculator's same-origin external script without allowing any
     # third-party script host or unsafe-inline/eval.
