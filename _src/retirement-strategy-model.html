@@ -3,146 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Retirement Strategy Model: Social Security, Savings & Medicare | The Second Half Guide</title>
-<meta name="description" content="Compare Social Security at 62, 65 and 67 while modeling retirement savings, work income, pension income, spending and Medicare timing.">
+<title>Social Security 62 vs 65 vs 67 Retirement Calculator | The Second Half Guide</title>
+<meta name="description" content="Compare claiming Social Security at 62, 65 and 67, then see the effect on retirement savings, spending gaps, work income, Medicare timing and household strategy.">
 <link rel="canonical" href="https://thesecondhalfguide.com/retirement-strategy-model">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Second Half Guide">
+<meta property="og:title" content="Social Security 62 vs 65 vs 67 Retirement Calculator">
+<meta property="og:description" content="Not just a Social Security check calculator. Compare how claiming age changes your retirement income, portfolio, spending gap and Medicare timeline.">
+<meta property="og:url" content="https://thesecondhalfguide.com/retirement-strategy-model">
+<meta property="og:image" content="https://thesecondhalfguide.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thesecondhalfguide.com/og.png">
+<meta name="author" content="Edward Silva">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.4183bdcb11.css">
 <link rel="stylesheet" href="/retirement-strategy-model.css">
 <link rel="stylesheet" href="/retirement-strategy-model-header.css">
+<link rel="stylesheet" href="/retirement-strategy-model-launch.css">
 </head>
-<body class="hub rsm-page">
+<body class="topic rsm-page is-quick">
 <header class="topbar">
   <div class="wrap">
-    <a class="wordmark" href="/#top">The <em>Second Half</em> Guide</a>
+    <a class="wordmark" href="/">The <em>Second Half</em> Guide</a>
     <nav class="topnav" aria-label="Primary">
+      <a class="topbar-home" href="/">Home</a>
       <a class="topbar-search" href="/search" aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
       <a class="topbar-cta" href="/#ask">Send us a topic &rarr;</a>
     </nav>
   </div>
 </header>
-
 <main id="top">
 <section class="rsm-hero"><div class="wrap-wide">
   <a class="topic-crumb" href="/money">&larr; Money &amp; Social Security</a>
-  <span class="eyebrow">Interactive planning tool</span>
-  <h1>Compare Social Security at 62, 65 and 67</h1>
-  <p class="rsm-lede">Build a fuller retirement estimate, then compare the three main claiming ages side by side. Change the assumptions and the results recalculate instantly.</p>
-  <div class="rsm-privacy" role="note"><div class="rsm-shield" aria-hidden="true">&#10003;</div><div><strong>Private by design.</strong> No name, Social Security number, account number or login is required. Your financial entries are calculated in your browser and are not sent to or stored by The Second Half Guide.</div></div>
+  <span class="eyebrow">Interactive retirement planning tool</span>
+  <h1>Social Security 62 vs. 65 vs. 67 retirement calculator</h1>
+  <p class="rsm-lede"><strong>Not just a Social Security calculator.</strong> See what each claiming age could do to your monthly benefit, retirement savings, spending gap and Medicare timeline.</p>
+  <div class="rsm-promise-grid" aria-label="What this calculator compares"><span>Monthly Social Security</span><span>Break-even age</span><span>Portfolio at retirement</span><span>Portfolio at your horizon</span><span>Work earnings test</span><span>Medicare timing</span></div>
+  <div class="rsm-privacy" role="note"><div class="rsm-shield" aria-hidden="true">&#10003;</div><div><strong>Private by design.</strong> No name, Social Security number, account number or login is required. Financial entries are calculated in your browser and are not sent to or stored by The Second Half Guide.</div></div>
 </div></section>
-
 <section class="rsm-tool" aria-labelledby="calculator-title"><div class="wrap-wide rsm-layout">
 <aside class="rsm-inputs"><div class="rsm-panel rsm-sticky">
-  <div class="rsm-panel-head"><h2 id="calculator-title">Build your estimate</h2><button class="rsm-reset" id="rsm-reset" type="button">Reset example</button></div>
-  <div class="rsm-mode-switch" role="group" aria-label="Calculator mode">
-    <button class="rsm-mode-button is-active" id="rsm-quick-mode" type="button" aria-pressed="true">Quick calculations</button>
-    <button class="rsm-mode-button" id="rsm-advanced-mode" type="button" aria-pressed="false">Advanced customization</button>
-  </div>
-
+  <div class="rsm-panel-head"><div><span class="rsm-kicker">Start here</span><h2 id="calculator-title">Build your estimate</h2></div><button class="rsm-reset" id="rsm-reset" type="button">Reset example</button></div>
+  <div class="rsm-mode-switch" role="group" aria-label="Calculator mode"><button class="rsm-mode-button is-active" id="rsm-quick-mode" type="button" aria-pressed="true">Quick calculations</button><button class="rsm-mode-button" id="rsm-advanced-mode" type="button" aria-pressed="false">Advanced customization</button></div>
+  <p class="rsm-mode-help" id="rsm-mode-help">Quick mode keeps the inputs short. Advanced mode adds contributions, pensions, return assumptions, Medicare and exact SSA estimates.</p>
   <fieldset class="rsm-choice"><legend>Planning for</legend><label><input type="radio" name="household" value="single" checked> Just me</label><label><input type="radio" name="household" value="couple"> Me and my spouse / partner</label></fieldset>
-
-  <div class="rsm-section-title">1. Your work &amp; Social Security</div>
-  <div class="rsm-grid-2">
-    <label>Birth month<select id="birth-month"></select></label>
-    <label>Birth year<input id="birth-year" type="number" min="1930" max="1970" value="1964"></label>
-    <label>Planned retirement age<input id="retire-age" type="number" min="62" max="75" value="65"></label>
-    <label>Current annual earnings subject to Social Security tax<input id="wages" type="number" min="0" step="1000" value="60000"></label>
-    <label>Years of Social Security-covered work<select id="years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label>
-    <label>Expected annual earnings until retirement<input id="future-wages" type="number" min="0" step="1000" value="60000"></label>
-  </div>
-  <p class="rsm-hint">We estimate Social Security using an SSA-style earnings reconstruction. Switch to Advanced customization to enter an actual SSA estimate and earnings-test details.</p>
-
-  <div id="spouse-inputs" class="rsm-hidden">
-    <div class="rsm-section-title">Spouse / partner</div>
-    <div class="rsm-grid-2">
-      <label>Birth month<select id="spouse-birth-month"></select></label>
-      <label>Birth year<input id="spouse-birth-year" type="number" min="1930" max="1970" value="1964"></label>
-      <label>Planned retirement age<input id="spouse-retire-age" type="number" min="62" max="75" value="65"></label>
-      <label>Current annual SS-covered earnings<input id="spouse-wages" type="number" min="0" step="1000" value="50000"></label>
-      <label>Years of Social Security-covered work<select id="spouse-years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label>
-      <label>Expected annual earnings until retirement<input id="spouse-future-wages" type="number" min="0" step="1000" value="50000"></label>
-    </div>
-  </div>
-
+  <div class="rsm-section-title">1. Your basics</div>
+  <div class="rsm-grid-2"><label data-mode="advanced">Birth month<select id="birth-month"></select></label><label>Birth year<input id="birth-year" type="number" min="1930" max="1970" value="1964"></label><label>Planned retirement age<input id="retire-age" type="number" min="62" max="75" value="65"></label><label>Current annual earnings subject to Social Security tax<input id="wages" type="number" min="0" step="1000" value="60000"></label><label>Years of Social Security-covered work<select id="years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label><label data-mode="advanced">Expected annual earnings until retirement<input id="future-wages" type="number" min="0" step="1000" value="60000"></label></div>
+  <p class="rsm-hint">The default Social Security result is a planning estimate. For the strongest estimate, use Advanced customization and enter the monthly estimate from your Social Security statement.</p>
+  <div id="spouse-inputs" class="rsm-hidden"><div class="rsm-section-title">Spouse / partner</div><div class="rsm-grid-2"><label data-mode="advanced">Birth month<select id="spouse-birth-month"></select></label><label>Birth year<input id="spouse-birth-year" type="number" min="1930" max="1970" value="1964"></label><label>Planned retirement age<input id="spouse-retire-age" type="number" min="62" max="75" value="65"></label><label>Current annual SS-covered earnings<input id="spouse-wages" type="number" min="0" step="1000" value="50000"></label><label>Years of Social Security-covered work<select id="spouse-years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label><label data-mode="advanced">Expected annual earnings until retirement<input id="spouse-future-wages" type="number" min="0" step="1000" value="50000"></label></div></div>
   <div class="rsm-section-title">2. Retirement savings</div>
-  <div class="rsm-grid-2">
-    <label>Traditional 401(k) / IRA balance<input id="traditional-balance" type="number" min="0" step="10000" value="350000"></label>
-    <label>Roth retirement balance<input id="roth-balance" type="number" min="0" step="10000" value="100000"></label>
-    <label>Cash / taxable investments for retirement<input id="taxable-balance" type="number" min="0" step="10000" value="50000"></label>
-    <label>Your annual retirement contributions<input id="annual-contrib" type="number" min="0" step="500" value="18000"></label>
-    <label>Employer annual contribution / match<input id="employer-contrib" type="number" min="0" step="500" value="3000"></label>
-    <label>Spouse annual retirement contributions<input id="spouse-contrib" type="number" min="0" step="500" value="0"></label>
-    <label>Spouse employer contribution / match<input id="spouse-employer-contrib" type="number" min="0" step="500" value="0"></label>
-    <label>Expected investment return %<input id="return-rate" type="number" min="0" max="12" step="0.25" value="5"></label>
-  </div>
-
-  <div class="rsm-section-title">3. Retirement income &amp; spending</div>
-  <div class="rsm-grid-2">
-    <label>Annual pension / annuity income<input id="pension-income" type="number" min="0" step="1000" value="0"></label>
-    <label>Other annual retirement income<input id="other-income" type="number" min="0" step="1000" value="0"></label>
-    <label>Target annual retirement spending<input id="annual-spending" type="number" min="0" step="1000" value="65000"></label>
-    <label>Planning horizon<select id="horizon"><option>80</option><option selected>85</option><option>90</option><option>95</option><option>100</option></select></label>
-  </div>
-  <fieldset class="rsm-choice rsm-choice-tight"><legend>If Social Security starts before retirement</legend><label><input type="radio" name="early-ss-use" value="spend" checked> Treat it as spending money</label><label><input type="radio" name="early-ss-use" value="invest"> Add unused checks to retirement savings</label></fieldset>
-
-  <div class="rsm-section-title">4. Medicare &amp; work after 65</div>
-  <div class="rsm-grid-2">
-    <label>Medicare Part B start month<input id="part-b-start" type="month"></label>
-    <label>Employer size at 65<select id="employer-size"><option value="unknown">Not sure</option><option value="under20">Under 20 employees</option><option value="20plus">20 or more employees</option><option value="none">No active employer coverage</option></select></label>
-    <label class="rsm-check"><input id="active-employer-coverage" type="checkbox"> Covered by an active employer group health plan at 65</label>
-    <label class="rsm-check"><input id="hsa" type="checkbox"> Contributing to an HSA near Medicare enrollment</label>
-    <label class="rsm-check"><input id="creditable-drug" type="checkbox"> Employer drug coverage is creditable</label>
-  </div>
-
-  <details class="rsm-advanced" id="advanced-customization"><summary>Advanced customization</summary><div class="rsm-grid-2 rsm-advanced-grid">
-    <label>Your SSA monthly estimate (optional)<input id="ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
-    <label>Estimate is for age<select id="ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label>
-    <label class="spouse-advanced rsm-hidden">Spouse SSA monthly estimate (optional)<input id="spouse-ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
-    <label class="spouse-advanced rsm-hidden">Spouse estimate is for age<select id="spouse-ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label>
-    <label>Your countable earnings after claiming<input id="countable-earnings" type="number" min="0" step="1000" value="60000"></label>
-    <label class="spouse-advanced rsm-hidden">Spouse countable earnings after claiming<input id="spouse-countable-earnings" type="number" min="0" step="1000" value="50000"></label>
-    <label>2026 earnings-test limit<input id="earnings-limit" type="number" min="0" step="100" value="24480"></label>
-  </div></details>
+  <div class="rsm-grid-2"><label>Traditional 401(k) / IRA balance<input id="traditional-balance" type="number" min="0" step="10000" value="350000"></label><label>Roth retirement balance<input id="roth-balance" type="number" min="0" step="10000" value="100000"></label><label>Cash / taxable investments for retirement<input id="taxable-balance" type="number" min="0" step="10000" value="50000"></label><label data-mode="advanced">Your annual retirement contributions<input id="annual-contrib" type="number" min="0" step="500" value="0"></label><label data-mode="advanced">Employer annual contribution / match<input id="employer-contrib" type="number" min="0" step="500" value="0"></label><label data-mode="advanced">Spouse annual retirement contributions<input id="spouse-contrib" type="number" min="0" step="500" value="0"></label><label data-mode="advanced">Spouse employer contribution / match<input id="spouse-employer-contrib" type="number" min="0" step="500" value="0"></label><label data-mode="advanced">Expected investment return %<input id="return-rate" type="number" min="0" max="12" step="0.25" value="5"></label></div>
+  <div class="rsm-section-title">3. Spending</div>
+  <div class="rsm-grid-2"><label>Target annual retirement spending<input id="annual-spending" type="number" min="0" step="1000" value="65000"></label><label data-mode="advanced">Planning horizon<select id="horizon"><option>80</option><option selected>85</option><option>90</option><option>95</option><option>100</option></select></label><label data-mode="advanced">Annual pension / annuity income<input id="pension-income" type="number" min="0" step="1000" value="0"></label><label data-mode="advanced">Other annual retirement income<input id="other-income" type="number" min="0" step="1000" value="0"></label></div>
+  <div data-mode="advanced"><fieldset class="rsm-choice rsm-choice-tight"><legend>If Social Security starts before retirement</legend><label><input type="radio" name="early-ss-use" value="spend" checked> Treat it as spending money</label><label><input type="radio" name="early-ss-use" value="invest"> Add unused checks to retirement savings</label></fieldset><div class="rsm-section-title">4. Medicare &amp; work after 65</div><div class="rsm-grid-2"><label>Medicare Part B start month<input id="part-b-start" type="month"></label><label>Employer size at 65<select id="employer-size"><option value="unknown">Not sure</option><option value="under20">Under 20 employees</option><option value="20plus">20 or more employees</option><option value="none">No active employer coverage</option></select></label><label class="rsm-check"><input id="active-employer-coverage" type="checkbox"> Covered by an active employer group health plan at 65</label><label class="rsm-check"><input id="hsa" type="checkbox"> Contributing to an HSA near Medicare enrollment</label><label class="rsm-check"><input id="creditable-drug" type="checkbox"> Employer drug coverage is creditable</label></div><div class="rsm-section-title">5. Exact SSA &amp; earnings-test details</div><div class="rsm-grid-2 rsm-advanced-grid" id="advanced-customization"><label>Your SSA monthly estimate (optional)<input id="ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label><label>Estimate is for age<select id="ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label><label class="spouse-advanced rsm-hidden">Spouse SSA monthly estimate (optional)<input id="spouse-ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label><label class="spouse-advanced rsm-hidden">Spouse estimate is for age<select id="spouse-ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label><label>Your countable earnings after claiming<input id="countable-earnings" type="number" min="0" step="1000" value="60000"></label><label class="spouse-advanced rsm-hidden">Spouse countable earnings after claiming<input id="spouse-countable-earnings" type="number" min="0" step="1000" value="50000"></label><label>2026 earnings-test limit<input id="earnings-limit" type="number" min="0" step="100" value="24480"></label></div></div>
 </div></aside>
-
 <div class="rsm-results" aria-live="polite">
-  <section class="rsm-results-hero rsm-panel"><div><span class="rsm-kicker">Your retirement model</span><h2>62 vs. 65 vs. 67</h2><p id="summary-copy">Change any input and the three strategies recalculate.</p></div><div class="rsm-best"><span>Retire at</span><strong id="focus-age">65</strong><small>your input</small></div></section>
-
-  <section class="rsm-stat-grid" aria-label="Key results">
-    <div class="rsm-stat"><span>Retirement savings today</span><strong id="current-balance">&mdash;</strong></div>
-    <div class="rsm-stat"><span>Projected savings at retirement</span><strong id="projected-balance">&mdash;</strong></div>
-    <div class="rsm-stat"><span>Estimated Social Security at 65</span><strong id="ss-at-65">&mdash;</strong></div>
-    <div class="rsm-stat"><span>Annual spending target</span><strong id="spending-target">&mdash;</strong></div>
-  </section>
-
-  <section class="rsm-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Main comparison</span><h2>What changes if you claim at 62, 65 or 67?</h2></div><p>All figures are estimates before taxes.</p></div>
-    <div class="rsm-table-wrap"><table class="rsm-table rsm-strategy-table"><thead><tr><th>Claim age</th><th>Monthly SS</th><th>Annual SS</th><th>62 comparison / break-even</th><th>Portfolio at retirement</th><th>Portfolio at horizon</th></tr></thead><tbody id="strategy-body"></tbody></table></div>
-  </section>
-
-  <section class="rsm-stat-grid rsm-break-grid" aria-label="Break-even results">
-    <div class="rsm-stat"><span>62 vs. 65 break-even</span><strong id="break-even-65">&mdash;</strong></div>
-    <div class="rsm-stat"><span>62 vs. 67 break-even</span><strong id="break-even-67">&mdash;</strong></div>
-    <div class="rsm-stat"><span>65 vs. 67 break-even</span><strong id="break-even-65-67">&mdash;</strong></div>
-    <div class="rsm-stat"><span>Planning horizon</span><strong id="horizon-display">&mdash;</strong></div>
-  </section>
-
+  <section class="rsm-results-hero rsm-panel"><div><span class="rsm-kicker">Your retirement model</span><h2>Three paths, one retirement</h2><p id="summary-copy">Change any input and the strategies recalculate.</p></div><div class="rsm-best"><span>Retire at</span><strong id="focus-age">65</strong><small>your input</small></div></section>
+  <div class="rsm-estimate-label" role="note"><strong>Planning estimate, not a recommendation.</strong> The goal is to make the tradeoffs visible. If you enter an SSA statement estimate, the calculator uses it instead of the built-in rough estimate.</div>
+  <section class="rsm-stat-grid" aria-label="Key results"><div class="rsm-stat"><span>Retirement savings today</span><strong id="current-balance">&mdash;</strong></div><div class="rsm-stat"><span>Projected savings at retirement</span><strong id="projected-balance">&mdash;</strong></div><div class="rsm-stat"><span>Estimated Social Security at 65</span><strong id="ss-at-65">&mdash;</strong></div><div class="rsm-stat"><span>Annual spending target</span><strong id="spending-target">&mdash;</strong></div></section>
+  <section class="rsm-panel" id="meaning-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Plain-English readout</span><h2>What this means for you</h2></div><p>Tradeoffs, not a one-size-fits-all answer.</p></div><div id="meaning-results" class="rsm-notes"></div></section>
+  <section class="rsm-panel rsm-path-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">At a glance</span><h2>Your three retirement paths</h2></div><p>Monthly benefit, spending coverage and portfolio consequences.</p></div><div id="path-cards" class="rsm-path-cards"><div class="rsm-path-card"><span>Claim at</span><strong>62</strong><p>Earlier checks. Lower monthly benefit.</p></div><div class="rsm-path-card rsm-path-focus"><span>Claim at</span><strong>65</strong><p>Middle path between timing and monthly income.</p></div><div class="rsm-path-card"><span>Claim at</span><strong>67</strong><p>Higher monthly income among the three main choices.</p></div></div></section>
+  <section class="rsm-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Main comparison</span><h2>What changes if you claim at 62, 65 or 67?</h2></div><p>All figures are estimates before taxes.</p></div><div class="rsm-table-wrap"><table class="rsm-table rsm-strategy-table"><thead><tr><th>Claim age</th><th>Monthly SS</th><th>Annual SS</th><th>62 comparison / break-even</th><th>Portfolio at retirement</th><th>Portfolio at horizon</th></tr></thead><tbody id="strategy-body"></tbody></table></div></section>
+  <section class="rsm-panel rsm-waiting-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">The question people actually ask</span><h2>How long do you have to live for waiting to catch up?</h2></div></div><div class="rsm-stat-grid rsm-break-grid"><div class="rsm-stat"><span>62 vs. 65 break-even</span><strong id="break-even-65">&mdash;</strong></div><div class="rsm-stat"><span>62 vs. 67 break-even</span><strong id="break-even-67">&mdash;</strong></div><div class="rsm-stat"><span>65 vs. 67 break-even</span><strong id="break-even-65-67">&mdash;</strong></div><div class="rsm-stat"><span>Planning horizon</span><strong id="horizon-display">&mdash;</strong></div></div></section>
+  <section class="rsm-panel" id="goal-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Decision guide</span><h2>Which claiming age may fit which goal?</h2></div><p>Describes tradeoffs. It does not choose for you.</p></div><div id="goal-results" class="rsm-medicare-grid"></div></section>
+  <section class="rsm-panel" id="earnings-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Working while claiming</span><h2>Earnings-test impact</h2></div></div><div id="earnings-results" class="rsm-notes"></div><a class="rsm-inline-link" href="/social-security-62">Read our plain-English guide to claiming at 62 &rarr;</a></section>
+  <section class="rsm-panel" id="stress-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Stress test</span><h2>What if investment returns are weaker or stronger?</h2></div><p>Illustration only, not a probability forecast.</p></div><div class="rsm-table-wrap"><table class="rsm-table"><thead><tr><th>Return assumption</th><th>Claim 62</th><th>Claim 65</th><th>Claim 67</th></tr></thead><tbody id="stress-body"></tbody></table></div></section>
+  <section class="rsm-panel rsm-hidden" id="couple-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Couple planning</span><h2>What if you claim at different ages?</h2></div><p>Combined annual Social Security once both benefits have started.</p></div><div class="rsm-table-wrap"><table class="rsm-table"><thead><tr><th>You / spouse</th><th>62</th><th>65</th><th>67</th></tr></thead><tbody id="couple-body"></tbody></table></div><div id="survivor-watch" class="rsm-notes"></div><div class="rsm-related-inline"><a href="/spousal-benefits">Spousal benefits explained &rarr;</a><a href="/widows-penalty">The widow's penalty &rarr;</a></div></section>
+  <section class="rsm-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Income coverage</span><h2>How much of your spending is covered without portfolio withdrawals?</h2></div></div><div id="income-results" class="rsm-medicare-grid"></div></section>
   <details class="rsm-panel" open><summary><strong>Cumulative Social Security: when does waiting catch up?</strong></summary><div class="rsm-chart-wrap"><svg id="crossover-chart" viewBox="0 0 820 360" role="img" aria-label="Cumulative Social Security benefits for claiming at ages 62, 65 and 67"></svg></div><div class="rsm-legend"><span><i class="line62"></i> Claim 62</span><span><i class="line65"></i> Claim 65</span><span><i class="line67"></i> Claim 67</span></div></details>
-
-  <details class="rsm-panel" open><summary><strong>Income coverage at retirement</strong></summary><div id="income-results" class="rsm-medicare-grid"></div></details>
-  <details class="rsm-panel"><summary><strong>Year-by-year roadmap: 62 to 67</strong></summary><div id="roadmap" class="rsm-roadmap"></div></details>
-  <details class="rsm-panel"><summary><strong>Medicare dates and warnings</strong></summary><div id="medicare-results" class="rsm-medicare-grid"></div></details>
-  <details class="rsm-panel"><summary><strong>How the estimate was built</strong></summary><div id="strategy-notes" class="rsm-notes"></div></details>
-  <details class="rsm-panel rsm-assumptions"><summary><strong>Assumptions &amp; calculation notes</strong></summary><ul><li>The default Social Security estimate reconstructs prior covered earnings using an SSA Quick Calculator-style method, applies wage indexing, a 35-year calculation and the applicable benefit formula.</li><li>An SSA estimate entered under Advanced customization overrides the rough estimate.</li><li>The portfolio model grows current balances, adds entered contributions while working, and uses Social Security plus pension/other income against the retirement spending target.</li><li>Taxes, investment volatility, inflation, RMDs, detailed survivor benefits and exact Medicare premiums are not fully modeled yet.</li></ul><p class="rsm-source-note">Educational planning tool, not financial, tax or legal advice. Verify important Social Security and Medicare decisions with the issuing agency.</p></details>
-
-  <div class="rsm-print-row"><button id="print-report" class="btn btn-primary" type="button">Print / save this report</button><span>Your entered financial values are not stored by this calculator.</span></div>
-</div>
-</div></section>
+  <section class="rsm-panel rsm-age70"><div><span class="rsm-kicker">One more age worth knowing</span><h2>What about waiting until 70?</h2><p>The main comparison stays at 62, 65 and 67 so the page remains readable. Social Security can continue to earn delayed retirement credits after full retirement age up to age 70. If that longer delay is realistic for you, compare it separately before filing.</p></div><a class="btn btn-secondary" href="/delayed-retirement-credit">See how delayed retirement credits work &rarr;</a></section>
+  <section class="rsm-panel" id="watch-panel"><div class="rsm-section-head"><div><span class="rsm-kicker">Taxes &amp; Medicare</span><h2>What the gross-income numbers do not show</h2></div></div><div id="watch-results" class="rsm-medicare-grid"></div><div class="rsm-related-inline"><a href="/no-tax-on-social-security">Social Security &amp; taxes &rarr;</a><a href="/irmaa">IRMAA explained &rarr;</a><a href="/hsa-medicare-timing">HSA / Medicare timing &rarr;</a></div></section>
+  <details class="rsm-panel"><summary><strong>Year-by-year roadmap: 62 to 67</strong></summary><div id="roadmap" class="rsm-roadmap"></div></details><details class="rsm-panel"><summary><strong>Medicare dates and warnings</strong></summary><div id="medicare-results" class="rsm-medicare-grid"></div><div class="rsm-related-inline"><a href="/medicare-enrollment">Medicare enrollment windows &rarr;</a><a href="/cobra-medicare-trap">The COBRA-to-Medicare trap &rarr;</a></div></details><details class="rsm-panel"><summary><strong>How the estimate was built</strong></summary><div id="strategy-notes" class="rsm-notes"></div></details><details class="rsm-panel rsm-assumptions"><summary><strong>Assumptions &amp; calculation notes</strong></summary><ul><li>The built-in Social Security estimate is a planning approximation based on covered earnings, work history, wage indexing and a 35-year benefit calculation.</li><li>An SSA estimate entered in Advanced customization overrides the built-in estimate.</li><li>The portfolio model grows entered savings, adds contributions while working, then fills any retirement-spending gap after Social Security, pension and other income.</li><li>The stress test changes only the annual investment-return assumption. It is not Monte Carlo analysis and does not assign probabilities.</li><li>Federal/state taxes, detailed survivor benefits, inflation paths, RMDs and future Medicare premiums are not fully modeled.</li></ul><p class="rsm-source-note">Educational planning tool, not financial, tax or legal advice. Verify filing decisions and current-year thresholds with Social Security, Medicare and the IRS.</p></details>
+  <div class="rsm-print-row"><button id="print-report" class="btn btn-primary" type="button">Print / save my retirement snapshot</button><span>Entered financial figures are processed locally and are not stored by this calculator.</span></div>
+</div></div></section>
+<section class="rsm-editorial" aria-labelledby="guide-title"><div class="wrap-wide"><div class="rsm-editorial-head"><span class="eyebrow">Before you file</span><h2 id="guide-title">The calculator is only useful if you understand what is moving underneath it</h2><p>These explanations are part of the page, not hidden inside the calculator, so readers and search engines can understand what the tool actually does.</p></div><div class="rsm-explainer-grid">
+<article><h3>What happens if you claim Social Security at 62?</h3><p>Age 62 gets money flowing sooner, but the monthly retirement benefit is reduced compared with waiting until full retirement age. If you keep working before full retirement age, the earnings test can also withhold some benefits when earnings exceed the annual limit. That makes taking it early while working a different calculation from simply comparing monthly checks.</p><a href="/social-security-62">Go deeper: Social Security at 62 &rarr;</a></article>
+<article><h3>What changes if you wait until 65?</h3><p>Age 65 is important because Medicare usually enters the picture, not because Social Security automatically becomes full at 65. For people whose full retirement age is later, claiming at 65 can still mean a reduced Social Security benefit. Treat Medicare enrollment and Social Security claiming as two related but separate decisions.</p><a href="/medicare-enrollment">Go deeper: Medicare enrollment &rarr;</a></article>
+<article><h3>What changes if you wait until 67?</h3><p>For people born in 1960 or later, 67 is full retirement age for Social Security retirement benefits. Waiting means giving up earlier checks in exchange for a larger monthly benefit. The calculator shows the age at which the larger later checks overtake the cumulative value of starting sooner.</p><a href="/delayed-retirement-credit">And what happens after full retirement age? &rarr;</a></article>
+<article><h3>What is a Social Security break-even age?</h3><p>Break-even is the age when the cumulative dollars from a later claiming strategy catch up with the cumulative dollars from an earlier one. It is useful, but it is not the whole decision. Taxes, work, survivor benefits, investment withdrawals, health, cash-flow needs and longevity can matter as much as the crossover age.</p></article>
+<article><h3>How does claiming age affect retirement savings?</h3><p>An earlier Social Security check may reduce the amount you need to withdraw from savings, or it may simply become additional spending. Waiting can require more portfolio withdrawals before benefits start, then provide a larger guaranteed monthly benefit later. This tool models that interaction instead of looking at Social Security in isolation.</p></article>
+<article><h3>What should couples compare?</h3><p>Couples have more combinations because each spouse can claim at a different age. The higher earner's claiming decision can also matter for survivor income. The couple matrix is a planning screen, not a complete survivor-benefit optimizer, so use it to identify scenarios worth checking against each spouse's SSA record.</p><a href="/spousal-benefits">Go deeper: spousal benefits &rarr;</a></article></div>
+<section class="rsm-related"><div><span class="eyebrow">Keep going</span><h2>Your result should lead to the next useful question</h2></div><div class="rsm-related-grid"><a href="/social-security-62"><strong>Thinking about filing at 62?</strong><span>See the reduction, break-even math and situations that change the picture.</span></a><a href="/hsa-medicare-timing"><strong>Still contributing to an HSA?</strong><span>Medicare timing can create a tax problem if the dates are handled casually.</span></a><a href="/irmaa"><strong>Higher retirement income?</strong><span>See how the Medicare income-related surcharge works and why the two-year lookback matters.</span></a><a href="/widows-penalty"><strong>Planning as a couple?</strong><span>Household income can change sharply after the first spouse dies.</span></a></div></section>
+<section class="rsm-sources"><span class="eyebrow">Primary sources</span><h2>Where the rules come from</h2><p>We use issuing-agency material for Social Security and Medicare rules. Before making a filing decision, confirm the current rules and your personal earnings record with the agencies themselves.</p><div class="rsm-source-links"><a href="https://www.ssa.gov/benefits/calculators/" rel="noopener">Social Security benefit calculators</a><a href="https://www.ssa.gov/OACT/quickcalc/" rel="noopener">SSA Quick Calculator</a><a href="https://www.ssa.gov/benefits/retirement/planner/whileworking.html" rel="noopener">SSA: working while receiving retirement benefits</a><a href="https://www.medicare.gov/basics/get-started-with-medicare" rel="noopener">Medicare: getting started</a></div><p class="rsm-updated">Page reviewed September 10, 2026. Annual limits and premiums change, so year-specific figures should be rechecked before publication updates.</p></section></div></section>
 </main>
-
 <footer><div class="wrap-wide foot-grid"><span>&copy; 2026 The Second Half Guide</span><span class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/numbers">Useful numbers</a><a href="/privacy">Privacy &amp; Terms</a></span></div></footer>
-<script src="/retirement-strategy-model.js" defer></script>
-<script src="/retirement-strategy-model-modes.js" defer></script>
+<script src="/retirement-strategy-model.js" defer></script><script src="/retirement-strategy-model-modes.js" defer></script><script src="/retirement-strategy-model-launch.js" defer></script>
 </body>
 </html>
