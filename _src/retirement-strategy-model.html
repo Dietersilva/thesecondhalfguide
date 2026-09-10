@@ -16,13 +16,10 @@
 <body class="hub rsm-page">
 <header class="topbar">
   <div class="wrap">
-    <a class="wordmark" href="/">The <em>Second Half</em> Guide</a>
-    <nav class="topnav rsm-topnav" aria-label="Primary">
-      <a class="topbar-cta" href="/">Home</a>
-      <a class="topbar-cta" href="/money">Money</a>
-      <a class="topbar-cta" href="/medicare">Medicare</a>
-      <a class="topbar-cta" href="/fraud">Fraud</a>
+    <a class="wordmark" href="/#top">The <em>Second Half</em> Guide</a>
+    <nav class="topnav" aria-label="Primary">
       <a class="topbar-search" href="/search" aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      <a class="topbar-cta" href="/#ask">Send us a topic &rarr;</a>
     </nav>
   </div>
 </header>
@@ -39,6 +36,10 @@
 <section class="rsm-tool" aria-labelledby="calculator-title"><div class="wrap-wide rsm-layout">
 <aside class="rsm-inputs"><div class="rsm-panel rsm-sticky">
   <div class="rsm-panel-head"><h2 id="calculator-title">Build your estimate</h2><button class="rsm-reset" id="rsm-reset" type="button">Reset example</button></div>
+  <div class="rsm-mode-switch" role="group" aria-label="Calculator mode">
+    <button class="rsm-mode-button is-active" id="rsm-quick-mode" type="button" aria-pressed="true">Quick calculations</button>
+    <button class="rsm-mode-button" id="rsm-advanced-mode" type="button" aria-pressed="false">Advanced customization</button>
+  </div>
 
   <fieldset class="rsm-choice"><legend>Planning for</legend><label><input type="radio" name="household" value="single" checked> Just me</label><label><input type="radio" name="household" value="couple"> Me and my spouse / partner</label></fieldset>
 
@@ -51,7 +52,7 @@
     <label>Years of Social Security-covered work<select id="years-worked"><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option selected>35</option><option value="40">35+ years</option></select></label>
     <label>Expected annual earnings until retirement<input id="future-wages" type="number" min="0" step="1000" value="60000"></label>
   </div>
-  <p class="rsm-hint">We estimate Social Security using an SSA-style earnings reconstruction. If you know an actual SSA estimate, use Advanced customization.</p>
+  <p class="rsm-hint">We estimate Social Security using an SSA-style earnings reconstruction. Switch to Advanced customization to enter an actual SSA estimate and earnings-test details.</p>
 
   <div id="spouse-inputs" class="rsm-hidden">
     <div class="rsm-section-title">Spouse / partner</div>
@@ -95,7 +96,7 @@
     <label class="rsm-check"><input id="creditable-drug" type="checkbox"> Employer drug coverage is creditable</label>
   </div>
 
-  <details class="rsm-advanced"><summary>Advanced customization</summary><div class="rsm-grid-2 rsm-advanced-grid">
+  <details class="rsm-advanced" id="advanced-customization"><summary>Advanced customization</summary><div class="rsm-grid-2 rsm-advanced-grid">
     <label>Your SSA monthly estimate (optional)<input id="ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
     <label>Estimate is for age<select id="ss-override-age"><option selected>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></label>
     <label class="spouse-advanced rsm-hidden">Spouse SSA monthly estimate (optional)<input id="spouse-ss-override" type="number" min="0" step="10" placeholder="Leave blank to estimate"></label>
@@ -142,5 +143,6 @@
 
 <footer><div class="wrap-wide foot-grid"><span>&copy; 2026 The Second Half Guide</span><span class="foot-links"><a href="/about">About</a><a href="/contact">Contact</a><a href="/numbers">Useful numbers</a><a href="/privacy">Privacy &amp; Terms</a></span></div></footer>
 <script src="/retirement-strategy-model.js" defer></script>
+<script src="/retirement-strategy-model-modes.js" defer></script>
 </body>
 </html>
