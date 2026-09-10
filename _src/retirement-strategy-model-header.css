@@ -1,0 +1,10 @@
+.rsm-page .rsm-topnav { display:flex; align-items:center; gap:4px; }
+.rsm-page .rsm-topnav .topbar-cta { padding:8px 10px; border-radius:8px; border-bottom:0; }
+.rsm-page .rsm-topnav .topbar-cta:hover { background:var(--surface-2); }
+.rsm-page .rsm-topnav .topbar-search { margin-left:4px; }
+@media (max-width: 760px) {
+  .rsm-page .topbar .wrap { flex-wrap:wrap; }
+  .rsm-page .rsm-topnav { width:100%; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+  .rsm-page .rsm-topnav::-webkit-scrollbar { display:none; }
+  .rsm-page .rsm-topnav .topbar-cta { flex:0 0 auto; }
+}
