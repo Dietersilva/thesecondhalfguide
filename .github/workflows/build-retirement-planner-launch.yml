@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Apply planner product branding
+        run: python3 _src/brand_retirement_planner.py
+
       - name: Regenerate site from source
         run: python3 _src/publish.py
 
