@@ -1,0 +1,47 @@
+/* Launch enhancements for the retirement strategy model */
+.rsm-promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:22px 0 0;max-width:900px}
+.rsm-promise-grid span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 12px;text-align:center;color:var(--ink-soft);font-size:13px;font-weight:700}
+.rsm-mode-help{margin:8px 0 0;color:var(--ink-faint);font-size:12.5px;line-height:1.45}
+.rsm-page.is-quick [data-mode="advanced"]{display:none!important}
+.rsm-page.is-advanced [data-mode="advanced"]{display:block}
+.rsm-page.is-advanced label[data-mode="advanced"]{display:block}
+.rsm-page.is-advanced .rsm-grid-2>[data-mode="advanced"]{display:block}
+.rsm-estimate-label{padding:13px 16px;border:1px solid var(--line);border-radius:11px;background:var(--surface-2);color:var(--ink-soft);font-size:14px;line-height:1.5}
+.rsm-estimate-label strong{color:var(--ink)}
+.rsm-path-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.rsm-path-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);padding:20px}
+.rsm-path-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pine)}
+.rsm-path-card.rsm-path-focus::before{background:var(--gold)}
+.rsm-path-card>span{display:block;color:var(--ink-faint);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.rsm-path-card>strong{display:block;margin:3px 0 10px;font-family:'Fraunces',serif;font-size:42px;line-height:1;color:var(--ink)}
+.rsm-path-card p{margin:0;color:var(--ink-soft);font-size:14px;line-height:1.45}
+.rsm-path-card .rsm-path-money{display:block;margin-top:12px;font-family:'Fraunces',serif;font-size:24px;color:var(--pine-strong)}
+.rsm-path-card .rsm-path-meta{display:grid;gap:4px;margin-top:9px;color:var(--ink-soft);font-size:13px}
+.rsm-waiting-panel{background:linear-gradient(135deg,var(--surface),var(--surface-2))}
+.rsm-inline-link,.rsm-related-inline a{display:inline-block;margin-top:13px;color:var(--pine-strong);font-weight:700;text-decoration:none}
+.rsm-inline-link:hover,.rsm-related-inline a:hover{text-decoration:underline}
+.rsm-related-inline{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:6px}
+.rsm-age70{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.rsm-age70 h2{margin:0 0 8px;font-family:'Fraunces',serif;color:var(--ink);font-size:27px}
+.rsm-age70 p{margin:0;max-width:690px;color:var(--ink-soft);line-height:1.55}
+.rsm-age70 .btn{flex:none}
+.rsm-editorial{padding:66px 0 72px;border-top:1px solid var(--line);background:var(--surface)}
+.rsm-editorial-head{max-width:860px;margin-bottom:28px}
+.rsm-editorial-head h2,.rsm-related h2,.rsm-sources h2{font-family:'Fraunces',serif;color:var(--ink);font-size:clamp(28px,3vw,40px);line-height:1.13;margin:8px 0 10px}
+.rsm-editorial-head p,.rsm-sources p{color:var(--ink-soft);font-size:17px;line-height:1.65}
+.rsm-explainer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rsm-explainer-grid article{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--bg)}
+.rsm-explainer-grid h3{font-family:'Fraunces',serif;color:var(--ink);font-size:22px;line-height:1.25;margin:0 0 9px}
+.rsm-explainer-grid p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.62}
+.rsm-explainer-grid a{display:inline-block;margin-top:12px;color:var(--pine-strong);font-weight:700;text-decoration:none}
+.rsm-related,.rsm-sources{margin-top:42px;padding-top:34px;border-top:1px solid var(--line)}
+.rsm-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.rsm-related-grid a{display:block;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface-2);text-decoration:none}
+.rsm-related-grid strong{display:block;color:var(--ink);font-size:16px;margin-bottom:5px}
+.rsm-related-grid span{display:block;color:var(--ink-soft);font-size:14px;line-height:1.5}
+.rsm-source-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:14px}
+.rsm-source-links a{color:var(--pine-strong);font-weight:700}
+.rsm-updated{font-size:13px!important;color:var(--ink-faint)!important}
+@media(max-width:760px){.rsm-promise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rsm-path-cards,.rsm-explainer-grid,.rsm-related-grid{grid-template-columns:1fr}.rsm-age70{display:block}.rsm-age70 .btn{margin-top:16px}}
+@media(max-width:480px){.rsm-promise-grid{grid-template-columns:1fr}}
+@media print{.rsm-editorial,.rsm-promise-grid,.rsm-related-inline,.rsm-inline-link,.rsm-age70{display:none!important}.rsm-path-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
