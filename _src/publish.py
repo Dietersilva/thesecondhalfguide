@@ -19,7 +19,7 @@ STATIC_TOOLS = (
     'retirement-strategy-model-launch.js',
     'retirement-planner-launch.html',
 )
-KEEP = {'.git', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion'}
+KEEP = {'.git', '.github', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion'}
 
 RETIREMENT_ARTICLE_CTAS = {
     'social-security-62.html': ('Run your own 62 vs. 65 vs. 67 numbers', 'Compare the monthly benefit, break-even age, retirement savings and spending gap using your own assumptions.'),
