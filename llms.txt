@@ -40,3 +40,6 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [Why this site exists](https://thesecondhalfguide.com/about): Who writes The Second Half Guide, how it is funded, how the facts are checked, and the standards it holds itself to. Published by Edward Silva.
 - [55, 60, 62, 65: when does “senior” actually start?](https://thesecondhalfguide.com/senior-age): There is no senior birthday. About a dozen unrelated clocks — 50, 55, 59½, 62, 65, 67 — set by different institutions, and only some of them matter.
 - [Approaching 60 and beyond: what actually changes, and what doesn't](https://thesecondhalfguide.com/approaching-60): What actually changes as you approach 60: the deadlines worth a calendar entry, the thresholds that matter, and the many that are only marketing.
+
+## Interactive tools
+- [The Second Half Retirement Planner: Social Security 62 vs. 65 vs. 67](https://thesecondhalfguide.com/retirement-strategy-model): Privacy-first browser calculator comparing claiming ages, retirement savings, spending gaps, work earnings-test effects, couple combinations and Medicare timing.
