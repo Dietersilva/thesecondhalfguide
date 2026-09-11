@@ -264,7 +264,7 @@ ARTICLES3['enrollment-scams'] = {
     'dek': 'Open enrollment is the one season when unsolicited Medicare contact feels normal. That’s '
            'exactly what makes it the most profitable eight weeks of the fraud calendar.',
     'meta': '5 minute read &middot; Reflects current CMS marketing rules',
-    'checked': CHECKED,
+    'checked': '11 September 2026',
     'reader': True,
     'body': """      <p>Between mid-October and early December, the mail gets heavier and the phone starts ringing.
       Some of it is legitimate marketing from real insurers. Some of it is licensed brokers who genuinely
@@ -316,6 +316,11 @@ ARTICLES3['enrollment-scams'] = {
         terms.</li>
         <li><strong>Urgency about the 7 December deadline.</strong> The deadline is real. The pressure to
         decide during the call is not.</li>
+        <li><strong>A text message about a &ldquo;new card&rdquo; or a &ldquo;flex card.&rdquo;</strong>
+        The same pitch now arrives by text as often as by phone &mdash; commonly from the short code
+        <strong>42474</strong>, offering a new Medicare card, a benefits update, or cash back on a
+        &ldquo;flex card.&rdquo; Medicare does not text. There is no flex card program and no cash-back
+        benefit. Don&rsquo;t tap the link; don&rsquo;t reply.</li>
       </ul>
 
 """ + AD_INLINE + """
@@ -347,6 +352,9 @@ ARTICLES3['enrollment-scams'] = {
         'at <em>smpresource.org</em>. Report even if nothing was lost &mdash; that’s how patterns get found.',
         'Decide nothing on a call you didn’t initiate. You have until <strong>7 December</strong>, and it '
         'is always long enough to check.',
+        'The same rule applies to <strong>text messages</strong>: don&rsquo;t tap a link or call a number '
+        'from an unsolicited text about your Medicare card or benefits, whatever short code it comes '
+        'from.',
     ]) + """
       <p>The reason this season works so well for fraud isn't that people become careless in October.
       It's that a genuine deadline, real mail from real insurers and a legitimately confusing decision all
@@ -362,6 +370,7 @@ ARTICLES3['enrollment-scams'] = {
          'https://www.cms.gov/medicare/health-drug-plans/managed-care-marketing'),
         ('Senior Medicare Patrol', 'https://www.smpresource.org/'),
         ('SHIP &mdash; Free local Medicare counselling', 'https://www.shiphelp.org/'),
+        ('AARP &mdash; Medicare flex card scams', 'https://www.aarp.org/money/scams-fraud/medicare-flex-card/'),
     ],
     'next': {'slug': 'five-minute-rule',
              'title': 'The five-minute rule',
