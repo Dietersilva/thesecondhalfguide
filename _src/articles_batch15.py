@@ -20,7 +20,7 @@ ARTICLES15['ma-plan-exits-2027'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'More Medicare Advantage plans are disappearing for 2027',
     'dek': 'Several major insurers are pulling Medicare Advantage plans out of markets for 2027, '
-           'well over a million members combined. If yours is one of them, the letter saying so is '
+           'hundreds of thousands of members combined. If yours is one of them, the letter saying so is '
            'arriving now &mdash; and it starts a clock most people don&rsquo;t know about.',
     'meta': '6 minute read &middot; Verified against CMS rate data and multiple insurer announcements',
     'checked': CHECKED15,
@@ -29,24 +29,27 @@ ARTICLES15['ma-plan-exits-2027'] = {
       of people, the letter says something bigger: the plan itself won&rsquo;t exist in 2027.</p>
 
       <p>Several of the largest Medicare Advantage insurers have confirmed 2027 market exits, and the
-      combined number of affected members is well into seven figures.</p>
+      combined number of affected members runs into the hundreds of thousands.</p>
 
 """ + facts('Who is pulling back, and by how much', [
         ('Humana', 'Confirmed exits affecting about <strong>600,000</strong> members nationally for 2027 '
                    '&mdash; the majority in plans rated 3.5 stars or lower.'),
         ('UnitedHealthcare', 'A preliminary 2027 list covering roughly <strong>34 counties across 12 '
                              'states</strong>, affecting more than 20,000 members.'),
-        ('Molina Healthcare', 'Exiting its Medicare Advantage Part D product entirely for 2027, to focus '
+        ('Molina Healthcare', 'Exiting its Medicare Advantage Part D product entirely for 2027 &mdash; '
+                              'about <strong>80,000</strong> MAPD members by its own count &mdash; to focus '
                               'exclusively on its dual-eligible line.'),
-        ('September 30', 'The deadline for your plan to notify you in writing, by law, if it is leaving '
-                         'your area for 2027 &mdash; the same deadline covered in last week&rsquo;s ANOC '
-                         'piece.'),
+        ('October 2', 'The federal deadline for your plan to notify you in writing if it is leaving your '
+                      'area entirely for 2027. That&rsquo;s a separate, later deadline than the September '
+                      '30 ANOC mailing covered in last week&rsquo;s piece, which covers routine plan '
+                      'changes, not full terminations.'),
     ]) + """
-      <p>These three are the confirmed, named exits as of this writing. Other insurers have signaled
-      smaller pullbacks in specific counties, and the full national picture won&rsquo;t be final until
-      plans file their complete 2027 bids. The reliable way to find out whether your own plan is affected
-      isn&rsquo;t a headline number &mdash; it&rsquo;s the letter arriving from your plan by September 30,
-      or a direct check at the Medicare Plan Finder once 2027 plans are listed.</p>
+      <p>These three are the confirmed, named exits as of this writing &mdash; a combined figure in the
+      hundreds of thousands, not the millions. Other insurers have signaled smaller pullbacks in specific
+      counties, and the full national picture won&rsquo;t be final until plans file their complete 2027
+      bids. The reliable way to find out whether your own plan is affected isn&rsquo;t a headline number
+      &mdash; it&rsquo;s the letter arriving from your plan by October 2, or a direct check at the Medicare
+      Plan Finder once 2027 plans are listed.</p>
 
       <p>This also isn&rsquo;t a new pattern starting this year. For the 2026 plan year, roughly 2.9
       million Medicare Advantage enrollees in standard HMO and PPO plans faced forced disenrollment
@@ -139,6 +142,9 @@ ARTICLES15['ma-plan-exits-2027'] = {
          'https://www.beckerspayer.com/payer/medicare-advantage/humana-to-exit-medicare-advantage-plans-covering-600000-members-in-2027/'),
         ('Becker&rsquo;s Hospital Review &mdash; 4 insurers exiting Medicare Advantage markets',
          'https://www.beckershospitalreview.com/finance/4-insurers-exiting-medicare-advantage-markets/'),
+        ('Becker&rsquo;s Payer Issues &mdash; Molina to drop Medicare Advantage prescription drug plans '
+         'in 2027',
+         'https://www.beckerspayer.com/payer/medicare-advantage/molina-to-drop-medicare-advantage-prescription-drug-plans-in-2027/'),
         ('CMS &mdash; 2027 Medicare Advantage and Part D Rate Announcement (fact sheet)',
          'https://www.cms.gov/newsroom/fact-sheets/2027-medicare-advantage-part-d-rate-announcement'),
         ('National Council on Aging &mdash; What are the Medicare Advantage Special Enrollment Periods?',
@@ -182,13 +188,19 @@ ARTICLES15['drug-negotiation-2027'] = {
         ('15 drugs', 'Selected for the second round of Medicare drug price negotiation, agreements '
                     'finalized with manufacturers by November 2025.'),
         ('January 1, 2027', 'When the negotiated prices actually take effect.'),
-        ('Ozempic, Wegovy, Rybelsus', 'The GLP-1 diabetes and weight-loss drugs in this round &mdash; '
-                                      'Medicare&rsquo;s negotiated price drops from a $959 list price to '
-                                      '<strong>$274</strong> for a 30-day supply, about a 71% cut.'),
-        ('38% &ndash; 85%', 'The discount range across all 15 drugs versus list price; average discount '
-                            'about 52%.'),
+        ('Ozempic, Wegovy, Rybelsus', 'The GLP-1 diabetes and weight-loss drugs in this round, about a 71% '
+                                      'cut for each &mdash; Medicare&rsquo;s negotiated price is '
+                                      '<strong>$276.78</strong> for a 30-day supply of Ozempic or Rybelsus, '
+                                      'and <strong>$385.63</strong> for a Wegovy 4-pen package (the two are '
+                                      'priced separately, not one shared figure).'),
+        ('38% &ndash; 85%', 'The discount range across all 15 drugs versus list price. CMS estimates the '
+                            'negotiated prices cut Medicare&rsquo;s own spending on these drugs by '
+                            '<strong>44%</strong> (about $12 billion a year against 2024 spending levels), '
+                            'or 36% ($8.5 billion) once existing manufacturer rebates are factored in.'),
         ('~5.3 million', 'Medicare enrollees who used one of these 15 drugs in the year CMS used to '
-                         'calculate the savings.'),
+                         'calculate the savings; CMS projects about <strong>$685 million</strong> of the '
+                         'total savings reaching beneficiaries directly as lower out-of-pocket costs in '
+                         '2027.'),
     ]) + """
       <h2>What &ldquo;negotiated price&rdquo; actually means for you</h2>
 
@@ -226,11 +238,14 @@ ARTICLES15['drug-negotiation-2027'] = {
       reduction on a more widely prescribed class of medication than anything in the first round.</p>
 
       <p>Round one is also the closest thing to evidence for how round two will actually play out, since
-      it has now run for most of a year. CMS has estimated it produced roughly $6 billion in program
-      savings and $1.5 billion in out-of-pocket savings for beneficiaries with Part D coverage in 2026.
-      That doesn&rsquo;t mean every individual saw a lower bill &mdash; it&rsquo;s an aggregate figure,
-      shaped by formulary placement and where each person was in their coverage year &mdash; but it&rsquo;s
-      a real result from the same mechanism about to apply to a second, larger group of drugs.</p>
+      it has now run for most of a year. CMS estimated that if round one&rsquo;s negotiated prices had
+      applied to 2023 spending, the program would have saved roughly $6 billion, with beneficiaries saving
+      about $1.5 billion out of pocket in 2026. That&rsquo;s a projection built on a prior year&rsquo;s
+      spending, not a measured tally of 2026&rsquo;s actual bills &mdash; and it&rsquo;s an aggregate figure,
+      shaped by formulary placement and where each person was in their coverage year. Round two&rsquo;s own
+      $12 billion estimate above works the same way: a projection against 2024 spending, not a guarantee of
+      what 2027 actually delivers. Still, round one&rsquo;s savings are the closest thing to a track record
+      this program has, and the mechanism producing round two&rsquo;s estimate is the same one.</p>
 
       <h2>What to actually check this fall</h2>
 
@@ -263,6 +278,11 @@ ARTICLES15['drug-negotiation-2027'] = {
          'https://www.managedhealthcareexecutive.com/view/cms-negotiates-a-70-discount-for-ozempic-and-wegovy'),
         ('Medicare Rights Center &mdash; Negotiated prices take effect for ten drugs in 2026',
          'https://www.medicarerights.org/medicare-watch/2025/10/09/negotiated-prices-take-effect-for-ten-drugs-in-2026'),
+        ('KFF &mdash; Key Facts About Medicare Drug Price Negotiation',
+         'https://www.kff.org/medicare/key-facts-about-medicare-drug-price-negotiation/'),
+        ('24/7 Wall St. &mdash; Medicare Negotiated Ozempic Down to $274 for 2027. Her Part D Plan Still '
+         'Sets the Copay.',
+         'https://247wallst.com/personal-finance/2026/08/21/medicare-negotiated-ozempic-down-to-274-for-2027-her-part-d-plan-still-sets-the-copay/'),
     ],
     'next': {'slug': 'drug-cap',
              'title': 'The $2,100 drug cap: real protection, narrower than it sounds',
