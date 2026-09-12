@@ -20,6 +20,7 @@ STATIC_TOOLS = (
     'retirement-planner-launch.html',
 )
 KEEP = {'.git', '.github', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion'}
+TOPIC_SHELL_PAGES = ('medicare.html','money.html','paperwork.html','fraud.html','aging.html','travel.html','family.html','search.html')
 
 RETIREMENT_ARTICLE_CTAS = {
     'social-security-62.html': ('Run your own 62 vs. 65 vs. 67 numbers', 'Compare the monthly benefit, break-even age, retirement savings and spending gap using your own assumptions.'),
@@ -65,6 +66,17 @@ def install_static_tools():
     if "script-src 'self'" not in cfg:
         cfg = cfg.replace("script-src ", "script-src 'self' ", 1)
     write(vercel, cfg)
+
+
+def normalize_topic_shells():
+    """Topic/search pages need the hub shell plus their topic-specific rules."""
+    for filename in TOPIC_SHELL_PAGES:
+        path = os.path.join(SITE, filename)
+        if not os.path.exists(path):
+            continue
+        html = read(path)
+        html = html.replace('<body class="topic">', '<body class="hub topic">', 1)
+        write(path, html)
 
 
 def inject_homepage_promotion():
@@ -145,6 +157,7 @@ def inject_discovery():
 
 
 def install_promotions():
+    normalize_topic_shells()
     inject_homepage_promotion()
     inject_article_ctas()
     inject_persistent_planner_link()
