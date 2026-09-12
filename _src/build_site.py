@@ -106,7 +106,7 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan must mail its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/cola-2027-estimate': 'Trackers estimate the 2027 Social Security COLA at 3.4%-3.6%, but nothing is official until SSA announces it in mid-October. What decides it.',
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
-    '/ma-plan-exits-2027': 'Humana, UnitedHealthcare and Molina are exiting Medicare Advantage markets for 2027, over a million members combined. What happens if yours is one.',
+    '/ma-plan-exits-2027': 'Humana, UnitedHealthcare and Molina are exiting Medicare Advantage markets for 2027, hundreds of thousands of members combined. What happens if yours is one.',
     '/drug-negotiation-2027': 'CMS finalized new Medicare drug prices months ago, including a 71% cut on Ozempic and Wegovy. Effective January 1 -- what that means, and does not, for you.',
 }
 
