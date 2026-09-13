@@ -13,11 +13,6 @@ function updatePathCards(){
   });
 }
 function schedule(){requestAnimationFrame(updatePathCards);}
-function init(){
-  schedule();
-  document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e=>{e.addEventListener('input',schedule);e.addEventListener('change',schedule);});
-  const body=document.getElementById('strategy-body');
-  if(body)new MutationObserver(schedule).observe(body,{childList:true,subtree:true,characterData:true});
-}
+function init(){schedule();document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e=>{e.addEventListener('input',schedule);e.addEventListener('change',schedule);});const body=document.getElementById('strategy-body');if(body)new MutationObserver(schedule).observe(body,{childList:true,subtree:true,characterData:true});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
