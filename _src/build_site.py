@@ -108,6 +108,9 @@ DESCRIPTIONS = {
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
     '/ma-plan-exits-2027': 'Humana, UnitedHealthcare and Molina are exiting Medicare Advantage markets for 2027, hundreds of thousands of members combined. What happens if yours is one.',
     '/drug-negotiation-2027': 'CMS finalized new Medicare drug prices months ago, including a 71% cut on Ozempic and Wegovy. Effective January 1 -- what that means, and does not, for you.',
+    '/parks-fee-free-days': 'The 2026 fee-free days now exclude nonresidents, and two prior holidays dropped off the list. What it means if you already have the Senior Pass.',
+    '/senior-travel-discounts': 'Amtrak still publishes a clear 10% senior discount. The major airlines do not -- what still exists, carrier by carrier, and how to actually check.',
+    '/portugal-d7-visa': 'Portugal ties its D7 retirement visa income floor to the minimum wage, which rose again for 2026. What changed, and why renewals get checked again.',
     '/grandparent-529-fafsa': 'A federal rule change removed the FAFSA penalty on grandparent-paid 529 distributions -- but some private colleges use a form that still asks.',
 }
 
@@ -301,6 +304,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/parks-fee-free-days', '/senior-travel-discounts', '/portugal-d7-visa',
     '/grandparent-529-fafsa',
     '/ma-plan-exits-2027', '/drug-negotiation-2027',
     '/anoc-letter', '/cola-2027-estimate', '/qr-parking-scam',
