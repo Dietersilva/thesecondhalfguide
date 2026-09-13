@@ -25,6 +25,14 @@ function preservePreviewLinks(){
  if(!token)return;
  document.querySelectorAll('a[href^="/"]').forEach(a=>{const u=new URL(a.getAttribute('href'),location.origin);u.searchParams.set('_vercel_share',token);a.href=u.pathname+u.search+u.hash;});
 }
-function init(){setupModes();preservePreviewLinks();}
+function loadAuditUi(){
+  if(document.querySelector('script[data-rsm-audit]'))return;
+  const s=document.createElement('script');
+  s.src='/retirement-strategy-model-audit-ui.js';
+  s.defer=true;
+  s.dataset.rsmAudit='1';
+  document.head.appendChild(s);
+}
+function init(){setupModes();preservePreviewLinks();loadAuditUi();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
