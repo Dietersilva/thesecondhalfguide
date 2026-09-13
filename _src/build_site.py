@@ -108,6 +108,7 @@ DESCRIPTIONS = {
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
     '/ma-plan-exits-2027': 'Humana, UnitedHealthcare and Molina are exiting Medicare Advantage markets for 2027, hundreds of thousands of members combined. What happens if yours is one.',
     '/drug-negotiation-2027': 'CMS finalized new Medicare drug prices months ago, including a 71% cut on Ozempic and Wegovy. Effective January 1 -- what that means, and does not, for you.',
+    '/grandparent-529-fafsa': 'A federal rule change removed the FAFSA penalty on grandparent-paid 529 distributions -- but about 200 private colleges use a form that still asks.',
 }
 
 PAGE_FILES = {
@@ -300,6 +301,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/grandparent-529-fafsa',
     '/ma-plan-exits-2027', '/drug-negotiation-2027',
     '/anoc-letter', '/cola-2027-estimate', '/qr-parking-scam',
     '/pickleball-injuries', '/skip-gen-travel',
