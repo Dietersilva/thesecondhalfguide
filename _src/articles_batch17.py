@@ -44,17 +44,18 @@ ARTICLES17['parks-fee-free-days'] = {
     ]) + """
       <h2>Why the fee-free days are irrelevant if you already have one</h2>
 
-      <p>The Senior Pass gets you into every fee area of every national park, every day of the year, for
-      as long as you live. A day when entrance is temporarily free for everyone else doesn&rsquo;t add
-      anything for a pass holder &mdash; you were already getting in free the day before and the day
-      after. The list matters to people who don&rsquo;t have any pass and are deciding when to make a
-      one-time visit. It has nothing to offer someone who solved that problem permanently for $80.</p>
+      <p>The Senior Pass covers entrance fees and standard amenity fees at participating federal
+      recreation sites, every day of the year, for as long as you live. A day when entrance is temporarily
+      free for everyone else doesn&rsquo;t add anything for a pass holder &mdash; you were already getting
+      in free the day before and the day after. The list matters to people who don&rsquo;t have any pass
+      and are deciding when to make a one-time visit. It has nothing to offer someone who solved that
+      problem permanently for $80.</p>
 
-      <p>If anything, a fee-free day is often the wrong day to be a pass holder at a popular park. Waiving
-      the fee doesn&rsquo;t change staffing, parking, or trail capacity &mdash; it just removes the one
-      thing that was mildly discouraging a fraction of visitors. Fee-free days routinely rank among the
-      most crowded of the year at high-traffic parks, which is exactly the crowd a pass holder has no
-      reason to fight through.</p>
+      <p>If anything, a fee-free day can be a less convenient day to visit as a pass holder at a popular
+      park. Waiving the fee doesn&rsquo;t change staffing, parking, or trail capacity &mdash; it just
+      removes the one thing that was mildly discouraging a fraction of visitors, which can mean more
+      competition for parking and timed-entry slots on those specific dates. A pass holder who can visit
+      any day has no particular reason to pick one of the days everyone else picked too.</p>
 
       <blockquote class="pull">
         <p>A fee-free day saves you money you weren&rsquo;t going to spend. A Senior Pass already did
@@ -80,9 +81,9 @@ ARTICLES17['parks-fee-free-days'] = {
 
       <p>Age isn&rsquo;t the only path to a free lifetime pass. The Access Pass &mdash; free, not $80
       &mdash; covers U.S. citizens and permanent residents of any age with a permanent disability,
-      documented the same way the Senior Pass documents age and residency. It carries the same benefits:
-      every fee area, every day, indefinitely. Worth knowing about directly, and worth mentioning to anyone
-      in your household who doesn&rsquo;t hit 62 but would otherwise qualify.</p>
+      documented the same way the Senior Pass documents age and residency. It carries the same coverage:
+      entrance and standard amenity fees, every day, indefinitely. Worth knowing about directly, and worth
+      mentioning to anyone in your household who doesn&rsquo;t hit 62 but would otherwise qualify.</p>
 
       <h2>The other 2026 change worth knowing, unrelated to fees</h2>
 
@@ -99,9 +100,10 @@ ARTICLES17['parks-fee-free-days'] = {
         'If you&rsquo;re 62 or older and don&rsquo;t have a pass yet, compare the $80 <strong>one-time '
         'lifetime</strong> Senior Pass against the $80 <strong>one-year</strong> general Annual Pass before '
         'assuming the fee-free calendar is worth planning around.',
-        'If you&rsquo;re bringing an adult child or grandchild who isn&rsquo;t a U.S. citizen or resident, '
-        'check whether your destination is one of the <strong>11 nonresident-fee parks</strong> &mdash; '
-        'the Senior Pass covers the pass holder, not automatically every companion in the vehicle.',
+        'At per-vehicle entrance fee parks, a Senior Pass covers everyone riding in the vehicle with you '
+        '&mdash; including a nonresident companion, at the 11 parks that would otherwise charge the '
+        '$100 surcharge. At per-person fee sites, it covers you plus up to <strong>three additional '
+        'adults</strong>. Beyond that, additional visitors pay their own way.',
         'A fee-free day is not a discount day for anyone with a pass already &mdash; treat the calendar as '
         'a crowd forecast, not a savings opportunity, once you&rsquo;re past that point.',
         'Confirm any specific park&rsquo;s hours and reservation requirements directly &mdash; a waived '
@@ -154,18 +156,25 @@ ARTICLES17['senior-travel-discounts'] = {
       called a &ldquo;senior discount&rdquo; in casual conversation. Only one of them is something you can
       count on before you actually run the numbers.</p>
 
-""" + facts('What&rsquo;s actually still offered, by carrier', [
-        ('Amtrak', '<strong>10% off</strong> most fares for travelers 65 and older, applied automatically '
-                   'once you select &ldquo;Senior&rdquo; as a traveler type when booking. Doesn&rsquo;t '
-                   'apply to sleeping-car charges. The one clearly published rule on this list.'),
-        ('United', 'Discounted fares on some routes for 65+, selected via a &ldquo;Senior (65+)&rdquo; '
-                   'passenger type at booking. Availability depends on the specific route and travel dates '
-                   '&mdash; it is not guaranteed on every search.'),
-        ('Delta', 'Reported senior fares on select routes, but not shown on delta.com &mdash; available '
-                  'only by calling reservations directly and asking.'),
-        ('American', 'Reported discounts concentrated on routes to Latin America, found through the '
-                     'advanced search rather than a labeled &ldquo;senior&rdquo; option on most domestic '
-                     'routes.'),
+""" + facts('The one published rule, versus what gets reported', [
+        ('Amtrak &mdash; published', '<strong>10% off</strong> most fares for travelers 65 and older, '
+                                     'applied automatically once you select &ldquo;Senior&rdquo; as a '
+                                     'traveler type when booking. Doesn&rsquo;t apply to sleeping-car '
+                                     'charges. On the Downeaster route specifically, Amtrak publishes a '
+                                     'separate, larger <strong>50% senior discount</strong> on coach fares.'),
+        ('United, Delta, American &mdash; reported, not published', 'Travel-advice sites consistently '
+                                                                     'report discounted fares for '
+                                                                     'travelers 65+ at each of these '
+                                                                     'carriers, sometimes through a '
+                                                                     '&ldquo;Senior&rdquo; passenger-type '
+                                                                     'option at booking, sometimes only by '
+                                                                     'phone. None of the three publishes a '
+                                                                     'standing, carrier-wide senior-fare '
+                                                                     'rule the way Amtrak does &mdash; '
+                                                                     'availability and terms are not '
+                                                                     'independently verifiable from the '
+                                                                     'carriers&rsquo; own published fare '
+                                                                     'rules.'),
         ('Southwest', 'No senior-specific fare category. Southwest&rsquo;s position is that its everyday '
                       'fares serve the same purpose for every age group.'),
     ]) + """
@@ -173,19 +182,21 @@ ARTICLES17['senior-travel-discounts'] = {
 
       <p>Amtrak treats its senior discount as a standard, published fare rule &mdash; it&rsquo;s on the
       site, it applies automatically, and the percentage doesn&rsquo;t change from one booking to the
-      next. The major airlines don&rsquo;t work that way. What gets called a &ldquo;senior fare&rdquo; at
-      an airline today is closer to a leftover fare-filing category: a specific, limited inventory bucket
-      that a carrier may or may not load on a given route, which is why the same airline can show a real
-      discount on one search and nothing on the next.</p>
+      next. The major airlines don&rsquo;t work that way. None of United, Delta, or American publishes a
+      standing senior-fare rule the way Amtrak does; what gets reported instead is a pattern &mdash; a
+      discount that shows up on some searches and not others &mdash; from independent travel-advice
+      sources, not from a fare rules page any of the three carriers puts out themselves.</p>
 
-      <p>That inconsistency is the actual story, more than any specific percentage. A senior fare that
-      exists on one route in one month is not a standing policy you can plan a trip around six months out
-      &mdash; it has to be checked at the time of booking, for that specific flight, the way you&rsquo;d
-      check any other fare.</p>
+      <p>That inconsistency is the actual story, more than any specific percentage. A discount reported on
+      one route in one month is not a standing policy you can plan a trip around six months out &mdash; it
+      has to be checked at the time of booking, for that specific flight, the way you&rsquo;d check any
+      other fare, and it can&rsquo;t be confirmed against a published carrier rule the way Amtrak&rsquo;s
+      can.</p>
 
       <blockquote class="pull">
-        <p>Amtrak&rsquo;s senior discount is a rule. What the airlines call a senior fare is closer to
-        leftover inventory &mdash; real when it&rsquo;s there, but not something to assume in advance.</p>
+        <p>Amtrak&rsquo;s senior discount is a published rule. What gets called a senior fare at the major
+        airlines is a reported pattern &mdash; real often enough to be worth checking, not confirmed
+        often enough to plan around.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -206,17 +217,18 @@ ARTICLES17['senior-travel-discounts'] = {
       <h2>The discount that isn&rsquo;t actually about your age</h2>
 
       <p>A lot of what gets marketed as a &ldquo;senior travel discount&rdquo; is really an AARP membership
-      discount, and the two aren&rsquo;t the same thing. AARP membership costs $12 a year, anyone 18 or
-      older can join, and full member benefits are available well before 65 &mdash; the organization
-      markets itself to the 50-plus range, not a strict age cutoff enforced at checkout. Through AARP&rsquo;s
-      travel program, members have reported hotel discounts up to 20% at chains including Wyndham, Choice
-      and Best Western, and car-rental savings up to 35% through Avis, Budget and Payless.</p>
+      discount, and the two aren&rsquo;t the same thing. AARP membership is a low-cost annual fee (check
+      AARP&rsquo;s current price directly, since membership pricing is promotional and changes), anyone 18
+      or older can join, and full member benefits are available well before 65 &mdash; the organization
+      markets itself to the 50-plus range, not a strict age cutoff enforced at checkout. AARP&rsquo;s own
+      site advertises hotel discounts up to 20% at chains including Wyndham, Choice and Best Western, and
+      car-rental savings up to 35% through Avis, Budget and Payless.</p>
 
-      <p>None of that requires proving your age the way Amtrak or an airline&rsquo;s senior fare does
-      &mdash; it requires an active membership, which is a $12 purchase rather than a birth year. That&rsquo;s
-      a meaningfully different mechanism from the age-verified discounts above, and worth knowing before
-      you assume a &ldquo;senior rate&rdquo; at a hotel or car-rental counter is checking your ID rather
-      than your membership card.</p>
+      <p>The eligibility mechanism is different from the age-verified discounts above: an AARP-partner rate
+      is checked against membership, not a birth year, which is worth knowing before you assume a &ldquo;senior
+      rate&rdquo; at a hotel or car-rental counter is checking ID rather than a membership number. (Some
+      partner offers may carry their own separate age or other conditions on top of membership &mdash; the
+      point is the mechanism is different, not that no conditions ever apply.)</p>
 
       <p>The same membership also covers cruise bookings and vacation packages through AARP&rsquo;s travel
       program, which matters if a cruise is the actual trip you&rsquo;re planning rather than a flight or a
@@ -233,14 +245,16 @@ ARTICLES17['senior-travel-discounts'] = {
         'For a carrier with no visible senior option online, <strong>call reservations directly</strong> '
         'and ask before concluding none exists.',
         'Don&rsquo;t book a senior fare sight unseen based on what a carrier offered on a different route '
-        'or in a different season &mdash; availability is filed per-route, not company-wide.',
+        'or in a different season &mdash; reported availability varies enough by route and date that one '
+        'good result elsewhere doesn&rsquo;t confirm your specific search.',
         'For train travel, confirm Amtrak&rsquo;s <strong>10% senior discount</strong> is actually applied '
-        'at checkout, and remember it excludes sleeping-car charges specifically.',
-        'Carry ID that proves your age at booking and at the gate or platform &mdash; every one of these '
-        'discounts requires it.',
+        'at checkout (or the 50% Downeaster rate, if that&rsquo;s your route), and remember it excludes '
+        'sleeping-car charges specifically.',
+        'Carry ID that proves your age &mdash; Amtrak requires it, and any age-verified airline fare will '
+        'as well; an AARP-partner rate requires proof of membership instead.',
         'Before assuming a hotel or car-rental &ldquo;senior rate&rdquo; needs an age check, confirm '
-        'whether it&rsquo;s actually an <strong>AARP membership rate</strong> instead &mdash; the '
-        'requirement then is a $12 membership, not a birth year.',
+        'whether it&rsquo;s actually an <strong>AARP membership rate</strong> instead &mdash; check AARP&rsquo;s '
+        'current membership price directly, since it&rsquo;s promotional and subject to change.',
     ]) + """
       <p>None of this is a reason to expect less. It&rsquo;s a reason to check every time, on the specific
       trip you&rsquo;re actually booking, rather than trusting whatever the last trip taught you.</p>
@@ -248,8 +262,8 @@ ARTICLES17['senior-travel-discounts'] = {
     'sources': [
         ('Amtrak &mdash; Senior Discount',
          'https://www.amtrak.com/seniors-discount'),
-        ('United Airlines &mdash; fare search (Senior 65+ passenger type)',
-         'https://www.united.com/'),
+        ('Amtrak Downeaster &mdash; Senior Discount',
+         'https://amtrakdowneaster.com/deals-discounts/deals/senior-discount/'),
         ('Chapter &mdash; Amtrak Fares for Seniors: Discounted Fares for Senior Riders',
          'https://askchapter.org/magazine/budgeting-financial-wellness-tips/saving-money/discount-amtrak-fares-for-seniors'),
         ('AARP &mdash; Travel: AARP Membership Benefits and Discounts',
@@ -283,8 +297,9 @@ ARTICLES17['portugal-d7-visa'] = {
       moves it and when.</p>
 
 """ + facts('The D7 income requirement, 2025 vs. 2026', [
-        ('What it&rsquo;s tied to', 'Portugal&rsquo;s national minimum wage, by law &mdash; the D7 income '
-                                    'floor rises automatically every January when the minimum wage does.'),
+        ('What it&rsquo;s tied to', 'Portugal&rsquo;s national minimum wage &mdash; the D7&rsquo;s '
+                                    'income floor is calculated from it, and rises each time the minimum '
+                                    'wage does.'),
         ('2025 minimum', '&euro;870 per month for a single applicant (about &euro;10,440 per year).'),
         ('2026 minimum', '&euro;920 per month for a single applicant (about &euro;11,040 per year), '
                          'effective January 1, 2026 under Decree-Law No. 139/2025.'),
@@ -297,8 +312,8 @@ ARTICLES17['portugal-d7-visa'] = {
       Portugal&rsquo;s immigration authority (AIMA) assesses the current threshold at the time of your
       renewal appointment, not the one in effect when your visa was originally issued. A retiree who
       qualified comfortably at &euro;870 a month in 2025 needs to show &euro;920 a month at their next
-      renewal in 2026 &mdash; even though nothing about their own finances changed. It's the law that
-      moved, on a fixed annual schedule, not their situation.</p>
+      renewal in 2026 &mdash; even though nothing about their own finances changed. It's the benchmark
+      that moved, not their situation.</p>
 
       <p>This is a modest year-over-year jump in absolute terms &mdash; &euro;50 a month, roughly &euro;600
       a year &mdash; but it's the kind of detail that's easy to miss if you did the math once during your
@@ -316,17 +331,22 @@ ARTICLES17['portugal-d7-visa'] = {
 
       <p>A lot of what circulates online about retiring to Portugal still references the Non-Habitual
       Resident regime &mdash; a tax break that gave qualifying new residents years of favorable treatment
-      on foreign income, pensions included. It closed to new applicants at the end of 2023. Anyone who
-      registered under NHR by December 31, 2023 keeps it for their existing term; anyone applying for a D7
-      visa now does not qualify for it, regardless of what an older guide or blog post says.</p>
+      on foreign income, pensions included. It closed to most new applicants at the end of 2023, with a
+      narrow, time-limited transition for people who could show they were already committed to the move by
+      specific 2023 milestones &mdash; a signed employment contract, a property purchase already under
+      contract, a child already enrolled in a Portuguese school, or a residence application already filed.
+      Someone starting the D7 process fresh today, with none of those in place beforehand, does not qualify
+      for NHR regardless of what an older guide or blog post says.</p>
 
       <p>What replaced it, called IFICI, is a narrower program aimed at people working in scientific
       research and innovation roles &mdash; not the general foreign-income and pension treatment NHR
-      offered retirees. A retiree moving to Portugal on a D7 visa today is applying under Portugal&rsquo;s
-      ordinary tax rules, not the more favorable regime that made the destination especially popular with
-      American retirees in years past. That&rsquo;s a real change to the underlying financial case for the
-      move, separate from the visa&rsquo;s income threshold, and it&rsquo;s worth confirming directly with
-      a tax professional rather than assuming a benefit that ended almost two years ago still applies.</p>
+      offered retirees. A retiree moving to Portugal on a D7 visa today, without one of those specific
+      transitional qualifications, is applying under Portugal&rsquo;s ordinary tax rules, not the more
+      favorable regime that made the destination especially popular with American retirees in years past.
+      That&rsquo;s a real change to the underlying financial case for the move, separate from the visa&rsquo;s
+      income threshold, and it&rsquo;s worth confirming directly with a tax professional &mdash; including
+      whether any transitional exception could apply to your specific situation &mdash; rather than
+      assuming either way.</p>
 
       <h2>What the D7 actually requires, beyond the income number</h2>
 
