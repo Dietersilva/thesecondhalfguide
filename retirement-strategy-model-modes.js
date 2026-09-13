@@ -17,7 +17,8 @@ function syncAuditedSecondary(){
   const stress=$('stress-body');if(stress)stress.innerHTML='<tr><td colspan="4"><strong>Stress-test figures temporarily withheld.</strong><br><small>The main 62/65/67 portfolio results above are audited. Alternate-return figures will return after that secondary engine uses the same couple timing rules.</small></td></tr>';
   const chart=$('crossover-chart');if(chart&&!chart.dataset.audited){chart.dataset.audited='1';chart.replaceChildren();const t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x','410');t.setAttribute('y','175');t.setAttribute('text-anchor','middle');t.setAttribute('font-size','18');t.setAttribute('fill','currentColor');t.textContent='Use the audited break-even ages above.';chart.appendChild(t);}
 }
+function loadHouseholdFix(){if(document.querySelector('script[data-household-fix]'))return;const s=document.createElement('script');s.src='/retirement-strategy-model-household.js';s.defer=true;s.dataset.householdFix='1';document.head.appendChild(s);}
 function scheduleAudit(){setTimeout(()=>requestAnimationFrame(syncAuditedSecondary),360);}
-function init(){setupModes();preservePreviewLinks();scheduleAudit();const body=$('strategy-body');if(body)new MutationObserver(scheduleAudit).observe(body,{childList:true,subtree:true});document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e=>{e.addEventListener('input',scheduleAudit);e.addEventListener('change',scheduleAudit);});}
+function init(){setupModes();preservePreviewLinks();loadHouseholdFix();scheduleAudit();const body=$('strategy-body');if(body)new MutationObserver(scheduleAudit).observe(body,{childList:true,subtree:true});document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e=>{e.addEventListener('input',scheduleAudit);e.addEventListener('change',scheduleAudit);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
