@@ -15,8 +15,6 @@ STATIC_TOOLS = (
     'retirement-strategy-model-header.css',
     'retirement-strategy-model-launch.css',
     'retirement-strategy-model.js',
-    'retirement-strategy-model-modes.js',
-    'retirement-strategy-model-launch.js',
     'retirement-planner-launch.html',
 )
 KEEP = {'.git', '.github', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion'}
