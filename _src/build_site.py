@@ -665,6 +665,44 @@ def spell(n):
 
 CATEGORY_SLUGS = ('medicare', 'money', 'paperwork', 'fraud', 'aging', 'travel', 'family')
 
+# The closing disclaimer used to be one generic paragraph on every article,
+# which read oddly on a page like the National Parks pass where income and
+# health aren't the relevant variables. Swapped per category so the caveat
+# actually names what could change the answer for that kind of page. The
+# text this replaces is the DISCLAIMER paragraph defined in build_articles.py;
+# keep the two in sync if that wording changes.
+CATEGORY_DISCLAIMERS = {
+    'medicare': 'This is general information, not personal insurance, financial or legal advice. We '
+                'report the rules, the numbers and the deadlines as clearly as we can, but plan details, '
+                'coverage decisions and premium costs depend on your specific plan. Treat this as a good '
+                'place to find the right questions, not a substitute for your plan&rsquo;s own materials '
+                'or a licensed adviser.',
+    'money': 'This is general information, not personal financial, tax or legal advice. We report the '
+             'rules, the numbers and the deadlines as clearly as we can. Your income, filing status, '
+             'state and account types can all change how a rule applies to you, so treat this as a good '
+             'place to find the right questions, not a substitute for a tax or financial professional '
+             'looking at your actual return.',
+    'paperwork': 'This is general information, not personal legal advice. We report what the forms and '
+                 'rules say as clearly as we can, but estate, beneficiary and power-of-attorney documents '
+                 'are governed by your state&rsquo;s law and your own paperwork. Treat this as a good '
+                 'place to find the right questions, not a substitute for an attorney reviewing your '
+                 'actual documents.',
+    'fraud': 'This is general fraud-prevention information, not a substitute for reporting an active '
+             'scam. The official reporting and assistance resources linked above are the right next step '
+             'if you or someone you know may be a target.',
+    'aging': 'This is general information, not individual medical, legal or financial advice. Health, '
+             'mobility and care needs vary enough from one household to the next that a specific decision '
+             'belongs with a doctor or other professional who knows your situation, not a website.',
+    'travel': 'This is general travel information, not personal travel advice. Prices, eligibility rules '
+              'and program terms change, and can vary by provider, country or season. Verify current '
+              'terms directly with the agency, airline, park or consulate linked above before you rely '
+              'on them.',
+    'family': 'This is general information, not personal family, financial or legal advice. Every '
+              'household is different, so treat this as a good place to find the right questions, not a '
+              'substitute for a professional who knows your specific situation.',
+}
+DISCLAIMER_P_RE = re.compile(r'<p><strong>This is general information.*?</p>', re.S)
+
 
 def layout_class(path):
     if path == '/': return 'hub'
@@ -957,6 +995,17 @@ def main():
             cat_name, cat_slug = breadcrumbs[path]
             crumb = f'<a class="topic-crumb" href="/{cat_slug}">&larr; {cat_name}</a>\n      '
             body = re.sub(r'<span class="eyebrow">', crumb + '<span class="eyebrow">', body, count=1)
+            if cat_slug in CATEGORY_DISCLAIMERS:
+                # Only the lead sentence is bolded in the original; keep that
+                # convention instead of bolding the whole category paragraph.
+                lead, _, rest = CATEGORY_DISCLAIMERS[cat_slug].partition('. ')
+                replacement = f'<p><strong>{lead}.</strong> {rest}</p>'
+                # A handful of pages predate the standard article template
+                # (build_articles.py's DISCLAIMER paragraph) and have no
+                # matching text to swap -- leave those alone rather than
+                # failing the build over a page this pass doesn't touch.
+                body, n_disc = DISCLAIMER_P_RE.subn(replacement, body, count=1)
+                assert n_disc <= 1, f'{path}: found {n_disc} disclaimer paragraphs, expected 0 or 1'
 
         body, n_foot = FOOTER_RE.subn(footer_block(cls), body)
         assert n_foot == 1, f'{path}: expected one footer, found {n_foot}'

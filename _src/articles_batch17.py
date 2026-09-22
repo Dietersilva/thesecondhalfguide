@@ -120,14 +120,14 @@ ARTICLES17['parks-fee-free-days'] = {
       people it was actually written for.</p>
 """,
     'sources': [
-        ('Al Jazeera &mdash; US will charge non-residents $100 to visit its most popular national parks',
-         'https://www.aljazeera.com/news/2025/11/26/us-will-charge-non-residents-100-to-visit-its-most-popular-national-parks'),
-        ('Newsweek &mdash; National Parks update: Full list of &lsquo;patriotic fee-free days&rsquo; in 2026',
-         'https://www.newsweek.com/national-parks-update-full-list-fee-free-days-2026-11110989'),
         ('U.S. National Park Service &mdash; Entrance Passes',
          'https://www.nps.gov/planyourvisit/passes.htm'),
         ('U.S. National Park Service &mdash; Nonresident Fees',
          'https://www.nps.gov/aboutus/nonresident-fees.htm'),
+        ('Al Jazeera &mdash; US will charge non-residents $100 to visit its most popular national parks',
+         'https://www.aljazeera.com/news/2025/11/26/us-will-charge-non-residents-100-to-visit-its-most-popular-national-parks'),
+        ('Newsweek &mdash; National Parks update: Full list of &lsquo;patriotic fee-free days&rsquo; in 2026',
+         'https://www.newsweek.com/national-parks-update-full-list-fee-free-days-2026-11110989'),
     ],
     'next': {'slug': 'parks-pass',
              'title': 'Is the National Parks Senior Pass still one of America&rsquo;s best deals?',
