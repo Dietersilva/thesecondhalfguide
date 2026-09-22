@@ -153,20 +153,24 @@ ARTICLES14['cola-2027-estimate'] = {
            'hasn&rsquo;t announced one &mdash; and won&rsquo;t until mid-October, once data that doesn&rsquo;t '
            'exist yet is finished.',
     'meta': '5 minute read &middot; Verified against BLS/CRS methodology and independent COLA trackers',
-    'checked': CHECKED14,
+    'checked': '21 September 2026',
     'body': """      <p>By late summer, several independent trackers had already put a number on the 2027 Social
       Security cost-of-living adjustment &mdash; and some coverage repeated those numbers as if the decision
       had been made. It hasn&rsquo;t. The Social Security Administration has not announced a 2027 COLA, and
-      structurally cannot, until data that doesn&rsquo;t exist yet has been collected.</p>
+      structurally cannot, until data that doesn&rsquo;t exist yet has been collected. Two of the three
+      months that decide it are now known; the last one lands 14 October.</p>
 
 """ + facts('Where things actually stand', [
         ('2.8%', 'The <em>official</em>, already-locked-in 2026 COLA, announced in October 2025 and in '
                  'effect since January 2026.'),
-        ('3.4% &ndash; 3.6%', 'The range of independent 2027 <em>estimates</em> as of early September '
-                              '2026, from three separate trackers &mdash; not from Social Security.'),
-        ('1 of 3', 'How many of the three CPI-W months that decide the COLA had actually been published '
-                   'as of this writing. Only July&rsquo;s figure is out; August&rsquo;s arrives September '
-                   '11, and September&rsquo;s &mdash; the last one needed &mdash; October 14.'),
+        ('3.5% &ndash; 3.6%', 'The range of independent 2027 <em>estimates</em> as of 21 September 2026, '
+                              'from three separate trackers &mdash; not from Social Security.'),
+        ('2 of 3', 'How many of the three CPI-W months that decide the COLA have actually been published. '
+                   'July and August are both out; September &mdash; the last one needed &mdash; arrives '
+                   '14 October.'),
+        ('11 September 2026', 'When the August CPI-W landed and every tracker below last updated its '
+                              'estimate. Unless September&rsquo;s data moves sharply, this is close to '
+                              'the final range.'),
         ('14 October 2026', 'The date the Social Security Administration is expected to announce the '
                             'official 2027 COLA, after the Bureau of Labor Statistics releases September '
                             'inflation data.'),
@@ -174,16 +178,19 @@ ARTICLES14['cola-2027-estimate'] = {
     ]) + """
       <h2>Where the estimates come from</h2>
 
-      <p>Three groups have published 2027 COLA forecasts. The Senior Citizens League estimated
-      <strong>3.6%</strong> and AARP projected <strong>3.5%</strong>, both on August 12. Independent
-      analyst Mary Johnson put her estimate at 3.7% in July, then revised it down to <strong>3.4%</strong>
-      in August as fresh inflation data came in &mdash; an earlier estimate that has since moved should be
-      read as superseded, not as her current view. All three are running the same public CPI-W formula the
-      government itself will eventually use &mdash; they are not guessing randomly. But as of this writing,
-      only <strong>one of the three months</strong> that decide the COLA has actually been published:
-      July&rsquo;s. August&rsquo;s CPI-W arrives September 11, and September&rsquo;s &mdash; the month that
-      actually closes the calculation &mdash; not until October 14. Two-thirds of the real data is still
-      ahead of every estimate above.</p>
+      <p>Three groups have published 2027 COLA forecasts, and all three moved when the August CPI-W landed
+      on 11 September. The Senior Citizens League had estimated 3.6% in August; its own site now calls
+      <strong>3.5%</strong> its final prediction ahead of the official number. Independent analyst Mary
+      Johnson had dropped to 3.4% in August and revised back up to <strong>3.5%</strong>. AARP had
+      projected 3.5% in August and raised that to <strong>3.6%</strong>. Reading superseded numbers as
+      current is exactly the mistake this article exists to head off &mdash; only the figures above, dated
+      to the 11 September update, reflect where each tracker actually stands. All three are running the
+      same public CPI-W formula the government itself will eventually use &mdash; they are not guessing
+      randomly. But as of this writing, only <strong>two of the three months</strong> that decide the COLA
+      have actually been published: July&rsquo;s and August&rsquo;s. September&rsquo;s &mdash; the month
+      that actually closes the calculation &mdash; doesn&rsquo;t land until October 14. One-third of the
+      real data is still ahead of every estimate above, which is why the range has narrowed to a single
+      point of spread rather than closing entirely.</p>
 
       <blockquote class="pull">
         <p>None of these figures are Social Security&rsquo;s number. They are outside groups running the
@@ -194,13 +201,14 @@ ARTICLES14['cola-2027-estimate'] = {
       <h2>Why three trackers publish three different numbers</h2>
 
       <p>All three groups are running the same public formula on the same underlying government data, so
-      the spread between 3.4% and 3.6% isn&rsquo;t disagreement about the rule &mdash; it&rsquo;s a
-      difference in timing and rounding as each one updated its own estimate through the summer. A forecast
-      published right after July&rsquo;s CPI-W release reflects one month of real data and two months of
-      assumption. The same tracker&rsquo;s estimate a few weeks later, after August&rsquo;s release, is
-      built on two-thirds real data instead of one-third &mdash; and estimates published this way generally
-      narrow, rather than widen, as more of the actual quarter comes in. That narrowing stops entirely once
-      September&rsquo;s figure lands and the government runs the calculation itself.</p>
+      the spread between 3.5% and 3.6% isn&rsquo;t disagreement about the rule &mdash; it&rsquo;s a
+      difference in timing and rounding as each one updated its own estimate through the summer and into
+      September. A forecast published right after July&rsquo;s CPI-W release reflected one month of real
+      data and two months of assumption. The same tracker&rsquo;s estimate after August&rsquo;s release,
+      the one quoted above, is built on two-thirds real data instead of one-third &mdash; and estimates
+      published this way generally narrow, rather than widen, as more of the actual quarter comes in. That
+      narrowing stops entirely once September&rsquo;s figure lands and the government runs the calculation
+      itself.</p>
 
       <h2>The formula, briefly</h2>
 
@@ -211,13 +219,13 @@ ARTICLES14['cola-2027-estimate'] = {
       process that produced 2.8% for 2026, run again on next year&rsquo;s data.</p>
 
       <p>If the range holds, a COLA in the mid-3s would be the largest increase since 2023 &mdash; but
-      &ldquo;if it holds&rdquo; is doing real work in that sentence. August and September data haven&rsquo;t
-      been fully counted yet, and the whole point of the formula is that nobody, including the trackers
-      publishing estimates, gets to shortcut that.</p>
+      &ldquo;if it holds&rdquo; is doing real work in that sentence. September data hasn&rsquo;t been
+      counted yet, and the whole point of the formula is that nobody, including the trackers publishing
+      estimates, gets to shortcut that.</p>
 
       <p>To put the range in dollars rather than percent: on today&rsquo;s average retired-worker benefit
-      of about $2,086 a month (the July 2026 figure), a 3.4% adjustment works out to roughly
-      $71 a month, and 3.6% to roughly $75. That arithmetic is simple and it is also entirely provisional
+      of about $2,086 a month (the July 2026 figure), a 3.5% adjustment works out to roughly
+      $73 a month, and 3.6% to roughly $75. That arithmetic is simple and it is also entirely provisional
       &mdash; it applies whichever estimate turns out closest, and none of them is the number Social
       Security will actually use. A smaller benefit sees a smaller dollar increase at the same percentage,
       and a larger one sees more &mdash; the COLA is a percentage of what you already receive, not a flat
@@ -250,9 +258,9 @@ ARTICLES14['cola-2027-estimate'] = {
         'The three months that decide it &mdash; July, August, September &mdash; are the only ones that '
         'matter. Inflation news from earlier in the year, however dramatic, already happened before the '
         'clock started.',
-        'Independent trackers have been revising their 2027 estimates downward over the summer as '
-        'inflation cooled, converging toward roughly <strong>3.4%&ndash;3.6%</strong> as of early '
-        'September &mdash; a range that only closes entirely once September&rsquo;s figure is in.',
+        'All three independent trackers updated their 2027 estimates after August&rsquo;s CPI-W landed on '
+        '11 September, converging to roughly <strong>3.5%&ndash;3.6%</strong> &mdash; a range that only '
+        'closes entirely once September&rsquo;s figure is in.',
     ]) + """
       <p>The estimate season exists because people want to plan, and there is nothing wrong with knowing
       the range. The distinction worth holding onto is which number is a forecast and which one is Social
@@ -265,8 +273,8 @@ ARTICLES14['cola-2027-estimate'] = {
          'https://www.congress.gov/crs-product/94-803'),
         ('Bureau of Labor Statistics &mdash; The use of the CPI in Social Security COLAs',
          'https://www.bls.gov/opub/btn/archive/the-use-of-the-cpi-in-social-security-cost-of-living-adjustments-colas.pdf'),
-        ('CNBC &mdash; Social Security COLA estimates for 2027 fall as inflation moderates',
-         'https://www.cnbc.com/2026/08/12/social-security-cola-estimates-for-2027-fall-as-inflation-moderates.html'),
+        ('CNBC &mdash; Social Security COLA for 2027 may be 3.5% to 3.6%, new estimates show',
+         'https://www.cnbc.com/2026/09/11/social-security-cola-2027-estimate.html'),
         ('The Senior Citizens League &mdash; COLA Watch',
          'https://seniorsleague.org/cola-watch/'),
         ('AARP &mdash; Social Security COLA Preview: Will 2027 Benefits Go Up?',

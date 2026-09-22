@@ -584,6 +584,18 @@ PUBLISHER = {
 }
 
 
+def checked_date(body, published=None):
+    """The date a page should report as last modified: its own 'Checked on'
+    date if the body states one, else its git first-commit date. Shared by
+    the JSON-LD dateModified field and the sitemap's <lastmod>, so a real
+    content correction moves both the same way instead of just one.
+    """
+    m = CHECKED_RE.search(re.sub(r'<[^>]+>', ' ', body))
+    if m and m.group(2) in MONTHS:
+        return '%s-%02d-%02d' % (m.group(3), MONTHS[m.group(2)], int(m.group(1)))
+    return published or ''
+
+
 def json_ld(path, title, desc, canonical, headline, body, published=None):
     cls = layout_class(path)
     if cls == 'hub':
@@ -604,11 +616,7 @@ def json_ld(path, title, desc, canonical, headline, body, published=None):
                 'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical}}
         if published:
             node['datePublished'] = published
-        m = CHECKED_RE.search(re.sub(r'<[^>]+>', ' ', body))
-        if m and m.group(2) in MONTHS:
-            node['dateModified'] = '%s-%02d-%02d' % (
-                m.group(3), MONTHS[m.group(2)], int(m.group(1)))
-        node.setdefault('dateModified', published or '')
+        node['dateModified'] = checked_date(body, published)
         if not node['dateModified']:
             del node['dateModified']
     node['@context'] = 'https://schema.org'
@@ -1147,12 +1155,13 @@ def main():
                 + '\nAdd each to a category in second-half-guide.template.html.')
 
     # sitemap
+    lastmod = {p: checked_date(rendered[p][3], published.get(p)) for p in rendered}
     urls = ''.join(
         # The homepage entry used to be a bare https://host with no path at
         # all. Google tolerates it; the sitemap protocol and stricter
         # validators want a complete URL, so the root keeps its slash.
         f'  <url><loc>{ORIGIN}{p}</loc>'
-        + (f'<lastmod>{published[p]}</lastmod>' if p in published else '')
+        + (f'<lastmod>{lastmod[p]}</lastmod>' if lastmod.get(p) else '')
         + f'<changefreq>{"weekly" if p == "/" else "monthly"}</changefreq>'
         f'<priority>{"1.0" if p == "/" else "0.8"}</priority></url>\n'
         for p in sorted(rendered) if p not in NOINDEX)

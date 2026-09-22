@@ -284,7 +284,7 @@ ARTICLES17['portugal-d7-visa'] = {
            'floor moves every January, automatically, and it just moved again for 2026.',
     'meta': '5 minute read &middot; Verified against Portugal&rsquo;s 2026 minimum-wage decree and current '
             'immigration guidance',
-    'checked': CHECKED17,
+    'checked': '22 September 2026',
     'body': """      <p>The D7 visa is the route most American retirees use to live in Portugal long-term: proof of
       steady passive income &mdash; Social Security, a pension, rental income, dividends &mdash; instead of
       a job offer or an investment purchase. It has a real advantage over the &ldquo;golden visa&rdquo;
@@ -309,11 +309,14 @@ ARTICLES17['portugal-d7-visa'] = {
       <h2>Why this catches people who already applied</h2>
 
       <p>The income threshold isn&rsquo;t fixed at the level you qualified under when you first applied.
-      Portugal&rsquo;s immigration authority (AIMA) assesses the current threshold at the time of your
-      renewal appointment, not the one in effect when your visa was originally issued. A retiree who
-      qualified comfortably at &euro;870 a month in 2025 needs to show &euro;920 a month at their next
-      renewal in 2026 &mdash; even though nothing about their own finances changed. It's the benchmark
-      that moved, not their situation.</p>
+      Portugal&rsquo;s immigration authority (AIMA) is reported, consistently across immigration-law and
+      relocation guidance, to assess the current threshold at the time of your renewal appointment, not
+      the one in effect when your visa was originally issued &mdash; AIMA&rsquo;s own guidance isn&rsquo;t
+      directly reachable from this sandbox, so treat the mechanism as well-corroborated rather than
+      pulled from the regulation itself, and confirm it with an immigration attorney before relying on it.
+      Reported this way, a retiree who qualified comfortably at &euro;870 a month in 2025 would need to
+      show &euro;920 a month at their next renewal in 2026 &mdash; even though nothing about their own
+      finances changed. It's the benchmark that moved, not their situation.</p>
 
       <p>This is a modest year-over-year jump in absolute terms &mdash; &euro;50 a month, roughly &euro;600
       a year &mdash; but it's the kind of detail that's easy to miss if you did the math once during your

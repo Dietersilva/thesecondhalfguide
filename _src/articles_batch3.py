@@ -261,10 +261,10 @@ ARTICLES3['enrollment-scams'] = {
     'title': 'Why Your Phone Rings More in October &mdash; The Second Half Guide',
     'eyebrow': 'Protecting yourself',
     'h1': 'Why your phone rings more in October',
-    'dek': 'Open enrollment is the one season when unsolicited Medicare contact feels normal. That’s '
-           'exactly what makes it the most profitable eight weeks of the fraud calendar.',
+    'dek': 'Open enrollment is one season when unsolicited Medicare contact can feel unusually normal, '
+           'which gives scammers useful cover.',
     'meta': '5 minute read &middot; Reflects current CMS marketing rules',
-    'checked': '11 September 2026',
+    'checked': '22 September 2026',
     'reader': True,
     'body': """      <p>Between mid-October and early December, the mail gets heavier and the phone starts ringing.
       Some of it is legitimate marketing from real insurers. Some of it is licensed brokers who genuinely
@@ -294,8 +294,8 @@ ARTICLES3['enrollment-scams'] = {
                                  'need it.'),
     ]) + """
       <blockquote class="pull">
-        <p>Nearly every legitimate Medicare interaction starts with you. If a conversation began because
-        someone contacted you, that alone is worth a pause.</p>
+        <p>Medicare plans and agents face specific restrictions on unsolicited marketing contact. If a
+        conversation began because someone contacted you first, that alone is worth a pause.</p>
       </blockquote>
 
       <h2>The scripts that show up this time of year</h2>
