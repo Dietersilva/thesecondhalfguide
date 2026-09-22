@@ -24,6 +24,8 @@ ARTICLES14['anoc-letter'] = {
            'changes is usually not the number printed at the top.',
     'meta': '6 minute read &middot; Verified against CMS&rsquo;s finalized 2027 rule',
     'checked': CHECKED14,
+    'recheck': {'due': '2026-10-15', 'why': 'Annual Enrollment opens -- confirm the September 30 ANOC '
+                'deadline and 2027 figures held for this cycle.'},
     'body': """      <p>Sometime this month, an envelope from your Medicare Advantage or Part D plan will arrive that
       looks a lot like the junk mail already piling up ahead of open enrollment. It isn&rsquo;t. It&rsquo;s
       called the <strong>Annual Notice of Change</strong> &mdash; ANOC, if anyone shortens it in front of
@@ -154,6 +156,8 @@ ARTICLES14['cola-2027-estimate'] = {
            'exist yet is finished.',
     'meta': '5 minute read &middot; Verified against BLS/CRS methodology and independent COLA trackers',
     'checked': '21 September 2026',
+    'recheck': {'due': '2026-10-14', 'why': 'Official SSA COLA announcement -- convert this piece to '
+                'report the real number rather than writing a new URL. Preserve the slug.'},
     'body': """      <p>By late summer, several independent trackers had already put a number on the 2027 Social
       Security cost-of-living adjustment &mdash; and some coverage repeated those numbers as if the decision
       had been made. It hasn&rsquo;t. The Social Security Administration has not announced a 2027 COLA, and

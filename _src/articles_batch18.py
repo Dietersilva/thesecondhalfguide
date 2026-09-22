@@ -23,6 +23,8 @@ ARTICLES18['ma-flex-card-2027'] = {
            'to tell you money was still sitting there.',
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s finalized 2027 Medicare Advantage rule',
     'checked': CHECKED18,
+    'recheck': {'due': '2027-01-05', 'why': 'Plan year begins -- confirm plans are actually implementing '
+                'the point-of-sale verification and no-rollover rule as described.'},
     'body': """      <p>A lot of Medicare Advantage plans hand out a debit card as a supplemental benefit.
       Depending on the plan and a member&rsquo;s eligibility, it may cover over-the-counter items, food or
       groceries, dental cost-sharing, transportation, utilities, or some mix of those &mdash; not every
@@ -152,6 +154,8 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s finalized 2027 marketing rule and '
             'independent industry coverage',
     'checked': CHECKED18,
+    'recheck': {'due': '2026-10-08', 'why': 'A week into the new rules being in effect -- confirm no '
+                'walk-back or clarification changed what actually took effect October 1.'},
     'body': """      <p>Every fall, the volume of Medicare sales calls, mailers and television ads goes up ahead of
       Annual Enrollment. This year, the federal rules governing that outreach are loosening at the same
       time, not tightening. The change takes effect <strong>1 October 2026</strong> &mdash; two weeks

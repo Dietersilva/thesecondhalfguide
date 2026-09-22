@@ -24,6 +24,8 @@ ARTICLES15['ma-plan-exits-2027'] = {
            'arriving now &mdash; and it starts a clock most people don&rsquo;t know about.',
     'meta': '6 minute read &middot; Verified against CMS rate data and multiple insurer announcements',
     'checked': CHECKED15,
+    'recheck': {'due': '2027-01-05', 'why': 'Plan year begins -- confirm the member-count figures held '
+                'and no additional insurer exits were announced after this was written.'},
     'body': """      <p>Last week&rsquo;s note about the Annual Notice of Change covered the routine version of this
       letter &mdash; premium shifts, formulary tweaks, network changes. This year, for a meaningful number
       of people, the letter says something bigger: the plan itself won&rsquo;t exist in 2027.</p>
@@ -172,6 +174,8 @@ ARTICLES15['drug-negotiation-2027'] = {
            'the negotiated price is, and isn&rsquo;t, before you compare 2027 plans this fall.',
     'meta': '6 minute read &middot; Verified against CMS&rsquo;s own selected-drug list',
     'checked': CHECKED15,
+    'recheck': {'due': '2027-01-05', 'why': 'Negotiated prices take effect -- confirm the prices quoted '
+                'here match what actually took effect, not the pre-effective-date projection.'},
     'body': """      <p>This isn&rsquo;t breaking news &mdash; CMS finished negotiating this round of Medicare drug
       prices with manufacturers in late 2025, and it hasn&rsquo;t changed since. What makes it worth
       covering now is the date attached to it: the second round of negotiated prices takes effect

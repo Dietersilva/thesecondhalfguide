@@ -15,6 +15,9 @@ ARTICLES2['drug-cap'] = {
            'big change &mdash; and the phrase &ldquo;out-of-pocket cap&rdquo; is doing a lot of work.',
     'meta': '5 minute read &middot; Verified against Medicare figures for 2026 and the finalized 2027 cap',
     'checked': '4 September 2026',
+    'recheck': {'due': '2026-11-15', 'why': 'CMS typically confirms next year’s Part D parameters in '
+                'its fall announcement -- reconfirm the 2027 figures already in this piece are still '
+                'correct once that lands.'},
     'body': """      <p>If you take expensive medication, $2,100 is the most important number in Medicare this year.</p>
 
       <p>It's the annual ceiling on what you can pay out of pocket for covered Part D prescription drugs.

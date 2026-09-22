@@ -285,6 +285,8 @@ ARTICLES17['portugal-d7-visa'] = {
     'meta': '5 minute read &middot; Verified against Portugal&rsquo;s 2026 minimum-wage decree and current '
             'immigration guidance',
     'checked': '22 September 2026',
+    'recheck': {'due': '2027-01-10', 'why': 'Portugal’s minimum wage typically resets each January -- '
+                'check for a new decree-law and update the income floor for the new year.'},
     'body': """      <p>The D7 visa is the route most American retirees use to live in Portugal long-term: proof of
       steady passive income &mdash; Social Security, a pension, rental income, dividends &mdash; instead of
       a job offer or an investment purchase. It has a real advantage over the &ldquo;golden visa&rdquo;
