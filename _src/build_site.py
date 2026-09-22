@@ -112,6 +112,8 @@ DESCRIPTIONS = {
     '/senior-travel-discounts': 'Amtrak still publishes a clear 10% senior discount. The major airlines do not -- what still exists, carrier by carrier, and how to actually check.',
     '/portugal-d7-visa': 'Portugal ties its D7 retirement visa income floor to the minimum wage, which rose again for 2026. What changed, and why renewals get checked again.',
     '/grandparent-529-fafsa': 'A federal rule change removed the FAFSA penalty on grandparent-paid 529 distributions -- but some private colleges use a form that still asks.',
+    '/ma-flex-card-2027': 'Starting in 2027, Medicare Advantage debit cards check purchases in real time and unused balances no longer roll into the next year. What changed.',
+    '/medicare-marketing-rules-2026': "Medicare's sales rules loosen October 1 -- shorter call recordings, no SOA wait. What changed, and the two protections that did not.",
 }
 
 PAGE_FILES = {
@@ -304,6 +306,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/ma-flex-card-2027', '/medicare-marketing-rules-2026',
     '/parks-fee-free-days', '/senior-travel-discounts', '/portugal-d7-visa',
     '/grandparent-529-fafsa',
     '/ma-plan-exits-2027', '/drug-negotiation-2027',
