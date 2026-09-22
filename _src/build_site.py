@@ -567,7 +567,7 @@ def git_dates():
 MONTHS = {m: i for i, m in enumerate(
     'January February March April May June July August September October '
     'November December'.split(), 1)}
-CHECKED_RE = re.compile(r'Checked against primary sources on (\d{1,2}) (\w+) (\d{4})')
+CHECKED_RE = re.compile(r'Checked on (\d{1,2}) (\w+) (\d{4}) against the sources listed below')
 
 PERSON = {
     '@type': 'Person',
