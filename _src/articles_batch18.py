@@ -11,7 +11,7 @@ from build_articles import facts, check, AD_INLINE
 
 ARTICLES18 = {}
 
-CHECKED18 = '18 September 2026'
+CHECKED18 = '22 September 2026'
 
 # --------------------------------------------------- MA debit/flex card 2027
 ARTICLES18['ma-flex-card-2027'] = {
@@ -23,11 +23,12 @@ ARTICLES18['ma-flex-card-2027'] = {
            'to tell you money was still sitting there.',
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s finalized 2027 Medicare Advantage rule',
     'checked': CHECKED18,
-    'body': """      <p>A lot of Medicare Advantage plans hand out a debit card as a supplemental benefit &mdash;
-      loaded with an allowance for groceries, over-the-counter items, dental work, or some mix of the
-      three. It is not a benefit every plan offers, and it is not part of Original Medicare at all. But for
-      the plans that do offer one, CMS finalized three changes to how that card works, starting with the
-      2027 plan year.</p>
+    'body': """      <p>A lot of Medicare Advantage plans hand out a debit card as a supplemental benefit.
+      Depending on the plan and a member&rsquo;s eligibility, it may cover over-the-counter items, food or
+      groceries, dental cost-sharing, transportation, utilities, or some mix of those &mdash; not every
+      plan offers one, the mix varies by plan, and Original Medicare has no such card at all. But for the
+      plans that do offer one, CMS finalized three changes to how that card works, starting with the 2027
+      plan year.</p>
 
       <p>None of them are effective yet. All three come from the same regulation: the Contract Year 2027
       Medicare Advantage and Part D final rule, which CMS published in the Federal Register on 6 April
@@ -37,30 +38,33 @@ ARTICLES18['ma-flex-card-2027'] = {
         ('6 April 2026', 'When CMS finalized the rule, in the Contract Year 2027 Medicare Advantage and '
                          'Part D final rule.'),
         ('2027 plan year', 'The first coverage year the new card rules apply to.'),
-        ('Real time', 'The point-of-sale standard a card must now use &mdash; checking what is actually '
-                      'in the cart against the plan&rsquo;s covered categories, not just where the card is '
-                      'being used.'),
-        ('Locked to one year', 'A balance loaded onto a 2027-year card cannot carry into 2028. This '
-                               'applies to cards issued under the new rule &mdash; it does not retroactively '
-                               'rewrite whatever your current plan already promised for a 2026 balance.'),
+        ('Real time', 'A card must electronically verify at the point of sale that a purchase is actually '
+                      'for a plan-covered benefit, not just that it happened at an approved kind of store. '
+                      'CMS did not mandate one specific technology to do this.'),
+        ('Plan-year limit', 'A plan may keep issuing the same physical card year to year, but the dollar '
+                            'amount or benefit allocation loaded onto it cannot carry from one plan year '
+                            'into the next. This is a forward-looking design rule &mdash; it does not '
+                            'retroactively rewrite whatever your current plan already promised for a 2026 '
+                            'balance.'),
         ('Dropped', 'The mid-year reminder notice CMS previously required plans to send about how much of '
                     'an allowance was still unused.'),
     ]) + """
       <h2>What actually changes</h2>
 
       <p>The first change is how the card checks a purchase. Under the new rule, a supplemental-benefit
-      debit card has to verify in real time that what is being bought is actually a covered item or
-      service, rather than approving a purchase because it happened at an approved kind of store. CMS
-      describes this as shifting verification from <em>where</em> a purchase happens to <em>what</em> is
-      being purchased. In practice, that means a card can decline part of a purchase at the register even
-      at a store the plan otherwise allows, if an item in the cart falls outside what the plan covers.</p>
+      debit card has to verify electronically, at the point of sale, that the transaction is actually for
+      a plan-covered benefit &mdash; rather than approving a purchase because it happened at an approved
+      kind of store. CMS declined to require one specific technology to do this, mentioning merchant
+      category codes and inventory-approval systems as examples of mechanisms plans might use. In practice,
+      that means a card can decline part of a purchase at the register even at a store the plan otherwise
+      allows, if an item falls outside what the plan covers.</p>
 
-      <p>The second change is the one with a deadline attached. Starting with the 2027 plan year, an
-      unused balance on one of these cards does not carry into the following year. Grocery, dental and
-      over-the-counter allowances that some plans previously let members roll forward are locked to the
-      plan year they were issued for. If a plan loads $50 a month for groceries and a member doesn&rsquo;t
-      spend all of it, that unspent amount stops existing when the plan year ends, rather than adding to
-      the following year&rsquo;s balance.</p>
+      <p>The second change is the one with a deadline attached. Starting with the 2027 plan year, a
+      plan may keep issuing the same physical card, but the dollar amount or benefit allocation loaded onto
+      it cannot carry from one plan year into the next. Balances that some plans previously let members
+      roll forward are locked to the plan year they were issued for. If a plan loads $50 a month toward an
+      allowance and a member doesn&rsquo;t spend all of it, that unspent amount stops existing when the
+      plan year ends, rather than adding to the following year&rsquo;s balance.</p>
 
       <p>The third change removes a safeguard rather than adding one. CMS had required plans to send
       members a mid-year reminder showing how much of a supplemental-benefit balance was still unspent.
@@ -91,12 +95,10 @@ ARTICLES18['ma-flex-card-2027'] = {
       <h2>A public eligibility requirement, too</h2>
 
       <p>A related piece of the same rule affects plans offering Special Supplemental Benefits for the
-      Chronically Ill &mdash; an extra tier of benefits, like broader food or transportation allowances,
-      available only to members who meet specific medical or eligibility criteria. Plans offering these
-      benefits now have to publicly post the eligibility criteria they use, rather than leaving members to
-      discover the conditions only after a card arrives or a claim is denied. If you or a household member
-      qualifies for one of these broader benefit tiers, the criteria for staying qualified should now be
-      something you can look up before enrolling, not something you find out after the fact.</p>
+      Chronically Ill (SSBCI) &mdash; an extra tier of benefits, like broader food or transportation
+      allowances, available only to members who meet specific medical or eligibility criteria. Plans
+      offering SSBCI must now publicly post the plan-developed eligibility criteria they use, rather than
+      leaving members to discover the conditions only after a card arrives or a claim is denied.</p>
 
       <h2>Worth doing before the year turns over</h2>
 
@@ -159,16 +161,18 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
 """ + facts('What changes 1 October 2026', [
         ('0 hours', 'The new required wait between signing a Scope of Appointment form and a one-on-one '
                     'sales meeting, down from 48 hours.'),
-        ('3 years', 'How long a plan or agent must keep a recording or transcript of your enrollment call, '
-                    'down from 10.'),
-        ('Allowed again', 'Marketing language such as &ldquo;best,&rdquo; &ldquo;top&rdquo; or '
-                          '&ldquo;most,&rdquo; previously restricted without extensive documentation.'),
-        ('Removed', 'The required 12-hour gap between an educational event and a sales event held at the '
-                    'same location.'),
+        ('6 years, not 10', 'How long a plan or agent must keep a call record: the actual audio for the '
+                            'first 3 years, then audio or a complete transcript for years 4 through 6.'),
+        ('Documentation eased, not removed', 'Marketing language such as &ldquo;best&rdquo; or '
+                          '&ldquo;most&rdquo; no longer has to cite supporting data directly in the '
+                          'material &mdash; but the claim still has to be true and provable if asked.'),
+        ('Notice, then removed', 'The required 12-hour gap between an educational event and a sales event '
+                    'at the same location is gone, but plans must still announce the switch and give '
+                    'attendees a chance to leave first.'),
         ('Still required', 'A signed Scope of Appointment before any specific plan, premium, network or '
                            'benefit can be discussed.'),
-        ('Still banned', 'Enrolling someone without consent, and cold-calling a number obtained without '
-                         'permission.'),
+        ('Still banned', 'Enrolling someone without consent, and unsolicited contact that violates '
+                         'Medicare&rsquo;s permission-to-contact rules.'),
     ]) + """
       <h2>What actually changes</h2>
 
@@ -179,16 +183,26 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
       disappears &mdash; an agent can move from your signature straight into a sales conversation the same
       day, even the same call.</p>
 
-      <p>Plans and agents also no longer have to keep records of enrollment-related calls for as long.
-      The retention window drops from ten years to three. And CMS is relaxing its restriction on
-      superlative language in marketing materials &mdash; claims like &ldquo;best,&rdquo; &ldquo;top-rated&rdquo;
-      or &ldquo;most affordable&rdquo; had required substantiating documentation to use; that documentation
-      burden is now lighter.</p>
+      <p>Plans and agents also no longer have to keep call records for as long, though the change is more
+      specific than a flat cut. The required retention period drops from ten years to six: the actual
+      audio recording is required for the first three years, and for years four through six a plan may
+      keep either the audio or a complete, accurate transcript instead. A recording made this Annual
+      Enrollment has to survive in one of those two forms into roughly 2032, not 2029.</p>
+
+      <p>CMS is also easing how superlative marketing language gets documented &mdash; claims like
+      &ldquo;best,&rdquo; &ldquo;top-rated&rdquo; or &ldquo;most affordable.&rdquo; The underlying rule
+      does not change: a claim like that still has to be factually supportable, and materials still cannot
+      be misleading, confusing or inaccurate. What changes is that a plan no longer has to cite the
+      supporting data directly inside the marketing material itself. CMS can still request that
+      documentation later, during a review or a complaint investigation.</p>
 
       <p>A fourth change affects events. Plans holding an educational session &mdash; an informational
       seminar not tied to enrolling in a specific plan &mdash; previously had to wait 12 hours before
       holding a sales-focused event at the same location. That gap is removed, so a marketing event can now
-      follow an educational one immediately, at the same address, the same day.</p>
+      follow an educational one immediately, at the same address, the same day. One protection survives the
+      change intact: the plan still has to clearly announce that the educational portion is ending and a
+      marketing event is starting, and give attendees a real chance to leave before it begins &mdash; CMS
+      has said something as brief as a restroom or snack break counts.</p>
 
       <blockquote class="pull">
         <p>The tools built to slow a sales conversation down didn&rsquo;t get stronger heading into this
@@ -200,35 +214,37 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
       <h2>Why the 48-hour rule existed in the first place</h2>
 
       <p>The waiting period being removed wasn&rsquo;t arbitrary. CMS introduced it in a 2024 final rule,
-      effective from the September 2023 sales season, specifically to address &ldquo;sign now, meet
-      now&rdquo; tactics: an agent collecting a Scope of Appointment and moving straight into a plan
-      pitch in the same visit, before a beneficiary had any real chance to think it over, call a family
-      member, or compare it against anything else. The 48 hours existed to build that space back in. As of
-      1 October, that built-in space is gone again, and whatever pause happens between signing an SOA and
-      hearing a sales pitch is left entirely up to the individual agent and the individual beneficiary.</p>
+      effective from the September 2023 sales season, and said at the time that a mandatory pause gave
+      beneficiaries &mdash; including more vulnerable ones &mdash; time to consult a caregiver or family
+      member and consider their options before a plan-specific sales conversation began. In the 2027 rule,
+      CMS reversed that reasoning, concluding the delay more often got in the way of beneficiaries who
+      already wanted the information and were ready to talk. As of 1 October, the built-in space is gone,
+      and whatever pause happens between signing an SOA and hearing a sales pitch is left entirely up to
+      the individual agent and the individual beneficiary.</p>
 
       <h2>What did not change</h2>
 
       <p>Two protections survive intact, and they are worth knowing precisely because so much around them
       loosened. CMS left in place the general prohibition on enrolling someone in a plan without their
-      consent. And the ban on cold-calling using a phone number obtained without permission is unchanged
-      &mdash; an agent or plan still cannot call you out of nowhere using a number they got from a list, a
-      data broker, or any source other than you giving it to them directly for that purpose.</p>
+      consent. And Medicare&rsquo;s permission-to-contact rules, which restrict unsolicited outreach to
+      beneficiaries, are unchanged by this rule &mdash; the specifics of what counts as permitted contact
+      versus a prohibited cold call are detailed enough that they are worth checking against Medicare&rsquo;s
+      own guidance directly rather than reducing to a single bright line here.</p>
 
-      <p>That distinction matters for a simple reason: an unsolicited call itself is still a meaningful
-      signal. If you did not give your number to an agent, plan, or a lead-generation site expecting a
-      callback, a cold call about Medicare coverage is not simply pushier marketing under looser rules
-      &mdash; it is calling in a way federal rules still prohibit, loosened rule or not.</p>
+      <p>That distinction matters for a simple reason: an unsolicited call is still something the rules
+      constrain, loosened rule or not. A call that does not fit within what Medicare&rsquo;s
+      permission-to-contact rules allow is not simply pushier marketing under a looser regime &mdash; it is
+      outside the rules as they still stand after 1 October.</p>
 
-      <h2>Why the retention window matters more than it sounds</h2>
+      <h2>Why the retention change matters more than it sounds</h2>
 
-      <p>Ten years down to three doesn&rsquo;t sound like a consumer-facing change, but it affects what
+      <p>Ten years down to six still doesn&rsquo;t sound like a consumer-facing change, but it affects what
       exists later if a disagreement comes up about what an agent told you. A shorter required retention
-      window means a shorter paper trail if a dispute about a call surfaces well after the fact &mdash; the
+      period means a shorter paper trail if a dispute about a call surfaces well after the fact &mdash; the
       kind of dispute that, under a Medicare Advantage enrollment made in October, might not surface until
-      a coverage gap shows up the following spring. A recording made this Annual Enrollment only has to
-      exist, at minimum, until roughly 2029 &mdash; long enough to cover most disputes, but shorter than the
-      decade a beneficiary previously had to request one.</p>
+      a coverage gap shows up the following spring. A recording made this Annual Enrollment has to survive,
+      in full audio for the first three years and then as audio or a transcript for three more, into
+      roughly 2032 &mdash; four years short of the decade a beneficiary previously had to request one.</p>
 
       <h2>Worth doing this Annual Enrollment</h2>
 
@@ -239,9 +255,10 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
         'A shorter wait after signing a Scope of Appointment does not shorten <strong>your</strong> right '
         'to take time. &ldquo;Send that to me in writing&rdquo; and &ldquo;I need to check with someone '
         'first&rdquo; remain complete sentences, any time you use them.',
-        'Superlative claims like &ldquo;best plan&rdquo; or &ldquo;most coverage&rdquo; now carry less '
-        'required documentation behind them than before &mdash; treat them as marketing language to verify '
-        'yourself, not as a substantiated ranking.',
+        'Superlative claims like &ldquo;best plan&rdquo; or &ldquo;most coverage&rdquo; still have to be '
+        'true and provable, but a plan no longer has to show its work inside the material itself &mdash; '
+        'so treat the claim as something to verify yourself rather than something already substantiated on '
+        'the page.',
         'If something about a call or enrollment feels wrong, contact your <strong>State Health Insurance '
         'Assistance Program (SHIP)</strong> or <strong>1-800-MEDICARE</strong> to report it. A shorter '
         'federal retention window is a reason to report sooner, not a reason not to.',
