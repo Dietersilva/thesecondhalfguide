@@ -19,8 +19,8 @@ ARTICLES11['overpayment-clawback'] = {
     'dek': 'SSA can now take half of your monthly check to recover an overpayment that may not even '
            'have been your fault. Two deadlines inside the letter decide whether that starts '
            'immediately or not at all.',
-    'meta': '6 minute read &middot; Verified against SSA guidance',
-    'checked': CHECKED11,
+    'meta': '6 minute read &middot; Verified against SSA guidance and 20 CFR 404.909',
+    'checked': '27 September 2026',
     'body': """      <p>An overpayment notice tells you SSA paid you more than it should have and wants the difference
       back. It happens more often than people expect — a return to work that changed the earnings test,
       a marital status change, an administrative error on SSA&rsquo;s own end — and the amount can run into
@@ -51,9 +51,10 @@ ARTICLES11['overpayment-clawback'] = {
       waiver request — and withholding does not start at all while SSA reviews it. Miss that window and
       file later, and withholding can already be underway by the time your request is filed; filing then
       suspends further withholding while the review is pending, but does not undo what was already taken.
-      A reconsideration filed within 60 days still pauses withholding during review. A reconsideration is
-      generally due within that 60-day window, but SSA can accept one filed later if you show good
-      cause for the delay.</p>
+      A reconsideration filed within 60 days still pauses withholding during review. That 60-day window
+      is not the same clock as the 30 days above: a reconsideration is generally due within 60 days after
+      you <em>receive</em> the notice, not 60 days from the date printed on it, though SSA can accept one
+      filed later if you show good cause for the delay.</p>
 
       <p>The waiver itself has no deadline — you can request one at any time. But requesting it inside
       that first 30 days is what keeps money in your check while you wait for an answer, rather than
@@ -69,8 +70,9 @@ ARTICLES11['overpayment-clawback'] = {
       <h2>What to actually do with the letter</h2>
 
 """ + check([
-        'Read the <strong>date on the notice</strong>, not the date you opened the envelope. The 30-day '
-        'and 60-day clocks run from the notice date.',
+        'The <strong>30-day</strong> collection-pause window runs from the date on the notice. The '
+        '<strong>60-day</strong> reconsideration deadline runs from the date you receive it instead '
+        '&mdash; two different clocks, not the same one.',
         'If you think the overpayment is <strong>wrong or the amount is off</strong>, file Form '
         '<strong>SSA-561</strong> (Request for Reconsideration).',
         'If you don&rsquo;t dispute it but <strong>can&rsquo;t afford the withholding</strong> or it '
@@ -96,6 +98,8 @@ ARTICLES11['overpayment-clawback'] = {
          'https://www.ssa.gov/forms/ssa-632.html'),
         ('SSA &mdash; Understanding SSI Overpayments',
          'https://www.ssa.gov/ssi/text-overpay-ussi.htm'),
+        ('20 CFR 404.909 &mdash; How to request reconsideration',
+         'https://www.ecfr.gov/current/title-20/chapter-III/part-404/subpart-J/subject-group-ECFRc7e1b6752e731c5/section-404.909'),
     ],
     'next': {'slug': 'cobra-medicare-trap',
              'title': 'The COBRA-to-Medicare trap',
