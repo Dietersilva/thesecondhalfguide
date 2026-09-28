@@ -41,6 +41,7 @@ function person(prefix = '') {
     retireAge: num(prefix + 'retire-age', 62, 75),
     wages: num(spouse ? 'spouse-wages' : 'wages'),
     futureWages: num(spouse ? 'spouse-future-wages' : 'future-wages'),
+    avgWages: num(spouse ? 'spouse-avg-wages' : 'avg-wages'),
     years: num(prefix + 'years-worked', 10, 45),
     override: num(spouse ? 'spouse-ss-override' : 'ss-override'),
     overrideAge: num(spouse ? 'spouse-ss-override-age' : 'ss-override-age', 62, 70),
@@ -66,12 +67,20 @@ function piaCalc(p, a) {
   if (p.override > 0) return p.override / Math.max(.1, factor(p.overrideAge, p.birthYear));
   const ey = p.birthYear + 62, iy = ey - 2, cy = TODAY.year;
   const last = Math.min(Math.max(0, p.wages), cbb(cy));
+  const avg = Math.max(0, p.avgWages || 0);
   const yrs = Math.max(10, Math.min(45, p.years));
   const end = Math.min(p.birthYear + p.retireAge, 2035);
   const start = end - yrs + 1;
   const v = [];
   for (let y = start; y <= end; y++) {
-    let n = y <= cy ? last * (awi(y) / awi(cy)) / Math.pow(1.02, cy - y) : Math.min(p.futureWages || p.wages, cbb(y));
+    // A given average-earnings-in-today's-dollars figure converts to that
+    // year's nominal wage the same way "current wages" does (scale by the
+    // wage-index ratio); it does not also get the rising-career-curve
+    // assumption applied on top, since it is already a career average, not
+    // a single current data point to extrapolate a curve from.
+    let n = y <= cy
+      ? (avg > 0 ? avg * (awi(y) / awi(cy)) : last * (awi(y) / awi(cy)) / Math.pow(1.02, cy - y))
+      : Math.min(p.futureWages || p.wages, cbb(y));
     n = Math.min(n, cbb(y));
     v.push(n * (y < iy ? awi(iy) / awi(y) : 1));
   }
@@ -86,7 +95,7 @@ function piaCalc(p, a) {
   return Math.floor(q * 10) / 10;
 }
 function pia(p, a) {
-  const k = [p.birthYear, p.retireAge, p.wages, p.futureWages, p.years, p.override, p.overrideAge, a].join('|');
+  const k = [p.birthYear, p.retireAge, p.wages, p.futureWages, p.avgWages, p.years, p.override, p.overrideAge, a].join('|');
   if (PC.has(k)) return PC.get(k);
   const v = piaCalc(p, a);
   PC.set(k, v);
@@ -282,9 +291,17 @@ function renderMedicare(s) {
   if (!s.creditable) c.push(`<div class="rsm-medicare-card rsm-alert"><strong>Part D</strong><p>Confirm whether existing drug coverage is creditable before delaying Part D.</p></div>`);
   $('medicare-results').innerHTML = c.join('');
 }
+function ssSourceNote(p) {
+  if (p.override > 0) return 'Using the SSA estimate you entered.';
+  if (p.avgWages > 0) return 'Using an SSA-style estimate built from your entered career-average earnings, work history, wage indexing and a 35-year benefit calculation.';
+  return 'Using an SSA-style estimate that assumes your earnings rose gradually to reach your current pay, work history, wage indexing and a 35-year benefit calculation. If your current pay is not representative of most of your career, enter your average earnings instead (Advanced customization) for a better estimate.';
+}
 function renderNotes(s) {
   const couple = s.household === 'couple';
-  $('strategy-notes').innerHTML = `<div class="rsm-note"><strong>Social Security:</strong> ${s.you.override > 0 ? 'Using the SSA estimate you entered.' : 'Using an SSA-style estimate from covered earnings, work history, wage indexing and a 35-year benefit calculation.'}</div><div class="rsm-note"><strong>Portfolio:</strong> The model starts with ${money(s.traditional + s.roth + s.taxable)}, adds entered contributions while working, then fills any retirement-spending gap after Social Security, pension and other income.</div>${couple ? `<div class="rsm-note"><strong>Couples:</strong> Household totals use indexed earnings, taxable wage caps, a highest-35 calculation, claim-age adjustments and estimated spousal excess where applicable. Both worker benefits are shown separately from any spousal excess. Survivor benefits are separate.</div>` : ''}<div class="rsm-note"><strong>Official check:</strong> Compare estimates with ${couple ? "each spouse's" : 'your'} Social Security statement before filing.</div>`;
+  const ssNote = couple
+    ? `Your figure: ${ssSourceNote(s.you)} Spouse figure: ${ssSourceNote(s.spouse)}`
+    : ssSourceNote(s.you);
+  $('strategy-notes').innerHTML = `<div class="rsm-note"><strong>Social Security:</strong> ${ssNote}</div><div class="rsm-note"><strong>Portfolio:</strong> The model starts with ${money(s.traditional + s.roth + s.taxable)}, adds entered contributions while working, then fills any retirement-spending gap after Social Security, pension and other income.</div>${couple ? `<div class="rsm-note"><strong>Couples:</strong> Household totals use indexed earnings, taxable wage caps, a highest-35 calculation, claim-age adjustments and estimated spousal excess where applicable. Both worker benefits are shown separately from any spousal excess. Survivor benefits are separate.</div>` : ''}<div class="rsm-note"><strong>Official check:</strong> Compare estimates with ${couple ? "each spouse's" : 'your'} Social Security statement before filing.</div>`;
 }
 function render() {
   const s = state(), couple = s.household === 'couple';
