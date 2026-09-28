@@ -5,6 +5,10 @@ body.rsm-page { background: var(--bg); }
 .rsm-lede { max-width: 790px; margin: 0; color: var(--ink-soft); font-size: 21px; line-height: 1.55; }
 .rsm-privacy { margin-top: 24px; max-width: 900px; display: flex; gap: 14px; align-items: flex-start; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; color: var(--ink-soft); font-size: 16px; line-height: 1.5; }
 .rsm-shield { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--pine); color: #fff; font-weight: 700; }
+.rsm-accuracy-tip { margin: 14px 0 18px; max-width: none; font-size: 13.5px; padding: 14px 16px; }
+.rsm-accuracy-tip .rsm-shield { width: 28px; height: 28px; font-size: 14px; }
+.rsm-accuracy-tip a { color: var(--pine); font-weight: 600; }
+.rsm-accuracy-tip .btn { display: inline-block; margin-top: 10px; padding: 8px 14px; font-size: 13px; }
 .rsm-tool { padding: 12px 0 64px; }
 .rsm-layout { display: grid; grid-template-columns: minmax(310px, 370px) minmax(0, 1fr); gap: 26px; align-items: start; }
 .rsm-inputs, .rsm-results { min-width: 0; }

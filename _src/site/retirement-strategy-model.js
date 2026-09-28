@@ -376,6 +376,14 @@ function init() {
   });
   $('print-report')?.addEventListener('click', () => window.print());
   $('rsm-reset')?.addEventListener('click', () => location.reload());
+  $('rsm-goto-override')?.addEventListener('click', () => {
+    $('rsm-advanced-mode')?.click();
+    setTimeout(() => {
+      const field = $('ss-override');
+      field?.scrollIntoView({behavior: 'smooth', block: 'center'});
+      field?.focus();
+    }, 350);
+  });
   render();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once: true});
