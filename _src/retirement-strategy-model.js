@@ -53,13 +53,22 @@ function person(prefix = '') {
 // pricing in a different pretend career length instead of the same person's
 // earnings record. Wage projection stops at the planned retirement age (or
 // the table's projection cap), never at the claim age under evaluation.
+//
+// The career window is exactly `years` long, ending at retirement -- anchored
+// off the end, not off today. Anchoring off today (with retirement in the
+// future) let extra undiscounted future-wage years get tacked on beyond what
+// `years` said the whole career would be, which silently reduced the
+// zero-padding SSA applies for a career shorter than 35 years and inflated
+// AIME for anyone entering fewer than 35 years worked. A career window ending
+// in the past (retirement age already behind today) is likewise never
+// force-extended to the present.
 function piaCalc(p, a) {
   if (p.override > 0) return p.override / Math.max(.1, factor(p.overrideAge, p.birthYear));
   const ey = p.birthYear + 62, iy = ey - 2, cy = TODAY.year;
   const last = Math.min(Math.max(0, p.wages), cbb(cy));
   const yrs = Math.max(10, Math.min(45, p.years));
-  const start = cy - yrs + 1;
-  const end = Math.max(cy, Math.min(p.birthYear + p.retireAge, 2035));
+  const end = Math.min(p.birthYear + p.retireAge, 2035);
+  const start = end - yrs + 1;
   const v = [];
   for (let y = start; y <= end; y++) {
     let n = y <= cy ? last * (awi(y) / awi(cy)) / Math.pow(1.02, cy - y) : Math.min(p.futureWages || p.wages, cbb(y));
