@@ -198,13 +198,22 @@ function cumulativeMixed(a, b, through, s) {
   return total;
 }
 function cross(a, b, s) {for (let age = b; age <= 100; age++) {if (cumulative(b, age, s) >= cumulative(a, age, s)) return age;} return null;}
+// The age (in "your" terms) at which the whole household's Social Security
+// has actually started -- not just yours. Anchoring on your own retirement
+// age alone silently dropped an age-gap spouse's benefit entirely: if your
+// spouse is younger, "you" reaching the claim age doesn't mean THEY have,
+// and the household total should not count a benefit that hasn't started.
+function householdReadyAge(claimAge, s) {
+  const off = s.household === 'couple' ? householdOffset(s) : 0;
+  return Math.max(s.you.retireAge, claimAge, claimAge - off);
+}
 // Once Social Security has actually started, not the day you retire -- for a
 // claim age later than retirement, checking coverage AT retirement always
 // reads as 0% (benefits haven't started yet), which made a later claim look
 // permanently worse instead of showing the larger check it actually pays
 // once it begins. The bridge gap before benefits start is real and is
 // reported separately, but it should not be conflated with ongoing coverage.
-function incomeAtRetirement(claimAge, s) {return atAge(Math.max(s.you.retireAge, claimAge), claimAge, claimAge, s, false) + s.pension + s.other;}
+function incomeAtRetirement(claimAge, s) {return atAge(householdReadyAge(claimAge, s), claimAge, claimAge, s, false) + s.pension + s.other;}
 function spendingCoverage(claimAge, s) {if (s.spending <= 0) return 100; return incomeAtRetirement(claimAge, s) / s.spending * 100;}
 
 function renderMeaning(s) {
@@ -269,9 +278,10 @@ function renderPathCards(s) {
 function renderIncome(s) {
   $('income-results').innerHTML = MAIN.map(age => {
     const guaranteed = incomeAtRetirement(age, s), gap = Math.max(0, s.spending - guaranteed), coverage = spendingCoverage(age, s);
-    const bridgeYears = Math.max(0, age - s.you.retireAge);
+    const bridgeYears = Math.max(0, householdReadyAge(age, s) - s.you.retireAge);
+    const bridgeWho = s.household === 'couple' ? 'with no Social Security started for either of you yet' : 'with no Social Security yet';
     const bridge = bridgeYears > 0
-      ? `<br><small>First: a ${bridgeYears.toFixed(0)}-year bridge with no Social Security yet, needing the full ${money(s.spending)}/yr from the portfolio. The figures above are for <b>after</b> that, once benefits start.</small>`
+      ? `<br><small>First: a ${bridgeYears.toFixed(0)}-year bridge ${bridgeWho}, needing the full ${money(s.spending)}/yr from the portfolio. The figures above are for <b>after</b> that, once benefits start.</small>`
       : '';
     return `<div class="rsm-medicare-card"><strong>Claim at ${age}</strong><p>Income once Social Security has started: <b>${money(guaranteed)}</b><br>Spending target: <b>${money(s.spending)}</b><br>Covered without portfolio withdrawals: <b>${pct(coverage)}</b><br>${gap ? `Ongoing portfolio need: <b>${money(gap)}/yr</b>` : 'Entered guaranteed income covers the spending target.'}${bridge}</p></div>`;
   }).join('');
