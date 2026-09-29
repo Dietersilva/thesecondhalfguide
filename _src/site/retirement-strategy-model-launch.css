@@ -6,6 +6,9 @@
 .rsm-page.is-advanced [data-mode="advanced"]{display:block}
 .rsm-page.is-advanced label[data-mode="advanced"]{display:block}
 .rsm-page.is-advanced .rsm-grid-2>[data-mode="advanced"]{display:block}
+.rsm-page.is-advanced [data-mode="quick"]{display:none!important}
+.rsm-page.ssknown-no [data-ssknown="yes"]{display:none!important}
+.rsm-page.ssknown-yes [data-ssknown="no"]{display:none!important}
 .rsm-estimate-label{padding:13px 16px;border:1px solid var(--line);border-radius:11px;background:var(--surface-2);color:var(--ink-soft);font-size:14px;line-height:1.5}
 .rsm-estimate-label strong{color:var(--ink)}
 .rsm-path-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}

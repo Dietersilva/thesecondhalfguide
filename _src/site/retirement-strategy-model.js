@@ -138,7 +138,9 @@ function state() {
   return {
     household: radio('household'), earlyUse: radio('early-ss-use'),
     you: person(), spouse: person('spouse-'),
-    traditional: num('traditional-balance'), roth: num('roth-balance'), taxable: num('taxable-balance'),
+    ...(document.body.classList.contains('is-advanced')
+      ? {traditional: num('traditional-balance'), roth: num('roth-balance'), taxable: num('taxable-balance')}
+      : {traditional: num('total-savings'), roth: 0, taxable: 0}),
     contrib: num('annual-contrib'), employer: num('employer-contrib'),
     spouseContrib: num('spouse-contrib'), spouseEmployer: num('spouse-employer-contrib'),
     returnRate: num('return-rate', 0, 12) / 100,
@@ -384,11 +386,23 @@ function previewLinks() {
   if (!token) return;
   document.querySelectorAll('a[href^="/"]').forEach(a => {const u = new URL(a.getAttribute('href'), location.origin); u.searchParams.set('_vercel_share', token); a.href = u.pathname + u.search + u.hash;});
 }
+function syncSavings(toAdvanced) {
+  const total = $('total-savings'), trad = $('traditional-balance'), roth = $('roth-balance'), tax = $('taxable-balance');
+  if (!total || !trad || !roth || !tax) return;
+  const sum = (Number(trad.value) || 0) + (Number(roth.value) || 0) + (Number(tax.value) || 0);
+  if (toAdvanced) {
+    const t = Number(total.value) || 0;
+    if (t !== sum) {trad.value = t; roth.value = 0; tax.value = 0;}
+  } else {
+    total.value = sum;
+  }
+}
 function setupModes() {
   const q = $('rsm-quick-mode'), a = $('rsm-advanced-mode'), h = $('rsm-mode-help');
   if (!q || !a) return;
   const set = (m, scroll = false) => {
     const x = m === 'advanced';
+    syncSavings(x);
     document.body.classList.toggle('is-advanced', x);
     document.body.classList.toggle('is-quick', !x);
     q.classList.toggle('is-active', !x);
@@ -397,10 +411,26 @@ function setupModes() {
     a.setAttribute('aria-pressed', String(x));
     if (h) h.textContent = x ? 'Advanced mode keeps every planning control visible. Your Quick-mode entries stay in place.' : 'Quick mode keeps the inputs short. Advanced mode adds contributions, pensions, return assumptions, Medicare and exact SSA estimates.';
     if (scroll) $('calculator-title')?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    immediateRender();
   };
   q.addEventListener('click', () => set('quick', true));
   a.addEventListener('click', () => set('advanced', true));
   set('quick');
+}
+function setupSSKnown() {
+  const radios = document.querySelectorAll('input[name="ss-known"]');
+  if (!radios.length) return;
+  const set = (v) => {
+    document.body.classList.toggle('ssknown-yes', v === 'yes');
+    document.body.classList.toggle('ssknown-no', v === 'no');
+    if (v === 'no') {
+      const ov = $('ss-override'), sov = $('spouse-ss-override');
+      if (ov) ov.value = '';
+      if (sov) sov.value = '';
+    }
+  };
+  radios.forEach(r => r.addEventListener('change', () => {if (r.checked) {set(r.value); immediateRender();}}));
+  set([...radios].find(r => r.checked)?.value || 'no');
 }
 let renderTimer = 0;
 function scheduleRender() {clearTimeout(renderTimer); renderTimer = setTimeout(() => requestAnimationFrame(render), 180);}
@@ -408,6 +438,7 @@ function immediateRender() {clearTimeout(renderTimer); requestAnimationFrame(ren
 function init() {
   populateMonths();
   setupModes();
+  setupSSKnown();
   previewLinks();
   document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e => {
     const live = e.matches('input[type=number],input[type=text],input[type=month]');
@@ -417,12 +448,13 @@ function init() {
   $('print-report')?.addEventListener('click', () => window.print());
   $('rsm-reset')?.addEventListener('click', () => location.reload());
   $('rsm-goto-override')?.addEventListener('click', () => {
-    $('rsm-advanced-mode')?.click();
+    const yes = document.querySelector('input[name="ss-known"][value="yes"]');
+    if (yes && !yes.checked) {yes.checked = true; yes.dispatchEvent(new Event('change', {bubbles: true}));}
     setTimeout(() => {
       const field = $('ss-override');
       field?.scrollIntoView({behavior: 'smooth', block: 'center'});
       field?.focus();
-    }, 350);
+    }, 50);
   });
   $('rsm-toggle-detail')?.addEventListener('click', () => {
     const btn = $('rsm-toggle-detail'), panel = $('rsm-detailed');
