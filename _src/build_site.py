@@ -87,6 +87,8 @@ DESCRIPTIONS = {
     '/overpayment-clawback': 'SSA can now withhold up to 50% of your monthly check to recover an overpayment. Two deadlines inside the letter — 30 and 60 days — decide when that starts.',
     '/cobra-medicare-trap': 'COBRA keeps your health plan going after a job ends, but it isn’t creditable coverage for Medicare Part B — missing that risks a permanent penalty.',
     '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
+    '/medical-equipment-fraud': 'CMS barred 11 equipment suppliers tied to $3.4 billion in suspected fraudulent billing. What to actually check on your own Medicare statement.',
+    '/aca-unauthorized-enrollment': 'CMS canceled 315,000 Marketplace enrollments covering 760,000 people over fraud concerns. How to check whether your own coverage was affected.',
     '/medicare': 'Every Medicare and health-insurance article in one place — enrollment windows, the drug cap, IRMAA, Medigap, and where Medicare stops working.',
     '/money': 'Every dated fact about taxes, deductions and Social Security — the senior deduction, RMDs, IRMAA, the Medigap window, and thresholds that move yearly.',
     '/paperwork': 'Every article on wills, beneficiary forms, digital accounts and power of attorney — explained without the law-school vocabulary, in one place.',
@@ -306,6 +308,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/medical-equipment-fraud', '/aca-unauthorized-enrollment',
     '/ma-flex-card-2027', '/medicare-marketing-rules-2026',
     '/parks-fee-free-days', '/senior-travel-discounts', '/portugal-d7-visa',
     '/grandparent-529-fafsa',
