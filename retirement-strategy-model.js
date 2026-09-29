@@ -228,7 +228,7 @@ function renderMeaning(s) {
 }
 function renderGoals(s) {
   const retire = s.you.retireAge, earningsImpact = withheldAnnual(62, s.you, s.limit) > 0;
-  $('goal-results').innerHTML = `<div class="rsm-medicare-card"><strong>Claim at 62</strong><p><b>Best fit for:</b> earlier cash flow or a shorter planning horizon.${earningsImpact ? ' Your entered work earnings make this option less attractive before FRA because benefits may be withheld.' : ''}</p></div><div class="rsm-medicare-card"><strong>Claim at 65</strong><p><b>Best fit for:</b> a middle path between earlier checks and a larger monthly benefit.${Math.abs(retire - 65) <= 1 ? ' This also lines up closely with your entered retirement age.' : ''}</p></div><div class="rsm-medicare-card"><strong>Claim at 67</strong><p><b>Best fit for:</b> maximizing the monthly benefit among these three choices and placing more weight on longevity protection.</p></div>`;
+  $('goal-results').innerHTML = `<div class="rsm-medicare-card"><strong>What claiming at 62 emphasizes</strong><p>Earlier income, and less need to bridge the first retirement years from savings.${earningsImpact ? ' Your entered work earnings are above the earnings-test limit before FRA, so part of this benefit may be withheld in the year(s) you keep working.' : ''}</p></div><div class="rsm-medicare-card"><strong>What claiming at 65 emphasizes</strong><p>A middle point between earlier cash flow and a larger monthly benefit.${Math.abs(retire - 65) <= 1 ? ' This also lines up closely with your entered retirement age.' : ''}</p></div><div class="rsm-medicare-card"><strong>What claiming at 67 emphasizes</strong><p>A larger monthly benefit among these three choices, and more protection if you live longer than average.</p></div>`;
 }
 function renderEarnings(s) {
   const people = [['You', s.you]];
@@ -236,13 +236,13 @@ function renderEarnings(s) {
   $('earnings-results').innerHTML = people.map(([label, p]) => {
     const w62 = withheldAnnual(62, p, s.limit), gross = grossAnnual(62, p), net = Math.max(0, gross - w62);
     if (w62 <= 0) return `<div class="rsm-note"><strong>${label}:</strong> Entered countable earnings are not above the current ${money(s.limit)} annual limit, so this simple 62 illustration shows no earnings-test withholding.</div>`;
-    return `<div class="rsm-note"><strong>${label} at 62:</strong> Estimated gross benefit ${money(gross)}/yr. With entered countable earnings, roughly <b>${money(w62)}</b> could be withheld, leaving about <b>${money(net)}</b> paid before tax in this simplified full-year illustration. Benefits withheld under the earnings test are not simply lost; SSA later adjusts for months withheld at full retirement age.</div>`;
+    return `<div class="rsm-note"><strong>${label} at 62:</strong> Estimated gross benefit ${money(gross)}/yr. With entered countable earnings, roughly <b>${money(w62)}</b> could be withheld, leaving about <b>${money(net)}</b> paid before tax &mdash; an <b>annual earnings-test estimate</b>, not a month-by-month calculation. Benefits withheld under the earnings test are not simply lost; SSA later adjusts for months withheld at full retirement age, and SSA also has a special monthly rule that can pay a full benefit for individual months under the limit during the calendar year you first claim, which this estimate does not reproduce.</div>`;
   }).join('');
 }
 function renderStress(s) {
   const base = s.returnRate, low = Math.max(0, base - .02), high = Math.min(.10, base + .02);
   const rows = [['Conservative', low], ['Your assumption', base], ['Stronger return', high]];
-  $('stress-body').innerHTML = rows.map(([label, rate]) => `<tr><td><strong>${label}</strong><br><small>${(rate * 100).toFixed(1)}% annual return</small></td>${MAIN.map(age => {const v = portfolioForClaim(age, s, rate).horizon; return `<td>${v > 0 ? money(v) : '<b>$0</b><br><small>portfolio depleted before horizon</small>'}</td>`;}).join('')}</tr>`).join('');
+  $('stress-body').innerHTML = rows.map(([label, rate]) => `<tr><td><strong>${label}</strong><br><small>${(rate * 100).toFixed(1)}% annual return, after inflation</small></td>${MAIN.map(age => {const v = portfolioForClaim(age, s, rate).horizon; return `<td>${v > 0 ? money(v) : '<b>$0</b><br><small>portfolio depleted before horizon</small>'}</td>`;}).join('')}</tr>`).join('');
 }
 function renderCouple(s) {
   const panel = $('couple-panel');
