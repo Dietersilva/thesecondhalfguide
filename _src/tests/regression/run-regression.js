@@ -78,11 +78,17 @@ async function setScenario(page, scenario) {
 
 async function readStrategyTable(page) {
   return page.evaluate(() => {
-    const rows = [...document.querySelectorAll('#strategy-body tr')];
-    return rows.map(tr => {
-      const cells = [...tr.querySelectorAll('td')].map(td => td.textContent.trim());
+    const cellsOf = tr => [...tr.querySelectorAll('td')].map(td => td.textContent.trim());
+    const rows = [...document.querySelectorAll('#strategy-body tr')].map(tr => {
+      const cells = cellsOf(tr);
       return {monthly: cells[1], annual: cells[2], atRetire: cells[4], horizon: cells[5]};
     });
+    const snapshot = [...document.querySelectorAll('#snapshot-body tr')].map(tr => {
+      const cells = cellsOf(tr);
+      return {bridge: cells[2], gap: cells[3]};
+    });
+    const matrix = [...document.querySelectorAll('#couple-body tr')].map(tr => cellsOf(tr).slice(1));
+    return {rows, snapshot, matrix};
   });
 }
 
@@ -117,12 +123,20 @@ function computeExpected(scenario) {
   for (const age of MAIN_AGES) {
     const steady = ref.household(you, spouse, isCouple, age, age, null, false, 0);
     const portfolio = ref.projectPortfolio(you, spouse, isCouple, age, householdInputs, startAge, rate);
+    const readyAge = ref.householdReadyAge(you, spouse, isCouple, age);
+    const income = ref.household(you, spouse, isCouple, age, age, readyAge, false, 0).total
+      + householdInputs.pension + householdInputs.other;
     out[age] = {
       monthly: steady.monthly,
       annual: steady.total,
       atRetire: portfolio.atRetire,
       horizon: portfolio.horizon,
+      bridgeCost: ref.bridge(you, spouse, isCouple, age, householdInputs).cost,
+      ongoingGap: Math.max(0, householdInputs.spending - income),
     };
+    if (isCouple) {
+      out.matrix = MAIN_AGES.map(a => MAIN_AGES.map(b => ref.household(you, spouse, true, a, b, null, false, 0).total));
+    }
   }
   return out;
 }
@@ -151,7 +165,8 @@ async function runAll() {
   for (const scenario of SCENARIOS) {
     const failures = [];
     await setScenario(page, scenario);
-    const rows = await readStrategyTable(page);
+    const table = await readStrategyTable(page);
+    const rows = table.rows;
     const expected = computeExpected(scenario);
 
     MAIN_AGES.forEach((age, i) => {
@@ -162,7 +177,17 @@ async function runAll() {
       compareValue(`age ${age} annual SS`, exp.annual, row.annual, failures, scenario.id);
       compareValue(`age ${age} portfolio at retirement`, exp.atRetire, row.atRetire, failures, scenario.id);
       compareValue(`age ${age} portfolio at horizon`, exp.horizon, row.horizon, failures, scenario.id, 10);
+      const snap = table.snapshot[i];
+      compareValue(`age ${age} snapshot bridge`, exp.bridgeCost, snap.bridge === '\u2014' ? '0' : snap.bridge, failures, scenario.id);
+      compareValue(`age ${age} snapshot ongoing gap`, exp.ongoingGap, snap.gap === 'Fully covered' ? '0' : snap.gap, failures, scenario.id);
     });
+    if (expected.matrix) {
+      expected.matrix.forEach((line, ri) => line.forEach((val, ci) => {
+        const text = (table.matrix[ri] || [])[ci] || '';
+        const m = text.match(/\$[\d,]+/);
+        compareValue(`couple matrix you ${MAIN_AGES[ri]} / spouse ${MAIN_AGES[ci]}`, val, m ? m[0] : text, failures, scenario.id);
+      }));
+    }
 
     // Invariant: with earlyUse='spend' (the default), portfolio at retirement
     // must not depend on which claim age is being compared.

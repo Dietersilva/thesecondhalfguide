@@ -33,7 +33,7 @@ full per-scenario detail (rendered rows + expected values) after each run.
 
 ## What's covered
 
-15 scenarios in `scenarios.js`: single and couple households, a short
+20 scenarios in `scenarios.js`: single and couple households, a short
 (zero-padded) work history, a high earner pinned at the taxable wage cap,
 an entered SSA statement override, career-average vs. current-wages
 estimation, an expected future raise, an older birth year with FRA = 66,
@@ -42,11 +42,13 @@ retirement ages, a 10-year spousal age gap, the mixed-household case where
 one spouse has a real SSA number and the other is estimated, a low-earning
 spouse whose spousal excess applies, portfolio depletion before the
 horizon, and reinvesting early Social Security checks instead of spending
-them.
+them. Later additions cover a pension netted out of the bridge, a staggered couple's
+bridge, an already-retired user, mixed claim ages with a birth-date offset, and blank
+"same as current pay" inputs.
 
-Each scenario checks monthly SS, annual SS, portfolio at retirement, and
-portfolio at horizon at claim ages 62/65/67 -- 12 numeric checks per
-scenario, ~180 total.
+Each scenario checks monthly SS, annual SS, portfolio at retirement, portfolio at
+horizon, the snapshot's bridge cost and ongoing gap at claim ages 62/65/67, and (for
+couples) all nine cells of the mixed-claim-age matrix.
 
 ## What isn't covered
 
@@ -97,3 +99,18 @@ traced to bugs in the *test harness*, not the production code:
 After fixing all three: 15/15 passed, confirming the production
 calculation code has not regressed relative to an independent
 implementation of the underlying SSA rules.
+
+### 2026-09-29, second pass: rules the first version shared with the calculator
+
+A later outside review found four modeling problems the first suite could not
+catch, because the reference had adopted the same conventions as the calculator:
+the snapshot bridge ignored pension/other income, started at the first spouse's
+retirement instead of when both were retired, spousal excess was reduced from the
+receiving spouse's own claim age rather than from when it can start (once the
+worker has filed), and an already-passed retirement age triggered withdrawals for
+years that had already gone by. Each was reproduced against the old build, fixed,
+and the reference was updated to the corrected rule before re-running (20/20).
+
+Known and deliberately not modeled: SSA credits back months withheld under the
+earnings test at full retirement age. The calculator discloses this; it affects
+break-even/cumulative figures for people who work while claiming early.

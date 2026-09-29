@@ -52,3 +52,7 @@
 @media(max-width:760px){.rsm-promise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rsm-path-cards,.rsm-explainer-grid,.rsm-related-grid{grid-template-columns:1fr}.rsm-age70{display:block}.rsm-age70 .btn{margin-top:16px}}
 @media(max-width:480px){.rsm-promise-grid{grid-template-columns:1fr}}
 @media print{.rsm-editorial,.rsm-promise-grid,.rsm-related-inline,.rsm-inline-link,.rsm-age70{display:none!important}.rsm-path-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rsm-adv-active{margin:10px 0 0;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);font-size:13px;color:var(--ink-soft);line-height:1.5}
+.rsm-adv-active strong{display:block;color:var(--ink)}
+.rsm-adv-actions{display:flex;gap:16px;margin-top:6px}
+.rsm-link-btn{appearance:none;background:none;border:0;padding:0;font:inherit;font-weight:700;text-decoration:underline;color:var(--pine-strong);cursor:pointer}

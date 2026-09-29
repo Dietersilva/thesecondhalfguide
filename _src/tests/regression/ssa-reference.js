@@ -162,9 +162,13 @@ function annualWithholding(person, claimAge, standardLimit) {
 // own reduced worker benefit up to (a reduced) half of the other spouse's
 // unreduced PIA. Only the receiving spouse's own early-claim reduction
 // applies to the excess; there is no delayed-credit boost on excess amounts.
-function spousalExcess(receiver, receiverClaimAge, worker) {
+function spousalExcess(receiver, receiverClaimAge, worker, workerClaimAge) {
   const raw = Math.max(0, 0.5 * computePIA(worker) - computePIA(receiver));
-  return raw * spousalExcessFactor(receiverClaimAge, receiver.birthYear) * 12;
+  // The excess can't be paid until the worker has filed, so its early-claim
+  // reduction counts from the later of the two start dates, in the receiver's age.
+  const workerFilesAtReceiverAge = workerClaimAge + birthDecimal(worker) - birthDecimal(receiver);
+  const entitledAge = Math.max(receiverClaimAge, workerFilesAtReceiverAge);
+  return raw * spousalExcessFactor(entitledAge, receiver.birthYear) * 12;
 }
 
 // Household Social Security total for a given pair of (hypothetical or
@@ -186,8 +190,8 @@ function household(you, spouse, isCouple, youClaimAge, spouseClaimAge, activeAge
 
   let youExcess = 0, spouseExcess = 0;
   if (youActive && spouseActive) {
-    youExcess = spousalExcess(you, youClaimAge, spouse);
-    spouseExcess = spousalExcess(spouse, spouseClaimAge, you);
+    youExcess = spousalExcess(you, youClaimAge, spouse, spouseClaimAge);
+    spouseExcess = spousalExcess(spouse, spouseClaimAge, you, youClaimAge);
   }
   const total = youOwn + spouseOwn + youExcess + spouseExcess;
   return {youOwn, spouseOwn, youExcess, spouseExcess, total, monthly: total / 12};
@@ -210,7 +214,19 @@ function bothRetiredAge(you, spouse, isCouple) {
 // started for the whole household, given a hypothetical claim age.
 function householdReadyAge(you, spouse, isCouple, claimAge) {
   const ageOffset = isCouple ? birthDecimal(you) - birthDecimal(spouse) : 0;
-  return Math.max(you.retireAge, claimAge, claimAge - ageOffset);
+  return Math.max(withdrawalStartAge(you, spouse, isCouple), claimAge, claimAge - ageOffset);
+}
+// Withdrawals start when everyone is retired, and never before today.
+function withdrawalStartAge(you, spouse, isCouple) {
+  return Math.max(bothRetiredAge(you, spouse, isCouple), currentAge(you));
+}
+// Years of full portfolio funding before Social Security starts, and the annual
+// amount drawn: spending net of pension/other income, never below zero.
+function bridge(you, spouse, isCouple, claimAge, inputs) {
+  const start = withdrawalStartAge(you, spouse, isCouple);
+  const years = Math.max(0, householdReadyAge(you, spouse, isCouple, claimAge) - start);
+  const gap = Math.max(0, inputs.spending - inputs.pension - inputs.other);
+  return {years, gap, cost: years * gap};
 }
 function currentAge(you) {
   let a = CURRENT_YEAR - you.birthYear;
@@ -245,7 +261,7 @@ function projectPortfolio(you, spouse, isCouple, claimAge, householdInputs, star
     }
   }
   const atRetire = balance;
-  for (let age = Math.round(retireAge); age < householdInputs.horizon; age++) {
+  for (let age = Math.round(Math.max(retireAge, startAge)); age < householdInputs.horizon; age++) {
     balance *= 1 + rate;
     // Whether each spouse's own benefit has actually started is a function
     // of THIS year's age versus their claim age, not a fixed "ready age"
@@ -269,5 +285,5 @@ module.exports = {
   ownBenefitFactor, spousalExcessFactor, computeAIME, computePIA,
   monthlyOwnBenefit, annualGrossOwnBenefit, annualWithholding, spousalExcess,
   household, ssAnnualAtSteadyState, bothRetiredAge, householdReadyAge,
-  currentAge, incomeOnceStarted, contributionsAtAge, projectPortfolio, birthDecimal,
+  currentAge, withdrawalStartAge, bridge, incomeOnceStarted, contributionsAtAge, projectPortfolio, birthDecimal,
 };

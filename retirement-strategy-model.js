@@ -46,7 +46,9 @@ function person(prefix = '') {
     years: num(prefix + 'years-worked', 10, 45),
     override: num(spouse ? 'spouse-ss-override' : 'ss-override'),
     overrideAge: num(spouse ? 'spouse-ss-override-age' : 'ss-override-age', 62, 70),
-    countable: num(spouse ? 'spouse-countable-earnings' : 'countable-earnings'),
+    countable: $(spouse ? 'spouse-countable-earnings' : 'countable-earnings')?.value === ''
+      ? num(spouse ? 'spouse-wages' : 'wages')
+      : num(spouse ? 'spouse-countable-earnings' : 'countable-earnings'),
   };
 }
 
@@ -113,7 +115,13 @@ function withheldAnnual(a, p, limit) {
   return f - a < 1 ? Math.min(g, Math.max(0, p.countable - 65160) / 3) : Math.min(g, Math.max(0, p.countable - limit) / 2);
 }
 function personAnnual(a, p, test, limit) {return Math.max(0, grossAnnual(a, p) - (test ? withheldAnnual(a, p, limit) : 0));}
-function excess(ra, r, wa, w) {return Math.max(0, .5 * pia(w, wa) - pia(r, ra)) * spFactor(ra, r.birthYear);}
+const birthDec = p => p.birthYear + (p.birthMonth - 1) / 12;
+// A spouse can't draw the spousal excess until the worker has filed, so its early-claim
+// reduction is counted from the later of the two start dates, in the receiving spouse's own age.
+function excess(ra, r, wa, w) {
+  const entitledAge = Math.max(ra, wa + birthDec(w) - birthDec(r));
+  return Math.max(0, .5 * pia(w, wa) - pia(r, ra)) * spFactor(entitledAge, r.birthYear);
+}
 
 // Household Social Security total for a given pair of claim ages, including each
 // spouse's own worker benefit plus any spousal excess either qualifies for.
@@ -178,7 +186,7 @@ function portfolioForClaim(claimAge, s, rate = s.returnRate) {
     if (s.earlyUse === 'invest') bal += atAge(age, claimAge, claimAge, s, true);
   }
   const atRetire = bal;
-  for (let age = Math.round(retire); age < s.horizon; age++) {
+  for (let age = Math.round(Math.max(retire, start)); age < s.horizon; age++) {
     bal *= 1 + rate;
     const income = atAge(age, claimAge, claimAge, s, false) + s.pension + s.other;
     bal -= Math.max(0, s.spending - income);
@@ -208,7 +216,18 @@ function cross(a, b, s) {for (let age = b; age <= 100; age++) {if (cumulative(b,
 // and the household total should not count a benefit that hasn't started.
 function householdReadyAge(claimAge, s) {
   const off = s.household === 'couple' ? householdOffset(s) : 0;
-  return Math.max(s.you.retireAge, claimAge, claimAge - off);
+  return Math.max(bridgeStartAge(s), claimAge, claimAge - off);
+}
+// Withdrawals begin when the whole household is retired -- and never in the past: someone
+// already past their planned retirement age starts drawing down from today's balance, not
+// from a date that has already gone by.
+function bridgeStartAge(s) {return Math.max(bothRetiredAge(s), ageNow(s.you));}
+// The years between retiring and the household's Social Security actually starting, and what
+// they cost the portfolio: only the part of spending not already covered by pension/other income.
+function bridgeInfo(claimAge, s) {
+  const years = Math.max(0, householdReadyAge(claimAge, s) - bridgeStartAge(s));
+  const gap = Math.max(0, s.spending - s.pension - s.other);
+  return {years, gap, cost: years * gap};
 }
 // Once Social Security has actually started, not the day you retire -- for a
 // claim age later than retirement, checking coverage AT retirement always
@@ -269,17 +288,16 @@ function renderWatch(s) {
 function renderSnapshot(s) {
   $('snapshot-body').innerHTML = MAIN.map(age => {
     const c = comp(age, age, s);
-    const bridgeYears = Math.max(0, householdReadyAge(age, s) - s.you.retireAge);
-    const bridgeCost = bridgeYears * s.spending;
+    const bridgeCost = bridgeInfo(age, s).cost;
     const gap = Math.max(0, s.spending - incomeAtRetirement(age, s));
     const horizon = portfolioForClaim(age, s).horizon;
     return `<tr${age === 65 ? ' class="rsm-focus-row"' : ''}><td>${age}</td><td>${money(c.monthly)}/mo</td><td>${bridgeCost > 0 ? money(bridgeCost) : '&mdash;'}</td><td>${gap > 0 ? money(gap) + '/yr' : 'Fully covered'}</td><td>${money(horizon)}</td></tr>`;
   }).join('');
 
   const gain = ssAnnual(67, s) - ssAnnual(62, s);
-  const bridgeYears67 = Math.max(0, householdReadyAge(67, s) - s.you.retireAge);
-  const tradeoff = bridgeYears67 > 0
-    ? `Claiming at 62 gives you income sooner but a permanently smaller monthly check. Waiting until 67 needs about ${money(bridgeYears67 * s.spending)} more from savings before Social Security starts, but pays about ${money(gain)} more per year after that.`
+  const bridge67 = bridgeInfo(67, s);
+  const tradeoff = bridge67.cost > 0
+    ? `Claiming at 62 gives you income sooner but a permanently smaller monthly check. Waiting until 67 needs about ${money(bridge67.cost)} more from savings before Social Security starts, but pays about ${money(gain)} more per year after that.`
     : `Claiming at 62 gives you income sooner but a permanently smaller monthly check. Waiting until 67 pays about ${money(gain)} more per year once both strategies are fully underway.`;
   $('tradeoff-copy').textContent = tradeoff;
 }
@@ -301,10 +319,10 @@ function renderPathCards(s) {
 function renderIncome(s) {
   $('income-results').innerHTML = MAIN.map(age => {
     const guaranteed = incomeAtRetirement(age, s), gap = Math.max(0, s.spending - guaranteed), coverage = spendingCoverage(age, s);
-    const bridgeYears = Math.max(0, householdReadyAge(age, s) - s.you.retireAge);
+    const b = bridgeInfo(age, s);
     const bridgeWho = s.household === 'couple' ? 'with no Social Security started for either of you yet' : 'with no Social Security yet';
-    const bridge = bridgeYears > 0
-      ? `<br><small>First: a ${bridgeYears.toFixed(0)}-year bridge ${bridgeWho}, needing the full ${money(s.spending)}/yr from the portfolio. The figures above are for <b>after</b> that, once benefits start.</small>`
+    const bridge = b.years > 0 && b.gap > 0
+      ? `<br><small>First: a ${b.years.toFixed(0)}-year bridge ${bridgeWho}, needing about ${money(b.gap)}/yr from the portfolio (your spending less any pension or other income). The figures above are for <b>after</b> that, once benefits start.</small>`
       : '';
     return `<div class="rsm-medicare-card"><strong>Claim at ${age}</strong><p>Income once Social Security has started: <b>${money(guaranteed)}</b><br>Spending target: <b>${money(s.spending)}</b><br>Covered without portfolio withdrawals: <b>${pct(coverage)}</b><br>${gap ? `Ongoing portfolio need: <b>${money(gap)}/yr</b>` : 'Entered guaranteed income covers the spending target.'}${bridge}</p></div>`;
   }).join('');
@@ -345,6 +363,34 @@ function renderNotes(s) {
     : ssSourceNote(s.you);
   $('strategy-notes').innerHTML = `<div class="rsm-note"><strong>Social Security:</strong> ${ssNote}</div><div class="rsm-note"><strong>Portfolio:</strong> The model starts with ${money(s.traditional + s.roth + s.taxable)}, adds entered contributions while working, then fills any retirement-spending gap after Social Security, pension and other income.</div>${couple ? `<div class="rsm-note"><strong>Couples:</strong> Household totals use indexed earnings, taxable wage caps, a highest-35 calculation, claim-age adjustments and estimated spousal excess where applicable. Both worker benefits are shown separately from any spousal excess. Survivor benefits are separate.</div>` : ''}<div class="rsm-note"><strong>Official check:</strong> Compare estimates with ${couple ? "each spouse's" : 'your'} Social Security statement before filing.</div>`;
 }
+function renderRetiredNote(s) {
+  $('rsm-retired-note')?.classList.toggle('rsm-hidden', !(bothRetiredAge(s) < ageNow(s.you)));
+}
+// Advanced-only inputs keep feeding the model after switching back to Quick, so say so
+// instead of letting Quick mode look like its few visible fields produced the answer.
+const ADV_RESET = {'annual-contrib': '0', 'employer-contrib': '0', 'spouse-contrib': '0', 'spouse-employer-contrib': '0',
+  'pension-income': '0', 'other-income': '0', 'return-rate': '3', horizon: '85', 'future-wages': '', 'avg-wages': '',
+  'spouse-future-wages': '', 'spouse-avg-wages': ''};
+function activeAdvanced(s) {
+  const couple = s.household === 'couple', out = [];
+  const contrib = s.contrib + s.employer + (couple ? s.spouseContrib + s.spouseEmployer : 0);
+  if (contrib > 0) out.push(`Contributions ${money(contrib)}/yr`);
+  if (s.pension > 0) out.push(`Pension ${money(s.pension)}/yr`);
+  if (s.other > 0) out.push(`Other income ${money(s.other)}/yr`);
+  if (Math.abs(s.returnRate - .03) > 1e-9) out.push(`Real return ${(s.returnRate * 100).toFixed(2).replace(/\.?0+$/, '')}%`);
+  if (s.horizon !== 85) out.push(`Horizon ${s.horizon}`);
+  if (s.earlyUse === 'invest') out.push('Early SS checks invested');
+  if ($('avg-wages')?.value !== '' || (couple && $('spouse-avg-wages')?.value !== '')) out.push('Career-average earnings');
+  if ($('future-wages')?.value !== '' || (couple && $('spouse-future-wages')?.value !== '')) out.push('Expected future earnings');
+  return out;
+}
+function renderAdvNotice(s) {
+  const box = $('rsm-adv-active');
+  if (!box) return;
+  const items = document.body.classList.contains('is-advanced') ? [] : activeAdvanced(s);
+  box.classList.toggle('rsm-hidden', !items.length);
+  $('rsm-adv-list').textContent = items.join(' \u00b7 ');
+}
 function render() {
   const s = state(), couple = s.household === 'couple';
   $('spouse-inputs')?.classList.toggle('rsm-hidden', !couple);
@@ -378,6 +424,7 @@ function render() {
     ? `Household view: you retire at ${Math.round(s.you.retireAge)} and your spouse/partner at ${Math.round(s.spouse.retireAge)}. Contributions stop separately for each person, and the portfolio results above account for both retirement dates.`
     : `Using ${s.you.override > 0 ? 'your SSA estimate' : 'an SSA-style estimate'}, compare claiming at 62, 65 and 67 while your savings, contributions, retirement income and spending assumptions flow through the model.`;
 
+  renderRetiredNote(s); renderAdvNotice(s);
   renderSnapshot(s);
   renderMeaning(s); renderGoals(s); renderEarnings(s); renderStress(s); renderCouple(s); renderWatch(s);
   renderTable(s); renderPathCards(s); renderIncome(s); renderRoadmap(s); renderChart(s); renderMedicare(s); renderNotes(s);
@@ -460,6 +507,13 @@ function init() {
     const live = e.matches('input[type=number],input[type=text],input[type=month]');
     if (live) e.addEventListener('input', scheduleRender);
     e.addEventListener('change', immediateRender);
+  });
+  $('rsm-adv-view')?.addEventListener('click', () => $('rsm-advanced-mode')?.click());
+  $('rsm-adv-reset')?.addEventListener('click', () => {
+    for (const [id, v] of Object.entries(ADV_RESET)) {const e = $(id); if (e) e.value = v;}
+    const spend = document.querySelector('input[name="early-ss-use"][value="spend"]');
+    if (spend) spend.checked = true;
+    immediateRender();
   });
   $('print-report')?.addEventListener('click', () => window.print());
   $('rsm-reset')?.addEventListener('click', () => location.reload());
