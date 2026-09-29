@@ -260,6 +260,26 @@ function renderWatch(s) {
   items.push(`<div class="rsm-medicare-card"><strong>Current Part B benchmark</strong><p>The standard Medicare Part B premium is $202.90 per month in 2026. Future premiums at your actual enrollment date will be different, so the calculator does not bake today's premium into a long-range retirement forecast.</p></div>`);
   $('watch-results').innerHTML = items.join('');
 }
+// The compact "give me six numbers, tell me what retiring at 62/65/67 means"
+// view. Everything here reuses numbers the detailed panels below already
+// compute -- no new calculation, just a shorter read on the same model.
+function renderSnapshot(s) {
+  $('snapshot-body').innerHTML = MAIN.map(age => {
+    const c = comp(age, age, s);
+    const bridgeYears = Math.max(0, householdReadyAge(age, s) - s.you.retireAge);
+    const bridgeCost = bridgeYears * s.spending;
+    const gap = Math.max(0, s.spending - incomeAtRetirement(age, s));
+    const horizon = portfolioForClaim(age, s).horizon;
+    return `<tr${age === 65 ? ' class="rsm-focus-row"' : ''}><td>${age}</td><td>${money(c.monthly)}/mo</td><td>${bridgeCost > 0 ? money(bridgeCost) : '&mdash;'}</td><td>${gap > 0 ? money(gap) + '/yr' : 'Fully covered'}</td><td>${money(horizon)}</td></tr>`;
+  }).join('');
+
+  const gain = ssAnnual(67, s) - ssAnnual(62, s);
+  const bridgeYears67 = Math.max(0, householdReadyAge(67, s) - s.you.retireAge);
+  const tradeoff = bridgeYears67 > 0
+    ? `Claiming at 62 gives you income sooner but a permanently smaller monthly check. Waiting until 67 needs about ${money(bridgeYears67 * s.spending)} more from savings before Social Security starts, but pays about ${money(gain)} more per year after that.`
+    : `Claiming at 62 gives you income sooner but a permanently smaller monthly check. Waiting until 67 pays about ${money(gain)} more per year once both strategies are fully underway.`;
+  $('tradeoff-copy').textContent = tradeoff;
+}
 function renderTable(s) {
   $('strategy-body').innerHTML = MAIN.map(age => {
     const p = portfolioForClaim(age, s), be = age === 62 ? 'Baseline' : (cross(62, age, s) ? `About age ${cross(62, age, s)}` : 'After 100');
@@ -355,6 +375,7 @@ function render() {
     ? `Household view: you retire at ${Math.round(s.you.retireAge)} and your spouse/partner at ${Math.round(s.spouse.retireAge)}. Contributions stop separately for each person, and the portfolio results above account for both retirement dates.`
     : `Using ${s.you.override > 0 ? 'your SSA estimate' : 'an SSA-style estimate'}, compare claiming at 62, 65 and 67 while your savings, contributions, retirement income and spending assumptions flow through the model.`;
 
+  renderSnapshot(s);
   renderMeaning(s); renderGoals(s); renderEarnings(s); renderStress(s); renderCouple(s); renderWatch(s);
   renderTable(s); renderPathCards(s); renderIncome(s); renderRoadmap(s); renderChart(s); renderMedicare(s); renderNotes(s);
 }
@@ -402,6 +423,14 @@ function init() {
       field?.scrollIntoView({behavior: 'smooth', block: 'center'});
       field?.focus();
     }, 350);
+  });
+  $('rsm-toggle-detail')?.addEventListener('click', () => {
+    const btn = $('rsm-toggle-detail'), panel = $('rsm-detailed');
+    if (!btn || !panel) return;
+    const hidden = panel.classList.toggle('rsm-hidden');
+    btn.setAttribute('aria-expanded', String(!hidden));
+    btn.textContent = hidden ? 'See detailed analysis →' : 'Hide detailed analysis ↑';
+    if (!hidden) panel.scrollIntoView({behavior: 'smooth', block: 'start'});
   });
   render();
 }
