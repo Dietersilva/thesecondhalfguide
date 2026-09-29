@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__/
 *.pyc
+_src/tests/regression/last-run.json
+_src/tests/regression/node_modules/
