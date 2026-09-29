@@ -1,6 +1,7 @@
 (() => {
 'use strict';
 const TODAY = {year: 2026, month: 9};
+const EARNINGS_LIMIT = 24480; // 2026 SSA annual earnings-test limit (below FRA); not user-editable
 const MAIN = [62, 65, 67];
 const YEARS = [62, 63, 64, 65, 66, 67];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -145,7 +146,7 @@ function state() {
     spouseContrib: num('spouse-contrib'), spouseEmployer: num('spouse-employer-contrib'),
     returnRate: num('return-rate', 0, 12) / 100,
     pension: num('pension-income'), other: num('other-income'), spending: num('annual-spending'),
-    horizon: num('horizon', 80, 100), limit: num('earnings-limit'),
+    horizon: num('horizon', 80, 100), limit: EARNINGS_LIMIT,
     partB: $('part-b-start')?.value || '', hsa: !!$('hsa')?.checked,
     coverage: !!$('active-employer-coverage')?.checked, creditable: !!$('creditable-drug')?.checked,
     employerSize: $('employer-size')?.value || 'unknown',
@@ -424,8 +425,22 @@ function setupSSKnown() {
     document.body.classList.toggle('ssknown-yes', v === 'yes');
     document.body.classList.toggle('ssknown-no', v === 'no');
     if (v === 'no') {
-      const ov = $('ss-override'), sov = $('spouse-ss-override');
+      const ov = $('ss-override');
       if (ov) ov.value = '';
+    }
+  };
+  radios.forEach(r => r.addEventListener('change', () => {if (r.checked) {set(r.value); immediateRender();}}));
+  set([...radios].find(r => r.checked)?.value || 'no');
+}
+function setupSpouseSSKnown() {
+  const radios = document.querySelectorAll('input[name="spouse-ss-known"]');
+  const box = $('spouse-inputs');
+  if (!radios.length || !box) return;
+  const set = (v) => {
+    box.classList.toggle('spouse-ssknown-yes', v === 'yes');
+    box.classList.toggle('spouse-ssknown-no', v === 'no');
+    if (v === 'no') {
+      const sov = $('spouse-ss-override');
       if (sov) sov.value = '';
     }
   };
@@ -439,6 +454,7 @@ function init() {
   populateMonths();
   setupModes();
   setupSSKnown();
+  setupSpouseSSKnown();
   previewLinks();
   document.querySelectorAll('.rsm-page input,.rsm-page select').forEach(e => {
     const live = e.matches('input[type=number],input[type=text],input[type=month]');
