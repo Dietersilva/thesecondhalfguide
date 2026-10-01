@@ -602,7 +602,13 @@ def checked_date(body, published=None):
     return published or ''
 
 
+def _plain(text):
+    # JSON-LD is plain text, not HTML: "isn&rsquo;t" must read "isn't" to a crawler.
+    return html_mod.unescape(text) if isinstance(text, str) else text
+
+
 def json_ld(path, title, desc, canonical, headline, body, published=None):
+    desc, headline = _plain(desc), _plain(headline)
     cls = layout_class(path)
     if cls == 'hub':
         node = {'@type': 'WebSite', 'name': 'The Second Half Guide',
@@ -632,9 +638,11 @@ def json_ld(path, title, desc, canonical, headline, body, published=None):
 def breadcrumb_ld(path, headline, crumb=None):
     """crumb is (category_name, category_slug) for an article; a category
     hub page passes None since the page itself *is* that level."""
+    headline = _plain(headline)
     items = [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': ORIGIN + '/'}]
     if crumb:
         cat_name, cat_slug = crumb
+        cat_name = _plain(cat_name)
         items.append({'@type': 'ListItem', 'position': 2, 'name': cat_name,
                       'item': f'{ORIGIN}/{cat_slug}'})
     items.append({'@type': 'ListItem', 'position': len(items) + 1, 'name': headline,
