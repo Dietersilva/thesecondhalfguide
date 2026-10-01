@@ -121,10 +121,10 @@ function computeExpected(scenario) {
   const rate = (scenario.fields['return-rate'] || 0) / 100;
   const out = {};
   for (const age of MAIN_AGES) {
-    const steady = ref.household(you, spouse, isCouple, age, age, null, false, 0);
+    const steady = ref.household(you, spouse, isCouple, age, age, null);
     const portfolio = ref.projectPortfolio(you, spouse, isCouple, age, householdInputs, startAge, rate);
     const readyAge = ref.householdReadyAge(you, spouse, isCouple, age);
-    const income = ref.household(you, spouse, isCouple, age, age, readyAge, false, 0).total
+    const income = ref.household(you, spouse, isCouple, age, age, readyAge).total
       + householdInputs.pension + householdInputs.other;
     out[age] = {
       monthly: steady.monthly,
@@ -135,7 +135,7 @@ function computeExpected(scenario) {
       ongoingGap: Math.max(0, householdInputs.spending - income),
     };
     if (isCouple) {
-      out.matrix = MAIN_AGES.map(a => MAIN_AGES.map(b => ref.household(you, spouse, true, a, b, null, false, 0).total));
+      out.matrix = MAIN_AGES.map(a => MAIN_AGES.map(b => ref.household(you, spouse, true, a, b, null).total));
     }
   }
   return out;

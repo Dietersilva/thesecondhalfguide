@@ -145,17 +145,60 @@ function annualGrossOwnBenefit(person, claimAge) {
   return monthlyOwnBenefit(person, claimAge) * 12;
 }
 
-// Amount of a year's benefit withheld under the Retirement Earnings Test,
-// given the person is under FRA in that year.
-function annualWithholding(person, claimAge, standardLimit) {
+// Retirement Earnings Test, as SSA applies it to a person who has claimed before
+// full retirement age (FRA) and is still working.
+//
+// Conventions chosen for this annual model (shared with the calculator, stated
+// here so a change to either is deliberate):
+//  - A "year" is a span of the person's own age, [t, t+1). The FRA year is the
+//    span that ends at FRA, i.e. FRA - t <= 1, and uses the higher limit with
+//    $1 withheld per $3; every earlier year uses $1 per $2.
+//  - Withholding only happens while the person is still working: t < retireAge.
+//  - SSA withholds whole monthly checks, so a year's withholding in dollars is
+//    converted to the smallest whole number of checks that covers it, never
+//    more than 12 (or the months left before FRA in the FRA year).
+function dollarsWithheldInYear(person, claimAge, ownAge, standardLimit) {
   const fra = fullRetirementAge(person.birthYear);
-  if (claimAge >= fra) return 0;
-  const gross = annualGrossOwnBenefit(person, claimAge);
-  const isFraYear = fra - claimAge < 1;
-  const overage = isFraYear
-    ? Math.max(0, person.countableEarnings - EARNINGS_LIMIT_FRA_YEAR) / 3
-    : Math.max(0, person.countableEarnings - standardLimit) / 2;
-  return Math.min(gross, overage);
+  const stillWorking = ownAge < person.retireAge;
+  const claimed = ownAge >= claimAge;
+  if (claimAge >= fra || ownAge >= fra || !stillWorking || !claimed) return 0;
+  const inFraYear = fra - ownAge <= 1;
+  const excess = inFraYear
+    ? (person.countableEarnings - EARNINGS_LIMIT_FRA_YEAR) / 3
+    : (person.countableEarnings - standardLimit) / 2;
+  return Math.min(annualGrossOwnBenefit(person, claimAge), Math.max(0, excess));
+}
+function checksWithheldInYear(person, claimAge, ownAge, standardLimit) {
+  const fra = fullRetirementAge(person.birthYear);
+  const dollars = dollarsWithheldInYear(person, claimAge, ownAge, standardLimit);
+  const check = monthlyOwnBenefit(person, claimAge);
+  if (dollars <= 0 || check <= 0) return 0;
+  let checks = 0;
+  while (checks * check < dollars - 1e-6) checks++;
+  const monthsLeftBeforeFra = Math.round((fra - ownAge) * 12);
+  return Math.min(checks, 12, monthsLeftBeforeFra);
+}
+function totalChecksWithheld(person, claimAge, standardLimit) {
+  const fra = fullRetirementAge(person.birthYear);
+  let total = 0;
+  for (let ownAge = claimAge; ownAge < fra; ownAge++) {
+    total += checksWithheldInYear(person, claimAge, ownAge, standardLimit);
+  }
+  return total;
+}
+// At FRA SSA recalculates as though the person had claimed that many months
+// later (never later than FRA itself).
+function settledMonthlyBenefit(person, claimAge, standardLimit) {
+  const fra = fullRetirementAge(person.birthYear);
+  const effectiveClaimAge = Math.min(fra, claimAge + totalChecksWithheld(person, claimAge, standardLimit) / 12);
+  return computePIA(person) * ownBenefitFactor(effectiveClaimAge, person.birthYear);
+}
+// One person's own benefit for a year in which they are `ownAge`. `ownAge === null`
+// means "settled": the benefit after any withholding has been credited back.
+function ownBenefitForYear(person, claimAge, ownAge, standardLimit) {
+  const fra = fullRetirementAge(person.birthYear);
+  if (ownAge === null || ownAge >= fra) return settledMonthlyBenefit(person, claimAge, standardLimit) * 12;
+  return Math.max(0, annualGrossOwnBenefit(person, claimAge) - dollarsWithheldInYear(person, claimAge, ownAge, standardLimit));
 }
 
 // The spousal "excess" -- the amount, if positive, that tops up a spouse's
@@ -175,17 +218,15 @@ function spousalExcess(receiver, receiverClaimAge, worker, workerClaimAge) {
 // actual) claim ages. `activeAge`, when given, is "how old is the primary
 // person right now" -- used to decide whether each benefit has actually
 // started yet and whether the earnings test should still apply.
-function household(you, spouse, isCouple, youClaimAge, spouseClaimAge, activeAge, applyEarningsTest, earningsLimit) {
+function household(you, spouse, isCouple, youClaimAge, spouseClaimAge, activeAge, earningsLimit = EARNINGS_LIMIT_STANDARD) {
   const ageOffset = birthDecimal(you) - birthDecimal(spouse);
   const spouseCurrentAge = activeAge === null ? Infinity : activeAge + ageOffset;
   const youActive = activeAge === null || activeAge >= youClaimAge;
   const spouseActive = isCouple && (activeAge === null || spouseCurrentAge >= spouseClaimAge);
 
-  const youOwn = youActive
-    ? Math.max(0, annualGrossOwnBenefit(you, youClaimAge) - (applyEarningsTest ? annualWithholding(you, youClaimAge, earningsLimit) : 0))
-    : 0;
+  const youOwn = youActive ? ownBenefitForYear(you, youClaimAge, activeAge, earningsLimit) : 0;
   const spouseOwn = spouseActive
-    ? Math.max(0, annualGrossOwnBenefit(spouse, spouseClaimAge) - (applyEarningsTest ? annualWithholding(spouse, spouseClaimAge, earningsLimit) : 0))
+    ? ownBenefitForYear(spouse, spouseClaimAge, activeAge === null ? null : spouseCurrentAge, earningsLimit)
     : 0;
 
   let youExcess = 0, spouseExcess = 0;
@@ -199,7 +240,7 @@ function household(you, spouse, isCouple, youClaimAge, spouseClaimAge, activeAge
 function birthDecimal(p) {return p.birthYear + (p.birthMonth - 1) / 12;}
 
 function ssAnnualAtSteadyState(you, spouse, isCouple, claimAge) {
-  return household(you, spouse, isCouple, claimAge, claimAge, null, false, 0).total;
+  return household(you, spouse, isCouple, claimAge, claimAge, null).total;
 }
 
 // The household's shared "both retired" age (a couple's retirement dates
@@ -236,7 +277,7 @@ function currentAge(you) {
 
 function incomeOnceStarted(you, spouse, isCouple, claimAge, pension, other) {
   const readyAge = householdReadyAge(you, spouse, isCouple, claimAge);
-  return household(you, spouse, isCouple, claimAge, claimAge, readyAge, false, 0).total + pension + other;
+  return household(you, spouse, isCouple, claimAge, claimAge, readyAge).total + pension + other;
 }
 
 function contributionsAtAge(you, spouse, isCouple, age, householdInputs) {
@@ -257,7 +298,7 @@ function projectPortfolio(you, spouse, isCouple, claimAge, householdInputs, star
     balance += contributionsAtAge(you, spouse, isCouple, age, householdInputs);
     if (householdInputs.earlyUse === 'invest') {
       const active = activeAgeForBenefit(you, spouse, isCouple, age, claimAge);
-      balance += household(you, spouse, isCouple, claimAge, claimAge, active, true, householdInputs.earningsLimit).total;
+      balance += household(you, spouse, isCouple, claimAge, claimAge, active).total;
     }
   }
   const atRetire = balance;
@@ -267,7 +308,7 @@ function projectPortfolio(you, spouse, isCouple, claimAge, householdInputs, star
     // of THIS year's age versus their claim age, not a fixed "ready age"
     // snapshot -- a claim age later than retirement must still show $0
     // guaranteed income in the bridge years before it arrives.
-    const income = household(you, spouse, isCouple, claimAge, claimAge, age, false, 0).total
+    const income = household(you, spouse, isCouple, claimAge, claimAge, age).total
       + householdInputs.pension + householdInputs.other;
     balance -= Math.max(0, householdInputs.spending - income);
     if (balance < 0) {balance = 0; break;}
@@ -283,7 +324,7 @@ module.exports = {
   CURRENT_YEAR, EARNINGS_LIMIT_STANDARD, EARNINGS_LIMIT_FRA_YEAR,
   averageWageIndex, taxableMax, bendPoints, fullRetirementAge,
   ownBenefitFactor, spousalExcessFactor, computeAIME, computePIA,
-  monthlyOwnBenefit, annualGrossOwnBenefit, annualWithholding, spousalExcess,
+  monthlyOwnBenefit, annualGrossOwnBenefit, dollarsWithheldInYear, totalChecksWithheld, settledMonthlyBenefit, spousalExcess,
   household, ssAnnualAtSteadyState, bothRetiredAge, householdReadyAge,
   currentAge, withdrawalStartAge, bridge, incomeOnceStarted, contributionsAtAge, projectPortfolio, birthDecimal,
 };

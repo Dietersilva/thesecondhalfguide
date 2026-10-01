@@ -33,7 +33,7 @@ full per-scenario detail (rendered rows + expected values) after each run.
 
 ## What's covered
 
-20 scenarios in `scenarios.js`: single and couple households, a short
+25 scenarios in `scenarios.js`: single and couple households, a short
 (zero-padded) work history, a high earner pinned at the taxable wage cap,
 an entered SSA statement override, career-average vs. current-wages
 estimation, an expected future raise, an older birth year with FRA = 66,
@@ -111,6 +111,27 @@ worker has filed), and an already-passed retirement age triggered withdrawals fo
 years that had already gone by. Each was reproduced against the old build, fixed,
 and the reference was updated to the corrected rule before re-running (20/20).
 
-Known and deliberately not modeled: SSA credits back months withheld under the
-earnings test at full retirement age. The calculator discloses this; it affects
-break-even/cumulative figures for people who work while claiming early.
+### 2026-09-29, third pass: earnings-test credit-back
+
+SSA withholds whole checks while someone works before full retirement age (FRA) and,
+at FRA, recalculates the benefit as though they had claimed that many months later.
+The calculator used to withhold and never credit it back, which made early claiming
+while working look much worse than it is (claim-65 vs claim-67 break-even read "about
+68" for a worker staying on to 67; it is closer to 80). It now models it:
+withholding per person, per working year, using each person's own retirement age;
+checks counted in whole months; the settled benefit is PIA times the reduction factor
+for `claim age + months withheld / 12`, capped at FRA. It feeds every output.
+
+Conventions stated in `ssa-reference.js` and shared deliberately: a year is a span of
+the person's own age, the FRA year is the span ending at FRA (so a person with an
+integer FRA of 67 gets the $65,160 / $1-per-$3 rule at 66, which the old code never
+reached), and checks in the FRA year are capped at the months left before FRA.
+
+Five new scenarios cover working past FRA, a fractional-FRA year, earnings under the
+limit, a couple where only one spouse still works, and invest-early-checks mode.
+Pointing the corrected reference at the previous build fails 9 of 25, so the suite
+does detect the change. Cross-checked the rule against a published worked example
+(filed at 63, $1,500/mo, $35,000 earnings, $23,400 limit: $5,800 withheld, 4 checks).
+
+Still not modeled: SSA's special first-year monthly rule, the earnings test on spousal
+excess, and months within a year (earnings are a single annual figure).

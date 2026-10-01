@@ -106,15 +106,36 @@ function pia(p, a) {
 }
 function monthly(a, p) {return pia(p, a) * factor(a, p.birthYear);}
 function grossAnnual(a, p) {return monthly(a, p) * 12;}
-function withheldAnnual(a, p, limit) {
+// Earnings test. In a year before a person reaches full retirement age (FRA), while they are
+// still working, SSA withholds whole monthly checks: $1 per $2 of earnings over the annual limit,
+// or -- in the year FRA is reached -- $1 per $3 over a higher limit. Withheld months are not lost:
+// at FRA the benefit is recalculated as though the person had claimed that many months later.
+// `t` is the person's own age during the year; the FRA year is the one that ends at FRA.
+function withheldInYear(a, t, p, limit) {
   const f = fra(p.birthYear);
-  if (a >= f) return 0;
-  const g = grossAnnual(a, p);
-  // The calendar year full retirement age is reached uses a higher limit and a $1-for-$3 rule
-  // instead of the standard $1-for-$2 rule that applies in earlier years.
-  return f - a < 1 ? Math.min(g, Math.max(0, p.countable - 65160) / 3) : Math.min(g, Math.max(0, p.countable - limit) / 2);
+  if (a >= f || t < a || t >= f || t >= p.retireAge) return 0;
+  const over = f - t <= 1 ? (p.countable - 65160) / 3 : (p.countable - limit) / 2;
+  return Math.min(grossAnnual(a, p), Math.max(0, over));
 }
-function personAnnual(a, p, test, limit) {return Math.max(0, grossAnnual(a, p) - (test ? withheldAnnual(a, p, limit) : 0));}
+function monthsWithheld(a, p, limit) {
+  const f = fra(p.birthYear), mo = monthly(a, p);
+  if (a >= f || mo <= 0) return 0;
+  let m = 0;
+  for (let t = a; t < Math.min(f, p.retireAge); t++) {
+    const monthsBeforeFra = Math.min(12, Math.round((f - t) * 12));
+    m += Math.min(monthsBeforeFra, Math.ceil(withheldInYear(a, t, p, limit) / mo - 1e-9));
+  }
+  return m;
+}
+// The monthly benefit once withheld months have been credited back at FRA.
+function creditedMonthly(a, p, limit) {
+  return pia(p, a) * factor(Math.min(fra(p.birthYear), a + monthsWithheld(a, p, limit) / 12), p.birthYear);
+}
+// ownAge === null means the settled benefit, after any credit-back.
+function personAnnual(a, p, limit, ownAge = null) {
+  if (ownAge === null || ownAge >= fra(p.birthYear)) return creditedMonthly(a, p, limit) * 12;
+  return Math.max(0, grossAnnual(a, p) - withheldInYear(a, ownAge, p, limit));
+}
 const birthDec = p => p.birthYear + (p.birthMonth - 1) / 12;
 // A spouse can't draw the spousal excess until the worker has filed, so its early-claim
 // reduction is counted from the later of the two start dates, in the receiving spouse's own age.
@@ -125,13 +146,13 @@ function excess(ra, r, wa, w) {
 
 // Household Social Security total for a given pair of claim ages, including each
 // spouse's own worker benefit plus any spousal excess either qualifies for.
-function comp(a, b, s, age = null, test = false) {
+function comp(a, b, s, age = null) {
   const off = (s.you.birthYear + (s.you.birthMonth - 1) / 12) - (s.spouse.birthYear + (s.spouse.birthMonth - 1) / 12);
   const spouseAge = age === null ? Infinity : age + off;
   const youActive = age === null || age >= a;
   const spouseActive = s.household === 'couple' && (age === null || spouseAge >= b);
-  const youOwn = youActive ? personAnnual(a, s.you, test, s.limit) : 0;
-  const spouseOwn = spouseActive ? personAnnual(b, s.spouse, test, s.limit) : 0;
+  const youOwn = youActive ? personAnnual(a, s.you, s.limit, age) : 0;
+  const spouseOwn = spouseActive ? personAnnual(b, s.spouse, s.limit, age === null ? null : spouseAge) : 0;
   let youExcess = 0, spouseExcess = 0;
   if (youActive && spouseActive) {
     youExcess = excess(a, s.you, b, s.spouse) * 12;
@@ -140,8 +161,8 @@ function comp(a, b, s, age = null, test = false) {
   const total = youOwn + spouseOwn + youExcess + spouseExcess;
   return {youOwn, spouseOwn, youExcess, spouseExcess, total, monthly: total / 12};
 }
-function ssAnnual(claimAge, s, test = false) {return comp(claimAge, claimAge, s, null, test).total;}
-function atAge(age, a, b, s, test = false) {return comp(a, b, s, age, test).total;}
+function ssAnnual(claimAge, s) {return comp(claimAge, claimAge, s, null).total;}
+function atAge(age, a, b, s) {return comp(a, b, s, age).total;}
 
 function state() {
   return {
@@ -183,12 +204,12 @@ function portfolioForClaim(claimAge, s, rate = s.returnRate) {
   for (let age = start; age < retire; age++) {
     bal *= 1 + rate;
     bal += contributionsAt(age, s);
-    if (s.earlyUse === 'invest') bal += atAge(age, claimAge, claimAge, s, true);
+    if (s.earlyUse === 'invest') bal += atAge(age, claimAge, claimAge, s);
   }
   const atRetire = bal;
   for (let age = Math.round(Math.max(retire, start)); age < s.horizon; age++) {
     bal *= 1 + rate;
-    const income = atAge(age, claimAge, claimAge, s, false) + s.pension + s.other;
+    const income = atAge(age, claimAge, claimAge, s) + s.pension + s.other;
     bal -= Math.max(0, s.spending - income);
     if (bal < 0) {bal = 0; break;}
   }
@@ -199,13 +220,13 @@ function portfolioForClaim(claimAge, s, rate = s.returnRate) {
 function cumulative(claimAge, through, s) {
   const off = s.household === 'couple' ? householdOffset(s) : 0;
   let total = 0;
-  for (let age = Math.floor(Math.min(claimAge, claimAge - off)); age <= through; age++) total += atAge(age, claimAge, claimAge, s, age < s.you.retireAge);
+  for (let age = Math.floor(Math.min(claimAge, claimAge - off)); age <= through; age++) total += atAge(age, claimAge, claimAge, s);
   return total;
 }
 function cumulativeMixed(a, b, through, s) {
   const off = s.household === 'couple' ? householdOffset(s) : 0;
   let total = 0;
-  for (let age = Math.floor(Math.min(a, b - off)); age <= through; age++) total += atAge(age, a, b, s, age < s.you.retireAge);
+  for (let age = Math.floor(Math.min(a, b - off)); age <= through; age++) total += atAge(age, a, b, s);
   return total;
 }
 function cross(a, b, s) {for (let age = b; age <= 100; age++) {if (cumulative(b, age, s) >= cumulative(a, age, s)) return age;} return null;}
@@ -235,12 +256,12 @@ function bridgeInfo(claimAge, s) {
 // permanently worse instead of showing the larger check it actually pays
 // once it begins. The bridge gap before benefits start is real and is
 // reported separately, but it should not be conflated with ongoing coverage.
-function incomeAtRetirement(claimAge, s) {return atAge(householdReadyAge(claimAge, s), claimAge, claimAge, s, false) + s.pension + s.other;}
+function incomeAtRetirement(claimAge, s) {return atAge(householdReadyAge(claimAge, s), claimAge, claimAge, s) + s.pension + s.other;}
 function spendingCoverage(claimAge, s) {if (s.spending <= 0) return 100; return incomeAtRetirement(claimAge, s) / s.spending * 100;}
 
 function renderMeaning(s) {
   const be65 = cross(62, 65, s), be67 = cross(62, 67, s), p62 = portfolioForClaim(62, s), p67 = portfolioForClaim(67, s);
-  const earlyWithheld = withheldAnnual(62, s.you, s.limit) + (s.household === 'couple' ? withheldAnnual(62, s.spouse, s.limit) : 0);
+  const earlyWithheld = withheldInYear(62, 62, s.you, s.limit) + (s.household === 'couple' ? withheldInYear(62, 62, s.spouse, s.limit) : 0);
   const lines = [];
   lines.push(`<div class="rsm-note"><strong>Cash sooner vs. larger check later:</strong> Claiming at 62 starts income earlier. Claiming at 67 produces about <b>${money(ssAnnual(67, s) - ssAnnual(62, s))} more per year</b> once both strategies are fully in pay status.</div>`);
   if (be65 || be67) lines.push(`<div class="rsm-note"><strong>When waiting catches up:</strong> Under these inputs, 65 catches 62 at about <b>age ${be65 || '100+'}</b>, while 67 catches 62 at about <b>age ${be67 || '100+'}</b>.</div>`);
@@ -249,17 +270,32 @@ function renderMeaning(s) {
   $('meaning-results').innerHTML = lines.join('');
 }
 function renderGoals(s) {
-  const retire = s.you.retireAge, earningsImpact = withheldAnnual(62, s.you, s.limit) > 0;
+  const retire = s.you.retireAge, earningsImpact = withheldInYear(62, 62, s.you, s.limit) > 0;
   $('goal-results').innerHTML = `<div class="rsm-medicare-card"><strong>What claiming at 62 emphasizes</strong><p>Earlier income, and less need to bridge the first retirement years from savings.${earningsImpact ? ' Your entered work earnings are above the earnings-test limit before FRA, so part of this benefit may be withheld in the year(s) you keep working.' : ''}</p></div><div class="rsm-medicare-card"><strong>What claiming at 65 emphasizes</strong><p>A middle point between earlier cash flow and a larger monthly benefit.${Math.abs(retire - 65) <= 1 ? ' This also lines up closely with your entered retirement age.' : ''}</p></div><div class="rsm-medicare-card"><strong>What claiming at 67 emphasizes</strong><p>A larger monthly benefit among these three choices, and more protection if you live longer than average.</p></div>`;
 }
 function renderEarnings(s) {
   const people = [['You', s.you]];
   if (s.household === 'couple') people.push(['Spouse', s.spouse]);
   $('earnings-results').innerHTML = people.map(([label, p]) => {
-    const w62 = withheldAnnual(62, p, s.limit), gross = grossAnnual(62, p), net = Math.max(0, gross - w62);
+    if (p.retireAge <= 62) return `<div class="rsm-note"><strong>${label}:</strong> A planned retirement at or before 62 means no earnings after claiming, so the earnings test would not apply.</div>`;
+    const w62 = withheldInYear(62, 62, p, s.limit), gross = grossAnnual(62, p), net = Math.max(0, gross - w62);
     if (w62 <= 0) return `<div class="rsm-note"><strong>${label}:</strong> Entered countable earnings are not above the current ${money(s.limit)} annual limit, so this simple 62 illustration shows no earnings-test withholding.</div>`;
-    return `<div class="rsm-note"><strong>${label} at 62:</strong> Estimated gross benefit ${money(gross)}/yr. With entered countable earnings, roughly <b>${money(w62)}</b> could be withheld, leaving about <b>${money(net)}</b> paid before tax &mdash; an <b>annual earnings-test estimate</b>, not a month-by-month calculation. Benefits withheld under the earnings test are not simply lost; SSA later adjusts for months withheld at full retirement age, and SSA also has a special monthly rule that can pay a full benefit for individual months under the limit during the calendar year you first claim, which this estimate does not reproduce.</div>`;
+    const m = monthsWithheld(62, p, s.limit);
+    return `<div class="rsm-note"><strong>${label} at 62:</strong> Estimated gross benefit ${money(gross)}/yr. With entered countable earnings, roughly <b>${money(w62)}</b> could be withheld in the first year, leaving about <b>${money(net)}</b> paid before tax &mdash; an annual estimate, not a month-by-month calculation. Across every working year before full retirement age that comes to about <b>${m} whole month${m === 1 ? '' : 's'}</b> of checks withheld. Withheld months are not lost: at full retirement age SSA recalculates the benefit as though you had claimed ${m} month${m === 1 ? '' : 's'} later, so the monthly amount rises from ${money(monthly(62, p))} to <b>${money(creditedMonthly(62, p, s.limit))}</b>. SSA also has a special monthly rule that can pay a full benefit for individual months under the limit during the calendar year you first claim, which this estimate does not reproduce.</div>`;
   }).join('');
+}
+function renderWithheldNote(s) {
+  const el = $('rsm-withheld-note');
+  if (!el) return;
+  const people = [['You', s.you]];
+  if (s.household === 'couple') people.push(['Spouse', s.spouse]);
+  const lines = [];
+  MAIN.forEach(age => people.forEach(([label, p]) => {
+    const m = monthsWithheld(age, p, s.limit);
+    if (m > 0) lines.push(`${s.household === 'couple' ? label + ' claiming' : 'Claiming'} at ${age}: ${m} month${m === 1 ? '' : 's'} withheld while working, so the benefit settles at ${money(creditedMonthly(age, p, s.limit))}/mo instead of ${money(monthly(age, p))}`);
+  }));
+  el.classList.toggle('rsm-hidden', !lines.length);
+  el.innerHTML = lines.length ? `<strong>Working before full retirement age changes the monthly figures.</strong> Under the earnings test, some early checks would be withheld; Social Security then raises the benefit at full retirement age to credit those months, and the monthly amounts shown are that settled benefit. ${lines.join('; ')}.` : '';
 }
 function renderStress(s) {
   const base = s.returnRate, low = Math.max(0, base - .02), high = Math.min(.10, base + .02);
@@ -424,7 +460,7 @@ function render() {
     ? `Household view: you retire at ${Math.round(s.you.retireAge)} and your spouse/partner at ${Math.round(s.spouse.retireAge)}. Contributions stop separately for each person, and the portfolio results above account for both retirement dates.`
     : `Using ${s.you.override > 0 ? 'your SSA estimate' : 'an SSA-style estimate'}, compare claiming at 62, 65 and 67 while your savings, contributions, retirement income and spending assumptions flow through the model.`;
 
-  renderRetiredNote(s); renderAdvNotice(s);
+  renderRetiredNote(s); renderAdvNotice(s); renderWithheldNote(s);
   renderSnapshot(s);
   renderMeaning(s); renderGoals(s); renderEarnings(s); renderStress(s); renderCouple(s); renderWatch(s);
   renderTable(s); renderPathCards(s); renderIncome(s); renderRoadmap(s); renderChart(s); renderMedicare(s); renderNotes(s);
