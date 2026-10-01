@@ -890,24 +890,42 @@ def search_page():
   var input = document.getElementById('q');
   var results = document.getElementById('results');
   var status = document.getElementById('search-status');
+  // Match on plain text: the index holds HTML entities (&rsquo; &amp;) and curly quotes,
+  // so normalize both the data and the query before comparing.
+  function norm(s) {
+    return s.toLowerCase()
+      .replace(/&rsquo;|&lsquo;|’|‘/g, "'")
+      .replace(/&amp;/g, '&')
+      .replace(/&mdash;|&ndash;|—|–/g, ' ')
+      .replace(/&[a-z]+;|&#[0-9]+;/g, ' ');
+  }
+  for (var k = 0; k < data.length; k++) {
+    data[k].nt = norm(data[k].t);
+    data[k].nh = data[k].nt + ' ' + norm(data[k].d);
+  }
   input.addEventListener('input', function () {
-    var q = input.value.trim().toLowerCase();
-    if (q.length < 2) {
+    var words = norm(input.value).split(/[ ]+/).filter(function (w) { return w.length >= 2; });
+    if (words.length === 0) {
       results.innerHTML = '';
       status.textContent = 'Type at least 2 letters to see results.';
       status.hidden = false;
       return;
     }
+    // Every word must appear, in any order; title matches are listed first.
     var titleHits = [], descHits = [];
     for (var i = 0; i < data.length; i++) {
-      var item = data[i];
-      if (item.t.toLowerCase().indexOf(q) !== -1) { titleHits.push(item); }
-      else if (item.d.toLowerCase().indexOf(q) !== -1) { descHits.push(item); }
+      var item = data[i], inTitle = true, inAll = true;
+      for (var w = 0; w < words.length; w++) {
+        if (item.nt.indexOf(words[w]) === -1) { inTitle = false; }
+        if (item.nh.indexOf(words[w]) === -1) { inAll = false; break; }
+      }
+      if (inTitle) { titleHits.push(item); }
+      else if (inAll) { descHits.push(item); }
     }
     var hits = titleHits.concat(descHits);
     if (hits.length === 0) {
       results.innerHTML = '';
-      status.textContent = 'No matches. Try a shorter or different word.';
+      status.textContent = 'No matches. Try fewer or different words.';
       status.hidden = false;
       return;
     }
