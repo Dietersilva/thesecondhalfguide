@@ -16,26 +16,29 @@ security headers: HSTS, a strict Content-Security-Policy, `nosniff`,
 ## Layout
 
 ```
-index.html, about.html, privacy.html, …   24 articles + 4 site pages
-styles.css                                one shared stylesheet
-fonts/*.woff2                             self-hosted, no third-party requests
-sitemap.xml, robots.txt, favicon.svg
-vercel.json                               headers + clean URLs
-_src/                                     generators (excluded via .vercelignore)
+index.html, about.html, etias.html, …      built pages: articles, category hubs, site pages
+styles.<hash>.css                          the one shared stylesheet (content-hashed filename);
+                                           styles.css is a short-cache legacy copy -- leave it
+fonts/*.woff2                              self-hosted, no third-party requests
+retirement-strategy-model.*                hand-authored calculator, copied verbatim by publish.py
+sitemap.xml, robots.txt, llms.txt          generated
+vercel.json                                generated: headers, CSP script hashes, clean URLs
+_src/                                      sources, generators and tests (excluded via .vercelignore)
 ```
 
 ## Regenerating
 
 ```
-cd _src
-python3 build_pages.py <about-url> <contact-url> <privacy-url>
-python3 build_articles.py <same three urls>
-python3 build_site.py
+python3 _src/publish.py --check    # build, report what would change, write nothing
+python3 _src/publish.py            # build and sync into the repo root
 ```
 
-`build_site.py` writes the shared stylesheet, decodes fonts to `fonts/*.woff2`,
-rewrites cross-links to root-relative paths, and regenerates `sitemap.xml`,
-`robots.txt` and `vercel.json`.
+`publish.py` runs the four builders in order (templates, pages, articles, site),
+then installs the hand-authored calculator files. `build_site.py` writes the shared
+stylesheet, decodes fonts, rewrites cross-links, and regenerates the sitemap,
+`robots.txt`, `llms.txt` and `vercel.json`. `CLAUDE.md` has the full operating notes.
+
+The calculator has an independent regression suite: `_src/tests/regression/README.md`.
 
 ## Editorial rules
 
@@ -44,9 +47,10 @@ rewrites cross-links to root-relative paths, and regenerates `sitemap.xml`,
 - No invented people or composite characters. Reader stories run with permission.
 - Ads are labelled; advertisers have no say in what gets written.
 
-## When AdSense is added
+## Content Security Policy
 
-`script-src` currently allow-lists one inline script by SHA-256 hash (the topic
-form's mailto builder). Adding AdSense means widening `script-src`, `frame-src`
-and `img-src` for Google's domains — change that in `build_site.py` deliberately
-rather than removing the policy.
+`script-src` allow-lists each inline script by SHA-256 hash; `build_site.py`
+computes the hashes and writes them into `vercel.json`. There are no external
+scripts beyond the analytics hosts it names, and no `unsafe-inline`. Adding AdSense
+(see `ADS_LIVE` in `build_site.py`) means widening `script-src`, `frame-src` and
+`img-src` for Google's domains -- do that deliberately rather than loosening the policy.
