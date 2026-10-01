@@ -169,8 +169,8 @@ ARTICLES3['open-enrollment'] = {
         ('By 30 September', 'The deadline for plans to mail your Annual Notice of Change for the '
                             'following year. If it hasn’t arrived by early October, chase it.'),
         ('A higher cap in 2027', 'The Part D out-of-pocket cap is indexed and rises from $2,100 '
-                                 '&mdash; projected at roughly $2,400, confirmed when CMS publishes '
-                                 'the figure. Worth knowing before you compare plans this fall.'),
+                                 'to $2,400 &mdash; CMS finalized the 2027 figure in April. Worth '
+                                 'knowing before you compare plans this fall.'),
         ('1 Jan &ndash; 31 Mar', 'Medicare Advantage Open Enrollment. If you’re already in an Advantage '
                                  'plan, you get one switch &mdash; to a different Advantage plan or back '
                                  'to Original Medicare.'),
