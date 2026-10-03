@@ -149,7 +149,7 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'Medicare&rsquo;s sales rules loosen on October 1',
     'dek': 'Two weeks before Annual Enrollment opens, several federal limits on how agents and plans can '
-           'reach you are being removed. Here is exactly what changed &mdash; and what is still against '
+           'reach you were removed. Here is exactly what changed &mdash; and what is still against '
            'the rules regardless.',
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s finalized 2027 marketing rule and '
             'independent industry coverage',
@@ -157,8 +157,8 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
     'recheck': {'due': '2026-10-08', 'why': 'A week into the new rules being in effect -- confirm no '
                 'walk-back or clarification changed what actually took effect October 1.'},
     'body': """      <p>Every fall, the volume of Medicare sales calls, mailers and television ads goes up ahead of
-      Annual Enrollment. This year, the federal rules governing that outreach are loosening at the same
-      time, not tightening. The change takes effect <strong>1 October 2026</strong> &mdash; two weeks
+      Annual Enrollment. This year, the federal rules governing that outreach loosened at the same
+      time, not tightened. The change took effect <strong>1 October 2026</strong> &mdash; two weeks
       before Annual Enrollment opens on 15 October &mdash; under the same Contract Year 2027 Medicare
       Advantage and Part D final rule CMS published on 6 April 2026.</p>
 
