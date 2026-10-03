@@ -155,12 +155,12 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'CMS canceled 760,000 Marketplace enrollments over fraud concerns',
     'dek': 'A September anti-fraud sweep canceled roughly 315,000 ACA Marketplace enrollments covering '
-           'more than 760,000 people &mdash; and CMS itself acknowledges some legitimate enrollees were '
-           'likely swept in with the fraudulent ones. Here is how to find out which side of that you are '
-           'on.',
+           'more than 760,000 people. CMS says every one was confirmed unauthorized; outside analysts '
+           'question whether legitimate enrollees could still be caught. Here is how to find out which '
+           'side of that you are on.',
     'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 2026 '
             'action',
-    'checked': CHECKED19,
+    'checked': '3 October 2026',
     'recheck': {'due': '2026-10-20', 'why': 'Marketplace open enrollment approaches -- confirm the appeal '
                 'and re-enrollment mechanics described here still match, and check whether CMS published '
                 'further guidance for affected consumers.'},
@@ -201,10 +201,12 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
       new 2027 registrations specifically, rather than broker activity across the board.</p>
 
       <p>CMS frames this as recovering federal money paid out on enrollments that should never have existed.
-      That framing is accurate as far as it goes. It is also, by CMS&rsquo;s own account, an imperfect
-      filter: reporting on the action has been explicit that some legitimate enrollees were almost certainly
-      caught in the same sweep &mdash; people who simply didn&rsquo;t respond to a data-matching notice in
-      time, rather than people who did anything fraudulent themselves.</p>
+      CMS says the canceled enrollments were confirmed unauthorized. Outside analysts are not as sure
+      the process was airtight: KFF&rsquo;s Cynthia Cox told the Associated Press that coverage obtained
+      through fraud should be canceled, but questioned whether the government had said enough about how
+      the affected people were identified, and reporting has raised the possibility that qualified
+      enrollees who missed a notice in time were canceled too. That is a concern from outside the agency,
+      not something CMS has conceded.</p>
 
       <blockquote class="pull">
         <p>An enforcement announcement measures what an agency caught in aggregate. It does not tell any

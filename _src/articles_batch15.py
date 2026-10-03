@@ -20,10 +20,12 @@ ARTICLES15['ma-plan-exits-2027'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'More Medicare Advantage plans are disappearing for 2027',
     'dek': 'Several major insurers are pulling Medicare Advantage plans out of markets for 2027, '
-           'hundreds of thousands of members combined. If yours is one of them, the letter saying so is '
-           'arriving now &mdash; and it starts a clock most people don&rsquo;t know about.',
-    'meta': '6 minute read &middot; Verified against CMS rate data and multiple insurer announcements',
-    'checked': CHECKED15,
+           'hundreds of thousands of members combined, even as CMS projects lower average premiums. If '
+           'yours is one of them, the termination letter should already have reached you &mdash; and it '
+           'starts a clock most people don&rsquo;t know about.',
+    'meta': '6 minute read &middot; Verified against CMS rate data, CMS&rsquo;s 2027 landscape and multiple '
+            'insurer announcements',
+    'checked': '3 October 2026',
     'recheck': {'due': '2027-01-05', 'why': 'Plan year begins -- confirm the member-count figures held '
                 'and no additional insurer exits were announced after this was written.'},
     'body': """      <p>Last week&rsquo;s note about the Annual Notice of Change covered the routine version of this
@@ -41,17 +43,23 @@ ARTICLES15['ma-plan-exits-2027'] = {
         ('Molina Healthcare', 'Exiting its Medicare Advantage Part D product entirely for 2027 &mdash; '
                               'about <strong>80,000</strong> MAPD members by its own count &mdash; to focus '
                               'exclusively on its dual-eligible line.'),
-        ('October 2', 'The federal deadline for your plan to notify you in writing if it is leaving your '
-                      'area entirely for 2027. That&rsquo;s a separate, later deadline than the September '
-                      '30 ANOC mailing covered in last week&rsquo;s piece, which covers routine plan '
-                      'changes, not full terminations.'),
+        ('October 2', 'The federal deadline, now passed, for your plan to notify you in writing if it is '
+                      'leaving your area entirely for 2027. That&rsquo;s a separate, later deadline than the '
+                      'September 30 ANOC mailing, which covers routine plan changes, not full '
+                      'terminations.'),
+        ('September 28', 'When CMS released the 2027 Medicare Advantage and Part D landscape. It projects the '
+                         'weighted average Medicare Advantage premium falling from <strong>$14.37 to '
+                         '$12.00</strong> a month, about 16.5%, with the total number of plans roughly '
+                         'flat nationally.'),
     ]) + """
       <p>These three are the confirmed, named exits as of this writing &mdash; a combined figure in the
       hundreds of thousands, not the millions. Other insurers have signaled smaller pullbacks in specific
-      counties, and the full national picture won&rsquo;t be final until plans file their complete 2027
-      bids. The reliable way to find out whether your own plan is affected isn&rsquo;t a headline number
-      &mdash; it&rsquo;s the letter arriving from your plan by October 2, or a direct check at the Medicare
-      Plan Finder once 2027 plans are listed.</p>
+      counties. CMS&rsquo;s September 28 landscape gives the national picture: lower average premiums and a
+      plan count that is roughly flat, but averages hide a lot. Choice shrinks in some states and in
+      individual counties while the national average improves. The reliable way to find out whether your
+      own plan is affected isn&rsquo;t a headline number &mdash; it&rsquo;s the letter your plan was
+      required to send by October 2. If you have not received one and your plan is not on the lists
+      above, call the plan or 1-800-MEDICARE, and check the Medicare Plan Finder.</p>
 
       <p>This also isn&rsquo;t a new pattern starting this year. For the 2026 plan year, roughly 2.9
       million Medicare Advantage enrollees in standard HMO and PPO plans faced forced disenrollment
