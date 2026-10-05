@@ -57,15 +57,22 @@ ARTICLES21['search-ad-scam'] = {
     ]) + """
       <h2>What a paid result looks like</h2>
 
-      <p>A search engine labels paid placements, usually with a small &ldquo;Ad&rdquo; or
-      &ldquo;Sponsored&rdquo; tag near the result. The tag is easy to miss and the page it leads to can be
-      built to look like a government site. The FTC&rsquo;s practical advice is to scroll past anything
-      marked that way and look for a result whose address ends in <strong>.gov</strong>.</p>
+      <p>The surest route skips the results altogether. Typing <strong>medicare.gov</strong> into the
+      browser&rsquo;s address bar yourself, or calling 1-800-MEDICARE, means no one has paid to put
+      anything in front of you. Then check the address that actually loads: it should end in
+      <strong>.gov</strong>.</p>
 
-      <p>The surer route skips the results altogether. Typing <strong>medicare.gov</strong> into the
-      address bar yourself, or calling 1-800-MEDICARE, means no one has paid to put anything in front of
-      you. The Plan Finder on the official site is free; a site that asks for a payment, or for your
-      Medicare number before it shows you any plans, is not it.</p>
+      <p>If you do search, a search engine labels paid placements, usually with a small &ldquo;Ad&rdquo;
+      or &ldquo;Sponsored&rdquo; tag near the result. The tag is easy to miss and the page it leads to
+      can be built to look like a government site. The FTC&rsquo;s practical advice is to scroll past
+      anything marked that way and look for a result whose address ends in <strong>.gov</strong>.</p>
+
+      <p>Not every ad is a scam. Plenty of paid results come from legitimate private businesses, such
+      as brokers and insurers, that are simply unrelated to the government. The point is narrower: a
+      paid result is not Medicare, and the official Plan Finder is free. Browsing plans and enrolling
+      in one are different stages, and personal details, including a Medicare number, belong at the
+      enrollment stage with a company or agent you chose, not on the first page a search ad
+      sends you to.</p>
 
       <blockquote class="pull">
         <p>A paid result is not a government result. The only thing a search ad proves is that someone
@@ -82,8 +89,9 @@ ARTICLES21['search-ad-scam'] = {
       Search engines carry the ads because advertisers pay for the position, and the FTC&rsquo;s alert
       treats that as a fact about how the system works, not a defect in the reader.</p>
 
-      <p>It is also not a new concern for the agency. FTC staff sent warning letters to healthcare plan
-      marketers and lead generators in December 2024, and the agency has run consumer alerts on
+      <p>It is also not a new concern for the agency. FTC staff sent warning letters to 21 healthcare plan
+      marketers and lead generators in December 2024, which the agency said did not allege that the
+      recipients had broken the law, and the agency has run consumer alerts on
       open-enrollment scams in earlier years. It held a public roundtable on healthcare scams around
       open enrollment on September 29. The paid-search version is the part that has grown, because the
       ad can be placed in front of exactly the person searching.</p>
@@ -98,8 +106,8 @@ ARTICLES21['search-ad-scam'] = {
 
       <p>It also pairs with the phone problem. A web form that collects a name and number is how a call
       center gets the list it dials later. That is one reason the sensible response is the same as for a
-      cold call: do not hand over a Medicare number, Social Security number or bank details to anyone
-      you did not contact through an address or number you verified yourself. The older piece on
+      cold call: be careful with a Medicare number, Social Security number or bank details: give them
+      only to a company or agent you chose, reached through an address or number you verified yourself. The older piece on
       <a href="/enrollment-scams">why the phone rings more in October</a> covers the calling side.</p>
 
       <h2>If you already clicked</h2>
@@ -111,10 +119,10 @@ ARTICLES21['search-ad-scam'] = {
       when Medicare is involved. A free State Health Insurance Assistance Program (SHIP) counselor can
       help sort out which coverage you actually have.</p>
 
-      <p>Two follow-ups are worth doing in any case. Review your Medicare claims for services you did
-      not receive, which is how medical identity theft usually shows up. And if you gave out a Social
-      Security number, the FTC&rsquo;s identity-theft site, IdentityTheft.gov, walks through the steps for
-      freezing credit and recording the incident.</p>
+      <p>If you gave out a Medicare or Social Security number, review your Medicare claims for services
+      you did not receive, which is how medical identity theft usually shows up. If you think your
+      identity has been misused, the FTC&rsquo;s IdentityTheft.gov walks through recovery steps, and the
+      FTC has separate guidance on medical identity theft. Seeing an ad is not a reason to go there.</p>
 
       <h2>What to check</h2>
 
@@ -124,8 +132,8 @@ ARTICLES21['search-ad-scam'] = {
         'If you do use a search engine, skip results marked <strong>Ad</strong> or '
         '<strong>Sponsored</strong> and check that the address ends in <strong>.gov</strong> before '
         'clicking.',
-        'Treat a request for payment to see plans, or for a Medicare number up front, as the signal '
-        'to leave the page.',
+        'Be wary of a page that asks for payment, or for a Medicare number, before it shows you '
+        'plans. The official Plan Finder is free.',
         'A free <strong>SHIP counselor</strong> or Senior Medicare Patrol volunteer can help with '
         'plan comparisons without selling you anything.',
         'If you were taken in, report it at <strong>ReportFraud.ftc.gov</strong> and to your state '
@@ -153,26 +161,28 @@ ARTICLES21['search-ad-scam'] = {
 
 # ------------------------------------------------------------- Roth catch-up
 ARTICLES21['roth-catch-up'] = {
-    'title': 'The 401(k) Catch-Up That Becomes Roth in 2027 &mdash; The Second Half Guide',
+    'title': 'When Your 401(k) Catch-Up Must Go Into Roth &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'The 401(k) catch-up that becomes Roth in 2027',
-    'dek': 'For workers 50 and older who earned more than a set amount from their employer the year '
-           'before, catch-up contributions must go in as Roth, and some plans will not take them at '
-           'all. The test is narrower than most summaries make it sound.',
+    'h1': 'When your 401(k) catch-up must go into Roth, and what changes in 2027',
+    'dek': 'The rule began in 2026: for workers 50 and older who earned more than a set amount from '
+           'their employer the year before, catch-up contributions must go in as Roth. The detailed '
+           'regulations apply from 2027, and some plans will not take catch-ups at all.',
     'meta': '6 minute read &middot; Checked against the IRS final regulations as reported by several '
             'plan administrators and law firms',
     'checked': CHECKED21,
     'recheck': {'due': '2026-11-15', 'why': 'The IRS normally announces next year\'s indexed limits in '
                 'the fall -- replace the unconfirmed 2027 wage threshold with the official figure.'},
-    'body': """      <p>A rule from the SECURE 2.0 Act is about to change how a certain group of older workers
-      saves in a workplace plan. Starting with 2027, final Treasury regulations require that if you are
-      50 or older and earned more than a threshold in wages from your employer the previous year, any
-      catch-up contribution you make must be a <strong>Roth</strong> contribution: after-tax, with no
-      deduction up front.</p>
+    'body': """      <p>A rule from the SECURE 2.0 Act changes how a certain group of older workers saves in a
+      workplace plan. If you are 50 or older and earned more than a threshold in wages from your
+      employer the previous year, any catch-up contribution you make must be a
+      <strong>Roth</strong> contribution: after-tax, with no deduction up front.</p>
 
-      <p>The statute took effect in 2026, but the IRS treated 2026 as a transition year in which plans
-      had to follow a reasonable, good-faith reading. The regulations apply in full from 2027, so for
-      many people the year to understand it is now.</p>
+      <p>The requirement generally began on <strong>1 January 2026</strong>. The IRS&rsquo;s earlier
+      administrative transition relief ended on 31 December 2025, and for 2026 plans are expected to
+      follow a reasonable, good-faith reading of the statute. That is a standard for how plans
+      comply, not a year in which the rule was optional. The final regulations, which spell out the
+      details, generally apply beginning in 2027, with later dates for certain governmental and
+      collectively bargained plans.</p>
 
 """ + facts('The rule, at a glance', [
         ('Who', 'Participants <strong>50 or older</strong> in a 401(k), 403(b) or 457(b) '
@@ -183,7 +193,9 @@ ARTICLES21['roth-catch-up'] = {
                            'published it; some outside estimates say $155,000. Treat that as '
                            'unconfirmed.'),
         ('Which wages', 'Social Security (FICA) wages, <strong>Box 3 of the W-2</strong>, from the '
-                        'employer sponsoring the plan. Not combined across employers.'),
+                        'employer sponsoring the plan. Generally not combined across employers; the '
+                        'final regulations allow aggregation in specified cases, such as related '
+                        'employers or a common paymaster.'),
         ('Self-employment income', 'Does not count. A sole proprietor or partner with no W-2 wages '
                                    'from the plan is outside the Roth-only rule.'),
         ('What changes', 'Catch-up contributions must be Roth. Regular contributions are unaffected '
@@ -192,7 +204,7 @@ ARTICLES21['roth-catch-up'] = {
                                            'contributions</strong>. A plan is not required to add '
                                            'Roth.'),
         ('2026 catch-up limits', '<strong>$8,000</strong> for 50 and older, <strong>$11,250</strong> '
-                                 'at ages 60 through 63.'),
+                                 'instead of that for ages 60 through 63.'),
     ]) + """
       <h2>Why the test is narrower than it sounds</h2>
 
@@ -203,7 +215,9 @@ ARTICLES21['roth-catch-up'] = {
       pay does not retroactively exempt you.</p>
 
       <p><strong>It is employer by employer.</strong> The test uses wages from the employer that
-      sponsors the plan, and wages are not added up across jobs. Someone who changed jobs mid-year is
+      sponsors the plan, and wages from separate employers are generally not added up. The final
+      regulations make exceptions in specified situations, such as related employers or a common
+      paymaster, so the plan administrator is the place to ask. Someone who changed jobs mid-year is
       measured against the new employer&rsquo;s plan using the pay that employer reported.</p>
 
       <p><strong>It counts W-2 wages only.</strong> Box 3 of the W-2 is the reference. Investment income
@@ -221,18 +235,21 @@ ARTICLES21['roth-catch-up'] = {
       <p>The two wage boxes on a W-2 can differ by thousands of dollars for exactly the people this
       rule is about. Box 1 is taxable wages, which is <em>reduced</em> by pre-tax 401(k) deferrals. Box 3
       is Social Security wages, which is <em>not</em>: elective deferrals count as FICA wages. An
-      employee paid $150,000 who put $24,500 into a pre-tax 401(k) shows about $125,500 in Box 1 and
-      $150,000 in Box 3. The regulations use the Box 3 figure, so a person can look below the line on
-      Box 1 and still be above it.</p>
+      employee paid $160,000 who put $24,500 into a pre-tax 401(k) shows about $135,500 in Box 1 and
+      $160,000 in Box 3, before any other payroll adjustments. The regulations use the Box 3 figure,
+      so a person can look below the line on Box 1 and still be above it. The test is wages that
+      <em>exceed</em> the threshold: someone at exactly $150,000 in 2025 is not over it for 2026.</p>
 
       <h2>What stays the same</h2>
 
       <p>The rule is about the <em>type</em> of catch-up contribution, not the amount. The regular
       annual deferral limit, $24,500 in 2026, is unaffected, and it can still be pre-tax. Only the
       extra amount allowed at 50 and older is redirected to Roth for those over the line. Workers
-      below the threshold keep whatever choice their plan already gave them. Because a Roth
-      contribution is not deducted, the effect for an affected worker is on timing of tax, not on how
-      much the plan will accept.</p>
+      below the threshold keep whatever choice their plan already gave them. A Roth catch-up
+      gives up the upfront income-tax exclusion that a pre-tax contribution carries, and qualified
+      withdrawals later are tax-free. That does not mean the lifetime tax bill comes out the same, and
+      the rule does not raise the amount that may be contributed. The 2026 figures above are labeled
+      as 2026; the 2027 limits had not been officially published when this was checked.</p>
 
       <h2>The 60&ndash;63 window and the plan that has no Roth</h2>
 
@@ -257,8 +274,8 @@ ARTICLES21['roth-catch-up'] = {
         'how it will handle catch-up contributions.',
         'If you are self-employed or a partner with no W-2 wages from the plan, the Roth-only rule '
         'does not apply to you.',
-        'Remember the tax treatment changes with the rule: a Roth catch-up is not deducted when '
-        'contributed, so take-home pay can differ from a pre-tax contribution of the same size.',
+        'A Roth catch-up is not deducted when contributed, so take-home pay can differ from a '
+        'pre-tax contribution of the same size.',
     ]) + """
       <p>For most workers 50 and older the rule changes nothing. For those above the line it changes
       the form the contribution takes, and for those whose plan has no Roth option it decides whether

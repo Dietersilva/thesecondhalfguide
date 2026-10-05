@@ -89,7 +89,7 @@ DESCRIPTIONS = {
     '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
     '/medicare-2027-costs': "CMS projects lower 2027 Medicare Advantage premiums, a $700 Part D deductible and a $2,400 cap. What a national average can't tell you about your own plan.",
     '/search-ad-scam': "The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.",
-    '/roth-catch-up': "Workers 50+ who earned over the prior-year wage threshold must make 401(k) catch-up contributions as Roth in 2027. Who is covered, which wages count.",
+    '/roth-catch-up': "Since 2026, 401(k) catch-up contributions for workers 50+ over a prior-year wage threshold must be Roth. Who is covered, which wages count, what 2027 adds.",
     '/etias': "ETIAS, Europe's €20 travel authorization, has no start date, and sites charging for it aren't the EU. What actually applies to Americans at the border now.",
     '/medical-equipment-fraud': 'CMS barred 11 equipment suppliers tied to $3.4 billion in suspected fraudulent billing. What to actually check on your own Medicare statement.',
     '/aca-unauthorized-enrollment': 'CMS canceled 315,000 Marketplace enrollments covering 760,000 people over fraud concerns. How to check whether your own coverage was affected.',
