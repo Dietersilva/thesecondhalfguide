@@ -25,7 +25,7 @@ ARTICLES15['ma-plan-exits-2027'] = {
            'starts a clock most people don&rsquo;t know about.',
     'meta': '6 minute read &middot; Verified against CMS rate data, CMS&rsquo;s 2027 landscape and multiple '
             'insurer announcements',
-    'checked': '3 October 2026',
+    'checked': '7 October 2026',
     'recheck': {'due': '2027-01-05', 'why': 'Plan year begins -- confirm the member-count figures held '
                 'and no additional insurer exits were announced after this was written.'},
     'body': """      <p>Last week&rsquo;s note about the Annual Notice of Change covered the routine version of this
@@ -47,10 +47,16 @@ ARTICLES15['ma-plan-exits-2027'] = {
                       'leaving your area entirely for 2027. That&rsquo;s a separate, later deadline than the '
                       'September 30 ANOC mailing, which covers routine plan changes, not full '
                       'terminations.'),
-        ('September 28', 'When CMS released the 2027 Medicare Advantage and Part D landscape. It projects the '
-                         'weighted average Medicare Advantage premium falling from <strong>$14.37 to '
-                         '$12.00</strong> a month, about 16.5%, with the total number of plans roughly '
-                         'flat nationally.'),
+    ]) + """
+""" + facts('What CMS&rsquo;s final 2027 landscape shows (released 28 September 2026)', [
+        ('Average premium', 'Medicare Advantage average <strong>$14.37 to $12.00</strong> a month, a '
+                            'projected 16.5% decline.'),
+        ('Plans nationally', 'About <strong>5,553 in 2026</strong> and <strong>5,532 in 2027</strong>.'),
+        ('Access', '<strong>More than 99%</strong> of people with Medicare will have at least one '
+                   'Medicare Advantage plan available; <strong>97%</strong> will have ten or more.'),
+        ('What it does not say', 'These are national figures. A falling average premium does not mean '
+                                 'your plan costs less, and a high national count does not mean your plan '
+                                 'is returning.'),
     ]) + """
       <p>These three are the confirmed, named exits as of this writing &mdash; a combined figure in the
       hundreds of thousands, not the millions. Other insurers have signaled smaller pullbacks in specific
