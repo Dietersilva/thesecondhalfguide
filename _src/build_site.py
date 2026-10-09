@@ -89,7 +89,7 @@ DESCRIPTIONS = {
     '/overpayment-clawback': 'SSA can now withhold up to 50% of your monthly check to recover an overpayment. Two deadlines inside the letter — 30 and 60 days — decide when that starts.',
     '/cobra-medicare-trap': 'COBRA keeps your health plan going after a job ends, but it isn’t creditable coverage for Medicare Part B — missing that risks a permanent penalty.',
     '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
-    '/medicare-2027-costs': "CMS projects lower 2027 Medicare Advantage premiums, a $700 Part D deductible and a $2,400 cap. What a national average can't tell you about your own plan.",
+    '/medicare-2027-costs': "CMS projects lower 2027 Medicare Advantage premiums, a Part D deductible of up to $700 and a $2,400 cap. What an average can't tell you about your plan.",
     '/claiming-age-clarity-act': "Congress sent the President a bill renaming Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
     '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.",
