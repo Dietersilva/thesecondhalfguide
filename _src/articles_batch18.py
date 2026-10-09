@@ -153,9 +153,7 @@ ARTICLES18['medicare-marketing-rules-2026'] = {
            'the rules regardless.',
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s finalized 2027 marketing rule and '
             'independent industry coverage',
-    'checked': CHECKED18,
-    'recheck': {'due': '2026-10-08', 'why': 'A week into the new rules being in effect -- confirm no '
-                'walk-back or clarification changed what actually took effect October 1.'},
+    'checked': '9 October 2026',
     'body': """      <p>Every fall, the volume of Medicare sales calls, mailers and television ads goes up ahead of
       Annual Enrollment. This year, the federal rules governing that outreach loosened at the same
       time, not tightened. The change took effect <strong>1 October 2026</strong> &mdash; two weeks
