@@ -26,7 +26,7 @@ ARTICLES19['medical-equipment-fraud'] = {
            'it confirms about a line item you might already be seeing.',
     'meta': '5 minute read &middot; Verified against CMS&rsquo;s announcement and independent '
             'healthcare-industry reporting',
-    'checked': CHECKED19,
+    'checked': '9 October 2026',
     'body': """      <p>On September 8, 2026, the Centers for Medicare &amp; Medicaid Services barred eleven medical
       equipment suppliers from receiving further Medicare Advantage payments, citing more than $3.4 billion
       in suspected fraudulent billing across 2025 and into 2026. The number is large enough to make
@@ -99,12 +99,16 @@ ARTICLES19['medical-equipment-fraud'] = {
 
       <h2>What a legitimate DME order actually requires</h2>
 
-      <p>One useful fact for telling a real order apart from a fraudulent one: Medicare generally requires
-      a face-to-face or telehealth encounter with your own treating physician and a written order before
-      equipment can be billed on your behalf. A caller offering to send you a back brace, a knee sleeve or
-      diabetic supplies based on a phone quiz alone &mdash; without your own doctor having examined you or
-      written an order &mdash; is not describing how the legitimate process works, regardless of how
-      official the call sounds.</p>
+      <p>One useful fact for telling a real order apart from a fraudulent one: Medicare coverage of
+      equipment runs through your own treating practitioner, who has to write an order for the item
+      before a supplier bills for it. How much more is required depends on the item. CMS keeps a
+      published list of equipment, 83 items as of April 2026, for which a qualifying face-to-face visit
+      with the practitioner within the previous six months is required and the written order has to
+      reach the supplier before delivery. Power wheelchairs and scooters are on it, and some oxygen
+      codes were added in January 2026. Items that are not on the list can still carry their own
+      documentation rules. Either way, a caller offering to send you a back brace, a knee sleeve or
+      diabetic supplies after a phone quiz &mdash; with no order from your own practitioner &mdash; is
+      not describing how the legitimate process works, regardless of how official the call sounds.</p>
 
       <h2>What to actually do about it</h2>
 
@@ -115,9 +119,9 @@ ARTICLES19['medical-equipment-fraud'] = {
         'Never give your <strong>Medicare number</strong> to anyone who calls, mails, or advertises '
         '&ldquo;free&rdquo; braces, equipment or supplies you did not ask for. A real Medicare number is '
         'worth money to exactly this kind of scheme.',
-        'A legitimate order requires your <strong>own doctor</strong> to have actually examined you, in '
-        'person or by telehealth, and to have written the order &mdash; not a phone screening from an '
-        'unfamiliar company.',
+        'A legitimate order comes from your <strong>own treating practitioner</strong>, who writes the '
+        'order for the item &mdash; not a phone screening from an unfamiliar company. For items on '
+        'CMS&rsquo;s required list, a qualifying visit has to come first.',
         'Suppliers already barred from Original Medicare shifting to bill <strong>Medicare Advantage</strong> '
         'instead was part of the pattern this action targeted &mdash; being on an Advantage plan is not '
         'outside the risk.',
@@ -154,24 +158,25 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
     'title': 'CMS Canceled 760,000 Marketplace Enrollments Over Fraud &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'CMS canceled 760,000 Marketplace enrollments over fraud concerns',
-    'dek': 'A September anti-fraud sweep canceled roughly 315,000 ACA Marketplace enrollments covering '
-           'more than 760,000 people. CMS says every one was confirmed unauthorized; outside analysts '
+    'dek': 'An anti-fraud sweep canceled roughly 315,000 ACA Marketplace enrollments covering '
+           'more than 760,000 people, effective August 31 and announced September 22. CMS says every one was confirmed unauthorized; outside analysts '
            'question whether legitimate enrollees could still be caught. Here is how to find out which '
            'side of that you are on.',
-    'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 2026 '
-            'action',
-    'checked': '3 October 2026',
+    'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 22 '
+            'announcement',
+    'checked': '9 October 2026',
     'recheck': {'due': '2026-10-20', 'why': 'Marketplace open enrollment approaches -- confirm the appeal '
                 'and re-enrollment mechanics described here still match, and check whether CMS published '
                 'further guidance for affected consumers.'},
-    'body': """      <p>On September 22, 2026, CMS announced it had canceled roughly 315,000 ACA Marketplace
+    'body': """      <p>On September 22, 2026, CMS announced that it had canceled roughly 315,000 ACA Marketplace
       enrollments, covering more than 760,000 people, as part of an anti-fraud action targeting
-      unauthorized broker-assisted sign-ups. If you or someone in your household has Marketplace coverage
+      unauthorized broker-assisted sign-ups. The cancellations themselves took effect on August 31;
+      September 22 is the date of the announcement. If you or someone in your household has Marketplace coverage
       &mdash; the bridge many people use between leaving a job and reaching Medicare at 65 &mdash; this is
       worth five minutes of your own checking, regardless of whether you think you did anything wrong.</p>
 
 """ + facts('The action, at a glance', [
-        ('315,000', 'Marketplace enrollments CMS canceled in its September 2026 anti-fraud action.'),
+        ('315,000', 'Marketplace enrollments CMS canceled, effective August 31 and announced September 22, 2026.'),
         ('760,000+', 'Individual people covered by those canceled enrollments.'),
         ('~$2.2 billion', 'Advance premium tax credit payments CMS expects to recover as a result.'),
         ('Why flagged', 'Enrolled with agent or broker assistance but lacking verified citizenship or '
