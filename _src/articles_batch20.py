@@ -24,12 +24,12 @@ ARTICLES20['medicare-2027-costs'] = {
              '&mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The 2027 Medicare plan numbers, and what an average can&rsquo;t tell you',
-    'dek': 'CMS projects lower average Medicare Advantage premiums for 2027, a $700 drug deductible, '
+    'dek': 'CMS projects lower average Medicare Advantage premiums for 2027, a Part D deductible of up to $700, '
            'and the end of a program that held standalone drug-plan premiums down. The national '
            'average is not a number any one plan charges.',
     'meta': '6 minute read &middot; Checked against CMS&rsquo;s announcements and independent '
             'reporting that cites them',
-    'checked': CHECKED20,
+    'checked': '9 October 2026',
     'body': """      <p>On September 28, CMS published its projections for 2027 Medicare Advantage and Part D
       premiums. The headline is a decline: the average Medicare Advantage premium is projected to fall
       from $14.37 a month to $12.00. It is a real number from a real agency, and it is worth reading
@@ -75,8 +75,8 @@ ARTICLES20['medicare-2027-costs'] = {
       <h2>The part that is the same for everyone</h2>
 
       <p>The Part D numbers are different in kind, because they are set by rule rather than by
-      averaging. The out-of-pocket cap rises to $2,400 and the standard deductible to as much as $700,
-      both finalized in CMS&rsquo;s April rate announcement. Once your covered drug costs reach the
+      averaging. The out-of-pocket cap rises to $2,400 and the defined standard deductible to a
+      maximum of $700, which a plan may set lower, both finalized in CMS&rsquo;s April rate announcement. Once your covered drug costs reach the
       cap, your cost for the rest of that calendar year is zero. The deductible counts toward the
       cap; it does not sit on top of it. We cover how the cap works &mdash; and what it doesn&rsquo;t
       cover &mdash; in <a href="/drug-cap">The $2,100 Medicare drug cap</a>.</p>
@@ -107,11 +107,11 @@ ARTICLES20['medicare-2027-costs'] = {
         ('How long it lasts', 'Generally for as long as you have Part D. The dollar amount is '
                               'recalculated each year from the new base premium.'),
     ]) + """
-      <h2>What you can&rsquo;t know yet</h2>
+      <h2>What no national figure can tell you</h2>
 
       <p>Your plan&rsquo;s own premium, drug list and network for 2027 are the things no national
-      figure can supply. CMS has said 2027 plan information would be on Medicare.gov&rsquo;s Plan
-      Finder by October 1, with the 2027 Star Ratings on or around October 8. If your current plan is
+      figure can supply. The 2027 plan information has been on Medicare.gov&rsquo;s Plan Finder since
+      October 1, and CMS published the 2027 Star Ratings there on October 8. If your current plan is
       leaving your area, the notice was due by October 2 &mdash; see
       <a href="/ma-plan-exits-2027">More Medicare Advantage plans are disappearing for 2027</a>.
       Your plan&rsquo;s Annual Notice of Change, mailed by the end of September, lists next
@@ -129,8 +129,9 @@ ARTICLES20['medicare-2027-costs'] = {
         'Change your plan mailed, and the Plan Finder on Medicare.gov. Not the national averages.',
         '<strong>Whether your plan continues:</strong> the non-renewal letter due by 2 October, if '
         'your plan is leaving.',
-        '<strong>The $2,400 cap and $700 deductible:</strong> set by CMS and the same rule for every '
-        'Part D plan.',
+        '<strong>The $2,400 cap and the $700 deductible ceiling:</strong> set by CMS. The cap applies to '
+        'every Part D plan; $700 is the most a plan may charge as a deductible, and your plan&rsquo;s '
+        'own figure can be lower.',
         '<strong>The national averages above:</strong> CMS&rsquo;s projections &mdash; useful context '
         'for the market, not a quote for any plan.',
         '<strong>Open enrollment:</strong> 15 October through 7 December, with changes effective '
