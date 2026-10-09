@@ -88,6 +88,8 @@ DESCRIPTIONS = {
     '/cobra-medicare-trap': 'COBRA keeps your health plan going after a job ends, but it isn’t creditable coverage for Medicare Part B — missing that risks a permanent penalty.',
     '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
     '/medicare-2027-costs': "CMS projects lower 2027 Medicare Advantage premiums, a $700 Part D deductible and a $2,400 cap. What a national average can't tell you about your own plan.",
+    '/claiming-age-clarity-act': "Congress sent the President a bill renaming Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
+    '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.",
     '/roth-catch-up': "Since 2026, 401(k) catch-up contributions for workers 50+ over a prior-year wage threshold must be Roth. Who is covered, which wages count, what 2027 adds.",
     '/etias': "ETIAS, Europe's €20 travel authorization, has no start date, and sites charging for it aren't the EU. What actually applies to Americans at the border now.",
@@ -312,6 +314,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/claiming-age-clarity-act', '/globe-part-b-drugs',
     '/search-ad-scam', '/roth-catch-up',
     '/medicare-2027-costs', '/etias',
     '/medical-equipment-fraud', '/aca-unauthorized-enrollment',
