@@ -17,6 +17,8 @@ import os
 import re
 import shutil
 
+from related import related_for
+
 SITE = 'site'
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 ORIGIN = 'https://thesecondhalfguide.com'
@@ -409,6 +411,26 @@ def subscribe_block(wide):
         '      </div>\n'
         '    </div>\n'
         '  </section>\n')
+
+
+RELATED_CSS = """
+body.article .related { margin: 40px 0 8px; }
+body.article .related h2 {
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; margin: 0 0 14px;
+}
+body.article .related ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+body.article .related li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px; box-shadow: var(--shadow);
+}
+body.article .related li:hover { border-color: var(--pine); }
+body.article .related a {
+  display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; line-height: 1.3;
+  color: var(--ink); text-decoration: none; margin-bottom: 4px; text-wrap: balance;
+}
+body.article .related a:hover { text-decoration: underline; }
+body.article .related p { margin: 0; font-size: 16px; color: var(--ink-soft); }
+"""
 
 
 LATEST_CSS = """
@@ -1087,6 +1109,35 @@ def main():
             body = body.replace(marker, latest_section(meta) + '\n' + marker, 1)
             rendered['/'] = (title, desc, canonical, body)
 
+    # Related reading: a short list of neighbors on every article, so each page
+    # is reachable from more than its hub and the one "next up" link. Needs
+    # every page's headline, hence a second pass.
+    article_paths = {p_ for p_ in rendered if layout_class(p_) == 'article'}
+    by_category = {}
+    for cat in categories:
+        by_category[cat['slug']] = [h for h, _ in reversed(cat['articles'])]
+    for path in sorted(article_paths):
+        title, desc, canonical, body = rendered[path]
+        cat_slug = breadcrumbs[path][1] if path in breadcrumbs else None
+        picks = related_for(path, article_paths, by_category.get(cat_slug, []))
+        nxt = re.search(r'class="next-up".*?href="([^"]+)"', body, re.S)
+        if nxt:
+            picks = [p_ for p_ in picks if p_ != nxt.group(1)]
+        picks = picks[:4]
+        assert len(picks) >= 3, f'{path}: only {len(picks)} related links'
+        items = '\n'.join(
+            f'        <li><a href="{p_}">{meta[p_][0]}</a>'
+            f'<p>{html_mod.escape(html_mod.unescape(meta[p_][1]), quote=False)}</p></li>' for p_ in picks)
+        block = (f'    <nav class="related" aria-label="Related reading">\n'
+                 f'      <h2>Related reading</h2>\n      <ul>\n{items}\n      </ul>\n    </nav>\n\n')
+        for anchor_ in ('    <div class="next-up">', '    <div class="author">', '    <div class="sources">'):
+            if anchor_ in body:
+                body = body.replace(anchor_, block + anchor_, 1)
+                break
+        else:
+            raise AssertionError(f'{path}: no place to put related reading')
+        rendered[path] = (title, desc, canonical, body)
+
     # The search index needs every page's title and description, which are
     # not all known until the loop above has finished -- same reason
     # {{ARTICLE_COUNT}} above is filled in as a second pass rather than
@@ -1123,7 +1174,7 @@ def main():
             rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
 
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + SUBSCRIBE_CSS + HEADER_CSS
+              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + RELATED_CSS + SUBSCRIBE_CSS + HEADER_CSS
               + (HOUSE_CSS if not ADS_LIVE else ''))
     # The stylesheet used to be served as a plain /styles.css. Because the
     # name never changed, a reader whose browser had cached an older copy kept
