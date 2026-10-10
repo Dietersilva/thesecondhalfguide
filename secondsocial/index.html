@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>/SECONDSOCIAL — The Second Half Guide</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--navy:#0b2b4b;--red:#d71920;--gold:#f3b21a;--green:#168746;--ink:#18212b;--muted:#64748b;--paper:#f7f4ed;--line:#d7dee5;--white:#fff;--teal:#126b68}
+*{box-sizing:border-box}body{margin:0;background:#eef3f6;color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,textarea,select{font:inherit}.shell{max-width:1480px;margin:auto;padding:24px}.topbar{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20}
+.topbar .inner{max-width:1480px;margin:auto;padding:16px 24px;display:flex;align-items:center;gap:18px}.brand{font-weight:900;font-size:23px}.brand b{color:var(--gold)}.tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#d9e7ef}.status{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}.pill{padding:7px 10px;border-radius:999px;background:#173f63;font-size:12px;font-weight:700}.pill.bad{background:#6f2530}.pill.good{background:#17603f}
+.grid{display:grid;grid-template-columns:340px 1fr;gap:22px}@media(max-width:980px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px rgba(11,43,75,.06)}.pad{padding:20px}
+h1,h2,h3{margin:0 0 10px}h1{font-size:30px}h2{font-size:20px;color:var(--navy)}h3{font-size:15px}.muted{color:var(--muted)}.small{font-size:13px}.tiny{font-size:11px}
+.queue{display:grid;gap:9px}.qitem{padding:12px;border:1px solid var(--line);border-radius:12px;background:#fbfcfd;cursor:pointer}.qitem.active{border-color:var(--navy);background:#edf5fb}.qtop{display:flex;justify-content:space-between;gap:10px}.badge{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:999px;background:#e9eef3;color:#53616d}.badge.verified{background:#e3f5e9;color:#17603f}.badge.locked{background:#fff1d8;color:#805a05}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.step{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fafcfd}.step b{display:block;color:var(--navy)}.step.done{border-color:#a7d6b5;background:#f1fbf4}.step.blocked{opacity:.55}
+.sourcebox{background:#f7fbfd;border:1px solid #cfe0e9;border-radius:12px;padding:14px}.sourcebox a{color:#0a6c8a}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.btn{border:0;border-radius:11px;padding:11px 15px;font-weight:800;cursor:pointer}.primary{background:var(--navy);color:#fff}.secondary{background:#e8eef3;color:var(--navy)}.danger{background:#f8e9e8;color:#8f2727}.btn:disabled{opacity:.45;cursor:not-allowed}
+.mainwork{display:grid;grid-template-columns:minmax(450px,650px) 1fr;gap:22px}@media(max-width:1180px){.mainwork{grid-template-columns:1fr}}
+.previewwrap{display:flex;justify-content:center;background:#dfe6eb;border-radius:16px;padding:18px;overflow:auto}.canvasframe{background:#fff;box-shadow:0 12px 38px rgba(0,0,0,.12);max-width:100%}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:800;cursor:pointer}.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.copybox{width:100%;min-height:145px;border:1px solid var(--line);border-radius:12px;padding:12px;resize:vertical}.checkrow{display:flex;align-items:flex-start;gap:9px;margin:10px 0}.warn{border-left:5px solid var(--gold);background:#fff8e7;padding:13px;border-radius:10px}.ok{border-left:5px solid var(--green);background:#eefaf2;padding:13px;border-radius:10px}.err{border-left:5px solid var(--red);background:#fff0f0;padding:13px;border-radius:10px}
+.platformgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}@media(max-width:700px){.platformgrid{grid-template-columns:1fr}}.platform{border:1px solid var(--line);border-radius:12px;padding:12px}.platform strong{color:var(--navy)}
+.footer{padding:24px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="inner"><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="tag">Verify → Create → Approve → Publish</div><div class="status"><span class="pill good">Engine V1</span><span class="pill bad">Metricool: no networks connected</span></div></div></header>
+
+<div class="shell">
+  <div class="grid">
+    <aside class="card pad">
+      <h2>10-story launch queue</h2>
+      <p class="small muted">Only verified/live stories can move to publishing. V1 unlocks the first story as the end-to-end example.</p>
+      <div class="queue" id="queue"></div>
+    </aside>
+
+    <main>
+      <section class="card pad">
+        <div style="display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap">
+          <div><div class="badge verified">Primary-source verified</div><h1 id="storyTitle">$90 Medicare payment</h1><p class="muted" id="storySub">One-time October 2026 premium rebate.</p></div>
+          <div class="small"><b>Style:</b> News Style + Footer Option B<br><span class="muted">Real information for what's next.<br>PLAIN FACTS • CHECKED AND DATED</span></div>
+        </div>
+
+        <div class="steps">
+          <div class="step done"><b>1. Verify</b><span class="small">CMS + Medicare.gov checked</span></div>
+          <div class="step done"><b>2. Create</b><span class="small">Platform assets ready</span></div>
+          <div class="step"><b>3. Approve</b><span class="small">Requires your checkbox</span></div>
+          <div class="step blocked"><b>4. Publish</b><span class="small">Blocked until connected</span></div>
+        </div>
+
+        <div class="sourcebox">
+          <b>Verification record · 10 Oct 2026</b>
+          <p class="small">Verified facts: one-time $90 rebate in October 2026; about 20.8 million eligible; Original Medicare Part B; living in the U.S.; not receiving Medicaid premium assistance; not paying IRMAA; Medicare Advantage not eligible; most direct deposits on/around Oct. 8; no application.</p>
+          <div class="small"><a target="_blank" href="https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions">CMS FAQ ↗</a> · <a target="_blank" href="https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter">Medicare.gov ↗</a></div>
+        </div>
+
+        <div class="warn" style="margin-top:12px"><b>Safety gate:</b> The draft article slug is <code>/medicare-90-payment</code>, but this engine does not treat the article as publishable until its live URL is confirmed. Social publishing remains disabled even after creative approval if the destination fails the live check.</div>
+      </section>
+
+      <section class="mainwork" style="margin-top:22px">
+        <div class="card pad">
+          <h2>Creative preview</h2>
+          <div class="tabs" id="tabs"></div>
+          <div class="previewwrap"><canvas id="creative" class="canvasframe" width="1080" height="1080"></canvas></div>
+          <div class="controls">
+            <button class="btn primary" id="download">Download current PNG</button>
+            <button class="btn secondary" id="downloadSet">Download carousel slides</button>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2>Platform package</h2>
+          <div class="platformgrid" id="platforms"></div>
+          <h3 style="margin-top:18px">Platform-specific post copy</h3>
+          <select id="copySelect" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);margin-bottom:8px"></select>
+          <textarea id="copyText" class="copybox"></textarea>
+          <div class="controls"><button class="btn secondary" id="copyBtn">Copy caption</button></div>
+
+          <div class="ok"><b>Group-post policy:</b> Group discovery can be automated; posting is never automatic to a group unless the group has been approved, its current rules have been checked, and the specific post is approved for that group. No duplicate mass-posting.</div>
+
+          <label class="checkrow"><input type="checkbox" id="approve"><span><b>I approve this story package.</b><br><span class="small muted">Approval covers only the verified facts and creative shown here. Any regenerated copy or changed fact requires re-approval.</span></span></label>
+          <label class="checkrow"><input type="checkbox" id="live"><span><b>Live article URL confirmed.</b><br><span class="small muted">V1 manual gate. Production version performs an automatic HTTP/content check before allowing publish.</span></span></label>
+
+          <div id="publishState" class="err"><b>Publishing blocked.</b> Connect social networks to Metricool, approve the package, and confirm the article is live.</div>
+          <div class="controls"><button class="btn primary" id="publish" disabled>Queue approved posts</button></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="footer">/SECONDSOCIAL V1 · Approval-first by design · Nothing publishes without current verification + human approval + live destination check</div>
+
+<script>
+const stories=[
+  ["$90 Medicare payment","CMS verified · V1 example","verified"],
+  ["2027 Medicare Star Ratings","queued","locked"],
+  ["DME rule changes Oct. 15","queued","locked"],
+  ["Medicare GLP-1 Bridge","queued","locked"],
+  ["2027 Medicare plan numbers","queued","locked"],
+  ["Medicare search-ad scam","queued","locked"],
+  ["2027 Roth catch-up","queued","locked"],
+  ["Medicare Advantage plan exits","queued","locked"],
+  ["Medicare marketing rules","queued","locked"],
+  ["2027 Social Security COLA","queued","locked"]
+];
+const queue=document.getElementById('queue');
+stories.forEach((s,i)=>{const d=document.createElement('div');d.className='qitem'+(i===0?' active':'');d.innerHTML='<div class="qtop"><b>'+(i+1)+'. '+s[0]+'</b><span class="badge '+s[2]+'">'+s[1]+'</span></div>'; queue.appendChild(d);});
+
+const modes=[
+ {id:'fb',label:'Facebook Page',w:1080,h:1080},
+ {id:'group',label:'Facebook Group',w:1080,h:1080},
+ {id:'ig1',label:'Instagram 1/4',w:1080,h:1080},
+ {id:'ig2',label:'Instagram 2/4',w:1080,h:1080},
+ {id:'ig3',label:'Instagram 3/4',w:1080,h:1080},
+ {id:'ig4',label:'Instagram 4/4',w:1080,h:1080},
+ {id:'vertical',label:'Reel / TikTok / Story',w:1080,h:1920},
+ {id:'threads',label:'Threads image',w:1080,h:1080}
+];
+let mode='fb';
+const tabs=document.getElementById('tabs');
+modes.forEach(m=>{const b=document.createElement('button');b.className='tab'+(m.id===mode?' on':'');b.textContent=m.label;b.onclick=()=>{mode=m.id;[...tabs.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');draw();};tabs.appendChild(b);});
+
+const c=document.getElementById('creative'),ctx=c.getContext('2d');
+function rr(x,y,w,h,r,fill){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=fill;ctx.fill()}
+function txt(t,x,y,size,color='#0b2b4b',weight=800,align='left'){ctx.fillStyle=color;ctx.font=weight+' '+size+'px Arial, sans-serif';ctx.textAlign=align;ctx.fillText(t,x,y)}
+function lineText(t,x,y,max,size,lh,color='#18212b',weight=700){const words=t.split(' ');let s='',yy=y;for(const w of words){const test=(s+' '+w).trim();ctx.font=weight+' '+size+'px Arial';if(ctx.measureText(test).width>max&&s){txt(s,x,yy,size,color,weight);s=w;yy+=lh}else s=test}if(s)txt(s,x,yy,size,color,weight);return yy}
+function logoFooter(H){ctx.fillStyle='#fff';ctx.fillRect(0,H-190,1080,190);ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(45,H-190);ctx.lineTo(1035,H-190);ctx.stroke();txt('TheSecondHalfGuide.com',540,H-116,43,'#0b2b4b',900,'center');txt("Real information for what's next.",540,H-73,25,'#0b2b4b',600,'center');txt('PLAIN FACTS • CHECKED AND DATED',540,H-36,18,'#64748b',700,'center')}
+function checkIcon(x,y,yes=true){ctx.fillStyle=yes?'#168746':'#d71920';ctx.beginPath();ctx.arc(x,y,27,0,Math.PI*2);ctx.fill();txt(yes?'✓':'×',x,y+13,38,'#fff',900,'center')}
+function base(W,H){c.width=W;c.height=H;ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,W,H);ctx.fillStyle='#e8eef2';for(let i=0;i<8;i++){ctx.beginPath();ctx.arc(W*.78+i*15,H*.22+i*8,230-i*18,0,Math.PI*2);ctx.strokeStyle='rgba(11,43,75,.035)';ctx.lineWidth=12;ctx.stroke();}}
+function tag(H){rr(55,45,560,72,14,'#d71920');txt('MEDICARE • OCTOBER 2026',335,94,31,'#fff',900,'center')}
+function cardMain(group=false){base(1080,1080);tag();txt('$90',55,240,160,'#d71920',900);txt('PAYMENT',55,357,104,'#0b2b4b',900);txt('Who gets it?',55,430,58,'#0b2b4b',900);
+ const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
+ let y=520;rows.forEach(r=>{checkIcon(78,y-10,r[1]);lineText(r[0],125,y,470,36,40,'#0b2b4b',800);if(r[2])txt(r[2],125,y+38,25,'#64748b',500);y+=105});
+ rr(600,520,430,250,34,'#0b2b4b');lineText('About 20.8 million people will receive a one-time $90 payment this month.',635,580,360,38,49,'#fff',800);txt('Source: CMS  •  Checked Oct. 10, 2026',815,735,19,'#fff',600,'center');
+ if(group){txt('SHAREABLE FACT SHEET',1025,150,18,'#64748b',800,'right');}
+ logoFooter(1080);
+}
+function carousel(n){base(1080,1080);tag();if(n===1){txt('$90',55,265,170,'#d71920',900);txt('PAYMENT',55,375,100,'#0b2b4b',900);txt('KEY FACTS',55,455,62,'#0b2b4b',900);lineText('One-time payment • About 20.8 million people • No application required',70,565,860,46,60,'#18212b',800)}
+ if(n===2){txt('Who gets it?',55,245,82,'#0b2b4b',900);checkIcon(85,350,true);lineText('Original Medicare Part B',140,365,700,52,58,'#0b2b4b',800);txt('Living in the U.S.; other eligibility rules apply.',140,430,31,'#64748b',500)}
+ if(n===3){txt("Who doesn't?",55,245,82,'#0b2b4b',900);let y=350;[['Medicare Advantage'],['Medicaid paying your premium'],['IRMAA payer']].forEach(r=>{checkIcon(85,y,false);lineText(r[0],140,y+15,700,43,50,'#0b2b4b',800);y+=120})}
+ if(n===4){txt('What to know',55,245,82,'#0b2b4b',900);let y=350;['No application','No processing fee','Most deposits around Oct. 8','Paper checks later in October'].forEach((r,i)=>{txt('•',75,y,48,'#f3b21a',900);lineText(r,130,y,800,43,50,'#0b2b4b',800);y+=105})}
+ txt(n+'/4',1000,75,25,'#fff',900,'right');logoFooter(1080);
+}
+function vertical(){base(1080,1920);tag();txt('$90',60,325,180,'#d71920',900);txt('PAYMENT',60,445,110,'#0b2b4b',900);rr(55,505,670,92,25,'#f3b21a');txt('NO APPLICATION REQUIRED',390,568,36,'#0b2b4b',900,'center');lineText('Who qualifies, who does not, when it arrives, and the scam angle.',60,720,900,58,72,'#0b2b4b',850);rr(60,1010,960,310,35,'#fff');lineText('Original Medicare Part B • U.S. resident • No Medicaid premium assistance • No IRMAA',110,1095,850,45,60,'#18212b',750);txt('Source: CMS  •  Checked Oct. 10, 2026',540,1430,26,'#64748b',700,'center');logoFooter(1920)}
+function threads(){base(1080,1080);tag();txt('$90',60,275,170,'#d71920',900);txt('PAYMENT',60,385,100,'#0b2b4b',900);txt('QUICK FACTS',60,455,54,'#0b2b4b',900);let y=545;[['Original Medicare Part B',true],['Medicare Advantage',false],['Medicaid premium help',false],['IRMAA payer',false]].forEach(r=>{checkIcon(85,y,r[1]);txt(r[0],140,y+12,34,'#0b2b4b',750);y+=80});logoFooter(1080)}
+function draw(){if(mode==='fb')cardMain(false);else if(mode==='group')cardMain(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='vertical')vertical();else threads();}
+draw();
+
+const captions={
+'Facebook Page':`A real one-time $90 Medicare payment is going out this month, but not everyone with Medicare qualifies.
+
+CMS says eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. There is no application.
+
+Full sourced explanation: https://thesecondhalfguide.com/medicare-90-payment
+
+Source: CMS • Checked Oct. 10, 2026`,
+'Facebook Group':`For anyone seeing posts about the new $90 Medicare payment: it is real, but it is not for everyone.
+
+CMS says it is a one-time October payment for certain people in Original Medicare Part B. No application is required. Medicare Advantage members, people receiving Medicaid premium assistance, and people paying IRMAA are not eligible.
+
+I put the rules and official sources in one place here:
+https://thesecondhalfguide.com/medicare-90-payment
+
+Source: CMS (checked Oct. 10, 2026)`,
+'Instagram':`The $90 Medicare payment is real — but eligibility is narrower than a lot of posts make it sound.
+
+Swipe for who gets it, who doesn't, and what to know. No application is required.
+
+Full sourced explanation at TheSecondHalfGuide.com
+Source: CMS • Checked Oct. 10, 2026
+
+#Medicare #Retirement #Medicare2026 #SecondHalfGuide`,
+'Threads':`A one-time $90 Medicare payment is going out this month.
+
+CMS says about 20.8 million people are eligible. It is for certain people in Original Medicare Part B — not Medicare Advantage — and there is no application.
+
+The eligibility rules matter more than the headline:
+https://thesecondhalfguide.com/medicare-90-payment
+
+Source: CMS • Checked Oct. 10, 2026`,
+'Reel / TikTok / Shorts':`HOOK: A real $90 Medicare payment is going out this month — but not everyone gets it.
+
+CMS says it is a one-time October rebate for certain people in Original Medicare Part B. Medicare Advantage members are out. Medicaid premium assistance and IRMAA also affect eligibility. You do not apply.
+
+Close: Full sourced explanation at TheSecondHalfGuide.com.
+
+On-screen source: CMS • Checked Oct. 10, 2026`
+};
+const copySelect=document.getElementById('copySelect'),copyText=document.getElementById('copyText');Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;copySelect.appendChild(o)});function setCopy(){copyText.value=captions[copySelect.value]}copySelect.onchange=setCopy;setCopy();
+document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(copyText.value);
+document.getElementById('download').onclick=()=>{const a=document.createElement('a');a.download='secondsocial-'+mode+'-medicare-90.png';a.href=c.toDataURL('image/png');a.click()};
+document.getElementById('downloadSet').onclick=async()=>{for(let n=1;n<=4;n++){mode='ig'+n;carousel(n);await new Promise(r=>setTimeout(r,100));const a=document.createElement('a');a.download='secondsocial-carousel-'+n+'-medicare-90.png';a.href=c.toDataURL('image/png');a.click()}mode='fb';draw()};
+const platforms=[
+ ['Facebook Page','1080×1080','Image + direct article URL in caption'],
+ ['Facebook Groups','1080×1080','Group-share version; only approved groups'],
+ ['Instagram Feed','4 × 1080×1080','Carousel; link via bio/profile/Story'],
+ ['Instagram Story','1080×1920','Use Link sticker to exact article'],
+ ['Instagram Reel','1080×1920','30–40 sec motion version'],
+ ['TikTok','1080×1920','Native short; profile link / eligible link'],
+ ['YouTube Shorts','1080×1920','Short + article URL in description'],
+ ['Threads','1080×1080 + text','Text-first post with clickable URL']
+];
+document.getElementById('platforms').innerHTML=platforms.map(p=>'<div class="platform"><strong>'+p[0]+'</strong><div class="small">'+p[1]+'</div><div class="tiny muted">'+p[2]+'</div></div>').join('');
+function gate(){const approved=document.getElementById('approve').checked,live=document.getElementById('live').checked;const ps=document.getElementById('publishState'),pb=document.getElementById('publish');pb.disabled=true;if(!approved||!live){ps.className='err';ps.innerHTML='<b>Publishing blocked.</b> Approval and live-URL verification are required.'}else{ps.className='warn';ps.innerHTML='<b>Creative approved, but publishing is still blocked.</b> No social networks are connected to Metricool yet. Once connected, /SECONDSOCIAL can queue approved posts without changing the creative.'}}document.getElementById('approve').onchange=gate;document.getElementById('live').onchange=gate;
+</script>
+</body></html>
