@@ -134,7 +134,7 @@ function tag(H){rr(55,45,560,72,14,'#d71920');txt('MEDICARE • OCTOBER 2026',33
 function cardMain(group=false){base(1080,1080);tag();txt('$90',55,240,160,'#d71920',900);txt('PAYMENT',55,357,104,'#0b2b4b',900);txt('Who gets it?',55,430,58,'#0b2b4b',900);
  const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
  let y=520;rows.forEach(r=>{checkIcon(78,y-10,r[1]);lineText(r[0],125,y,470,36,40,'#0b2b4b',800);if(r[2])txt(r[2],125,y+38,25,'#64748b',500);y+=105});
- rr(600,520,430,250,34,'#0b2b4b');lineText('About 20.8 million people will receive a one-time $90 payment this month.',635,580,360,38,49,'#fff',800);txt('Source: CMS  •  Checked Oct. 10, 2026',815,735,19,'#fff',600,'center');
+ rr(600,505,430,325,34,'#0b2b4b');lineText('About 20.8 million people will receive a one-time $90 payment this month.',635,560,350,31,42,'#fff',800);ctx.strokeStyle='#6e89a0';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(630,760);ctx.lineTo(1000,760);ctx.stroke();txt('Source: CMS',815,792,18,'#fff',700,'center');txt('Checked Oct. 10, 2026',815,817,16,'#dde7ee',500,'center');
  if(group){txt('SHAREABLE FACT SHEET',1025,150,18,'#64748b',800,'right');}
  logoFooter(1080);
 }
