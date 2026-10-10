@@ -27,8 +27,8 @@ ARTICLES23['medicare-90-payment'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The $90 Medicare payment: who gets it and who doesn&rsquo;t',
     'dek': 'A one-time $90 payment is going to people in Original Medicare Part B this month. No application '
-           'is needed, three groups are left out, and anyone who asks for your bank details to &ldquo;'
-           'release&rdquo; it is not Medicare.',
+           'is needed, but eligibility depends on your kind of Medicare, where you live, whether Medicaid '
+           'helps pay your premium and whether you pay IRMAA.',
     'meta': '5 minute read &middot; Checked against CMS&rsquo;s FAQ, Medicare.gov and independent reporting '
             'that cites them',
     'checked': CHECKED23,
@@ -50,10 +50,10 @@ ARTICLES23['medicare-90-payment'] = {
         ('Who is paid', 'People in <strong>Original Medicare Part B</strong> who live in the United States. '
                         'A Medigap policy or a Part D plan on top of Original Medicare does not disqualify '
                         'you.'),
-        ('Who is left out', 'People in <strong>Medicare Advantage</strong>; people who get <strong>Medicaid '
-                            'premium help</strong> through a Medicare Savings Program; people who pay '
-                            '<strong>IRMAA</strong> (the income-related surcharge); and people living outside '
-                            'the U.S.'),
+        ('Who is left out', 'People in <strong>Medicare Advantage</strong>; people receiving '
+                            '<strong>Medicaid assistance with their Medicare premium</strong>; people who '
+                            'pay <strong>IRMAA</strong> (the income-related surcharge); and people living '
+                            'outside the U.S.'),
         ('How many', 'About <strong>20.8 million</strong> people, per CMS.'),
         ('How it arrives', 'Direct deposit, most around <strong>October 8</strong>. Otherwise a Treasury '
                            'check mailed later in October.'),
@@ -62,16 +62,16 @@ ARTICLES23['medicare-90-payment'] = {
     ]) + """
       <h2>Who is left out, and why that surprises people</h2>
 
-      <p>The three exclusions are worth reading slowly, because each one catches a different kind of
-      household.</p>
+      <p>The exclusions are worth reading slowly, because each one catches a different kind of
+      household. (Living in the United States is also a condition of getting the payment.)</p>
 
       <p><strong>Medicare Advantage.</strong> The payment goes to people in Original Medicare Part B, so a
       person in an Advantage plan is not in the group, even though that person also has Part B.
       Roughly half of people with Medicare are in Advantage plans, which means a large share of the
       Medicare population will see nothing.</p>
 
-      <p><strong>Medicaid premium help.</strong> If a state Medicare Savings Program already pays your
-      Part B premium, you are excluded. This is the exclusion that confuses lower-income readers, who
+      <p><strong>Medicaid premium help.</strong> People receiving Medicaid assistance with their Medicare
+      premium are not eligible. This is the exclusion that confuses lower-income readers, who
       might reasonably assume the opposite.</p>
 
       <p><strong>IRMAA.</strong> People who pay the income-related surcharge are excluded. There is no
@@ -94,8 +94,7 @@ ARTICLES23['medicare-90-payment'] = {
       Most people with direct deposit set up were to see it around October 8. People without a deposit
       account on file get a paper check at the address Medicare has for them, later in October. If you
       moved recently and your Medicare address is out of date, that is the situation in which a check
-      goes astray. Address changes for Medicare run through Social Security, and a person who has not
-      updated one in years has a reason to do it now, whatever happens with this payment.</p>
+      goes astray. Medicare says official address changes for Medicare are made through Social Security.</p>
 
       <p>You do not log in anywhere, fill in anything or call anyone. Medicare.gov has a page about the
       one-time premium rebate letter, and CMS has published an FAQ. Those are the places the details
@@ -116,12 +115,16 @@ ARTICLES23['medicare-90-payment'] = {
 
       <h2>If you expected it and it did not come</h2>
 
-      <p>Most missing payments come down to one of the three exclusions: the person is in a Medicare
-      Advantage plan, receives Medicaid premium help, or pays IRMAA. If none of those applies, the
-      next thing to check is whether the deposit information or mailing address on file is current.
+      <p>If an expected payment has not arrived, the first things to check are whether one of the
+      exclusions applies (a Medicare Advantage plan, Medicaid premium help, IRMAA) and whether the
+      deposit or mailing information on file is current.
       Direct deposits can take a short while to show up and paper checks later still, so the
       later-October window matters before concluding anything has gone wrong. For an actual eligibility
       question, 1-800-MEDICARE is the number CMS gives.</p>
+
+      <p>The payment arrives separately from your monthly Social Security benefit and does not replace
+      or change it. Eligibility questions are best settled with Medicare directly, at the number
+      above, rather than with anyone who contacts you first.</p>
 
       <p>It is also worth knowing that the payment is not a change to your premium. The Part B
       premium for 2027 has not been announced, and the $90 does not alter what you owe in January.</p>
@@ -131,12 +134,12 @@ ARTICLES23['medicare-90-payment'] = {
 """ + check([
         'Which kind of Medicare you have: <strong>Original Medicare</strong> with Part B is in; a '
         '<strong>Medicare Advantage</strong> plan is out.',
-        'Whether a <strong>Medicare Savings Program</strong> pays your Part B premium, or you pay '
+        'Whether <strong>Medicaid helps pay your Medicare premium</strong>, or you pay '
         '<strong>IRMAA</strong>. Either one means no payment.',
         'If you have direct deposit with Social Security, look for the deposit. If you do not, watch for a '
         '<strong>Treasury check</strong> later in October at your address on file with Medicare.',
-        'Ignore any request to <strong>apply</strong>, verify a bank account or pay a fee. There is no '
-        'application.',
+        'The official payment involves no <strong>application</strong>, no fee and no bank-account '
+        'verification.',
         'For an eligibility question, call <strong>1-800-MEDICARE (1-800-633-4227)</strong>, a number you '
         'looked up yourself, not one in a text.',
     ]) + """
@@ -155,8 +158,8 @@ ARTICLES23['medicare-90-payment'] = {
     ],
     'next': {'slug': 'medicare-savings',
              'title': 'The Medicare help millions qualify for and never claim',
-             'blurb': 'One of the three groups left out of the payment already has its premium paid '
-                      'through a Medicare Savings Program. Here is how those work.'},
+             'blurb': 'Some people left out of the payment already have their premium paid through a '
+                      'Medicare Savings Program. Here is how those work.'},
 }
 
 # ------------------------------------------------------------------ Star Ratings
@@ -214,8 +217,9 @@ ARTICLES23['star-ratings-2027'] = {
       <p>Ratings belong to a <strong>contract</strong>, which is the agreement between CMS and an
       insurer. One contract can cover many different plans in many counties, with different
       premiums, networks and benefits. Two plans with the same stars can look entirely different from
-      the inside, and a plan that is new this year can carry the rating of the contract it was added
-      to. That is why a rating is a good starting filter and a poor final answer.</p>
+      the inside, because CMS assigns ratings at the contract level and every plan under a contract
+      shows that contract&rsquo;s rating. That is why a rating describes a contract well and a single
+      plan only loosely.</p>
 
       <p>The overall rating blends many measures, from how well a plan keeps members healthy to how it
       handles complaints and appeals and how members rate their experience. A single number
@@ -239,10 +243,12 @@ ARTICLES23['star-ratings-2027'] = {
 
       <h2>Why it matters for the money</h2>
 
-      <p>Star Ratings are not only a consumer tool. They affect what CMS pays plans, with higher-rated
-      contracts eligible for bonus payments. That gives insurers a strong reason to chase four stars,
-      and it is one reason a plan&rsquo;s marketing leans on its rating. A rating is real information,
-      but it is also something the seller has every reason to put first.</p>
+      <p>Star Ratings are not only a consumer tool. They affect what CMS pays plans: higher-rated
+      contracts are eligible for quality bonus payments, and CMS says the ratings published for 2027
+      will affect Medicare Advantage quality bonus payments for 2028. That gives insurers a strong
+      reason to chase four stars, and it is one reason a plan&rsquo;s marketing leans on its rating.
+      A rating is real information, but it is also something the seller has every reason to put
+      first.</p>
 
       <h2>The part the stars cannot tell you</h2>
 
@@ -261,9 +267,10 @@ ARTICLES23['star-ratings-2027'] = {
 
       <p>The ratings land at the same time as the other 2027 information. The Annual Notice of Change
       tells you what your current plan is changing; the Plan Finder lets you price the alternatives with
-      your own drugs and pharmacy; the stars sit alongside both. A reasonable order is the one that
-      starts with your own list of doctors and prescriptions and ends with the rating, because the
-      rating is the one input that cannot tell you whether a plan covers the things you use.</p>
+      your own drugs and pharmacy, and shows the Star Ratings alongside the cost and benefit
+      information. A star rating does not replace a plan&rsquo;s provider network, drug list, pharmacy
+      network and cost sharing, which are the things that decide whether a plan covers what you
+      use.</p>
 
       <p>Plans also change from year to year, and so do ratings. A rating published in October describes
       performance measured earlier, which means a plan&rsquo;s 2027 coverage and its 2027 stars are
@@ -273,14 +280,13 @@ ARTICLES23['star-ratings-2027'] = {
       <h2>What to check</h2>
 
 """ + check([
-        'Use the stars as a <strong>first filter</strong>, then read the plan itself: premium, '
-        'deductible, copays, network and drug list.',
-        'Check your <strong>own doctors, drugs and pharmacy</strong> in the Plan Finder before looking at '
-        'any rating.',
-        'Remember a rating belongs to a <strong>contract</strong> that can cover many plans, so confirm '
-        'the plan you are looking at is the one the stars describe.',
-        'Compare the stars with your <strong>Annual Notice of Change</strong>, which lists what changes '
-        'in your own plan for 2027.',
+        'The Plan Finder shows Star Ratings next to each plan&rsquo;s <strong>premium, deductible, '
+        'copays, network and drug list</strong>; the rating does not replace any of them.',
+        'A rating belongs to a <strong>contract</strong> that can cover many plans, so several plans '
+        'can show the same stars.',
+        'Your own <strong>doctors, drugs and pharmacy</strong> are checked in the Plan Finder, not by '
+        'the rating.',
+        'Your <strong>Annual Notice of Change</strong> lists what changes in your own plan for 2027.',
         'Open enrollment runs <strong>15 October through 7 December</strong>; changes take effect '
         '1 January.',
     ]) + """
@@ -307,7 +313,7 @@ ARTICLES23['dme-prior-authorization'] = {
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The equipment prior-authorization change starting October 15',
     'dek': 'Starting October 15, CMS requires some newly enrolled equipment suppliers to get approval '
-           'before billing certain items. It applies to the supplier, not to every patient or every '
+           'before delivering and billing certain items. It applies to the supplier, not to every patient or every '
            'product.',
     'meta': '6 minute read &middot; Checked against CMS&rsquo;s program page, a Medicare contractor&rsquo;s '
             'guidance and trade reporting',
@@ -328,8 +334,8 @@ ARTICLES23['dme-prior-authorization'] = {
         ('Who it applies to', '<strong>Newly enrolled</strong> DMEPOS suppliers, and suppliers with '
                               'certain <strong>changes of ownership</strong>, effective on or after '
                               'that date.'),
-        ('What they must do', 'Get <strong>prior authorization</strong> before billing Medicare for the '
-                              'designated items.'),
+        ('What they must do', 'Get <strong>prior authorization</strong> before furnishing a designated '
+                              'item and submitting the Medicare claim.'),
         ('How long', 'A <strong>one-year</strong> probationary period, beginning with the '
                      'supplier&rsquo;s first bill for a listed item.'),
         ('Which items', 'A CMS list of designated codes, including <strong>orthoses</strong> '
@@ -366,10 +372,11 @@ ARTICLES23['dme-prior-authorization'] = {
 """ + AD_INLINE + """
       <h2>What a patient could notice</h2>
 
-      <p>Most patients will notice nothing. If you get equipment from an established supplier, nothing
-      changes. If you get one of the designated items from a supplier that is new to Medicare, the
-      supplier has to have the approval in hand before it bills, which can mean a short wait before an
-      item is delivered. That is a reason to ask early rather than a reason to worry.</p>
+      <p>Most patients will notice nothing. The probationary program applies to newly enrolled or
+      ownership-changing suppliers; established suppliers can still be subject to Medicare&rsquo;s
+      existing equipment prior-authorization requirements, which are a separate program. If you get one of the designated items from a supplier that is new to Medicare, the
+      supplier has to have the approval in hand before it delivers the item and bills, which can mean
+      a short wait.  That is a reason to ask early rather than a reason to worry.</p>
 
       <p>It is not a requirement that you do anything. The supplier submits the request. What you can
       do is ask the supplier whether the item needs prior authorization and whether it has been
@@ -405,9 +412,10 @@ ARTICLES23['dme-prior-authorization'] = {
       Prior authorization is an extra checkpoint for a defined group of suppliers and items, layered on
       top of those rules.</p>
 
-      <p>It does not change what you pay either. Cost-sharing for covered equipment follows Medicare&rsquo;s
-      usual Part B rules, with the same 20% coinsurance after the deductible that applied before the
-      change. The new checkpoint affects timing and billing, not the price on your statement.</p>
+      <p>It does not change what you pay either. For covered equipment under Original Medicare, the usual cost is 20% of the
+      Medicare-approved amount after the Part B deductible when the supplier accepts assignment; a
+      supplier that does not accept assignment can cost more. The new checkpoint affects timing and
+      billing, not those rules.</p>
 
       <p>It is also not a sign that a supplier is doing anything wrong. A new business has to start
       somewhere, and this is a condition of starting.</p>
@@ -461,7 +469,7 @@ ARTICLES23['glp1-bridge'] = {
     'h1': 'The Medicare GLP-1 Bridge: $50 a month, with conditions',
     'dek': 'Through the end of 2027, some people in Part D can get certain weight-loss GLP-1 drugs for $50 '
            'a month. It is a temporary program with a specific drug list, clinical criteria and its own '
-           'approval path.',
+           'approval path that starts at the pharmacy.',
     'meta': '6 minute read &middot; Checked against Medicare.gov and CMS materials as reported by '
             'independent sources',
     'checked': CHECKED23,
@@ -477,17 +485,23 @@ ARTICLES23['glp1-bridge'] = {
 """ + facts('The Bridge, at a glance', [
         ('Runs', '<strong>July 1, 2026 &ndash; December 31, 2027</strong>.'),
         ('Cost', '<strong>$50</strong> for a one-month (28- or 30-day) supply.'),
-        ('Who', 'People in a <strong>Part D plan</strong> with a prescription for <strong>weight '
+        ('Who', 'People with Part D drug coverage, through a standalone plan or an eligible Medicare '
+                'Advantage plan that includes it, with a prescription for <strong>weight '
                 'management</strong> who meet the clinical criteria.'),
         ('Drugs (as of July 1)', 'Wegovy in all forms, Foundayo in all forms, and Zepbound in the '
                                  '<strong>KwikPen</strong> only. CMS says the list may change.'),
-        ('Clinical criteria', 'A BMI of 35 or more; or 30 or more with certain heart, blood-pressure or '
-                              'kidney conditions; or 27 or more with prediabetes or a prior heart '
-                              'attack, stroke or blocked arteries.'),
-        ('Not eligible', 'People with type 2 diabetes, moderate-to-severe obstructive sleep apnea or '
-                         'advanced liver scarring from MASH; and people who filled a GLP-1 through Part D '
-                         'in 2026.'),
-        ('How approval works', 'Through a <strong>CMS central processor</strong>, not your Part D plan.'),
+        ('Clinical criteria', 'A BMI of 35 or more; or 30 or more with heart failure with preserved '
+                              'ejection fraction, uncontrolled hypertension despite treatment, or chronic '
+                              'kidney disease stage 3a or above; or 27 or more with prediabetes, a prior '
+                              'heart attack, a prior stroke or symptomatic peripheral artery disease '
+                              '(poor circulation in the legs or arms that causes symptoms). The BMI '
+                              'counted is the one when treatment started.'),
+        ('Not eligible', 'Anyone whose GLP-1 is for an indication Part D already covers: type 2 diabetes, '
+                         'moderate-to-severe obstructive sleep apnea, or noncirrhotic MASH with '
+                         'moderate-to-advanced liver fibrosis. Those go through the Part D plan.'),
+        ('How approval works', 'It starts at the <strong>pharmacy</strong>. A <strong>CMS central '
+                               'processor</strong>, not your Part D plan, handles the prior '
+                               'authorization.'),
     ]) + """
       <h2>What the program is, and what it is not</h2>
 
@@ -498,8 +512,9 @@ ARTICLES23['glp1-bridge'] = {
 
       <p>Those drugs are also not covered through the usual Part D benefit for weight loss, which is why
       the program exists. For people who take GLP-1 drugs for type 2 diabetes, nothing here applies;
-      those prescriptions continue to run through ordinary Part D, which is why diabetes is on the
-      exclusion list for the Bridge itself.</p>
+      those prescriptions are handled through the person&rsquo;s Part D plan, subject to that
+      plan&rsquo;s coverage rules, which is why diabetes is on the exclusion list for the Bridge
+      itself.</p>
 
       <blockquote class="pull">
         <p>The Bridge is a temporary program with a fixed end date, a short drug list and its own
@@ -508,8 +523,9 @@ ARTICLES23['glp1-bridge'] = {
 
       <h2>The conditions that decide it</h2>
 
-      <p>Three layers have to line up. The first is the plan: you need Part D. The second is the
-      prescription: it has to be for weight management, from a prescriber who submits the request. The
+      <p>Three layers have to line up. The first is the coverage: you need Part D drug coverage, which can be a standalone plan or an
+      eligible Medicare Advantage plan that includes it. The second is the prescription: it has to be for weight management, and it has to be for a use Part D does not
+      already cover. The
       third is the clinical profile, which CMS sets out as a BMI threshold that rises or falls with
       specific other conditions. A higher BMI qualifies on its own; a lower one qualifies only with a
       listed condition alongside it. Certain diagnoses rule a person out altogether.</p>
@@ -532,8 +548,8 @@ ARTICLES23['glp1-bridge'] = {
 
       <h2>What the Bridge leaves alone</h2>
 
-      <p>People who take Ozempic or Mounjaro for type 2 diabetes stay in ordinary Part D, where those
-      drugs are covered for that use. The Bridge is for weight management with the three drugs on the
+      <p>People who take Ozempic or Mounjaro for type 2 diabetes stay in their Part D plan, which
+      handles those prescriptions under its own coverage rules. The Bridge is for weight management with the three drugs on the
       list. It is also not a route to compounded versions of these medicines, which are not covered
       under the program.</p>
 
@@ -545,14 +561,20 @@ ARTICLES23['glp1-bridge'] = {
 
       <h2>How a person actually gets it</h2>
 
-      <p>It starts with a prescriber, not with Medicare. The prescriber submits the prior authorization to
-      the CMS processor, and, once approved, the prescription is filled at a participating pharmacy.
-      A person cannot sign up on their own, and no website will enroll you in it. That is the practical
-      test for anyone offering to arrange access for a fee: the official route runs through a licensed
-      prescriber and a participating pharmacy, and costs nothing beyond the $50 and the care itself.</p>
+      <p>The process starts when the prescriber sends an eligible prescription to a pharmacy. The
+      pharmacy checks Bridge eligibility with a claim and, if prior authorization is needed, sends the
+      request to the prescriber. The prescriber then submits the required form to the CMS central
+      processor, and the pharmacy fills the prescription once it is approved. CMS notes that a
+      prescriber who tries to start the prior authorization before the pharmacy has submitted that
+      first claim will get a &ldquo;patient not found&rdquo; error, and that the processor&rsquo;s
+      decision can take up to 72 hours.</p>
 
-      <p>One more detail worth knowing: someone who filled a GLP-1 prescription through their Part D plan
-      earlier in 2026 is not eligible for the rest of 2026, which is a rule people often miss.</p>
+      <p>A person cannot sign up on their own, and no website will enroll you in it. That is the
+      practical test for anyone offering to arrange access for a fee: the official route runs through a
+      prescriber and a pharmacy, and costs nothing beyond the $50 and the care itself.</p>
+
+      <p>One more detail worth knowing: if your Medicare drug plan is already paying for your GLP-1,
+      that medication continues through the plan rather than switching to the Bridge.</p>
 
       <h2>What happens after 2027</h2>
 
@@ -564,12 +586,12 @@ ARTICLES23['glp1-bridge'] = {
       <h2>What to check</h2>
 
 """ + check([
-        'You need a <strong>Part D plan</strong>. Original Medicare alone, with no drug plan, does not '
-        'qualify.',
+        'You need <strong>Part D drug coverage</strong>, standalone or through an eligible Medicare '
+        'Advantage plan. Original Medicare alone, with no drug plan, does not qualify.',
         'Ask your prescriber whether you meet the <strong>clinical criteria</strong> and whether the '
         'drug is on the <strong>current list</strong>. CMS says the list may change.',
-        'The prescriber submits the request through CMS&rsquo;s <strong>central processor</strong>. You '
-        'do not apply yourself.',
+        'The sequence runs <strong>prescriber to pharmacy, pharmacy to prescriber, prescriber to CMS&rsquo;s '
+        'central processor</strong>. You do not apply yourself.',
         'The <strong>$50</strong> does not count toward your Part D deductible or out-of-pocket cap, and '
         'it is not reduced by Extra Help.',
         'Be wary of anyone offering to <strong>arrange access for a fee</strong> or asking for a Medicare '
