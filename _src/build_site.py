@@ -311,6 +311,22 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 """
 
 
+# Search engines cut a title at roughly 60 characters. These pages' natural
+# headlines run longer, so the <title> (and og:title) gets a shorter form while
+# the on-page H1 keeps the full wording.
+TITLE_OVERRIDES = {
+    '/advantage-vs-original': 'Medicare Advantage vs. Original Medicare: What Differs',
+    '/anoc-letter': 'The Medicare Annual Notice of Change, and Why to Read It',
+    '/grandparent-529-fafsa': 'The Grandparent 529 Rule Changed. Most Families Missed It',
+    '/medical-equipment-fraud': 'The Medical Equipment Fraud Crackdown: What to Check',
+    '/medicare-2027-costs': '2027 Medicare Plan Numbers: What an Average Can&rsquo;t Tell You',
+    '/overpayment-clawback': 'The Social Security Overpayment Letter and Its Deadline',
+    '/parks-fee-free-days': 'National Parks Fee-Free Days Don&rsquo;t Help Senior Pass Holders',
+    '/parks-pass': 'Is the National Parks Senior Pass Still a Great Deal?',
+    '/spousal-benefits': 'Social Security Spousal Benefits: What You&rsquo;re Entitled To',
+    '/ssi-wage-reporting': 'Social Security&rsquo;s Automatic Wage Reporting, and Its Limits',
+}
+
 # --- Latest ------------------------------------------------------------------
 # Newest first. An article's topic card is its permanent home; this is a
 # time-ordered view of the same pages, not a separate place things live in for a
@@ -1034,6 +1050,7 @@ def main():
         title = title_m.group(1).strip() if title_m else 'The Second Half Guide'
         if path != '/':
             title = re.sub(r'\s*(?:&mdash;|\u2014|\|)\s*The Second Half Guide\s*$', '', title)
+        title = TITLE_OVERRIDES.get(path, title)
 
         style_m = re.search(r'<style>(.*?)</style>', html, re.S)
         css = style_m.group(1) if style_m else ''
@@ -1298,6 +1315,13 @@ def main():
 
     # sitemap
     lastmod = {p: checked_date(rendered[p][3], published.get(p)) for p in rendered}
+    for cat in categories:
+        dates = [lastmod[h] for h, _ in cat['articles'] if lastmod.get(h)]
+        if dates and '/' + cat['slug'] in lastmod:
+            lastmod['/' + cat['slug']] = max(dates)
+    all_dates = [d for p_, d in lastmod.items() if d and layout_class(p_) == 'article']
+    if all_dates and '/' in lastmod:
+        lastmod['/'] = max(all_dates)
     urls = ''.join(
         # The homepage entry used to be a bare https://host with no path at
         # all. Google tolerates it; the sitemap protocol and stricter
@@ -1340,32 +1364,28 @@ def main():
             'it, and the sources are listed at the foot of each article.', '',
             'Published by Edward Silva. Not financial, legal, medical or tax advice; '
             'this is a publisher, not an advisor. Figures are stated for the year '
-            'named on the page and change annually.', '']
-    groups = [
-        ('Medicare', ['/medicare-enrollment', '/open-enrollment', '/advantage-vs-original',
-                      '/medicare-gaps', '/medicare-savings', '/irmaa', '/observation-status',
-                      '/medigap-window', '/drug-cap', '/wellness-visit', '/vaccine-ages']),
-        ('Social Security and taxes', ['/social-security-62', '/cola', '/wep-gpo-repeal',
-                                       '/widows-penalty', '/senior-deduction', '/rmd-deadline',
-                                       '/property-tax', '/social-security-login']),
-        ('Fraud and safety', ['/bank-imposter-scam', '/five-minute-rule', '/romance-scams',
-                              '/gold-courier-scam', '/voice-cloning', '/enrollment-scams',
-                              '/numbers']),
-        ('Reference', ['/about', '/senior-age', '/approaching-60']),
-    ]
-    for name, paths in groups:
-        llms.append(f'## {name}')
-        for p_ in paths:
-            if p_ in meta:
-                # llms.txt is plain markdown, so the HTML entities the site
-                # stores have to be resolved and the summary cut at a word
-                # boundary rather than mid-word at a fixed offset.
-                head_ = html_mod.unescape(meta[p_][0])
-                sum_ = html_mod.unescape(meta[p_][1])
-                if len(sum_) > 160:
-                    sum_ = sum_[:160].rsplit(' ', 1)[0] + '…'
-                llms.append(f'- [{head_}]({ORIGIN}{p_}): {sum_}')
+            'named on the page and change annually. Every page is listed in '
+            f'{ORIGIN}/sitemap.xml.', '']
+    def llms_line(p_):
+        # llms.txt is plain markdown, so the HTML entities the site stores
+        # have to be resolved and the summary cut at a word boundary rather
+        # than mid-word at a fixed offset.
+        head_ = html_mod.unescape(meta[p_][0])
+        sum_ = html_mod.unescape(meta[p_][1])
+        if len(sum_) > 160:
+            sum_ = sum_[:160].rsplit(' ', 1)[0] + '\u2026'
+        return f'- [{head_}]({ORIGIN}{p_}): {sum_}'
+
+    # Same grouping as the homepage topic grid (the one hand-maintained list),
+    # newest first, so this file cannot fall behind the site.
+    for cat in categories:
+        paths = [h for h, _ in reversed(cat['articles']) if h in meta]
+        llms.append(f"## {html_mod.unescape(cat['name'])}")
+        llms += [llms_line(p_) for p_ in paths]
         llms.append('')
+    llms.append('## Reference')
+    llms += [llms_line(p_) for p_ in ('/approaching-60', '/numbers', '/about') if p_ in meta]
+    llms.append('')
     open(f'{SITE}/llms.txt', 'w').write('\n'.join(llms))
 
     # Strict CSP: the site ships no scripts and no third-party assets today.
