@@ -654,11 +654,15 @@ def json_ld(path, title, desc, canonical, headline, body, published=None):
                 'image': ORIGIN + '/og.png', 'inLanguage': 'en-US',
                 'isAccessibleForFree': True,
                 'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical}}
+        modified = checked_date(body, published)
+        # A page can't be published after it was last checked. The 'Checked on'
+        # date is the author's own and the first-commit date is git's, so on the
+        # oldest pages (committed a day after their stated check) they can
+        # disagree; the earlier of the two is the safer datePublished.
         if published:
-            node['datePublished'] = published
-        node['dateModified'] = checked_date(body, published)
-        if not node['dateModified']:
-            del node['dateModified']
+            node['datePublished'] = min(published, modified) if modified else published
+        if modified:
+            node['dateModified'] = modified
     node['@context'] = 'https://schema.org'
     return json.dumps(node, indent=None, separators=(',', ':'), sort_keys=True)
 
