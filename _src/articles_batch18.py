@@ -108,7 +108,7 @@ ARTICLES18['ma-flex-card-2027'] = {
         'Check your <strong>current 2026 balance</strong> now, while a mid-year reminder notice might '
         'still be part of your plan&rsquo;s current design. Don&rsquo;t assume next year&rsquo;s plan will '
         'send one.',
-        'Read your plan&rsquo;s <strong>Annual Notice of Change</strong>, arriving by 30 September, for '
+        'Read your plan&rsquo;s <strong>Annual Notice of Change</strong>, which plans had to mail by 30 September, for '
         'exactly how it describes the 2027 allowance and any rollover language.',
         'If you are comparing plans during Annual Enrollment, ask directly whether a debit-card benefit '
         'exists at all, and whether unused amounts carry forward under the plan&rsquo;s <strong>current, '
