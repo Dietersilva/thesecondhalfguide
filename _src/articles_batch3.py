@@ -320,8 +320,9 @@ ARTICLES3['enrollment-scams'] = {
         The same pitch now arrives by text as often as by phone &mdash; AARP and other consumer-fraud
         trackers have flagged the short code <strong>42474</strong> as a common source, offering a new
         Medicare card, a benefits update, or cash back on a &ldquo;flex card.&rdquo; Medicare does not text.
-        There is no flex card program and no cash-back benefit. Don&rsquo;t tap the link; don&rsquo;t
-        reply.</li>
+        Original Medicare has no flex card or cash-back benefit. Some Medicare Advantage plans
+        do offer a real supplemental-benefit debit card, but they do not send one by unsolicited text
+        &mdash; confirm any offer with your own plan. Don&rsquo;t tap the link; don&rsquo;t reply.</li>
       </ul>
 
 """ + AD_INLINE + """
