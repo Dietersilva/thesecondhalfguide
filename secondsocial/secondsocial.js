@@ -16,49 +16,68 @@ function footer(h){ctx.fillStyle='#fff';ctx.fillRect(0,h-180,1080,180);ctx.strok
 
 function square(group=false){
   base();
+  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,16,1080);
 
-  // subtle editorial geometry
-  ctx.strokeStyle='rgba(11,43,75,.06)';ctx.lineWidth=3;
-  [150,245,340].forEach(r=>{ctx.beginPath();ctx.arc(940,200,r,0,Math.PI*2);ctx.stroke()});
-  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,18,1080);
-
-  // kicker
+  // publication kicker
   text('THE SECOND HALF GUIDE',55,158,17,'#64748b',true);
-  ctx.fillStyle='#f3b21a';ctx.fillRect(55,176,235,6);
+  text('MEDICARE EXPLAINER',55,190,22,'#0b2b4b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(55,205,240,6);
 
   // hero
-  text('$90',55,320,112,'#d71920');
-  text('MEDICARE',55,395,42,'#0b2b4b');
-  text('PAYMENT',55,460,58,'#0b2b4b');
-  text('Who gets it?',55,515,31,'#18212b');
+  text('$90',55,340,118,'#d71920');
+  text('MEDICARE PAYMENT',55,415,48,'#0b2b4b');
+  text('Who gets it?',55,462,30,'#18212b');
 
-  // eligibility rail
-  const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
-  let y=595;
-  for(const [title,good,sub] of rows){
-    check(78,y,good);
-    text(title,125,y-8,24,'#0b2b4b',true);
-    text(sub,125,y+23,18,'#64748b',false);
-    y+=73;
-  }
+  // big stat module
+  ctx.strokeStyle='#cfd9df';ctx.lineWidth=2;ctx.strokeRect(610,145,415,220);
+  text('20.8M',817,245,70,'#0b2b4b',true,'center');
+  text('eligible people',817,292,23,'#18212b',true,'center');
+  text('Source: CMS',817,330,16,'#64748b',false,'center');
 
-  // floating fact panel
-  ctx.save();ctx.shadowColor='rgba(11,43,75,.16)';ctx.shadowBlur=22;ctx.shadowOffsetY=8;
-  rr(610,500,1025,810,28,'#0b2b4b');ctx.restore();
-  text('20.8M',818,585,64,'#fff',true,'center');
-  text('people are eligible',818,635,25,'#fff',true,'center');
-  ctx.fillStyle='#f3b21a';ctx.fillRect(690,675,255,5);
-  text('ONE-TIME $90 PAYMENT',818,720,20,'#dde7ee',true,'center');
-  text('Source: CMS',818,760,17,'#dde7ee',false,'center');
-  text('Checked Oct. 10, 2026',818,790,15,'#aebfcb',false,'center');
+  // two-column eligibility infographic
+  text('MAY QUALIFY',55,545,20,'#168746',true);
+  ctx.fillStyle='#168746';ctx.fillRect(55,560,430,5);
+  check(78,625,true);
+  text('Original Medicare',125,617,26,'#0b2b4b',true);
+  text('with Part B',125,650,24,'#0b2b4b',true);
+  text('Living in the U.S.',125,683,18,'#64748b',false);
 
-  if(group)text('SHAREABLE FACT SHEET',1015,150,15,'#64748b',true,'right');
+  text('NOT ELIGIBLE',560,545,20,'#d71920',true);
+  ctx.fillStyle='#d71920';ctx.fillRect(560,560,465,5);
+  const noRows=['Medicare Advantage','Medicaid premium help','IRMAA payer'];
+  let ny=615;
+  for(const item of noRows){check(585,ny,false);text(item,632,ny+8,23,'#0b2b4b',true);ny+=68}
+
+  // process strip / action facts
+  ctx.fillStyle='#eef3f6';ctx.fillRect(55,765,970,92);
+  text('NO APPLICATION',95,808,21,'#0b2b4b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(340,787,5,48);
+  text('DIRECT DEPOSITS',390,808,21,'#0b2b4b',true);
+  text('went out around Oct. 8',390,835,16,'#64748b',false);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(690,787,5,48);
+  text('PAPER CHECKS',735,808,21,'#0b2b4b',true);
+  text('later in October',735,835,16,'#64748b',false);
+
+  if(group)text('SHAREABLE FACT SHEET',1015,120,15,'#64748b',true,'right');
   footer(1080);
-  note.textContent=(heroClearancePass()?'✓ ':'⚠ ')+'Sleek editorial master: shared Facebook/Threads visual system with measured spacing and mobile-safe hierarchy.';
+  note.textContent='Infographic master: eligibility, exclusions, timing and action facts are structured as data modules instead of generic cards.';
 }
 function carousel(n){
  base();text(n+'/4',1010,83,24,'#fff',true,'right');
- if(n===1){ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,16,1080);text('THE SECOND HALF GUIDE',55,160,17,'#64748b',true);ctx.fillStyle='#f3b21a';ctx.fillRect(55,178,230,6);text('$90',55,300,112,'#d71920');text('MEDICARE PAYMENT',55,390,58);text('KEY FACTS',55,465,46);let y=565;for(const s of ['One-time payment','About 20.8 million people','No application required','Watch for scams']){check(80,y,true);text(s,135,y+12,34,'#18212b');y+=88}}
+ if(n===1){
+  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,16,1080);
+  text('THE SECOND HALF GUIDE',55,160,17,'#64748b',true);
+  text('MEDICARE EXPLAINER',55,190,22,'#0b2b4b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(55,205,240,6);
+  text('$90',55,340,118,'#d71920');
+  text('MEDICARE PAYMENT',55,415,48);
+  ctx.strokeStyle='#cfd9df';ctx.lineWidth=2;ctx.strokeRect(55,500,970,190);
+  text('20.8M',110,610,70,'#0b2b4b');
+  text('people are eligible',480,595,31,'#18212b');
+  text('Source: CMS',480,635,17,'#64748b',false);
+  ctx.fillStyle='#eef3f6';ctx.fillRect(55,745,970,110);
+  text('NO APPLICATION REQUIRED',540,808,31,'#0b2b4b',true,'center');
+}
  if(n===2){text('Who may qualify?',55,245,66);check(85,360,true);text('Original Medicare',140,350,42);text('with Part B',140,405,42);text('Living in the U.S.',140,465,27,'#64748b',false);text('Other eligibility rules apply.',55,570,29,'#18212b')}
  if(n===3){text('Who is not eligible?',55,245,61);let y=355;for(const s of ['Medicare Advantage','Medicaid paying your premium','IRMAA payer']){check(85,y,false);for(const ln of wrapText(s,760,35)){text(ln,140,y+12,35);y+=41}y+=75}}
  if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
@@ -67,55 +86,47 @@ function carousel(n){
 function cover(){
   c.width=1080;c.height=1920;
   ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
-
-  // shared editorial rail + geometry
-  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,22,1920);
-  ctx.strokeStyle='rgba(11,43,75,.055)';ctx.lineWidth=4;
-  [180,300,420].forEach(r=>{ctx.beginPath();ctx.arc(930,250,r,0,Math.PI*2);ctx.stroke()});
+  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,20,1920);
 
   rr(55,55,610,130,16,'#d71920');
   text('MEDICARE • OCTOBER 2026',332,96,30,'#fff',true,'center');
 
-  text('THE SECOND HALF GUIDE',58,200,18,'#64748b',true);
-  ctx.fillStyle='#f3b21a';ctx.fillRect(58,220,270,7);
+  text('THE SECOND HALF GUIDE',58,205,18,'#64748b',true);
+  text('MEDICARE EXPLAINER',58,240,24,'#0b2b4b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(58,258,280,7);
 
-  // hero
-  text('$90',58,445,175,'#d71920');
-  text('MEDICARE',58,590,64,'#0b2b4b');
-  text('PAYMENT',58,685,90,'#0b2b4b');
-  text('Who gets it?',58,760,38,'#18212b');
+  text('$90',58,500,180,'#d71920');
+  text('MEDICARE PAYMENT',58,620,72,'#0b2b4b');
+  text('Who gets it?',58,690,36,'#18212b');
 
-  // eligibility list
-  const rows=[
-    ['Original Medicare with Part B',true,'Living in the U.S.'],
-    ['Medicare Advantage',false,'Not eligible'],
-    ['Medicaid paying your premium',false,'Not eligible'],
-    ['IRMAA payer',false,'Not eligible']
-  ];
-  let y=885;
-  for(const [title,good,sub] of rows){
-    check(82,y,good);
-    text(title,138,y-9,28,'#0b2b4b',true);
-    text(sub,138,y+28,21,'#64748b',false);
-    y+=105;
-  }
+  // hero statistic as outlined infographic
+  ctx.strokeStyle='#cfd9df';ctx.lineWidth=3;ctx.strokeRect(58,785,1022,1015);
+  text('20.8M',120,900,100,'#0b2b4b');
+  text('people are eligible',575,885,38,'#18212b');
+  text('Source: CMS',575,940,20,'#64748b',false);
 
-  // fact panel
-  ctx.save();ctx.shadowColor='rgba(11,43,75,.16)';ctx.shadowBlur=26;ctx.shadowOffsetY=10;
-  rr(58,1315,1022,1560,30,'#0b2b4b');ctx.restore();
-  text('20.8M',540,1400,76,'#fff',true,'center');
-  text('people are eligible',540,1460,31,'#fff',true,'center');
-  ctx.fillStyle='#f3b21a';ctx.fillRect(330,1500,420,6);
-  text('Source: CMS',540,1535,20,'#dde7ee',false,'center');
+  // eligibility split
+  text('MAY QUALIFY',58,1110,22,'#168746',true);
+  ctx.fillStyle='#168746';ctx.fillRect(58,1128,420,6);
+  check(85,1200,true);
+  text('Original Medicare with Part B',142,1190,30,'#0b2b4b',true);
+  text('Living in the U.S.',142,1230,22,'#64748b',false);
 
-  // footer
-  ctx.fillStyle='#fff';ctx.fillRect(0,1665,1080,255);
-  ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(58,1665);ctx.lineTo(1022,1665);ctx.stroke();
-  text('TheSecondHalfGuide.com',540,1750,40,'#0b2b4b',true,'center');
-  text("Real information for what's next.",540,1805,24,'#0b2b4b',false,'center');
-  text('PLAIN FACTS • CHECKED AND DATED',540,1855,18,'#64748b',true,'center');
+  text('NOT ELIGIBLE',58,1345,22,'#d71920',true);
+  ctx.fillStyle='#d71920';ctx.fillRect(58,1363,420,6);
+  const noRows=['Medicare Advantage','Medicaid premium help','IRMAA payer'];
+  let y=1435;
+  for(const item of noRows){check(85,y,false);text(item,142,y+10,28,'#0b2b4b',true);y+=82}
 
-  note.textContent='Story / cover: vertical adaptation of the same sleek Facebook/Threads editorial system.';
+  // action ribbon
+  ctx.fillStyle='#eef3f6';ctx.fillRect(58,1680,1022,1765);
+  text('NO APPLICATION REQUIRED',540,1730,30,'#0b2b4b',true,'center');
+
+  text('TheSecondHalfGuide.com',540,1820,38,'#0b2b4b',true,'center');
+  text("Real information for what's next.",540,1865,22,'#0b2b4b',false,'center');
+  text('PLAIN FACTS • CHECKED AND DATED',540,1900,16,'#64748b',true,'center');
+
+  note.textContent='Story / cover: infographic-first vertical adaptation of the Facebook/Threads master.';
 }
 function videoPanel(){
   c.width=1080;c.height=1080;
