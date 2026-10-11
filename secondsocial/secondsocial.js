@@ -80,7 +80,7 @@ function carousel(n){
 }
  if(n===2){text('Who may qualify?',55,245,66);check(85,360,true);text('Original Medicare',140,350,42);text('with Part B',140,405,42);text('Living in the U.S.',140,465,27,'#64748b',false);text('Other eligibility rules apply.',55,570,29,'#18212b')}
  if(n===3){text('Who is not eligible?',55,245,61);let y=355;for(const s of ['Medicare Advantage','Medicaid paying your premium','IRMAA payer']){check(85,y,false);for(const ln of wrapText(s,760,35)){text(ln,140,y+12,35);y+=41}y+=75}}
- if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
+ if(n===4){text('How it arrives',55,245,66);let y=335;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,32)){text(ln,125,y,32);y+=40}y+=34}rr(55,790,970,60,12,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,828,23,'#fff',true,'center')}
  footer(1080);note.textContent='Final carousel system: Hook → may qualify → not eligible → arrival + exact readable story path.'
 }
 function cover(){
@@ -119,7 +119,7 @@ function cover(){
   for(const item of noRows){check(85,y,false);text(item,142,y+10,28,'#0b2b4b',true);y+=82}
 
   // action ribbon
-  ctx.fillStyle='#eef3f6';ctx.fillRect(58,1680,1022,1765);
+  ctx.fillStyle='#eef3f6';ctx.fillRect(58,1690,1022,60);
   text('NO APPLICATION REQUIRED',540,1730,30,'#0b2b4b',true,'center');
 
   text('TheSecondHalfGuide.com',540,1820,38,'#0b2b4b',true,'center');
@@ -131,22 +131,13 @@ function cover(){
 function videoPanel(){
   c.width=1080;c.height=1080;
   ctx.fillStyle='#eef3f6';ctx.fillRect(0,0,1080,1080);
-  rr(90,85,990,995,34,'#fff');
-  rr(140,140,940,250,24,'#0b2b4b');
-  text('ANIMATED VIDEO ASSET',540,205,46,'#fff',true,'center');
-  text('24 sec • 9:16 • captioned',540,320,42,'#0b2b4b',true,'center');
-
-  rr(160,390,920,540,28,'#f3b21a');
-  text('INSTAGRAM REELS',540,455,38,'#0b2b4b',true,'center');
-
-  rr(160,575,920,725,28,'#d71920');
-  text('TIKTOK',540,640,44,'#fff',true,'center');
-
-  rr(160,760,920,910,28,'#0b2b4b');
-  text('YOUTUBE SHORTS',540,825,38,'#fff',true,'center');
-
-  text('Use the animated file, not the cover image.',540,965,28,'#64748b',true,'center');
-  note.textContent='This tab represents the actual animated social-video asset. The static Story / Cover tab is only the thumbnail/cover companion.';
+  rr(90,85,900,910,34,'#fff');
+  text('ANIMATED VIDEO ASSET',540,200,46,'#0b2b4b',true,'center');
+  text('24 sec \u2022 9:16 \u2022 captioned',540,260,32,'#64748b',true,'center');
+  const rows=[['INSTAGRAM REELS','#f3b21a','#0b2b4b'],['TIKTOK','#d71920','#fff'],['YOUTUBE SHORTS','#0b2b4b','#fff']];
+  rows.forEach((r,i)=>{rr(160,320+i*130,760,100,24,r[1]);text(r[0],540,383+i*130,40,r[2],true,'center')});
+  text('Use the animated file, not the cover image.',540,800,28,'#64748b',true,'center');
+  note.textContent='This tab lists where the animated video is used. The static Story / Cover tab is only the thumbnail companion.';
 }
 function threads(){square(false);note.textContent='Threads: final image plus exact clickable article URL in post text.'}
 function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='cover')cover();else if(mode==='video')videoPanel();else threads();const d=document.getElementById('download');if(d){d.disabled=mode==='video';d.textContent=mode==='video'?'Animated video asset':'Download current PNG'}}draw();
@@ -220,7 +211,7 @@ const sel=document.getElementById('copySelect'),ta=document.getElementById('copy
 
 const topical=[
  {title:'2027 Medicare Star Ratings',score:98,why:'Released Oct. 8; Open Enrollment starts Oct. 15',state:'recommended'},
- {title:'DME rule changes Oct. 15',score:96,why:'Rule takes effect in 5 days',state:''},
+ {title:'DME rule changes Oct. 15',score:96,why:'CMS rule starts Oct. 15',state:''},
  {title:'Medicare GLP-1 Bridge',score:93,why:'High-interest $50/month program; active now',state:''},
  {title:'2027 Medicare plan numbers',score:91,why:'Plan Finder / AEP timing',state:''},
  {title:'Medicare search-ad scam',score:89,why:'FTC warning + enrollment-season traffic',state:''},
@@ -234,9 +225,12 @@ const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const
 
 const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn'),publishedTop=document.getElementById('publishedTop');
 let liveStatus=false,networksConnected=false;
-approve.checked=localStorage.getItem('secondsocial.med90.approved')!=='0';
-published.checked=localStorage.getItem('secondsocial.med90.published')==='1';
-async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex;if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
+const PKG='med90-2026-10-11';
+let saved=null;try{saved=localStorage.getItem('secondsocial.med90.approved')}catch(e){}
+approve.checked=saved===PKG;
+try{published.checked=localStorage.getItem('secondsocial.med90.published')==='1'}catch(e){}
+function setArticlePill(ok){document.querySelectorAll('.js-article-pill').forEach(e=>{e.textContent=ok?'Article live':'Article not verified';e.className=e.className.replace(/\b(good|bad)\b/g,'')+' '+(ok?'good':'bad')})}
+async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex&&data.canonical===target&&data.finalOk;setArticlePill(liveStatus);if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;setArticlePill(false);liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
 function gate(){
   const alreadyPublished=published.checked;
   if(publishedTop){
@@ -286,8 +280,8 @@ async function loadConnections(){
   gate();
 }
 document.getElementById('recheckUrl').onclick=checkLive;
-approve.onchange=()=>{localStorage.setItem('secondsocial.med90.approved',approve.checked?'1':'0');gate()};
-published.onchange=()=>{localStorage.setItem('secondsocial.med90.published',published.checked?'1':'0');gate()};
+approve.onchange=()=>{try{localStorage.setItem('secondsocial.med90.approved',approve.checked?PKG:'0')}catch(e){}gate()};
+published.onchange=()=>{try{localStorage.setItem('secondsocial.med90.published',published.checked?'1':'0')}catch(e){}gate()};
 publish.onclick=()=>{if(publish.disabled)return;alert('Publishing is ready to hand off to Metricool. Final scheduler wiring will execute the approved package when network connections are present.');};
 checkLive();
 loadConnections();

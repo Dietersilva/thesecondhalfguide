@@ -9,8 +9,9 @@ module.exports = async function handler(req,res){
     }
     const controller=new AbortController();
     const timer=setTimeout(()=>controller.abort(),8000);
-    const r=await fetch(u.toString(),{method:'GET',redirect:'follow',signal:controller.signal,headers:{'user-agent':'SecondHalfGuide-SECONDSOCIAL/1.0'}});
+    const r=await fetch(u.toString(),{method:'GET',redirect:'manual',signal:controller.signal,headers:{'user-agent':'SecondHalfGuide-SECONDSOCIAL/1.0'}});
     clearTimeout(timer);
+    if(r.status>=300&&r.status<400){return res.status(200).json({ok:false,status:r.status,error:'Redirect not followed',finalOk:false})}
     const text=await r.text();
     const titleMatch=text.match(/<title[^>]*>([^<]+)<\/title>/i);
     const canonicalMatch=text.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i);
@@ -22,7 +23,8 @@ module.exports = async function handler(req,res){
       title:titleMatch?titleMatch[1].trim():null,
       canonical:canonicalMatch?canonicalMatch[1]:null,
       noindex,
-      hasArticleSignals:/article|story|checked|sources/i.test(text)
+      finalOk:new URL(r.url).hostname===u.hostname&&u.pathname===new URL(r.url).pathname,
+      hasArticleSignals:/application\/ld\+json/i.test(text)&&/class="byline"|<article/i.test(text)
     });
   }catch(e){
     return res.status(500).json({ok:false,error:e && e.name==='AbortError'?'Timeout':'Check failed'});
