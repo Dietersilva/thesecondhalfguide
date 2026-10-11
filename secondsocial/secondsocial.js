@@ -85,12 +85,35 @@ const topical=[
 const q=document.getElementById('queueList');topical.forEach((s,i)=>{const row=document.createElement('div');row.className='qrow '+(s.state||'');row.innerHTML='<div class="rank">'+(i+1)+'</div><div><b>'+s.title+'</b><div class="why">'+s.why+'</div></div><div class="score">'+s.score+'/100</div>';q.appendChild(row)});
 const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' · '+s.score+'/100';nextSelect.appendChild(o)});
 
-const approve=document.getElementById('approve'),live=document.getElementById('live'),published=document.getElementById('published'),publish=document.getElementById('publishBtn'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),state=document.getElementById('publishState');
+const approve=document.getElementById('approve'),published=document.getElementById('published'),publish=document.getElementById('publishBtn'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),state=document.getElementById('publishState'),liveBox=document.getElementById('liveCheck');
+let liveStatus=false;
+approve.checked=localStorage.getItem('secondsocial.med90.approved')==='1';
+published.checked=localStorage.getItem('secondsocial.med90.published')==='1';
 function gate(){
- if(!approve.checked||!live.checked){state.className='err';state.innerHTML='<b>Publishing blocked.</b> Approve the exact package and confirm the live article URL.';publish.disabled=true;finish.disabled=true;return}
- state.className='warn';state.innerHTML='<b>Creative approved.</b> Publishing is still blocked until social accounts are connected to Metricool.';publish.disabled=true;
+ if(!approve.checked||!liveStatus){state.className='err';state.innerHTML='<b>Publishing blocked.</b> The exact package must be approved and the production article must pass the live URL check.';publish.disabled=true;finish.disabled=true;return}
+ state.className='warn';state.innerHTML='<b>Creative approved and article live.</b> Publishing remains blocked until social accounts are connected to Metricool.';publish.disabled=true;
  finish.disabled=!published.checked;
 }
-approve.onchange=live.onchange=published.onchange=gate;
-finish.onclick=()=>{if(!published.checked)return;chooser.classList.add('open');finish.disabled=true;document.getElementById('activeStatus').textContent='Published · ready to choose next';document.getElementById('activeStatus').className='pill good'};
+approve.onchange=()=>{localStorage.setItem('secondsocial.med90.approved',approve.checked?'1':'0');gate()};
+published.onchange=()=>{localStorage.setItem('secondsocial.med90.published',published.checked?'1':'0');gate()};
+async function checkLive(){
+ liveBox.className='warn'; liveBox.innerHTML='<b>Checking production article…</b>';
+ try{
+   const target='https://thesecondhalfguide.com/medicare-90-payment';
+   const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});
+   const data=await r.json();
+   liveStatus=!!data.ok && !data.noindex;
+   if(liveStatus){
+     liveBox.className='ok'; liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>';
+   }else{
+     liveBox.className='err'; liveBox.innerHTML='<b>Live article check failed.</b><div class="small">HTTP '+(data.status||'error')+'. /SECONDSOCIAL will not publish this campaign until the destination is live and indexable.</div>';
+   }
+ }catch(e){
+   liveStatus=false; liveBox.className='err'; liveBox.innerHTML='<b>Live article check unavailable.</b><div class="small">Publishing remains blocked until the check succeeds.</div>';
+ }
+ gate();
+}
+document.getElementById('recheckUrl').onclick=checkLive;
+checkLive();
+finish.onclick=()=>{if(!published.checked)return;chooser.classList.add('open');finish.disabled=true;localStorage.setItem('secondsocial.med90.complete','1');document.getElementById('activeStatus').textContent='Published · ready to choose next';document.getElementById('activeStatus').className='pill good'};
 document.getElementById('activateNext').onclick=()=>{alert('Prototype: '+nextSelect.value+' will become the next active story after production publishing is connected. The finished engine will create a fresh verification job before any creative is generated.');};
