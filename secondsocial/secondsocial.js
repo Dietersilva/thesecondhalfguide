@@ -15,17 +15,50 @@ function check(x,y,good){ctx.fillStyle=good?'#168746':'#d71920';ctx.beginPath();
 function footer(h){ctx.fillStyle='#fff';ctx.fillRect(0,h-180,1080,180);ctx.strokeStyle='#d7dee5';ctx.beginPath();ctx.moveTo(45,h-180);ctx.lineTo(1035,h-180);ctx.stroke();text('TheSecondHalfGuide.com',540,h-112,42,'#0b2b4b',true,'center');text("Real information for what's next.",540,h-73,24,'#0b2b4b',false,'center');text('PLAIN FACTS • CHECKED AND DATED',540,h-36,17,'#64748b',true,'center')}
 
 function square(group=false){
- base();text('$90',55,205,106,'#d71920');text('MEDICARE',55,340,47);text('PAYMENT',55,410,64);text('Who gets it?',55,470,38);
- const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
- let y=548;
- for(const [title,good,sub] of rows){check(78,y,good);let yy=y-22;for(const ln of wrapText(title,430,28)){text(ln,125,yy,28);yy+=34}text(sub,125,yy+2,20,'#64748b',false);y+=94}
- rr(600,525,425,305,30,'#0b2b4b');let yy=570;for(const ln of wrapText('About 20.8 million people are eligible for a one-time $90 payment this month.',335,29)){text(ln,635,yy,29,'#fff');yy+=40}
- ctx.strokeStyle='#6e89a0';ctx.beginPath();ctx.moveTo(630,760);ctx.lineTo(995,760);ctx.stroke();text('Source: CMS',813,795,18,'#fff',true,'center');text('Checked Oct. 10, 2026',813,820,16,'#dde7ee',false,'center');
- if(group)text('SHAREABLE FACT SHEET',1015,150,16,'#64748b',true,'right');footer(1080);note.textContent=(heroClearancePass()?'✓ ':'⚠ ')+'Hero-number clearance checked. Final square master: no overlap, one brand footer, exact article URL carried in post copy.'
+  base();
+
+  // subtle editorial geometry
+  ctx.strokeStyle='rgba(11,43,75,.06)';ctx.lineWidth=3;
+  [150,245,340].forEach(r=>{ctx.beginPath();ctx.arc(940,200,r,0,Math.PI*2);ctx.stroke()});
+  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,18,1080);
+
+  // kicker
+  text('THE SECOND HALF GUIDE',55,158,17,'#64748b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(55,176,235,6);
+
+  // hero
+  text('$90',55,320,112,'#d71920');
+  text('MEDICARE',55,395,42,'#0b2b4b');
+  text('PAYMENT',55,460,58,'#0b2b4b');
+  text('Who gets it?',55,515,31,'#18212b');
+
+  // eligibility rail
+  const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
+  let y=595;
+  for(const [title,good,sub] of rows){
+    check(78,y,good);
+    text(title,125,y-8,24,'#0b2b4b',true);
+    text(sub,125,y+23,18,'#64748b',false);
+    y+=73;
+  }
+
+  // floating fact panel
+  ctx.save();ctx.shadowColor='rgba(11,43,75,.16)';ctx.shadowBlur=22;ctx.shadowOffsetY=8;
+  rr(610,500,1025,810,28,'#0b2b4b');ctx.restore();
+  text('20.8M',818,585,64,'#fff',true,'center');
+  text('people are eligible',818,635,25,'#fff',true,'center');
+  ctx.fillStyle='#f3b21a';ctx.fillRect(690,675,255,5);
+  text('ONE-TIME $90 PAYMENT',818,720,20,'#dde7ee',true,'center');
+  text('Source: CMS',818,760,17,'#dde7ee',false,'center');
+  text('Checked Oct. 10, 2026',818,790,15,'#aebfcb',false,'center');
+
+  if(group)text('SHAREABLE FACT SHEET',1015,150,15,'#64748b',true,'right');
+  footer(1080);
+  note.textContent=(heroClearancePass()?'✓ ':'⚠ ')+'Sleek editorial master: shared Facebook/Threads visual system with measured spacing and mobile-safe hierarchy.';
 }
 function carousel(n){
  base();text(n+'/4',1010,83,24,'#fff',true,'right');
- if(n===1){text('$90',55,205,112,'#d71920');text('MEDICARE PAYMENT',55,350,58);text('KEY FACTS',55,425,46);let y=535;for(const s of ['One-time payment','About 20.8 million people','No application required','Watch for scams']){check(80,y,true);text(s,135,y+12,34,'#18212b');y+=88}}
+ if(n===1){ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,16,1080);text('THE SECOND HALF GUIDE',55,160,17,'#64748b',true);ctx.fillStyle='#f3b21a';ctx.fillRect(55,178,230,6);text('$90',55,300,112,'#d71920');text('MEDICARE PAYMENT',55,390,58);text('KEY FACTS',55,465,46);let y=565;for(const s of ['One-time payment','About 20.8 million people','No application required','Watch for scams']){check(80,y,true);text(s,135,y+12,34,'#18212b');y+=88}}
  if(n===2){text('Who may qualify?',55,245,66);check(85,360,true);text('Original Medicare',140,350,42);text('with Part B',140,405,42);text('Living in the U.S.',140,465,27,'#64748b',false);text('Other eligibility rules apply.',55,570,29,'#18212b')}
  if(n===3){text('Who is not eligible?',55,245,61);let y=355;for(const s of ['Medicare Advantage','Medicaid paying your premium','IRMAA payer']){check(85,y,false);for(const ln of wrapText(s,760,35)){text(ln,140,y+12,35);y+=41}y+=75}}
  if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
@@ -35,49 +68,55 @@ function cover(){
   c.width=1080;c.height=1920;
   ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
 
-  // Same visual language as the approved Threads/Facebook square card
+  // shared editorial rail + geometry
+  ctx.fillStyle='#0b2b4b';ctx.fillRect(0,0,22,1920);
+  ctx.strokeStyle='rgba(11,43,75,.055)';ctx.lineWidth=4;
+  [180,300,420].forEach(r=>{ctx.beginPath();ctx.arc(930,250,r,0,Math.PI*2);ctx.stroke()});
+
   rr(55,55,610,130,16,'#d71920');
   text('MEDICARE • OCTOBER 2026',332,96,30,'#fff',true,'center');
 
-  text('$90',55,330,150,'#d71920');
-  text('MEDICARE',55,470,60,'#0b2b4b');
-  text('PAYMENT',55,555,82,'#0b2b4b');
-  text('Who gets it?',55,630,42,'#0b2b4b');
+  text('THE SECOND HALF GUIDE',58,200,18,'#64748b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(58,220,270,7);
 
-  // Eligibility list
+  // hero
+  text('$90',58,445,175,'#d71920');
+  text('MEDICARE',58,590,64,'#0b2b4b');
+  text('PAYMENT',58,685,90,'#0b2b4b');
+  text('Who gets it?',58,760,38,'#18212b');
+
+  // eligibility list
   const rows=[
     ['Original Medicare with Part B',true,'Living in the U.S.'],
     ['Medicare Advantage',false,'Not eligible'],
     ['Medicaid paying your premium',false,'Not eligible'],
     ['IRMAA payer',false,'Not eligible']
   ];
-  let y=755;
+  let y=885;
   for(const [title,good,sub] of rows){
-    check(78,y,good);
-    let yy=y-18;
-    for(const ln of wrapText(title,620,32)){text(ln,130,yy,32,'#0b2b4b',true);yy+=38}
-    text(sub,130,yy+4,23,'#64748b',false);
-    y+=120;
+    check(82,y,good);
+    text(title,138,y-9,28,'#0b2b4b',true);
+    text(sub,138,y+28,21,'#64748b',false);
+    y+=105;
   }
 
-  // Same navy fact panel, adapted vertically
-  rr(55,1265,1025,1535,28,'#0b2b4b');
-  text('ABOUT 20.8 MILLION',540,1345,44,'#fff',true,'center');
-  text('PEOPLE ARE ELIGIBLE',540,1405,38,'#fff',true,'center');
-  text('FOR THE ONE-TIME $90 PAYMENT',540,1462,27,'#dde7ee',true,'center');
-  text('Source: CMS',540,1510,20,'#dde7ee',false,'center');
+  // fact panel
+  ctx.save();ctx.shadowColor='rgba(11,43,75,.16)';ctx.shadowBlur=26;ctx.shadowOffsetY=10;
+  rr(58,1315,1022,1560,30,'#0b2b4b');ctx.restore();
+  text('20.8M',540,1400,76,'#fff',true,'center');
+  text('people are eligible',540,1460,31,'#fff',true,'center');
+  ctx.fillStyle='#f3b21a';ctx.fillRect(330,1500,420,6);
+  text('Source: CMS',540,1535,20,'#dde7ee',false,'center');
 
-  // Matching footer
-  ctx.fillStyle='#fff';ctx.fillRect(0,1660,1080,260);
-  ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(55,1660);ctx.lineTo(1025,1660);ctx.stroke();
-  text('TheSecondHalfGuide.com',540,1745,42,'#0b2b4b',true,'center');
-  text("Real information for what's next.",540,1800,24,'#0b2b4b',false,'center');
-  text('PLAIN FACTS • CHECKED AND DATED',540,1850,18,'#64748b',true,'center');
+  // footer
+  ctx.fillStyle='#fff';ctx.fillRect(0,1665,1080,255);
+  ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(58,1665);ctx.lineTo(1022,1665);ctx.stroke();
+  text('TheSecondHalfGuide.com',540,1750,40,'#0b2b4b',true,'center');
+  text("Real information for what's next.",540,1805,24,'#0b2b4b',false,'center');
+  text('PLAIN FACTS • CHECKED AND DATED',540,1855,18,'#64748b',true,'center');
 
-  note.textContent='Story / cover version of the approved Threads/Facebook design. Same visual system, reformatted for 9:16.';
+  note.textContent='Story / cover: vertical adaptation of the same sleek Facebook/Threads editorial system.';
 }
-
 function videoPanel(){
   c.width=1080;c.height=1080;
   ctx.fillStyle='#eef3f6';ctx.fillRect(0,0,1080,1080);
