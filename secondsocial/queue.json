@@ -4,12 +4,19 @@
     "id": "medicare-90-payment",
     "title": "$90 Medicare payment",
     "url": "https://thesecondhalfguide.com/medicare-90-payment",
-    "status": "blocked_not_live",
+    "status": "live_verified",
     "score": 100,
     "sources": [
       "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions",
       "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
-    ]
+    ],
+    "liveCheck": {
+      "checkedAt": "2026-10-10T20:34:22-04:00",
+      "status": 200,
+      "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
+      "canonical": "https://thesecondhalfguide.com/medicare-90-payment",
+      "noindex": false
+    }
   },
   "queue": [
     {
