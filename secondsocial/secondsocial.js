@@ -16,7 +16,7 @@ function square(group=false){
  const rows=[['Original Medicare with Part B',true,'Living in the U.S.'],['Medicare Advantage',false,'Not eligible'],['Medicaid paying your premium',false,'Not eligible'],['IRMAA payer',false,'Not eligible']];
  let y=525;
  for(const [title,good,sub] of rows){check(78,y,good);let yy=y-22;for(const ln of wrapText(title,430,28)){text(ln,125,yy,28);yy+=34}text(sub,125,yy+2,20,'#64748b',false);y+=94}
- rr(600,500,425,330,30,'#0b2b4b');let yy=555;for(const ln of wrapText('About 20.8 million people will receive a one-time $90 payment this month.',335,29)){text(ln,635,yy,29,'#fff');yy+=40}
+ rr(600,500,425,330,30,'#0b2b4b');let yy=555;for(const ln of wrapText('About 20.8 million people are eligible for a one-time $90 payment this month.',335,29)){text(ln,635,yy,29,'#fff');yy+=40}
  ctx.strokeStyle='#6e89a0';ctx.beginPath();ctx.moveTo(630,760);ctx.lineTo(995,760);ctx.stroke();text('Source: CMS',813,795,18,'#fff',true,'center');text('Checked Oct. 10, 2026',813,820,16,'#dde7ee',false,'center');
  if(group)text('SHAREABLE FACT SHEET',1015,150,16,'#64748b',true,'right');footer(1080);note.textContent='Final square master: one brand footer only, no overlap, exact article URL carried in post copy.'
 }
@@ -25,7 +25,7 @@ function carousel(n){
  if(n===1){text('$90',55,230,130,'#d71920');text('MEDICARE PAYMENT',55,340,62);text('KEY FACTS',55,420,48);let y=530;for(const s of ['One-time payment','About 20.8 million people','No application required','Watch for scams']){check(80,y,true);text(s,135,y+12,34,'#18212b');y+=88}}
  if(n===2){text('Who may qualify?',55,245,66);check(85,360,true);text('Original Medicare',140,350,42);text('with Part B',140,405,42);text('Living in the U.S.',140,465,27,'#64748b',false);text('Other eligibility rules apply.',55,570,29,'#18212b')}
  if(n===3){text('Who is not eligible?',55,245,61);let y=355;for(const s of ['Medicare Advantage','Medicaid paying your premium','IRMAA payer']){check(85,y,false);for(const ln of wrapText(s,760,35)){text(ln,140,y+12,35);y+=41}y+=75}}
- if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits around Oct. 8','Paper checks later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
+ if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
  footer(1080);note.textContent='Final carousel system: Hook → may qualify → not eligible → arrival + exact readable story path.'
 }
 function vertical(){
@@ -34,12 +34,12 @@ function vertical(){
  text('$90',55,335,145,'#d71920');text('MEDICARE',55,480,72);text('PAYMENT',55,575,72);
  rr(55,665,980,780,26,'#f3b21a');text('NO APPLICATION REQUIRED',545,738,38,'#0b2b4b',true,'center');
  text('It’s real.',55,930,54,'#18212b');text('But not everyone gets it.',55,1005,54,'#18212b');
- rr(610,1110,1015,1320,28,'#fff');text('20.8M',812,1185,58,'#0b2b4b',true,'center');text('expected recipients',812,1240,26,'#18212b',true,'center');text('Source: CMS',812,1285,20,'#64748b',false,'center');
+ rr(610,1110,1015,1320,28,'#fff');text('20.8M',812,1185,58,'#0b2b4b',true,'center');text('eligible people',812,1240,26,'#18212b',true,'center');text('Source: CMS',812,1285,20,'#64748b',false,'center');
  rr(180,1455,900,1555,24,'#0b2b4b');text('LINK IN BIO / PROFILE',540,1518,30,'#fff',true,'center');
  text('TheSecondHalfGuide.com/medicare-90-payment',540,1645,27,'#0b2b4b',true,'center');
  ctx.strokeStyle='#d7dee5';ctx.beginPath();ctx.moveTo(90,1730);ctx.lineTo(990,1730);ctx.stroke();
  text("Real information for what's next.",540,1790,28,'#0b2b4b',false,'center');text('PLAIN FACTS • CHECKED AND DATED',540,1840,19,'#64748b',true,'center');
- note.textContent='Native 9:16 master: vertical-first composition, no square-card inset, no repeated footer, no headline collision.'
+ note.textContent='Native 9:16 master: vertical-first composition, no square-card inset, no repeated footer, no headline collision. Final video uses timed on-screen captions.'
 }
 function threads(){square(false);note.textContent='Threads: final image plus exact clickable article URL in post text.'}
 function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='vertical')vertical();else threads()}draw();
@@ -47,7 +47,7 @@ function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true)
 const captions={
 'Facebook Page':`A one-time $90 Medicare payment is going out this month — but not everyone with Medicare qualifies.
 
-CMS says eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. No application is required.
+CMS says about 20.8 million people are eligible. Eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. No application is required.
 
 Full sourced story:
 https://thesecondhalfguide.com/medicare-90-payment
