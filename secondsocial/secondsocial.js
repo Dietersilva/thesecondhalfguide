@@ -35,35 +35,40 @@ function cover(){
   c.width=1080;c.height=1920;
   ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
 
-  // Editorial label
-  rr(64,58,650,136,16,'#0b2b4b');
-  text('MEDICARE • OCTOBER 2026',357,106,31,'#fff',true,'center');
+  // subtle editorial rings
+  ctx.strokeStyle='rgba(11,43,75,.06)';ctx.lineWidth=4;
+  [180,280,380].forEach(r=>{ctx.beginPath();ctx.arc(930,190,r,0,Math.PI*2);ctx.stroke()});
 
-  // Strong, restrained hero
-  text('$90',70,430,220,'#d71920');
-  text('MEDICARE',70,610,86,'#0b2b4b');
-  text('PAYMENT',70,720,112,'#0b2b4b');
+  // section label
+  rr(64,70,640,142,16,'#0b2b4b');
+  text('MEDICARE • OCTOBER 2026',352,108,30,'#fff',true,'center');
 
-  // Single hook
-  rr(70,825,1010,955,24,'#f3b21a');
-  text('WHO GETS IT?',540,895,54,'#0b2b4b',true,'center');
+  // hero
+  text('$90',64,455,225,'#d71920');
+  text('MEDICARE',64,640,84,'#0b2b4b');
+  text('PAYMENT',64,760,112,'#0b2b4b');
 
-  // Key fact
-  text('20.8 MILLION',70,1130,68,'#0b2b4b');
-  text('people are eligible',70,1195,38,'#18212b');
-  text('Source: CMS',70,1245,22,'#64748b',false);
+  // single editorial accent
+  ctx.fillStyle='#f3b21a';ctx.fillRect(64,835,520,12);
+  text('WHO GETS IT?',64,930,50,'#0b2b4b');
 
-  // Small explainer cue, not fake CTA
-  rr(70,1385,640,1470,20,'#0b2b4b');
-  text('24-SECOND EXPLAINER',355,1430,30,'#fff',true,'center');
+  // key fact, no box
+  text('20.8M',64,1130,94,'#0b2b4b');
+  text('people are eligible',64,1200,38,'#18212b');
+  text('Source: CMS',64,1250,22,'#64748b',false);
 
-  // Brand footer
-  ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(70,1665);ctx.lineTo(1010,1665);ctx.stroke();
-  text('TheSecondHalfGuide.com',540,1745,40,'#0b2b4b',true,'center');
-  text("Real information for what's next.",540,1800,25,'#0b2b4b',false,'center');
-  text('PLAIN FACTS • CHECKED AND DATED',540,1850,18,'#64748b',true,'center');
+  // compact factual cue
+  rr(64,1360,620,1455,22,'#fff4d8');
+  text('NO APPLICATION REQUIRED',374,1412,28,'#7a5608',true,'center');
 
-  note.textContent='Story / cover only. Clean editorial companion to the animated video. No AI people, fake documents, fake buttons, or ad-style imagery.';
+  // clean footer
+  ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(64,1635);ctx.lineTo(1016,1635);ctx.stroke();
+  text('TheSecondHalfGuide.com',64,1730,42,'#0b2b4b');
+  text("Real information for what's next.",64,1782,25,'#0b2b4b',false);
+  text('PLAIN FACTS • CHECKED AND DATED',64,1830,18,'#64748b',true);
+
+  note.textContent='Story / cover only. Clean editorial thumbnail that matches the approved newsroom cards. No fake buttons, no promo slabs, no extra visual genre.';
 }
 
 function videoPanel(){
