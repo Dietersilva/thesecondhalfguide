@@ -63,16 +63,20 @@ A creative is not ready for approval unless:
 - native 9:16 layouts are used for vertical video;
 - exact article destination/link instructions are mapped;
 - facts match the current verification record;
-- mobile readability is acceptable.
+- mobile readability is acceptable;
+- population language distinguishes eligibility from guaranteed receipt;
+- date-sensitive timing is written in the correct tense for the posting date;
+- final slide/CTA panels do not overlap warning or information bands.
 
 ## Current campaign
 The $90 Medicare Payment: Who Gets It and Who Doesn’t
 - Primary sources: CMS + Medicare.gov.
 - Article URL: https://thesecondhalfguide.com/medicare-90-payment
 - Live check: PASSED, HTTP 200, canonical verified, indexable.
-- Creative: FINAL and user-approved.
+- Creative: FINAL, corrected, and user-approved.
+- Corrections locked: 20.8M described as eligible, Oct. 8 timing in past tense, slide 4 overlap removed, native vertical video captioned.
 - Preflight: PASSED.
-- Status: ready for social-account connection and final scheduling/publishing.
+- Status: ready for social-account connection and final scheduling/publishing, subject to a fresh live-URL check immediately before post.
 - Next story remains locked.
 
 ## Current Metricool state
