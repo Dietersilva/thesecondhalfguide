@@ -3,7 +3,7 @@
   "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
   "articleUrl": "https://thesecondhalfguide.com/medicare-90-payment",
   "displayUrl": "TheSecondHalfGuide.com/medicare-90-payment",
-  "status": "ready_for_connections_and_publish",
+  "status": "final_corrected_pre_publish",
   "verifiedAt": "2026-10-10",
   "sources": [
     {
@@ -52,7 +52,11 @@
       "sourceAndCheckedDate": true,
       "exactLinkMapped": true,
       "nativeVertical": true,
-      "mobileReadable": true
+      "mobileReadable": true,
+      "cmsEligibilityWording": true,
+      "timingTenseCurrent": true,
+      "slide4NoOverlap": true,
+      "verticalTimedCaptions": true
     }
   },
   "linkRules": {
@@ -84,5 +88,16 @@
     "finalPublishApproval": false,
     "published": false,
     "completed": false
+  },
+  "creativeCorrections": {
+    "eligibilityWording": "Uses CMS-aligned 'about 20.8 million people are eligible' wording; no 'will receive' overstatement.",
+    "timing": "Uses past-tense 'went out around Oct. 8' for most direct deposits and 'expected later in October' for paper checks.",
+    "carouselSlide4": "Full-story panel and warning band are separated with no overlap.",
+    "verticalVideo": "Native 9:16 final uses timed on-screen captions; no paid voiceover service used."
+  },
+  "prePublish": {
+    "liveUrlMustPassFreshCheck": true,
+    "recheckTimingWordingOnPostDay": true,
+    "confirmActiveStoryIsFirstProfileLinkOnBioPlatforms": true
   }
 }
