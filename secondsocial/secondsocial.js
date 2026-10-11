@@ -1,5 +1,5 @@
 const c=document.getElementById('creative'),ctx=c.getContext('2d');let mode='fb';
-const tabs=[['fb','Facebook Page'],['group','FB Group'],['ig1','Carousel 1'],['ig2','Carousel 2'],['ig3','Carousel 3'],['ig4','Carousel 4'],['vertical','Reels / TikTok / Shorts'],['threads','Threads']];
+const tabs=[['fb','Facebook Page'],['group','FB Group'],['ig1','Carousel 1'],['ig2','Carousel 2'],['ig3','Carousel 3'],['ig4','Carousel 4'],['cover','Story / Cover'],['video','Reels / TikTok / Shorts Video'],['threads','Threads']];
 const tabWrap=document.getElementById('tabs');const note=document.getElementById('previewNote');
 tabs.forEach(([id,label])=>{const b=document.createElement('button');b.className='tab'+(id===mode?' on':'');b.textContent=label;b.onclick=()=>{mode=id;[...tabWrap.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');draw()};tabWrap.appendChild(b)});
 
@@ -31,21 +31,67 @@ function carousel(n){
  if(n===4){text('How it arrives',55,245,66);let y=355;for(const s of ['Most direct deposits went out around Oct. 8','Paper checks are expected later in October','No processing fee','No bank verification']){text('•',70,y,44,'#f3b21a');for(const ln of wrapText(s,820,34)){text(ln,125,y,34);y+=41}y+=62}rr(80,775,1000,855,18,'#0b2b4b');text('Full story: TheSecondHalfGuide.com/medicare-90-payment',540,825,23,'#fff',true,'center')}
  footer(1080);note.textContent='Final carousel system: Hook → may qualify → not eligible → arrival + exact readable story path.'
 }
-function vertical(){
- c.width=1080;c.height=1920;ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
- rr(55,45,610,78,16,'#0b2b4b');text('MEDICARE • OCTOBER 2026',332,96,30,'#fff',true,'center');
- text('$90',55,335,145,'#d71920');text('MEDICARE',55,480,72);text('PAYMENT',55,575,72);
- rr(55,665,980,780,26,'#f3b21a');text('NO APPLICATION REQUIRED',545,738,38,'#0b2b4b',true,'center');
- text('It’s real.',55,930,54,'#18212b');text('But not everyone gets it.',55,1005,54,'#18212b');
- rr(610,1110,1015,1320,28,'#fff');text('20.8M',812,1185,58,'#0b2b4b',true,'center');text('eligible people',812,1240,26,'#18212b',true,'center');text('Source: CMS',812,1285,20,'#64748b',false,'center');
- rr(180,1455,900,1555,24,'#0b2b4b');text('LINK IN BIO / PROFILE',540,1518,30,'#fff',true,'center');
- text('TheSecondHalfGuide.com/medicare-90-payment',540,1645,27,'#0b2b4b',true,'center');
- ctx.strokeStyle='#d7dee5';ctx.beginPath();ctx.moveTo(90,1730);ctx.lineTo(990,1730);ctx.stroke();
- text("Real information for what's next.",540,1790,28,'#0b2b4b',false,'center');text('PLAIN FACTS • CHECKED AND DATED',540,1840,19,'#64748b',true,'center');
- note.textContent='Vertical-video version only: used for Instagram Reels, TikTok and YouTube Shorts. It is separate from the Facebook/Threads/Carousel static designs.'
+function cover(){
+  c.width=1080;c.height=1920;
+  ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
+
+  // top label
+  rr(55,55,625,132,18,'#0b2b4b');
+  text('MEDICARE • OCTOBER 2026',340,102,31,'#fff',true,'center');
+
+  // graphic accent
+  ctx.fillStyle='#f3b21a';
+  ctx.beginPath();ctx.moveTo(760,0);ctx.lineTo(1080,0);ctx.lineTo(1080,420);ctx.closePath();ctx.fill();
+
+  // hero stack
+  text('$90',70,390,210,'#d71920');
+  text('MEDICARE',70,560,88,'#0b2b4b');
+  text('PAYMENT',70,670,108,'#0b2b4b');
+
+  rr(70,770,850,892,26,'#f3b21a');
+  text('WHO GETS IT?',460,837,54,'#0b2b4b',true,'center');
+
+  rr(70,980,1010,1165,30,'#fff');
+  text('20.8M',130,1075,92,'#0b2b4b');
+  text('eligible people',550,1070,42,'#18212b');
+  text('Source: CMS',550,1125,22,'#64748b',false);
+
+  // lower hook band
+  rr(70,1265,1010,1445,28,'#0b2b4b');
+  text('NO APPLICATION REQUIRED',540,1345,44,'#fff',true,'center');
+  text('Not everyone qualifies.',540,1398,30,'#dde7ee',false,'center');
+
+  rr(70,1515,720,1610,24,'#d71920');
+  text('24-SECOND EXPLAINER',395,1565,34,'#fff',true,'center');
+
+  text('TheSecondHalfGuide.com',540,1740,38,'#0b2b4b',true,'center');
+  text("Real information for what's next.",540,1790,24,'#0b2b4b',false,'center');
+  text('PLAIN FACTS • CHECKED AND DATED',540,1835,18,'#64748b',true,'center');
+  note.textContent='Static Story / cover image only. Designed to be readable as a small thumbnail and to visually support the animated Reel/TikTok/Shorts video.';
+}
+
+function videoPanel(){
+  c.width=1080;c.height=1080;
+  ctx.fillStyle='#eef3f6';ctx.fillRect(0,0,1080,1080);
+  rr(90,85,990,995,34,'#fff');
+  rr(140,140,940,250,24,'#0b2b4b');
+  text('ANIMATED VIDEO ASSET',540,205,46,'#fff',true,'center');
+  text('24 sec • 9:16 • captioned',540,320,42,'#0b2b4b',true,'center');
+
+  rr(160,390,920,540,28,'#f3b21a');
+  text('INSTAGRAM REELS',540,455,38,'#0b2b4b',true,'center');
+
+  rr(160,575,920,725,28,'#d71920');
+  text('TIKTOK',540,640,44,'#fff',true,'center');
+
+  rr(160,760,920,910,28,'#0b2b4b');
+  text('YOUTUBE SHORTS',540,825,38,'#fff',true,'center');
+
+  text('Use the animated file, not the cover image.',540,965,28,'#64748b',true,'center');
+  note.textContent='This tab represents the actual animated social-video asset. The static Story / Cover tab is only the thumbnail/cover companion.';
 }
 function threads(){square(false);note.textContent='Threads: final image plus exact clickable article URL in post text.'}
-function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='vertical')vertical();else threads()}draw();
+function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='cover')cover();else if(mode==='video')videoPanel();else threads();const d=document.getElementById('download');if(d){d.disabled=mode==='video';d.textContent=mode==='video'?'Animated video asset':'Download current PNG'}}draw();
 
 const captions={
 'Facebook Page':`A one-time $90 Medicare payment is going out this month — but not everyone with Medicare qualifies.
@@ -112,7 +158,7 @@ TheSecondHalfGuide.com/medicare-90-payment
 
 Source: CMS • Checked Oct. 10, 2026`
 };
-const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});function setCopy(){ta.value=captions[sel.value]}sel.onchange=setCopy;setCopy();document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{const a=document.createElement('a');a.download='secondsocial-final-'+mode+'-medicare-90.png';a.href=c.toDataURL('image/png');a.click()};
+const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});function setCopy(){ta.value=captions[sel.value]}sel.onchange=setCopy;setCopy();document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download='secondsocial-final-'+mode+'-medicare-90.png';a.href=c.toDataURL('image/png');a.click()};
 
 const topical=[
  {title:'2027 Medicare Star Ratings',score:98,why:'Released Oct. 8; Open Enrollment starts Oct. 15',state:'recommended'},
