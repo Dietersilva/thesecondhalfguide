@@ -104,3 +104,11 @@ Every group must have:
 - /secondsocial/groups.json — group rules/approval registry
 - /api/secondsocial/check-url.js — exact article live validator
 - Metricool — scheduling/publishing/analytics after account authorization
+
+## Rendering creative (single source of truth)
+
+Copy and facts live in `campaigns/<id>.json` under `content`. Run:
+
+    python3.13 secondsocial/render/render.py <id>
+
+This writes the exact PNGs to `secondsocial/out/<id>/` plus `manifest.json`. The dashboard shows those files, so what is approved is what is posted. The run exits non-zero if any asset has text under 26px, clipped or overlapping text, content outside the canvas, or content running into the footer, or if the timing wording has passed its `expires.timing` date.

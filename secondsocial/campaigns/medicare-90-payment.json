@@ -103,5 +103,56 @@
     "liveUrlMustPassFreshCheck": true,
     "recheckTimingWordingOnPostDay": true,
     "confirmActiveStoryIsFirstProfileLinkOnBioPlatforms": true
+  },
+  "content": {
+    "kicker": "Medicare explainer",
+    "badge": "MEDICARE • OCTOBER 2026",
+    "hero": "$90",
+    "heroLabel": "Medicare payment",
+    "heroSub": "Who gets it?",
+    "stat": {
+      "value": "20.8M",
+      "label": "people are eligible",
+      "source": "Source: CMS"
+    },
+    "qualify": {
+      "title": "May qualify",
+      "items": [
+        "Original Medicare with Part B",
+        "Living in the U.S."
+      ]
+    },
+    "notEligible": {
+      "title": "Not eligible",
+      "items": [
+        "Medicare Advantage",
+        "Medicaid premium help",
+        "IRMAA payers"
+      ]
+    },
+    "noApplication": "No application needed",
+    "timing": [
+      {
+        "head": "Direct deposits",
+        "text": "Most went out around Oct. 8"
+      },
+      {
+        "head": "Paper checks",
+        "text": "Expected later in October"
+      }
+    ],
+    "checkedLine": "Source: CMS • Checked Oct. 10, 2026",
+    "tagline": "Real information for what's next.",
+    "trust": "PLAIN FACTS • CHECKED AND DATED",
+    "otherRules": "Other eligibility rules apply.",
+    "arrives": [
+      "No application needed",
+      "Most direct deposits went out around Oct. 8",
+      "Paper checks expected later in October"
+    ]
+  },
+  "expires": {
+    "timing": "2026-10-31",
+    "reason": "Payment timing wording goes stale once paper checks have gone out."
   }
 }
