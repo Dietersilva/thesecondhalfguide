@@ -30,72 +30,7 @@ function draw(){const d=document.getElementById('download');
   if(d){d.disabled=false;d.textContent='Download current PNG'}}
 draw();
 
-const captions={
-'Facebook Page':`A one-time $90 Medicare payment is going out this month — but not everyone with Medicare qualifies.
-
-CMS says about 20.8 million people are eligible. Eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. No application is required.
-
-Full sourced story:
-https://thesecondhalfguide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`,
-'Facebook Group':`For anyone seeing posts about the $90 Medicare payment: it is real, but it is not for everyone.
-
-CMS says it is a one-time October payment for certain people in Original Medicare Part B. Medicare Advantage members, people receiving Medicaid premium assistance, and people paying IRMAA are not eligible. No application is required.
-
-Full sourced explanation:
-https://thesecondhalfguide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`,
-'Instagram Carousel':`The $90 Medicare payment is real — but eligibility is narrower than many posts make it sound.
-
-Swipe for who may qualify, who is not eligible, and how the payment arrives.
-
-Full sourced story: LINK IN BIO
-TheSecondHalfGuide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026
-
-#Medicare #Retirement #Medicare2026 #SecondHalfGuide`,
-'Instagram Story':`Use native Link sticker.
-
-Sticker label: READ THE FULL SOURCED STORY
-Destination:
-https://thesecondhalfguide.com/medicare-90-payment`,
-'Instagram Reel':`The $90 Medicare payment is real — but not everyone gets it.
-
-Who may qualify, who is not eligible, how it arrives, and what to watch for.
-
-Full sourced story: LINK IN BIO
-TheSecondHalfGuide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`,
-'Threads':`A one-time $90 Medicare payment is going out this month.
-
-CMS says about 20.8 million people are eligible. It is for certain people in Original Medicare Part B — not Medicare Advantage — and there is no application.
-
-Full sourced story:
-https://thesecondhalfguide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`,
-'TikTok':`The $90 Medicare payment is real — but not everyone gets it.
-
-Who may qualify, who is excluded, how it arrives, and what to watch for.
-
-Full sourced story: LINK IN BIO / PROFILE
-TheSecondHalfGuide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`,
-'YouTube Short':`TITLE: $90 Medicare Payment: Who Gets It?
-
-The $90 Medicare payment is real, but eligibility is limited. This Short explains who may qualify, who does not, how the payment arrives, and what to watch for.
-
-Full sourced story: first link on our channel profile.
-TheSecondHalfGuide.com/medicare-90-payment
-
-Source: CMS • Checked Oct. 10, 2026`
-};
-const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});function setCopy(){ta.value=captions[sel.value]}sel.onchange=setCopy;setCopy();document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download=FILES[mode]+'.png';a.href=img.src;a.click()};
+let captions={};const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');function setCopy(){ta.value=captions[sel.value]||''}sel.onchange=setCopy;fetch('/secondsocial/campaigns/medicare-90-payment.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{captions=d.captions||{};sel.innerHTML='';Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});setCopy()}).catch(()=>{ta.value='Could not load captions from the campaign file.'});document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download=FILES[mode]+'.png';a.href=img.src;a.click()};
 
 const topical=[
  {title:'2027 Medicare Star Ratings',score:98,why:'Released Oct. 8; Open Enrollment starts Oct. 15',state:'recommended'},

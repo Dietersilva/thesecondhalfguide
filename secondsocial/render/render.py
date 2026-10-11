@@ -47,7 +47,7 @@ body:before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;backgr
 .foot{margin:auto -56px 0 -64px;padding:14px 56px 16px 64px;background:#fff;border-top:2px solid var(--line);text-align:center}
 .foot .site{font-size:42px;font-weight:700;color:var(--navy)}
 .foot .tag{font-size:28px;color:var(--navy)}
-.foot .src{font-size:28px;color:var(--muted);margin-top:4px}
+.foot .src{font-size:28px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-top:4px}
 .gap{flex:1;min-height:20px}
 .big .hero b{font-size:260px}.big .stat b{font-size:100px}
 .slide{font-size:70px;font-weight:700;color:var(--navy);font-family:Fra,serif;line-height:1.1;margin-top:34px}
@@ -60,8 +60,8 @@ def icon(ok): return '<span class="ic">%s</span>' % ('✓' if ok else '×')
 def rows(items, ok): return ''.join('<div class="row">%s<span>%s</span></div>' % (icon(ok), e(i)) for i in items)
 
 def footer(c, with_src=True):
-    return ('<div class="foot"><div class="site">TheSecondHalfGuide.com</div><div class="tag">%s</div>%s</div>'
-            % (e(c['tagline']), '<div class="src">%s</div>' % e(c['checkedLine']) if with_src else ''))
+    return ('<div class="foot"><div class="site">TheSecondHalfGuide.com</div><div class="tag">%s</div><div class="src">%s</div></div>'
+            % (e(c['tagline']), e(c['trust'])))
 
 def hero(c, big=False):
     return ('<div class="hero"><b>%s</b><div class="l1">%s<span class="l2">%s</span></div></div>'
@@ -94,18 +94,18 @@ def car1(c):
 
 def car2(c):
     q = c['qualify']
-    return 1080, page('<div class="num">2/4</div><div class="badge">%s</div><div class="slide">Who may qualify?</div><div class="gap"></div><div class="cols" style="grid-template-columns:1fr"><div class="col y"><h3>%s</h3><div style="font-size:0"></div>%s</div></div><div class="sub">%s</div><div class="gap"></div>%s'
-        % (e(c['badge']), e(q['title']), ''.join('<div class="row" style="font-size:56px;margin:44px 0;gap:26px">%s<span>%s</span></div>' % (icon(True), e(i)) for i in q['items']), e(c['otherRules']), footer(c)), 1080)
+    return 1080, page('<div class="num">2/4</div><div class="badge">%s</div><div class="slide">Who may qualify?</div><div class="sub" style="font-size:30px;color:var(--muted);margin-top:10px">%s</div><div class="gap"></div><div class="cols" style="grid-template-columns:1fr"><div class="col y"><h3>%s</h3><div style="font-size:0"></div>%s</div></div><div class="sub">%s</div><div class="gap"></div>%s'
+        % (e(c['badge']), e(c['stat']['source']), e(q['title']), ''.join('<div class="row" style="font-size:56px;margin:44px 0;gap:26px">%s<span>%s</span></div>' % (icon(True), e(i)) for i in q['items']), e(c['otherRules']), footer(c)), 1080)
 
 def car3(c):
     n = c['notEligible']
-    return 1080, page('<div class="num">3/4</div><div class="badge">%s</div><div class="slide">Who is not eligible?</div><div class="gap"></div><div class="cols" style="grid-template-columns:1fr"><div class="col n"><h3>%s</h3>%s</div></div><div class="gap"></div>%s'
-        % (e(c['badge']), e(n['title']), ''.join('<div class="row" style="font-size:56px;margin:44px 0;gap:26px">%s<span>%s</span></div>' % (icon(False), e(i)) for i in n['items']), footer(c)), 1080)
+    return 1080, page('<div class="num">3/4</div><div class="badge">%s</div><div class="slide">Who is not eligible?</div><div class="sub" style="font-size:30px;color:var(--muted);margin-top:10px">%s</div><div class="gap"></div><div class="cols" style="grid-template-columns:1fr"><div class="col n"><h3>%s</h3>%s</div></div><div class="gap"></div>%s'
+        % (e(c['badge']), e(c['stat']['source']), e(n['title']), ''.join('<div class="row" style="font-size:56px;margin:44px 0;gap:26px">%s<span>%s</span></div>' % (icon(False), e(i)) for i in n['items']), footer(c)), 1080)
 
 def car4(c):
     items = c['arrives']
-    return 1080, page('<div class="num">4/4</div><div class="badge">%s</div><div class="slide">How it arrives</div><div class="gap"></div>%s<div class="gap"></div><div class="link">Full story: %s</div><div style="height:28px"></div>%s'
-        % (e(c['badge']), ''.join('<div class="row" style="font-size:42px;margin:26px 0"><span class="ic" style="background:var(--gold);color:var(--navy)">•</span><span>%s</span></div>' % e(i) for i in items), e(c['_display']), footer(c)), 1080)
+    return 1080, page('<div class="num">4/4</div><div class="badge">%s</div><div class="slide">How it arrives</div><div class="sub" style="font-size:30px;color:var(--muted);margin-top:10px">%s</div><div class="gap"></div>%s<div class="gap"></div><div class="link">Full story: %s</div><div style="height:28px"></div>%s'
+        % (e(c['badge']), e(c['stat']['source']), ''.join('<div class="row" style="font-size:42px;margin:26px 0"><span class="ic" style="background:var(--gold);color:var(--navy)">•</span><span>%s</span></div>' % e(i) for i in items), e(c['_display']), footer(c)), 1080)
 
 def story(c):
     # Instagram Story: keep key content between y=250 and y=1670 (UI overlays top and bottom ~250px)

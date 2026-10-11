@@ -113,7 +113,7 @@
     "stat": {
       "value": "20.8M",
       "label": "people are eligible",
-      "source": "Source: CMS"
+      "source": "Source: CMS • Checked Oct. 10, 2026"
     },
     "qualify": {
       "title": "May qualify",
@@ -141,7 +141,6 @@
         "text": "Expected later in October"
       }
     ],
-    "checkedLine": "Source: CMS • Checked Oct. 10, 2026",
     "tagline": "Real information for what's next.",
     "trust": "PLAIN FACTS • CHECKED AND DATED",
     "otherRules": "Other eligibility rules apply.",
@@ -154,5 +153,15 @@
   "expires": {
     "timing": "2026-10-31",
     "reason": "Payment timing wording goes stale once paper checks have gone out."
+  },
+  "captions": {
+    "Facebook Page": "A one-time $90 Medicare payment is going out this month — but not everyone with Medicare qualifies.\n\nCMS says about 20.8 million people are eligible. Eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. No application is required.\n\nFull sourced story:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Facebook Group": "For anyone seeing posts about the $90 Medicare payment: it is real, but it is not for everyone.\n\nCMS says it is a one-time October payment for certain people in Original Medicare Part B. Medicare Advantage members, people receiving Medicaid premium assistance, and people paying IRMAA are not eligible. No application is required.\n\nFull sourced explanation:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Instagram Carousel": "The $90 Medicare payment is real — but eligibility is narrower than many posts make it sound.\n\nSwipe for who may qualify, who is not eligible, and how the payment arrives.\n\nFull sourced story: LINK IN BIO\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026\n\n#Medicare #Retirement #Medicare2026 #SecondHalfGuide",
+    "Instagram Story": "Use native Link sticker.\n\nSticker label: READ THE FULL SOURCED STORY\nDestination:\nhttps://thesecondhalfguide.com/medicare-90-payment",
+    "Instagram Reel": "The $90 Medicare payment is real — but not everyone gets it.\n\nWho may qualify, who is not eligible, how it arrives, and what to watch for.\n\nFull sourced story: LINK IN BIO\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Threads": "A one-time $90 Medicare payment is going out this month.\n\nCMS says about 20.8 million people are eligible. It is for certain people in Original Medicare Part B — not Medicare Advantage — and there is no application.\n\nFull sourced story:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "TikTok": "The $90 Medicare payment is real — but not everyone gets it.\n\nWho may qualify, who is excluded, how it arrives, and what to watch for.\n\nFull sourced story: LINK IN BIO / PROFILE\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "YouTube Short": "TITLE: $90 Medicare Payment: Who Gets It?\n\nThe $90 Medicare payment is real, but eligibility is limited. This Short explains who may qualify, who does not, how the payment arrives, and what to watch for.\n\nFull sourced story: first link on our channel profile.\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026"
   }
 }

@@ -1,10 +1,10 @@
 {
   "campaign": "medicare-90-payment",
-  "generated": "2026-10-11T04:02:37+00:00",
+  "generated": "2026-10-11T04:04:25+00:00",
   "minFontPx": 26,
   "assets": {
     "facebook_page_1080": {
-      "sha256": "f4def76a14cbeb18ae54dce31b16b9e3285224d912a266248d68e0f335acb17f",
+      "sha256": "63775b354b530f4a6dc7a8d8205e93fa19a794aa22f038942ca231166e02d522",
       "size": [
         1080,
         1080
@@ -12,7 +12,7 @@
       "issues": []
     },
     "facebook_group_1080": {
-      "sha256": "f4def76a14cbeb18ae54dce31b16b9e3285224d912a266248d68e0f335acb17f",
+      "sha256": "63775b354b530f4a6dc7a8d8205e93fa19a794aa22f038942ca231166e02d522",
       "size": [
         1080,
         1080
@@ -20,7 +20,7 @@
       "issues": []
     },
     "threads_1080": {
-      "sha256": "f4def76a14cbeb18ae54dce31b16b9e3285224d912a266248d68e0f335acb17f",
+      "sha256": "63775b354b530f4a6dc7a8d8205e93fa19a794aa22f038942ca231166e02d522",
       "size": [
         1080,
         1080
@@ -28,7 +28,7 @@
       "issues": []
     },
     "instagram_carousel_1": {
-      "sha256": "28f911cf015266d40625aef31a534cfad48285eeada48e78b7904ad1d92be614",
+      "sha256": "50eb34ac5cedf5905758ec8ef45362f792468d19911549eb0c7c5ddb39cd880f",
       "size": [
         1080,
         1080
@@ -36,7 +36,7 @@
       "issues": []
     },
     "instagram_carousel_2": {
-      "sha256": "ef5759e809554d762ce505477b54a918568e283193845a84d779f8c538c5b7b9",
+      "sha256": "a91433f84d0d1d2866412f35ee1e0355ce4ef07d0384f8e7c6ee99f5905eb372",
       "size": [
         1080,
         1080
@@ -44,7 +44,7 @@
       "issues": []
     },
     "instagram_carousel_3": {
-      "sha256": "9c5831effc945c8e106a3ad9c0a89415323765b94e13314e61a99b561165a858",
+      "sha256": "f6bbb98ef1560ad8a344d141b3b168fbd3a6f332f8cc5a358efdfd35baa7970f",
       "size": [
         1080,
         1080
@@ -52,7 +52,7 @@
       "issues": []
     },
     "instagram_carousel_4": {
-      "sha256": "7b21cd979c83fb05433e5362f0b750b349e78612b0550adde004f3ac1690ab3f",
+      "sha256": "a8e5736e065c5b3547be7fe9fd6d762a7df9da1dc1024b31ea9bd6e6723ae117",
       "size": [
         1080,
         1080
@@ -60,7 +60,7 @@
       "issues": []
     },
     "instagram_story_1080x1920": {
-      "sha256": "42d8a5a0280108064dce87f11aaae5f9a4c7b06c389a7da3e46a6ed6ee4693c2",
+      "sha256": "a5e9d8dc3cac3ea31e616d729682fc5c16bb8ba6858b0b24c65b531c8d93f0e2",
       "size": [
         1080,
         1920
