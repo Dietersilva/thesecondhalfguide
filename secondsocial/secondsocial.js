@@ -1,5 +1,5 @@
 const c=document.getElementById('creative'),ctx=c.getContext('2d');let mode='fb';
-const tabs=[['fb','Facebook Page'],['group','FB Group'],['ig1','Carousel 1'],['ig2','Carousel 2'],['ig3','Carousel 3'],['ig4','Carousel 4'],['vertical','Native 9:16'],['threads','Threads']];
+const tabs=[['fb','Facebook Page'],['group','FB Group'],['ig1','Carousel 1'],['ig2','Carousel 2'],['ig3','Carousel 3'],['ig4','Carousel 4'],['vertical','Reels / TikTok / Shorts'],['threads','Threads']];
 const tabWrap=document.getElementById('tabs');const note=document.getElementById('previewNote');
 tabs.forEach(([id,label])=>{const b=document.createElement('button');b.className='tab'+(id===mode?' on':'');b.textContent=label;b.onclick=()=>{mode=id;[...tabWrap.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');draw()};tabWrap.appendChild(b)});
 
@@ -42,7 +42,7 @@ function vertical(){
  text('TheSecondHalfGuide.com/medicare-90-payment',540,1645,27,'#0b2b4b',true,'center');
  ctx.strokeStyle='#d7dee5';ctx.beginPath();ctx.moveTo(90,1730);ctx.lineTo(990,1730);ctx.stroke();
  text("Real information for what's next.",540,1790,28,'#0b2b4b',false,'center');text('PLAIN FACTS • CHECKED AND DATED',540,1840,19,'#64748b',true,'center');
- note.textContent='Native 9:16 master: vertical-first composition, no square-card inset, no repeated footer, no headline collision. Final video uses timed on-screen captions.'
+ note.textContent='Vertical-video version only: used for Instagram Reels, TikTok and YouTube Shorts. It is separate from the Facebook/Threads/Carousel static designs.'
 }
 function threads(){square(false);note.textContent='Threads: final image plus exact clickable article URL in post text.'}
 function draw(){if(mode==='fb')square(false);else if(mode==='group')square(true);else if(mode.startsWith('ig'))carousel(Number(mode.slice(2)));else if(mode==='vertical')vertical();else threads()}draw();
@@ -128,13 +128,17 @@ const topical=[
 const q=document.getElementById('queueList');topical.forEach((s,i)=>{const row=document.createElement('div');row.className='qrow '+(s.state||'');row.innerHTML='<div class="rank">'+(i+1)+'</div><div><b>'+s.title+'</b><div class="why">'+s.why+'</div></div><div class="score">'+s.score+'/100</div>';q.appendChild(row)});
 const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' · '+s.score+'/100';nextSelect.appendChild(o)});
 
-const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn');
+const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn'),publishedTop=document.getElementById('publishedTop');
 let liveStatus=false,networksConnected=false;
 approve.checked=localStorage.getItem('secondsocial.med90.approved')!=='0';
 published.checked=localStorage.getItem('secondsocial.med90.published')==='1';
 async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex;if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
 function gate(){
   const alreadyPublished=published.checked;
+  if(publishedTop){
+    publishedTop.textContent=alreadyPublished?'PUBLISHED':'NOT PUBLISHED';
+    publishedTop.className='pill '+(alreadyPublished?'good':'bad');
+  }
   finish.disabled=!alreadyPublished;
   if(alreadyPublished){
     publish.disabled=true;
