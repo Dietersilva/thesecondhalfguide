@@ -56,7 +56,10 @@
       "cmsEligibilityWording": true,
       "timingTenseCurrent": true,
       "slide4NoOverlap": true,
-      "verticalTimedCaptions": true
+      "verticalTimedCaptions": true,
+      "heroNumberClearance36px": true,
+      "facebookRenderedIndependently": true,
+      "threadsRenderedIndependently": true
     }
   },
   "linkRules": {
@@ -93,7 +96,8 @@
     "eligibilityWording": "Uses CMS-aligned 'about 20.8 million people are eligible' wording; no 'will receive' overstatement.",
     "timing": "Uses past-tense 'went out around Oct. 8' for most direct deposits and 'expected later in October' for paper checks.",
     "carouselSlide4": "Full-story panel and warning band are separated with no overlap.",
-    "verticalVideo": "Native 9:16 final uses timed on-screen captions; no paid voiceover service used."
+    "verticalVideo": "Native 9:16 final uses timed on-screen captions; no paid voiceover service used.",
+    "facebookThreadsHeroSpacing": "Reduced $90 hero size and added measured clearance from MEDICARE headline; Facebook and Threads use the corrected square master."
   },
   "prePublish": {
     "liveUrlMustPassFreshCheck": true,
