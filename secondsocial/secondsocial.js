@@ -39,27 +39,32 @@ function cover(){
   ctx.strokeStyle='rgba(11,43,75,.06)';ctx.lineWidth=4;
   [180,280,380].forEach(r=>{ctx.beginPath();ctx.arc(930,190,r,0,Math.PI*2);ctx.stroke()});
 
-  // section label
-  rr(64,70,640,142,16,'#0b2b4b');
-  text('MEDICARE • OCTOBER 2026',352,108,30,'#fff',true,'center');
+  // editorial masthead
+  text('THE SECOND HALF GUIDE',64,86,20,'#64748b',true);
+  text('NEWS BRIEF',64,120,30,'#0b2b4b',true);
+  ctx.fillStyle='#f3b21a';ctx.fillRect(64,145,950,7);
+  rr(64,178,335,250,14,'#d71920');
+  text('MEDICARE',231,218,34,'#fff',true,'center');
+  rr(425,178,745,250,14,'#0b2b4b');
+  text('OCTOBER 2026',585,218,28,'#fff',true,'center');
 
   // hero
-  text('$90',64,455,225,'#d71920');
-  text('MEDICARE',64,640,84,'#0b2b4b');
-  text('PAYMENT',64,760,112,'#0b2b4b');
+  text('$90',64,520,225,'#d71920');
+  text('MEDICARE',64,700,84,'#0b2b4b');
+  text('PAYMENT',64,820,112,'#0b2b4b');
 
   // single editorial accent
-  ctx.fillStyle='#f3b21a';ctx.fillRect(64,835,520,12);
-  text('WHO GETS IT?',64,930,50,'#0b2b4b');
+  ctx.fillStyle='#f3b21a';ctx.fillRect(64,895,520,12);
+  text('WHO GETS IT?',64,990,50,'#0b2b4b');
 
   // key fact, no box
-  text('20.8M',64,1130,94,'#0b2b4b');
-  text('people are eligible',64,1200,38,'#18212b');
-  text('Source: CMS',64,1250,22,'#64748b',false);
+  text('20.8M',64,1190,94,'#0b2b4b');
+  text('people are eligible',64,1260,38,'#18212b');
+  text('Source: CMS',64,1310,22,'#64748b',false);
 
   // compact factual cue
-  rr(64,1360,620,1455,22,'#fff4d8');
-  text('NO APPLICATION REQUIRED',374,1412,28,'#7a5608',true,'center');
+  rr(64,1420,620,1515,22,'#fff4d8');
+  text('NO APPLICATION REQUIRED',374,1472,28,'#7a5608',true,'center');
 
   // clean footer
   ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;
