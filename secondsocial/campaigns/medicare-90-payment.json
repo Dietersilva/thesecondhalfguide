@@ -163,5 +163,49 @@
     "Threads": "A one-time $90 Medicare payment is going out this month.\n\nCMS says about 20.8 million people are eligible. It is for certain people in Original Medicare Part B — not Medicare Advantage — and there is no application.\n\nFull sourced story:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
     "TikTok": "The $90 Medicare payment is real — but not everyone gets it.\n\nWho may qualify, who is excluded, how it arrives, and what to watch for.\n\nFull sourced story: LINK IN BIO / PROFILE\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
     "YouTube Short": "TITLE: $90 Medicare Payment: Who Gets It?\n\nThe $90 Medicare payment is real, but eligibility is limited. This Short explains who may qualify, who does not, how the payment arrives, and what to watch for.\n\nFull sourced story: first link on our channel profile.\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026"
-  }
+  },
+  "linkPlacement": [
+    {
+      "id": "fb_page",
+      "platform": "Facebook Page",
+      "rule": "Exact article URL in the post text (clickable).",
+      "check": "URL is in the post text and opens the right article"
+    },
+    {
+      "id": "threads",
+      "platform": "Threads",
+      "rule": "Exact article URL in the post text (clickable).",
+      "check": "URL is in the post text and opens the right article"
+    },
+    {
+      "id": "fb_group",
+      "platform": "Facebook Groups",
+      "rule": "Post manually, one group at a time. Exact URL only if that group's rules allow links.",
+      "check": "Group rules checked; link used only where allowed"
+    },
+    {
+      "id": "ig_bio",
+      "platform": "Instagram carousel and Reel",
+      "rule": "Caption says \"link in bio\". The first profile link must be this article.",
+      "check": "Instagram bio link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    },
+    {
+      "id": "ig_story",
+      "platform": "Instagram Story",
+      "rule": "Add a native Link sticker in the Instagram app. Label: READ THE FULL SOURCED STORY.",
+      "check": "Link sticker added with the exact article URL"
+    },
+    {
+      "id": "tiktok_bio",
+      "platform": "TikTok",
+      "rule": "Caption says \"link in bio / profile\". The profile link must be this article.",
+      "check": "TikTok profile link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    },
+    {
+      "id": "yt_bio",
+      "platform": "YouTube Shorts",
+      "rule": "Caption says \"first link on our channel profile\". The first channel link must be this article.",
+      "check": "First YouTube channel link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    }
+  ]
 }

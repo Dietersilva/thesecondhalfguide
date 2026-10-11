@@ -30,7 +30,7 @@ function draw(){const d=document.getElementById('download');
   if(d){d.disabled=false;d.textContent='Download current PNG'}}
 draw();
 
-let captions={};const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');function setCopy(){ta.value=captions[sel.value]||''}sel.onchange=setCopy;fetch('/secondsocial/campaigns/medicare-90-payment.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{captions=d.captions||{};sel.innerHTML='';Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});setCopy()}).catch(()=>{ta.value='Could not load captions from the campaign file.'});document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download=FILES[mode]+'.png';a.href=img.src;a.click()};
+let captions={};const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');function setCopy(){ta.value=captions[sel.value]||''}sel.onchange=setCopy;fetch('/secondsocial/campaigns/medicare-90-payment.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{captions=d.captions||{};sel.innerHTML='';Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});setCopy();renderLinks(d.linkPlacement||[]);gate()}).catch(()=>{ta.value='Could not load captions from the campaign file.'});document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download=FILES[mode]+'.png';a.href=img.src;a.click()};
 
 const topical=[
  {title:'2027 Medicare Star Ratings',score:98,why:'Released Oct. 8; Open Enrollment starts Oct. 15',state:'recommended'},
@@ -47,13 +47,23 @@ const q=document.getElementById('queueList');topical.forEach((s,i)=>{const row=d
 const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' · '+s.score+'/100';nextSelect.appendChild(o)});
 
 const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn'),publishedTop=document.getElementById('publishedTop');
-let liveStatus=false,networksConnected=false;
+let liveStatus=false,networksConnected=false,linksDone=false;
 const PKG='med90-2026-10-11';
 let saved=null;try{saved=localStorage.getItem('secondsocial.med90.approved')}catch(e){}
 approve.checked=saved===PKG;
 try{published.checked=localStorage.getItem('secondsocial.med90.published')==='1'}catch(e){}
 function setArticlePill(ok){document.querySelectorAll('.js-article-pill').forEach(e=>{e.textContent=ok?'Article live':'Article not verified';e.className=e.className.replace(/\b(good|bad)\b/g,'')+' '+(ok?'good':'bad')})}
 async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex&&data.canonical===target&&data.finalOk;setArticlePill(liveStatus);if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;setArticlePill(false);liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
+function renderLinks(list){
+  const box=document.getElementById('linkPanel');box.innerHTML='';let saved={};
+  try{saved=JSON.parse(localStorage.getItem('secondsocial.med90.links.'+PKG)||'{}')}catch(e){}
+  list.forEach(it=>{const row=document.createElement('label');row.className='check linkrow';
+    row.innerHTML='<input type="checkbox" data-id="'+it.id+'"><span><b>'+it.platform+'</b><div class="small">'+it.rule+'</div><div class="small muted">&#9744; '+it.check+'</div></span>';
+    const cb=row.querySelector('input');cb.checked=!!saved[it.id];
+    cb.onchange=()=>{saved[it.id]=cb.checked;try{localStorage.setItem('secondsocial.med90.links.'+PKG,JSON.stringify(saved))}catch(e){}updateLinks(list);gate()};
+    box.appendChild(row)});
+  updateLinks(list)}
+function updateLinks(list){linksDone=list.length>0&&[...document.querySelectorAll('#linkPanel input')].every(i=>i.checked)}
 function gate(){
   const alreadyPublished=published.checked;
   if(publishedTop){
@@ -74,6 +84,12 @@ function gate(){
     publish.disabled=true;
     state.className='err';
     state.innerHTML='<b>Publishing blocked.</b> Approve the exact story package first.';
+    return;
+  }
+  if(!linksDone){
+    publish.disabled=true;
+    state.className='err';
+    state.innerHTML='<b>Publishing blocked.</b> Confirm every link placement above.';
     return;
   }
   if(!liveStatus){
