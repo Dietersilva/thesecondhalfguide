@@ -128,30 +128,60 @@ const topical=[
 const q=document.getElementById('queueList');topical.forEach((s,i)=>{const row=document.createElement('div');row.className='qrow '+(s.state||'');row.innerHTML='<div class="rank">'+(i+1)+'</div><div><b>'+s.title+'</b><div class="why">'+s.why+'</div></div><div class="score">'+s.score+'/100</div>';q.appendChild(row)});
 const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' · '+s.score+'/100';nextSelect.appendChild(o)});
 
-const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser');
-let liveStatus=false;
+const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn');
+let liveStatus=false,networksConnected=false;
 approve.checked=localStorage.getItem('secondsocial.med90.approved')!=='0';
 published.checked=localStorage.getItem('secondsocial.med90.published')==='1';
 async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex;if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
 function gate(){
-  publish.disabled=true;
-  finish.disabled=!published.checked;
+  const alreadyPublished=published.checked;
+  finish.disabled=!alreadyPublished;
+  if(alreadyPublished){
+    publish.disabled=true;
+    publish.textContent='Published';
+    state.className='ok';
+    state.innerHTML='<b>Story marked published.</b> Finish the campaign to unlock the next story.';
+    if(connectBtn) connectBtn.style.display='none';
+    return;
+  }
+  publish.textContent='Publish Story';
   if(!approve.checked){
+    publish.disabled=true;
     state.className='err';
     state.innerHTML='<b>Publishing blocked.</b> Approve the exact story package first.';
     return;
   }
   if(!liveStatus){
+    publish.disabled=true;
     state.className='err';
     state.innerHTML='<b>Publishing blocked.</b> Live article validation must pass.';
     return;
   }
-  state.className='warn';
-  state.innerHTML='<b>Approved and live.</b> Connect social networks in Metricool to enable scheduling.';
+  if(!networksConnected){
+    publish.disabled=true;
+    state.className='warn';
+    state.innerHTML='<b>Ready to publish once networks are connected.</b> Use Connect networks to finish setup.';
+    if(connectBtn) connectBtn.style.display='';
+    return;
+  }
+  publish.disabled=false;
+  state.className='ok';
+  state.innerHTML='<b>Ready to publish.</b> The exact package is approved, the article is live, and social networks are connected.';
+  if(connectBtn) connectBtn.style.display='none';
+}
+async function loadConnections(){
+  try{
+    const r=await fetch('/secondsocial/connections.json',{cache:'no-store'});
+    const data=await r.json();
+    networksConnected=Array.isArray(data?.metricool?.networks)&&data.metricool.networks.length>0;
+  }catch(e){networksConnected=false}
+  gate();
 }
 document.getElementById('recheckUrl').onclick=checkLive;
 approve.onchange=()=>{localStorage.setItem('secondsocial.med90.approved',approve.checked?'1':'0');gate()};
 published.onchange=()=>{localStorage.setItem('secondsocial.med90.published',published.checked?'1':'0');gate()};
+publish.onclick=()=>{if(publish.disabled)return;alert('Publishing is ready to hand off to Metricool. Final scheduler wiring will execute the approved package when network connections are present.');};
 checkLive();
+loadConnections();
 finish.onclick=()=>{if(!published.checked)return;chooser.classList.add('open');finish.disabled=true;document.getElementById('activeStatus').textContent='Published · ready to choose next';document.getElementById('activeStatus').className='pill good'};
 document.getElementById('activateNext').onclick=()=>alert('Next-story activation stays locked until the current campaign is published and completed. Once connected, activating a story will start a fresh verification job before creative generation.');
