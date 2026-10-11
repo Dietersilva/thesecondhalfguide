@@ -54,6 +54,7 @@ Platform behavior:
 ## Mandatory preflight QA
 A creative is not ready for approval unless:
 - no overlapping or clipped text;
+- hero numbers, percentages, dollar amounts, dates, and other oversized type have a measured clearance zone of at least 36 px from adjacent headline text;
 - headline has adequate breathing room;
 - all content stays inside platform safe areas;
 - both tagline/trust lines are present and legible;
@@ -67,6 +68,8 @@ A creative is not ready for approval unless:
 - population language distinguishes eligibility from guaranteed receipt;
 - date-sensitive timing is written in the correct tense for the posting date;
 - final slide/CTA panels do not overlap warning or information bands.
+- every platform variant is rendered and checked independently; a layout passing on one platform does not imply Facebook, Threads, carousel, Story, or 9:16 variants pass.
+- inherited/shared templates must be rechecked after any headline, font-size, or hero-number change.
 
 ## Current campaign
 The $90 Medicare Payment: Who Gets It and Who Doesn’t
