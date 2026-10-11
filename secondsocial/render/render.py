@@ -46,8 +46,8 @@ body:before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;backgr
 .strip div{font-size:28px;line-height:1.2;color:var(--ink)}.strip b{display:block;font-size:30px;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
 .foot{margin:auto -56px 0 -64px;padding:14px 56px 16px 64px;background:#fff;border-top:2px solid var(--line);text-align:center}
 .foot .site{font-size:42px;font-weight:700;color:var(--navy)}
-.foot .tag{font-size:28px;color:var(--navy)}
-.foot .src{font-size:28px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-top:4px}
+.foot .tag{font-size:34px;color:var(--navy)}
+.foot .src{font-size:26px;font-weight:400;color:var(--muted);margin-top:2px}
 .gap{flex:1;min-height:20px}
 .big .hero b{font-size:260px}.big .stat b{font-size:100px}
 .slide{font-size:70px;font-weight:700;color:var(--navy);font-family:Fra,serif;line-height:1.1;margin-top:34px}
