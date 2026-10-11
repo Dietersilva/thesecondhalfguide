@@ -35,43 +35,47 @@ function cover(){
   c.width=1080;c.height=1920;
   ctx.fillStyle='#f7f4ed';ctx.fillRect(0,0,1080,1920);
 
-  // subtle editorial rings
-  ctx.strokeStyle='rgba(11,43,75,.06)';ctx.lineWidth=4;
-  [180,280,380].forEach(r=>{ctx.beginPath();ctx.arc(930,190,r,0,Math.PI*2);ctx.stroke()});
+  // Same visual language as the approved Threads/Facebook square card
+  rr(55,55,610,130,16,'#d71920');
+  text('MEDICARE • OCTOBER 2026',332,96,30,'#fff',true,'center');
 
-  // centered editorial masthead
-  text('THE SECOND HALF GUIDE',540,86,20,'#64748b',true,'center');
-  text('NEWS BRIEF',540,122,30,'#0b2b4b',true,'center');
-  ctx.fillStyle='#f3b21a';ctx.fillRect(250,150,580,7);
-  rr(120,185,960,275,18,'#0b2b4b');
-  text('MEDICARE • OCTOBER 2026',540,232,38,'#fff',true,'center');
+  text('$90',55,330,150,'#d71920');
+  text('MEDICARE',55,470,60,'#0b2b4b');
+  text('PAYMENT',55,555,82,'#0b2b4b');
+  text('Who gets it?',55,630,42,'#0b2b4b');
 
-  // hero
-  text('$90',64,555,225,'#d71920');
-  text('MEDICARE',64,735,84,'#0b2b4b');
-  text('PAYMENT',64,855,112,'#0b2b4b');
+  // Eligibility list
+  const rows=[
+    ['Original Medicare with Part B',true,'Living in the U.S.'],
+    ['Medicare Advantage',false,'Not eligible'],
+    ['Medicaid paying your premium',false,'Not eligible'],
+    ['IRMAA payer',false,'Not eligible']
+  ];
+  let y=755;
+  for(const [title,good,sub] of rows){
+    check(78,y,good);
+    let yy=y-18;
+    for(const ln of wrapText(title,620,32)){text(ln,130,yy,32,'#0b2b4b',true);yy+=38}
+    text(sub,130,yy+4,23,'#64748b',false);
+    y+=120;
+  }
 
-  // single editorial accent
-  ctx.fillStyle='#f3b21a';ctx.fillRect(64,930,520,12);
-  text('WHO GETS IT?',64,1025,50,'#0b2b4b');
+  // Same navy fact panel, adapted vertically
+  rr(55,1265,1025,1535,28,'#0b2b4b');
+  text('ABOUT 20.8 MILLION',540,1345,44,'#fff',true,'center');
+  text('PEOPLE ARE ELIGIBLE',540,1405,38,'#fff',true,'center');
+  text('FOR THE ONE-TIME $90 PAYMENT',540,1462,27,'#dde7ee',true,'center');
+  text('Source: CMS',540,1510,20,'#dde7ee',false,'center');
 
-  // key fact, no box
-  text('20.8M',64,1225,94,'#0b2b4b');
-  text('people are eligible',64,1295,38,'#18212b');
-  text('Source: CMS',64,1345,22,'#64748b',false);
-
-  // compact factual cue
-  rr(64,1420,620,1515,22,'#fff4d8');
-  text('NO APPLICATION REQUIRED',374,1472,28,'#7a5608',true,'center');
-
-  // clean footer
+  // Matching footer
+  ctx.fillStyle='#fff';ctx.fillRect(0,1660,1080,260);
   ctx.strokeStyle='#d7dee5';ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(64,1635);ctx.lineTo(1016,1635);ctx.stroke();
-  text('TheSecondHalfGuide.com',64,1730,42,'#0b2b4b');
-  text("Real information for what's next.",64,1782,25,'#0b2b4b',false);
-  text('PLAIN FACTS • CHECKED AND DATED',64,1830,18,'#64748b',true);
+  ctx.beginPath();ctx.moveTo(55,1660);ctx.lineTo(1025,1660);ctx.stroke();
+  text('TheSecondHalfGuide.com',540,1745,42,'#0b2b4b',true,'center');
+  text("Real information for what's next.",540,1800,24,'#0b2b4b',false,'center');
+  text('PLAIN FACTS • CHECKED AND DATED',540,1850,18,'#64748b',true,'center');
 
-  note.textContent='Story / cover only. Clean editorial thumbnail that matches the approved newsroom cards. No fake buttons, no promo slabs, no extra visual genre.';
+  note.textContent='Story / cover version of the approved Threads/Facebook design. Same visual system, reformatted for 9:16.';
 }
 
 function videoPanel(){
