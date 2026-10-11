@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-10",
+  "metricool": {
+    "blogId": "6788930",
+    "connected": true,
+    "networks": [],
+    "status": "no_networks_connected"
+  },
+  "required": [
+    {
+      "network": "facebook",
+      "label": "Facebook Page",
+      "status": "user_setup_required"
+    },
+    {
+      "network": "instagram",
+      "label": "Instagram Professional",
+      "status": "user_setup_required"
+    },
+    {
+      "network": "threads",
+      "label": "Threads",
+      "status": "user_setup_required"
+    },
+    {
+      "network": "tiktok",
+      "label": "TikTok",
+      "status": "user_setup_required"
+    },
+    {
+      "network": "youtube",
+      "label": "YouTube",
+      "status": "user_setup_required"
+    }
+  ],
+  "facebookGroups": {
+    "mode": "manual_approval",
+    "approvedGroups": 0
+  }
+}
