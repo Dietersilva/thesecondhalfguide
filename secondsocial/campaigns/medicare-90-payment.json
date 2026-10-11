@@ -1,0 +1,56 @@
+{
+  "id": "medicare-90-payment",
+  "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
+  "articleUrl": "https://thesecondhalfguide.com/medicare-90-payment",
+  "status": "awaiting_user_creative_approval_and_social_connections",
+  "verifiedAt": "2026-10-10",
+  "sources": [
+    {
+      "issuer": "CMS",
+      "url": "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions"
+    },
+    {
+      "issuer": "Medicare.gov",
+      "url": "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
+    }
+  ],
+  "verifiedFacts": [
+    "One-time $90 premium rebate in October 2026",
+    "Approximately 20.8 million eligible beneficiaries",
+    "Original Medicare Part B",
+    "Must live in the United States",
+    "Not receiving Medicaid premium assistance",
+    "Not paying IRMAA",
+    "Medicare Advantage members are not eligible",
+    "No application required"
+  ],
+  "liveCheck": {
+    "status": 200,
+    "canonical": "https://thesecondhalfguide.com/medicare-90-payment",
+    "passed": true
+  },
+  "creativeStyle": {
+    "family": "News Style",
+    "footer": "Option B",
+    "tagline": "Real information for what's next.",
+    "trustline": "PLAIN FACTS • CHECKED AND DATED"
+  },
+  "platforms": [
+    "facebook_page",
+    "facebook_group",
+    "instagram_carousel",
+    "instagram_story",
+    "instagram_reel",
+    "threads",
+    "tiktok",
+    "youtube_shorts"
+  ],
+  "gates": {
+    "factsVerified": true,
+    "articleLive": true,
+    "userCreativeApproval": false,
+    "socialAccountsConnected": false,
+    "published": false,
+    "completed": false
+  }
+}
