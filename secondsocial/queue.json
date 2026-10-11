@@ -1,0 +1,70 @@
+{
+  "updated": "2026-10-10",
+  "current": {
+    "id": "medicare-90-payment",
+    "title": "$90 Medicare payment",
+    "url": "https://thesecondhalfguide.com/medicare-90-payment",
+    "status": "blocked_not_live",
+    "score": 100,
+    "sources": [
+      "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions",
+      "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
+    ]
+  },
+  "queue": [
+    {
+      "id": "star-ratings-2027",
+      "title": "2027 Medicare Star Ratings",
+      "score": 98,
+      "why": "Released Oct. 8; Open Enrollment starts Oct. 15"
+    },
+    {
+      "id": "dme-oct-15",
+      "title": "DME rule changes Oct. 15",
+      "score": 96,
+      "why": "Rule takes effect in 5 days"
+    },
+    {
+      "id": "glp1-bridge",
+      "title": "Medicare GLP-1 Bridge",
+      "score": 93,
+      "why": "High-interest $50/month program; active now"
+    },
+    {
+      "id": "medicare-2027-costs",
+      "title": "2027 Medicare plan numbers",
+      "score": 91,
+      "why": "Plan Finder / AEP timing"
+    },
+    {
+      "id": "search-ad-scam",
+      "title": "Medicare search-ad scam",
+      "score": 89,
+      "why": "FTC warning + enrollment-season traffic"
+    },
+    {
+      "id": "roth-catch-up",
+      "title": "2027 Roth catch-up",
+      "score": 82,
+      "why": "2027 change; strong 60-63 audience fit"
+    },
+    {
+      "id": "ma-exits-2027",
+      "title": "Medicare Advantage plan exits",
+      "score": 80,
+      "why": "Plan-change season"
+    },
+    {
+      "id": "medicare-marketing-2026",
+      "title": "Medicare marketing rules",
+      "score": 76,
+      "why": "Oct. 1 rule change; still current"
+    },
+    {
+      "id": "cola-2027-estimate",
+      "title": "2027 Social Security COLA",
+      "score": 74,
+      "why": "Update after Oct. 14 CPI release"
+    }
+  ]
+}
