@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>/SECONDSOCIAL — Approval Queue</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/secondsocial/secondsocial.css"></head><body>
-<header class="topbar"><div class="inner"><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="sub">One story at a time · Verify → Create → Approve → Publish → Complete → Choose next</div></div></header>
+<header class="topbar"><div class="inner"><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="sub">One story at a time · Verify → Create → Approve → Publish → Complete → Choose next · <a href="/secondsocial/setup.html" style="color:#fff;text-decoration:underline">Setup</a></div></div></header>
 <main class="shell">
 <section class="card queuegrid">
   <div>
@@ -32,7 +32,7 @@
     <h2 style="margin-top:18px">Post copy</h2><select id="copySelect" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px"></select><textarea id="copyText" class="copybox"></textarea><div class="controls"><button class="btn secondary" id="copyBtn">Copy caption</button></div>
     <div class="ok"><b>Group policy:</b> group discovery can be automated; posting requires approved group + current rule check + specific post approval. No duplicate mass-posting.</div>
     <label class="check"><input type="checkbox" id="approve"><span><b>I approve this exact story package.</b><div class="small muted">Any changed fact, copy or regenerated creative requires re-approval.</div></span></label>
-    <label class="check"><input type="checkbox" id="live"><span><b>Live article URL confirmed.</b><div class="small muted">Production version performs this check automatically.</div></span></label>
+    <div id="liveCheck" class="err"><b>Checking live article…</b><div class="small">The engine verifies the production URL automatically before publishing.</div></div><div class="controls"><button class="btn secondary" id="recheckUrl">Recheck article URL</button></div>
     <div id="publishState" class="err"><b>Publishing blocked.</b> Approval, live-URL confirmation and connected networks are required.</div>
     <div class="controls"><button class="btn primary" id="publishBtn" disabled>Queue approved posts</button></div>
     <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
