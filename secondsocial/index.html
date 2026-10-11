@@ -1,44 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>/SECONDSOCIAL — Approval Queue</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/secondsocial/secondsocial.css"></head><body>
-<header class="topbar"><div class="inner"><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="sub">One story at a time · Verify → Create → Approve → Publish → Complete → Choose next · <a href="/secondsocial/setup.html" style="color:#fff;text-decoration:underline">Setup</a></div></div></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>/SECONDSOCIAL — Final Approval Engine</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/secondsocial/secondsocial.css"></head><body>
+<header class="topbar"><div class="inner"><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="sub">One story at a time · Verify → Create → Preflight → Approve → Publish → Complete → Choose next · <a href="/secondsocial/setup.html">Setup</a></div></div></header>
 <main class="shell">
+
 <section class="card queuegrid">
   <div>
-    <div class="activebox"><div class="eyebrow">Current production story</div><h1>$90 Medicare payment</h1><p class="muted">One-time October 2026 premium rebate · News Style + Footer Option B</p>
-      <div class="locks"><span class="pill good">Primary-source verified</span><span class="pill bad">Metricool: no networks connected</span><span class="pill gold" id="activeStatus">In production</span></div>
+    <div class="activebox"><div class="eyebrow">Current production story</div><h1>The $90 Medicare Payment</h1><p class="muted">Who gets it and who doesn’t · Final News Style master</p>
+      <div class="locks"><span class="pill good">Primary-source verified</span><span class="pill good">Article live</span><span class="pill good">Creative approved</span><span class="pill bad">Networks not connected</span><span class="pill gold" id="activeStatus">Ready for publish setup</span></div>
     </div>
   </div>
   <div>
-    <h2>How the queue works</h2>
-    <p class="small">The engine ranks timely stories, but only one story can be active. Nothing else is generated or published until the current story is signed off and marked complete.</p>
-    <div class="ok"><b>Recommended next:</b> 2027 Medicare Star Ratings<br><span class="small">Score 98/100 · released Oct. 8 · Open Enrollment starts Oct. 15</span></div>
+    <h2>Current state</h2>
+    <p class="small">This story is finished creatively and remains the only active campaign. Publishing is blocked only by social-network connection and your final scheduling/publish confirmation.</p>
+    <div class="ok"><b>Recommended next after completion:</b> 2027 Medicare Star Ratings<br><span class="small">Score 98/100 · Open Enrollment timing</span></div>
   </div>
 </section>
 
 <section class="card">
-  <h2>Topical queue</h2><p class="small muted">Ranked by deadline urgency, freshness of primary sources, audience fit and likely social interest. You can override the recommendation after the current story is complete.</p>
+  <h2>Locked /SECONDSOCIAL standards</h2>
+  <div class="standardgrid">
+    <div class="standard"><b>One story at a time</b><span>No next campaign until the current story is published and completed.</span></div>
+    <div class="standard"><b>Fresh verification</b><span>Re-check primary/issuing sources before creative and again before publication if facts may have changed.</span></div>
+    <div class="standard"><b>News Style</b><span>Clean consumer-newsroom look. No Medicare-ad aesthetic, fake buttons, clutter, or aggressive promo language.</span></div>
+    <div class="standard"><b>Three-line brand lock</b><span>TheSecondHalfGuide.com · Real information for what’s next. · PLAIN FACTS • CHECKED AND DATED</span></div>
+    <div class="standard"><b>Native platform design</b><span>Square cards stay square. Reels/TikTok/Shorts are true 9:16 designs, never square cards floated inside a vertical frame.</span></div>
+    <div class="standard"><b>Exact destination</b><span>Send readers to the exact article whenever clickable links are supported. Never default to the homepage for a specific story.</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Preflight QA</h2>
+  <div class="preflight">
+    <span class="qa pass">✓ No overlapping text</span>
+    <span class="qa pass">✓ Headline safe area</span>
+    <span class="qa pass">✓ No duplicated branding</span>
+    <span class="qa pass">✓ Three brand lines present once</span>
+    <span class="qa pass">✓ Source + checked date present</span>
+    <span class="qa pass">✓ Exact article link mapped</span>
+    <span class="qa pass">✓ Native 9:16 vertical layout</span>
+    <span class="qa pass">✓ Mobile-readable type</span>
+  </div>
+  <p class="small muted">A campaign cannot reach “Ready for approval” if any required preflight item fails.</p>
+</section>
+
+<section class="card">
+  <h2>Topical queue</h2><p class="small muted">Visible for planning only. Locked until the current campaign is completed.</p>
   <div class="queue" id="queueList"></div>
   <div class="chooser" id="chooser"><b>Current story complete. Choose the next story.</b><select id="nextSelect"></select><button class="btn gold" id="activateNext">Activate selected story</button></div>
 </section>
 
 <section class="card">
-  <div class="statusrow"><span class="pill good">Verification record · Oct. 10, 2026</span></div>
-  <div class="steps"><div class="step done"><b>1. Verify</b><div class="small">CMS + Medicare.gov checked</div></div><div class="step done"><b>2. Create</b><div class="small">Platform assets ready</div></div><div class="step current"><b>3. Approve</b><div class="small">Your approval required</div></div><div class="step blocked"><b>4. Publish</b><div class="small">Blocked until connected</div></div></div>
-  <div class="sourcebox"><b>Verified facts</b><div class="small">$90 one-time rebate; about 20.8 million eligible; Original Medicare Part B; U.S. resident; no Medicaid premium assistance; no IRMAA; Medicare Advantage excluded; no application.</div><div class="small"><a href="https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions" target="_blank">CMS FAQ ↗</a> · <a href="https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter" target="_blank">Medicare.gov ↗</a></div></div>
+  <div class="statusrow"><span class="pill good">Verification record · Oct. 10, 2026</span><span class="pill good">HTTP 200 · canonical verified</span></div>
+  <div class="steps"><div class="step done"><b>1. Verify</b><div class="small">CMS + Medicare.gov</div></div><div class="step done"><b>2. Create</b><div class="small">Final platform set</div></div><div class="step done"><b>3. Preflight</b><div class="small">QA passed</div></div><div class="step done"><b>4. Approve</b><div class="small">Creative locked</div></div><div class="step blocked"><b>5. Publish</b><div class="small">Connect networks first</div></div></div>
+  <div class="sourcebox"><b>Exact destination</b><div class="storyurl">TheSecondHalfGuide.com/medicare-90-payment</div><div class="small"><a href="https://thesecondhalfguide.com/medicare-90-payment" target="_blank">Open live article ↗</a> · <a href="https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions" target="_blank">CMS source ↗</a> · <a href="https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter" target="_blank">Medicare.gov ↗</a></div></div>
 </section>
 
 <section class="layout">
-  <div class="card"><h2>Creative preview</h2><div class="tabs" id="tabs"></div><canvas id="creative" width="1080" height="1080"></canvas><div class="controls"><button class="btn primary" id="download">Download current PNG</button></div></div>
-  <div class="card"><h2>Platform package</h2><div class="platforms"><div class="platform"><strong>Facebook</strong><div class="small">Page + group share</div></div><div class="platform"><strong>Instagram</strong><div class="small">Carousel + Story + Reel</div></div><div class="platform"><strong>TikTok / Shorts</strong><div class="small">9:16 vertical</div></div><div class="platform"><strong>Threads</strong><div class="small">Text-first + image</div></div></div>
-    <h2 style="margin-top:18px">Post copy</h2><select id="copySelect" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px"></select><textarea id="copyText" class="copybox"></textarea><div class="controls"><button class="btn secondary" id="copyBtn">Copy caption</button></div>
-    <div class="ok"><b>Group policy:</b> group discovery can be automated; posting requires approved group + current rule check + specific post approval. No duplicate mass-posting.</div>
-    <label class="check"><input type="checkbox" id="approve"><span><b>I approve this exact story package.</b><div class="small muted">Any changed fact, copy or regenerated creative requires re-approval.</div></span></label>
-    <div id="liveCheck" class="err"><b>Checking live article…</b><div class="small">The engine verifies the production URL automatically before publishing.</div></div><div class="controls"><button class="btn secondary" id="recheckUrl">Recheck article URL</button></div>
-    <div id="publishState" class="err"><b>Publishing blocked.</b> Approval, live-URL confirmation and connected networks are required.</div>
+  <div class="card"><h2>Final creative preview</h2><div class="tabs" id="tabs"></div><canvas id="creative" width="1080" height="1080"></canvas><div class="controls"><button class="btn primary" id="download">Download current PNG</button></div><p class="small muted" id="previewNote"></p></div>
+  <div class="card"><h2>Final platform package</h2>
+    <div class="platforms">
+      <div class="platform"><strong>Facebook Page</strong><div class="small">Square news card + exact clickable article URL</div></div>
+      <div class="platform"><strong>Facebook Groups</strong><div class="small">Share version; exact URL only where rules allow</div></div>
+      <div class="platform"><strong>Instagram</strong><div class="small">4-slide carousel + Story link sticker + native Reel</div></div>
+      <div class="platform"><strong>Threads</strong><div class="small">Image + exact clickable URL</div></div>
+      <div class="platform"><strong>TikTok</strong><div class="small">Native 9:16 + “Link in bio/profile”</div></div>
+      <div class="platform"><strong>YouTube Shorts</strong><div class="small">Native 9:16 + “First link on channel profile”</div></div>
+    </div>
+
+    <h2 style="margin-top:18px">Platform copy</h2><select id="copySelect"></select><textarea id="copyText" class="copybox"></textarea><div class="controls"><button class="btn secondary" id="copyBtn">Copy caption</button></div>
+
+    <div class="ok"><b>Link rule:</b> exact article URL wherever clickable. Instagram Feed/Reel uses “Link in bio”; Story uses the native Link sticker; TikTok uses bio/profile where available; Shorts points to the first channel-profile link.</div>
+    <div id="liveCheck" class="warn"><b>Checking live article…</b></div><div class="controls"><button class="btn secondary" id="recheckUrl">Recheck article URL</button></div>
+    <div id="publishState" class="warn"><b>Ready except for connections.</b> Social networks still need to be connected in Metricool.</div>
     <div class="controls"><button class="btn primary" id="publishBtn" disabled>Queue approved posts</button></div>
-    <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
-    <h3>Finish this story</h3>
-    <label class="check"><input type="checkbox" id="published"><span><b>I confirm this story has been published.</b><div class="small muted">Only after this is checked can a new story be activated.</div></span></label>
+    <hr>
+    <h3>Complete campaign</h3>
+    <label class="check"><input type="checkbox" id="published"><span><b>I confirm this story has been published.</b><div class="small muted">Only then will the next story unlock.</div></span></label>
     <button class="btn gold" id="finishBtn" disabled>Finish story & unlock next</button>
   </div>
 </section>
-</main><div class="footer">/SECONDSOCIAL V1 · one-story-at-a-time · current facts + human approval + live-link check before every post</div><script src="/secondsocial/secondsocial.js"></script></body></html>
+
+</main><div class="footer">/SECONDSOCIAL FINAL BASELINE · one story at a time · verify · preflight · approve · exact-link publish</div><script src="/secondsocial/secondsocial.js"></script></body></html>
