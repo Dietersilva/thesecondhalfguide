@@ -52,7 +52,7 @@ const PKG='med90-2026-10-11';
 let saved=null;try{saved=localStorage.getItem('secondsocial.med90.approved')}catch(e){}
 approve.checked=saved===PKG;
 try{published.checked=localStorage.getItem('secondsocial.med90.published')==='1'}catch(e){}
-function setArticlePill(ok){document.querySelectorAll('.js-article-pill').forEach(e=>{e.textContent=ok?'Article live':'Article not verified';e.className=e.className.replace(/\b(good|bad)\b/g,'')+' '+(ok?'good':'bad')})}
+function setArticlePill(ok){document.querySelectorAll('.js-article-pill').forEach(e=>{e.textContent=ok?'Article live':'Article not verified';e.className=e.className.replace(/\b(good|bad|gold)\b/g,'')+' '+(ok?'good':'bad')})}
 async function checkLive(){liveBox.className='warn';liveBox.innerHTML='<b>Checking production article…</b>';try{const target='https://thesecondhalfguide.com/medicare-90-payment';const r=await fetch('/api/secondsocial/check-url?url='+encodeURIComponent(target),{cache:'no-store'});const data=await r.json();liveStatus=!!data.ok&&!data.noindex&&data.canonical===target&&data.finalOk;setArticlePill(liveStatus);if(liveStatus){liveBox.className='ok';liveBox.innerHTML='<b>Live article check passed.</b><div class="small">HTTP '+data.status+' · '+(data.title||'article found')+'</div>'}else{liveBox.className='err';liveBox.innerHTML='<b>Live article check failed.</b><div class="small">Publishing remains blocked.</div>'}}catch(e){liveStatus=false;setArticlePill(false);liveBox.className='err';liveBox.innerHTML='<b>Live article check unavailable.</b>'}gate()}
 function renderLinks(list){
   const box=document.getElementById('linkPanel');box.innerHTML='';let saved={};
