@@ -18,6 +18,8 @@ One story at a time:
 ## Locked visual standard
 - News Style / consumer-newsroom aesthetic.
 - No Medicare-ad aesthetic.
+- No synthetic people, fake checks/documents, fake buttons, exaggerated YouTube-style thumbnails, or tabloid visual tropes unless explicitly requested.
+- Story/cover art should inherit the approved editorial/newsroom design system rather than introducing a separate visual genre.
 - No fake clickable buttons.
 - No compressed or colliding headlines.
 - No duplicated brand/footer information.
