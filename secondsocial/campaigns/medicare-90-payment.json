@@ -1,0 +1,107 @@
+{
+  "id": "medicare-90-payment",
+  "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
+  "articleUrl": "https://thesecondhalfguide.com/medicare-90-payment",
+  "displayUrl": "TheSecondHalfGuide.com/medicare-90-payment",
+  "status": "final_corrected_pre_publish",
+  "verifiedAt": "2026-10-10",
+  "sources": [
+    {
+      "issuer": "CMS",
+      "url": "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions"
+    },
+    {
+      "issuer": "Medicare.gov",
+      "url": "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
+    }
+  ],
+  "verifiedFacts": [
+    "One-time $90 premium rebate in October 2026",
+    "Approximately 20.8 million eligible beneficiaries",
+    "Original Medicare Part B",
+    "Must live in the United States",
+    "Not receiving Medicaid premium assistance",
+    "Not paying IRMAA",
+    "Medicare Advantage members are not eligible",
+    "No application required"
+  ],
+  "liveCheck": {
+    "status": 200,
+    "canonical": "https://thesecondhalfguide.com/medicare-90-payment",
+    "passed": true,
+    "noindex": false
+  },
+  "creativeStyle": {
+    "family": "News Style",
+    "footer": "Option B",
+    "site": "TheSecondHalfGuide.com",
+    "tagline": "Real information for what's next.",
+    "trustline": "PLAIN FACTS • CHECKED AND DATED",
+    "vertical": "native_9x16",
+    "fakeButtons": false,
+    "duplicatedBranding": false
+  },
+  "preflight": {
+    "passed": true,
+    "checks": {
+      "noTextOverlap": true,
+      "noClipping": true,
+      "headlineBreathingRoom": true,
+      "platformSafeArea": true,
+      "brandLinesPresentOnce": true,
+      "sourceAndCheckedDate": true,
+      "exactLinkMapped": true,
+      "nativeVertical": true,
+      "mobileReadable": true,
+      "cmsEligibilityWording": true,
+      "timingTenseCurrent": true,
+      "slide4NoOverlap": true,
+      "verticalTimedCaptions": true,
+      "heroNumberClearance36px": true,
+      "facebookRenderedIndependently": true,
+      "threadsRenderedIndependently": true
+    }
+  },
+  "linkRules": {
+    "facebook_page": "exact_clickable_url",
+    "facebook_group": "exact_url_if_rules_allow",
+    "threads": "exact_clickable_url",
+    "instagram_feed": "link_in_bio_first_profile_link",
+    "instagram_story": "native_link_sticker_exact_url",
+    "instagram_reel": "link_in_bio",
+    "tiktok": "link_in_bio_or_profile_where_available",
+    "youtube_shorts": "first_channel_profile_link"
+  },
+  "platforms": [
+    "facebook_page",
+    "facebook_group",
+    "instagram_carousel",
+    "instagram_story",
+    "instagram_reel",
+    "threads",
+    "tiktok",
+    "youtube_shorts"
+  ],
+  "gates": {
+    "factsVerified": true,
+    "articleLive": true,
+    "preflightPassed": true,
+    "userCreativeApproval": true,
+    "socialAccountsConnected": false,
+    "finalPublishApproval": false,
+    "published": false,
+    "completed": false
+  },
+  "creativeCorrections": {
+    "eligibilityWording": "Uses CMS-aligned 'about 20.8 million people are eligible' wording; no 'will receive' overstatement.",
+    "timing": "Uses past-tense 'went out around Oct. 8' for most direct deposits and 'expected later in October' for paper checks.",
+    "carouselSlide4": "Full-story panel and warning band are separated with no overlap.",
+    "verticalVideo": "Native 9:16 final uses timed on-screen captions; no paid voiceover service used.",
+    "facebookThreadsHeroSpacing": "Reduced $90 hero size and added measured clearance from MEDICARE headline; Facebook and Threads use the corrected square master."
+  },
+  "prePublish": {
+    "liveUrlMustPassFreshCheck": true,
+    "recheckTimingWordingOnPostDay": true,
+    "confirmActiveStoryIsFirstProfileLinkOnBioPlatforms": true
+  }
+}

@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>/SECONDSOCIAL — Final Approval Engine</title><meta name="robots" content="noindex,nofollow"><link rel="icon" type="image/svg+xml" href="/secondsocial/favicon.svg"><link rel="stylesheet" href="/secondsocial/secondsocial.css"></head><body>
+<header class="topbar"><div class="inner brandrow"><div class="brandlock"><div class="engine-mark" aria-hidden="true"><span class="slash">/</span><span class="pulse">S</span></div><div><div class="brand"><b>/SECONDSOCIAL</b> · The Second Half Guide</div><div class="sub">Production dashboard · <a href="/secondsocial/setup.html">Setup & rules</a></div></div></div></div></header>
+<main class="shell">
+
+<section class="card queuegrid">
+  <div>
+    <div class="activebox"><div class="eyebrow">Current production story</div>
+      <div class="storytopline"><a class="storylinktop" href="https://thesecondhalfguide.com/medicare-90-payment" target="_blank" rel="noopener">Open original story ↗</a><span class="pill bad" id="publishedTop">NOT PUBLISHED</span></div>
+      <h1>The $90 Medicare Payment</h1><p class="muted">Who gets it and who doesn’t · Final News Style master</p>
+      <div class="locks"><span class="pill good">Primary-source verified</span><span class="pill good">Article live</span><span class="pill good">Creative approved</span><span class="pill bad">Networks not connected</span><span class="pill gold" id="activeStatus">Ready for publish setup</span></div>
+    </div>
+  </div>
+  <div>
+    <h2>Current state</h2>
+    <div class="statusstack">
+      <div><b>Creative</b><span class="pill good">Final</span></div>
+      <div><b>Article</b><span class="pill good">Live</span></div>
+      <div><b>Publishing</b><span class="pill bad">Waiting for networks</span></div>
+    </div>
+    <div class="ok compact"><b>Next after completion:</b> 2027 Medicare Star Ratings</div>
+  </div>
+</section>
+
+<section class="card destinationcard">
+  <div><div class="eyebrow">Exact destination</div><div class="storyurl">TheSecondHalfGuide.com/medicare-90-payment</div></div>
+  <div class="destinationlinks"><a href="https://thesecondhalfguide.com/medicare-90-payment" target="_blank">Open article ↗</a><a href="https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions" target="_blank">CMS source ↗</a><a href="https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter" target="_blank">Medicare.gov ↗</a></div>
+</section>
+
+<section class="layout">
+  <div class="card"><h2>Final creative preview</h2><p class="small muted previewhint">Static cards, a dedicated Story/cover thumbnail, and the separate animated video used for Reels, TikTok and YouTube Shorts.</p><div class="tabs" id="tabs"></div><canvas id="creative" width="1080" height="1080"></canvas><div class="controls"><button class="btn primary" id="download">Download current PNG</button></div><p class="small muted" id="previewNote"></p></div>
+  <div class="card"><h2>Final platform package</h2>
+    <div class="platformchips">
+      <span>Facebook Page</span><span>Facebook Groups</span><span>Instagram</span><span>Threads</span><span>TikTok</span><span>YouTube Shorts</span>
+    </div>
+
+    <h2 style="margin-top:18px">Platform copy</h2><select id="copySelect"></select><textarea id="copyText" class="copybox"></textarea><div class="controls"><button class="btn secondary" id="copyBtn">Copy caption</button></div>
+
+    <div class="ok compact"><b>Destination:</b> exact article page on every supported platform.</div>
+    <div id="liveCheck" class="warn"><b>Checking live article…</b></div><div class="controls"><button class="btn secondary" id="recheckUrl">Recheck article URL</button></div>
+    <hr>
+    <h3>Approval</h3>
+    <label class="check approvalbox"><input type="checkbox" id="approve" checked><span><b>I approve this exact story package for publication.</b><div class="small muted">If facts, copy, links, or creative change materially, this approval resets.</div></span></label>
+    <div id="publishState" class="warn"><b>Ready except for connections.</b> Social networks still need to be connected in Metricool.</div>
+    <div class="controls"><button class="btn primary" id="publishBtn" disabled>Publish Story</button><a class="btn secondary" id="connectBtn" href="/secondsocial/setup.html">Connect networks</a></div>
+    <hr>
+    <h3>Already published elsewhere?</h3>
+    <label class="check"><input type="checkbox" id="published"><span><b>Mark this story as already published.</b><div class="small muted">Use this only if you posted it manually outside /SECONDSOCIAL. Otherwise use Publish Story above.</div></span></label>
+    <button class="btn gold" id="finishBtn" disabled>Finish story & unlock next</button>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Topical queue</h2><p class="small muted">Visible for planning only. Locked until the current campaign is completed.</p>
+  <div class="queue" id="queueList"></div>
+  <div class="chooser" id="chooser"><b>Current story complete. Choose the next story.</b><select id="nextSelect"></select><button class="btn gold" id="activateNext">Activate selected story</button></div>
+</section>
+
+
+</main><div class="footer">/SECONDSOCIAL · production dashboard</div><script src="/secondsocial/secondsocial.js"></script></body></html>
