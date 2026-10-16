@@ -171,7 +171,7 @@ ARTICLES24['cola-scam'] = {
     'checked': CHECKED24,
     'body': """      <p>On 14 October the Social Security Administration announced a 3.6% cost-of-living
       adjustment for 2027. The increase is applied automatically. Nobody has to apply, pay or call to
-      receive it. That plain fact is the entire basis of a scam that reappears every autumn, and it is
+      receive it. That plain fact is the entire basis of a scam that reappears every fall, and it is
       easier to see once the real process is laid out beside the fake one.</p>
 
       <p>One note on timing, because the site&rsquo;s rule is to say how old a fact is. This piece was
