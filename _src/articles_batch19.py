@@ -165,10 +165,10 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
            'side of that you are on.',
     'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 22 '
             'announcement',
-    'checked': '9 October 2026',
-    'recheck': {'due': '2026-10-20', 'why': 'Marketplace open enrollment approaches -- confirm the appeal '
-                'and re-enrollment mechanics described here still match, and check whether CMS published '
-                'further guidance for affected consumers.'},
+    'checked': '23 October 2026',
+    'recheck': {'due': '2026-11-01', 'why': 'Marketplace open enrollment opens 1 November -- confirm the '
+                'dates (reports disagreed on the closing date, so none is stated), the broker rules and '
+                'whether CMS has published guidance for consumers whose coverage was canceled.'},
     'body': """      <p>On September 22, 2026, CMS announced that it had canceled roughly 315,000 ACA Marketplace
       enrollments, covering more than 760,000 people, as part of an anti-fraud action targeting
       unauthorized broker-assisted sign-ups. The cancellations themselves took effect on August 31;
@@ -183,6 +183,8 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
         ('Why flagged', 'Enrolled with agent or broker assistance but lacking verified citizenship or '
                         'immigration documentation, or insurers unable to identify the claims or contact '
                         'the enrollee at all.'),
+        ('~440,000', 'Additional enrollees CMS said it plans to review after flagging irregularities. '
+                     'They are not part of the canceled 315,000.'),
         ('New broker freeze', 'Agents and brokers without an active 2026 Marketplace registration are '
                               'temporarily barred from registering for the 2027 plan year.'),
         ('90 days', 'The standard window to appeal a Marketplace eligibility determination, counted from '
@@ -243,7 +245,8 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
       date on an Eligibility Notice to file an appeal, through the Marketplace Appeals Center. If you
       believe your own cancellation was an error &mdash; you are a citizen or lawfully present, you did
       respond to any notice you received, or you never used a broker at all &mdash; that appeal path exists
-      specifically for this. Filing costs nothing and does not require a lawyer.</p>
+      specifically for this. Filing costs nothing and does not require a lawyer. A person who is past the 90 days can explain why
+      the deadline was missed when filing; the Marketplace decides whether to extend it.</p>
 
       <h2>What to actually do</h2>
 
@@ -265,7 +268,9 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
         'because unauthorized agents were being attached to consumer accounts without their knowledge.',
         'If you are newly uninsured because of this and need coverage before Medicare eligibility, act '
         'before your state&rsquo;s <strong>open enrollment</strong> window closes rather than after &mdash; '
-        'a gap here can mean a real gap in coverage, not just paperwork.',
+        'a gap here can mean a real gap in coverage, not just paperwork. Open enrollment for 2027 coverage '
+        'begins <strong>November 1, 2026</strong>; reports differ on the closing date, so check '
+        'HealthCare.gov or your state site for it.',
     ]) + """
       <p>Nothing about this action requires you to have done anything wrong to be affected by it. The
       single most useful thing to take from it is the five minutes it takes to log in and look &mdash; not
