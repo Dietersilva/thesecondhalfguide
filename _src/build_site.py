@@ -117,7 +117,7 @@ DESCRIPTIONS = {
     '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
     '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
     '/skip-gen-travel': 'Grandparents plan 75% of skip-gen trips and pay for 84% of them. What the survey shows, and the consent paperwork that can stop a trip at the border.',
-    '/anoc-letter': 'Every Medicare Advantage and Part D plan must mail its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
+    '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
     '/prescription-payment-plan': "The Part D payment plan spreads the $2,400 out-of-pocket cap into monthly bills. It doesn't lower costs, and switching plans in open enrollment ends it.",
