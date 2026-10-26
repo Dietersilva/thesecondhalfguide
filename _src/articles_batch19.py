@@ -165,10 +165,10 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
            'side of that you are on.',
     'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 22 '
             'announcement',
-    'checked': '23 October 2026',
+    'checked': '26 October 2026',
     'recheck': {'due': '2026-11-01', 'why': 'Marketplace open enrollment opens 1 November -- confirm the '
-                'dates (reports disagreed on the closing date, so none is stated), the broker rules and '
-                'whether CMS has published guidance for consumers whose coverage was canceled.'},
+                'HealthCare.gov dates (1 Nov to 15 Jan; enroll by 15 Dec for 1 Jan coverage), the broker '
+                'rules and whether CMS has published guidance for consumers whose coverage was canceled.'},
     'body': """      <p>On September 22, 2026, CMS announced that it had canceled roughly 315,000 ACA Marketplace
       enrollments, covering more than 760,000 people, as part of an anti-fraud action targeting
       unauthorized broker-assisted sign-ups. The cancellations themselves took effect on August 31;
@@ -200,7 +200,9 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
       termination notices to more than 200 agents and brokers since January. CMS has also sent 569 notices
       of intent to terminate agreements with brokers whose 2026 applications were missing basic applicant
       information, including Social Security numbers &mdash; the kind of gap that makes an enrollment
-      difficult to verify as legitimate in the first place.</p>
+      difficult to verify as legitimate in the first place. NPR described the canceled plans as
+      HealthCare.gov enrollments; this site found no report of a comparable sweep of state-run
+      Marketplaces.</p>
 
       <p>Most of the flagged brokers, by CMS&rsquo;s own account, were new to the Marketplace channel:
       agents who had first registered to sell ACA plans for the 2026 season. New registrants are a small
@@ -241,12 +243,15 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
 
       <h2>If your coverage was actually canceled</h2>
 
-      <p>Marketplace eligibility determinations carry a standing appeal right: generally 90 days from the
-      date on an Eligibility Notice to file an appeal, through the Marketplace Appeals Center. If you
-      believe your own cancellation was an error &mdash; you are a citizen or lawfully present, you did
-      respond to any notice you received, or you never used a broker at all &mdash; that appeal path exists
-      specifically for this. Filing costs nothing and does not require a lawyer. A person who is past the 90 days can explain why
-      the deadline was missed when filing; the Marketplace decides whether to extend it.</p>
+      <p>Start with the notice and your account: what do they say, and what date do they give? Then ask
+      the Marketplace, and the insurer, why coverage ended and whether it can be corrected or restored.
+      Some Marketplace eligibility decisions can be appealed, generally within 90 days of the date on the
+      Eligibility Notice, through the Marketplace Appeals Center. A late filer can explain the delay and
+      ask for an extension, and the Marketplace decides whether to grant it. But not every dispute
+      qualifies: HealthCare.gov lists the date your coverage ended among the things the Marketplace
+      appeals process cannot review, and a dispute with an insurer is usually handled through the
+      plan&rsquo;s own appeal or complaint process. Ask which review applies to your particular notice.
+      Filing an appeal costs nothing and does not require a lawyer.</p>
 
       <h2>What to actually do</h2>
 
@@ -254,9 +259,10 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
         'Log into your <strong>HealthCare.gov</strong> account (or your state&rsquo;s own Marketplace site) '
         'now and confirm your coverage still shows active &mdash; don&rsquo;t assume it is because nothing '
         'has arrived in the mail.',
-        'If your coverage was canceled and you believe that was in error, you generally have <strong>90 '
-        'days</strong> from the date on your Eligibility Notice to file an appeal through the Marketplace '
-        'Appeals Center.',
+        'If your coverage was canceled and you believe that was in error, ask the Marketplace and your '
+        'insurer which review applies to your notice. Some eligibility decisions can be appealed, '
+        'generally within <strong>90 days</strong> of the date on the Eligibility Notice; a dispute over '
+        'the date coverage ended is not one of them.',
         'If you need to re-enroll, go directly to <strong>HealthCare.gov</strong> or your state&rsquo;s '
         'official Marketplace &mdash; not a search ad, a social media link, or an unsolicited caller, given '
         'that broker misconduct is exactly what triggered this action in the first place.',
@@ -268,9 +274,10 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
         'because unauthorized agents were being attached to consumer accounts without their knowledge.',
         'If you are newly uninsured because of this and need coverage before Medicare eligibility, act '
         'before your state&rsquo;s <strong>open enrollment</strong> window closes rather than after &mdash; '
-        'a gap here can mean a real gap in coverage, not just paperwork. Open enrollment for 2027 coverage '
-        'begins <strong>November 1, 2026</strong>; reports differ on the closing date, so check '
-        'HealthCare.gov or your state site for it.',
+        'a gap here can mean a real gap in coverage, not just paperwork. In HealthCare.gov states, open '
+        'enrollment for 2027 coverage runs from <strong>November 1, 2026</strong> to <strong>January 15, '
+        '2027</strong>, with <strong>December 15</strong> the deadline for coverage that starts January 1. '
+        'State-run Marketplaces set their own dates.',
     ]) + """
       <p>Nothing about this action requires you to have done anything wrong to be affected by it. The
       single most useful thing to take from it is the five minutes it takes to log in and look &mdash; not

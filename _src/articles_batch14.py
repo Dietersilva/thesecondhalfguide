@@ -19,24 +19,25 @@ ARTICLES14['anoc-letter'] = {
              '&mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare letter arriving in September, and why it&rsquo;s worth reading',
-    'dek': 'Every Medicare Advantage and Part D plan has to mail its Annual Notice of Change by '
-           'September 30. It is a legal deadline, not a marketing mailer &mdash; and what actually '
-           'changes is usually not the number printed at the top.',
+    'dek': 'Every Medicare Advantage and Part D plan generally has to get its Annual Notice of Change '
+           'to you by September 30. It is a federal requirement, not a marketing mailer &mdash; and what '
+           'actually changes is usually not the number printed at the top.',
     'meta': '6 minute read &middot; Verified against CMS&rsquo;s finalized 2027 rule',
     'checked': '16 October 2026',
     'body': """      <p>By the end of September, an envelope from your Medicare Advantage or Part D plan should have arrived that
       looks a lot like the junk mail already piling up ahead of open enrollment. It isn&rsquo;t. It&rsquo;s
       called the <strong>Annual Notice of Change</strong> &mdash; ANOC, if anyone shortens it in front of
-      you &mdash; and federal rules require every plan to mail it to you by <strong>September 30</strong>,
-      every year, without exception.</p>
+      you &mdash; and federal rules generally require every plan to get it to you by <strong>September 30</strong>
+      each year. Delivery timing and method can differ in some situations, including a recent
+      enrollment.</p>
 
       <p>What it contains is a full list of everything about your specific plan that changes on
       <strong>January 1</strong>. Not a comparison to other plans, not a sales pitch &mdash; a disclosure of
       what your own plan is about to do differently.</p>
 
 """ + facts('What the ANOC actually is', [
-        ('September 30', 'Legal deadline for every Medicare Advantage and Part D plan to mail its ANOC '
-                         'for the coming year.'),
+        ('September 30', 'The date by which Medicare Advantage and Part D plans are generally required '
+                         'to get the ANOC for the coming year to members.'),
         ('January 1, 2027', 'When the changes described in this year&rsquo;s letter take effect.'),
         ('October 15 &ndash; December 7', 'The Annual Enrollment Period &mdash; the window during which '
                                           'you can act on anything the letter tells you, by switching '
@@ -87,7 +88,7 @@ ARTICLES14['anoc-letter'] = {
       specific benefit matters to you beyond what the ANOC happened to mention.</p>
 
       <p>If nothing has arrived, that&rsquo;s worth following up on rather than assuming your
-      plan has no changes this year. CMS requires plans to get it to you by September 30; call your plan
+      plan has no changes this year. CMS generally requires plans to get it to you by September 30; call your plan
       directly to request a copy, and if that doesn&rsquo;t resolve it, <strong>1-800-MEDICARE</strong> can
       help.</p>
 

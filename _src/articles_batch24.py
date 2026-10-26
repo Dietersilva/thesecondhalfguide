@@ -42,7 +42,7 @@ ARTICLES24['social-security-trust-fund'] = {
                                     'of reserves &mdash; one quarter earlier than last year&rsquo;s '
                                     'projection.'),
         ('78%', 'The share of scheduled OASI benefits that continuing income would cover at that point, '
-                'if the law is not changed. It implies a reduction of about 22%.'),
+                'if the law is not changed. The remaining 22% is the projected shortfall.'),
         ('2034', 'When the retirement, survivors and disability funds, treated as one combined fund, are '
                  'projected to run out of reserves. CRS gives the third quarter of 2034.'),
         ('83%', 'The share of scheduled benefits the combined funds&rsquo; income would cover at that '
@@ -59,11 +59,12 @@ ARTICLES24['social-security-trust-fund'] = {
       every pay period, and the report estimates how much of the scheduled benefit that continuing income
       would cover. For the retirement fund in the fourth quarter of 2032 the answer is 78%.</p>
 
-      <p>That percentage is the whole content of the &ldquo;22% cut&rdquo; headline. It is a statement
-      about what the program&rsquo;s income would support under current law. It is not a decision anyone
-      has made, and the report does not predict what Congress will do. The reductions it describes are
-      what would happen automatically if nothing changes, and the Trustees describe them as applying
-      across the board.</p>
+      <p>That percentage is the whole content of the &ldquo;22% cut&rdquo; headline. It is a systemwide
+      financing estimate: the share of scheduled benefits that continuing income could support. It is not
+      an enacted 22% cut to every person&rsquo;s monthly check, and current law does not say exactly how
+      benefits would be paid once reserves are exhausted. The Congressional Research Service has described
+      two possibilities: full benefits paid late, or reduced benefits paid on time. No decision has been
+      made, and the report does not predict what Congress will do.</p>
 
       <blockquote class="pull">
         <p>Depletion is the date the reserves reach zero, not the date benefits stop. The report counts
@@ -112,8 +113,9 @@ ARTICLES24['social-security-trust-fund'] = {
       the law would produce without changes. It does not say what legislation will be passed. It does
       not change anything about the cost-of-living adjustment, which is set separately by the
       consumer-price formula covered on <a href="/cola-2027-estimate">the 2027 COLA page</a>. And it does
-      not describe any individual&rsquo;s benefit: the 78% figure is an average across the program, not
-      a calculation for any one person&rsquo;s record.</p>
+      not describe any individual&rsquo;s benefit: 78% is the aggregate share of scheduled benefits that
+      projected continuing income could support, not a calculation for any one person&rsquo;s
+      record.</p>
 
       <p>For the ages this site is written for, the dates are close enough to be worth knowing and far
       enough away that they are not a deadline. A person who is 66 now is 72 in 2032. A person who is 60
@@ -168,16 +170,19 @@ ARTICLES24['cola-scam'] = {
            'call, a form &mdash; that Social Security&rsquo;s inspector general says does not exist.',
     'meta': '5 minute read &middot; Checked against SSA and SSA Inspector General materials and AARP '
             'reporting',
-    'checked': CHECKED24,
+    'checked': '26 October 2026',
     'body': """      <p>On 14 October the Social Security Administration announced a 3.6% cost-of-living
       adjustment for 2027. The increase is applied automatically. Nobody has to apply, pay or call to
       receive it. That plain fact is the entire basis of a scam that reappears every fall, and it is
       easier to see once the real process is laid out beside the fake one.</p>
 
       <p>One note on timing, because the site&rsquo;s rule is to say how old a fact is. This piece was
-      checked on 16 October 2026. The Inspector General&rsquo;s alerts cited below date from 2024 and
-      2025. This site found no alert written specifically about the 2027 increase as of that date. The
-      pitch is old and the number in it changes.</p>
+      first checked on 16 October 2026 and updated on 26 October. The Inspector General&rsquo;s earlier
+      alerts cited below date from 2022, 2024 and 2025. A warning about the 2027 increase itself followed
+      the announcement: reports dated 21&ndash;22 October say Social Security is warning that scammers
+      are asking for activation fees, requests to change direct-deposit details, personal or financial
+      information, and visits to imitation websites or downloads of malicious software, all tied to the
+      new increase. The pitch is old and the number in it changes.</p>
 
 """ + facts('The real process, and the fake one', [
         ('3.6%', 'The 2027 COLA, announced 14 October 2026. It takes effect with January 2027 benefits.'),
@@ -227,15 +232,17 @@ ARTICLES24['cola-scam'] = {
       <h2>The pitch is old; only the number changes</h2>
 
       <p>This is not a one-year problem. AARP was describing COLA-themed Social Security phone scams in
-      2022. The Inspector General&rsquo;s office warned in June 2024 about the &ldquo;$600 June
-      increase&rdquo; that did not exist, and again in July 2025 about the letters. Each wave borrows
+      2022. The Inspector General&rsquo;s office warned in October 2022 that offers to increase a
+      benefit come from criminals, in June 2024 about a &ldquo;$600 June increase&rdquo; that did not
+      exist, and in July 2025 about the letters. Each wave borrows
       whatever the current figure is. For 2026 the figure was 2.8%; for 2027 it is 3.6%. A message that
       cites the right percentage has told you only that the sender reads the news.</p>
 
       <p>One practical consequence follows from the agency&rsquo;s own schedule. The real notice does not
       begin appearing online until late November and does not arrive by mail until December. A letter or
       call about &ldquo;your COLA&rdquo; that shows up in October is ahead of that schedule. That is an
-      inference from the dates rather than a rule the agency has published, but it is a useful one.</p>
+      inference from the dates rather than a rule the agency has published, and it is a reason to verify
+      the contact independently, not proof that it is fraudulent.</p>
 
       <h2>How the real notice reaches you</h2>
 
@@ -249,17 +256,15 @@ ARTICLES24['cola-scam'] = {
       <p>None of it asks for a payment, a password or a Social Security number. If a contact does ask for
       one, it did not come through that process.</p>
 
-      <h2>The three places the real information lives</h2>
+      <h2>Where the real information lives</h2>
 
-      <p>There are only three: the Message Center in a personal <em>my Social Security</em> account, the
-      one-page notice in the mail, and the 3.6% announcement itself on <em>ssa.gov</em>. Anything else,
-      whether a text, a social media post, a call or a letter pointing to a different website, is outside
-      that set. The practical test is to reach the same information through a route you chose, by typing
-      the agency&rsquo;s address yourself, instead of the route the message offered you.</p>
-
-      <p>People who cannot get into an online account have an option that does not involve any of the
-      above: the agency&rsquo;s own offices and its published number, found on <em>ssa.gov</em>, not on
-      the letter in front of you.</p>
+      <p>The Message Center in a personal <em>my Social Security</em> account, the one-page notice in the
+      mail, and the 3.6% announcement on <em>ssa.gov</em> are the main places. The agency&rsquo;s own
+      offices and its published phone number, found on <em>ssa.gov</em> rather than on a letter, are also
+      legitimate ways to ask. A text, a social media post, or a call or letter that points to a different
+      website is a reason to stop and check. The practical test is to reach the same information through a
+      route you chose, by typing the agency&rsquo;s address yourself, instead of the route the message
+      offered you.</p>
 
       <h2>What the agency has said about how it contacts people</h2>
 
@@ -340,16 +345,18 @@ ARTICLES24['prescription-payment-plan'] = {
     ]) + """
       <h2>How the monthly bill is calculated</h2>
 
-      <p>Once enrolled, a person stops paying at the counter for covered drugs. The plan bills them each
-      month instead. The amount is based on what the prescriptions cost, plus any balance carried from the
-      previous month, divided by the number of months left in the year.</p>
+      <p>Once enrolled, a person stops paying at the counter for covered drugs. Each month the plan bills
+      the lesser of two amounts: what the person owes so far, or a monthly cap. In the first month the cap
+      is the annual out-of-pocket threshold, less any eligible costs already incurred, divided by the
+      number of months left in the plan year, counting the current month. In later months the cap is the
+      unpaid balance plus any new costs, divided by the months left.</p>
 
-      <p>An example, using the 2027 deductible. In January a person fills a prescription that costs $700.
-      Without the plan they would pay $700 at the pharmacy. With it they pay nothing at the counter, and
-      the plan bills about $58 for January, which is $700 divided by the twelve months left in the year. In
-      February they fill another prescription for $120. The plan adds it to the remaining balance and
-      divides again by the eleven months left. By December the balance is paid off. The arithmetic is the
-      plan&rsquo;s formula; what it does is smooth the same total into smaller pieces.</p>
+      <p>An example for 2027. A person enrolls in January and has $700 in eligible out-of-pocket drug
+      costs that month. The first bill is <strong>$200</strong>: the lesser of $700 and the $2,400
+      threshold divided by twelve. The remaining $500 carries forward. If $120 in new eligible costs
+      arrives in February, that month&rsquo;s bill is about $56.36, which is $500 plus $120 divided by the
+      eleven months left. Later bills change as new costs arrive and fewer months remain. The arithmetic
+      is the plan&rsquo;s formula, and what it does is spread the same total into smaller pieces.</p>
 
       <blockquote class="pull">
         <p>The plan changes when the money is due, not how much of it there is.</p>
@@ -412,8 +419,10 @@ ARTICLES24['prescription-payment-plan'] = {
         'the Prescription Payment Plan.',
         'The plan costs nothing to join and can be started at any time through <strong>your own Part D '
         'plan</strong>.',
-        'The monthly bill is calculated from your drug costs plus any prior balance, divided by the '
-        'months left in the year.',
+        'Each month the plan bills the lesser of what you owe so far and a monthly cap. In the first '
+        'month the cap is the remaining threshold divided by the months left &mdash; for 2027, at most '
+        '$200 &mdash; and later months use your unpaid balance plus new costs, divided by the months '
+        'left.',
         'Participation is tied to a plan. If you switch plans during open enrollment '
         '(<strong>15 October&ndash;7 December</strong>), you need to enroll with the new plan.',
         'The plan does not reduce the total. A person who would pay $2,400 pays $2,400, only in smaller '
