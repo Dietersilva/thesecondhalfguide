@@ -1249,6 +1249,14 @@ def main():
         shutil.copy('ogcard/og.png', f'{SITE}/og.png')
     if os.path.isdir('images'):
         shutil.copytree('images', f'{SITE}/images')
+    # Per-article share cards (rendered by og_cards.py, committed in ogcards/).
+    og_cards = set()
+    if os.path.isdir('ogcards'):
+        os.makedirs(f'{SITE}/og', exist_ok=True)
+        for f_ in os.listdir('ogcards'):
+            if f_.endswith('.png'):
+                shutil.copy(f'ogcards/{f_}', f'{SITE}/og/{f_}')
+                og_cards.add(f_[:-4])
 
     # Identical on every page, so hashed and built once rather than inside
     # the per-page loop below. The loader script (src=...) doesn't need a
@@ -1290,6 +1298,14 @@ def main():
                 hashlib.sha256(crumb_ld.encode()).digest()).decode())
             breadcrumb_script = f'<script type="application/ld+json">{crumb_ld}</script>\n'
 
+        slug_ = path.lstrip('/')
+        if layout_class(path) == 'article' and slug_ in og_cards:
+            og_img = f'{ORIGIN}/og/{slug_}.png'
+            og_alt = title + ' \u2014 The Second Half Guide'
+        else:
+            og_img = f'{ORIGIN}/og.png'
+            og_alt = 'The Second Half Guide \u2014 what nobody tells you about the 10 years surrounding retirement.'
+
         head = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -1303,12 +1319,12 @@ def main():
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{ORIGIN}/og.png">
+<meta property="og:image" content="{og_img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Second Half Guide — what nobody tells you about the 10 years surrounding retirement.">
+<meta property="og:image:alt" content="{og_alt}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{ORIGIN}/og.png">
+<meta name="twitter:image" content="{og_img}">
 <meta name="author" content="Edward Silva">
 <meta name="robots" content="{ROBOTS[path in NOINDEX]}">
 <meta name="p:domain_verify" content="cf9e7cc57922a3cff500c309a64354e5">
