@@ -666,7 +666,8 @@ def _plain(text):
     return html_mod.unescape(text) if isinstance(text, str) else text
 
 
-def json_ld(path, title, desc, canonical, headline, body, published=None):
+def json_ld(path, title, desc, canonical, headline, body, published=None,
+            image=None):
     desc, headline = _plain(desc), _plain(headline)
     cls = layout_class(path)
     if cls == 'hub':
@@ -682,7 +683,7 @@ def json_ld(path, title, desc, canonical, headline, body, published=None):
     else:
         node = {'@type': 'Article', 'headline': headline[:110], 'url': canonical,
                 'description': desc, 'author': PERSON, 'publisher': PUBLISHER,
-                'image': ORIGIN + '/og.png', 'inLanguage': 'en-US',
+                'image': image or ORIGIN + '/og.png', 'inLanguage': 'en-US',
                 'isAccessibleForFree': True,
                 'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical}}
         modified = checked_date(body, published)
@@ -1275,8 +1276,10 @@ def main():
             f'<script>{ga4_inline}</script>\n')
 
     for path, (title, desc, canonical, body) in rendered.items():
+        card_ = f'{ORIGIN}{path}'.replace(ORIGIN + '/', ORIGIN + '/og/') + '.png'
         ld = json_ld(path, title, desc, canonical, meta[path][0], body,
-                     published.get(path))
+                     published.get(path),
+                     image=card_ if path.lstrip('/') in og_cards else None)
         # A ld+json data block is not executed, so script-src does not gate it,
         # but hashing it costs nothing and survives a stricter policy later.
         script_hashes.add("'sha256-%s'" % base64.b64encode(
