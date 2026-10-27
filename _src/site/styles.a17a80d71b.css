@@ -839,6 +839,9 @@ body.topic .topic-hero .topic-icon { width: 42px; height: 42px; color: var(--pin
 body.topic .topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
 body.topic .topic-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
 body.topic .topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
+body.topic .topic-intro { max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink); margin: 14px 0 0; }
+body.topic .topic-intro p { margin: 0 0 12px; }
+body.topic .topic-intro a { color: var(--pine-strong); text-decoration: underline; text-underline-offset: 3px; }
 body.topic .topic-hero .count { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin: 18px 0 0; }
 body.topic .topic-list { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
 body.topic .topic-link {
