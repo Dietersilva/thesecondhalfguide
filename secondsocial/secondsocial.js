@@ -32,19 +32,17 @@ draw();
 
 let captions={};const sel=document.getElementById('copySelect'),ta=document.getElementById('copyText');function setCopy(){ta.value=captions[sel.value]||''}sel.onchange=setCopy;fetch('/secondsocial/campaigns/medicare-90-payment.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{captions=d.captions||{};sel.innerHTML='';Object.keys(captions).forEach(k=>{const o=document.createElement('option');o.textContent=k;sel.appendChild(o)});setCopy();renderLinks(d.linkPlacement||[]);gate()}).catch(()=>{ta.value='Could not load captions from the campaign file.'});document.getElementById('copyBtn').onclick=()=>navigator.clipboard.writeText(ta.value);document.getElementById('download').onclick=()=>{if(mode==='video')return;const a=document.createElement('a');a.download=FILES[mode]+'.png';a.href=img.src;a.click()};
 
-const topical=[
- {title:'2027 Medicare Star Ratings',score:98,why:'Released Oct. 8; Open Enrollment starts Oct. 15',state:'recommended'},
- {title:'DME rule changes Oct. 15',score:96,why:'CMS rule starts Oct. 15',state:''},
- {title:'Medicare GLP-1 Bridge',score:93,why:'High-interest $50/month program; active now',state:''},
- {title:'2027 Medicare plan numbers',score:91,why:'Plan Finder / AEP timing',state:''},
- {title:'Medicare search-ad scam',score:89,why:'FTC warning + enrollment-season traffic',state:''},
- {title:'2027 Roth catch-up',score:82,why:'2027 change; strong 60–63 audience fit',state:''},
- {title:'Medicare Advantage plan exits',score:80,why:'Plan-change season',state:''},
- {title:'Medicare marketing rules',score:76,why:'Oct. 1 rule change; still current',state:''},
- {title:'2027 Social Security COLA',score:74,why:'Update after Oct. 14 CPI release',state:''}
-];
-const q=document.getElementById('queueList');topical.forEach((s,i)=>{const row=document.createElement('div');row.className='qrow '+(s.state||'');row.innerHTML='<div class="rank">'+(i+1)+'</div><div><b>'+s.title+'</b><div class="why">'+s.why+'</div></div><div class="score">'+s.score+'/100</div>';q.appendChild(row)});
-const nextSelect=document.getElementById('nextSelect');topical.forEach(s=>{const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' · '+s.score+'/100';nextSelect.appendChild(o)});
+const q=document.getElementById('queueList'),nextSelect=document.getElementById('nextSelect');
+fetch('/secondsocial/queue.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  const topical=d.queue||[];q.innerHTML='';nextSelect.innerHTML='';
+  topical.forEach((s,i)=>{const row=document.createElement('div');row.className='qrow'+(i===0?' recommended':'');
+    const rank=document.createElement('div');rank.className='rank';rank.textContent=i+1;
+    const mid=document.createElement('div'),t=document.createElement('b'),w=document.createElement('div');t.textContent=s.title;w.className='why';w.textContent=s.why;mid.append(t,w);
+    const sc=document.createElement('div');sc.className='score';sc.textContent=s.score+'/100';
+    row.append(rank,mid,sc);q.appendChild(row);
+    const o=document.createElement('option');o.value=s.title;o.textContent=s.title+' \u00b7 '+s.score+'/100';nextSelect.appendChild(o)});
+  const nx=document.querySelector('.ok.compact');if(nx&&topical[0])nx.innerHTML='<b>Next after completion:</b> '+topical[0].title.replace(/[<>&]/g,'');
+}).catch(()=>{q.textContent='Could not load the queue.'});
 
 const liveBox=document.getElementById('liveCheck'),publish=document.getElementById('publishBtn'),state=document.getElementById('publishState'),approve=document.getElementById('approve'),published=document.getElementById('published'),finish=document.getElementById('finishBtn'),chooser=document.getElementById('chooser'),connectBtn=document.getElementById('connectBtn'),publishedTop=document.getElementById('publishedTop');
 let liveStatus=false,networksConnected=false,linksDone=false;
