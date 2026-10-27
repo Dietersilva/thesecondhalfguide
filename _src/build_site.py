@@ -322,6 +322,11 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # headlines run longer, so the <title> (and og:title) gets a shorter form while
 # the on-page H1 keeps the full wording.
 TITLE_OVERRIDES = {
+    '/about': 'About The Second Half Guide: The Editor and Our Standards',
+    '/contact': 'Contact The Second Half Guide, and Report a Correction',
+    '/medicare-enrollment': 'Medicare Enrollment Deadlines and Late Penalties',
+    '/medicare': 'Medicare Guides: Enrollment, Costs and Coverage',
+    '/money': 'Social Security, Retirement and Tax Rules After 55',
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/advantage-vs-original': 'Medicare Advantage vs. Original Medicare: What Differs',
     '/anoc-letter': 'The Medicare Annual Notice of Change, and Why to Read It',
@@ -843,6 +848,9 @@ HUB_PAGE_CSS = """
 .topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
 .topic-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
 .topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
+.topic-intro { max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink); margin: 14px 0 0; }
+.topic-intro p { margin: 0 0 12px; }
+.topic-intro a { color: var(--pine-strong); text-decoration: underline; text-underline-offset: 3px; }
 .topic-hero .count { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin: 18px 0 0; }
 .topic-list { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
 .topic-link {
@@ -861,6 +869,19 @@ HUB_PAGE_CSS = """
 }
 .wrap { max-width: 800px; }
 """
+
+
+# Orientation text for the topic hubs that were mostly link lists. Facts here are ones the
+# articles themselves carry and source; keep it that way (report the rule, not the decision).
+HUB_INTROS = {
+    'medicare': '''<p>Medicare runs on dates, and the dates do not forgive. Enrollment around the 65th birthday has a fixed seven-month window, the Annual Enrollment Period for changing plans runs 15 October to 7 December, and the dollar figures reset every January. For 2027 the Part D out-of-pocket cap is $2,400 and the standard Part D deductible is $700.</p>
+<p>New to Medicare, start with <a href="/medicare-enrollment">the enrollment deadlines and late penalties</a>, <a href="/advantage-vs-original">Advantage versus Original</a> and <a href="/medicare-gaps">what Medicare does not cover</a>. Already enrolled, <a href="/open-enrollment">open enrollment</a>, <a href="/medicare-2027-costs">the 2027 plan numbers</a>, <a href="/drug-cap">the drug cap</a> and <a href="/irmaa">the income-based surcharge</a> matter most this season. Every piece lists its sources and the date it was checked. This site reports the rules; it does not recommend a plan.</p>''',
+    'money': '''<p>Social Security, retirement accounts and taxes after 55 share one feature: small differences in age and timing change the dollars. The 2027 cost-of-living adjustment is 3.6%. Full retirement age is 67 for anyone born in 1960 or later, and filing at 62 pays a monthly benefit about 30 percent smaller in that case.</p>
+<p>For Social Security, start with <a href="/social-security-62">filing at 62, by the arithmetic</a>, <a href="/delayed-retirement-credit">what delaying adds</a> and <a href="/cola-2027-estimate">the 2027 COLA</a>. For taxes and accounts, see <a href="/no-tax-on-social-security">what the "no tax on Social Security" law actually did</a>, <a href="/senior-deduction">the senior deduction</a> and <a href="/rmd-deadline">required minimum distributions</a>. The site publishes facts with a date, a number or a threshold, and leaves the decision to you and your own advisers.</p>''',
+    'fraud': '''<p>Scams aimed at people in their late fifties and sixties repeat a few patterns: a deadline, a secret, and a request to move money or share a number. A real agency does not ask you to pay to "activate" a benefit, and none of them needs an answer in the next five minutes. Suspected fraud can be reported at reportfraud.ftc.gov.</p>
+<p>Start with <a href="/five-minute-rule">why scammers need you to act right now</a>, then the seasonal ones: <a href="/enrollment-scams">the October phone calls around Medicare enrollment</a> and <a href="/cola-scam">the Social Security "COLA activation" scam</a>. <a href="/bank-imposter-scam">The bank imposter call</a> and <a href="/numbers">the numbers worth keeping by the phone</a> cover the rest.</p>''',
+    'paperwork': '''<p>A few documents decide what happens when something goes wrong, and most households have them out of date or never made. The ones this site covers are <a href="/beneficiary-form">the beneficiary form that can outrank a will</a>, <a href="/power-of-attorney">power of attorney</a> and <a href="/digital-estate">who gets your digital life</a>. Rules differ by state, so each piece says where the details vary.</p>''',
+}
 
 
 def hub_page(cat):
@@ -884,6 +905,7 @@ def hub_page(cat):
       <div class="topic-icon">{cat['icon']}</div>
       <h1>{cat['name']}</h1>
       <p class="dek">{cat['blurb']}</p>
+      <div class="topic-intro">{HUB_INTROS.get(cat['slug'], '')}</div>
       <p class="count">{n} {plural} in this topic</p>
     </div>
     <div class="topic-list">
