@@ -1,0 +1,211 @@
+{
+  "id": "medicare-90-payment",
+  "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
+  "articleUrl": "https://thesecondhalfguide.com/medicare-90-payment",
+  "displayUrl": "TheSecondHalfGuide.com/medicare-90-payment",
+  "status": "final_corrected_pre_publish",
+  "verifiedAt": "2026-10-10",
+  "sources": [
+    {
+      "issuer": "CMS",
+      "url": "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions"
+    },
+    {
+      "issuer": "Medicare.gov",
+      "url": "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
+    }
+  ],
+  "verifiedFacts": [
+    "One-time $90 premium rebate in October 2026",
+    "Approximately 20.8 million eligible beneficiaries",
+    "Original Medicare Part B",
+    "Must live in the United States",
+    "Not receiving Medicaid premium assistance",
+    "Not paying IRMAA",
+    "Medicare Advantage members are not eligible",
+    "No application required"
+  ],
+  "liveCheck": {
+    "status": 200,
+    "canonical": "https://thesecondhalfguide.com/medicare-90-payment",
+    "passed": true,
+    "noindex": false
+  },
+  "creativeStyle": {
+    "family": "News Style",
+    "footer": "Option B",
+    "site": "TheSecondHalfGuide.com",
+    "tagline": "Real information for what's next.",
+    "trustline": "PLAIN FACTS • CHECKED AND DATED",
+    "vertical": "native_9x16",
+    "fakeButtons": false,
+    "duplicatedBranding": false
+  },
+  "preflight": {
+    "passed": true,
+    "checks": {
+      "noTextOverlap": true,
+      "noClipping": true,
+      "headlineBreathingRoom": true,
+      "platformSafeArea": true,
+      "brandLinesPresentOnce": true,
+      "sourceAndCheckedDate": true,
+      "exactLinkMapped": true,
+      "nativeVertical": true,
+      "mobileReadable": true,
+      "cmsEligibilityWording": true,
+      "timingTenseCurrent": true,
+      "slide4NoOverlap": true,
+      "verticalTimedCaptions": true,
+      "heroNumberClearance36px": true,
+      "facebookRenderedIndependently": true,
+      "threadsRenderedIndependently": true
+    }
+  },
+  "linkRules": {
+    "facebook_page": "exact_clickable_url",
+    "facebook_group": "exact_url_if_rules_allow",
+    "threads": "exact_clickable_url",
+    "instagram_feed": "link_in_bio_first_profile_link",
+    "instagram_story": "native_link_sticker_exact_url",
+    "instagram_reel": "link_in_bio",
+    "tiktok": "link_in_bio_or_profile_where_available",
+    "youtube_shorts": "first_channel_profile_link"
+  },
+  "platforms": [
+    "facebook_page",
+    "facebook_group",
+    "instagram_carousel",
+    "instagram_story",
+    "instagram_reel",
+    "threads",
+    "tiktok",
+    "youtube_shorts"
+  ],
+  "gates": {
+    "factsVerified": true,
+    "articleLive": true,
+    "preflightPassed": true,
+    "userCreativeApproval": true,
+    "socialAccountsConnected": false,
+    "finalPublishApproval": false,
+    "published": false,
+    "completed": false
+  },
+  "creativeCorrections": {
+    "eligibilityWording": "Uses CMS-aligned 'about 20.8 million people are eligible' wording; no 'will receive' overstatement.",
+    "timing": "Uses past-tense 'went out around Oct. 8' for most direct deposits and 'expected later in October' for paper checks.",
+    "carouselSlide4": "Full-story panel and warning band are separated with no overlap.",
+    "verticalVideo": "Native 9:16 final uses timed on-screen captions; no paid voiceover service used.",
+    "facebookThreadsHeroSpacing": "Reduced $90 hero size and added measured clearance from MEDICARE headline; Facebook and Threads use the corrected square master."
+  },
+  "prePublish": {
+    "liveUrlMustPassFreshCheck": true,
+    "recheckTimingWordingOnPostDay": true,
+    "confirmActiveStoryIsFirstProfileLinkOnBioPlatforms": true
+  },
+  "content": {
+    "kicker": "Medicare explainer",
+    "badge": "MEDICARE • OCTOBER 2026",
+    "hero": "$90",
+    "heroLabel": "Medicare payment",
+    "heroSub": "Who gets it?",
+    "stat": {
+      "value": "20.8M",
+      "label": "people are eligible",
+      "source": "Source: CMS • Checked Oct. 10, 2026"
+    },
+    "qualify": {
+      "title": "May qualify",
+      "items": [
+        "Original Medicare with Part B",
+        "Living in the U.S."
+      ]
+    },
+    "notEligible": {
+      "title": "Not eligible",
+      "items": [
+        "Medicare Advantage",
+        "Medicaid premium help",
+        "IRMAA payers"
+      ]
+    },
+    "noApplication": "No application needed",
+    "timing": [
+      {
+        "head": "Direct deposits",
+        "text": "Most went out around Oct. 8"
+      },
+      {
+        "head": "Paper checks",
+        "text": "Expected later in October"
+      }
+    ],
+    "tagline": "Real information for what's next.",
+    "trust": "PLAIN FACTS • CHECKED AND DATED",
+    "otherRules": "Other eligibility rules apply.",
+    "arrives": [
+      "No application needed",
+      "Most direct deposits went out around Oct. 8",
+      "Paper checks expected later in October"
+    ]
+  },
+  "expires": {
+    "timing": "2026-10-31",
+    "reason": "Payment timing wording goes stale once paper checks have gone out."
+  },
+  "captions": {
+    "Facebook Page": "A one-time $90 Medicare payment is going out this month — but not everyone with Medicare qualifies.\n\nCMS says about 20.8 million people are eligible. Eligible beneficiaries are in Original Medicare Part B, live in the U.S., are not receiving Medicaid premium assistance, and do not pay IRMAA. Medicare Advantage members are not eligible. No application is required.\n\nFull sourced story:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Facebook Group": "For anyone seeing posts about the $90 Medicare payment: it is real, but it is not for everyone.\n\nCMS says it is a one-time October payment for certain people in Original Medicare Part B. Medicare Advantage members, people receiving Medicaid premium assistance, and people paying IRMAA are not eligible. No application is required.\n\nFull sourced explanation:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Instagram Carousel": "The $90 Medicare payment is real — but eligibility is narrower than many posts make it sound.\n\nSwipe for who may qualify, who is not eligible, and how the payment arrives.\n\nFull sourced story: LINK IN BIO\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026\n\n#Medicare #Retirement #Medicare2026 #SecondHalfGuide",
+    "Instagram Story": "Use native Link sticker.\n\nSticker label: READ THE FULL SOURCED STORY\nDestination:\nhttps://thesecondhalfguide.com/medicare-90-payment",
+    "Instagram Reel": "The $90 Medicare payment is real — but not everyone gets it.\n\nWho may qualify, who is not eligible, how it arrives, and what to watch for.\n\nFull sourced story: LINK IN BIO\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "Threads": "A one-time $90 Medicare payment is going out this month.\n\nCMS says about 20.8 million people are eligible. It is for certain people in Original Medicare Part B — not Medicare Advantage — and there is no application.\n\nFull sourced story:\nhttps://thesecondhalfguide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "TikTok": "The $90 Medicare payment is real — but not everyone gets it.\n\nWho may qualify, who is excluded, how it arrives, and what to watch for.\n\nFull sourced story: LINK IN BIO / PROFILE\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026",
+    "YouTube Short": "TITLE: $90 Medicare Payment: Who Gets It?\n\nThe $90 Medicare payment is real, but eligibility is limited. This Short explains who may qualify, who does not, how the payment arrives, and what to watch for.\n\nFull sourced story: first link on our channel profile.\nTheSecondHalfGuide.com/medicare-90-payment\n\nSource: CMS • Checked Oct. 10, 2026"
+  },
+  "linkPlacement": [
+    {
+      "id": "fb_page",
+      "platform": "Facebook Page",
+      "rule": "Exact article URL in the post text (clickable).",
+      "check": "URL is in the post text and opens the right article"
+    },
+    {
+      "id": "threads",
+      "platform": "Threads",
+      "rule": "Exact article URL in the post text (clickable).",
+      "check": "URL is in the post text and opens the right article"
+    },
+    {
+      "id": "fb_group",
+      "platform": "Facebook Groups",
+      "rule": "Post manually, one group at a time. Exact URL only if that group's rules allow links.",
+      "check": "Group rules checked; link used only where allowed"
+    },
+    {
+      "id": "ig_bio",
+      "platform": "Instagram carousel and Reel",
+      "rule": "Caption says \"link in bio\". The first profile link must be this article.",
+      "check": "Instagram bio link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    },
+    {
+      "id": "ig_story",
+      "platform": "Instagram Story",
+      "rule": "Add a native Link sticker in the Instagram app. Label: READ THE FULL SOURCED STORY.",
+      "check": "Link sticker added with the exact article URL"
+    },
+    {
+      "id": "tiktok_bio",
+      "platform": "TikTok",
+      "rule": "Caption says \"link in bio / profile\". The profile link must be this article.",
+      "check": "TikTok profile link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    },
+    {
+      "id": "yt_bio",
+      "platform": "YouTube Shorts",
+      "rule": "Caption says \"first link on our channel profile\". The first channel link must be this article.",
+      "check": "First YouTube channel link now points to https://thesecondhalfguide.com/medicare-90-payment"
+    }
+  ]
+}

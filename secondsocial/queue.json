@@ -1,0 +1,95 @@
+{
+  "updated": "2026-10-27",
+  "current": {
+    "id": "medicare-90-payment",
+    "title": "$90 Medicare payment",
+    "url": "https://thesecondhalfguide.com/medicare-90-payment",
+    "status": "live_verified",
+    "score": 100,
+    "sources": [
+      "https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions",
+      "https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter"
+    ],
+    "liveCheck": {
+      "checkedAt": "2026-10-10T20:34:22-04:00",
+      "status": 200,
+      "title": "The $90 Medicare Payment: Who Gets It and Who Doesn’t",
+      "canonical": "https://thesecondhalfguide.com/medicare-90-payment",
+      "noindex": false
+    }
+  },
+  "queue": [
+    {
+      "id": "star-ratings-2027",
+      "title": "2027 Medicare Star Ratings",
+      "score": 98,
+      "why": "Released Oct. 8; Open Enrollment runs Oct. 15 to Dec. 7"
+    },
+    {
+      "id": "cola-scam",
+      "title": "Social Security COLA activation scam",
+      "score": 97,
+      "why": "SSA warning reported Oct. 21-22 after the 3.6% announcement"
+    },
+    {
+      "id": "cola-2027-estimate",
+      "title": "2027 Social Security COLA is 3.6%",
+      "score": 96,
+      "why": "Announced Oct. 14; notices appear late November"
+    },
+    {
+      "id": "prescription-payment-plan",
+      "title": "Medicare Prescription Payment Plan",
+      "score": 93,
+      "why": "Plan switching during Open Enrollment ends participation"
+    },
+    {
+      "id": "glp1-bridge",
+      "title": "Medicare GLP-1 Bridge",
+      "score": 92,
+      "why": "High-interest $50/month program; active now"
+    },
+    {
+      "id": "medicare-2027-costs",
+      "title": "2027 Medicare plan numbers",
+      "score": 91,
+      "why": "Plan Finder / Open Enrollment timing"
+    },
+    {
+      "id": "search-ad-scam",
+      "title": "Medicare search-ad scam",
+      "score": 89,
+      "why": "FTC warning (Oct. 22) + enrollment-season traffic"
+    },
+    {
+      "id": "roth-catch-up",
+      "title": "2027 Roth catch-up",
+      "score": 82,
+      "why": "2027 change; strong 60-63 audience fit"
+    },
+    {
+      "id": "ma-plan-exits-2027",
+      "title": "Medicare Advantage plan exits",
+      "score": 80,
+      "why": "Plan-change season"
+    },
+    {
+      "id": "dme-prior-authorization",
+      "title": "DME prior-authorization change",
+      "score": 78,
+      "why": "CMS rule started Oct. 15"
+    },
+    {
+      "id": "social-security-trust-fund",
+      "title": "2026 Trustees Report explained",
+      "score": 76,
+      "why": "Released June 9; resurfaces in COLA coverage"
+    },
+    {
+      "id": "medicare-marketing-rules-2026",
+      "title": "Medicare marketing rules",
+      "score": 72,
+      "why": "Oct. 1 rule change; still current"
+    }
+  ]
+}

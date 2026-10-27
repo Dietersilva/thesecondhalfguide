@@ -1,0 +1,11 @@
+{
+  "policy": {
+    "massAutoPosting": false,
+    "requireGroupApproval": true,
+    "requireCurrentRulesCheck": true,
+    "requirePerPostApproval": true,
+    "duplicatePostAvoidance": true
+  },
+  "approved": [],
+  "candidates": []
+}

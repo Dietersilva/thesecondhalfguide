@@ -1,0 +1,71 @@
+{
+  "campaign": "medicare-90-payment",
+  "generated": "2026-10-11T04:05:42+00:00",
+  "minFontPx": 26,
+  "assets": {
+    "facebook_page_1080": {
+      "sha256": "6f1665432732bb841fa8ce56357b181d75da0f7dcc713b2af63becae75adb811",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "facebook_group_1080": {
+      "sha256": "6f1665432732bb841fa8ce56357b181d75da0f7dcc713b2af63becae75adb811",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "threads_1080": {
+      "sha256": "6f1665432732bb841fa8ce56357b181d75da0f7dcc713b2af63becae75adb811",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "instagram_carousel_1": {
+      "sha256": "1075f68748914cc463ad86aaa524cf1c31e43b29d248870c7f35ac24de6a2016",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "instagram_carousel_2": {
+      "sha256": "f1b4ea2d9e0c8e8b7b67ee1ec5dbcc6aea6407484063caeffca2e4a1db9901a3",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "instagram_carousel_3": {
+      "sha256": "524004c7cc8c96b0fb40bf2e22f8554f01eb10dbdd8b498fa4ca3807ab154ea9",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "instagram_carousel_4": {
+      "sha256": "05cc1eb6c250f4d0299474558c1c937dd6c2fcbe049417dbe3db7d3ad0b04ae5",
+      "size": [
+        1080,
+        1080
+      ],
+      "issues": []
+    },
+    "instagram_story_1080x1920": {
+      "sha256": "f33d8d98a6bceff762431b362cd8f4d82065f66ac79a7780c5440c33f9770c01",
+      "size": [
+        1080,
+        1920
+      ],
+      "issues": []
+    }
+  }
+}

@@ -17,7 +17,10 @@ STATIC_TOOLS = (
     'retirement-strategy-model.js',
     'retirement-planner-launch.html',
 )
-KEEP = {'.git', '.github', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion'}
+# secondsocial/, api/ and middleware.js are the internal /SECONDSOCIAL dashboard; they are
+# hand-maintained, not built, so the sync must never treat them as stale.
+KEEP = {'.git', '.github', '.gitignore', '.vercelignore', 'README.md', 'CLAUDE.md', '_src', 'promotion',
+        'secondsocial', 'api', 'middleware.js'}
 TOPIC_SHELL_PAGES = ('medicare.html','money.html','paperwork.html','fraud.html','aging.html','travel.html','family.html','search.html')
 
 RETIREMENT_ARTICLE_CTAS = {
