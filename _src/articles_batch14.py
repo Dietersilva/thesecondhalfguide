@@ -19,26 +19,25 @@ ARTICLES14['anoc-letter'] = {
              '&mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The Medicare letter arriving in September, and why it&rsquo;s worth reading',
-    'dek': 'Every Medicare Advantage and Part D plan has to mail its Annual Notice of Change by '
-           'September 30. It is a legal deadline, not a marketing mailer &mdash; and what actually '
-           'changes is usually not the number printed at the top.',
+    'dek': 'Every Medicare Advantage and Part D plan generally has to get its Annual Notice of Change '
+           'to you by September 30. It is a federal requirement, not a marketing mailer &mdash; and what '
+           'actually changes is usually not the number printed at the top.',
     'meta': '6 minute read &middot; Verified against CMS&rsquo;s finalized 2027 rule',
-    'checked': CHECKED14,
-    'recheck': {'due': '2026-10-15', 'why': 'Annual Enrollment opens -- confirm the September 30 ANOC '
-                'deadline and 2027 figures held for this cycle.'},
+    'checked': '16 October 2026',
     'body': """      <p>By the end of September, an envelope from your Medicare Advantage or Part D plan should have arrived that
       looks a lot like the junk mail already piling up ahead of open enrollment. It isn&rsquo;t. It&rsquo;s
       called the <strong>Annual Notice of Change</strong> &mdash; ANOC, if anyone shortens it in front of
-      you &mdash; and federal rules require every plan to mail it to you by <strong>September 30</strong>,
-      every year, without exception.</p>
+      you &mdash; and federal rules generally require every plan to get it to you by <strong>September 30</strong>
+      each year. Delivery timing and method can differ in some situations, including a recent
+      enrollment.</p>
 
       <p>What it contains is a full list of everything about your specific plan that changes on
       <strong>January 1</strong>. Not a comparison to other plans, not a sales pitch &mdash; a disclosure of
       what your own plan is about to do differently.</p>
 
 """ + facts('What the ANOC actually is', [
-        ('September 30', 'Legal deadline for every Medicare Advantage and Part D plan to mail its ANOC '
-                         'for the coming year.'),
+        ('September 30', 'The date by which Medicare Advantage and Part D plans are generally required '
+                         'to get the ANOC for the coming year to members.'),
         ('January 1, 2027', 'When the changes described in this year&rsquo;s letter take effect.'),
         ('October 15 &ndash; December 7', 'The Annual Enrollment Period &mdash; the window during which '
                                           'you can act on anything the letter tells you, by switching '
@@ -89,7 +88,7 @@ ARTICLES14['anoc-letter'] = {
       specific benefit matters to you beyond what the ANOC happened to mention.</p>
 
       <p>If nothing has arrived, that&rsquo;s worth following up on rather than assuming your
-      plan has no changes this year. CMS requires plans to get it to you by September 30; call your plan
+      plan has no changes this year. CMS generally requires plans to get it to you by September 30; call your plan
       directly to request a copy, and if that doesn&rsquo;t resolve it, <strong>1-800-MEDICARE</strong> can
       help.</p>
 
@@ -117,7 +116,8 @@ ARTICLES14['anoc-letter'] = {
         'but that&rsquo;s the maximum &mdash; check your own ANOC for what your specific plan actually '
         'charges.',
         'If anything in the letter concerns you, the window to act is <strong>October 15 to December '
-        '7</strong>. Outside that window, this year&rsquo;s plan carries into next year automatically.',
+        '7</strong> &mdash; and it opened on October 15. Outside that window, this year&rsquo;s plan '
+        'carries into next year automatically.',
         'The ANOC tells you what your plan is changing to. It does not tell you what a better-fit plan '
         'would cost &mdash; that comparison lives at the Medicare Plan Finder, separately.',
         'If you have an Advantage plan, check the <strong>network and referral</strong> sections too, not '
@@ -126,7 +126,7 @@ ARTICLES14['anoc-letter'] = {
     ]) + """
       <p>Nobody enjoys reading insurance mail closely. This is the one piece of it each year built entirely
       out of things that are about to be true whether you read it or not &mdash; which is the whole case for
-      reading it before October 15, rather than after.</p>
+      reading it while the enrollment window is still open, through December 7.</p>
 """,
     'sources': [
         ('CMS &mdash; Contract Year 2027 Medicare Advantage and Part D Final Rule (fact sheet)',
@@ -148,147 +148,149 @@ ARTICLES14['anoc-letter'] = {
 
 # --------------------------------------------------------------- 2027 COLA
 ARTICLES14['cola-2027-estimate'] = {
-    'title': 'The 2027 Social Security COLA Isn’t Official Yet &mdash; The Second Half Guide',
+    'title': 'The 2027 Social Security COLA Is 3.6% &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'The 2027 Social Security COLA isn&rsquo;t official yet',
-    'dek': 'Headlines this summer have already put a number on next year&rsquo;s raise. Social Security '
-           'hasn&rsquo;t announced one &mdash; and won&rsquo;t until mid-October, once data that doesn&rsquo;t '
-           'exist yet is finished.',
-    'meta': '5 minute read &middot; Verified against BLS/CRS methodology and independent COLA trackers',
-    'checked': '21 September 2026',
-    'recheck': {'due': '2026-10-14', 'why': 'Official SSA COLA announcement -- convert this piece to '
-                'report the real number rather than writing a new URL. Preserve the slug.'},
-    'body': """      <p>By late summer, several independent trackers had already put a number on the 2027 Social
-      Security cost-of-living adjustment &mdash; and some coverage repeated those numbers as if the decision
-      had been made. It hasn&rsquo;t. The Social Security Administration has not announced a 2027 COLA, and
-      structurally cannot, until data that doesn&rsquo;t exist yet has been collected. Two of the three
-      months that decide it are now known; the last one lands 14 October.</p>
+    'h1': 'The 2027 Social Security COLA is 3.6%',
+    'dek': 'Social Security announced the official 2027 raise on 14 October: 3.6%, starting with January '
+           'benefits. The earnings limits and the taxable maximum moved with it &mdash; and Medicare&rsquo;s '
+           '2027 premium, which decides what you keep, has not been announced.',
+    'meta': '5 minute read &middot; Checked against the SSA announcement and independent reports',
+    'checked': '16 October 2026',
+    'body': """      <p>On 14 October 2026 the Social Security Administration announced a <strong>3.6%</strong>
+      cost-of-living adjustment for 2027. It applies to Social Security benefits starting with the January
+      2027 payments, and to Supplemental Security Income payments starting 31 December 2026. It is the
+      largest adjustment since the 8.7% for 2023, and it is higher than the 2.8% that took effect in
+      January 2026. Nobody has to apply for it; the increase is added automatically.</p>
 
-""" + facts('Where things actually stand', [
-        ('2.8%', 'The <em>official</em>, already-locked-in 2026 COLA, announced in October 2025 and in '
-                 'effect since January 2026.'),
-        ('3.5% &ndash; 3.6%', 'The range of independent 2027 <em>estimates</em> as of 21 September 2026, '
-                              'from three separate trackers &mdash; not from Social Security.'),
-        ('2 of 3', 'How many of the three CPI-W months that decide the COLA have actually been published. '
-                   'July and August are both out; September &mdash; the last one needed &mdash; arrives '
-                   '14 October.'),
-        ('11 September 2026', 'When the August CPI-W landed and every tracker below last updated its '
-                              'estimate. Unless September&rsquo;s data moves sharply, this is close to '
-                              'the final range.'),
-        ('14 October 2026', 'The date the Social Security Administration is expected to announce the '
-                            'official 2027 COLA, after the Bureau of Labor Statistics releases September '
-                            'inflation data.'),
-        ('$0', 'How much of the estimate range above is a government figure, until that date.'),
+""" + facts('The official 2027 figures', [
+        ('3.6%', 'The 2027 COLA, announced 14 October 2026. The 2026 COLA was 2.8%.'),
+        ('$2,095 &rarr; $2,170', 'The average retired-worker benefit before and after the increase, '
+                                 'according to the Social Security Administration &mdash; about $75 a '
+                                 'month.'),
+        ('$192,300', 'The 2027 taxable maximum &mdash; the most earnings subject to Social Security tax. '
+                     'It was $184,500 in 2026.'),
+        ('$25,560', 'The 2027 earnings limit for people who have not reached full retirement age all year. '
+                    'It was $24,480 in 2026.'),
+        ('$67,920', 'The 2027 earnings limit in the year a person reaches full retirement age.'),
+        ('31 December 2026', 'When the increased SSI payment is paid.'),
+        ('Not yet announced', 'The 2027 Medicare Part B premium and deductible. CMS had not published them '
+                              'as of 16 October 2026.'),
     ]) + """
-      <h2>Where the estimates come from</h2>
-
-      <p>Three groups have published 2027 COLA forecasts, and all three moved when the August CPI-W landed
-      on 11 September. The Senior Citizens League had estimated 3.6% in August; its own site now calls
-      <strong>3.5%</strong> its final prediction ahead of the official number. Independent analyst Mary
-      Johnson had dropped to 3.4% in August and revised back up to <strong>3.5%</strong>. AARP had
-      projected 3.5% in August and raised that to <strong>3.6%</strong>. Reading superseded numbers as
-      current is exactly the mistake this article exists to head off &mdash; only the figures above, dated
-      to the 11 September update, reflect where each tracker actually stands. All three are running the
-      same public CPI-W formula the government itself will eventually use &mdash; they are not guessing
-      randomly. But as of this writing, only <strong>two of the three months</strong> that decide the COLA
-      have actually been published: July&rsquo;s and August&rsquo;s. September&rsquo;s &mdash; the month
-      that actually closes the calculation &mdash; doesn&rsquo;t land until October 14. One-third of the
-      real data is still ahead of every estimate above, which is why the range has narrowed to a single
-      point of spread rather than closing entirely.</p>
-
-      <blockquote class="pull">
-        <p>None of these figures are Social Security&rsquo;s number. They are outside groups running the
-        government&rsquo;s own formula on data that isn&rsquo;t finished yet.</p>
-      </blockquote>
-
-""" + AD_INLINE + """
-      <h2>Why three trackers publish three different numbers</h2>
-
-      <p>All three groups are running the same public formula on the same underlying government data, so
-      the spread between 3.5% and 3.6% isn&rsquo;t disagreement about the rule &mdash; it&rsquo;s a
-      difference in timing and rounding as each one updated its own estimate through the summer and into
-      September. A forecast published right after July&rsquo;s CPI-W release reflected one month of real
-      data and two months of assumption. The same tracker&rsquo;s estimate after August&rsquo;s release,
-      the one quoted above, is built on two-thirds real data instead of one-third &mdash; and estimates
-      published this way generally narrow, rather than widen, as more of the actual quarter comes in. That
-      narrowing stops entirely once September&rsquo;s figure lands and the government runs the calculation
-      itself.</p>
-
-      <h2>The formula, briefly</h2>
+      <h2>How the 3.6% was set</h2>
 
       <p>The COLA is not a policy choice or a negotiation. It comes from the Consumer Price Index for Urban
       Wage Earners and Clerical Workers &mdash; CPI-W &mdash; averaged across July, August and September,
-      and compared to the same three-month average from the prior year the formula last used. The
-      percentage change, rounded to the nearest tenth of a percent, becomes the COLA. It is the identical
-      process that produced 2.8% for 2026, run again on next year&rsquo;s data.</p>
+      and compared with the same three-month average a year earlier. The percentage change, rounded to the
+      nearest tenth of a percent, becomes the COLA. September&rsquo;s inflation data, released the same day
+      as the announcement, is the last piece, which is why the number cannot be known before mid-October.</p>
 
-      <p>If the range holds, a COLA in the mid-3s would be the largest increase since 2023 &mdash; but
-      &ldquo;if it holds&rdquo; is doing real work in that sentence. September data hasn&rsquo;t been
-      counted yet, and the whole point of the formula is that nobody, including the trackers publishing
-      estimates, gets to shortcut that.</p>
+      <p>The independent trackers this site cited in September, which were running the same public formula
+      on two of the three months, had put the range at 3.5% to 3.6%. The official result landed at the top
+      of it. That is the ordinary pattern: estimates narrow as the quarter fills in, and the final figure
+      comes from the government&rsquo;s own calculation, not from any forecaster&rsquo;s.</p>
 
-      <p>To put the range in dollars rather than percent: on today&rsquo;s average retired-worker benefit
-      of about $2,086 a month (the July 2026 figure), a 3.5% adjustment works out to roughly
-      $73 a month, and 3.6% to roughly $75. That arithmetic is simple and it is also entirely provisional
-      &mdash; it applies whichever estimate turns out closest, and none of them is the number Social
-      Security will actually use. A smaller benefit sees a smaller dollar increase at the same percentage,
-      and a larger one sees more &mdash; the COLA is a percentage of what you already receive, not a flat
-      amount added to every check alike.</p>
+      <blockquote class="pull">
+        <p>3.6% is the percentage. What lands in the account is a different number, and the difference is
+        set by what is deducted before it arrives.</p>
+      </blockquote>
 
-      <h2>The raise and the deposit are not the same number</h2>
+""" + AD_INLINE + """
+      <h2>What 3.6% means in dollars</h2>
 
-      <p>Whatever the 2027 COLA turns out to be, it will not be the amount that shows up in the monthly
-      deposit. That happened with 2026&rsquo;s already-official 2.8%: it added about $56 to the average
-      benefit, but the Medicare Part B premium rose from $185.00 to $202.90 over the same period &mdash; an
-      increase of $17.90, deducted automatically before the payment arrives. Net effect: about $38 of the
-      announced $56 actually landed. A <a href="/cola">hold-harmless</a> provision limits how much the Part
-      B increase can eat into the COLA for most people who have Part B premiums withheld directly from
-      Social Security &mdash; it does not cover everyone. Newly-enrolled Medicare beneficiaries, higher
-      earners paying the IRMAA surcharge, and people whose Part B premium is paid by Medicaid are among
-      those it doesn&rsquo;t protect. For everyone, protected or not, the amount that actually lands
-      routinely arrives smaller than the headline percentage implies, and 2027&rsquo;s Part B premium
-      hasn&rsquo;t been announced yet either.</p>
+      <p>The Social Security Administration puts the average retired-worker benefit at $2,095 before the
+      increase and $2,170 after &mdash; roughly $75 a month. That is an average. A COLA is a percentage of
+      the benefit a person already receives, not a flat amount added to every check alike, so the dollar
+      figure scales with the benefit:</p>
 
-      <h2>What&rsquo;s worth doing while you wait</h2>
+      <p>A $1,500 benefit rises by about $54 a month. A $2,000 benefit rises by about $72. A $3,000 benefit
+      rises by about $108. The arithmetic is the same for everyone; only the starting point differs.</p>
+
+      <h2>The raise and the deposit are still different numbers</h2>
+
+      <p>The Part B premium is usually deducted from Social Security before the payment arrives, and the
+      2027 premium has not been announced. For comparison, the 2026 premium rose from $185.00 to $202.90
+      &mdash; an increase of $17.90 that came out of the 2.8% COLA before it reached most people&rsquo;s
+      accounts. A hold-harmless provision limits how much of a COLA the Part B increase can absorb for many
+      people who have the premium withheld from their benefit, but it does not cover everyone: people newly
+      enrolled in Medicare, higher earners paying the <a href="/irmaa">IRMAA surcharge</a>, and people whose
+      premium is paid by Medicaid are among those it does not protect. The mechanics are laid out on
+      <a href="/cola">the COLA page</a>.</p>
+
+      <p>Until CMS publishes the 2027 premium and deductible, the net effect of the 3.6% cannot be
+      calculated. Projections exist, but a projection is not an announcement, and this site does not treat
+      one as the other.</p>
+
+      <h2>The other numbers that moved</h2>
+
+      <p><strong>The earnings limit.</strong> A person who claims benefits before full retirement age and
+      keeps working has benefits withheld once earnings pass a yearly limit. For 2027 that limit is
+      <strong>$25,560</strong> for anyone below full retirement age for the entire year: $1 in benefits is
+      withheld for every $2 earned above it. In the calendar year a person reaches full retirement age, the
+      limit is <strong>$67,920</strong> and the rate is $1 withheld for every $3 above it, counting only the
+      earnings before the month full retirement age is reached. After that month there is no limit. Benefits
+      withheld are not forfeited: the Social Security Administration recalculates the monthly benefit at
+      full retirement age to credit the months that were withheld. The test does not apply to income
+      from investments, pensions or retirement accounts &mdash; only to wages and self-employment income.</p>
+
+      <p><strong>The taxable maximum.</strong> Social Security tax applies to earnings up to a cap, which
+      rises to <strong>$192,300</strong> in 2027 from $184,500. At 6.2% each for the employee and the
+      employer, the most either pays in Social Security tax on wages is $11,922.60. The Medicare tax has no
+      wage cap and is unchanged. The cap matters mainly to people still working at higher earnings in
+      their late fifties and sixties; for everyone else, it changes nothing.</p>
+
+      <h2>When the notice and the first payment arrive</h2>
+
+      <p>Social Security sends each beneficiary a notice of the new amount. People with a <em>my Social
+      Security</em> account can read it in the Message Center beginning in late November, ahead of the
+      paper copy; the 2027 Medicare premium for people who have it withheld is expected to appear there at
+      the same time. People who do not use online notices receive a one-page mailed notice in December.
+      The first payment at the new amount comes with the January 2027 benefit. For most people, that is the
+      Wednesday tied to their birthday: 13 January for birthdays on the 1st through the 10th, 20 January
+      for the 11th through the 20th, and 27 January for the 21st through the 31st. SSI recipients are paid
+      the increase on 31 December.</p>
+
+      <h2>What&rsquo;s worth checking now</h2>
 
 """ + check([
-        'Treat every number published before <strong>14 October 2026</strong> as an estimate, however '
-        'confidently it&rsquo;s stated &mdash; including the ones in this article.',
-        'The real number, when it lands, comes directly from the <strong>Social Security '
-        'Administration</strong>, not from a tracker or a news estimate.',
-        'A COLA percentage is not the same as what actually lands in your account. Part B premiums for '
-        '2027 are announced separately, and typically absorb part of any increase before it arrives '
-        '&mdash; see the mechanics on <a href="/cola">the COLA page</a> for how that worked in 2026.',
-        'The three months that decide it &mdash; July, August, September &mdash; are the only ones that '
-        'matter. Inflation news from earlier in the year, however dramatic, already happened before the '
-        'clock started.',
-        'All three independent trackers updated their 2027 estimates after August&rsquo;s CPI-W landed on '
-        '11 September, converging to roughly <strong>3.5%&ndash;3.6%</strong> &mdash; a range that only '
-        'closes entirely once September&rsquo;s figure is in.',
+        'The official 2027 COLA is <strong>3.6%</strong>, announced 14 October 2026 by the Social '
+        'Security Administration. Any earlier figure &mdash; including the 3.5%&ndash;3.6% estimates '
+        'published in September &mdash; has been superseded.',
+        'A COLA percentage is not the same as what lands in an account. The <strong>2027 Part B '
+        'premium</strong> is announced separately and, for most people who have it withheld, comes out '
+        'of the increase first &mdash; see <a href="/cola">the COLA page</a>.',
+        'The <strong>earnings limit</strong> for people under full retirement age rose to $25,560, and to '
+        '$67,920 in the year full retirement age is reached. The limit applies to wages and '
+        'self-employment income only.',
+        'The <strong>taxable maximum</strong> rose to $192,300. It affects only earnings above the 2026 '
+        'cap of $184,500.',
+        'The new benefit amount is sent to each beneficiary in a notice from the Social Security '
+        'Administration; that notice, not a news estimate, is the number that governs the January '
+        'payment.',
     ]) + """
-      <p>The estimate season exists because people want to plan, and there is nothing wrong with knowing
-      the range. The distinction worth holding onto is which number is a forecast and which one is Social
-      Security&rsquo;s &mdash; and until mid-October, there is only one of those. When the real figure
-      arrives, it will come from the Social Security Administration directly, not from any of the trackers
-      quoted above, however close their guess turns out to be.</p>
+      <p>The estimate season is over, and the useful thing about it ending is that the arguments about
+      which forecaster was closest stop mattering. The percentage is set. What remains open is the part
+      the Social Security Administration does not decide: what Medicare charges for 2027, and how much of
+      the 3.6% survives the deduction. That number arrives from CMS, and until it does, the honest figure
+      for the net raise is that there isn&rsquo;t one yet.</p>
 """,
     'sources': [
-        ('Congressional Research Service &mdash; Social Security: Cost-of-Living Adjustments',
-         'https://www.congress.gov/crs-product/94-803'),
+        ('Social Security Administration &mdash; Social Security Announces 3.6 Percent Benefit Increase for 2027',
+         'https://www.ssa.gov/blog/en/posts/2026-10-14.html'),
+        ('Social Security Administration &mdash; 2027 Cost-of-Living Adjustment fact sheet',
+         'https://www.ssa.gov/news/en/cola/factsheets/2027.html'),
+        ('Journal of Accountancy &mdash; Social Security wage base and COLA announced for 2027',
+         'https://www.journalofaccountancy.com/news/2026/oct/social-security-wage-base-and-cola-announced-for-2027/'),
+        ('Axios &mdash; Social Security recipients will see rise in monthly payments next year',
+         'https://www.axios.com/2026/10/14/social-security-cola-inflation'),
+        ('Kiplinger &mdash; 2027 Social Security COLA is 3.6%: What You Need to Know',
+         'https://www.kiplinger.com/retirement/social-security/2027-social-security-cola-is-3-6-percent'),
         ('Bureau of Labor Statistics &mdash; The use of the CPI in Social Security COLAs',
          'https://www.bls.gov/opub/btn/archive/the-use-of-the-cpi-in-social-security-cost-of-living-adjustments-colas.pdf'),
-        ('CNBC &mdash; Social Security COLA for 2027 may be 3.5% to 3.6%, new estimates show',
-         'https://www.cnbc.com/2026/09/11/social-security-cola-2027-estimate.html'),
-        ('The Senior Citizens League &mdash; COLA Watch',
-         'https://seniorsleague.org/cola-watch/'),
-        ('AARP &mdash; Social Security COLA Preview: Will 2027 Benefits Go Up?',
-         'https://www.aarp.org/social-security/cola-2027-increase-estimate/'),
     ],
     'next': {'slug': 'cola',
              'title': 'The COLA: why a raise doesn&rsquo;t feel like one',
              'blurb': 'What happens to a COLA once it&rsquo;s official and Medicare&rsquo;s premium takes '
-                      'its share &mdash; the part that applies whatever October&rsquo;s number turns out '
-                      'to be.'},
+                      'its share &mdash; the part that applies whatever the percentage turns out to be.'},
 }
 
 # ----------------------------------------------------------- QR parking scam

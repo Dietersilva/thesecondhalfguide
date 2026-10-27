@@ -90,6 +90,10 @@ DESCRIPTIONS = {
     '/cobra-medicare-trap': 'COBRA keeps your health plan going after a job ends, but it isn’t creditable coverage for Medicare Part B — missing that risks a permanent penalty.',
     '/medicare-advantage-oep': 'A second Medicare enrollment window opens every January, separate from fall’s AEP — but only for people already on Medicare Advantage, and only once.',
     '/medicare-2027-costs': "CMS projects lower 2027 Medicare Advantage premiums, a Part D deductible of up to $700 and a $2,400 cap. What an average can't tell you about your plan.",
+    '/medicare-90-payment': "A one-time $90 payment is going to people in Original Medicare Part B. No application, who is excluded, and why a request for bank details is not Medicare.",
+    '/star-ratings-2027': "CMS published the 2027 Medicare Star Ratings on October 8. What the 71% figure measures, what a contract rating covers, and what it can't say about your plan.",
+    '/dme-prior-authorization': "From October 15, CMS requires some new equipment suppliers to get approval before delivering and billing certain items. Who it covers and what patients see.",
+    '/glp1-bridge': "Through 2027, some Part D members can get certain weight-loss GLP-1 drugs for $50 a month. The drug list, criteria, exclusions and how approval works.",
     '/claiming-age-clarity-act': "Congress sent the President a bill renaming Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
     '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.",
@@ -113,8 +117,11 @@ DESCRIPTIONS = {
     '/ssi-wage-reporting': 'SSA’s Payroll Information Exchange now reports many SSI and SSDI recipients’ wages automatically each month. What still has to be reported by hand.',
     '/pickleball-injuries': 'Pickleball ER visits nearly quadrupled since 2018, and adults 50+ are most of them. The numbers, and what actually reduces the injury risk.',
     '/skip-gen-travel': 'Grandparents plan 75% of skip-gen trips and pay for 84% of them. What the survey shows, and the consent paperwork that can stop a trip at the border.',
-    '/anoc-letter': 'Every Medicare Advantage and Part D plan must mail its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
-    '/cola-2027-estimate': 'Trackers estimate the 2027 Social Security COLA at 3.4%-3.6%, but nothing is official until SSA announces it in mid-October. What decides it.',
+    '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
+    '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
+    '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/prescription-payment-plan': "The Part D payment plan spreads the $2,400 out-of-pocket cap into monthly bills. It doesn't lower costs, and switching plans in open enrollment ends it.",
+    '/cola-2027-estimate': 'Social Security announced a 3.6% COLA for 2027. The average benefit, the new earnings limits, the taxable maximum, and what Part B still decides.',
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
     '/ma-plan-exits-2027': 'Humana, UnitedHealthcare and Molina are exiting Medicare Advantage markets for 2027, hundreds of thousands of members combined. What happens if yours is one.',
     '/drug-negotiation-2027': 'CMS finalized new Medicare drug prices months ago, including a 71% cut on Ozempic and Wegovy. Effective January 1 -- what that means, and does not, for you.',
@@ -315,6 +322,7 @@ body.hub .house-more, body.article .house-more, body.doc .house-more {
 # headlines run longer, so the <title> (and og:title) gets a shorter form while
 # the on-page H1 keeps the full wording.
 TITLE_OVERRIDES = {
+    '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/advantage-vs-original': 'Medicare Advantage vs. Original Medicare: What Differs',
     '/anoc-letter': 'The Medicare Annual Notice of Change, and Why to Read It',
     '/grandparent-529-fafsa': 'The Grandparent 529 Rule Changed. Most Families Missed It',
@@ -332,6 +340,8 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/cola-2027-estimate', '/social-security-trust-fund', '/cola-scam', '/prescription-payment-plan',
+    '/medicare-90-payment', '/star-ratings-2027', '/dme-prior-authorization', '/glp1-bridge',
     '/claiming-age-clarity-act', '/globe-part-b-drugs',
     '/search-ad-scam', '/roth-catch-up',
     '/medicare-2027-costs', '/etias',
@@ -340,7 +350,7 @@ LATEST = [
     '/parks-fee-free-days', '/senior-travel-discounts', '/portugal-d7-visa',
     '/grandparent-529-fafsa',
     '/ma-plan-exits-2027', '/drug-negotiation-2027',
-    '/anoc-letter', '/cola-2027-estimate', '/qr-parking-scam',
+    '/anoc-letter', '/qr-parking-scam',
     '/pickleball-injuries', '/skip-gen-travel',
     '/compassionate-allowances', '/medicare-card-scam', '/ssi-wage-reporting',
     '/overpayment-clawback', '/cobra-medicare-trap', '/medicare-advantage-oep',

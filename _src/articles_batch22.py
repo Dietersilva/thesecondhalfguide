@@ -30,13 +30,16 @@ ARTICLES22['claiming-age-clarity-act'] = {
            'or dollar amount.',
     'meta': '5 minute read &middot; Checked against the bill text and independent reporting on its '
             'passage',
-    'checked': CHECKED22,
-    'recheck': {'due': '2026-10-23', 'why': 'The President has a fixed window to sign or veto -- confirm '
-                'whether H.R. 5284 became law and update the opening and the status row.'},
+    'checked': '26 October 2026',
+    'recheck': {'due': '2026-11-02', 'why': 'Signing status still unconfirmed on 26 October; no Public Law '
+                'number found -- check the Congress.gov action history and update the opening and the '
+                'status row.'},
     'body': """      <p>On September 29, the Senate passed the Claiming Age Clarity Act by unanimous consent. The House
       had already passed the identical bill on December 1, 2025, so nothing more is needed from Congress.
-      The bill, H.R. 5284, went to the President. At the time of this writing no signature had been
-      reported.</p>
+      The bill, H.R. 5284, went to the President. As of October 26, this site could not confirm what
+      happened next. The sources it could read show the Senate&rsquo;s September 29 passage as the latest
+      recorded action, and none gives a Public Law number. Whether the bill has been signed is therefore
+      unconfirmed, and the Congress.gov action history is the place to settle it.</p>
 
       <p>What it does is small, and it is easy to overstate. Social Security would change the words it uses
       for the three ages everyone argues about. It would not move the age at which anyone can file, would
@@ -45,7 +48,8 @@ ARTICLES22['claiming-age-clarity-act'] = {
 """ + facts('The bill, at a glance', [
         ('Bill', 'H.R. 5284, the Claiming Age Clarity Act.'),
         ('Status', 'Passed the House on December 1, 2025 and the Senate on September 29, 2026 without '
-                   'changes. Sent to the President. No signature reported as of October 9.'),
+                   'changes. Sent to the President. Not confirmed as signed as of October 26; no '
+                   'Public Law number found.'),
         ('Age 62', 'Now &ldquo;early eligibility age.&rdquo; Would become the <strong>minimum monthly '
                    'benefit age</strong>.'),
         ('Full retirement age', 'Now 66 to 67 depending on birth year. Would become the '
