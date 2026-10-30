@@ -17,19 +17,19 @@ CLUSTERS = [
      'medicare-2027-costs', 'advantage-vs-original', 'open-enrollment'],
     # What Medicare costs
     ['medicare-2027-costs', 'drug-cap', 'drug-negotiation-2027', 'irmaa', 'medicare-savings',
-     'medicare-gaps', 'globe-part-b-drugs', 'prescription-payment-plan'],
+     'medicare-gaps', 'globe-part-b-drugs', 'prescription-payment-plan', 'medicare-telehealth-2027'],
     ['medicare-gaps', 'long-term-care', 'observation-status', 'wellness-visit', 'medigap-window'],
     ['irmaa', 'medicare-savings', 'medicare-2027-costs', 'cola', 'aca-subsidy-cliff'],
     ['aca-subsidy-cliff', 'aca-unauthorized-enrollment', 'cobra-medicare-trap', 'medicare-enrollment'],
     # Social Security: claiming and benefits
     ['social-security-62', 'delayed-retirement-credit', 'spousal-benefits', 'widows-penalty',
-     'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund'],
+     'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund', 'earnings-test'],
     ['cola', 'cola-2027-estimate', 'no-tax-on-social-security', 'irmaa', 'delayed-retirement-credit',
      'medicare-savings', 'social-security-trust-fund', 'cola-scam'],
     ['no-tax-on-social-security', 'senior-deduction', 'standard-deduction-65'],
     # Social Security: dealing with the agency
     ['overpayment-clawback', 'ssi-wage-reporting', 'compassionate-allowances', 'social-security-login',
-     'cola-scam'],
+     'cola-scam', 'earnings-test'],
     ['wep-gpo-repeal', 'spousal-benefits', 'social-security-62', 'widows-penalty'],
     # Taxes
     ['senior-deduction', 'senior-deduction-phaseout', 'senior-deduction-sunset', 'standard-deduction-65',
@@ -44,7 +44,7 @@ CLUSTERS = [
     ['enrollment-scams', 'search-ad-scam', 'medicare-card-scam', 'five-minute-rule',
      'medical-equipment-fraud', 'aca-unauthorized-enrollment', 'cola-scam'],
     ['five-minute-rule', 'bank-imposter-scam', 'gold-courier-scam', 'voice-cloning', 'romance-scams',
-     'qr-parking-scam'],
+     'qr-parking-scam', 'ftc-older-adults-fraud-report'],
     # Aging in place
     ['aging-in-place', 'falls', 'driving', 'hearing-aids', 'downsizing-math', 'long-term-care'],
     ['falls', 'aging-in-place', 'pickleball-injuries', 'vaccine-ages', 'wellness-visit'],

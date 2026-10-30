@@ -120,6 +120,9 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/earnings-test': "Still working and collecting Social Security before full retirement age? The 2027 limits are $25,560 and $67,920. What counts, what's withheld, what returns.",
+    '/ftc-older-adults-fraud-report': 'The FTC says people 60 and older reported about $3 billion lost to fraud in 2025, five times 2020. What the figure counts and what it leaves out.',
+    '/medicare-telehealth-2027': 'Congress extended Medicare telehealth through 31 December 2027. Visits from home, what they cost, and what returns on 1 January 2028 if nothing passes.',
     '/prescription-payment-plan': "The Part D payment plan spreads the $2,400 out-of-pocket cap into monthly bills. It doesn't lower costs, and switching plans in open enrollment ends it.",
     '/cola-2027-estimate': 'Social Security announced a 3.6% COLA for 2027. The average benefit, the new earnings limits, the taxable maximum, and what Part B still decides.',
     '/qr-parking-scam': 'The FTC warns scammers are sticking fake QR codes over real ones on parking meters. How the trick works, and the check that stops it.',
@@ -328,6 +331,9 @@ TITLE_OVERRIDES = {
     '/medicare': 'Medicare Guides: Enrollment, Costs and Coverage',
     '/money': 'Social Security, Retirement and Tax Rules After 55',
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
+    '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
+    '/ftc-older-adults-fraud-report': 'FTC Report: Older Adults Reported $3 Billion in Fraud Losses',
+    '/medicare-telehealth-2027': 'Medicare Telehealth Is Covered Through 2027',
     '/advantage-vs-original': 'Medicare Advantage vs. Original Medicare: What Differs',
     '/anoc-letter': 'The Medicare Annual Notice of Change, and Why to Read It',
     '/grandparent-529-fafsa': 'The Grandparent 529 Rule Changed. Most Families Missed It',
@@ -345,6 +351,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',
     '/cola-2027-estimate', '/social-security-trust-fund', '/cola-scam', '/prescription-payment-plan',
     '/medicare-90-payment', '/star-ratings-2027', '/dme-prior-authorization', '/glp1-bridge',
     '/claiming-age-clarity-act', '/globe-part-b-drugs',
