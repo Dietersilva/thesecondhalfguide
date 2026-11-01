@@ -13,7 +13,7 @@ CLUSTERS = [
     ['medicare-enrollment', 'open-enrollment', 'medicare-advantage-oep', 'medigap-window',
      'advantage-vs-original', 'anoc-letter', 'cobra-medicare-trap', 'hsa-medicare-timing'],
     # Medicare Advantage and the 2027 plan year
-    ['ma-plan-exits-2027', 'ma-flex-card-2027', 'medicare-marketing-rules-2026', 'anoc-letter',
+    ['ma-plan-exits-2027', 'ma-flex-card-2027', 'medicare-marketing-rules-2026', 'anoc-letter', 'silversneakers-2027',
      'medicare-2027-costs', 'advantage-vs-original', 'open-enrollment'],
     # What Medicare costs
     ['medicare-2027-costs', 'drug-cap', 'drug-negotiation-2027', 'irmaa', 'medicare-savings',
@@ -51,10 +51,10 @@ CLUSTERS = [
     ['downsizing-math', 'property-tax', 'aging-in-place'],
     # Travel
     ['airport-help', 'airport-security', 'passport-traps', 'travel-medications', 'cruise-medical',
-     'travel-insurance'],
+     'travel-insurance', 'tsa-confirmid-fee', 'eclipse-2027'],
     ['the-big-trip', 'go-go-years', 'senior-travel-discounts', 'parks-pass', 'parks-fee-free-days',
      'senior-age'],
-    ['passport-traps', 'etias', 'portugal-d7-visa', 'travel-insurance'],
+    ['passport-traps', 'etias', 'portugal-d7-visa', 'travel-insurance', 'uk-eta', 'eclipse-2027'],
     ['vaccine-ages', 'travel-medications', 'cruise-medical'],
     # Family
     ['grandparent-529-fafsa', 'long-distance', 'skip-gen-travel', 'on-call', 'free-college'],

@@ -30,6 +30,7 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [CMS canceled 760,000 Marketplace enrollments over fraud concerns](https://thesecondhalfguide.com/aca-unauthorized-enrollment): CMS canceled 315,000 Marketplace enrollments covering 760,000 people over fraud concerns. How to check whether your own coverage was affected.
 - [Medicare telehealth: covered at home through the end of 2027](https://thesecondhalfguide.com/medicare-telehealth-2027): Congress extended Medicare telehealth through 31 December 2027. Visits from home, what they cost, and what returns on 1 January 2028 if nothing passes.
 - [The Medicare Prescription Payment Plan: same cap, paid monthly](https://thesecondhalfguide.com/prescription-payment-plan): The Part D payment plan spreads the $2,400 out-of-pocket cap into monthly bills. It doesn't lower costs, and switching plans in open enrollment ends it.
+- [SilverSneakers and Medicare gym benefits for 2027: what to check before 7 December](https://thesecondhalfguide.com/silversneakers-2027): Original Medicare doesn't cover a gym; some Advantage plans do. How to check whether your SilverSneakers benefit survives 2027 before 7 December.
 
 ## Money & the tax year
 - [Should you file for Social Security at 62? Here's what the math actually says](https://thesecondhalfguide.com/social-security-62): Filing for Social Security at 62 cuts your benefit permanently. The arithmetic — the reduction, the break-even, and when filing early still wins.
@@ -91,6 +92,9 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [Aging in place: staying home is a goal, not a plan](https://thesecondhalfguide.com/aging-in-place): “I’m never leaving this house” sounds like a decision about a house. It’s mostly a decision about stairs, driving, and who lives near enough to help.
 
 ## Travel & discounts
+- [The 2 August 2027 total solar eclipse: where it crosses, how long it lasts](https://thesecondhalfguide.com/eclipse-2027): The 2 August 2027 total solar eclipse crosses southern Spain and ends in Egypt. Totality lengths, why Cairo misses it, and the next US total eclipse in 2044.
+- [The UK’s £20 travel authorization: what Americans need before the flight](https://thesecondhalfguide.com/uk-eta): Americans need a £20 UK Electronic Travel Authorisation before flying to Britain. Validity, how long it takes, who is exempt, and the sites charging more.
+- [The $45 airport ID fee: who pays it, and who does not](https://thesecondhalfguide.com/tsa-confirmid-fee): Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.
 - [ETIAS: the EU travel authorization that isn’t live yet](https://thesecondhalfguide.com/etias): ETIAS, Europe's €20 travel authorization, has no start date, and sites charging for it aren't the EU. What actually applies to Americans at the border now.
 - [Portugal’s retirement visa income rule just went up again](https://thesecondhalfguide.com/portugal-d7-visa): Portugal ties its D7 retirement visa income floor to the minimum wage, which rose again for 2026. What changed, and why renewals get checked again.
 - [Which senior travel discounts still actually exist in 2026](https://thesecondhalfguide.com/senior-travel-discounts): Amtrak still publishes a clear 10% senior discount. The major airlines do not -- what still exists, carrier by carrier, and how to actually check.
