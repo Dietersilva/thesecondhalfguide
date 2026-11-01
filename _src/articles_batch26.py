@@ -74,8 +74,8 @@ ARTICLES26['tsa-confirmid-fee'] = {
 
       <p>That has a practical consequence for the readers of this site. A passport card, which many
       people keep for a cruise, is an accepted document for a domestic flight. So is a Global Entry card,
-      which is one more reason Global Entry is the better buy, as <a href="/airport-security">the airport
-      security page</a> works out. And a temporary paper license, issued while a new one is in the mail,
+      one of the DHS trusted-traveler cards TSA lists. The <a href="/airport-security">airport security
+      page</a> covers what those programs cost. And a temporary paper license, issued while a new one is in the mail,
       is not an accepted document on its own, a gap that catches people who renewed shortly before a trip.</p>
 
       <blockquote class="pull">
@@ -92,9 +92,11 @@ ARTICLES26['tsa-confirmid-fee'] = {
       people with a perfectly good license who simply did not realize it lacked the star. None of this is
       a judgment about the traveler. It is a gap between a renewal date and a federal deadline.</p>
 
-      <p>The rule underneath is unchanged and simple: for a domestic flight, an adult needs one accepted
-      form of identification, not two. A person who holds a valid passport already has it, and the fee
-      is irrelevant to them.</p>
+      <p>The rule underneath is unchanged and simple: for a domestic flight, an adult generally needs one accepted
+      form of identification, not two. A traveler who arrives without one may be offered the
+      identity-verification option, which is what the fee pays for, rather than being turned away
+      outright. A person who holds a valid passport already has an accepted document, and the fee is
+      irrelevant to them.</p>
 
       <h2>Where scammers fit in</h2>
 
@@ -157,14 +159,14 @@ ARTICLES26['eclipse-2027'] = {
     'title': 'The 2 August 2027 Total Solar Eclipse: Path and Duration &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The 2 August 2027 total solar eclipse: where it crosses, how long it lasts',
-    'dek': 'Southern Spain gets a few minutes of darkness at midday. Egypt gets more than six. For a reader '
+    'dek': 'Southern Spain gets a few minutes of darkness in the late morning. Egypt gets more than six. For a reader '
            'in the lower 48, the next total eclipse at home is in 2044.',
     'meta': '6 minute read &middot; Checked against Spain&rsquo;s IGN, NASA and eclipse-guide reporting',
     'checked': CHECKED26,
     'body': """      <p>A total solar eclipse is the rare travel event with a fixed date, a fixed place and no
       second chance. The next one that Americans can reasonably plan around is on
       <strong>2 August 2027</strong>. It crosses the Atlantic, the Strait of Gibraltar, southern Spain
-      and North Africa, and ends in Egypt. Tour operators are already selling trips, which is the reason
+      and North Africa, then continues across Egypt and the Arabian Peninsula to Somalia. Tour operators are already selling trips, which is the reason
       this page is worth having nine months ahead of the date and not nine days.</p>
 
       <p>It is also a page about a calendar, not a recommendation. What follows is the geometry, the
@@ -189,7 +191,7 @@ ARTICLES26['eclipse-2027'] = {
       shadow&rsquo;s center line crosses the coast at a different angle than its edges, and a place near the
       edge gets a shorter eclipse than a place near the middle. Standing in the wrong town can cost minutes.</p>
 
-      <p>Egypt is the other end of the logic. The longest totality on land is near Luxor, at about six
+      <p>Egypt is the other side of that trade. The longest totality on land is near Luxor, at about six
       minutes and twenty-three seconds. Cairo and the pyramids at Giza are not on the path. They would see
       a deep partial eclipse of about 95%, which is dramatic and is not totality. A traveler who books a
       trip around Cairo to see the eclipse has booked the wrong city.</p>
@@ -218,9 +220,9 @@ ARTICLES26['eclipse-2027'] = {
       <p>Looking at the Sun is dangerous except for one moment. The widely repeated guidance in the
       eclipse guides is that eclipse glasses meeting the <strong>ISO 12312-2</strong> standard must be
       worn during every partial phase, before and after totality, and may be removed only during the brief
-      total phase, inside the path of totality, and put back on as soon as the first bright sliver of Sun
-      returns. Ordinary sunglasses are not a substitute, and the glasses do not protect a camera, binoculars
-      or a telescope. Checking the marking on the glasses, and not the packaging, is the point.
+      total phase, inside the path of totality, when no bright part of the Sun remains visible, and put back on as
+      soon as the first bright sliver returns. Ordinary sunglasses are not a substitute, and eclipse glasses do not make a camera, binoculars
+      or a telescope safe: those need their own solar filters fitted to the front. Checking the marking on the glasses, and not the packaging, is the point.
       The agency guidance (NASA, the American Astronomical Society) is worth reading directly before the
       date, because most of the pages that repeat it are selling glasses.</p>
 
@@ -250,7 +252,7 @@ ARTICLES26['eclipse-2027'] = {
 
 """ + check([
         'The total solar eclipse is on <strong>2 August 2027</strong>, crossing southern Spain and North '
-        'Africa and ending in Egypt.',
+        'Africa, then continuing across Egypt and the Arabian Peninsula to Somalia.',
         'Longest totality: about <strong>6 minutes 23 seconds</strong> near Luxor. In Spain: about '
         '4 minutes 48 seconds at Ceuta, 2 minutes 54 seconds at Cádiz, 1 minute 48 seconds at Málaga.',
         '<strong>Cairo and Giza are outside the path</strong>: about 95% partial, not total.',
@@ -315,12 +317,12 @@ ARTICLES26['uk-eta'] = {
 
       <p>An ETA is permission to travel to the UK. It is not a visa, and it is not a guarantee of entry.
       A border officer can still refuse a visitor who has one, and guides describe it as
-      authorizing travel, not admission. It does not allow work. It is a screening step that moves the
+      authorizing travel, not admission. It does not generally authorize working in the UK; the visitor rules set out what is permitted. It is a screening step that moves the
       question of whether you may come from the border to before you leave.</p>
 
       <p>It applies to Americans, Canadians, Australians and citizens of all 27 EU countries, among others.
-      British and Irish citizens are exempt, including dual citizens, and a US-Irish dual national would
-      travel on the Irish passport. Airlines now check. A UK Parliament written statement dated
+      British and Irish citizens are exempt, including dual citizens, though a dual national may need to
+      show proof of that citizenship, and GOV.UK sets out how. Airlines now check. A UK Parliament written statement dated
       25 February 2026 says carriers are required to verify, through automated checks against Home
       Office records, that a passenger holds permission to travel before they board. A traveler without
       one can be refused at the gate, which is a worse place to find out than a website.</p>
@@ -340,8 +342,8 @@ ARTICLES26['uk-eta'] = {
       within a day, which makes the sensible rule to apply well before the trip, and not at the airport.</p>
 
       <blockquote class="pull">
-        <p>The official fee is &pound;20. Anything that costs more is a service fee for filling in the same
-        form.</p>
+        <p>The official fee is &pound;20. Third-party sites may charge more, and using them does not speed
+        the Home Office&rsquo;s decision.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -381,7 +383,8 @@ ARTICLES26['uk-eta'] = {
       <h2>What&rsquo;s worth keeping in mind</h2>
 
 """ + check([
-        'American visitors need a UK ETA before they fly. It costs <strong>&pound;20</strong> and lasts '
+        'Most American visitors need a UK ETA before they fly, unless an exemption applies or they already '
+        'hold suitable UK permission. It costs <strong>&pound;20</strong> and lasts '
         '<strong>two years</strong> or until the passport expires.',
         'Each traveler, <strong>including children</strong>, needs their own. It is tied to the passport, so a '
         'new passport means a new ETA.',
@@ -431,8 +434,8 @@ ARTICLES26['silversneakers-2027'] = {
         ('Original Medicare', 'Parts A and B do not cover gym memberships or fitness programs.'),
         ('Plan by plan', 'Fitness benefits are add-ons to individual Medicare Advantage plans. They can '
                          'be added, changed or removed each year.'),
-        ('About 9 in 10', 'Share of Medicare Advantage plans offering some fitness benefit in 2026, down '
-                          'slightly from 2025. Reports citing KFF give 93% and 91%.'),
+        ('Reported shifts', 'Some plans have swapped SilverSneakers for a similar program; others have '
+                            'dropped fitness benefits. No 2027 count of plans offering one was found.'),
         ('15 October &ndash; 7 December', 'Annual Enrollment, when a plan can be changed for 2027.'),
         ('1 January &ndash; 31 March 2027', 'The Medicare Advantage Open Enrollment Period, which allows one '
                                            'change for people already in an Advantage plan.'),
@@ -446,7 +449,8 @@ ARTICLES26['silversneakers-2027'] = {
       product that some plans license, in the same way that other plans use their own programs. The best
       known alternative is UnitedHealthcare&rsquo;s Renew Active, which is reported to appear on certain
       UnitedHealthcare Medicare Advantage and AARP Medicare Supplement plans. A member who sees a different
-      name on a 2027 notice has not necessarily lost the benefit. The program name changed.</p>
+      name on a 2027 notice has not necessarily lost the benefit. The program name changed. But a replacement does not always
+      exist: some plans have dropped fitness benefits altogether.</p>
 
       <p>That is the first thing to check, because the names are not interchangeable. Someone who has used
       a particular gym through SilverSneakers needs to know whether that gym is part of the plan&rsquo;s
@@ -454,12 +458,13 @@ ARTICLES26['silversneakers-2027'] = {
 
       <h2>What is known about 2027</h2>
 
-      <p>Aetna has said it will continue to offer a SilverSneakers basic fitness membership to individual
+      <p>Aetna has said, for 2027, that it will continue to offer a SilverSneakers basic fitness membership to individual
       Medicare Advantage members at no additional cost. Beyond that, no industry-wide announcement of
       drops turned up, and the reporting is mixed. Some plans have dropped SilverSneakers but offer a
-      similar benefit in its place. Others have dropped fitness benefits altogether. The overall figure
-      shows how small the shift is in aggregate and how large it can be for one person: about nine in ten
-      Advantage plans offered some fitness benefit in 2026, and a few points fewer than the year before.</p>
+      similar benefit in its place. Others have dropped fitness benefits altogether. Reporting on 2026
+      shows that most Advantage plans offered some fitness benefit, but sources give different exact
+      figures, and none speaks to 2027 or to any one plan. What is small in aggregate can be large for one
+      person.</p>
 
       <p>It is also not limited to Advantage plans. Some Medicare Supplement (Medigap) policies include a
       fitness program, though not as a standard feature, and an insurer&rsquo;s own materials are the place

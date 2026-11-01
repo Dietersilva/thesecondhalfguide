@@ -121,7 +121,7 @@ DESCRIPTIONS = {
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
     '/tsa-confirmid-fee': 'Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.',
-    '/eclipse-2027': 'The 2 August 2027 total solar eclipse crosses southern Spain and ends in Egypt. Totality lengths, why Cairo misses it, and the next US total eclipse in 2044.',
+    '/eclipse-2027': 'The 2 August 2027 total solar eclipse crosses Spain and North Africa to Egypt. Totality lengths, why Cairo misses it, and the next US total eclipse, in 2044.',
     '/uk-eta': 'Americans need a £20 UK Electronic Travel Authorisation before flying to Britain. Validity, how long it takes, who is exempt, and the sites charging more.',
     '/silversneakers-2027': "Original Medicare doesn't cover a gym; some Advantage plans do. How to check whether your SilverSneakers benefit survives 2027 before 7 December.",
     '/earnings-test': "Still working and collecting Social Security before full retirement age? The 2027 limits are $25,560 and $67,920. What counts, what's withheld, what returns.",
