@@ -28,6 +28,7 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [Advantage or Original: what actually differs](https://thesecondhalfguide.com/advantage-vs-original): Medicare Advantage or Original Medicare: what each one is, how the money works, and the one decision that gets much harder to reverse later on.
 - [The Medicare deadline that never forgives you](https://thesecondhalfguide.com/medicare-enrollment): Miss your Medicare enrollment window without the right coverage and you pay a surcharge every month for life. The seven months that decide it.
 - [CMS canceled 760,000 Marketplace enrollments over fraud concerns](https://thesecondhalfguide.com/aca-unauthorized-enrollment): CMS canceled 315,000 Marketplace enrollments covering 760,000 people over fraud concerns. How to check whether your own coverage was affected.
+- [Medicare telehealth: covered at home through the end of 2027](https://thesecondhalfguide.com/medicare-telehealth-2027): Congress extended Medicare telehealth through 31 December 2027. Visits from home, what they cost, and what returns on 1 January 2028 if nothing passes.
 - [The Medicare Prescription Payment Plan: same cap, paid monthly](https://thesecondhalfguide.com/prescription-payment-plan): The Part D payment plan spreads the $2,400 out-of-pocket cap into monthly bills. It doesn't lower costs, and switching plans in open enrollment ends it.
 
 ## Money & the tax year
@@ -57,6 +58,7 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [What someone over 65 can actually deduct in 2026](https://thesecondhalfguide.com/standard-deduction-65): Three separate deductions stack for someone over 65 in 2026: the base, the age-65 addition, and the new $6,000. Together, more than most expect.
 - [The $75,000 line, and what the senior deduction is worth above it](https://thesecondhalfguide.com/senior-deduction-phaseout): The $6,000 senior deduction shrinks by six cents per dollar above $75,000 single or $150,000 joint, and reaches zero at $175,000. The arithmetic.
 - [The new $6,000 senior deduction, explained](https://thesecondhalfguide.com/senior-deduction): The new $6,000 senior deduction for people 65 and over — temporary, income-limited, and widely misdescribed as “no tax on Social Security.”
+- [Working while you collect Social Security: the 2027 earnings test](https://thesecondhalfguide.com/earnings-test): Still working and collecting Social Security before full retirement age? The 2027 limits are $25,560 and $67,920. What counts, what's withheld, what returns.
 - [What the 2026 Trustees Report actually says about Social Security](https://thesecondhalfguide.com/social-security-trust-fund): The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.
 
 ## Paperwork that matters
@@ -76,6 +78,7 @@ Published by Edward Silva. Not financial, legal, medical or tax advice; this is 
 - [The medical equipment fraud crackdown, and what to check on your own statement](https://thesecondhalfguide.com/medical-equipment-fraud): CMS barred 11 equipment suppliers tied to $3.4 billion in suspected fraudulent billing. What to actually check on your own Medicare statement.
 - [The equipment prior-authorization change starting October 15](https://thesecondhalfguide.com/dme-prior-authorization): From October 15, CMS requires some new equipment suppliers to get approval before delivering and billing certain items. Who it covers and what patients see.
 - [The Medicare website that is really an ad](https://thesecondhalfguide.com/search-ad-scam): The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.
+- [What the FTC’s new report says older adults lost to fraud](https://thesecondhalfguide.com/ftc-older-adults-fraud-report): The FTC says people 60 and older reported about $3 billion lost to fraud in 2025, five times 2020. What the figure counts and what it leaves out.
 - [The Social Security “COLA activation” scam](https://thesecondhalfguide.com/cola-scam): The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.
 
 ## Aging in place
