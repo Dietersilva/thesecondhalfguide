@@ -56,8 +56,10 @@ ARTICLES25['earnings-test'] = {
     ]) + """
       <h2>Who it applies to</h2>
 
-      <p>Only people who are receiving Social Security retirement benefits and have not yet reached
-      full retirement age. For anyone born in 1960 or later, full retirement age is 67. Someone who is
+      <p>People who are receiving Social Security benefits before full retirement age and are still
+      working. That includes retirement benefits and, according to SSA&rsquo;s own guidance as
+      reported, spousal and survivor benefits claimed before full retirement age. This page describes
+      the retirement case. For anyone born in 1960 or later, full retirement age is 67. Someone who is
       working but has not claimed is not subject to the test at all, because there is no benefit to
       withhold. The test is about the overlap: claiming early while still earning.</p>
 
@@ -119,8 +121,7 @@ ARTICLES25['earnings-test'] = {
       months in which payments were withheld, as if the person had claimed correspondingly later.
       A person with several withheld months ends up with a somewhat higher benefit for the rest of their
       life. How long it takes for the higher benefit to repay the amount withheld depends on the
-      individual case. One published estimate puts it at roughly twelve to fifteen years, which is a
-      rough figure and not an SSA number.</p>
+      individual case.</p>
 
       <p>It is also why the test sits oddly beside the rule for waiting past full retirement age, covered
       on <a href="/delayed-retirement-credit">the delayed retirement credit page</a>. That credit is a
@@ -205,6 +206,7 @@ ARTICLES25['ftc-older-adults-fraud-report'] = {
         ('About $600 million', 'The comparable figure for 2020. The total has grown roughly fivefold.'),
         ('Over $1 billion', 'Reported losses to investment scams, the largest single category. Up 42% '
                             'from 2024.'),
+        ('About 70%', 'The share of reported dollars that came from losses of $100,000 or more.'),
         ('$13.3 billion to $119.5 billion', 'The FTC&rsquo;s estimate of what fraud costs older adults '
                                             'once unreported losses are counted. The range reflects '
                                             'different assumptions.'),
@@ -214,19 +216,22 @@ ARTICLES25['ftc-older-adults-fraud-report'] = {
       <p>The figure is <em>reported</em> loss. It is what people told the FTC, or what reached the FTC
       through the other agencies and organizations that feed its Consumer Sentinel database. A scam that
       nobody reports is not in it. That is the single most important thing about the number, and it cuts
-      the other way from what most readers assume. The $3 billion is a floor.</p>
+      the other way from what most readers assume. The $3 billion is the loss reported through the FTC&rsquo;s data collection. It is not an estimate
+      of every dollar lost to fraud.</p>
 
       <p>The FTC says as much itself. Using different assumptions about how many people never
       report, it estimates the true cost to older adults in
       2025 at somewhere between $13.3 billion and $119.5 billion. A range that wide says the agency
-      does not know the answer. It does say the reported figure is a small piece of it.</p>
+      does not know the answer. It does say the reported figure captures only part of the loss.</p>
 
       <h2>Why the total grew fivefold</h2>
 
       <p>From about $600 million in 2020 to about $3 billion in 2025 is not a story about more
       people being fooled by the same thing. According to coverage of the report, the rise was driven
       largely by individual losses of $100,000 or more, often to investment scams, romance scams and
-      impersonators. A smaller number of very large losses moves a total much more than a large number
+      impersonators. As reported from the FTC&rsquo;s figures, reports of that size rose from 1,136 in
+      2020 to 6,769 in 2025, and together they account for roughly 70% of the dollars older adults
+      reported, about $2.1 billion of the total. A smaller number of very large losses moves a total much more than a large number
       of small ones.</p>
 
       <p>That is also why investment scams top the list. They reported more than $1 billion in losses
@@ -344,7 +349,8 @@ ARTICLES25['medicare-telehealth-2027'] = {
         ('3 February 2026', 'When the two-year extension was signed, as part of the Consolidated '
                             'Appropriations Act, 2026.'),
         ('31 December 2027', 'The last day the expanded flexibilities are in effect.'),
-        ('1 January 2028', 'When the older limits return, unless Congress acts again.'),
+        ('1 January 2028', 'When the general flexibilities end and the older limits return, unless '
+                           'Congress acts again. Mental-health telehealth follows separate rules.'),
         ('Your home', 'Counts as the place you receive the visit. Before 2020, in most cases it did not.'),
         ('20%', 'The usual Part B coinsurance, after the Part B deductible. A telehealth visit is billed '
                 'like an in-person one.'),
@@ -406,8 +412,8 @@ ARTICLES25['medicare-telehealth-2027'] = {
 
       <h2>What happens on 1 January 2028</h2>
 
-      <p>Unless Congress extends the rules again or makes them permanent, the pre-pandemic limits come
-      back: the rural and facility restrictions and the narrower list of covered situations. That is
+      <p>Unless Congress extends the rules again or makes them permanent, the general flexibilities
+      described above end and the pre-pandemic limits come back: the rural and facility restrictions and the narrower list of covered situations. That is
       about fourteen months away. Congress has extended these rules repeatedly, sometimes after a
       lapse. That is a pattern, and it is not a promise. Reporting on the extension notes that there has been
       little movement on bills to make the flexibilities permanent.</p>
@@ -416,13 +422,18 @@ ARTICLES25['medicare-telehealth-2027'] = {
       for example a recurring series of visits, should expect the rules for visits in January 2028 to be
       whatever Congress has decided by then.</p>
 
-      <h2>A note about what this page leaves out</h2>
+      <h2>Mental health visits follow different rules</h2>
 
-      <p>Mental health care by telehealth has its own set of rules, and reporting on them is not
-      consistent about which parts are permanent and which are on the same 2027 clock, so this page does
-      not describe them. The same goes for prescribing of controlled substances by telehealth, which
-      is governed by federal drug enforcement rules rather than by Medicare. Neither is covered here, and
-      the provider&rsquo;s office is the right place to ask about both.</p>
+      <p>Telehealth for mental and behavioral health is not simply on the same clock. HHS&rsquo;s
+      telehealth guidance says Medicare&rsquo;s requirement for an in-person visit alongside behavioral
+      telehealth is not being enforced through 31 December 2027, and reporting describes visits from home
+      for these services as not tied to this extension. Sources describe audio-only rules for behavioral
+      care differently, so this page does not. The point is that the end of 2027 is not the end of every
+      telehealth flexibility, and the provider&rsquo;s office is the place to ask about mental health
+      care.</p>
+
+      <p>Prescribing of controlled substances by telehealth is governed by federal drug enforcement
+      rules rather than by Medicare, and is not covered here either.</p>
 
       <p>Medicare Advantage plans are separate again. Each plan sets its own network and visit rules,
       which is one more reason the plan&rsquo;s own
@@ -438,7 +449,8 @@ ARTICLES25['medicare-telehealth-2027'] = {
         'It is paid like any Part B service: the deductible, then <strong>20%</strong>. The 2026 deductible '
         'is $283; the 2027 figure has not been announced.',
         'Audio-only visits are allowed for <strong>some</strong> services, not all.',
-        'On <strong>1 January 2028</strong> the older limits return unless Congress acts again.',
+        'On <strong>1 January 2028</strong> the general flexibilities end and the older limits return '
+        'unless Congress acts again. Mental-health telehealth follows separate rules.',
     ]) + """
       <p>The rule that governs a visit is the rule on the day of the visit. For the next fourteen months,
       that rule is generous. After that, it depends on a vote.</p>
@@ -452,6 +464,8 @@ ARTICLES25['medicare-telehealth-2027'] = {
          'https://www.forbes.com/sites/brucejapsen/2026/02/03/congress-extends-medicare-telehealth-coverage-for-two-years/'),
         ('KFF &mdash; What to know about Medicare coverage of telehealth',
          'https://www.kff.org/medicare/what-to-know-about-medicare-coverage-of-telehealth/'),
+        ('HHS &mdash; Telehealth.HHS.gov, Medicare payment policies',
+         'https://telehealth.hhs.gov/providers/billing-and-reimbursement/medicare-payment-policies'),
         ('Foley &amp; Lardner &mdash; Medicare telehealth flexibilities: countdown to January 30, 2026',
          'https://www.foley.com/insights/publications/2026/01/medicare-telehealth-flexibilities-countdown-to-january-30-2026-and-what-comes/'),
     ],

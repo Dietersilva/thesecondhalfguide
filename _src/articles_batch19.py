@@ -165,10 +165,11 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
            'side of that you are on.',
     'meta': '5 minute read &middot; Verified against independent reporting on CMS&rsquo;s September 22 '
             'announcement',
-    'checked': '26 October 2026',
-    'recheck': {'due': '2026-11-01', 'why': 'Marketplace open enrollment opens 1 November -- confirm the '
-                'HealthCare.gov dates (1 Nov to 15 Jan; enroll by 15 Dec for 1 Jan coverage), the broker '
-                'rules and whether CMS has published guidance for consumers whose coverage was canceled.'},
+    'checked': '1 November 2026',
+    'recheck': {'due': '2026-12-15', 'why': 'Confirm the HealthCare.gov open-enrollment close held at 15 January '
+                '(the 15 December rule was reportedly set aside in June; an appeal is pending), the broker '
+                'authorization rules in practice, and whether CMS has published guidance for consumers whose '
+                'coverage was canceled.'},
     'body': """      <p>On September 22, 2026, CMS announced that it had canceled roughly 315,000 ACA Marketplace
       enrollments, covering more than 760,000 people, as part of an anti-fraud action targeting
       unauthorized broker-assisted sign-ups. The cancellations themselves took effect on August 31;
@@ -253,6 +254,23 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
       plan&rsquo;s own appeal or complaint process. Ask which review applies to your particular notice.
       Filing an appeal costs nothing and does not require a lawyer.</p>
 
+      <h2>Open enrollment, and what changed for brokers</h2>
+
+      <p>Open enrollment for 2027 coverage began on 1 November. CMS&rsquo;s plan-year 2027 fact sheet
+      gives HealthCare.gov&rsquo;s window as 1 November 2026 to 15 January 2027. Secondary guides add that
+      enrolling by 15 December generally starts coverage on 1 January, and that later enrollment starts
+      on 1 February. Reporting also says a rule that would have ended HealthCare.gov enrollment on
+      15 December was set aside by a federal court in June, and that CMS has said the full January window
+      applies this season while an appeal is pending. State-run Marketplaces set their own dates.</p>
+
+      <p>On the broker side, CMS said it would require a consumer&rsquo;s electronic authorization before an
+      agent or broker can act on an application or enrollment, and that applications involving a broker
+      must include a Social Security or immigration document number for applicants other than newborns.
+      Existing brokers are also being asked to verify their identity again. As of mid-October,
+      HealthInsurance.org reported that CMS had not published steps for someone whose legitimate
+      enrollment was canceled, apart from enrolling during open enrollment, and this site found no such
+      guidance as of 1 November.</p>
+
       <h2>What to actually do</h2>
 
 """ + check([
@@ -292,6 +310,14 @@ ARTICLES19['aca-unauthorized-enrollment'] = {
          'https://www.forbes.com/sites/jessepines/2026/09/23/cms-canceled-aca-coverage-for-760000-people-over-fraud-heres-what-patients-should-know'),
         ('Groom Law Group &mdash; CMS Targets Unauthorized Marketplace Enrollments and Broker Misconduct',
          'https://www.groom.com/resources/cms-targets-unauthorized-marketplace-enrollments-and-broker-misconduct-102o2yg/'),
+        ('CMS &mdash; Plan year 2027 Marketplace plans and prices fact sheet',
+         'https://www.cms.gov/newsroom/fact-sheets/plan-year-2027-marketplace-plans-prices-fact-sheet-0'),
+        ('Healthcare Dive &mdash; CMS freezes new ACA broker registrations for 2027, culls &lsquo;unauthorized&rsquo; '
+         'enrollees',
+         'https://www.healthcaredive.com/news/cms-freezes-new-aca-broker-registrations-for-2027/831138/'),
+        ('HealthInsurance.org &mdash; Why did the federal government cancel ACA Marketplace coverage for '
+         '760,000 people?',
+         'https://www.healthinsurance.org/faqs/why-did-the-federal-government-cancel-aca-marketplace-coverage-for-760000-people/'),
         ('HealthCare.gov &mdash; What can I appeal?',
          'https://www.healthcare.gov/marketplace-appeals/'),
     ],
