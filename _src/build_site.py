@@ -120,6 +120,10 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/tsa-confirmid-fee': 'Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.',
+    '/eclipse-2027': 'The 2 August 2027 total solar eclipse crosses Spain and North Africa to Egypt. Totality lengths, why Cairo misses it, and the next US total eclipse, in 2044.',
+    '/uk-eta': 'Americans need a £20 UK Electronic Travel Authorisation before flying to Britain. Validity, how long it takes, who is exempt, and the sites charging more.',
+    '/silversneakers-2027': "Original Medicare doesn't cover a gym; some Advantage plans do. How to check whether your SilverSneakers benefit survives 2027 before 7 December.",
     '/earnings-test': "Still working and collecting Social Security before full retirement age? The 2027 limits are $25,560 and $67,920. What counts, what's withheld, what returns.",
     '/ftc-older-adults-fraud-report': 'The FTC says people 60 and older reported about $3 billion lost to fraud in 2025, five times 2020. What the figure counts and what it leaves out.',
     '/medicare-telehealth-2027': 'Congress extended Medicare telehealth through 31 December 2027. Visits from home, what they cost, and what returns on 1 January 2028 if nothing passes.',
@@ -332,6 +336,10 @@ TITLE_OVERRIDES = {
     '/money': 'Social Security, Retirement and Tax Rules After 55',
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
+    '/tsa-confirmid-fee': 'TSA $45 ID Fee (ConfirmID): Who Pays and Who Does Not',
+    '/eclipse-2027': '2 August 2027 Total Solar Eclipse: Path and Duration',
+    '/uk-eta': 'UK ETA for Americans: The £20 Travel Authorization',
+    '/silversneakers-2027': 'SilverSneakers and Medicare Gym Benefits for 2027',
     '/ftc-older-adults-fraud-report': 'FTC Report: Older Adults Reported $3 Billion in Fraud Losses',
     '/medicare-telehealth-2027': 'Medicare Telehealth Is Covered Through 2027',
     '/advantage-vs-original': 'Medicare Advantage vs. Original Medicare: What Differs',
@@ -351,6 +359,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
     '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',
     '/cola-2027-estimate', '/social-security-trust-fund', '/cola-scam', '/prescription-payment-plan',
     '/medicare-90-payment', '/star-ratings-2027', '/dme-prior-authorization', '/glp1-bridge',
