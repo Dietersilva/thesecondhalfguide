@@ -30,13 +30,13 @@ ARTICLES22['claiming-age-clarity-act'] = {
            'or dollar amount.',
     'meta': '5 minute read &middot; Checked against the bill text and independent reporting on its '
             'passage',
-    'checked': '26 October 2026',
-    'recheck': {'due': '2026-11-02', 'why': 'Signing status still unconfirmed on 26 October; no Public Law '
+    'checked': '1 November 2026',
+    'recheck': {'due': '2026-11-09', 'why': 'Signing status still unconfirmed on 1 November; no Public Law '
                 'number found -- check the Congress.gov action history and update the opening and the '
                 'status row.'},
     'body': """      <p>On September 29, the Senate passed the Claiming Age Clarity Act by unanimous consent. The House
       had already passed the identical bill on December 1, 2025, so nothing more is needed from Congress.
-      The bill, H.R. 5284, went to the President. As of October 26, this site could not confirm what
+      The bill, H.R. 5284, went to the President. As of November 1, this site could not confirm what
       happened next. The sources it could read show the Senate&rsquo;s September 29 passage as the latest
       recorded action, and none gives a Public Law number. Whether the bill has been signed is therefore
       unconfirmed, and the Congress.gov action history is the place to settle it.</p>
@@ -48,7 +48,7 @@ ARTICLES22['claiming-age-clarity-act'] = {
 """ + facts('The bill, at a glance', [
         ('Bill', 'H.R. 5284, the Claiming Age Clarity Act.'),
         ('Status', 'Passed the House on December 1, 2025 and the Senate on September 29, 2026 without '
-                   'changes. Sent to the President. Not confirmed as signed as of October 26; no '
+                   'changes. Sent to the President. Not confirmed as signed as of November 1; no '
                    'Public Law number found.'),
         ('Age 62', 'Now &ldquo;early eligibility age.&rdquo; Would become the <strong>minimum monthly '
                    'benefit age</strong>.'),
@@ -58,6 +58,8 @@ ARTICLES22['claiming-age-clarity-act'] = {
                    'benefit age</strong>.'),
         ('What does not change', 'When you can file, the size of any reduction or increase, and every '
                                  'dollar amount.'),
+        ('When the new words would appear', 'As reported, the agency would have until the later of 1 January '
+                                            '2027 or 12 months after the bill becomes law to make the change.'),
     ]) + """
       <h2>Why the words matter to anyone</h2>
 
