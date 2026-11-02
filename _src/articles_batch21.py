@@ -28,7 +28,7 @@ ARTICLES21['search-ad-scam'] = {
     'meta': '5 minute read &middot; Checked against the FTC&rsquo;s September 2026 consumer alert and '
             'independent reporting that cites it',
     'checked': CHECKED21,
-    'recheck': {'due': '2026-11-02', 'why': 'Open enrollment is under way -- check for a newer FTC alert '
+    'recheck': {'due': '2026-12-07', 'why': 'Open enrollment closes 7 December -- check for a newer FTC alert '
                 'or enforcement action on paid-search impersonation.'},
     'body': """      <p>Most open-enrollment scam warnings are about the phone. The Federal Trade Commission&rsquo;s
       alert, published on September 28 ahead of Medicare and Marketplace open enrollment, is about
