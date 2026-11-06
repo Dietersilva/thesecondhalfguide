@@ -120,6 +120,8 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/medicaid-work-requirements': 'Expansion adults 19 to 64 must show 80 hours a month of work, study or service from 1 January 2027. Exemptions, the 30-day notice, and what varies by state.',
+    '/wiser-prior-authorization': 'Since January, six states require prior authorization for some Part B services in traditional Medicare. Which states and services, and why Advantage differs.',
     '/tsa-confirmid-fee': 'Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.',
     '/eclipse-2027': 'The 2 August 2027 total solar eclipse crosses Spain and North Africa to Egypt. Totality lengths, why Cairo misses it, and the next US total eclipse, in 2044.',
     '/uk-eta': 'Americans need a £20 UK Electronic Travel Authorisation before flying to Britain. Validity, how long it takes, who is exempt, and the sites charging more.',
@@ -337,6 +339,8 @@ TITLE_OVERRIDES = {
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
     '/tsa-confirmid-fee': 'TSA $45 ID Fee (ConfirmID): Who Pays and Who Does Not',
+    '/medicaid-work-requirements': 'Medicaid Work Requirements 2027: Ages 19-64, 80 Hours',
+    '/wiser-prior-authorization': 'Prior Authorization in Traditional Medicare: Six States',
     '/eclipse-2027': '2 August 2027 Total Solar Eclipse: Path and Duration',
     '/uk-eta': 'UK ETA for Americans: The £20 Travel Authorization',
     '/silversneakers-2027': 'SilverSneakers and Medicare Gym Benefits for 2027',
@@ -359,6 +363,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
     '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',
     '/cola-2027-estimate', '/social-security-trust-fund', '/cola-scam', '/prescription-payment-plan',
