@@ -44,6 +44,7 @@
  "long-term-care": "31a8bca71fb2",
  "ma-flex-card-2027": "d55959b4b16a",
  "ma-plan-exits-2027": "70f3a6430375",
+ "medicaid-work-requirements": "f846719cfd86",
  "medical-equipment-fraud": "97eb8302cf9a",
  "medicare-2027-costs": "20cf8c79bd29",
  "medicare-90-payment": "63c8bec21d50",
@@ -99,5 +100,6 @@
  "wednesday-letters": "76774e6fd0f3",
  "wellness-visit": "601b15f8c4ff",
  "wep-gpo-repeal": "8bc15dd89c49",
- "widows-penalty": "b3017d36d1bb"
+ "widows-penalty": "b3017d36d1bb",
+ "wiser-prior-authorization": "fd58162b7887"
 }
