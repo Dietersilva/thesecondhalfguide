@@ -28,7 +28,7 @@ ARTICLES21['search-ad-scam'] = {
     'meta': '5 minute read &middot; Checked against the FTC&rsquo;s September 2026 consumer alert and '
             'independent reporting that cites it',
     'checked': CHECKED21,
-    'recheck': {'due': '2026-11-02', 'why': 'Open enrollment is under way -- check for a newer FTC alert '
+    'recheck': {'due': '2026-12-07', 'why': 'Open enrollment closes 7 December -- check for a newer FTC alert '
                 'or enforcement action on paid-search impersonation.'},
     'body': """      <p>Most open-enrollment scam warnings are about the phone. The Federal Trade Commission&rsquo;s
       alert, published on September 28 ahead of Medicare and Marketplace open enrollment, is about
@@ -169,9 +169,7 @@ ARTICLES21['roth-catch-up'] = {
            'regulations apply from 2027, and some plans will not take catch-ups at all.',
     'meta': '6 minute read &middot; Checked against the IRS final regulations as reported by several '
             'plan administrators and law firms',
-    'checked': CHECKED21,
-    'recheck': {'due': '2026-11-15', 'why': 'The IRS normally announces next year\'s indexed limits in '
-                'the fall -- replace the unconfirmed 2027 wage threshold with the official figure.'},
+    'checked': '13 November 2026',
     'body': """      <p>A rule from the SECURE 2.0 Act changes how a certain group of older workers saves in a
       workplace plan. If you are 50 or older and earned more than a threshold in wages from your
       employer the previous year, any catch-up contribution you make must be a
@@ -189,9 +187,9 @@ ARTICLES21['roth-catch-up'] = {
                 'plan whose prior-year wages from <em>that employer</em> exceeded the threshold.'),
         ('2026 threshold', '<strong>$150,000</strong> of prior-year (2025) wages, indexed from '
                            '$145,000 in the law.'),
-        ('2027 threshold', 'Indexed again, and based on 2026 wages. At checking time the IRS had not '
-                           'published it; some outside estimates say $155,000. Treat that as '
-                           'unconfirmed.'),
+        ('2027 threshold', '<strong>$155,000</strong> of prior-year (2026) wages, per the IRS&rsquo;s '
+                           'Notice 2026-66 of 12 November 2026, as reported by several plan and tax '
+                           'outlets.'),
         ('Which wages', 'Social Security (FICA) wages, <strong>Box 3 of the W-2</strong>, from the '
                         'employer sponsoring the plan. Generally not combined across employers; the '
                         'final regulations allow aggregation in specified cases, such as related '
@@ -249,7 +247,8 @@ ARTICLES21['roth-catch-up'] = {
       gives up the upfront income-tax exclusion that a pre-tax contribution carries, and qualified
       withdrawals later are tax-free. That does not mean the lifetime tax bill comes out the same, and
       the rule does not raise the amount that may be contributed. The 2026 figures above are labeled
-      as 2026; the 2027 limits had not been officially published when this was checked.</p>
+      as 2026; the 2027 limits, announced on 12 November 2026, are in the fact table above and on
+      <a href="/retirement-limits-2027">the 2027 limits page</a>.</p>
 
       <h2>The 60&ndash;63 window and the plan that has no Roth</h2>
 
@@ -268,8 +267,8 @@ ARTICLES21['roth-catch-up'] = {
 """ + check([
         'Find <strong>Box 3</strong> of last year&rsquo;s W-2 from the employer that sponsors the plan. '
         'That is the number the test uses, not Box 1.',
-        'Compare it with the threshold for the contribution year. For 2026 it is $150,000; for 2027, '
-        'wait for the IRS figure rather than relying on an estimate.',
+        'Compare it with the threshold for the contribution year. For 2026 it is $150,000; for 2027 it is '
+        '$155,000 of 2026 wages.',
         'Ask the plan administrator whether the plan <strong>offers a Roth option</strong> and '
         'how it will handle catch-up contributions.',
         'If you are self-employed or a partner with no W-2 wages from the plan, the Roth-only rule '

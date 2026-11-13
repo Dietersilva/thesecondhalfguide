@@ -14,13 +14,14 @@ CLUSTERS = [
      'advantage-vs-original', 'anoc-letter', 'cobra-medicare-trap', 'hsa-medicare-timing'],
     # Medicare Advantage and the 2027 plan year
     ['ma-plan-exits-2027', 'ma-flex-card-2027', 'medicare-marketing-rules-2026', 'anoc-letter', 'silversneakers-2027',
-     'medicare-2027-costs', 'advantage-vs-original', 'open-enrollment'],
+     'medicare-2027-costs', 'advantage-vs-original', 'open-enrollment', 'wiser-prior-authorization'],
     # What Medicare costs
     ['medicare-2027-costs', 'drug-cap', 'drug-negotiation-2027', 'irmaa', 'medicare-savings',
-     'medicare-gaps', 'globe-part-b-drugs', 'prescription-payment-plan', 'medicare-telehealth-2027'],
+     'medicare-gaps', 'globe-part-b-drugs', 'prescription-payment-plan', 'medicare-telehealth-2027', 'wiser-prior-authorization'],
     ['medicare-gaps', 'long-term-care', 'observation-status', 'wellness-visit', 'medigap-window'],
     ['irmaa', 'medicare-savings', 'medicare-2027-costs', 'cola', 'aca-subsidy-cliff'],
-    ['aca-subsidy-cliff', 'aca-unauthorized-enrollment', 'cobra-medicare-trap', 'medicare-enrollment'],
+    ['aca-subsidy-cliff', 'aca-unauthorized-enrollment', 'cobra-medicare-trap', 'medicare-enrollment',
+     'medicaid-work-requirements'],
     # Social Security: claiming and benefits
     ['social-security-62', 'delayed-retirement-credit', 'spousal-benefits', 'widows-penalty',
      'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund', 'earnings-test'],
@@ -33,9 +34,10 @@ CLUSTERS = [
     ['wep-gpo-repeal', 'spousal-benefits', 'social-security-62', 'widows-penalty'],
     # Taxes
     ['senior-deduction', 'senior-deduction-phaseout', 'senior-deduction-sunset', 'standard-deduction-65',
-     'no-tax-on-social-security', 'property-tax'],
+     'no-tax-on-social-security', 'property-tax', 'tax-numbers-2027'],
     # Retirement accounts
-    ['catch-up-60-63', 'roth-catch-up', 'rule-of-55', 'rmd-deadline', 'hsa-medicare-timing'],
+    ['catch-up-60-63', 'roth-catch-up', 'rule-of-55', 'rmd-deadline', 'hsa-medicare-timing',
+     'retirement-limits-2027'],
     ['rmd-deadline', 'beneficiary-form', 'senior-deduction'],
     # Estate paperwork
     ['beneficiary-form', 'power-of-attorney', 'digital-estate', 'widows-penalty', 'long-term-care',

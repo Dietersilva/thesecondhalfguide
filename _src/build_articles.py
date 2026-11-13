@@ -1227,7 +1227,9 @@ def _load_batches():
                       ('articles_batch23', 'ARTICLES23'),
                       ('articles_batch24', 'ARTICLES24'),
                       ('articles_batch25', 'ARTICLES25'),
-                      ('articles_batch26', 'ARTICLES26')):
+                      ('articles_batch26', 'ARTICLES26'),
+                      ('articles_batch27', 'ARTICLES27'),
+                      ('articles_batch28', 'ARTICLES28')):
         ARTICLES.update(getattr(importlib.import_module(mod), name))
 
 
