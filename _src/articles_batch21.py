@@ -19,26 +19,26 @@ CHECKED21 = '3 October 2026'
 
 # ------------------------------------------------------- paid search ad scam
 ARTICLES21['search-ad-scam'] = {
-    'title': 'The Medicare Website That Is Really an Ad &mdash; The Second Half Guide',
+    'title': 'When a Medicare Search Result Is an Ad &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'The Medicare website that is really an ad',
-    'dek': 'The FTC&rsquo;s open-enrollment warning is about a scam that starts with a search, not a '
-           'phone call: paid ads that sit above the real Medicare.gov and look official. Here is how '
-           'to tell the difference in about two seconds.',
+    'h1': 'When a Medicare search result is an ad',
+    'dek': 'The FTC warns that scammers can buy search ads that imitate official health-insurance sites. '
+           'Check the website&rsquo;s actual address and use verified help.',
     'meta': '5 minute read &middot; Checked against the FTC&rsquo;s September 2026 consumer alert and '
             'independent reporting that cites it',
-    'checked': CHECKED21,
+    'checked': '13 November 2026',
     'recheck': {'due': '2026-12-07', 'why': 'Open enrollment closes 7 December -- check for a newer FTC alert '
-                'or enforcement action on paid-search impersonation.'},
+                'or enforcement action on paid-search impersonation, and confirm the October 29 letters '
+                'description still matches the FTC release.'},
     'body': """      <p>Most open-enrollment scam warnings are about the phone. The Federal Trade Commission&rsquo;s
       alert, published on September 28 ahead of Medicare and Marketplace open enrollment, is about
-      something quieter: the search results page. Its point is simple. Scammers pay to appear at the top
-      of search results, and a paid result can look a great deal like the real thing.</p>
+      something quieter: the search results page. Its point is simple. Scammers can pay to appear at the
+      top of search results, and a paid result can look a great deal like the real thing.</p>
 
-      <p>Someone searching for &ldquo;Medicare plans&rdquo; in October is exactly who the ad is built for.
-      The link goes to a page that borrows official-looking logos and keywords, or to a number that rings
-      a call center. The FTC says a person who uses that link or number can end up paying for something
-      that is not health insurance, or exposing personal information to medical identity theft.</p>
+      <p>Someone searching for &ldquo;Medicare plans&rdquo; during open enrollment is who such an ad is built
+      for. The link can go to a page that borrows official-looking logos and keywords, or to a number that
+      rings a call center. The FTC says a person who uses that link or number can end up paying for
+      something that is not health insurance, or exposing personal information to medical identity theft.</p>
 
 """ + facts('What the FTC alert says, at a glance', [
         ('Where it starts', 'A <strong>paid ad</strong> at the top of search results, not a call or a '
@@ -47,36 +47,37 @@ ARTICLES21['search-ad-scam'] = {
                              'looking logos and the keywords you searched for.'),
         ('What it can cost you', 'Payment for a plan that is <strong>not health insurance</strong>, or '
                                  'medical identity theft.'),
-        ('Official addresses', '<strong>Medicare.gov</strong> and <strong>HealthCare.gov</strong>. '
-                               'Government sites end in .gov.'),
+        ('Official addresses', '<strong>Medicare.gov</strong> for Medicare and '
+                               '<strong>HealthCare.gov</strong> for federal Marketplace information. Check '
+                               'the hostname that actually loads.'),
         ('Official phone', '<strong>1-800-633-4227</strong> (1-800-MEDICARE) for Medicare.'),
-        ('Medicare open enrollment', '<strong>15 October &ndash; 7 December</strong>. The window '
-                                     'when this traffic peaks.'),
+        ('Medicare open enrollment', '<strong>15 October &ndash; 7 December</strong>, here for 2027 '
+                                     'coverage.'),
         ('Where to report', 'ReportFraud.ftc.gov and your state attorney general; Medicare-related '
                             'scams also to Medicare at the number above.'),
     ]) + """
       <h2>What a paid result looks like</h2>
 
-      <p>The surest route skips the results altogether. Typing <strong>medicare.gov</strong> into the
-      browser&rsquo;s address bar yourself, or calling 1-800-MEDICARE, means no one has paid to put
-      anything in front of you. Then check the address that actually loads: it should end in
-      <strong>.gov</strong>.</p>
+      <p>For the official Medicare website, type <strong>https://www.medicare.gov</strong> into the
+      browser&rsquo;s address bar. Then check the hostname that actually loads. Medicare.gov and its genuine
+      subdomains are different from a lookalike such as medicare.gov.example.com, where the real domain is
+      the part just before the final &ldquo;.com&rdquo;. Only verified U.S. government organizations can
+      register .gov domains, so a true .gov hostname is a useful signal, but check the hostname itself, not
+      the page title or a string that merely contains &ldquo;.gov.&rdquo; For federal Marketplace
+      information, use HealthCare.gov.</p>
 
       <p>If you do search, a search engine labels paid placements, usually with a small &ldquo;Ad&rdquo;
-      or &ldquo;Sponsored&rdquo; tag near the result. The tag is easy to miss and the page it leads to
-      can be built to look like a government site. The FTC&rsquo;s practical advice is to scroll past
-      anything marked that way and look for a result whose address ends in <strong>.gov</strong>.</p>
+      or &ldquo;Sponsored&rdquo; tag near the result. The tag is easy to miss.</p>
 
       <p>Not every ad is a scam. Plenty of paid results come from legitimate private businesses, such
-      as brokers and insurers, that are simply unrelated to the government. The point is narrower: a
-      paid result is not Medicare, and the official Plan Finder is free. Browsing plans and enrolling
-      in one are different stages, and personal details, including a Medicare number, belong at the
-      enrollment stage with a company or agent you chose, not on the first page a search ad
-      sends you to.</p>
+      as brokers and insurers. The point is narrower: the official Plan Finder is free, and browsing plans
+      and enrolling in one are different stages. Be cautious about giving a Medicare number to anyone who
+      reached you first or to a lead form on a page you cannot verify. A provider, an insurer or a trusted
+      Medicare counselor you chose may legitimately need information for other purposes.</p>
 
       <blockquote class="pull">
-        <p>A paid result is not a government result. The only thing a search ad proves is that someone
-        paid for the position.</p>
+        <p>An Ad or Sponsored label means someone paid for placement. It does not establish who runs the
+        destination or whether it is trustworthy.</p>
       </blockquote>
 
 """ + AD_INLINE + """
@@ -84,64 +85,61 @@ ARTICLES21['search-ad-scam'] = {
 
       <p>An ad does not have to be a convincing forgery. It only has to be there at the moment a person
       is looking, with a headline that echoes the search, and a logo or a web address close enough to
-      pass at a glance. People searching for plan information in the fall are doing something
-      unfamiliar and a little stressful, and the first plausible result is the one most of them click.
-      Search engines carry the ads because advertisers pay for the position, and the FTC&rsquo;s alert
-      treats that as a fact about how the system works, not a defect in the reader.</p>
+      pass at a glance. Search engines carry the ads because advertisers pay for the position, and the
+      FTC&rsquo;s alert treats that as a fact about how the system works, not a defect in the reader.</p>
 
-      <p>It is also not a new concern for the agency. FTC staff sent warning letters to 21 healthcare plan
-      marketers and lead generators in December 2024, which the agency said did not allege that the
-      recipients had broken the law, and the agency has run consumer alerts on
-      open-enrollment scams in earlier years. It held a public roundtable on healthcare scams around
-      open enrollment on September 29. The paid-search version is the part that has grown, because the
-      ad can be placed in front of exactly the person searching.</p>
+      <p>It is not a new concern for the agency. FTC staff sent warning letters to 21 healthcare plan
+      marketers and lead generators in December 2024. On October 29, 2026, FTC staff announced warning
+      letters to 25 healthcare-plan marketers and lead generators about potentially deceptive marketing.
+      Neither set of letters alleges wrongdoing by the recipients. The newer letters concern Marketplace
+      insurance and other healthcare products, so they are broader healthcare-marketing warnings, not proof
+      of a new Medicare paid-search impersonation case. The FTC also held a public roundtable on healthcare
+      scams around open enrollment on September 29.</p>
 
-      <h2>Why October</h2>
+      <h2>Why open enrollment</h2>
 
-      <p>Medicare open enrollment runs from 15 October to 7 December, and shopping for 2027 coverage
-      sends millions of people to search engines at once. Marketplace open enrollment follows. The FTC
-      has issued warnings of this kind in earlier years, and this year&rsquo;s adds the
-      search-advertising angle plainly. The scheme depends on timing: the ad is waiting when a person
-      who is already looking types in the query.</p>
+      <p>Medicare open enrollment runs from 15 October to 7 December, and Marketplace open enrollment follows.
+      People shopping for coverage are searching for exactly the terms these ads target, so the timing
+      matters to the scheme: the ad is waiting when a person who is already looking types in the query.</p>
 
       <p>It also pairs with the phone problem. A web form that collects a name and number is how a call
-      center gets the list it dials later. That is one reason the sensible response is the same as for a
-      cold call: be careful with a Medicare number, Social Security number or bank details: give them
-      only to a company or agent you chose, reached through an address or number you verified yourself. The older piece on
+      center can get the list it dials later. The sensible response is the same as for a cold call: be
+      careful with a Medicare number, Social Security number or bank details, and give them only to a company
+      or agent you chose, reached through an address or number you verified yourself. The older piece on
       <a href="/enrollment-scams">why the phone rings more in October</a> covers the calling side.</p>
 
       <h2>If you already clicked</h2>
 
-      <p>Clicking an ad is not the harm. The harm comes from what happens next: a payment, a Medicare
-      or Social Security number typed into a form, a call to the number on the page. If you stopped
-      before that point, there is nothing to undo. If you did not, the FTC&rsquo;s guidance is to report
-      it at ReportFraud.ftc.gov and to your state attorney general, and to Medicare at 1-800-633-4227
-      when Medicare is involved. A free State Health Insurance Assistance Program (SHIP) counselor can
-      help sort out which coverage you actually have.</p>
+      <p>Clicking does not automatically mean your identity was stolen. Close a suspicious page. If a link
+      downloaded software or you installed something, follow the FTC&rsquo;s malware guidance. If you
+      disclosed information, the next steps depend on what you shared.</p>
 
-      <p>If you gave out a Medicare or Social Security number, review your Medicare claims for services
-      you did not receive, which is how medical identity theft usually shows up. If you think your
-      identity has been misused, the FTC&rsquo;s IdentityTheft.gov walks through recovery steps, and the
-      FTC has separate guidance on medical identity theft. Seeing an ad is not a reason to go there.</p>
+      <p>If you paid, contact the bank, card issuer or payment service promptly and ask about reversing the
+      payment. If your Medicare number may have been misused, contact 1-800-MEDICARE and review your claims
+      for services you did not receive. Use IdentityTheft.gov for recovery guidance after identity misuse;
+      the FTC also provides protective steps when a Social Security number was exposed but misuse is
+      uncertain. Report the scam at ReportFraud.ftc.gov and to your state attorney general.</p>
+
+      <p>Help is available. State Health Insurance Assistance Programs (SHIPs) offer Medicare coverage
+      counseling and plan-comparison help. Senior Medicare Patrol (SMP) helps people prevent, detect and
+      report suspected Medicare fraud. Some organizations run both, but the two roles are distinct.</p>
 
       <h2>What to check</h2>
 
 """ + check([
-        'Go to <strong>Medicare.gov</strong> by typing the address, or by using a bookmark made once '
-        'from a source you trust.',
-        'If you do use a search engine, skip results marked <strong>Ad</strong> or '
-        '<strong>Sponsored</strong> and check that the address ends in <strong>.gov</strong> before '
-        'clicking.',
-        'Be wary of a page that asks for payment, or for a Medicare number, before it shows you '
-        'plans. The official Plan Finder is free.',
-        'A free <strong>SHIP counselor</strong> or Senior Medicare Patrol volunteer can help with '
-        'plan comparisons without selling you anything.',
-        'If you were taken in, report it at <strong>ReportFraud.ftc.gov</strong> and to your state '
-        'attorney general, and to Medicare at <strong>1-800-633-4227</strong> if Medicare is involved.',
+        'Go to <strong>Medicare.gov</strong> by typing <strong>https://www.medicare.gov</strong>, or by '
+        'using a bookmark made once from a source you trust.',
+        'Check the <strong>hostname that actually loads</strong>, not the page title or a string that merely '
+        'contains &ldquo;.gov.&rdquo;',
+        'An <strong>Ad</strong> or <strong>Sponsored</strong> label means paid placement, nothing more.',
+        'Be wary of a page that asks for payment, or for a Medicare number, before it shows you plans, and '
+        'of anyone who contacts you first. The official Plan Finder is free.',
+        'If you were taken in: contact your bank or card issuer if you paid, call Medicare at '
+        '<strong>1-800-633-4227</strong> if Medicare is involved, and report it at '
+        '<strong>ReportFraud.ftc.gov</strong>.',
     ]) + """
-      <p>None of this requires technical skill. It requires noticing that the first result is not
-      always the official one, a habit that costs two seconds and protects a number that cannot be
-      reissued.</p>
+      <p>The first search result is not always the official one. Checking the actual address and using a
+      verified contact reduces the chance of handing information to an impersonator.</p>
 """,
     'sources': [
         ('FTC &mdash; What to know ahead of Open Enrollment to avoid health insurance scams '
@@ -149,8 +147,21 @@ ARTICLES21['search-ad-scam'] = {
          'https://consumer.ftc.gov/consumer-alerts/2026/09/what-know-ahead-open-enrollment-avoid-health-insurance-scams'),
         ('FTC &mdash; Medicare Impersonators',
          'https://consumer.ftc.gov/medicare-impersonators'),
+        ('FTC &mdash; FTC staff warn marketers of healthcare plans and lead generators not to deceive consumers '
+         '(October 2026)',
+         'https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-staff-warn-marketers-healthcare-plans-lead-generators-not-deceive-consumers-about-terms'),
+        ('FTC &mdash; Staff sends warning letters to healthcare plan marketers and lead generators (December 2024)',
+         'https://search.ftc.gov/news-events/news/press-releases/2024/12/ftc-staff-sends-warning-letters-healthcare-plan-marketers-lead-generators'),
+        ('FTC &mdash; What to do if you were scammed',
+         'https://consumer.ftc.gov/articles/what-do-if-you-were-scammed'),
+        ('FTC &mdash; How to recognize and avoid phishing scams',
+         'https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams'),
         ('FTC &mdash; How to avoid Medicare Open Enrollment scams (Consumer Alert, October 2023)',
          'https://consumer.ftc.gov/consumer-alerts/2023/10/how-avoid-medicare-open-enrollment-scams'),
+        ('Medicare.gov &mdash; Reporting Medicare fraud and abuse',
+         'https://www.medicare.gov/basics/reporting-medicare-fraud-and-abuse'),
+        ('Administration for Community Living &mdash; Senior Medicare Patrol',
+         'https://acl.gov/programs/protecting-rights-and-preventing-abuse/senior-medicare-patrol-smp'),
         ('Bitdefender &mdash; FTC Warns of Fake Health Insurance Ads Online',
          'https://www.bitdefender.com/en-us/blog/hotforsecurity/fake-health-insurance-ads-ftc-warning'),
     ],

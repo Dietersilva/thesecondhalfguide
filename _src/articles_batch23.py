@@ -26,37 +26,41 @@ ARTICLES23['medicare-90-payment'] = {
     'title': 'The $90 Medicare Payment: Who Gets It and Who Doesn&rsquo;t &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
     'h1': 'The $90 Medicare payment: who gets it and who doesn&rsquo;t',
-    'dek': 'A one-time $90 payment went to people in Original Medicare Part B in October. No application '
-           'is needed, but eligibility depends on your kind of Medicare, where you live, whether Medicaid '
-           'helps pay your premium and whether you pay IRMAA.',
+    'dek': 'CMS announced a one-time $90 rebate for certain people in Original Medicare Part B, scheduled for '
+           'October 2026. Eligibility and missing-payment questions go to different agencies.',
     'meta': '5 minute read &middot; Checked against CMS&rsquo;s FAQ, Medicare.gov and independent reporting '
             'that cites them',
-    'checked': '2 November 2026',
-    'body': """      <p>Medicare sent a one-time payment of <strong>$90</strong> in October to people with Original Medicare
-      Part B. CMS describes it as coming from the Medicare Improvement Fund and says about 20.8 million
-      people are eligible. Most were to receive it by direct deposit on or around October 8, and anyone
-      without a deposit account on file was to get a Treasury check later in October.</p>
+    'checked': '13 November 2026',
+    'recheck': {'due': '2026-12-14', 'why': 'Confirm the CMS FAQ still gives the same contacts (1-800-MEDICARE for '
+                'eligibility, Social Security for payment status), that no further payment has been announced, '
+                'and that the 2027 Part B premium wording still holds.'},
+    'body': """      <p>CMS announced a one-time <strong>$90</strong> Medicare Improvement Fund rebate for eligible
+      Original Medicare Part B beneficiaries, scheduled for October 2026. The agency described about 20.8
+      million people as eligible. Its timetable placed most direct deposits around October 8, with Treasury
+      checks later that month.</p>
 
-      <p>The payment is real, it is small, and it comes with a rule that every scammer in the country
-      is already using: you do not apply for it, and nobody has to &ldquo;verify&rdquo; anything for it to
-      arrive.</p>
+      <p>The rebate is real, it is small, and it has one feature that impersonators can exploit: you do not
+      apply for it. An automatic rebate can give a caller a believable story, a demand to pay a fee or hand
+      over information to &ldquo;release&rdquo; it.</p>
 
 """ + facts('The payment, at a glance', [
         ('Amount', '<strong>$90</strong>, one time.'),
         ('Source', 'The Medicare Improvement Fund, per CMS&rsquo;s FAQ. Separate from your monthly Social '
                    'Security benefit.'),
         ('Who is paid', 'People in <strong>Original Medicare Part B</strong> who live in the United States. '
-                        'A Medigap policy or a Part D plan on top of Original Medicare does not disqualify '
-                        'you.'),
+                        'A Medigap policy or a Part D plan on top of Original Medicare does not by itself '
+                        'disqualify you; other conditions still apply.'),
         ('Who is left out', 'People in <strong>Medicare Advantage</strong>; people receiving '
                             '<strong>Medicaid assistance with their Medicare premium</strong>; people who '
                             'pay <strong>IRMAA</strong> (the income-related surcharge); and people living '
-                            'outside the U.S.'),
+                            'outside the U.S. Edge cases are a question for Medicare.'),
         ('How many', 'About <strong>20.8 million</strong> people, per CMS.'),
-        ('How it arrives', 'Direct deposit, most around <strong>October 8</strong>. Otherwise a Treasury '
-                           'check mailed later in October.'),
-        ('Do you apply?', '<strong>No.</strong> There is no form and no sign-up.'),
-        ('Questions', '1-800-MEDICARE (1-800-633-4227).'),
+        ('How it was scheduled', 'Direct deposit, most around <strong>October 8</strong>. Otherwise a Treasury '
+                                 'check later in October.'),
+        ('Do you apply?', '<strong>No.</strong> No application is part of the announced process.'),
+        ('Eligibility questions', 'Medicare: 1-800-MEDICARE (1-800-633-4227).'),
+        ('Missing payment', 'CMS directs payment-status questions to Social Security: 1-800-772-1213, '
+                            'available from October 15, 2026.'),
     ]) + """
       <h2>Who is left out, and why that surprises people</h2>
 
@@ -64,49 +68,51 @@ ARTICLES23['medicare-90-payment'] = {
       household. (Living in the United States is also a condition of getting the payment.)</p>
 
       <p><strong>Medicare Advantage.</strong> The payment goes to people in Original Medicare Part B, so a
-      person in an Advantage plan is not in the group, even though that person also has Part B.
-      Roughly half of people with Medicare are in Advantage plans, which means a large share of the
-      Medicare population will see nothing.</p>
+      person in an Advantage plan is not in the group, even though that person also has Part B.</p>
 
       <p><strong>Medicaid premium help.</strong> People receiving Medicaid assistance with their Medicare
       premium are not eligible. This is the exclusion that confuses lower-income readers, who
       might reasonably assume the opposite.</p>
 
       <p><strong>IRMAA.</strong> People who pay the income-related surcharge are excluded. There is no
-      single &ldquo;income cutoff&rdquo; to memorize here: it is the IRMAA status that decides, and that
-      status is set by a tax return from two years ago. For 2026, the surcharge starts above $109,000 of
-      income for a single filer and $218,000 for a married couple filing jointly, as covered in
-      <a href="/irmaa">the piece on IRMAA</a>; anyone paying it, at any bracket, is excluded.
-      Several widely shared posts have claimed an
-      income cutoff of around $19,000. That figure is a misreading and is not part of the rule.</p>
+      single &ldquo;income cutoff&rdquo; to memorize: it is the IRMAA status that decides. For 2026, the
+      standard Part B IRMAA threshold is modified adjusted gross income (MAGI) above $109,000 for an
+      individual return or $218,000 for a joint return, generally based on 2024 tax information, as covered
+      in <a href="/irmaa">the piece on IRMAA</a>. Social Security can adjust an IRMAA determination in
+      qualifying circumstances, such as a life-changing event or an amended return. The rebate exclusion
+      concerns IRMAA status. It is not a separate $19,000 income test, and no such figure appears in the
+      eligibility rules.</p>
 
       <blockquote class="pull">
-        <p>The payment goes to a category of enrollment, not to a level of need. Whether you get it
-        depends on which kind of Medicare you have and whether anyone else is paying your premium.</p>
+        <p>Eligibility depends on Medicare enrollment, residence, Medicaid premium assistance and IRMAA
+        status.</p>
       </blockquote>
 
 """ + AD_INLINE + """
-      <h2>How it is paid, and what you do not have to do</h2>
+      <h2>How it was paid, and what you did not have to do</h2>
 
       <p>Social Security makes the payment, using the banking information it already has for you.
-      Most people with direct deposit set up were to see it around October 8. People without a deposit
-      account on file get a paper check at the address Medicare has for them, later in October. If you
-      moved recently and your Medicare address is out of date, that is the situation in which a check
-      goes astray. Medicare says official address changes for Medicare are made through Social Security.</p>
+      Most people with direct deposit on file were scheduled to receive it around October 8. People without
+      a deposit account on file were to get a paper check at the address Medicare has for them. If you
+      moved recently and your Medicare address is out of date, that is the situation in which a check goes
+      astray. Medicare says address changes are made through Social Security; railroad beneficiaries
+      use the Railroad Retirement Board. The steps are on
+      <a href="https://www.medicare.gov/basics/change-address" rel="noopener">Medicare&rsquo;s change-of-address
+      page</a>.</p>
 
-      <p>You do not log in anywhere, fill in anything or call anyone. Medicare.gov has a page about the
-      one-time premium rebate letter, and CMS has published an FAQ. Those are the places the details
-      live.</p>
+      <p>No application is part of the announced rebate process. An unsolicited request for a fee or bank
+      details to release it is a warning sign. If you contact an agency yourself about a missing payment, it
+      may need to verify your identity. That is different from a stranger asking for the same details.</p>
 
       <h2>The scam that arrives with it</h2>
 
-      <p>Any benefit paid to more than twenty million people is an opening for a call. The pattern is
+      <p>Any benefit announced to more than twenty million people is an opening for a call. The pattern is
       predictable: a text, an email or a phone call says the payment is &ldquo;held&rdquo; or
       &ldquo;pending,&rdquo; and that to release it you must confirm a bank account, a Medicare number
-      or a Social Security number, or pay a small processing fee. None of that is part of how this
-      payment works. If the money is going to reach you, it is going to reach you without your help. CMS&rsquo;s
-      FAQ says the paper check carries the memo &ldquo;Medicare Improvement Fund Payment; $90 Payment to
-      Offset October Premium.&rdquo;</p>
+      or a Social Security number, or pay a small processing fee. None of that is part of the announced
+      process. CMS&rsquo;s FAQ says the paper check carries the memo &ldquo;Medicare Improvement Fund
+      Payment; $90 Payment to Offset October Premium.&rdquo; Matching words alone do not prove that a check
+      or a caller is genuine.</p>
 
       <p>The same instinct covers the reverse case. If someone tells you that you have been
       &ldquo;approved for extra&rdquo; and need to act before a deadline, the absence of any application
@@ -115,20 +121,15 @@ ARTICLES23['medicare-90-payment'] = {
 
       <h2>If you expected it and it did not come</h2>
 
-      <p>If an expected payment has not arrived, the first things to check are whether one of the
-      exclusions applies (a Medicare Advantage plan, Medicaid premium help, IRMAA) and whether the
-      deposit or mailing information on file is current.
-      The October payment window has now passed. As of 2 November, CMS has not announced a second
-      payment or any further group, and the sources checked do not say whether the fund could pay another
-      round. For an eligibility question, or a payment that has not arrived, 1-800-MEDICARE is the number
-      CMS gives.</p>
+      <p>The announced October timetable has passed. First check whether one of the exclusions applies (a
+      Medicare Advantage plan, Medicaid premium help, IRMAA) and whether the deposit or mailing information
+      on file is current. For rebate eligibility, call 1-800-MEDICARE (1-800-633-4227). For a missing payment
+      or its delivery status, CMS directs beneficiaries to Social Security at 1-800-772-1213. The FAQ
+      describes a one-time rebate; it does not establish that every payment has arrived.</p>
 
-      <p>The payment arrives separately from your monthly Social Security benefit and does not replace
-      or change it. Eligibility questions are best settled with Medicare directly, at the number
-      above, rather than with anyone who contacts you first.</p>
-
-      <p>It is also worth knowing that the payment is not a change to your premium. The Part B
-      premium for 2027 has not been announced, and the $90 does not alter what you owe in January.</p>
+      <p>The payment is separate from your monthly Social Security benefit and does not replace or change
+      it. It is also separate from the monthly Part B premium schedule. Use numbers you looked up
+      yourself, not one in a text or a voicemail.</p>
 
       <h2>What to check</h2>
 
@@ -137,12 +138,11 @@ ARTICLES23['medicare-90-payment'] = {
         '<strong>Medicare Advantage</strong> plan is out.',
         'Whether <strong>Medicaid helps pay your Medicare premium</strong>, or you pay '
         '<strong>IRMAA</strong>. Either one means no payment.',
-        'If you have direct deposit with Social Security, look for the deposit. If you do not, watch for a '
-        '<strong>Treasury check</strong> later in October at your address on file with Medicare.',
-        'The official payment involves no <strong>application</strong>, no fee and no bank-account '
-        'verification.',
-        'For an eligibility question, call <strong>1-800-MEDICARE (1-800-633-4227)</strong>, a number you '
-        'looked up yourself, not one in a text.',
+        'Whether the deposit or mailing address Social Security and Medicare have for you is current.',
+        'If you expected the rebate and it has not arrived, use the official contacts: '
+        '<strong>1-800-MEDICARE (1-800-633-4227)</strong> for eligibility and '
+        '<strong>Social Security, 1-800-772-1213</strong>, for payment status.',
+        'Do not send banking information in response to an unsolicited message.',
     ]) + """
       <p>The payment is a small, one-time event. What is worth carrying forward is the shape of it: a
       real benefit, an automatic one, and a simple rule for spotting anyone pretending otherwise.</p>
@@ -152,6 +152,10 @@ ARTICLES23['medicare-90-payment'] = {
          'https://www.cms.gov/newsroom/fact-sheets/medicare-improvement-fund-premium-rebate-frequently-asked-questions'),
         ('Medicare.gov &mdash; One-time premium rebate letter',
          'https://www.medicare.gov/basics/forms-publications-mailings/mailings/other/one-time-premium-rebate-letter'),
+        ('CMS &mdash; 2026 Medicare Parts A &amp; B premiums and deductibles (IRMAA table)',
+         'https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles'),
+        ('Medicare.gov &mdash; Change your address',
+         'https://www.medicare.gov/basics/change-address'),
         ('CNBC &mdash; Medicare beneficiaries may get $90 payment to offset Part B premium',
          'https://www.cnbc.com/2026/10/05/medicare-part-b-beneficiaries-90-payment.html'),
         ('Kiplinger &mdash; Who Qualifies for the New $90 Medicare Part B Rebate?',
