@@ -94,7 +94,7 @@ DESCRIPTIONS = {
     '/star-ratings-2027': "CMS published the 2027 Medicare Star Ratings on October 8. What the 71% figure measures, what a contract rating covers, and what it can't say about your plan.",
     '/dme-prior-authorization': "From October 15, CMS requires some new equipment suppliers to get approval before delivering and billing certain items. Who it covers and what patients see.",
     '/glp1-bridge': "Through 2027, some Part D members can get certain weight-loss GLP-1 drugs for $50 a month. The drug list, criteria, exclusions and how approval works.",
-    '/claiming-age-clarity-act': "Congress sent the President a bill renaming Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
+    '/claiming-age-clarity-act': "A bill passed by Congress would rename Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
     '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that paid search ads can imitate Medicare.gov before open enrollment. How to spot a paid result and where the official site and phone line are.",
     '/roth-catch-up': "Since 2026, 401(k) catch-up contributions for workers 50+ over a prior-year wage threshold must be Roth. Who is covered, which wages count, what 2027 adds.",

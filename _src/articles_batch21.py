@@ -247,7 +247,8 @@ ARTICLES21['roth-catch-up'] = {
       gives up the upfront income-tax exclusion that a pre-tax contribution carries, and qualified
       withdrawals later are tax-free. That does not mean the lifetime tax bill comes out the same, and
       the rule does not raise the amount that may be contributed. The 2026 figures above are labeled
-      as 2026; the 2027 limits had not been officially published when this was checked.</p>
+      as 2026; the 2027 limits, announced on 12 November 2026, are in the fact table above and on
+      <a href="/retirement-limits-2027">the 2027 limits page</a>.</p>
 
       <h2>The 60&ndash;63 window and the plan that has no Roth</h2>
 
@@ -266,8 +267,8 @@ ARTICLES21['roth-catch-up'] = {
 """ + check([
         'Find <strong>Box 3</strong> of last year&rsquo;s W-2 from the employer that sponsors the plan. '
         'That is the number the test uses, not Box 1.',
-        'Compare it with the threshold for the contribution year. For 2026 it is $150,000; for 2027, '
-        'wait for the IRS figure rather than relying on an estimate.',
+        'Compare it with the threshold for the contribution year. For 2026 it is $150,000; for 2027 it is '
+        '$155,000 of 2026 wages.',
         'Ask the plan administrator whether the plan <strong>offers a Roth option</strong> and '
         'how it will handle catch-up contributions.',
         'If you are self-employed or a partner with no W-2 wages from the plan, the Roth-only rule '

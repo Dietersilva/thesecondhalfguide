@@ -226,7 +226,7 @@ ARTICLES10['catch-up-60-63'] = {
         ('Standard catch-up, age 50+', 'An additional $8,000, for a total of $32,500.'),
         ('Super catch-up, ages 60&ndash;63', 'An additional <strong>$11,250 instead</strong> of the '
                                              'standard catch-up, for a total of <strong>$35,750</strong>.'),
-        ('The 2027 numbers', 'Announced 12 November 2026: deferral limit <strong>$25,500</strong>, '
+        ('2027 update (13 November 2026)', 'Announced 12 November 2026: deferral limit <strong>$25,500</strong>, '
                              'standard catch-up $8,500 (total $34,000), and the ages 60&ndash;63 catch-up '
                              '<strong>$11,750</strong> (total <strong>$37,250</strong>). The full list is on '
                              '<a href="/retirement-limits-2027">the 2027 limits page</a>.'),
