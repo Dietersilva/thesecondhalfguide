@@ -169,9 +169,7 @@ ARTICLES21['roth-catch-up'] = {
            'regulations apply from 2027, and some plans will not take catch-ups at all.',
     'meta': '6 minute read &middot; Checked against the IRS final regulations as reported by several '
             'plan administrators and law firms',
-    'checked': CHECKED21,
-    'recheck': {'due': '2026-11-15', 'why': 'The IRS normally announces next year\'s indexed limits in '
-                'the fall -- replace the unconfirmed 2027 wage threshold with the official figure.'},
+    'checked': '13 November 2026',
     'body': """      <p>A rule from the SECURE 2.0 Act changes how a certain group of older workers saves in a
       workplace plan. If you are 50 or older and earned more than a threshold in wages from your
       employer the previous year, any catch-up contribution you make must be a
@@ -189,9 +187,9 @@ ARTICLES21['roth-catch-up'] = {
                 'plan whose prior-year wages from <em>that employer</em> exceeded the threshold.'),
         ('2026 threshold', '<strong>$150,000</strong> of prior-year (2025) wages, indexed from '
                            '$145,000 in the law.'),
-        ('2027 threshold', 'Indexed again, and based on 2026 wages. At checking time the IRS had not '
-                           'published it; some outside estimates say $155,000. Treat that as '
-                           'unconfirmed.'),
+        ('2027 threshold', '<strong>$155,000</strong> of prior-year (2026) wages, per the IRS&rsquo;s '
+                           'Notice 2026-66 of 12 November 2026, as reported by several plan and tax '
+                           'outlets.'),
         ('Which wages', 'Social Security (FICA) wages, <strong>Box 3 of the W-2</strong>, from the '
                         'employer sponsoring the plan. Generally not combined across employers; the '
                         'final regulations allow aggregation in specified cases, such as related '

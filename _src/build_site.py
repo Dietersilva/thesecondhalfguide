@@ -120,6 +120,8 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/tax-numbers-2027': 'The IRS set the 2027 amounts: standard deduction $33,200 joint, $16,600 single, the 65-plus add-on, brackets and the 0% gains line. Not for the 2026 return.',
+    '/retirement-limits-2027': 'IRS Notice 2026-66: 2027 401(k) limit $25,500, catch-up $8,500, ages 60-63 catch-up $11,750, IRA $7,500, and the Roth catch-up wage threshold of $155,000.',
     '/medicaid-work-requirements': 'Expansion adults 19 to 64 must show 80 hours a month of work, study or service from 1 January 2027. Exemptions, the 30-day notice, and what varies by state.',
     '/wiser-prior-authorization': 'Since January, six states require prior authorization for some Part B services in traditional Medicare. Which states and services, and why Advantage differs.',
     '/tsa-confirmid-fee': 'Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.',
@@ -340,6 +342,8 @@ TITLE_OVERRIDES = {
     '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
     '/tsa-confirmid-fee': 'TSA $45 ID Fee (ConfirmID): Who Pays and Who Does Not',
     '/medicaid-work-requirements': 'Medicaid Work Requirements 2027: Ages 19-64, 80 Hours',
+    '/tax-numbers-2027': '2027 Tax Numbers: Standard Deduction, Brackets, Age 65 Add-On',
+    '/retirement-limits-2027': '2027 Retirement Limits: 401(k) $25,500, IRA $7,500, Catch-Ups',
     '/wiser-prior-authorization': 'Prior Authorization in Traditional Medicare: Six States',
     '/eclipse-2027': '2 August 2027 Total Solar Eclipse: Path and Duration',
     '/uk-eta': 'UK ETA for Americans: The £20 Travel Authorization',
@@ -363,6 +367,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/tax-numbers-2027', '/retirement-limits-2027',
     '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
     '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',
