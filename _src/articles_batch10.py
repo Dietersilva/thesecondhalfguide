@@ -216,7 +216,7 @@ ARTICLES10['catch-up-60-63'] = {
            'well past the standard age-50 amount &mdash; but only if your plan permits it, and only if '
            'you know to ask.',
     'meta': '5 minute read &middot; Verified against IRS 2026 figures',
-    'checked': CHECKED10,
+    'checked': '16 November 2026',
     'body': """      <p>Everyone 50 and older can already put more into a 401(k) than younger workers can. Fewer people
       know there is a second, larger step up — available only during the calendar years you are 60, 61, 62
       or 63, and only if your employer&rsquo;s plan specifically allows it.</p>
@@ -230,8 +230,8 @@ ARTICLES10['catch-up-60-63'] = {
                              'standard catch-up $8,500 (total $34,000), and the ages 60&ndash;63 catch-up '
                              '<strong>$11,750</strong> (total <strong>$37,250</strong>). The full list is on '
                              '<a href="/retirement-limits-2027">the 2027 limits page</a>.'),
-        ('The window', 'Only the calendar years you turn 60, 61, 62 or 63. Turn 64, and the limit drops '
-                       'back to the standard $8,000 catch-up.'),
+        ('The window', 'Only the calendar years you turn 60, 61, 62 or 63. The year you turn 64, the '
+                       'limit drops back to the standard catch-up ($8,000 in 2026, $8,500 in 2027).'),
         ('Plan availability', 'The higher catch-up must be specifically <strong>permitted under the '
                               'employer&rsquo;s plan</strong> &mdash; it is not automatic just because the '
                               'plan allows the standard 50+ catch-up. Ask your plan administrator '
@@ -249,9 +249,10 @@ ARTICLES10['catch-up-60-63'] = {
       <h2>Why the window is exactly four years</h2>
 
       <p>SECURE 2.0 set the higher catch-up specifically for the calendar years someone is age 60 through
-      63 — not a running &ldquo;60 and older&rdquo; category the way the standard catch-up works. Turn 64
-      partway through a year and that year still counts at the higher limit; the following year, once
-      you&rsquo;ve turned 64, the amount reverts to the ordinary $8,000 catch-up. There is no extending it
+      63 — not a running &ldquo;60 and older&rdquo; category the way the standard catch-up works. The
+      higher limit applies in a year when you are 60, 61, 62 or 63 at the end of the calendar year, so the
+      year you turn 64 is already an ordinary catch-up year, and the amount reverts to the standard
+      catch-up ($8,000 in 2026, $8,500 in 2027). There is no extending it
       and no repeating it — four specific tax years, tied to your birth year, and then it&rsquo;s gone.</p>
 
       <p>At the 2026 figures, that is <strong>$3,250 more</strong> in an eligible year than the standard

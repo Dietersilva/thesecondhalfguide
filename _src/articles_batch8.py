@@ -1024,7 +1024,7 @@ ARTICLES8['rmd-deadline'] = {
            'your birth year, the first one has a trap in it, and there is a route that skips the tax '
            'entirely.',
     'meta': '6 minute read &middot; 2026 figures verified against IRS rules',
-    'checked': CHECKED,
+    'checked': '16 November 2026',
     'body': """      <p>Most money in a traditional 401(k) or IRA has never been taxed. That was the deal: deduct it
       going in, pay on the way out. Required minimum distributions are the government collecting on the
       second half of that arrangement, and they are not optional.</p>
@@ -1051,7 +1051,8 @@ ARTICLES8['rmd-deadline'] = {
         ('The charitable route', 'A qualified charitable distribution from an IRA, available from age '
                                  '<strong>70&frac12;</strong>, up to <strong>$111,000</strong> per '
                                  'person in 2026 &mdash; $222,000 for a married couple each giving from '
-                                 'their own IRA.'),
+                                 'their own IRA. The IRS has set the 2027 limit at $114,000, per '
+                                 'reporting on Notice 2026-66.'),
     ]) + """
       <h2>The first-year trap</h2>
 
@@ -1095,8 +1096,8 @@ ARTICLES8['rmd-deadline'] = {
 """ + check([
         'Available from age <strong>70&frac12;</strong> &mdash; earlier than RMDs begin, so there are '
         'years when you can do this before you are required to withdraw anything.',
-        'Up to <strong>$111,000</strong> per person in 2026. A married couple can each give that much '
-        'from their own IRA.',
+        'Up to <strong>$111,000</strong> per person in 2026, and $114,000 in 2027, per reporting on IRS '
+        'Notice 2026-66. A married couple can each give that much from their own IRA.',
         'It counts toward your RMD for the year, up to the amount given.',
         'It must go <strong>directly</strong> from the IRA to the charity. Money that passes through '
         'your hands first is an ordinary withdrawal, taxed as one.',

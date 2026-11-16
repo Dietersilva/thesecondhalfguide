@@ -26,7 +26,7 @@ ARTICLES21['search-ad-scam'] = {
            'Check the website&rsquo;s actual address and use verified help.',
     'meta': '5 minute read &middot; Checked against the FTC&rsquo;s September 2026 consumer alert and '
             'independent reporting that cites it',
-    'checked': '13 November 2026',
+    'checked': '16 November 2026',
     'recheck': {'due': '2026-12-07', 'why': 'Open enrollment closes 7 December -- check for a newer FTC alert '
                 'or enforcement action on paid-search impersonation, and confirm the October 29 letters '
                 'description still matches the FTC release.'},
@@ -96,6 +96,12 @@ ARTICLES21['search-ad-scam'] = {
       of a new Medicare paid-search impersonation case. The FTC also held a public roundtable on healthcare
       scams around open enrollment on September 29.</p>
 
+      <p>On November 12, 2026, the FTC also published an alert about fake FTC websites and people posing
+      as FTC staff. The agency says scammers copy its name, logo and design, and that real FTC websites,
+      including ReportFraud.ftc.gov, end in .gov. It says it has demanded removal of more than 30
+      imposter sites since its Impersonation Rule took effect in April 2024. The same habit applies to a
+      Medicare lookalike: check the address that actually loads.</p>
+
       <h2>Why open enrollment</h2>
 
       <p>Medicare open enrollment runs from 15 October to 7 December, and Marketplace open enrollment follows.
@@ -152,6 +158,8 @@ ARTICLES21['search-ad-scam'] = {
          'https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-staff-warn-marketers-healthcare-plans-lead-generators-not-deceive-consumers-about-terms'),
         ('FTC &mdash; Staff sends warning letters to healthcare plan marketers and lead generators (December 2024)',
          'https://search.ftc.gov/news-events/news/press-releases/2024/12/ftc-staff-sends-warning-letters-healthcare-plan-marketers-lead-generators'),
+        ('FTC &mdash; How to spot fake FTC websites and FTC impersonators (Consumer Alert, November 2026)',
+         'https://consumer.ftc.gov/consumer-alerts/2026/11/how-spot-fake-ftc-websites-and-ftc-impersonators'),
         ('FTC &mdash; What to do if you were scammed',
          'https://consumer.ftc.gov/articles/what-do-if-you-were-scammed'),
         ('FTC &mdash; How to recognize and avoid phishing scams',
