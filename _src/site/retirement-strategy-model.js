@@ -1,7 +1,12 @@
 (() => {
 'use strict';
 const TODAY = {year: 2026, month: 9};
-const EARNINGS_LIMIT = 24480; // 2026 SSA annual earnings-test limit (below FRA); not user-editable
+const EARNINGS_LIMIT = 24480; // 2026 SSA annual earnings-test limit (below FRA); display default only
+// Published SSA earnings-test limits by calendar year: [below FRA all year, year FRA is reached].
+// Years after 2027 reuse the 2027 figures until SSA publishes the next ones, so later-year
+// withholding is an estimate, not a forecast of the indexed amounts.
+const EARNINGS_TABLE = {2026: [24480, 65160], 2027: [25560, 67920]};
+function limitsFor(year) {return EARNINGS_TABLE[Math.min(Math.max(Math.floor(year), 2026), 2027)];}
 const MAIN = [62, 65, 67];
 const YEARS = [62, 63, 64, 65, 66, 67];
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -114,7 +119,8 @@ function grossAnnual(a, p) {return monthly(a, p) * 12;}
 function withheldInYear(a, t, p, limit) {
   const f = fra(p.birthYear);
   if (a >= f || t < a || t >= f || t >= p.retireAge) return 0;
-  const over = f - t <= 1 ? (p.countable - 65160) / 3 : (p.countable - limit) / 2;
+  const L = limitsFor(p.birthYear + t);
+  const over = f - t <= 1 ? (p.countable - L[1]) / 3 : (p.countable - L[0]) / 2;
   return Math.min(grossAnnual(a, p), Math.max(0, over));
 }
 function monthsWithheld(a, p, limit) {
@@ -266,7 +272,7 @@ function renderMeaning(s) {
   lines.push(`<div class="rsm-note"><strong>Cash sooner vs. larger check later:</strong> Claiming at 62 starts income earlier. Claiming at 67 produces about <b>${money(ssAnnual(67, s) - ssAnnual(62, s))} more per year</b> once both strategies are fully in pay status.</div>`);
   if (be65 || be67) lines.push(`<div class="rsm-note"><strong>When waiting catches up:</strong> Under these inputs, 65 catches 62 at about <b>age ${be65 || '100+'}</b>, while 67 catches 62 at about <b>age ${be67 || '100+'}</b>.</div>`);
   lines.push(`<div class="rsm-note"><strong>Portfolio consequence:</strong> At age ${s.horizon}, the model shows about <b>${money(p62.horizon)}</b> remaining if you claim at 62 versus <b>${money(p67.horizon)}</b> if you claim at 67, using your spending and return assumptions.</div>`);
-  if (earlyWithheld > 0) lines.push(`<div class="rsm-note"><strong>Working matters:</strong> Your entered earnings could cause roughly <b>${money(earlyWithheld)}</b> of first-year benefits to be withheld if benefits begin at 62 under the current 2026 earnings-test limit.</div>`);
+  if (earlyWithheld > 0) lines.push(`<div class="rsm-note"><strong>Working matters:</strong> Your entered earnings could cause roughly <b>${money(earlyWithheld)}</b> of first-year benefits to be withheld if benefits begin at 62 under the earnings-test limit for that year ($24,480 in 2026, $25,560 in 2027).</div>`);
   $('meaning-results').innerHTML = lines.join('');
 }
 function renderGoals(s) {
@@ -279,7 +285,7 @@ function renderEarnings(s) {
   $('earnings-results').innerHTML = people.map(([label, p]) => {
     if (p.retireAge <= 62) return `<div class="rsm-note"><strong>${label}:</strong> A planned retirement at or before 62 means no earnings after claiming, so the earnings test would not apply.</div>`;
     const w62 = withheldInYear(62, 62, p, s.limit), gross = grossAnnual(62, p), net = Math.max(0, gross - w62);
-    if (w62 <= 0) return `<div class="rsm-note"><strong>${label}:</strong> Entered countable earnings are not above the current ${money(s.limit)} annual limit, so this simple 62 illustration shows no earnings-test withholding.</div>`;
+    if (w62 <= 0) return `<div class="rsm-note"><strong>${label}:</strong> Entered countable earnings are not above the ${money(limitsFor(p.birthYear + 62)[0])} earnings-test limit for that year, so this simple 62 illustration shows no earnings-test withholding.</div>`;
     const m = monthsWithheld(62, p, s.limit);
     return `<div class="rsm-note"><strong>${label} at 62:</strong> Estimated gross benefit ${money(gross)}/yr. With entered countable earnings, roughly <b>${money(w62)}</b> could be withheld in the first year, leaving about <b>${money(net)}</b> paid before tax &mdash; an annual estimate, not a month-by-month calculation. Across every working year before full retirement age that comes to about <b>${m} whole month${m === 1 ? '' : 's'}</b> of checks withheld. Withheld months are not lost: at full retirement age SSA recalculates the benefit as though you had claimed ${m} month${m === 1 ? '' : 's'} later, so the monthly amount rises from ${money(monthly(62, p))} to <b>${money(creditedMonthly(62, p, s.limit))}</b>. SSA also has a special monthly rule that can pay a full benefit for individual months under the limit during the calendar year you first claim, which this estimate does not reproduce.</div>`;
   }).join('');

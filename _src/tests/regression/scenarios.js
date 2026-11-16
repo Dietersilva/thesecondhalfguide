@@ -329,7 +329,7 @@ const SCENARIOS = [
   },
   {
     id: 'credit_work_past_fra',
-    description: 'Single, works to 70 at $90k: full years withheld, then a partial FRA-year withholding ($1 per $3 over $65,160)',
+    description: 'Single, works to 70 at $90k: full years withheld, then a partial FRA-year withholding ($1 per $3 over the FRA-year limit, $67,920 from 2027 on)',
     household: 'single',
     fields: {
       'birth-year': 1964, 'birth-month': 6, 'retire-age': 70,
@@ -339,6 +339,20 @@ const SCENARIOS = [
       'annual-contrib': 0, 'employer-contrib': 0,
       'return-rate': 3, 'annual-spending': 65000, horizon: 90,
       'pension-income': 0, 'other-income': 0, 'countable-earnings': 90000,
+    },
+  },
+  {
+    id: 'credit_2027_limit',
+    description: 'Single, born 1965 (turns 62 in 2027), works to 67 at $27k: only the part above the 2027 limit ($25,560) is withheld, not the 2026 limit ($24,480)',
+    household: 'single',
+    fields: {
+      'birth-year': 1965, 'birth-month': 6, 'retire-age': 67,
+      wages: 27000, 'future-wages': 27000, 'avg-wages': 0, 'years-worked': 35,
+      'ss-override': 0,
+      'traditional-balance': 300000, 'roth-balance': 0, 'taxable-balance': 0,
+      'annual-contrib': 0, 'employer-contrib': 0,
+      'return-rate': 3, 'annual-spending': 45000, horizon: 90,
+      'pension-income': 0, 'other-income': 0, 'countable-earnings': 27000,
     },
   },
   {
