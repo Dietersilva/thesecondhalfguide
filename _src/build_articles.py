@@ -420,7 +420,7 @@ ARTICLES['five-minute-rule'] = {
     'dek': 'Modern fraud isn’t an intelligence test. It’s an attack on your decision time &mdash; '
            'which is why one boring habit beats memorising every scam.',
     'meta': '6 minute read &middot; FBI and FTC figures current for 2025 reporting year',
-    'checked': CHECKED,
+    'checked': '16 November 2026',
     'body': """      <p>A text says money is leaving your account right now. A caller says your Social Security number
       turned up at a crime scene. A pop-up says hackers are inside your computer and you must not shut it
       down.</p>
@@ -485,6 +485,13 @@ ARTICLES['five-minute-rule'] = {
       already know is real &mdash; the number on the back of your card, the agency's public website, the
       contact already in your phone. Never the number they gave you, and never by pressing 1.</p>
 
+      <p>The same applies to websites. On 12 November 2026 the FTC warned that scammers copy government
+      branding, layouts and content to build fake agency sites, and that some pose as agency staff with
+      fake credentials. It says it has demanded removal of more than 30 sites imitating the FTC itself
+      since its Impersonation Rule took effect in April 2024. A government site can be copied, so an
+      official look proves nothing: check the address in the browser, and reach an agency through a
+      website or number you already know.</p>
+
       <h2>Why competent people get caught</h2>
 
       <p>There's a comforting story that fraud victims were gullible. It doesn't survive contact with the
@@ -529,6 +536,8 @@ ARTICLES['five-minute-rule'] = {
          'https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money'),
         ('FTC data spotlight &mdash; How scammers are stealing older adults’ life savings',
          'https://www.ftc.gov/news-events/data-visualizations/data-spotlight/2025/08/false-alarm-real-scam-how-scammers-are-stealing-older-adults-life-savings'),
+        ('FTC &mdash; How to spot fake FTC websites and FTC impersonators (Consumer Alert, 12 November 2026)',
+         'https://consumer.ftc.gov/consumer-alerts/2026/11/how-spot-fake-ftc-websites-and-ftc-impersonators'),
         ('FTC &mdash; Report fraud', 'https://reportfraud.ftc.gov/'),
     ],
     'next': {'slug': 'voice-cloning',
