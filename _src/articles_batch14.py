@@ -155,7 +155,7 @@ ARTICLES14['cola-2027-estimate'] = {
            'benefits. The earnings limits and the taxable maximum moved with it &mdash; and Medicare&rsquo;s '
            '2027 premium, which decides what you keep, has not been announced.',
     'meta': '5 minute read &middot; Checked against the SSA announcement and independent reports',
-    'checked': '16 October 2026',
+    'checked': '16 November 2026',
     'body': """      <p>On 14 October 2026 the Social Security Administration announced a <strong>3.6%</strong>
       cost-of-living adjustment for 2027. It applies to Social Security benefits starting with the January
       2027 payments, and to Supplemental Security Income payments starting 31 December 2026. It is the
@@ -180,7 +180,7 @@ ARTICLES14['cola-2027-estimate'] = {
 
       <p>The COLA is not a policy choice or a negotiation. It comes from the Consumer Price Index for Urban
       Wage Earners and Clerical Workers &mdash; CPI-W &mdash; averaged across July, August and September,
-      and compared with the same three-month average a year earlier. The percentage change, rounded to the
+      and compared with the same three-month average from the last year in which a COLA took effect, which in recent years has been the year before. The percentage change, rounded to the
       nearest tenth of a percent, becomes the COLA. September&rsquo;s inflation data, released the same day
       as the announcement, is the last piece, which is why the number cannot be known before mid-October.</p>
 
