@@ -94,7 +94,7 @@ DESCRIPTIONS = {
     '/star-ratings-2027': "CMS published the 2027 Medicare Star Ratings on October 8. What the 71% figure measures, what a contract rating covers, and what it can't say about your plan.",
     '/dme-prior-authorization': "From October 15, CMS requires some new equipment suppliers to get approval before delivering and billing certain items. Who it covers and what patients see.",
     '/glp1-bridge': "Through 2027, some Part D members can get certain weight-loss GLP-1 drugs for $50 a month. The drug list, criteria, exclusions and how approval works.",
-    '/claiming-age-clarity-act': "Congress sent the President a bill renaming Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
+    '/claiming-age-clarity-act': "A bill passed by Congress would rename Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
     '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that scammers can buy search ads that imitate official health-insurance sites. How to check the real address and where to get verified help.",
     '/roth-catch-up': "Since 2026, 401(k) catch-up contributions for workers 50+ over a prior-year wage threshold must be Roth. Who is covered, which wages count, what 2027 adds.",
@@ -120,6 +120,8 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/tax-numbers-2027': 'The IRS set the 2027 amounts: standard deduction $33,200 joint, $16,600 single, the 65-plus add-on, brackets and the 0% gains line. Not for the 2026 return.',
+    '/retirement-limits-2027': 'IRS Notice 2026-66: 2027 401(k) limit $25,500, catch-up $8,500, ages 60-63 catch-up $11,750, IRA $7,500, and the Roth catch-up wage threshold of $155,000.',
     '/medicaid-work-requirements': 'Medicaid work rules start 1 January 2027 for adults 19 to 64. What a 29 October court ruling changed, who is exempt, and the 30-day notice.',
     '/wiser-prior-authorization': 'WISeR adds prior authorization or pre-payment review for some Part B services in six states. Which states, which route, and how Advantage differs.',
     '/tsa-confirmid-fee': 'Since 1 February, flyers without REAL ID or another accepted ID can pay $45 for TSA ConfirmID. Who pays, what it does not guarantee, and where it is paid.',
@@ -339,6 +341,8 @@ TITLE_OVERRIDES = {
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
     '/tsa-confirmid-fee': 'TSA $45 ID Fee (ConfirmID): Who Pays and Who Does Not',
+    '/tax-numbers-2027': '2027 Tax Numbers: Standard Deduction, Brackets, Age 65 Add-On',
+    '/retirement-limits-2027': '2027 Retirement Limits: 401(k) $25,500, IRA $7,500, Catch-Ups',
     '/medicaid-work-requirements': 'Medicaid Work Requirements 2027: Ages 19-64',
     '/wiser-prior-authorization': 'WISeR: Payment Review in Original Medicare, Six States',
     '/eclipse-2027': '2 August 2027 Total Solar Eclipse: Path and Duration',
@@ -363,6 +367,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/tax-numbers-2027', '/retirement-limits-2027',
     '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
     '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',

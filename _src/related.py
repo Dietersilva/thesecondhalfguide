@@ -34,9 +34,10 @@ CLUSTERS = [
     ['wep-gpo-repeal', 'spousal-benefits', 'social-security-62', 'widows-penalty'],
     # Taxes
     ['senior-deduction', 'senior-deduction-phaseout', 'senior-deduction-sunset', 'standard-deduction-65',
-     'no-tax-on-social-security', 'property-tax'],
+     'no-tax-on-social-security', 'property-tax', 'tax-numbers-2027'],
     # Retirement accounts
-    ['catch-up-60-63', 'roth-catch-up', 'rule-of-55', 'rmd-deadline', 'hsa-medicare-timing'],
+    ['catch-up-60-63', 'roth-catch-up', 'rule-of-55', 'rmd-deadline', 'hsa-medicare-timing',
+     'retirement-limits-2027'],
     ['rmd-deadline', 'beneficiary-form', 'senior-deduction'],
     # Estate paperwork
     ['beneficiary-form', 'power-of-attorney', 'digital-estate', 'widows-penalty', 'long-term-care',

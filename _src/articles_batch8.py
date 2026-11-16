@@ -1411,6 +1411,11 @@ ARTICLES8['standard-deduction-65'] = {
                                         '2025.'),
         ('The unusual part', 'Number three applies <strong>whether you itemize or not</strong>. The first '
                              'two exist only if you take the standard deduction.'),
+        ('2027 update (13 November 2026)', 'Announced 5 November 2026 and applying to tax year 2027: base '
+                     '$33,200 joint, $16,600 single, $24,925 head of household; age-65 addition $1,700 per '
+                     'qualifying condition if married, $2,100 if unmarried and not a surviving spouse; the '
+                     '$6,000 senior deduction is unchanged, with the phase-out measured by modified adjusted '
+                     'gross income. See <a href="/tax-numbers-2027">the 2027 tax numbers page</a>.'),
         ('The blindness addition', 'A separate matter from either. The same age-based addition amounts '
                                    'apply if you are blind, and someone who is both 65 or older and '
                                    'blind can claim it twice.'),
