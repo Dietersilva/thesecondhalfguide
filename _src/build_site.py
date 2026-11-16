@@ -338,6 +338,10 @@ TITLE_OVERRIDES = {
     '/medicare-enrollment': 'Medicare Enrollment Deadlines and Late Penalties',
     '/medicare': 'Medicare Guides: Enrollment, Costs and Coverage',
     '/money': 'Social Security, Retirement and Tax Rules After 55',
+    '/fraud': 'Scam and Fraud Protection: Current Scams and What to Do',
+    '/driving': 'The Driving Conversation: Signs, Checks and Next Steps',
+    '/cobra-medicare-trap': 'The COBRA-to-Medicare Trap and the Part B Late Penalty',
+    '/star-ratings-2027': '2027 Medicare Star Ratings: What a Star Does and Doesn’t Say',
     '/prescription-payment-plan': 'Medicare Prescription Payment Plan: Same Cap, Monthly',
     '/earnings-test': 'Social Security Earnings Test 2027: $25,560 and $67,920',
     '/tsa-confirmid-fee': 'TSA $45 ID Fee (ConfirmID): Who Pays and Who Does Not',
@@ -1297,9 +1301,19 @@ def main():
                       f"  gtag('config', '{GA4_MEASUREMENT_ID}');")
         script_hashes.add("'sha256-%s'" % base64.b64encode(
             hashlib.sha256(ga4_inline.encode()).digest()).decode())
+        # Newsletter sign-ups post to Kit and leave the site, so the event is sent
+        # with the beacon transport. External file: no inline hash needed.
+        open(f'{SITE}/signup-track.js', 'w').write(
+            "document.addEventListener('submit', function (e) {\n"
+            "  var f = e.target;\n"
+            "  if (f && f.classList && f.classList.contains('signup-form') && typeof gtag === 'function') {\n"
+            "    gtag('event', 'generate_lead', {form: 'newsletter', transport_type: 'beacon'});\n"
+            "  }\n"
+            "}, true);\n")
         ga4_script = (
             f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>\n'
-            f'<script>{ga4_inline}</script>\n')
+            f'<script>{ga4_inline}</script>\n'
+            '<script defer src="/signup-track.js"></script>\n')
 
     for path, (title, desc, canonical, body) in rendered.items():
         card_ = f'{ORIGIN}{path}'.replace(ORIGIN + '/', ORIGIN + '/og/') + '.png'
@@ -1480,6 +1494,7 @@ def main():
     #     nothing in the browser looks broken enough to notice.
     script_src_extras = []
     connect_src_extras = []
+    img_src_extras = []
     if VERCEL_ANALYTICS:
         script_src_extras.append(f"{ORIGIN}/_vercel/insights/script.js")
         connect_src_extras.append('https://vitals.vercel-insights.com')
@@ -1492,11 +1507,15 @@ def main():
         script_src_extras.append('https://www.googletagmanager.com')
         connect_src_extras.append('https://www.google-analytics.com')
         connect_src_extras.append('https://*.google-analytics.com')
+        # Hosts Google's own CSP guidance lists for GA4 / Tag Manager hits.
+        connect_src_extras.append('https://*.analytics.google.com')
+        connect_src_extras.append('https://*.googletagmanager.com')
+        img_src_extras.extend(['https://*.google-analytics.com', 'https://*.googletagmanager.com'])
     script_src_extra = ' '.join(script_src_extras)
     connect_src = (f" connect-src 'self' {' '.join(connect_src_extras)};"
                    if connect_src_extras else '')
     csp = (f"default-src 'self'; "
-           "img-src 'self' data:; "
+           f"img-src 'self' data:{' ' + ' '.join(img_src_extras) if img_src_extras else ''}; "
            "style-src 'self'; "
            "font-src 'self'; "
            f"script-src {' '.join(sorted(script_hashes)) or chr(39)+'none'+chr(39)}"

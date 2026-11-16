@@ -297,9 +297,8 @@ ARTICLES24['cola-scam'] = {
         ('SSA Office of the Inspector General &mdash; Inspector General warns of newest imposter scam tactic '
          '(17 July 2025)',
          'https://oig.ssa.gov/scam-alerts/2025-07-17-inspector-general-warns-of-newest-imposter-scam-tactic/'),
-        ('SSA Office of the Inspector General &mdash; Scam alert: Inspector General warns $600 June '
-         'increase is bogus (13 June 2024)',
-         'https://oig.ssa.gov/news-releases/2024-06-13-scam-alert-inspector-general-warns-600-june-increase-is-bogus'),
+        ('SSA Office of the Inspector General &mdash; Scam alert: $600 June increase is bogus',
+         'https://oig.ssa.gov/scam-alerts/2025-07-17-600-june-increase-is-bogus/'),
         ('AARP &mdash; Warning: fake Social Security COLA phone calls',
          'https://www.aarp.org/money/scams-fraud/warning-fake-social-security-cola-phone-calls/'),
         ('Social Security Administration &mdash; 2027 COLA press release (14 October 2026)',
