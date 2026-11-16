@@ -322,10 +322,11 @@ ARTICLES23['dme-prior-authorization'] = {
            'product.',
     'meta': '6 minute read &middot; Checked against CMS&rsquo;s program page, a Medicare contractor&rsquo;s '
             'guidance and trade reporting',
-    'checked': CHECKED23,
-    'recheck': {'due': '2026-11-15', 'why': 'A month after the start -- confirm the effective date held and '
-                'check whether CMS changed the item list or the suppliers covered.'},
-    'body': """      <p>Beginning <strong>October 15, 2026</strong>, CMS is introducing what it calls
+    'checked': '16 November 2026',
+    'recheck': {'due': '2026-12-15', 'why': 'Confirm the 28 October 2026 additions to the required prior '
+                'authorization list (sources disagree on the count) against CMS\u2019s list, and whether the '
+                'probationary program changed.'},
+    'body': """      <p>Beginning <strong>October 15, 2026</strong>, CMS introduced what it calls
       <em>probationary prior authorization</em> for certain durable medical equipment, prosthetics,
       orthotics and supplies, usually shortened to DMEPOS. It applies to suppliers that are newly
       enrolled in Medicare, or that go through certain changes in ownership, and it covers a list of
