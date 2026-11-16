@@ -298,10 +298,10 @@ ARTICLES11['medicare-advantage-oep'] = {
       way to miss both.</p>
 """,
     'sources': [
-        ('Medicare &mdash; Medicare Advantage Open Enrollment Period',
-         'https://www.medicare.gov/basics/get-started-with-medicare/coverage-choices/how-to-compare-medicare-options'),
-        ('CMS &mdash; Enrollment periods for Medicare Advantage and Part D',
-         'https://www.cms.gov/medicare/enrollment-renewal/health-drug-plans/enrollment-periods'),
+        ('Medicare &mdash; Medicare &amp; You handbook (enrollment periods)',
+         'https://www.medicare.gov/publications/10050-medicare-and-you.pdf'),
+        ('Medicare &mdash; Medicare Plan Finder',
+         'https://www.medicare.gov/plan-compare/'),
     ],
     'next': {'slug': 'overpayment-clawback',
              'title': 'The Social Security overpayment letter, and the deadline inside it',

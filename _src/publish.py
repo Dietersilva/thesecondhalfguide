@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the site from _src and sync it into the repo root for deployment."""
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -61,6 +62,15 @@ def install_static_tools():
         if not os.path.exists(src):
             sys.exit(f'missing standalone tool source: {src}')
         shutil.copy2(src, os.path.join(SITE, name))
+    # These two pages are hand-written, so their stylesheet link goes stale whenever the
+    # hashed styles.<hash>.css changes. Point them at the current one on every build.
+    current = sorted(f for f in os.listdir(SITE) if re.fullmatch(r'styles\.[0-9a-f]{10}\.css', f))
+    if len(current) != 1:
+        sys.exit(f'expected exactly one hashed stylesheet in {SITE}, found {current}')
+    for name in STATIC_TOOLS:
+        if name.endswith('.html'):
+            path = os.path.join(SITE, name)
+            write(path, re.sub(r'/styles\.[0-9a-f]{10}\.css', '/' + current[0], read(path)))
 
     vercel = os.path.join(SITE, 'vercel.json')
     cfg = read(vercel)

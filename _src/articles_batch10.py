@@ -197,8 +197,6 @@ ARTICLES10['hsa-medicare-timing'] = {
     'sources': [
         ('IRS &mdash; Publication 969, Health Savings Accounts and Other Tax-Favored Health Plans',
          'https://www.irs.gov/publications/p969'),
-        ('Medicare &mdash; Health Savings Accounts (HSAs) and Medicare',
-         'https://www.medicare.gov/basics/costs/health-savings-accounts'),
         ('Medicare &mdash; How Part A and Part B sign-up periods work',
          'https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start'),
     ],

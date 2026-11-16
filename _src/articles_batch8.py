@@ -1128,9 +1128,8 @@ ARTICLES8['rmd-deadline'] = {
     'sources': [
         ('IRS &mdash; Required minimum distributions',
          'https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs'),
-        ('IRS &mdash; Retirement plan and IRA required minimum distributions',
-         'https://www.irs.gov/retirement-plans/plan-participant-employee/'
-         'retirement-topics-required-minimum-distributions-rmd'),
+        ('IRS &mdash; Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)',
+         'https://www.irs.gov/publications/p590b'),
         ('Congressional Research Service &mdash; Qualified charitable distributions from IRAs',
          'https://www.congress.gov/crs-product/IF11377'),
         ('IRS &mdash; Form 5329', 'https://www.irs.gov/forms-pubs/about-form-5329'),
