@@ -120,6 +120,8 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/part-b-premium-2027': 'CMS set the 2027 Part B premium at $209.40 and the deductible at $292. The Part A numbers, and how much of the 3.6% Social Security raise is left.',
+    '/irmaa-2027': 'The 2027 Medicare IRMAA brackets: the surcharge starts above $112,000 single or $224,000 joint on your 2025 return. Part B and Part D amounts by tier.',
     '/tax-numbers-2027': 'The IRS set the 2027 amounts: standard deduction $33,200 joint, $16,600 single, the 65-plus add-on, brackets and the 0% gains line. Not for the 2026 return.',
     '/retirement-limits-2027': 'IRS Notice 2026-66: 2027 401(k) limit $25,500, catch-up $8,500, ages 60-63 catch-up $11,750, IRA $7,500, and the Roth catch-up wage threshold of $155,000.',
     '/medicaid-work-requirements': 'Medicaid work rules start 1 January 2027 for adults 19 to 64. What a 29 October court ruling changed, who is exempt, and the 30-day notice.',
@@ -339,6 +341,8 @@ TITLE_OVERRIDES = {
     '/medicare': 'Medicare Guides: Enrollment, Costs and Coverage',
     '/money': 'Social Security, Retirement and Tax Rules After 55',
     '/fraud': 'Scam and Fraud Protection: Current Scams and What to Do',
+    '/part-b-premium-2027': 'Medicare Part B 2027: $209.40 Premium, $292 Deductible',
+    '/irmaa-2027': '2027 IRMAA Brackets: Surcharge Starts at $112,000 / $224,000',
     '/driving': 'The Driving Conversation: Signs, Checks and Next Steps',
     '/cobra-medicare-trap': 'The COBRA-to-Medicare Trap and the Part B Late Penalty',
     '/star-ratings-2027': '2027 Medicare Star Ratings: What a Star Does and Doesn’t Say',
@@ -371,7 +375,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
-    '/tax-numbers-2027', '/retirement-limits-2027',
+    '/part-b-premium-2027', '/irmaa-2027', '/tax-numbers-2027', '/retirement-limits-2027',
     '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
     '/earnings-test', '/ftc-older-adults-fraud-report', '/medicare-telehealth-2027',

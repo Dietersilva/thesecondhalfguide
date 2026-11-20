@@ -16,16 +16,16 @@ CLUSTERS = [
     ['ma-plan-exits-2027', 'ma-flex-card-2027', 'medicare-marketing-rules-2026', 'anoc-letter', 'silversneakers-2027',
      'medicare-2027-costs', 'advantage-vs-original', 'open-enrollment', 'wiser-prior-authorization'],
     # What Medicare costs
-    ['medicare-2027-costs', 'drug-cap', 'drug-negotiation-2027', 'irmaa', 'medicare-savings',
+    ['part-b-premium-2027', 'irmaa-2027', 'medicare-2027-costs', 'drug-cap', 'drug-negotiation-2027', 'irmaa', 'medicare-savings',
      'medicare-gaps', 'globe-part-b-drugs', 'prescription-payment-plan', 'medicare-telehealth-2027', 'wiser-prior-authorization'],
     ['medicare-gaps', 'long-term-care', 'observation-status', 'wellness-visit', 'medigap-window'],
-    ['irmaa', 'medicare-savings', 'medicare-2027-costs', 'cola', 'aca-subsidy-cliff'],
+    ['irmaa', 'irmaa-2027', 'part-b-premium-2027', 'medicare-savings', 'medicare-2027-costs', 'cola', 'aca-subsidy-cliff'],
     ['aca-subsidy-cliff', 'aca-unauthorized-enrollment', 'cobra-medicare-trap', 'medicare-enrollment',
      'medicaid-work-requirements'],
     # Social Security: claiming and benefits
     ['social-security-62', 'delayed-retirement-credit', 'spousal-benefits', 'widows-penalty',
      'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund', 'earnings-test'],
-    ['cola', 'cola-2027-estimate', 'no-tax-on-social-security', 'irmaa', 'delayed-retirement-credit',
+    ['cola', 'cola-2027-estimate', 'part-b-premium-2027', 'no-tax-on-social-security', 'irmaa', 'delayed-retirement-credit',
      'medicare-savings', 'social-security-trust-fund', 'cola-scam'],
     ['no-tax-on-social-security', 'senior-deduction', 'standard-deduction-65'],
     # Social Security: dealing with the agency
