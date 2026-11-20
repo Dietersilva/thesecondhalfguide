@@ -153,9 +153,9 @@ ARTICLES14['cola-2027-estimate'] = {
     'h1': 'The 2027 Social Security COLA is 3.6%',
     'dek': 'Social Security announced the official 2027 raise on 14 October: 3.6%, starting with January '
            'benefits. The earnings limits and the taxable maximum moved with it &mdash; and Medicare&rsquo;s '
-           '2027 premium, which decides what you keep, has not been announced.',
-    'meta': '5 minute read &middot; Checked against the SSA announcement and independent reports',
-    'checked': '16 November 2026',
+           '2027 Part B premium, announced 17 November, takes $6.50 a month out of it.',
+    'meta': '5 minute read &middot; Checked against the SSA announcement, the CMS fact sheet and independent reports',
+    'checked': '20 November 2026',
     'body': """      <p>On 14 October 2026 the Social Security Administration announced a <strong>3.6%</strong>
       cost-of-living adjustment for 2027. It applies to Social Security benefits starting with the January
       2027 payments, and to Supplemental Security Income payments starting 31 December 2026. It is the
@@ -173,8 +173,8 @@ ARTICLES14['cola-2027-estimate'] = {
                     'It was $24,480 in 2026.'),
         ('$67,920', 'The 2027 earnings limit in the year a person reaches full retirement age.'),
         ('31 December 2026', 'When the increased SSI payment is paid.'),
-        ('Not yet announced', 'The 2027 Medicare Part B premium and deductible. CMS had not published them '
-                              'as of 16 October 2026.'),
+        ('$209.40', 'The 2027 Medicare Part B premium, announced 17 November 2026, up $6.50 from $202.90. The '
+                    'Part B deductible is $292. See <a href="/part-b-premium-2027">the 2027 Part B page</a>.'),
     ]) + """
       <h2>How the 3.6% was set</h2>
 
@@ -207,8 +207,9 @@ ARTICLES14['cola-2027-estimate'] = {
 
       <h2>The raise and the deposit are still different numbers</h2>
 
-      <p>The Part B premium is usually deducted from Social Security before the payment arrives, and the
-      2027 premium has not been announced. For comparison, the 2026 premium rose from $185.00 to $202.90
+      <p>The Part B premium is usually deducted from Social Security before the payment arrives. CMS
+      announced the 2027 premium on 17 November: $209.40, up $6.50 from $202.90. For comparison, the 2026
+      premium rose from $185.00 to $202.90
       &mdash; an increase of $17.90 that came out of the 2.8% COLA before it reached most people&rsquo;s
       accounts. A hold-harmless provision limits how much of a COLA the Part B increase can absorb for many
       people who have the premium withheld from their benefit, but it does not cover everyone: people newly
@@ -216,9 +217,10 @@ ARTICLES14['cola-2027-estimate'] = {
       premium is paid by Medicaid are among those it does not protect. The mechanics are laid out on
       <a href="/cola">the COLA page</a>.</p>
 
-      <p>Until CMS publishes the 2027 premium and deductible, the net effect of the 3.6% cannot be
-      calculated. Projections exist, but a projection is not an announcement, and this site does not treat
-      one as the other.</p>
+      <p>With both numbers official, the arithmetic is possible. Against the average raise of about $75, a
+      $6.50 premium increase leaves about $68.50 a month for someone whose premium is withheld. That is
+      this site&rsquo;s own subtraction of two published figures, and it is worked through on
+      <a href="/part-b-premium-2027">the page on 2027 Part B costs</a>.</p>
 
       <h2>The other numbers that moved</h2>
 
@@ -256,8 +258,9 @@ ARTICLES14['cola-2027-estimate'] = {
         'Security Administration. Any earlier figure &mdash; including the 3.5%&ndash;3.6% estimates '
         'published in September &mdash; has been superseded.',
         'A COLA percentage is not the same as what lands in an account. The <strong>2027 Part B '
-        'premium</strong> is announced separately and, for most people who have it withheld, comes out '
-        'of the increase first &mdash; see <a href="/cola">the COLA page</a>.',
+        'premium</strong> is <strong>$209.40</strong>, up $6.50, and for most people who have it withheld '
+        'it comes out of the increase first &mdash; see <a href="/part-b-premium-2027">the 2027 Part B '
+        'page</a> and <a href="/cola">the COLA page</a>.',
         'The <strong>earnings limit</strong> for people under full retirement age rose to $25,560, and to '
         '$67,920 in the year full retirement age is reached. The limit applies to wages and '
         'self-employment income only.',
@@ -268,10 +271,10 @@ ARTICLES14['cola-2027-estimate'] = {
         'payment.',
     ]) + """
       <p>The estimate season is over, and the useful thing about it ending is that the arguments about
-      which forecaster was closest stop mattering. The percentage is set. What remains open is the part
-      the Social Security Administration does not decide: what Medicare charges for 2027, and how much of
-      the 3.6% survives the deduction. That number arrives from CMS, and until it does, the honest figure
-      for the net raise is that there isn&rsquo;t one yet.</p>
+      which forecaster was closest stop mattering. The percentage is set, and so is the part the Social
+      Security Administration does not decide. What Medicare charges for 2027 arrived from CMS on
+      17 November, and about $68.50 a month of the average raise survives the deduction. The figure that
+      governs a given person is the one on that person&rsquo;s own notice.</p>
 """,
     'sources': [
         ('Social Security Administration &mdash; Social Security Announces 3.6 Percent Benefit Increase for 2027',

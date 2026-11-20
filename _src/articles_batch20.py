@@ -118,9 +118,10 @@ ARTICLES20['medicare-2027-costs'] = {
       year&rsquo;s changes to your own coverage; <a href="/anoc-letter">The Medicare letter arriving
       in September</a> covers how to read it.</p>
 
-      <p>The Part B premium for 2027 has not been announced either. The Medicare Trustees&rsquo; 2026
-      report projected $209.50 a month, against $202.90 in 2026; CMS&rsquo;s official figure normally
-      arrives in the fall. The projection is a forecast and the announcement can differ from it.</p>
+      <p>The Part B premium for 2027 was announced on 17 November: $209.40 a month, against $202.90 in
+      2026. The Medicare Trustees&rsquo; 2026 report had projected $209.50, so the official figure came in
+      ten cents lower. The Part B deductible is $292. The details are on
+      <a href="/part-b-premium-2027">the page on 2027 Part B costs</a>.</p>
 
       <h2>Where each number lives</h2>
 

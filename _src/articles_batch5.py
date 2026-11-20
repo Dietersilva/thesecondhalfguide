@@ -303,7 +303,8 @@ ARTICLES5['cola'] = {
                               'increase of $17.90, deducted straight from the benefit.'),
         ('About $38', 'What is actually left of the average increase once Part B is taken out.'),
         ('~71 million', 'People receiving the adjustment.'),
-        ('Next announcement', 'October 2026, for benefits beginning January 2027.'),
+        ('Next adjustment', '3.6%, announced 14 October 2026, for benefits beginning January 2027. The 2027 Part B '
+                            'premium is $209.40. See <a href="/cola-2027-estimate">the 2027 COLA page</a>.'),
     ]) + """
       <h2>The part that gets skipped</h2>
 

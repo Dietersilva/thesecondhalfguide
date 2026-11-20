@@ -354,7 +354,7 @@ ARTICLES25['medicare-telehealth-2027'] = {
         ('Your home', 'Counts as the place you receive the visit. Before 2020, in most cases it did not.'),
         ('20%', 'The usual Part B coinsurance, after the Part B deductible. A telehealth visit is billed '
                 'like an in-person one.'),
-        ('$283', 'The 2026 Part B deductible. The 2027 figure has not been announced.'),
+        ('$283 / $292', 'The Part B deductible: $283 in 2026 and $292 in 2027, announced 17 November.'),
     ]) + """
       <h2>What the extension keeps in place</h2>
 
@@ -389,9 +389,9 @@ ARTICLES25['medicare-telehealth-2027'] = {
       <h2>What a visit costs</h2>
 
       <p>Telehealth is paid under Part B, so the usual Part B cost-sharing applies: the annual deductible,
-      then 20% of the Medicare-approved amount. The deductible for 2026 is $283. The 2027 amount
-      is announced each fall, and as of 30 October it has not been. The projected figures are discussed
-      on <a href="/medicare-2027-costs">the page on 2027 Medicare costs</a>. A Medigap policy that pays
+      then 20% of the Medicare-approved amount. The deductible for 2026 is $283. CMS announced the 2027
+      amount, $292, on 17 November; the figures are on
+      <a href="/part-b-premium-2027">the page on 2027 Part B costs</a>. A Medigap policy that pays
       the 20% coinsurance pays it for telehealth as well, because it is the same Part B service.</p>
 
       <p>Nothing about this changes with the extension. It extended where and how a visit can happen,
@@ -446,8 +446,8 @@ ARTICLES25['medicare-telehealth-2027'] = {
         'Medicare&rsquo;s expanded telehealth coverage runs through <strong>31 December 2027</strong>, '
         'under a law signed 3 February 2026.',
         'A visit can take place <strong>from home</strong>, without a rural-area requirement.',
-        'It is paid like any Part B service: the deductible, then <strong>20%</strong>. The 2026 deductible '
-        'is $283; the 2027 figure has not been announced.',
+        'It is paid like any Part B service: the deductible, then <strong>20%</strong>. The deductible is '
+        '$283 in 2026 and <strong>$292</strong> in 2027.',
         'Audio-only visits are allowed for <strong>some</strong> services, not all.',
         'On <strong>1 January 2028</strong> the general flexibilities end and the older limits return '
         'unless Congress acts again. Mental-health telehealth follows separate rules.',
