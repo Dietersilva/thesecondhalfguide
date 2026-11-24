@@ -15,8 +15,8 @@ SHARED_CSS = """
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,__A400__) format('woff2'); }
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 700; font-display: swap; src: url(data:font/woff2;base64,__A700__) format('woff2'); }
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: italic; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,__A400I__) format('woff2'); }
-  @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(data:font/woff2;base64,__F700__) format('woff2'); }
-  @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 500; font-display: swap; src: url(data:font/woff2;base64,__F500I__) format('woff2'); }
+  @font-face { font-family: 'Public Sans'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(data:font/woff2;base64,__F700__) format('woff2'); }
+  @font-face { font-family: 'Public Sans'; font-style: italic; font-weight: 500; font-display: swap; src: url(data:font/woff2;base64,__F500I__) format('woff2'); }
 
   :root {
     --bg: #FFFDF7;
@@ -24,7 +24,7 @@ SHARED_CSS = """
     --surface-2: #FBF3DD;
     --ink: #2E3024;
     --ink-soft: #5C5F4F;
-    --ink-faint: #87897A;
+    --ink-faint: #6B6E5E;
     --pine: #3E8267;
     --pine-strong: #2C6650;
     --gold: #E08E2B;
@@ -56,27 +56,27 @@ SHARED_CSS = """
     backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
   }
   .topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; gap: 16px; }
-  .wordmark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .wordmark { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
   .wordmark em { font-style: italic; font-weight: 500; color: var(--pine-strong); }
   .topbar-cta { font-size: 16px; font-weight: 700; color: var(--pine-strong); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
   .topbar-cta:hover { border-bottom-color: var(--pine-strong); }
 
-  .page-head { padding: 56px 0 8px; }
+  .page-head { padding: 64px 0 12px; }
   .eyebrow {
     display: inline-block; font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--pine-strong); background: var(--surface-2); padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
   }
   h1 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
-    line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
+    font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.06; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
   }
   .dek { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
   .meta { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin-bottom: 8px; }
 
   .prose { padding: 8px 0 12px; }
-  .prose h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(23px, 2.9vw, 29px); margin: 44px 0 14px; text-wrap: balance; }
-  .prose h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; margin: 30px 0 10px; }
-  .prose p { margin: 0 0 20px; max-width: 66ch; }
+  .prose h2 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(26px, 3.2vw, 34px); margin: 52px 0 14px; padding-top: 22px; border-top: 3px solid var(--line); text-wrap: balance; }
+  .prose h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 20px; margin: 30px 0 10px; }
+  .prose p { margin: 0 0 22px; max-width: 66ch; font-size: 20px; line-height: 1.7; }
   .prose ul, .prose ol { margin: 0 0 22px; padding-left: 26px; max-width: 64ch; }
   .prose li { margin-bottom: 10px; }
   .prose strong { color: var(--ink); }
@@ -111,15 +111,15 @@ SHARED_CSS = """
   .contact-card {
     display: flex; gap: 18px; align-items: flex-start; margin: 0 0 18px;
     background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 24px 26px; box-shadow: var(--shadow);
+    padding: 24px 26px; border-top: 4px solid var(--pine); box-shadow: var(--shadow);
   }
   .contact-card svg { flex: none; width: 26px; height: 26px; stroke: var(--pine-strong); margin-top: 3px; }
-  .contact-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; }
+  .contact-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; }
   .contact-card p { margin: 0; font-size: 16.5px; color: var(--ink-soft); }
   .contact-card a { font-weight: 700; }
 
   .toc {
-    background: var(--surface-2); border-radius: var(--radius); padding: 22px 26px; margin: 0 0 34px;
+    background: var(--surface-2); border-radius: var(--radius); border-left: 5px solid var(--pine); padding: 24px 28px; margin: 0 0 38px;
   }
   .toc p { font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 10px; }
   .toc ol { margin: 0; padding-left: 22px; }
@@ -135,15 +135,15 @@ SHARED_CSS = """
   .num-group h2 { margin-top: 34px; }
   .num-card {
     display: flex; gap: 20px; align-items: flex-start; padding: 20px 22px; margin: 0 0 12px;
-    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--pine); border-radius: var(--radius);
   }
   .num-card .who { flex: 1 1 auto; }
-  .num-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin: 0 0 5px; }
-  .num-card p { margin: 0 0 5px; font-size: 16px; color: var(--ink-soft); }
+  .num-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 21px; margin: 0 0 5px; }
+  .num-card p { margin: 0 0 5px; font-size: 17.5px; color: var(--ink-soft); }
   .num-card p.not { font-size: 15px; color: var(--ink-faint); }
   .num-card .tel {
-    flex: none; text-align: right; font-family: 'Fraunces', serif; font-weight: 700;
-    font-size: 20px; color: var(--pine-strong); white-space: nowrap;
+    flex: none; text-align: right; font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700;
+    font-size: 28px; color: var(--pine-strong); white-space: nowrap;
   }
   .num-card .tel span { display: block; font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 400; font-size: 13.5px; color: var(--ink-faint); margin-top: 4px; }

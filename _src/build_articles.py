@@ -13,31 +13,31 @@ import build_pages
 from build_pages import SHARED_CSS, HUB
 
 ARTICLE_CSS = """
-  .article-head { padding: 56px 0 8px; }
+  .article-head { padding: 64px 0 12px; }
   h1 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
-    line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
+    font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.06; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
   }
-  .dek { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 56ch; }
+  .dek { font-size: 21px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 24px; max-width: 56ch; }
   .meta { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin-bottom: 8px; }
 
   .prose { padding: 8px 0 12px; }
   .prose h2 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(24px, 3vw, 30px);
-    margin: 44px 0 16px; text-wrap: balance;
+    font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(26px, 3.2vw, 34px);
+    margin: 52px 0 16px; padding-top: 22px; border-top: 3px solid var(--line); text-wrap: balance;
   }
-  .prose h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 21px; margin: 30px 0 10px; }
-  .prose p { margin: 0 0 20px; max-width: 66ch; }
+  .prose h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 21px; margin: 30px 0 10px; }
+  .prose p { margin: 0 0 22px; max-width: 66ch; font-size: 20px; line-height: 1.7; }
   .prose ul, .prose ol { margin: 0 0 22px; padding-left: 26px; max-width: 64ch; }
-  .prose li { margin-bottom: 10px; }
+  .prose li { margin-bottom: 12px; font-size: 20px; line-height: 1.65; }
   .prose strong { color: var(--ink); }
 
   blockquote.pull {
-    margin: 34px 0; padding: 28px 30px; background: var(--surface); border: 1px solid var(--line);
-    border-radius: var(--radius); box-shadow: var(--shadow);
+    margin: 36px 0; padding: 28px 30px; background: var(--surface); border: 1px solid var(--line);
+    border-left: 6px solid var(--pine); border-radius: var(--radius); box-shadow: var(--shadow);
   }
   blockquote.pull p {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.5;
+    font-family: 'Public Sans', system-ui, sans-serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.5;
     color: var(--ink); margin: 0; max-width: 56ch;
   }
 
@@ -58,10 +58,10 @@ ARTICLE_CSS = """
   .checklist svg { flex: none; width: 22px; height: 22px; stroke: var(--pine-strong); margin-top: 1px; }
 
   /* At-a-glance fact table: the "facts you need" spine of the site. */
-  .facts { margin: 34px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
-  .facts-head { background: var(--surface-2); padding: 14px 20px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); }
+  .facts { margin: 36px 0; border: 1px solid var(--line); border-top: 4px solid var(--pine); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .facts-head { background: var(--surface-2); padding: 14px 20px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); }
   .facts-scroll { overflow-x: auto; }
-  .facts table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 17px; }
+  .facts table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 18px; }
   .facts th, .facts td { text-align: left; padding: 14px 20px; border-top: 1px solid var(--line); vertical-align: top; }
   .facts th { font-weight: 700; white-space: nowrap; width: 1%; }
   .facts tr:first-child th, .facts tr:first-child td { border-top: none; }
@@ -90,7 +90,7 @@ ARTICLE_CSS = """
     flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
     border: 2px solid var(--surface); box-shadow: 0 1px 3px rgba(51,53,42,0.18);
   }
-  .author h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin: 0 0 8px; }
+  .author h2 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 8px; }
   .author p { margin: 0 0 10px; font-size: 16px; color: var(--ink-soft); max-width: 62ch; }
   .author p:last-child { margin-bottom: 0; }
 
@@ -102,17 +102,17 @@ ARTICLE_CSS = """
   }
   .reader-call .label { display: flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); margin: 0 0 10px; }
   .reader-call .label svg { width: 19px; height: 19px; stroke: var(--pine-strong); flex: none; }
-  .reader-call h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 23px; margin: 0 0 12px; }
+  .reader-call h2 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 23px; margin: 0 0 12px; }
   .reader-call p { margin: 0 0 14px; font-size: 17px; color: var(--ink-soft); max-width: 60ch; }
   .reader-call a.btn {
     display: inline-flex; font-weight: 700; font-size: 16px; padding: 12px 20px; border-radius: 10px;
-    background: var(--pine); color: #FBFAF4; text-decoration: none;
+    background: var(--pine-strong); color: #FBFAF4; text-decoration: none; min-height: 48px; align-items: center;
   }
-  .reader-call a.btn:hover { background: var(--pine-strong); }
+  .reader-call a.btn:hover { background: #245543; }
   .reader-call .fine { font-size: 14.5px; color: var(--ink-faint); margin: 14px 0 0; }
 
   .sources { margin: 48px 0 8px; padding: 26px 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
-  .sources h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; margin: 0 0 6px; }
+  .sources h2 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 20px; margin: 0 0 6px; }
   .sources p.checked { font-size: 15px; color: var(--ink-faint); margin: 0 0 14px; }
   .sources ul { margin: 0; padding-left: 22px; font-size: 16px; }
   .sources li { margin-bottom: 9px; color: var(--ink-soft); }
@@ -122,13 +122,13 @@ ARTICLE_CSS = """
     border-radius: var(--radius); box-shadow: var(--shadow);
   }
   .next-up p.label { font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); margin: 0 0 8px; }
-  .next-up h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; }
+  .next-up h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; }
   .next-up p { margin: 0 0 16px; color: var(--ink-soft); }
   .next-up a.btn {
     display: inline-flex; font-weight: 700; font-size: 16px; padding: 12px 20px; border-radius: 10px;
-    background: var(--pine); color: #FBFAF4; text-decoration: none;
+    background: var(--pine-strong); color: #FBFAF4; text-decoration: none; min-height: 48px; align-items: center;
   }
-  .next-up a.btn:hover { background: var(--pine-strong); }
+  .next-up a.btn:hover { background: #245543; }
 
   @media (max-width: 600px) {
     .article-head { padding-top: 36px; }
@@ -136,7 +136,7 @@ ARTICLE_CSS = """
   }
 """
 
-from charts import CHART_CSS, thresholds_timeline, enrolment_window, fraud_share, part_d_phases
+from charts import CHART_CSS, thresholds_timeline, enrolment_window, fraud_share, part_d_phases, scam_script
 
 ARTICLE_CSS += CHART_CSS
 
@@ -467,6 +467,7 @@ ARTICLES['five-minute-rule'] = {
         <li>Money is directed into a channel that is <strong>hard or impossible to reverse</strong>:
         wire transfer, cryptocurrency ATM, gift cards, a courier who comes to your door for cash or gold.</li>
       </ul>
+""" + scam_script() + """
 
       <blockquote class="pull">
         <p>A scammer only has control while you stay inside their channel. Hanging up is not rude. It is

@@ -14,6 +14,7 @@ pay an income-related surcharge, the married-filing-separately brackets, and the
 2027 base Part D premium."""
 
 from build_articles import facts, check, AD_INLINE
+from charts import irmaa_tiers
 
 ARTICLES29 = {}
 
@@ -194,6 +195,7 @@ ARTICLES29['irmaa-2027'] = {
         ('$500,000 or more single; $750,000 or more joint',
          'Part B total $711.80, which is $502.40 more. Part D surcharge $96.40.'),
     ]) + """
+""" + irmaa_tiers() + """
       <h2>Where the 2025 income comes in</h2>
 
       <p>IRMAA looks back two years. The 2027 amounts are set from the 2025 return, which Social Security

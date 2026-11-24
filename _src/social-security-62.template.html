@@ -3,8 +3,8 @@
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_400) format('woff2'); }
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: normal; font-weight: 700; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_700) format('woff2'); }
   @font-face { font-family: 'Atkinson Hyperlegible'; font-style: italic; font-weight: 400; font-display: swap; src: url(data:font/woff2;base64,ATKINSON_400I) format('woff2'); }
-  @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_700) format('woff2'); }
-  @font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 500; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_500I) format('woff2'); }
+  @font-face { font-family: 'Public Sans'; font-style: normal; font-weight: 600 700; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_700) format('woff2'); }
+  @font-face { font-family: 'Public Sans'; font-style: italic; font-weight: 500; font-display: swap; src: url(data:font/woff2;base64,FRAUNCES_500I) format('woff2'); }
 
   :root {
     --bg: #FFFDF7;
@@ -12,7 +12,7 @@
     --surface-2: #FBF3DD;
     --ink: #2E3024;
     --ink-soft: #5C5F4F;
-    --ink-faint: #87897A;
+    --ink-faint: #6B6E5E;
     --pine: #3E8267;
     --pine-strong: #2C6650;
     --gold: #E08E2B;
@@ -47,7 +47,7 @@
     border-bottom: 1px solid var(--line);
   }
   .topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; gap: 16px; }
-  .wordmark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .wordmark { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none; white-space: nowrap; }
   .wordmark em { font-style: italic; font-weight: 500; color: var(--pine-strong); }
   .topbar-cta { font-size: 16px; font-weight: 700; color: var(--pine-strong); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
   .topbar-cta:hover { border-bottom-color: var(--pine-strong); }
@@ -58,7 +58,7 @@
     color: var(--pine-strong); background: var(--surface-2); padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
   }
   h1 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
+    font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px);
     line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 18px; text-wrap: balance;
   }
   .dek { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 22px; max-width: 58ch; }
@@ -66,10 +66,10 @@
 
   .prose { padding: 8px 0 12px; }
   .prose h2 {
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(24px, 3vw, 30px);
+    font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(24px, 3vw, 30px);
     margin: 44px 0 16px; text-wrap: balance;
   }
-  .prose h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 21px; margin: 30px 0 10px; }
+  .prose h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 21px; margin: 30px 0 10px; }
   .prose p { margin: 0 0 20px; max-width: 66ch; }
   .prose ul, .prose ol { margin: 0 0 22px; padding-left: 26px; max-width: 64ch; }
   .prose li { margin-bottom: 10px; }
@@ -80,7 +80,7 @@
     border-radius: var(--radius); box-shadow: var(--shadow);
   }
   blockquote.pull p {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.5;
+    font-family: 'Public Sans', system-ui, sans-serif; font-style: italic; font-weight: 500; font-size: 20px; line-height: 1.5;
     color: var(--ink); margin: 0; max-width: 56ch;
   }
 
@@ -104,7 +104,7 @@
 
   .breakeven-figure { margin: 10px 0 34px; }
   .breakeven-figure svg { width: 100%; height: auto; display: block; }
-  .breakeven-caption { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 15px; color: var(--ink-faint); margin-top: 10px; }
+  .breakeven-caption { font-family: 'Public Sans', system-ui, sans-serif; font-style: italic; font-weight: 500; font-size: 15px; color: var(--ink-faint); margin-top: 10px; }
 
   .ad-slot { margin: 44px 0; }
   .ad-slot-inner {
@@ -119,7 +119,7 @@
     border-radius: var(--radius); box-shadow: var(--shadow);
   }
   .next-up p.label { font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine-strong); margin: 0 0 8px; }
-  .next-up h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; }
+  .next-up h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; }
   .next-up p { margin: 0 0 16px; color: var(--ink-soft); }
   .next-up a.btn {
     display: inline-flex; font-weight: 700; font-size: 16px; padding: 12px 20px; border-radius: 10px;
@@ -130,6 +130,23 @@
   footer { border-top: 1px solid var(--line); padding: 34px 0 60px; margin-top: 40px; }
   .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 15px; color: var(--ink-faint); }
   footer a { color: var(--ink-soft); }
+
+  .chart {
+    margin: 34px 0; padding: 24px 26px 20px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .chart-title {
+    font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--pine-strong); margin: 0 0 16px;
+  }
+  .chart-note { font-size: 15px; color: var(--ink-faint); margin: 14px 0 0; max-width: 60ch; }
+  .chart text { font-family: 'Atkinson Hyperlegible', sans-serif; }
+  .c-lab { font-size: 16px; fill: var(--ink-soft); }
+  .c-num { font-size: 19px; font-weight: 700; fill: var(--ink); }
+  .c-key { font-size: 15.5px; fill: var(--ink-soft); }
+  .chart { border-top: 4px solid var(--pine); }
+  .chart-note { color: var(--ink-soft); font-size: 16px; }
 </style>
 
 <header class="topbar">
@@ -168,6 +185,27 @@
           </tbody>
         </table>
       </div>
+      <div class="chart">
+        <p class="chart-title">What your check looks like at each age</p>
+        <svg viewBox="0 0 700 204" role="img" aria-labelledby="caT caD">
+          <title id="caT">Monthly Social Security check by claiming age</title>
+          <desc id="caD">Three bars for someone whose full-retirement-age benefit is 2,000 dollars a month. Claiming at 62 pays 70 percent, about 1,400 dollars. Claiming at 67 pays 100 percent, 2,000 dollars. Claiming at 70 pays 124 percent, about 2,480 dollars.</desc>
+          <text class="c-num" x="136" y="44" text-anchor="end">Age 62</text>
+          <rect x="150" y="14" width="210" height="44" rx="6" fill="var(--ink-faint)"/>
+          <text class="c-num" x="372" y="36">70%</text>
+          <text class="c-lab" x="372" y="56">~$1,400 a month</text>
+          <text class="c-num" x="136" y="106" text-anchor="end">Age 67 (full)</text>
+          <rect x="150" y="76" width="300" height="44" rx="6" fill="var(--pine)"/>
+          <text class="c-num" x="462" y="98">100%</text>
+          <text class="c-lab" x="462" y="118">$2,000 a month</text>
+          <text class="c-num" x="136" y="168" text-anchor="end">Age 70</text>
+          <rect x="150" y="138" width="372" height="44" rx="6" fill="var(--gold)"/>
+          <text class="c-num" x="534" y="160">124%</text>
+          <text class="c-lab" x="534" y="180">~$2,480 a month</text>
+        </svg>
+        <p class="chart-note">Example for someone with a $2,000 monthly benefit at full retirement age.</p>
+      </div>
+
       <p>That's a roughly 77% gap in monthly income between claiming at 62 versus 70 &mdash; and it's permanent for the rest of your life, with annual cost-of-living adjustments applied on top of whichever number you locked in.</p>
 
       <h2>So which one actually pays more, in total?</h2>

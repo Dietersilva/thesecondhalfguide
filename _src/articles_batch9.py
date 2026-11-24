@@ -2,6 +2,7 @@
 """Ninth batch: three facts for people leaving work before 65."""
 
 from build_articles import facts, check, AD_INLINE
+from charts import claiming_ages
 
 ARTICLES9 = {}
 
@@ -242,6 +243,7 @@ ARTICLES9['delayed-retirement-credit'] = {
       same as any other benefit. That is the entire "secret." It is arithmetic SSA publishes, not
       information anyone is hiding.</p>
 
+""" + claiming_ages() + """
       <blockquote class="pull">
         <p>This is not advice to delay. Whether waiting makes sense depends on your health, your other
         income, and whether you have a spouse whose survivor benefit depends on yours &mdash; a genuinely

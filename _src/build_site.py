@@ -318,7 +318,7 @@ body.hub .house-label, body.article .house-label, body.doc .house-label {
   text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
 }
 body.hub .house-title, body.article .house-title, body.doc .house-title {
-  display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 21px;
+  display: block; font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 21px;
   line-height: 1.25; color: var(--ink); margin-bottom: 6px; text-wrap: balance;
 }
 body.hub .house-blurb, body.article .house-blurb, body.doc .house-blurb {
@@ -423,9 +423,9 @@ SUBSCRIBE_CSS = """
 .signup { border-top: 1px solid var(--line); margin-top: 8px; padding: 40px 0 8px; }
 .signup-card {
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 30px 28px;
+  padding: 34px 32px; border-top: 4px solid var(--pine); box-shadow: var(--shadow);
 }
-.signup-card h2 { font-size: 1.45rem; margin: 0 0 6px; }
+.signup-card h2 { font-size: 1.7rem; margin: 0 0 6px; }
 .signup-card p.why { margin: 0 0 20px; color: var(--ink-soft); max-width: 54ch; }
 .signup-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
 .signup-field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 260px; }
@@ -438,10 +438,10 @@ SUBSCRIBE_CSS = """
 .signup-field input:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
 .signup-form button {
   font: inherit; font-weight: 700; font-size: 1.05rem; min-height: 52px;
-  padding: 13px 22px; border: 0; border-radius: 9px; cursor: pointer;
+  padding: 13px 22px; border: 0; border-radius: 12px; cursor: pointer;
   background: var(--pine-strong); color: #fff; flex: 0 0 auto;
 }
-.signup-form button:hover { filter: brightness(1.08); }
+.signup-form button:hover { background: #245543; }
 .signup-form button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .signup-fine { margin: 16px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
 @media (max-width: 520px) {
@@ -484,7 +484,7 @@ def subscribe_block(wide):
 RELATED_CSS = """
 body.article .related { margin: 40px 0 8px; }
 body.article .related h2 {
-  font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; margin: 0 0 14px;
+  font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 24px; margin: 0 0 14px;
 }
 body.article .related ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 body.article .related li {
@@ -493,7 +493,7 @@ body.article .related li {
 }
 body.article .related li:hover { border-color: var(--pine); }
 body.article .related a {
-  display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; line-height: 1.3;
+  display: block; font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.3;
   color: var(--ink); text-decoration: none; margin-bottom: 4px; text-wrap: balance;
 }
 body.article .related a:hover { text-decoration: underline; }
@@ -508,16 +508,16 @@ body.hub .latest-grid {
 }
 body.hub .latest-card {
   display: block; text-decoration: none; background: var(--surface);
-  border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px;
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; border-top: 4px solid var(--pine);
   box-shadow: var(--shadow);
 }
-body.hub .latest-card:hover { border-color: var(--pine); }
+body.hub .latest-card:hover { border-color: var(--pine); box-shadow: 0 2px 4px rgba(51,53,42,0.08), 0 12px 28px -12px rgba(51,53,42,0.22); }
 body.hub .latest-kicker {
   display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--pine-strong); margin-bottom: 8px;
 }
 body.hub .latest-card h3 {
-  font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; line-height: 1.25;
+  font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 21px; line-height: 1.25;
   margin: 0 0 8px; color: var(--ink); text-wrap: balance;
 }
 body.hub .latest-card p { margin: 0; font-size: 16px; color: var(--ink-soft); }
@@ -594,8 +594,117 @@ HEADER_CSS = """
 @media print { .topnav { display: none; } }
 """
 
+REDESIGN_CSS = """
+/* ---- redesign: dark header with a topic bar, colour bands, dark footer ---- */
+.topbar { background: var(--pine-strong) !important; border-bottom: 0; backdrop-filter: none; }
+.topbar .wrap, .topbar .wrap-wide { background: transparent !important; }
+.topbar .wordmark { color: #fff; }
+.topbar .wordmark em { color: #FBE4B8; }
+.topbar .topbar-home, .topbar .topbar-cta, .topbar .topbar-search { color: #fff; }
+.topbar .topbar-home:hover, .topbar .topbar-cta:hover { color: #FBE4B8; border-bottom-color: #FBE4B8; }
+.topbar .topbar-search:hover { background: rgba(255,255,255,0.14); }
+.topics-bar { background: #245543; border-top: 1px solid rgba(255,255,255,0.14); }
+.topics-bar > div { display: flex; gap: 6px; overflow-x: auto; padding-top: 0 !important; padding-bottom: 0 !important; scrollbar-width: none; }
+.topics-bar > div::-webkit-scrollbar { display: none; }
+.topics-bar a { flex: none; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; padding: 12px 14px; border-bottom: 3px solid transparent; }
+.topics-bar a:hover { border-bottom-color: #FBE4B8; background: rgba(255,255,255,0.08); }
+footer { background: #2E3024; border-top: 0; color: #E9E6D8; margin-top: 0; }
+footer a, footer span { color: #E9E6D8; }
+footer a:hover { color: #FBE4B8; }
+.hero { background: var(--pine-strong); color: #fff; padding-top: 64px; padding-bottom: 72px; }
+.hero h1 { color: #fff; }
+.hero .eyebrow { background: rgba(255,255,255,0.14); color: #fff; }
+.hero .hero-lede { color: #FBE4B8; }
+.hero .hero-sub { color: #E4EFE9; }
+.hero .btn-primary { background: #F2B24D; color: #2E3024; border-color: #F2B24D; }
+.hero .btn-primary:hover { background: #FBE4B8; }
+.hero .btn-ghost { color: #fff; border-color: #fff; background: transparent; }
+.hero .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+.hero .hero-photo img { box-shadow: 0 18px 40px -18px rgba(0,0,0,0.55); }
+.starthere { background: #E4EFE9; padding: 44px 0 52px; }
+.starthere-h { font-family: 'Public Sans', system-ui, sans-serif; font-size: clamp(26px, 3vw, 34px); margin: 0 0 22px; color: var(--ink); }
+.starthere-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.start-card { display: flex; flex-direction: column; gap: 10px; background: #fff; border-radius: 14px; padding: 22px; text-decoration: none; color: var(--ink); border-top: 6px solid var(--pine-strong); box-shadow: var(--shadow); transition: transform .15s ease; }
+.start-card:hover { transform: translateY(-3px); }
+.start-lab { font-size: 13.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--pine-strong); }
+.start-title { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.25; }
+.start-go { margin-top: auto; font-weight: 700; color: var(--pine-strong); }
+@media (max-width: 620px) { .topbar { position: static; } }
+@media (max-width: 960px) { .starthere-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .starthere-grid { grid-template-columns: 1fr; } }
+.note { background: var(--surface-2); }
+.topics { background: #FBF3DD; }
+.toc-side { margin: 0 0 28px; padding: 18px 20px; background: #E4EFE9; border-radius: 14px; border-top: 5px solid var(--pine-strong); }
+.toc-side-h { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--pine-strong); }
+.toc-side ol { margin: 0; padding-left: 20px; }
+.toc-side li { margin: 0 0 8px; font-size: 16px; line-height: 1.35; }
+.toc-side a { color: var(--ink); text-decoration: none; }
+.toc-side a:hover { color: var(--pine-strong); text-decoration: underline; }
+.prose h2 { scroll-margin-top: 150px; }
+.article-head .dek, .page-head .dek { margin-left: 0; margin-right: 0; text-align: left; }
+@media (min-width: 1180px) { main .wrap:has(.toc-side) { max-width: 1040px; } main .wrap:has(.toc-side) .article-head { margin-left: 286px; } .toc-side { float: left; position: sticky; top: 150px; width: 250px; margin: 6px 36px 0 0; } .prose { display: flow-root; } }
+@media print { .toc-side { display: none; } }
+"""
+
+def _scope(css):
+    """Prefix every plain rule with `body` so these rules beat the page templates'
+    own (later, equal-specificity) inline CSS. @media lines are scoped inside."""
+    import re as _re
+    out = []
+    for line in css.split(chr(10)):
+        s = line.strip()
+        if not s or s.startswith('/*') or '{' not in s:
+            out.append(line); continue
+        def pre(sel):
+            return ', '.join('body ' + p.strip() for p in sel.split(','))
+        if s.startswith('@media'):
+            head, rest = s.split('{', 1)
+            inner = _re.sub(r'([^{}]+)\{', lambda m: pre(m.group(1)) + ' {', rest)
+            out.append(head + '{' + inner)
+        else:
+            sel, rest = s.split('{', 1)
+            out.append(pre(sel) + ' {' + rest)
+    return chr(10).join(out)
+
+
+REDESIGN_CSS = _scope(REDESIGN_CSS)
+
 SEARCH_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" '
               'stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>')
+
+
+TOPIC_NAV = (('medicare', 'Medicare'), ('money', 'Money &amp; taxes'), ('paperwork', 'Paperwork'),
+             ('fraud', 'Scams'), ('aging', 'Aging in place'), ('travel', 'Travel'), ('family', 'Family'))
+
+
+def add_toc(body):
+    """Insert a sticky 'On this page' list before the article prose, built from its h2s."""
+    start = body.find('<div class="prose">')
+    if start < 0 or 'class="toc-side"' in body:
+        return body
+    end = len(body)
+    for marker in ('class="author"', 'class="reader-call"', 'class="sources"', 'class="next-up"'):
+        i = body.find(marker, start)
+        if i > 0:
+            end = min(end, i)
+    seg = body[start:end]
+    heads = re.findall(r'<h2>(.*?)</h2>', seg, re.S)
+    if len(heads) < 3:
+        return body
+    items, used = [], set()
+    def put_id(m):
+        text = m.group(1)
+        slug = re.sub(r'[^a-z0-9]+', '-', re.sub(r'<[^>]+>|&[a-z#0-9]+;', ' ', text).lower()).strip('-')[:48] or 'section'
+        base, n = slug, 2
+        while slug in used:
+            slug = f'{base}-{n}'; n += 1
+        used.add(slug)
+        items.append((slug, text))
+        return f'<h2 id="{slug}">{text}</h2>'
+    seg2 = re.sub(r'<h2>(.*?)</h2>', put_id, seg, flags=re.S)
+    toc = ('<nav class="toc-side" aria-label="On this page"><p class="toc-side-h">On this page</p><ol>'
+           + ''.join(f'<li><a href="#{s}">{t}</a></li>' for s, t in items) + '</ol></nav>')
+    return body[:start] + toc + seg2 + body[end:]
 
 
 def header_block(cls):
@@ -611,7 +720,10 @@ def header_block(cls):
             f'      <a class="topbar-cta" href="{"#ask" if cls == "hub" else "/#ask"}">'
             'Send us a topic &rarr;</a>\n'
             '    </nav>\n'
-            '  </div>\n</header>')
+            '  </div>\n'
+            f'  <nav class="topics-bar" aria-label="Topics"><div class="{wrap}">'
+            + ''.join(f'<a href="/{s}">{n}</a>' for s, n in TOPIC_NAV) +
+            '</div></nav>\n</header>')
 
 
 FOOTER_RE = re.compile(r'<footer>.*?</footer>', re.S)
@@ -881,8 +993,9 @@ HUB_PAGE_CSS = """
 .topic-hero { padding: 52px 0 8px; }
 .topic-hero .topic-icon { width: 42px; height: 42px; color: var(--pine-strong); margin-bottom: 16px; }
 .topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
-.topic-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+.topic-hero h1 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(34px, 5vw, 50px); line-height: 1.06; margin: 0 0 14px; text-wrap: balance; }
 .topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
+.topic-banner { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 50% 35%; border-radius: 16px; margin: 20px 0 8px; box-shadow: var(--shadow); }
 .topic-intro { max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink); margin: 14px 0 0; }
 .topic-intro p { margin: 0 0 12px; }
 .topic-intro a { color: var(--pine-strong); text-decoration: underline; text-underline-offset: 3px; }
@@ -891,11 +1004,11 @@ HUB_PAGE_CSS = """
 .topic-link {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 18px 22px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+  padding: 20px 24px; border-left: 5px solid var(--pine); text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
 }
-.topic-link:hover { border-color: var(--pine); }
+.topic-link:hover { border-color: var(--pine); box-shadow: 0 2px 4px rgba(51,53,42,0.08), 0 12px 28px -12px rgba(51,53,42,0.22); }
 .topic-link:hover .topic-link-arrow { transform: translateX(3px); }
-.topic-link-title { font-size: 17px; font-weight: 700; max-width: 62ch; }
+.topic-link-title { font-size: 19px; font-weight: 700; max-width: 62ch; }
 .topic-link-arrow { flex: none; color: var(--pine-strong); font-weight: 700; transition: transform .15s; }
 .topic-back {
   display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700;
@@ -940,6 +1053,7 @@ def hub_page(cat):
       <div class="topic-icon">{cat['icon']}</div>
       <h1>{cat['name']}</h1>
       <p class="dek">{cat['blurb']}</p>
+      <img class="topic-banner" src="/images/photo/{cat['slug']}.jpg" alt="" width="900" height="600">
       <div class="topic-intro">{HUB_INTROS.get(cat['slug'], '')}</div>
       <p class="count">{n} {plural} in this topic</p>
     </div>
@@ -956,7 +1070,7 @@ def hub_page(cat):
 
 SEARCH_PAGE_CSS = """
 .search-hero { padding: 52px 0 8px; }
-.search-hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; margin: 0 0 14px; text-wrap: balance; }
+.search-hero h1 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(34px, 5vw, 50px); line-height: 1.06; margin: 0 0 14px; text-wrap: balance; }
 .search-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 24px; max-width: 58ch; }
 .search-label { display: block; font-weight: 700; font-size: 1rem; margin: 0 0 8px; }
 .search-input {
@@ -1065,8 +1179,8 @@ NEW_FONT_FACES = """
 @font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/atkinson-400.woff2) format('woff2')}
 @font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/atkinson-700.woff2) format('woff2')}
 @font-face{font-family:'Atkinson Hyperlegible';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/atkinson-400i.woff2) format('woff2')}
-@font-face{font-family:'Fraunces';font-style:normal;font-weight:600 700;font-display:swap;src:url(/fonts/fraunces-700.woff2) format('woff2')}
-@font-face{font-family:'Fraunces';font-style:italic;font-weight:500;font-display:swap;src:url(/fonts/fraunces-500i.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:600 700;font-display:swap;src:url(/fonts/fraunces-700.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:italic;font-weight:500;font-display:swap;src:url(/fonts/fraunces-500i.woff2) format('woff2')}
 """
 
 
@@ -1160,6 +1274,8 @@ def main():
 
         body, n_head = HEADER_RE.subn(header_block(cls), body)
         assert n_head == 1, f'{path}: expected one header, found {n_head}'
+        if cls == 'article':
+            body = add_toc(body)
 
         # The letter is the point of the site's email, so it goes at the end of
         # anything worth reading. Not on the reference pages, where a signup
@@ -1265,7 +1381,7 @@ def main():
             rendered[path] = (title, desc, canonical, AD_SLOT_RE.sub(swap, body))
 
     styles = (NEW_FONT_FACES + '\n'.join(global_rules) + '\n'
-              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + RELATED_CSS + SUBSCRIBE_CSS + HEADER_CSS
+              + '\n'.join(css_blocks) + NORMALIZE + LATEST_CSS + RELATED_CSS + SUBSCRIBE_CSS + HEADER_CSS + REDESIGN_CSS
               + (HOUSE_CSS if not ADS_LIVE else ''))
     # The stylesheet used to be served as a plain /styles.css. Because the
     # name never changed, a reader whose browser had cached an older copy kept

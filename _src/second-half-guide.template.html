@@ -22,14 +22,14 @@
     src: url(data:font/woff2;base64,ATKINSON_400I) format('woff2');
   }
   @font-face {
-    font-family: 'Fraunces';
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 600 700;
     font-display: swap;
     src: url(data:font/woff2;base64,FRAUNCES_700) format('woff2');
   }
   @font-face {
-    font-family: 'Fraunces';
+    font-family: 'Public Sans';
     font-style: italic;
     font-weight: 500;
     font-display: swap;
@@ -45,7 +45,7 @@
     --surface-2: #FBF3DD;
     --ink: #2E3024;
     --ink-soft: #5C5F4F;
-    --ink-faint: #87897A;
+    --ink-faint: #6B6E5E;
     --pine: #3E8267;
     --pine-strong: #2C6650;
     --gold: #E08E2B;
@@ -100,7 +100,7 @@
     gap: 16px;
   }
   .wordmark {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-weight: 700;
     font-size: 22px;
     letter-spacing: -0.01em;
@@ -146,17 +146,17 @@
     margin-bottom: 20px;
   }
   h1 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-weight: 700;
-    font-size: clamp(34px, 4.6vw, 48px);
-    line-height: 1.08;
+    font-size: clamp(38px, 5.4vw, 60px);
+    line-height: 1.04;
     letter-spacing: -0.01em;
     margin: 0 0 22px;
     text-wrap: balance;
     color: var(--ink);
   }
   .hero-lede {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-style: italic;
     font-weight: 500;
     font-size: 23px;
@@ -185,35 +185,52 @@
     font-size: 17px;
     font-weight: 700;
     padding: 14px 24px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 2px solid transparent;
     cursor: pointer;
     text-decoration: none;
     line-height: 1;
+    min-height: 52px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
   .btn-primary {
-    background: var(--pine);
+    background: var(--pine-strong);
     color: #FBFAF4;
   }
-  .btn-primary:hover { background: var(--pine-strong); }
+  .btn-primary:hover { background: #245543; }
   .btn-ghost {
     background: transparent;
-    border-color: var(--line);
+    border-color: var(--ink-faint);
     color: var(--ink);
   }
-  .btn-ghost:hover { border-color: var(--ink-faint); }
+  .btn-ghost:hover { border-color: var(--ink); }
 
   /* ---------- arc graphic ---------- */
   .arc-figure { margin: 0; }
   .arc-figure svg { width: 100%; height: auto; display: block; }
   .arc-caption {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-style: italic;
     font-weight: 500;
-    font-size: 15px;
-    color: var(--ink-faint);
+    font-size: 16px;
+    color: var(--ink-soft);
     text-align: center;
     margin-top: 10px;
+  }
+
+
+  /* ---------- photographs ---------- */
+  .hero-photo { margin: 0; }
+  .hero-photo img {
+    display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 40%;
+    border-radius: 18px; box-shadow: var(--shadow);
+  }
+  .arc-band { padding: 8px 0 48px; }
+  .arc-band .arc-figure { max-width: 640px; margin: 0 auto; }
+  .topic-photo {
+    display: block; width: calc(100% + 48px); height: auto; max-width: none; margin: -24px -24px 6px;
+    aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 35%;
+    border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
   }
 
   /* ---------- note section ---------- */
@@ -226,10 +243,11 @@
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
+    border-left: 6px solid var(--pine);
     box-shadow: var(--shadow);
   }
   .note p {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-style: italic;
     font-weight: 500;
     font-size: 21px;
@@ -253,9 +271,9 @@
     margin: 0 0 34px;
   }
   .section-head h2 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-weight: 700;
-    font-size: clamp(26px, 3vw, 32px);
+    font-size: clamp(28px, 3.4vw, 38px);
     margin: 0 0 12px;
     text-wrap: balance;
   }
@@ -283,7 +301,7 @@
     color: var(--pine-strong);
   }
   .start-here-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-weight: 700;
     font-size: 17px;
     color: var(--ink);
@@ -311,6 +329,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow: hidden;
     box-shadow: var(--shadow);
   }
   .topic-icon {
@@ -325,11 +344,11 @@
   }
   .topic-icon svg { width: 24px; height: 24px; stroke: var(--pine-strong); }
   .topic-card h3 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Public Sans', system-ui, sans-serif;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 22px;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.25;
   }
   .topic-card h3 a { color: inherit; text-decoration: none; }
   .topic-card h3 a:hover { text-decoration: underline; }
@@ -541,7 +560,32 @@
           <a class="btn btn-ghost" href="/numbers">The numbers to keep by the phone</a>
         </div>
       </div>
-      <figure class="arc-figure reveal d2">
+      <div class="hero-photo reveal d2"><img src="/images/photo/hero.jpg" alt="" width="1400" height="931" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <section class="starthere">
+    <div class="wrap">
+      <h2 class="starthere-h">Start with what people ask first</h2>
+      <div class="starthere-grid">
+        <a class="start-card" href="/medicare-enrollment"><span class="start-lab">Medicare</span><span class="start-title">Medicare Enrollment Deadlines and Late Penalties</span><span class="start-go">Read &rarr;</span></a>
+        <a class="start-card" href="/social-security-62"><span class="start-lab">Social Security</span><span class="start-title">File for Social Security at 62? What the Math Says</span><span class="start-go">Read &rarr;</span></a>
+        <a class="start-card" href="/part-b-premium-2027"><span class="start-lab">2027 costs</span><span class="start-title">Medicare Part B 2027: $209.40 Premium, $292 Deductible</span><span class="start-go">Read &rarr;</span></a>
+        <a class="start-card" href="/five-minute-rule"><span class="start-lab">Scams</span><span class="start-title">The Five-Minute Rule: Why Scammers Need You to Act Right Now</span><span class="start-go">Read &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap ad-slot">
+    <div class="ad-slot-inner">
+      <span class="ad-slot-label">Advertisement</span>
+      <span class="ad-slot-note">Leaderboard unit &middot; activates after AdSense approval</span>
+    </div>
+  </div>
+
+  <section class="arc-band">
+    <div class="wrap">
+      <figure class="arc-figure ">
         <svg viewBox="0 0 560 320" role="img" aria-labelledby="arcTitle arcDesc">
           <title id="arcTitle">A rising arc representing life's second half</title>
           <desc id="arcDesc">A curved line rises from the lower left and levels out high on the right, with a marker past the midpoint labeled "you are here," illustrating that the second half continues upward rather than declining.</desc>
@@ -553,19 +597,12 @@
           <circle cx="365" cy="59" r="9" fill="var(--gold)"/>
           <circle cx="365" cy="59" r="17" fill="var(--gold)" opacity="0.25"/>
           <circle cx="365" cy="59" r="26" fill="var(--gold)" opacity="0.12"/>
-          <text x="365" y="34" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="500" font-size="16" fill="var(--ink)">you are here</text>
+          <text x="365" y="34" text-anchor="middle" font-family="Public Sans" font-style="italic" font-weight="500" font-size="16" fill="var(--ink)">you are here</text>
         </svg>
         <figcaption class="arc-caption">The line doesn't go down from here. It levels out &mdash; and keeps going.</figcaption>
       </figure>
     </div>
   </section>
-
-  <div class="wrap ad-slot">
-    <div class="ad-slot-inner">
-      <span class="ad-slot-label">Advertisement</span>
-      <span class="ad-slot-note">Leaderboard unit &middot; activates after AdSense approval</span>
-    </div>
-  </div>
 
   <section class="note">
     <div class="wrap">
@@ -591,6 +628,7 @@
       <div class="topic-grid">
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/medicare.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 8h4M16 8h4M6 12h12M7 16h10"/></svg>
           </div>
@@ -631,6 +669,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/money.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.5 15c.4 1 1.3 1.5 2.5 1.5 1.6 0 2.5-.8 2.5-1.9 0-2.6-5-1.3-5-3.9 0-1.1.9-1.9 2.5-1.9 1.2 0 2.1.5 2.5 1.5"/></svg>
           </div>
@@ -671,6 +710,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/paperwork.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v3h3M9 12h6M9 15.5h6M9 8.5h3"/></svg>
           </div>
@@ -684,6 +724,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/fraud.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
           </div>
@@ -707,6 +748,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/aging.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5L12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
           </div>
@@ -724,6 +766,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/travel.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l3-8h12l3 8"/><path d="M3 13h18v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 5v3M15 5v3"/></svg>
           </div>
@@ -752,6 +795,7 @@
         </div>
 
         <div class="topic-card">
+          <img class="topic-photo" src="/images/photo/family.jpg" alt="" width="900" height="600" loading="lazy">
           <div class="topic-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.5-3 2.7-5 5.5-5s5 2 5.5 5"/><path d="M15 14.5c2 .2 3.5 1.9 4 4.5"/></svg>
           </div>

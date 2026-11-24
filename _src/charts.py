@@ -23,9 +23,11 @@ CHART_CSS = """
   }
   .chart-note { font-size: 15px; color: var(--ink-faint); margin: 14px 0 0; max-width: 60ch; }
   .chart text { font-family: 'Atkinson Hyperlegible', sans-serif; }
-  .c-lab { font-size: 13px; fill: var(--ink-soft); }
-  .c-num { font-size: 15px; font-weight: 700; fill: var(--ink); }
-  .c-key { font-size: 12.5px; fill: var(--ink-faint); }
+  .c-lab { font-size: 16px; fill: var(--ink-soft); }
+  .c-num { font-size: 19px; font-weight: 700; fill: var(--ink); }
+  .c-key { font-size: 15.5px; fill: var(--ink-soft); }
+  .chart { border-top: 4px solid var(--pine); }
+  .chart-note { color: var(--ink-soft); font-size: 16px; }
 """
 
 
@@ -111,6 +113,92 @@ def enrolment_window():
     return _wrap('Your Initial Enrollment Period',
                  svg,
                  'Seven months, centered on your birthday month. The early half is the better half.')
+
+
+# ---------------------------------------------------------------- claiming age
+def claiming_ages():
+    # Figures are the ones already in the age-62 article's table: 70% / 100% /
+    # 124% of the full benefit, shown on its own $2,000-at-67 example.
+    rows = [('Age 62', 70, '~$1,400 a month', 'var(--ink-faint)'),
+            ('Age 67 (full)', 100, '$2,000 a month', 'var(--pine)'),
+            ('Age 70', 124, '~$2,480 a month', 'var(--gold)')]
+    x0, scale, top = 150, 3.0, 14
+    parts = []
+    for i, (label, pct, money, color) in enumerate(rows):
+        y = top + i * 62
+        w = round(pct * scale)
+        parts.append(f'<text class="c-num" x="{x0 - 14}" y="{y + 30}" text-anchor="end">{label}</text>')
+        parts.append(f'<rect x="{x0}" y="{y}" width="{w}" height="44" rx="6" fill="{color}"/>')
+        parts.append(f'<text class="c-num" x="{x0 + w + 12}" y="{y + 22}">{pct}%</text>')
+        parts.append(f'<text class="c-lab" x="{x0 + w + 12}" y="{y + 42}">{money}</text>')
+    svg = ('        <svg viewBox="0 0 700 204" role="img" aria-labelledby="caT caD">\n'
+           '          <title id="caT">Monthly Social Security check by claiming age</title>\n'
+           '          <desc id="caD">Three bars for someone whose full-retirement-age benefit is 2,000 '
+           'dollars a month. Claiming at 62 pays 70 percent, about 1,400 dollars. Claiming at 67 pays '
+           '100 percent, 2,000 dollars. Claiming at 70 pays 124 percent, about 2,480 dollars.</desc>\n'
+           '          ' + '\n          '.join(parts) + '\n        </svg>')
+    return _wrap('What your check looks like at each age',
+                 svg,
+                 'Example for someone with a $2,000 monthly benefit at full retirement age.')
+
+
+# ---------------------------------------------------------------- IRMAA tiers
+def irmaa_tiers():
+    # Single-filer 2025 income bands and Part B monthly totals, as in the
+    # irmaa-2027 article's table. Bar length is the total, so the step is visible.
+    rows = [('Up to $112,000', 209.40), ('To $141,000', 293.10), ('To $177,000', 418.80),
+            ('To $212,000', 544.40), ('To $499,999', 670.00), ('$500,000 or more', 711.80)]
+    x0, bw, top, mx = 170, 400, 10, 711.80
+    parts = []
+    for i, (label, amt) in enumerate(rows):
+        y = top + i * 46
+        w = round(bw * amt / mx)
+        fill = 'var(--pine)' if i == 0 else 'var(--gold)'
+        parts.append(f'<text class="c-lab" x="{x0 - 12}" y="{y + 24}" text-anchor="end">{label}</text>')
+        parts.append(f'<rect x="{x0}" y="{y}" width="{w}" height="34" rx="6" fill="{fill}"/>')
+        parts.append(f'<text class="c-num" x="{x0 + w + 10}" y="{y + 24}">${amt:,.2f}</text>')
+    head = ['<svg viewBox="0 0 700 290" role="img" aria-labelledby="irT irD">',
+            '<title id="irT">2027 Part B monthly premium by income, single filers</title>',
+            '<desc id="irD">Six bars. A single filer with 2025 income up to 112,000 dollars pays '
+            'the standard 209.40 dollars a month. Each higher income band pays more: 293.10, 418.80, '
+            '544.40, 670.00, and 711.80 dollars for 500,000 dollars or more.</desc>']
+    svg = '\n'.join(['        ' + x for x in head + parts + ['</svg>']])
+    return _wrap('Part B a month in 2027, by 2025 income (single filer)',
+                 svg,
+                 'Green is the standard premium. Each step up is a cliff: one dollar over a line moves '
+                 'the whole year to the next bar. Joint-filer lines are in the table above.')
+
+
+# ---------------------------------------------------------------- scam script
+def scam_script():
+    steps = ['A trusted institution appears to contact you first',
+             'A threat is introduced',
+             'Normal procedures are said to be too slow',
+             'Secrecy is framed as protective',
+             'Money goes where it is hard to reverse']
+    parts = []
+    for i, s in enumerate(steps):
+        y = 8 + i * 54
+        last = (i == len(steps) - 1)
+        fill = 'var(--gold-soft)' if last else 'var(--bg)'
+        stroke = 'var(--gold)' if last else 'var(--line)'
+        parts.append(f'<rect x="4" y="{y}" width="640" height="44" rx="8" fill="{fill}" '
+                     f'stroke="{stroke}" stroke-width="1.5"/>')
+        parts.append(f'<circle cx="34" cy="{y + 22}" r="15" fill="var(--pine-strong)"/>')
+        parts.append(f'<text x="34" y="{y + 28}" text-anchor="middle" font-size="17" font-weight="700" '
+                     f'fill="#FBFAF4">{i + 1}</text>')
+        parts.append(f'<text class="c-num" x="64" y="{y + 29}">{s}</text>')
+        if not last:
+            parts.append(f'<path d="M34 {y + 44} v10" stroke="var(--ink-faint)" stroke-width="2"/>')
+    head = ['<svg viewBox="0 0 650 280" role="img" aria-labelledby="scT scD">',
+            '<title id="scT">The five steps of a typical fraud call</title>',
+            '<desc id="scD">In order: a trusted institution appears to contact you first; a threat '
+            'is introduced; normal procedures are said to be too slow; secrecy is framed as protective; '
+            'and money is directed to a channel that is hard to reverse.</desc>']
+    svg = '\n'.join(['        ' + x for x in head + parts + ['</svg>']])
+    return _wrap('The same five steps, in order',
+                 svg,
+                 'Hanging up is not rude. It is the entire defense.')
 
 
 # ---------------------------------------------------------------- fraud share
