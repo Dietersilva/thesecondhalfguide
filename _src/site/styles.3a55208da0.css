@@ -352,7 +352,7 @@ body.hub .topic-card p {
     font-size: 16px;
     color: var(--ink-soft);
     margin: 0;
-    flex-grow: 1;
+    flex-grow: 0;
   }
 body.hub .tag-soon {
     align-self: flex-start;
@@ -1433,6 +1433,7 @@ body .house-feature .house-title { grid-area: title !important; color: #fff !imp
 body .house-feature .house-blurb { grid-area: blurb !important; color: #E4EFE9 !important; font-size: 18px !important; max-width: 46ch; }
 body .house-feature .house-more { display: inline-block !important; grid-area: more !important; justify-self: start; align-self: start; margin-top: 22px !important; background: #F2B24D; color: #1F3A2F !important; padding: 13px 24px; border-radius: 10px; font-weight: 700; text-decoration: none !important; }
 body .house.house-feature:hover .house-more { background: #FBC76E; }
+@media print {body .topbar, body .topics-bar { display: none !important; }body .topic-band { background: none !important; color: #000 !important; }body .topic-band h1, body .topic-band .dek { color: #000 !important; }body .topic-band .count { background: none !important; padding: 0 !important; }body .topic-body { display: block !important; }body .topic-aside { position: static !important; margin-top: 16px; }body .article-head, body .page-head { background: none !important; box-shadow: none !important; clip-path: none !important; padding-top: 0 !important; }body .house.house-feature { background: none !important; color: #000 !important; box-shadow: none !important; border: 1px solid #999 !important; }body .house-feature .house-title, body .house-feature .house-blurb, body .house-feature .house-label, body .house-feature .house-more { color: #000 !important; background: none !important; }body .house-feature .house-photo, body .topic-banner { display: none !important; } }
 body .article-head, body .page-head { background: #E4EFE9; box-shadow: 0 0 0 100vmax #E4EFE9; clip-path: inset(0 -100vmax); padding-top: 34px !important; padding-bottom: 26px !important; margin-bottom: 30px; }
 @media (max-width: 760px) {body .house.house-feature { grid-template-columns: 1fr !important; grid-template-areas: "photo" "label" "title" "blurb" "more" !important; padding: 24px 20px !important; }body .house-feature .house-photo { min-height: 0; height: 170px; margin: 0 8px 20px 0; box-shadow: 8px 8px 0 #F2B24D; } }
 body footer { background: #2E3024; border-top: 0; color: #E9E6D8; margin-top: 0; }
