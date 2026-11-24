@@ -598,11 +598,38 @@ SUBSCRIBED_BODY = """  <div class="wrap">
   </div>
 """
 
+NOT_FOUND_BODY = """  <div class="wrap">
+    <article class="doc">
+      <p class="eyebrow">Page not found</p>
+      <h1>We couldn't find that page</h1>
+      <p class="dek">The link may be old, or the address may have a typo. Nothing is wrong on your end. Here are three ways to get back on track.</p>
+
+      <h2>Search the guide</h2>
+      <p><a href="/search">Search every article</a> by a word or two, such as &ldquo;Part B&rdquo;, &ldquo;IRMAA&rdquo; or &ldquo;gift card scam&rdquo;.</p>
+
+      <h2>Pick a topic</h2>
+      <ul>
+        <li><a href="/medicare">Medicare &amp; health insurance</a></li>
+        <li><a href="/money">Money &amp; taxes</a></li>
+        <li><a href="/paperwork">Paperwork</a></li>
+        <li><a href="/fraud">Scams</a></li>
+        <li><a href="/aging">Aging in place</a></li>
+        <li><a href="/travel">Travel</a></li>
+        <li><a href="/family">Family</a></li>
+      </ul>
+
+      <h2>Or start from the front</h2>
+      <p>Go to <a href="/">the home page</a>, or open <a href="/numbers">the numbers worth keeping by the phone</a>. If a link on this site led you here, please <a href="/contact">tell us</a> and we will fix it.</p>
+    </article>
+  </div>
+"""
+
 PAGES = {
     'about': ('About &mdash; The Second Half Guide', ABOUT_BODY),
     'contact': ('Contact &mdash; The Second Half Guide', CONTACT_BODY),
     'privacy': ('Privacy Policy &amp; Terms &mdash; The Second Half Guide', PRIVACY_BODY),
     'numbers': ('The Numbers Worth Keeping by the Phone &mdash; The Second Half Guide', NUMBERS_BODY),
+    '404': ('Page not found &mdash; The Second Half Guide', NOT_FOUND_BODY),
     'subscribed': ('Almost there &mdash; confirm your subscription &mdash; The Second Half Guide', SUBSCRIBED_BODY),
 }
 

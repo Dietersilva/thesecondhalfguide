@@ -44,6 +44,7 @@ DESCRIPTIONS = {
     '/medigap-window': 'The one-time six-month Medigap window: when it starts, what guaranteed issue means, and what insurers may ask about your health once it closes.',
     '/numbers': 'The real phone numbers for Medicare, Social Security, fraud reporting and local help — checked, with hours, and printable for the kitchen drawer.',
     '/rmd-deadline': 'Required minimum distributions in 2026: the age by birth year, the first-year trap, the 25% penalty, and the charitable route that skips the tax.',
+    '/404': 'The page you asked for could not be found. Search the guide, pick a topic, or start from the home page.',
     '/subscribed': 'Confirm your subscription to Wednesday Letters from The Second Half Guide — and what to do if the confirmation email has not arrived yet.',
     '/about': 'Who writes The Second Half Guide, how it is funded, how the facts are checked, and the standards it holds itself to. Published by Edward Silva.',
     '/advantage-vs-original': 'Medicare Advantage or Original Medicare: what each one is, how the money works, and the one decision that gets much harder to reverse later on.',
@@ -150,6 +151,7 @@ PAGE_FILES = {
     'second-half-guide.html': '/',
     'numbers.html': '/numbers',
     'subscribed.html': '/subscribed',
+    '404.html': '/404',
     'about.html': '/about',
     'contact.html': '/contact',
     'privacy.html': '/privacy',
@@ -873,7 +875,7 @@ def breadcrumb_ld(path, headline, crumb=None):
 
 # Utility pages: real destinations for a reader mid-flow, but nothing a
 # search engine should index or a sitemap should advertise.
-NOINDEX = {'/subscribed'}
+NOINDEX = {'/subscribed', '/404'}
 ROBOTS = {False: 'index, follow, max-image-preview:large',
           True: 'noindex, follow'}
 
@@ -940,7 +942,7 @@ DISCLAIMER_P_RE = re.compile(r'<p><strong>This is general information.*?</p>', r
 
 def layout_class(path):
     if path == '/': return 'hub'
-    if path in ('/about', '/contact', '/privacy', '/numbers', '/subscribed'): return 'doc'
+    if path in ('/about', '/contact', '/privacy', '/numbers', '/subscribed', '/404'): return 'doc'
     if path == '/search' or path.lstrip('/') in CATEGORY_SLUGS: return 'topic'
     return 'article'
 
