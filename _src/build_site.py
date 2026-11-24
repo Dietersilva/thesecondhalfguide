@@ -608,6 +608,15 @@ REDESIGN_CSS = """
 .topics-bar > div::-webkit-scrollbar { display: none; }
 .topics-bar a { flex: none; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; padding: 12px 14px; border-bottom: 3px solid transparent; }
 .topics-bar a:hover { border-bottom-color: #FBE4B8; background: rgba(255,255,255,0.08); }
+.house.house-feature { position: relative; display: grid !important; grid-template-columns: minmax(0, 1fr) 300px !important; grid-template-areas: "label photo" "title photo" "blurb photo" "more photo" !important; column-gap: 40px; align-content: center; background: #1F3A2F !important; border: 0 !important; border-radius: 18px !important; padding: 44px 48px !important; color: #fff; overflow: hidden; box-shadow: 0 20px 44px -20px rgba(31,58,47,0.6) !important; }
+.house-feature .house-photo { grid-area: photo !important; width: 100%; height: 100%; min-height: 260px; object-fit: cover; border-radius: 12px; align-self: stretch; box-shadow: -10px 10px 0 #F2B24D; }
+.house-feature .house-label { grid-area: label !important; color: #F2B24D !important; }
+.house-feature .house-title { grid-area: title !important; color: #fff !important; font-size: clamp(28px, 3.4vw, 40px) !important; line-height: 1.1 !important; max-width: 20ch; margin: 6px 0 14px !important; }
+.house-feature .house-blurb { grid-area: blurb !important; color: #E4EFE9 !important; font-size: 18px !important; max-width: 46ch; }
+.house-feature .house-more { display: inline-block !important; grid-area: more !important; justify-self: start; align-self: start; margin-top: 22px !important; background: #F2B24D; color: #1F3A2F !important; padding: 13px 24px; border-radius: 10px; font-weight: 700; text-decoration: none !important; }
+.house.house-feature:hover .house-more { background: #FBC76E; }
+.article-head, .page-head { background: #E4EFE9; box-shadow: 0 0 0 100vmax #E4EFE9; clip-path: inset(0 -100vmax); padding-top: 34px !important; padding-bottom: 26px !important; margin-bottom: 30px; }
+@media (max-width: 760px) { .house.house-feature { grid-template-columns: 1fr !important; grid-template-areas: "photo" "label" "title" "blurb" "more" !important; padding: 24px 20px !important; } .house-feature .house-photo { min-height: 0; height: 170px; margin: 0 8px 20px 0; box-shadow: 8px 8px 0 #F2B24D; } }
 footer { background: #2E3024; border-top: 0; color: #E9E6D8; margin-top: 0; }
 footer a, footer span { color: #E9E6D8; }
 footer a:hover { color: #FBE4B8; }
@@ -708,7 +717,7 @@ def add_toc(body):
 
 
 def header_block(cls):
-    wrap = 'wrap' if cls in ('hub', 'topic') else 'wrap-wide'
+    wrap = 'wrap' if cls == 'hub' else 'wrap-wide'
     home = '/#top' if cls == 'hub' else '/'
     nav = '' if cls == 'hub' else '      <a class="topbar-home" href="/">Home</a>\n'
     search = f'      <a class="topbar-search" href="/search" aria-label="Search the site">{SEARCH_SVG}</a>\n'
@@ -990,32 +999,43 @@ def extract_categories(home_html, routes):
 
 
 HUB_PAGE_CSS = """
-.topic-hero { padding: 52px 0 8px; }
-.topic-hero .topic-icon { width: 42px; height: 42px; color: var(--pine-strong); margin-bottom: 16px; }
-.topic-hero .topic-icon svg { width: 100%; height: 100%; stroke: currentColor; }
-.topic-hero h1 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(34px, 5vw, 50px); line-height: 1.06; margin: 0 0 14px; text-wrap: balance; }
-.topic-hero .dek { font-size: 19px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 8px; max-width: 58ch; }
-.topic-banner { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 50% 35%; border-radius: 16px; margin: 20px 0 8px; box-shadow: var(--shadow); }
-.topic-intro { max-width: 62ch; font-size: 17px; line-height: 1.65; color: var(--ink); margin: 14px 0 0; }
-.topic-intro p { margin: 0 0 12px; }
-.topic-intro a { color: var(--pine-strong); text-decoration: underline; text-underline-offset: 3px; }
-.topic-hero .count { font-size: 15px; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 16px; margin: 18px 0 0; }
-.topic-list { padding: 8px 0 60px; display: flex; flex-direction: column; gap: 12px; }
-.topic-link {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+body.topic .wrap-wide { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+body.topic .topbar .wrap-wide { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; gap: 16px; }
+body.topic .topics-bar .wrap-wide { padding: 0 18px; }
+body.topic .topic-band { background: var(--pine-strong); color: #fff; }
+body.topic .topic-band-in { max-width: 1120px; margin: 0 auto; padding: 44px 24px 48px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+body.topic .topic-icon { width: 46px; height: 46px; color: #245543; margin-bottom: 14px; }
+body.topic .topic-icon svg { width: 100%; height: 100%; stroke: #245543; }
+body.topic .topic-band h1 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: clamp(36px, 5vw, 56px); line-height: 1.04; margin: 0 0 14px; color: #fff; text-wrap: balance; }
+body.topic .topic-band .dek { font-size: 20px; line-height: 1.55; color: #E4EFE9; margin: 0 0 20px; max-width: 46ch; }
+body.topic .topic-band .count { display: inline-block; font-size: 15px; font-weight: 700; color: #1F3A2F; background: #F2B24D; border-radius: 999px; padding: 6px 16px; margin: 0; }
+body.topic .topic-banner { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 35%; border-radius: 14px; box-shadow: 14px 14px 0 rgba(242,178,77,0.9); }
+body.topic .topic-body { max-width: 1120px; margin: 0 auto; padding: 44px 24px 72px; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; align-items: start; }
+body.topic .topic-list { padding: 0; margin: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; counter-reset: piece; }
+body.topic .topic-link {
+  counter-increment: piece;
+  display: flex; align-items: center; gap: 18px;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 20px 24px; border-left: 5px solid var(--pine); text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+  padding: 18px 22px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
 }
-.topic-link:hover { border-color: var(--pine); box-shadow: 0 2px 4px rgba(51,53,42,0.08), 0 12px 28px -12px rgba(51,53,42,0.22); }
-.topic-link:hover .topic-link-arrow { transform: translateX(3px); }
-.topic-link-title { font-size: 19px; font-weight: 700; max-width: 62ch; }
-.topic-link-arrow { flex: none; color: var(--pine-strong); font-weight: 700; transition: transform .15s; }
-.topic-back {
-  display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700;
-  color: var(--pine-strong); text-decoration: underline; text-decoration-thickness: 2px;
-  text-underline-offset: 3px; margin: 4px 0 0; width: fit-content;
+body.topic .topic-link::before { content: counter(piece, decimal-leading-zero); flex: none; width: 2.2em; font-size: 15px; font-weight: 700; color: var(--pine-strong); font-variant-numeric: tabular-nums; }
+body.topic .topic-link:hover { border-color: var(--pine); box-shadow: 0 2px 4px rgba(51,53,42,0.08), 0 12px 28px -12px rgba(51,53,42,0.22); }
+body.topic .topic-link:hover .topic-link-arrow { transform: translateX(3px); }
+body.topic .topic-link-title { flex: 1; font-size: 19px; line-height: 1.35; font-weight: 700; }
+body.topic .topic-link-arrow { flex: none; color: var(--pine-strong); font-weight: 700; transition: transform .15s; }
+body.topic .topic-aside { position: sticky; top: 140px; background: #FBF3DD; border: 1px solid #EBDDB4; border-top: 6px solid #F2B24D; border-radius: var(--radius); padding: 24px 26px; }
+body.topic .topic-aside h2 { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 12px; font-family: 'Public Sans', system-ui, sans-serif; }
+body.topic .topic-intro { font-size: 16.5px; line-height: 1.65; color: var(--ink); margin: 0; }
+body.topic .topic-intro p { margin: 0 0 12px; }
+body.topic .topic-intro a { color: var(--pine-strong); text-decoration: underline; text-underline-offset: 3px; }
+body.topic .topic-back { display: inline-flex; margin-top: 18px; font-size: 15px; font-weight: 700; color: var(--pine-strong); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  body.topic .topic-band-in { grid-template-columns: 1fr; gap: 24px; padding: 32px 18px 36px; }
+  body.topic .topic-banner { aspect-ratio: 16 / 6; box-shadow: 8px 8px 0 rgba(242,178,77,0.9); margin-right: 8px; width: calc(100% - 8px); }
+  body.topic .topic-body { grid-template-columns: 1fr; gap: 32px; padding: 28px 18px 56px; }
+  body.topic .topic-aside { position: static; }
 }
-.wrap { max-width: 800px; }
+@media (max-width: 560px) { body.topic .topic-link { padding: 16px 16px; gap: 12px; } body.topic .topic-link-title { font-size: 17.5px; } }
 """
 
 
@@ -1048,19 +1068,26 @@ def hub_page(cat):
 <header class="topbar"></header>
 
 <main>
-  <div class="wrap">
-    <div class="topic-hero">
-      <div class="topic-icon">{cat['icon']}</div>
-      <h1>{cat['name']}</h1>
-      <p class="dek">{cat['blurb']}</p>
+  <section class="topic-band">
+    <div class="topic-band-in">
+      <div>
+        <div class="topic-icon">{cat['icon']}</div>
+        <h1>{cat['name']}</h1>
+        <p class="dek">{cat['blurb']}</p>
+        <p class="count">{n} {plural} in this topic</p>
+      </div>
       <img class="topic-banner" src="/images/photo/{cat['slug']}.jpg" alt="" width="900" height="600">
-      <div class="topic-intro">{HUB_INTROS.get(cat['slug'], '')}</div>
-      <p class="count">{n} {plural} in this topic</p>
     </div>
+  </section>
+  <div class="topic-body">
     <div class="topic-list">
 {cards}
     </div>
-    <a class="topic-back" href="/">&larr; All topics</a>
+    <aside class="topic-aside">
+      <h2>About this topic</h2>
+      <div class="topic-intro">{HUB_INTROS.get(cat['slug'], '')}</div>
+      <a class="topic-back" href="/">&larr; All topics</a>
+    </aside>
   </div>
 </main>
 

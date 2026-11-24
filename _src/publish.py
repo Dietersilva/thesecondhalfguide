@@ -94,7 +94,7 @@ def inject_homepage_promotion():
     home = os.path.join(SITE, 'index.html')
     html = read(home)
 
-    feature = '''\n  <div class="wrap">\n    <a class="house" href="/retirement-strategy-model">\n      <span class="house-label">New interactive tool</span>\n      <span class="house-title">The Second Half Retirement Planner: 62 vs. 65 vs. 67</span>\n      <span class="house-blurb">Not just a Social Security check calculator. See what claiming age can do to your monthly income, retirement savings, spending gap, work earnings test and Medicare timeline.</span>\n      <span class="house-more">Run your numbers &rarr;</span>\n    </a>\n  </div>\n'''
+    feature = '''\n  <div class="wrap">\n    <a class="house house-feature" href="/retirement-strategy-model">\n      <img class="house-photo" src="/images/photo/planner.jpg" alt="" width="900" height="1350">\n      <span class="house-label">New interactive tool</span>\n      <span class="house-title">The Second Half Retirement Planner: 62 vs. 65 vs. 67</span>\n      <span class="house-blurb">Not just a Social Security check calculator. See what claiming age can do to your monthly income, retirement savings, spending gap, work earnings test and Medicare timeline.</span>\n      <span class="house-more">Run your numbers &rarr;</span>\n    </a>\n  </div>\n'''
     hero_end = '  </section>\n\n  <div class="wrap">\n      <a class="house" href="/airport-help">'
     if 'The Second Half Retirement Planner: 62 vs. 65 vs. 67' not in html and hero_end in html:
         html = html.replace(hero_end, '  </section>\n' + feature + '\n  <div class="wrap">\n      <a class="house" href="/airport-help">', 1)
