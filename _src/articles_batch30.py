@@ -23,7 +23,8 @@ ARTICLES30['christmas-bird-count'] = {
     'eyebrow': 'Facts &amp; dates',
     'h1': 'The Christmas Bird Count: how to join from your backyard',
     'dek': 'The count began in 1900 as an alternative to a holiday shooting contest. It runs every winter '
-           'from 14 December to 5 January, it is free, and a feeder count can be done from your own yard.',
+           'from 14 December to 5 January, it is free, and a feeder count can be done from your own yard if it sits inside a count circle '
+           'and the local compiler has agreed.',
     'meta': '6 minute read &middot; Checked against Audubon&rsquo;s own pages and its feeder-watching guidance',
     'checked': CHECKED30,
     'body': """      <p>On Christmas Day in 1900, the ornithologist Frank Chapman proposed an alternative to a holiday
@@ -32,7 +33,7 @@ ARTICLES30['christmas-bird-count'] = {
       Audubon, 27 birders conducted 25 counts in the United States and Canada and tallied around 90
       species.</p>
 
-      <p>The count has run every winter since. This season it takes place between
+      <p>The count has taken place every winter since 1900. This season it runs between
       <strong>14 December 2026 and 5 January 2027</strong>. Participation is free, and Audubon says it is
       open to bird enthusiasts of any level.</p>
 
@@ -43,7 +44,7 @@ ARTICLES30['christmas-bird-count'] = {
         ('1900', 'First count, on Christmas Day: 27 birders, 25 counts, around 90 species.'),
         ('126th count (2025&ndash;26)', '85,222 participants, 2,701 circles, 43,815,563 birds, 21 countries or territories.'),
         ('10,993', 'Feeder counters in the 2025&ndash;26 count, out of 85,222 participants.'),
-        ('300+', 'Peer-reviewed scientific papers published using the count&rsquo;s data.'),
+        ('More than 300', 'Peer-reviewed articles published using the count&rsquo;s data.'),
     ]) + """
       <h2>How a count is organized</h2>
 
@@ -105,7 +106,7 @@ ARTICLES30['christmas-bird-count'] = {
       the bird observations. Effort and weather are what let scientists compare a snowy afternoon with two
       observers to a clear day with ten.</p>
 
-      <p>Audubon reports that more than 300 peer-reviewed scientific papers have been published using the
+      <p>Audubon reports that more than 300 peer-reviewed articles have been published using the
       data, and says it helped reveal dramatic declines in grassland birds such as the Eastern Meadowlark
       and the Bobolink. The U.S. Fish and Wildlife Service describes it the same way: the data is compiled
       and used to learn about long-term bird trends, and has appeared in reports such as the State of the
@@ -289,7 +290,7 @@ ARTICLES30['flying-with-a-grandchild-tsa'] = {
     'sources': [
         ('TSA &mdash; Identification', 'https://www.tsa.gov/travel/security-screening/identification'),
         ('TSA &mdash; Traveling with children',
-         'https://www.tsa.gov/travel/special-procedures/traveling-children'),
+         'https://www.tsa.gov/travel/tsa-cares/traveling-children'),
         ('TSA &mdash; DHS to end &ldquo;shoes-off&rdquo; travel policy (8 July 2025)',
          'https://www.tsa.gov/news/press/releases/2025/07/08/dhs-end-shoes-travel-policy'),
     ],
