@@ -589,7 +589,7 @@ body.doc .contact-card {
     padding: 24px 26px; border-top: 4px solid var(--pine); box-shadow: var(--shadow);
   }
 body.doc .contact-card svg { flex: none; width: 26px; height: 26px; stroke: var(--pine-strong); margin-top: 3px; }
-body.doc .contact-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; }
+body.doc .contact-card h2, body.doc .contact-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; border-top: 0; padding-top: 0; }
 body.doc .contact-card p { margin: 0; font-size: 16.5px; color: var(--ink-soft); }
 body.doc .contact-card a { font-weight: 700; }
 body.doc .toc {
@@ -694,7 +694,7 @@ body.article .contact-card {
     padding: 24px 26px; border-top: 4px solid var(--pine); box-shadow: var(--shadow);
   }
 body.article .contact-card svg { flex: none; width: 26px; height: 26px; stroke: var(--pine-strong); margin-top: 3px; }
-body.article .contact-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; }
+body.article .contact-card h2, body.article .contact-card h3 { font-family: 'Public Sans', system-ui, sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 6px; border-top: 0; padding-top: 0; }
 body.article .contact-card p { margin: 0; font-size: 16.5px; color: var(--ink-soft); }
 body.article .contact-card a { font-weight: 700; }
 body.article .toc {

@@ -280,6 +280,10 @@ Do not duplicate these. Check the list before proposing a topic.
 - `/wep-gpo-repeal` — The pension rule that cut your benefit is gone
 - `/widows-penalty` — The widow's penalty
 - `/wednesday-letters` — Reader correspondence
+- `/christmas-bird-count` — The Audubon Christmas Bird Count, and how a feeder count works
+- `/flying-with-a-grandchild-tsa` — TSA rules for a child and the adult, domestic flights
+
+This list is not exhaustive: it stops at the pages written before late 2026. Before proposing a topic, also list the root `*.html` files and read any close page.
 
 ### Known gaps
 
@@ -317,3 +321,30 @@ owner can read them as they will actually look before merging.
 Do not merge to `main`. Do not flip `ADS_LIVE`. Do not change prices,
 thresholds, or the privacy policy without saying so prominently in the PR
 description — the privacy policy is with an attorney.
+
+---
+
+## 7. Added 24-25 November 2026
+
+- **Primary sources can now be read in the desktop app.** The sandbox limitation in section 2
+  still applies to `WebSearch` and plain HTTP, but the built-in browser pane opened tsa.gov,
+  ssa.gov, cdc.gov, fda.gov, ftc.gov and medicare.gov directly on 24 November 2026. Use it, and say
+  "opened directly" only when it was. travel.state.gov sits behind a Cloudflare challenge and
+  cannot be read this way. Collapsed accordions need the page's `textContent`, not `get_page_text`.
+- **Script link checks give false alarms.** A Python checker got 403 from most agency sites and
+  a 404 from every ftc.gov URL, all of which loaded fine in a real browser. Treat 403 and 404 from
+  an agency host as "unverified", then open it in the browser before editing any link.
+- **Do not open a PDF in the browser pane**: it triggers a save dialog on the user's screen.
+- **Counts are checked at build time.** `check_counts.py` runs inside `publish.py` and fails
+  the build if a hub's "N pieces" or the homepage count disagrees with what is linked. The
+  planner launch page is installed by `publish.py`, not built, so it is deliberately not counted.
+- **Every built page has a skip link** (`header_block` in `build_site.py`) and `<main>` carries the
+  target id. The two planner pages are static files and carry the link in their own source.
+- **Fact tables stack on phones** (600px and under) so the description column is never clipped.
+- **Search covers the planner**: the two static planner entries are appended in `build_site.py`.
+- **Ad-slot house promos rotate with the article pool**, so adding one article regenerates
+  promo blocks on about 200 pages. That is expected, not a bug.
+- **Friday drafts**: write 2-3 articles, each from pages actually opened; leave out any number
+  that could not be confirmed; no `[VERIFY]` text in a draft. Reader-facing text must not mention
+  this file or the internal claim tables.
+
