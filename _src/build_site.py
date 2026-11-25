@@ -121,6 +121,8 @@ DESCRIPTIONS = {
     '/anoc-letter': 'Every Medicare Advantage and Part D plan generally must send its Annual Notice of Change by September 30. What it says, and the 2027 numbers now confirmed.',
     '/social-security-trust-fund': 'The 2026 Trustees Report in plain numbers: which fund runs short in 2032 and 2034, the share of benefits still payable, and what the dates do not mean.',
     '/cola-scam': "The 3.6% Social Security raise is automatic. The inspector general has warned of fake letters, fees and calls to 'activate' it. What a real notice looks like.",
+    '/christmas-bird-count': "The Audubon Christmas Bird Count runs 14 December to 5 January, is free, and welcomes beginners. How a backyard feeder count works, and the counting rule.",
+    '/flying-with-a-grandchild-tsa': "TSA does not require ID for children under 18 on domestic flights, but adults must show it. What TSA says about screening kids, formula and strollers.",
     '/part-b-premium-2027': 'CMS set the 2027 Part B premium at $209.40 and the deductible at $292. The Part A numbers, and how much of the 3.6% Social Security raise is left.',
     '/irmaa-2027': 'The 2027 Medicare IRMAA brackets: the surcharge starts above $112,000 single or $224,000 joint on your 2025 return. Part B and Part D amounts by tier.',
     '/tax-numbers-2027': 'The IRS set the 2027 amounts: standard deduction $33,200 joint, $16,600 single, the 65-plus add-on, brackets and the 0% gains line. Not for the 2026 return.',
@@ -377,6 +379,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
+    '/christmas-bird-count', '/flying-with-a-grandchild-tsa',
     '/part-b-premium-2027', '/irmaa-2027', '/tax-numbers-2027', '/retirement-limits-2027',
     '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
