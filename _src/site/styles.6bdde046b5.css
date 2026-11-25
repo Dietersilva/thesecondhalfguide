@@ -836,7 +836,15 @@ body.article .next-up a.btn {
   }
 body.article .next-up a.btn:hover { background: #245543; }
 @media (max-width: 600px) {body.article .article-head { padding-top: 36px; }
-body.article .facts th, body.article .facts td { padding: 12px 16px; }}
+body.article .facts th, body.article .facts td { padding: 12px 16px; }
+body.article /* Stack each fact (label over description) so the description is never
+       clipped off the right edge and no sideways swipe is needed. */
+    .facts table { min-width: 0; }
+body.article .facts tr { display: block; border-top: 1px solid var(--line); }
+body.article .facts tr:first-child { border-top: none; }
+body.article .facts th, body.article .facts td { display: block; width: auto; border-top: none; }
+body.article .facts th { white-space: normal; padding-bottom: 0; }
+body.article .facts td { padding-top: 4px; }}
 body.article .chart {
     margin: 34px 0; padding: 24px 26px 20px; background: var(--surface);
     border: 1px solid var(--line); border-radius: var(--radius);

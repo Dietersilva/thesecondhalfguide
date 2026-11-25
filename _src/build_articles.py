@@ -133,6 +133,14 @@ ARTICLE_CSS = """
   @media (max-width: 600px) {
     .article-head { padding-top: 36px; }
     .facts th, .facts td { padding: 12px 16px; }
+    /* Stack each fact (label over description) so the description is never
+       clipped off the right edge and no sideways swipe is needed. */
+    .facts table { min-width: 0; }
+    .facts tr { display: block; border-top: 1px solid var(--line); }
+    .facts tr:first-child { border-top: none; }
+    .facts th, .facts td { display: block; width: auto; border-top: none; }
+    .facts th { white-space: normal; padding-bottom: 0; }
+    .facts td { padding-top: 4px; }
   }
 """
 
