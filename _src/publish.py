@@ -177,7 +177,7 @@ def install_promotions():
 
 def main():
     check = '--check' in sys.argv
-    for script in ('build_templates.py', 'build_pages.py', 'build_articles.py', 'build_site.py'):
+    for script in ('build_templates.py', 'build_pages.py', 'build_articles.py', 'build_site.py', 'check_counts.py'):
         out = run(script)
         print(f'  {script}: {out.splitlines()[-1] if out else "ok"}')
     install_static_tools()

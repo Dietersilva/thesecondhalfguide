@@ -601,6 +601,8 @@ HEADER_CSS = """
 
 REDESIGN_CSS = """
 /* ---- redesign: dark header with a topic bar, colour bands, dark footer ---- */
+.skip-link { position: absolute; left: 12px; top: -80px; z-index: 1000; background: #fff; color: var(--pine-strong); padding: 12px 18px; border: 2px solid var(--pine-strong); border-radius: 8px; font-weight: 700; text-decoration: none; }
+.skip-link:focus { top: 12px; }
 .topbar { background: var(--pine-strong) !important; border-bottom: 0; backdrop-filter: none; }
 .topbar .wrap, .topbar .wrap-wide { background: transparent !important; }
 .topbar .wordmark { color: #fff; }
@@ -727,7 +729,9 @@ def header_block(cls):
     home = '/#top' if cls == 'hub' else '/'
     nav = '' if cls == 'hub' else '      <a class="topbar-home" href="/">Home</a>\n'
     search = f'      <a class="topbar-search" href="/search" aria-label="Search the site">{SEARCH_SVG}</a>\n'
-    return ('<header class="topbar">\n'
+    skip = '#top' if cls == 'hub' else '#main-content'
+    return (f'<a class="skip-link" href="{skip}">Skip to main content</a>\n'
+            '<header class="topbar">\n'
             f'  <div class="{wrap}">\n'
             f'    <a class="wordmark" href="{home}">The <em>Second Half</em> Guide</a>\n'
             '    <nav class="topnav">\n'
@@ -1309,6 +1313,9 @@ def main():
         assert n_head == 1, f'{path}: expected one header, found {n_head}'
         if cls == 'article':
             body = add_toc(body)
+        # Target for the skip link. The homepage already names its <main> id="top".
+        if cls != 'hub':
+            body = body.replace('<main>', '<main id="main-content">', 1)
 
         # The letter is the point of the site's email, so it goes at the end of
         # anything worth reading. Not on the reference pages, where a signup
@@ -1387,6 +1394,16 @@ def main():
             {'t': meta[p_][0], 'd': meta[p_][1], 'u': p_}
             for p_ in sorted(rendered)
             if layout_class(p_) in ('article', 'topic') and p_ != '/search'
+        ]
+        # The planner and its launch article are installed by publish.py rather than rendered
+        # above, so they would otherwise be missing from search.
+        index += [
+            {'t': 'Retirement Calculator: Social Security at 62, 65 or 67',
+             'd': 'Compare claiming Social Security at 62, 65 and 67, then see the effect on retirement savings, spending gaps, work income, Medicare timing and household strategy.',
+             'u': '/retirement-strategy-model'},
+            {'t': 'Why We Built The Second Half Retirement Planner',
+             'd': 'Most retirement calculators stop at the Social Security check. This one follows the decision into savings, spending, work, couples and Medicare timing.',
+             'u': '/retirement-planner-launch'},
         ]
         index_json = json.dumps(index, separators=(',', ':')).replace('</', '<\\/')
         title, desc, canonical, body = rendered['/search']

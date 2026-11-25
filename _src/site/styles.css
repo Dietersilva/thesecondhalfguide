@@ -1422,6 +1422,8 @@ body.article .related p { margin: 0; font-size: 16px; color: var(--ink-soft); }
 @media print { .topnav { display: none; } }
 
 /* ---- redesign: dark header with a topic bar, colour bands, dark footer ---- */
+body .skip-link { position: absolute; left: 12px; top: -80px; z-index: 1000; background: #fff; color: var(--pine-strong); padding: 12px 18px; border: 2px solid var(--pine-strong); border-radius: 8px; font-weight: 700; text-decoration: none; }
+body .skip-link:focus { top: 12px; }
 body .topbar { background: var(--pine-strong) !important; border-bottom: 0; backdrop-filter: none; }
 body .topbar .wrap, body .topbar .wrap-wide { background: transparent !important; }
 body .topbar .wordmark { color: #fff; }
