@@ -22,24 +22,20 @@ CHECKED22 = '9 October 2026'
 
 # ------------------------------------------------------ Claiming Age Clarity Act
 ARTICLES22['claiming-age-clarity-act'] = {
-    'title': 'A Bill Would Rename Social Security&rsquo;s Claiming Ages &mdash; The Second Half Guide',
+    'title': 'Social Security&rsquo;s Claiming Ages Have New Names &mdash; The Second Half Guide',
     'eyebrow': 'Facts &amp; thresholds',
-    'h1': 'A bill would rename Social Security&rsquo;s claiming ages',
-    'dek': 'Congress has passed a bill that would rename &ldquo;early,&rdquo; &ldquo;full&rdquo; '
+    'h1': 'Social Security&rsquo;s claiming ages are being renamed',
+    'dek': 'A law now requires Social Security to rename &ldquo;early,&rdquo; &ldquo;full&rdquo; '
            'and &ldquo;delayed&rdquo; retirement. It changes the labels. It does not change a single age '
            'or dollar amount.',
-    'meta': '5 minute read &middot; Checked against the bill text and independent reporting on its '
-            'passage',
-    'checked': '1 November 2026',
-    'recheck': {'due': '2026-11-25', 'why': 'Signing status still unconfirmed on 13 November; no Public Law '
-                'number found -- check the Congress.gov action history and update the opening and the '
-                'status row.'},
-    'body': """      <p>On September 29, the Senate passed the Claiming Age Clarity Act by unanimous consent. The House
-      had already passed the identical bill on December 1, 2025, so nothing more is needed from Congress.
-      The bill, H.R. 5284, went to the President. As of November 13, this site could not confirm what
-      happened next. The sources it could read show the Senate&rsquo;s September 29 passage as the latest
-      recorded action, and none gives a Public Law number. Whether the bill has been signed is therefore
-      unconfirmed, and the Congress.gov action history is the place to settle it.</p>
+    'meta': '5 minute read &middot; Checked against the enrolled bill text, the GovInfo and LegiScan '
+            'records and independent reporting',
+    'checked': '27 November 2026',
+    'body': """      <p>The Claiming Age Clarity Act is law. On September 29, the Senate passed it by unanimous
+      consent. The House had already passed the identical bill on December 1, 2025. The bill, H.R. 5284,
+      then went to the President, and the federal record shows it as <strong>Public Law 119-144</strong>,
+      dated <strong>November 20, 2026</strong>. Until two weeks ago this page could not confirm that,
+      because the sources it could read stopped at the Senate vote.</p>
 
       <p>What it does is small, and it is easy to overstate. Social Security would change the words it uses
       for the three ages everyone argues about. It would not move the age at which anyone can file, would
@@ -48,8 +44,7 @@ ARTICLES22['claiming-age-clarity-act'] = {
 """ + facts('The bill, at a glance', [
         ('Bill', 'H.R. 5284, the Claiming Age Clarity Act.'),
         ('Status', 'Passed the House on December 1, 2025 and the Senate on September 29, 2026 without '
-                   'changes. Sent to the President. Not confirmed as signed as of November 13; no '
-                   'Public Law number found.'),
+                   'changes. Became Public Law 119-144 on November 20, 2026.'),
         ('Age 62', 'Now &ldquo;early eligibility age.&rdquo; Would become the <strong>minimum monthly '
                    'benefit age</strong>.'),
         ('Full retirement age', 'Now 66 to 67 depending on birth year. Would become the '
@@ -58,8 +53,9 @@ ARTICLES22['claiming-age-clarity-act'] = {
                    'benefit age</strong>.'),
         ('What does not change', 'When you can file, the size of any reduction or increase, and every '
                                  'dollar amount.'),
-        ('When the new words would appear', 'As reported, the agency would have until the later of 1 January '
-                                            '2027 or 12 months after the bill becomes law to make the change.'),
+        ('When the new words appear', 'The enrolled text gives the agency until the later of 1 January '
+                                      '2027 or 12 months after enactment, which points to about '
+                                      'November 2027.'),
     ]) + """
       <h2>Why the words matter to anyone</h2>
 
@@ -77,10 +73,9 @@ ARTICLES22['claiming-age-clarity-act'] = {
 
       <p>H.R. 5284 passed the House on December 1, 2025, with Representative Smucker, a Pennsylvania
       Republican, as its lead sponsor. The Senate then took it up and passed it on September 29, 2026 by
-      unanimous consent, meaning no senator objected and no roll call was held. Because the Senate did
-      not amend it, the House did not need to vote again. A bill that reaches the President this way
-      becomes law if signed, or if the President does nothing for the period the Constitution allows
-      while Congress is in session. A veto would send it back.</p>
+      unanimous consent, meaning no senator objected and no roll call was held. Because the Senate did not amend it, the House did not need
+      to vote again, and the bill went to the President for signature. It was enacted on November
+      20.</p>
 
       <h2>The ages themselves, as they stand</h2>
 
@@ -123,11 +118,11 @@ ARTICLES22['claiming-age-clarity-act'] = {
 """ + AD_INLINE + """
       <h2>What would actually look different</h2>
 
-      <p>Reporting on the bill says the new terms would replace the old ones in how the Social Security
-      Administration describes the ages: on its website, in its publications and on the materials sent to
+      <p>The law directs Social Security to replace the old terms with the new ones, and reporting says
+      that covers how the agency describes the ages: on its website, in its publications and on the materials sent to
       beneficiaries. The phrase &ldquo;delayed retirement credit&rdquo; is also reported to be on its way
-      out. Because the bill needs a signature first and the agency would then have to update its
-      materials, nothing about the vocabulary on a statement in your mailbox changes this month.</p>
+      out. The agency has until the later of January 1, 2027 or 12 months after enactment to update its
+      materials, so the vocabulary on a statement in your mailbox may not change this month.</p>
 
       <p>It also means the older names will be in circulation for some time. Articles, calculators and
       advisers will use both, and a reader may meet &ldquo;full retirement age&rdquo; and
@@ -138,8 +133,8 @@ ARTICLES22['claiming-age-clarity-act'] = {
       <h2>What to watch</h2>
 
 """ + check([
-        'Whether the bill becomes law: the President signs it, vetoes it, or lets it become law without '
-        'a signature. Congress.gov shows the status of H.R. 5284.',
+        'When Social Security begins using the new terms. The law sets a deadline, not a date, so '
+        'the old names and the new ones will appear side by side for a while.',
         'Your own numbers are unchanged either way. Your full retirement age depends on your birth year '
         'and is on your <strong>my Social Security</strong> statement.',
         'If you read a headline saying the retirement age has been changed, check whether it means the '
@@ -148,15 +143,21 @@ ARTICLES22['claiming-age-clarity-act'] = {
         '<a href="/social-security-62">the piece on filing at 62</a> and '
         '<a href="/delayed-retirement-credit">what delaying actually adds</a>.',
     ]) + """
-      <p>A bill like this is useful mostly as a reminder of how much of the Social Security conversation
-      happens in vocabulary. The three ages are the same ones they were last week. If they are renamed,
-      the only thing a reader needs to do is learn which new phrase points to which old one.</p>
+      <p>A law like this is useful mostly as a reminder of how much of the Social Security conversation
+      happens in vocabulary. The three ages are the same ones they were last month. The only thing a
+      reader needs to do is learn which new phrase points to which old one.</p>
 """,
     'sources': [
         ('CNBC &mdash; Claiming Age Clarity Act would change Social Security claiming terms',
          'https://www.cnbc.com/2026/10/01/claiming-age-clarity-act-social-security.html'),
         ('AARP &mdash; Can New Social Security Wording Lead to Bigger Checks?',
          'https://www.aarp.org/social-security/retirement-age-clarity-act/'),
+        ('GovInfo &mdash; Claiming Age Clarity Act, bill status record (H.R. 5284)',
+         'https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr5284.xml'),
+        ('GovInfo &mdash; H.R. 5284, enrolled bill',
+         'https://www.govinfo.gov/app/details/BILLS-119hr5284enr'),
+        ('LegiScan &mdash; US HB5284, Claiming Age Clarity Act',
+         'https://legiscan.com/US/bill/HB5284/2025?guid=4XhPpEwpEgx8DDbwbW0CdK'),
         ('GovTrack &mdash; Claiming Age Clarity Act (H.R. 5284)',
          'https://www.govtrack.us/congress/bills/119/hr5284'),
         ('Rep. Smucker &mdash; Bipartisan Claiming Age Clarity Act Heads to President&rsquo;s Desk',

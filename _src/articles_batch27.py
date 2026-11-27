@@ -32,8 +32,9 @@ ARTICLES27['medicaid-work-requirements'] = {
             'independent reporting that cites them',
     'checked': CHECKED27,
     'recheck': {'due': '2026-12-15', 'why': 'Check the Massachusetts v. Oz ruling for an appeal or stay, any '
-                'guidance CMS issues in response, and which states have announced launch dates; recheck again '
-                'before 1 January 2027.'},
+                'guidance CMS issues in response, which states have announced launch dates and which took the '
+                '13 November hold harmless period (states told CMS by 11 December); recheck again '
+                'before 1 January 2027. The hold harmless item was added 27 November without a full recheck.'},
     'body': """      <p>Most coverage of Medicaid work requirements is about younger adults. The age range in the
       rule is 19 to 64. That includes a lot of readers of this site: people in their late fifties and early
       sixties who left a job, have no employer coverage, and are covered through their state&rsquo;s
@@ -50,7 +51,20 @@ ARTICLES27['medicaid-work-requirements'] = {
       look-back for claims data and its limits on relying on a person&rsquo;s own statement.</p>
 
       <p>The ruling does not remove the requirement or change the <strong>1 January 2027</strong> start date.
-      The reporting reviewed does not say whether CMS will appeal, and the situation may change quickly.
+      The reporting reviewed does not say whether CMS will appeal, and the situation may change quickly.</p>
+
+      <h2>The hold harmless period CMS announced on 13 November</h2>
+
+      <p>On <strong>13 November 2026</strong>, CMS announced an optional six-month &ldquo;hold harmless&rdquo;
+      period. States that choose it may use it through <strong>30 June 2027</strong>. During that time a state
+      must still assess whether people meet the requirement, but it may not deny coverage or disenroll an
+      otherwise eligible person solely for failing to meet it, and CMS will not take enforcement action
+      against the state. States have to tell CMS by <strong>11 December 2026</strong> whether they will use
+      the option. It is optional: a state can adopt a shorter period or none at all. It does not change
+      the 1 January 2027 date, and advocacy groups note that people may still receive notices and
+      questions during the period. Which choice your state made is the thing to ask its Medicaid agency.</p>
+
+      <p>
       Whether any of this applies to you depends on your state, so ask the state Medicaid agency which rules
       it is using.</p>
 
@@ -64,6 +78,8 @@ ARTICLES27['medicaid-work-requirements'] = {
                          'the federal minimum wage times 80 hours.'),
         ('30 days', 'From receipt of a notice of noncompliance to show compliance or an exemption.'),
         ('31 December 2028', 'The latest a state could delay, if it receives a good-faith-effort exemption.'),
+        ('30 June 2027', 'The end of the optional hold harmless period CMS announced on 13 November. States '
+                         'tell CMS by 11 December 2026 whether they will use it.'),
     ]) + """
       <h2>Who is covered, and where it stops</h2>
 
@@ -165,6 +181,10 @@ ARTICLES27['medicaid-work-requirements'] = {
         ('Center on Budget and Policy Priorities &mdash; A guide to reducing coverage losses through effective '
          'implementation of Medicaid&rsquo;s new work requirement',
          'https://www.cbpp.org/research/health/a-guide-to-reducing-coverage-losses-through-effective-implementation-of-medicaids'),
+        ('KFF &mdash; CMS announces optional 6-month delay for enforcing Medicaid work requirements (November 2026)',
+         'https://www.kff.org/quick-insights/cms-announces-optional-6-month-delay-for-enforcing-medicaid-work-requirements/'),
+        ('Fierce Healthcare &mdash; Trump administration delays enforcement of Medicaid work requirements for six months',
+         'https://www.fiercehealthcare.com/regulatory/trump-administration-delays-enforcement-medicaid-work-requirements-six-months'),
         ('Foley Hoag &mdash; CMS issues interim final rule imposing Medicaid work requirements for expansion '
          'populations (June 2026)',
          'https://foleyhoag.com/news-and-insights/publications/alerts-and-updates/2026/june/cms-issues-interim-final-rule-imposing-medicaid-work-requirements-for-expansion-populations/'),

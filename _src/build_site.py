@@ -95,7 +95,8 @@ DESCRIPTIONS = {
     '/star-ratings-2027': "CMS published the 2027 Medicare Star Ratings on October 8. What the 71% figure measures, what a contract rating covers, and what it can't say about your plan.",
     '/dme-prior-authorization': "From October 15, CMS requires some new equipment suppliers to get approval before delivering and billing certain items. Who it covers and what patients see.",
     '/glp1-bridge': "Through 2027, some Part D members can get certain weight-loss GLP-1 drugs for $50 a month. The drug list, criteria, exclusions and how approval works.",
-    '/claiming-age-clarity-act': "A bill passed by Congress would rename Social Security's early, full and delayed claiming ages. The new names, and why no age or dollar amount changes.",
+    '/payment-dates-january-2027': "Social Security and SSI payment dates for December 2026 and January 2027, and why the January payment for some people arrives on 31 December.",
+    '/claiming-age-clarity-act': "A new law renames Social Security's early, full and delayed claiming ages. The new names, the deadline, and why no age or dollar amount changes.",
     '/globe-part-b-drugs': "CMS finalized GLOBE, a mandatory Part B drug pricing test for Original Medicare patients in randomly chosen areas. Who is in it, when it starts, the lawsuit.",
     '/search-ad-scam': "The FTC warns that scammers can buy search ads that imitate official health-insurance sites. How to check the real address and where to get verified help.",
     '/roth-catch-up': "Since 2026, 401(k) catch-up contributions for workers 50+ over a prior-year wage threshold must be Roth. Who is covered, which wages count, what 2027 adds.",
@@ -346,6 +347,7 @@ TITLE_OVERRIDES = {
     '/money': 'Social Security, Retirement and Tax Rules After 55',
     '/fraud': 'Scam and Fraud Protection: Current Scams and What to Do',
     '/part-b-premium-2027': 'Medicare Part B 2027: $209.40 Premium, $292 Deductible',
+    '/payment-dates-january-2027': 'Social Security Payment Dates: Dec 2026 and Jan 2027',
     '/irmaa-2027': '2027 IRMAA Brackets: Surcharge Starts at $112,000 / $224,000',
     '/driving': 'The Driving Conversation: Signs, Checks and Next Steps',
     '/cobra-medicare-trap': 'The COBRA-to-Medicare Trap and the Part B Late Penalty',
@@ -379,7 +381,7 @@ TITLE_OVERRIDES = {
 # time-ordered view of the same pages, not a separate place things live in for a
 # week. Add new slugs to the top as they publish.
 LATEST = [
-    '/christmas-bird-count', '/flying-with-a-grandchild-tsa',
+    '/payment-dates-january-2027', '/christmas-bird-count', '/flying-with-a-grandchild-tsa',
     '/part-b-premium-2027', '/irmaa-2027', '/tax-numbers-2027', '/retirement-limits-2027',
     '/medicaid-work-requirements', '/wiser-prior-authorization',
     '/tsa-confirmid-fee', '/eclipse-2027', '/uk-eta', '/silversneakers-2027',
