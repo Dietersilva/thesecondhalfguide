@@ -24,8 +24,9 @@ CLUSTERS = [
      'medicaid-work-requirements'],
     # Social Security: claiming and benefits
     ['social-security-62', 'delayed-retirement-credit', 'spousal-benefits', 'widows-penalty',
-     'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund', 'earnings-test'],
-    ['cola', 'cola-2027-estimate', 'part-b-premium-2027', 'no-tax-on-social-security', 'irmaa', 'delayed-retirement-credit',
+     'claiming-age-clarity-act', 'cola', 'wep-gpo-repeal', 'social-security-trust-fund', 'earnings-test',
+     'payment-dates-january-2027'],
+    ['cola', 'cola-2027-estimate', 'payment-dates-january-2027', 'part-b-premium-2027', 'no-tax-on-social-security', 'irmaa', 'delayed-retirement-credit',
      'medicare-savings', 'social-security-trust-fund', 'cola-scam'],
     ['no-tax-on-social-security', 'senior-deduction', 'standard-deduction-65'],
     # Social Security: dealing with the agency
